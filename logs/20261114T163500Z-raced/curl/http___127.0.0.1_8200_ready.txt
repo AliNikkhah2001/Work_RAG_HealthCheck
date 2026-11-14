@@ -1,1 +1,0 @@
-{"status":"ready","nemo_config_loaded":true,"upstream_reachable":false,"policy_version":"mvp-1"}
