@@ -1,8 +1,8 @@
-# GPU Full Recovery Report — `20261114T153319Z-Ali-Nikkhah-4`
+# GPU Full Recovery Report — `20261114T153737Z-Ali-Nikkhah-4`
 
 | Field | Value |
 |------|------|
-| UTC | 2026-11-14T15:33:34Z |
+| UTC | 2026-11-14T15:38:44Z |
 | Host | Ali-Nikkhah-4.local |
 | Status | **HEALTHY** |
 | Mode | `compose` |
@@ -60,23 +60,23 @@ qa_pass=3/3
 === Knowledgebase container ===
 KB container: dana-local-kb-1
 --- KB container env ---
-KB_WEB_HOST=0.0.0.0
-KB_RERANKER_DEVICE=cpu
+KB_DB_MODE=pgvector
 KB_EMBED_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-HF_HOME=/models
-KB_EMBED_DEVICE=cpu
 KB_EMBED_BACKEND=local
 KB_REDIS_URL=redis://REDACTED
-KB_OPENROUTER_API_KEY=REDACTED
-HF_HUB_CACHE=/models
-KB_DB_MODE=pgvector
 KB_RERANKER_MODEL=cohere/rerank-v3.5
-KB_EMBED_DIM=384
 KB_OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+KB_EMBED_DIM=384
+KB_RERANKER_DEVICE=cpu
 KB_DB_URL=postgresql://REDACTED
-KB_RERANKER_BACKEND=openrouter
+KB_OPENROUTER_API_KEY=REDACTED
 KB_USE_TANTIVY=false
 KB_WEB_PORT=8000
+KB_EMBED_DEVICE=cpu
+KB_RERANKER_BACKEND=openrouter
+KB_WEB_HOST=0.0.0.0
+HF_HOME=/models
+HF_HUB_CACHE=/models
 
 --- KB container processes ---
 OCI runtime exec failed: exec failed: unable to start container process: exec: "ps": executable file not found in $PATH
@@ -140,7 +140,20 @@ OCI runtime exec failed: exec failed: unable to start container process: exec: "
 ```
 
 ## Screenshots
-_none_
+- ![](collector-health.png)
+- ![](endpoint_13000_health.png)
+- ![](endpoint_18000_health.png)
+- ![](endpoint_8000_health.png)
+- ![](endpoint_8085_health.png)
+- ![](endpoint_8100_health.png)
+- ![](endpoint_8200_health.png)
+- ![](gemma-health.png)
+- ![](guard-health.png)
+- ![](jenkins-login.png)
+- ![](kb-health.png)
+- ![](orch-health.png)
+- ![](webui-chat.png)
+- ![](webui-home.png)
 
 ## Post-restart processes
 ```
@@ -152,4 +165,4 @@ no restart data
 DANA_HOST_REPO=/Users/alinikkhah/Documents/Work/CreditScoring/chatbot-health-dashboard bash /Users/alinikkhah/Documents/Work/CreditScoring/chatbot-health-dashboard/components/server-setup/scripts/gpu_full_recover_report.sh
 ```
 
-Artifacts live under `docs/ops/gpu-recover-reports/20261114T153319Z-Ali-Nikkhah-4/` in Work_RAG-Server-Setup.
+Artifacts live under `docs/ops/gpu-recover-reports/20261114T153737Z-Ali-Nikkhah-4/` in Work_RAG-Server-Setup.
