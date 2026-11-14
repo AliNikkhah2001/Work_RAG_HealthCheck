@@ -1,7 +1,7 @@
 {
   "schema_version": "health-run/v1",
-  "run_id": "20261114T161500Z-concb",
-  "generated_at": "2026-11-14T16:15:00Z",
+  "run_id": "20261114T162500Z-concb",
+  "generated_at": "2026-11-14T16:25:00Z",
   "machine": "conc-b",
   "machine_type": "unknown",
   "host": "Ali-Nikkhah-4.local",
@@ -132,7 +132,7 @@
   "gate": {},
   "kb": null,
   "links": {
-    "detail": "logs/20261114T161500Z-concb/dashboard.html",
-    "record": "runs/20261114T161500Z-concb.json"
+    "detail": "logs/20261114T162500Z-concb/dashboard.html",
+    "record": "runs/20261114T162500Z-concb.json"
   }
 }
