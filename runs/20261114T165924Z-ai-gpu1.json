@@ -130,7 +130,35 @@
     "kb_search_ok": true
   },
   "gate": {},
-  "kb": null,
+  "kb": {
+    "verdict": "unknown",
+    "mismatches": [],
+    "checks": [
+      {
+        "check": "expected vs db",
+        "match": null,
+        "detail": "GPU host is not a KB git checkout; expected corpus unreadable"
+      },
+      {
+        "check": "db vs served",
+        "match": false,
+        "detail": "db=1319 served=1298"
+      }
+    ],
+    "chunks_in_db": 1319,
+    "documents_in_db": null,
+    "chunks_in_pin": null,
+    "corpus_live": "unknown",
+    "corpus_latest": "unknown",
+    "corpus_lagging": null,
+    "manifest_id": null,
+    "packs": {},
+    "embedding_models": [],
+    "last_ingestion_job": null,
+    "unknown": [
+      "expected.chunk_count"
+    ]
+  },
   "links": {
     "detail": "logs/20261114T165924Z-ai-gpu1/dashboard.html",
     "record": "runs/20261114T165924Z-ai-gpu1.json"
