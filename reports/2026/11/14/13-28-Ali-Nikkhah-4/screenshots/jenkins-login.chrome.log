@@ -1,0 +1,11 @@
+[28948:743557:1114/165745.161005:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28948:743557:1114/165745.161617:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28948:743557:1114/165745.161709:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28948:743557:1114/165745.161803:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+Trying to load the allocator multiple times. This is *not* supported.
+[28948:743557:1114/165745.221325:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28948:743557:1114/165745.222006:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28948:743557:1114/165745.222243:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+489498 bytes written to file /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T132647Z-Ali-Nikkhah-4/screenshots/jenkins-login.png
+[28944:743540:1114/165745.863425:ERROR:base/process/process_mac.cc:45] task_policy_set TASK_CATEGORY_POLICY: (os/kern) invalid argument (4)
+[28944:743540:1114/165745.863466:ERROR:base/process/process_mac.cc:90] task_policy_set TASK_SUPPRESSION_POLICY: (os/kern) invalid argument (4)

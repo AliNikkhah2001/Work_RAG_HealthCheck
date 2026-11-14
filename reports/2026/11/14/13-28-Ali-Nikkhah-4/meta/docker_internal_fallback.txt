@@ -1,0 +1,3 @@
+[docker-internal] dana-local-kb-1 responds internally
+[docker-internal] dana-local-guardrails-1 responds internally
+[docker-internal] dana-local-orchestrator-1 responds internally

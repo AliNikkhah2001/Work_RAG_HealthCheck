@@ -1,0 +1,34 @@
+[29296:745881:1114/165756.694346:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29296:745881:1114/165756.694795:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29296:745881:1114/165756.694862:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29296:745881:1114/165756.694928:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+Trying to load the allocator multiple times. This is *not* supported.
+[29296:745881:1114/165756.758315:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29296:745881:1114/165756.758703:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29296:745881:1114/165756.760273:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29296:745881:1114/165757.420531:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422486:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422535:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422549:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422556:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422563:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422569:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422575:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422584:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422590:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422595:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422600:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422606:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422611:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422616:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422645:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422651:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422656:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422660:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422666:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422670:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422676:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422680:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422684:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[29296:745881:1114/165757.422688:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:401] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+6447 bytes written to file /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T132647Z-Ali-Nikkhah-4/screenshots/webui-chat.png

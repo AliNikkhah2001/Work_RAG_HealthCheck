@@ -1,0 +1,35 @@
+2026-11-14T12:15:44.285523880Z No WEBUI_SECRET_KEY environment variable set, loading from file.
+2026-11-14T12:15:44.285564422Z Generating new WEBUI_SECRET_KEY...
+2026-11-14T12:15:44.290615713Z Loading WEBUI_SECRET_KEY from .webui_secret_key
+2026-11-14T12:15:50.476552591Z INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+2026-11-14T12:15:50.476595508Z INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+2026-11-14T12:15:50.565441800Z WARNI [open_webui.env] 
+2026-11-14T12:15:50.565465425Z 
+2026-11-14T12:15:50.565466758Z WARNING: CORS_ALLOW_ORIGIN IS SET TO '*' - NOT RECOMMENDED FOR PRODUCTION DEPLOYMENTS.
+2026-11-14T12:15:50.565467758Z 
+2026-11-14T12:15:56.471427219Z 
+2026-11-14T12:15:56.471466261Z  ██████╗ ██████╗ ███████╗███╗   ██╗    ██╗    ██╗███████╗██████╗ ██╗   ██╗██╗
+2026-11-14T12:15:56.471470886Z ██╔═══██╗██╔══██╗██╔════╝████╗  ██║    ██║    ██║██╔════╝██╔══██╗██║   ██║██║
+2026-11-14T12:15:56.471472427Z ██║   ██║██████╔╝█████╗  ██╔██╗ ██║    ██║ █╗ ██║█████╗  ██████╔╝██║   ██║██║
+2026-11-14T12:15:56.471473886Z ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║    ██║███╗██║██╔══╝  ██╔══██╗██║   ██║██║
+2026-11-14T12:15:56.471475261Z ╚██████╔╝██║     ███████╗██║ ╚████║    ╚███╔███╔╝███████╗██████╔╝╚██████╔╝██║
+2026-11-14T12:15:56.471476636Z  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝     ╚══╝╚══╝ ╚══════╝╚═════╝  ╚═════╝ ╚═╝
+2026-11-14T12:15:56.471477969Z 
+2026-11-14T12:15:56.471478886Z 
+2026-11-14T12:15:56.471479844Z v0.13.3 - building the best AI user interface.
+2026-11-14T12:15:56.471480927Z 
+2026-11-14T12:15:56.471481844Z https://github.com/open-webui/open-webui
+2026-11-14T12:15:56.471482844Z 
+2026-11-14T12:15:56.937673011Z INFO:     Started server process [1]
+2026-11-14T12:15:56.937716261Z INFO:     Waiting for application startup.
+2026-11-14T12:15:56.946700928Z 2026-11-14 12:15:56.946 | INFO     | open_webui.utils.logger:start_logger:225 - GLOBAL_LOG_LEVEL: INFO
+2026-11-14T12:15:57.159448803Z 2026-11-14 12:15:57.159 | INFO     | open_webui.main:lifespan:426 - Installing external dependencies of functions and tools...
+2026-11-14T12:15:57.167743386Z 2026-11-14 12:15:57.167 | INFO     | open_webui.utils.plugin:install_frontmatter_requirements:460 - No requirements found in frontmatter.
+2026-11-14T12:15:57.174254094Z 2026-11-14 12:15:57.174 | INFO     | open_webui.utils.automations:scheduler_worker_loop:79 - Scheduler worker started (timer poll interval: 1s, scheduler poll interval: 10s)
+2026-11-14T13:19:04.904107041Z 2026-11-14 13:19:04.897 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:55592 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:22:07.237337209Z 2026-11-14 13:22:07.236 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:42568 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:25:10.398332294Z 2026-11-14 13:25:10.397 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:35176 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:25:10.656865752Z 2026-11-14 13:25:10.656 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:35204 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:26:27.362748385Z 2026-11-14 13:26:27.361 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:57740 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:26:40.851493169Z 2026-11-14 13:26:40.850 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:43776 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:26:40.972402794Z 2026-11-14 13:26:40.972 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:43782 - "POST /api/chat/completions HTTP/1.1" 401

@@ -1,0 +1,11 @@
+[29028:744131:1114/165747.026732:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29028:744131:1114/165747.027176:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29028:744131:1114/165747.027258:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29028:744131:1114/165747.027328:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+Trying to load the allocator multiple times. This is *not* supported.
+[29028:744131:1114/165747.076674:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29028:744131:1114/165747.076838:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[29028:744131:1114/165747.082782:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+24745 bytes written to file /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T132647Z-Ali-Nikkhah-4/screenshots/gemma-health.png
+[29024:744102:1114/165747.469276:ERROR:base/process/process_mac.cc:45] task_policy_set TASK_CATEGORY_POLICY: (os/kern) invalid argument (4)
+[29024:744102:1114/165747.469314:ERROR:base/process/process_mac.cc:90] task_policy_set TASK_SUPPRESSION_POLICY: (os/kern) invalid argument (4)

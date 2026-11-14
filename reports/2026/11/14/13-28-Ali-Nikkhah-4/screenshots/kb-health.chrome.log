@@ -1,0 +1,9 @@
+[28469:740405:1114/165730.397602:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28469:740405:1114/165730.402701:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28469:740405:1114/165730.406742:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28469:740405:1114/165730.406966:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+Trying to load the allocator multiple times. This is *not* supported.
+[28469:740405:1114/165730.493126:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28469:740405:1114/165730.497011:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[28469:740405:1114/165730.499152:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+24745 bytes written to file /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T132647Z-Ali-Nikkhah-4/screenshots/kb-health.png

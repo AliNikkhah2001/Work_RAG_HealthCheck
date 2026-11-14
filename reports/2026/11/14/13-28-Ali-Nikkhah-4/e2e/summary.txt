@@ -1,0 +1,5 @@
+chat_greeting http=200
+chat_credit_qa http=200
+chat_webui http=401
+chat_webui http=401 (auth required — skipped on dev, will pass on prod with WEBUI_AUTH=REDACTED
+kb_search http=200

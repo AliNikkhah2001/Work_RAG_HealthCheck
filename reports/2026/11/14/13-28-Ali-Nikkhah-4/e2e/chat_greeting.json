@@ -1,0 +1,85 @@
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "created": 1794662844, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"role": "assistant"}, "finish_reason": null}]}
+
+: agent validate_input + retrieve running
+
+: agent retrieve done chunks=0 latency_ms=105
+
+: agent format_response greeting
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "سلام! "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "👋 "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "من "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "دانا، "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "دستیار "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "هوشمند "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "شرکت "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتبارسنجی "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "ایران، "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "هستم.\n"}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "می‌توانم "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "به "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "سوالات "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "شما "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "درباره "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "مفاهیم "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتبارسنجی، "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "گزارش "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتبارسنجی، "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "امتیاز "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "و "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "رتبه "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتباری "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "و "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "روش "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "رفع "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "دلایل "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "کاهش "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "امتیاز "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "پاسخ "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "بدهم.\n"}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "چطور "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "می‌توانم "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "به "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "شما "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "کمک "}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "کنم؟"}}]}
+
+data: {"id": "chatcmpl-d9ee2818-945a-460d-b2ee-29e9b94a6975", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}]}
+
+data: [DONE]
