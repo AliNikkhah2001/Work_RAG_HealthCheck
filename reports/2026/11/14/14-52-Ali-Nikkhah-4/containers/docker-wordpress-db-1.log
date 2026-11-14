@@ -1,0 +1,35 @@
+2026-10-19T21:10:04.658319887Z 2026-10-19 21:10:04+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+2026-10-19T21:10:04.797911220Z 2026-10-19 21:10:04+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-10-19T21:10:04.804723470Z 2026-10-19 21:10:04+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+2026-10-19T21:10:04.900282470Z '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-10-19T21:10:05.084465803Z 2026-10-19T21:10:05.081641Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-10-19T21:10:05.084495387Z 2026-10-19T21:10:05.082863Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2026-10-19T21:10:05.084497762Z 2026-10-19T21:10:05.082888Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.46) starting as process 1
+2026-10-19T21:10:05.090588220Z 2026-10-19T21:10:05.090433Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-19T21:10:05.256220012Z 2026-10-19T21:10:05.256066Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-19T21:10:05.402271804Z 2026-10-19T21:10:05.402129Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-10-19T21:10:05.402284929Z 2026-10-19T21:10:05.402154Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-10-19T21:10:05.403634762Z 2026-10-19T21:10:05.403531Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-10-19T21:10:05.414955595Z 2026-10-19T21:10:05.414825Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-10-19T21:10:05.414973637Z 2026-10-19T21:10:05.414902Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.46'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-10-19T21:10:36.928044263Z 2026-10-19T21:10:36.927748Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-19T21:37:56.739905507Z 2026-10-19T21:37:56.739726Z 134 [Warning] [MY-013360] [Server] Plugin sha256_password reported: ''sha256_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-19T21:38:49.767839712Z 2026-10-19T21:38:49.767507Z 138 [Warning] [MY-013360] [Server] Plugin sha256_password reported: ''sha256_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-20T01:18:40.404733258Z 2026-10-20T01:18:40.402240Z 695 [Warning] [MY-013360] [Server] Plugin sha256_password reported: ''sha256_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-21T17:36:35.117587500Z 2026-10-21T17:36:35.107276Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.46).
+2026-10-21T18:50:19.974136805Z 2026-10-21 18:50:19+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+2026-10-21T18:50:20.230284097Z 2026-10-21 18:50:20+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-10-21T18:50:20.248937597Z 2026-10-21 18:50:20+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+2026-10-21T18:50:20.348049555Z '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-10-21T18:50:20.553631430Z 2026-10-21T18:50:20.549045Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-10-21T18:50:20.553652847Z 2026-10-21T18:50:20.549922Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2026-10-21T18:50:20.553654639Z 2026-10-21T18:50:20.550000Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.46) starting as process 1
+2026-10-21T18:50:20.559272722Z 2026-10-21T18:50:20.559146Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-10-21T18:50:20.798326722Z 2026-10-21T18:50:20.798165Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-10-21T18:50:21.098723625Z 2026-10-21T18:50:21.098574Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-10-21T18:50:21.098741916Z 2026-10-21T18:50:21.098606Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-10-21T18:50:21.100310416Z 2026-10-21T18:50:21.100231Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-10-21T18:50:21.120169250Z 2026-10-21T18:50:21.119987Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-10-21T18:50:21.120190791Z 2026-10-21T18:50:21.120054Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.46'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-10-21T18:50:42.187187093Z 2026-10-21T18:50:42.187058Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2026-10-21T21:50:29.925494637Z 2026-10-21T21:50:29.925119Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.46).

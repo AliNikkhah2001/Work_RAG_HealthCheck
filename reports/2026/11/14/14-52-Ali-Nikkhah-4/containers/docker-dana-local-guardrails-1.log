@@ -1,0 +1,66 @@
+2026-11-14T14:47:03.795374513Z INFO:     Started server process [1]
+2026-11-14T14:47:03.795415638Z INFO:     Waiting for application startup.
+2026-11-14T14:47:04.037554805Z Upstream Gemma manager is NOT reachable
+2026-11-14T14:47:04.037612221Z INFO:     Application startup complete.
+2026-11-14T14:47:04.039069180Z INFO:     Uvicorn running on http://0.0.0.0:8200 (Press CTRL+C to quit)
+2026-11-14T14:47:08.021910500Z INFO:     127.0.0.1:38566 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:47:18.203783297Z INFO:     127.0.0.1:60804 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:47:28.366236344Z INFO:     127.0.0.1:49382 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:47:38.494246751Z INFO:     127.0.0.1:43168 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:47:48.595882756Z INFO:     127.0.0.1:53720 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:47:58.702519427Z INFO:     127.0.0.1:39902 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:48:03.431093054Z INFO:     172.24.0.1:55368 - "GET / HTTP/1.1" 404 Not Found
+2026-11-14T14:48:08.800294334Z INFO:     127.0.0.1:49706 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:48:15.048424420Z INFO:     172.24.0.1:65412 - "GET / HTTP/1.1" 404 Not Found
+2026-11-14T14:48:18.987519589Z INFO:     127.0.0.1:45880 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:48:29.094111427Z INFO:     127.0.0.1:40980 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:48:39.188553834Z INFO:     127.0.0.1:52208 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:48:49.270828714Z INFO:     127.0.0.1:58084 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:48:58.752767677Z INFO:     172.24.0.1:61520 - "GET / HTTP/1.1" 404 Not Found
+2026-11-14T14:48:59.384298636Z INFO:     127.0.0.1:38050 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:49:06.637109083Z INFO:     172.24.0.1:64684 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:49:09.466756459Z INFO:     127.0.0.1:38806 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:49:10.476101835Z KB registry unavailable for guardrails ([Errno 111] Connection refused); using vendored YAML
+2026-11-14T14:49:10.802717002Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:49:10.802751710Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:49:10.808017335Z INFO:     172.24.0.8:60328 - "POST /v1/rails/check HTTP/1.1" 200 OK
+2026-11-14T14:49:13.756388378Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:49:13.756491045Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:49:16.846157213Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:49:16.846175005Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:49:16.847923671Z INFO:     172.24.0.8:60328 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-11-14T14:49:16.976679713Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:49:16.976689505Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:49:17.575985130Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:49:17.576000088Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:49:17.576925130Z INFO:     172.24.0.8:60328 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-11-14T14:49:19.597165964Z INFO:     127.0.0.1:60944 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:49:29.708183636Z INFO:     127.0.0.1:60374 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:49:39.857025168Z INFO:     127.0.0.1:48108 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:49:49.979902048Z INFO:     127.0.0.1:55624 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:50:00.156425011Z INFO:     172.24.0.1:57440 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:50:00.176771969Z INFO:     127.0.0.1:58078 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:50:10.289841460Z INFO:     127.0.0.1:36742 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:50:15.436199837Z KB registry unavailable for guardrails ([Errno 111] Connection refused); using vendored YAML
+2026-11-14T14:50:15.515122712Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:50:15.515170421Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:50:15.519023796Z INFO:     172.24.0.8:49496 - "POST /v1/rails/check HTTP/1.1" 200 OK
+2026-11-14T14:50:17.865573713Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:50:17.865621880Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:50:20.532275506Z INFO:     127.0.0.1:55352 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:50:22.005662465Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:50:22.005715340Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:50:22.007377549Z INFO:     172.24.0.8:49496 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-11-14T14:50:22.142030507Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:50:22.142047507Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:50:22.889422549Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:50:22.889431799Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:50:22.890242341Z INFO:     172.24.0.8:49496 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-11-14T14:50:30.792253761Z INFO:     127.0.0.1:34360 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:50:40.911622835Z INFO:     127.0.0.1:57380 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:50:42.922967753Z selfcheck error: Client error '400 Bad Request' for url 'http://litellm:4000/v1/chat/completions'
+2026-11-14T14:50:42.923004294Z For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+2026-11-14T14:50:42.924445378Z INFO:     172.24.0.8:43266 - "POST /v1/rails/check HTTP/1.1" 200 OK
+2026-11-14T14:50:51.013199382Z INFO:     127.0.0.1:37636 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:51:01.137921053Z INFO:     127.0.0.1:56930 - "GET /health HTTP/1.1" 200 OK
+2026-11-14T14:51:11.233359960Z INFO:     127.0.0.1:47372 - "GET /health HTTP/1.1" 200 OK

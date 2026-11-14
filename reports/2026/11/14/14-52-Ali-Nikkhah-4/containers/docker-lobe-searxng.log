@@ -1,0 +1,546 @@
+2026-08-21T06:06:40.507749587Z SearXNG 2026.8.20-487d7a96e
+2026-08-21T06:06:40.515808046Z Updating certificates in /etc/ssl/certs...
+2026-08-21T06:06:40.908632088Z 0 added, 0 removed; done.
+2026-08-21T06:06:40.908650546Z Running hooks in /etc/ca-certificates/update.d...
+2026-08-21T06:06:40.909462421Z done.
+2026-08-21T06:06:41.025354796Z [INFO] Starting granian (main PID: 1)
+2026-08-21T06:06:41.025748421Z [INFO] Listening at: http://:::8080
+2026-08-21T06:06:41.146581088Z [INFO] Spawning worker-1 with PID: 850
+2026-08-21T06:06:41.678835088Z 2026-08-21 06:06:41,677 ERROR:searx.engines: (PID 850) annas archive: engine SETUP failed, exception: missing required config `base_url`
+2026-08-21T06:06:41.678855755Z Traceback (most recent call last):
+2026-08-21T06:06:41.678859130Z   File "/usr/local/searxng/searx/engines/__init__.py", line 282, in call_engine_setup
+2026-08-21T06:06:41.678860588Z     setup_ok = engine.setup(engine_data)
+2026-08-21T06:06:41.678861713Z   File "/usr/local/searxng/searx/engines/annas_archive.py", line 106, in setup
+2026-08-21T06:06:41.678862838Z     raise ValueError("missing required config `base_url`")
+2026-08-21T06:06:41.678863921Z ValueError: missing required config `base_url`
+2026-08-21T06:06:41.678864921Z 2026-08-21 06:06:41,678 ERROR:searx.engines: (PID 850) annas archive: engine setup was not successful
+2026-08-21T06:06:41.678892963Z 2026-08-21 06:06:41,678 ERROR:searx.engines: (PID 850) annas archive: can't register engine (loading engine failed)
+2026-08-21T06:06:41.679808130Z 2026-08-21 06:06:41,679 ERROR:searx.engines: (PID 850) ahmia: can't register engine (loading engine failed)
+2026-08-21T06:06:41.681901671Z 2026-08-21 06:06:41,681 ERROR:searx.engines: Cannot load engine "ask"
+2026-08-21T06:06:41.681907296Z Traceback (most recent call last):
+2026-08-21T06:06:41.681908421Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.681909505Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.681910546Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.681911546Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.681912546Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.681913463Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.681914880Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.681915921Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.681916963Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/ask.py'
+2026-08-21T06:06:41.681918088Z 2026-08-21 06:06:41,681 ERROR:searx.engines: (PID 850) ask: can't register engine (loading engine failed)
+2026-08-21T06:06:41.686676630Z 2026-08-21 06:06:41,685 ERROR:searx.engines: Cannot load engine "cppreference"
+2026-08-21T06:06:41.686690213Z Traceback (most recent call last):
+2026-08-21T06:06:41.686691380Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.686692505Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.686693546Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.686694546Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.686695505Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.686696463Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.686697880Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.686698963Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.686700088Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/cppreference.py'
+2026-08-21T06:06:41.686701213Z 2026-08-21 06:06:41,686 ERROR:searx.engines: (PID 850) cppreference: can't register engine (loading engine failed)
+2026-08-21T06:06:41.741005755Z 2026-08-21 06:06:41,740 ERROR:searx.engines: Missing engine config attribute: "piped.music.frontend_url"
+2026-08-21T06:06:41.741036838Z 2026-08-21 06:06:41,740 ERROR:searx.engines: (PID 850) piped.music: can't register engine (loading engine failed)
+2026-08-21T06:06:41.741778046Z 2026-08-21 06:06:41,741 ERROR:searx.engines: Cannot load engine "podcastindex"
+2026-08-21T06:06:41.741784171Z Traceback (most recent call last):
+2026-08-21T06:06:41.741785755Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.741787171Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.741788338Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.741789380Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.741790338Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.741791338Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.741792755Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.741793880Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.741795046Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/podcastindex.py'
+2026-08-21T06:06:41.741796213Z 2026-08-21 06:06:41,741 ERROR:searx.engines: (PID 850) podcastindex: can't register engine (loading engine failed)
+2026-08-21T06:06:41.742231005Z 2026-08-21 06:06:41,741 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T06:06:41.742237255Z Traceback (most recent call last):
+2026-08-21T06:06:41.742238463Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.742246630Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.742247838Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.742248921Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.742249880Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.742250838Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.742252046Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.742253088Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.742254130Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T06:06:41.742257213Z 2026-08-21 06:06:41,742 ERROR:searx.engines: (PID 850) presearch: can't register engine (loading engine failed)
+2026-08-21T06:06:41.742640380Z 2026-08-21 06:06:41,742 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T06:06:41.742644380Z Traceback (most recent call last):
+2026-08-21T06:06:41.742645505Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.742646713Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.742647838Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.742648880Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.742649880Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.742650838Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.742652046Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.742653130Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.742654296Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T06:06:41.742655380Z 2026-08-21 06:06:41,742 ERROR:searx.engines: (PID 850) presearch images: can't register engine (loading engine failed)
+2026-08-21T06:06:41.743032046Z 2026-08-21 06:06:41,742 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T06:06:41.743042671Z Traceback (most recent call last):
+2026-08-21T06:06:41.743044880Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.743046005Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.743047046Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.743048088Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.743049046Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.743049963Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.743051005Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.743054713Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.743055838Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T06:06:41.743056921Z 2026-08-21 06:06:41,742 ERROR:searx.engines: (PID 850) presearch videos: can't register engine (loading engine failed)
+2026-08-21T06:06:41.743442588Z 2026-08-21 06:06:41,743 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T06:06:41.743446546Z Traceback (most recent call last):
+2026-08-21T06:06:41.743447630Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.743448713Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.743449838Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.743450880Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.743451921Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.743452880Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.743454046Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.743455088Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.743456255Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T06:06:41.743457338Z 2026-08-21 06:06:41,743 ERROR:searx.engines: (PID 850) presearch news: can't register engine (loading engine failed)
+2026-08-21T06:06:41.746720880Z 2026-08-21 06:06:41,746 ERROR:searx.engines: Cannot load engine "reddit"
+2026-08-21T06:06:41.746731046Z Traceback (most recent call last):
+2026-08-21T06:06:41.746732838Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.746733921Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.746734963Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.746736088Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.746737046Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.746738046Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.746739130Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.746740213Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.746741296Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/reddit.py'
+2026-08-21T06:06:41.746742380Z 2026-08-21 06:06:41,746 ERROR:searx.engines: (PID 850) reddit: can't register engine (loading engine failed)
+2026-08-21T06:06:41.750454380Z 2026-08-21 06:06:41,749 ERROR:searx.engines: Cannot load engine "searchcode_code"
+2026-08-21T06:06:41.750474838Z Traceback (most recent call last):
+2026-08-21T06:06:41.750476546Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.750477880Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.750478963Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.750480046Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.750480963Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.750481963Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.750483296Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.750484421Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.750485421Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/searchcode_code.py'
+2026-08-21T06:06:41.750486588Z 2026-08-21 06:06:41,750 ERROR:searx.engines: (PID 850) searchcode code: can't register engine (loading engine failed)
+2026-08-21T06:06:41.753464546Z 2026-08-21 06:06:41,753 ERROR:searx.engines: (PID 850) torch: can't register engine (loading engine failed)
+2026-08-21T06:06:41.758145255Z 2026-08-21 06:06:41,757 ERROR:searx.engines.wikicommons.images: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T06:06:41.758153630Z 2026-08-21 06:06:41,758 ERROR:searx.engines: (PID 850) wikicommons.images: engine setup was not successful
+2026-08-21T06:06:41.758155546Z 2026-08-21 06:06:41,758 ERROR:searx.engines: (PID 850) wikicommons.images: can't register engine (loading engine failed)
+2026-08-21T06:06:41.758537796Z 2026-08-21 06:06:41,758 ERROR:searx.engines.wikicommons.videos: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T06:06:41.758548671Z 2026-08-21 06:06:41,758 ERROR:searx.engines: (PID 850) wikicommons.videos: engine setup was not successful
+2026-08-21T06:06:41.758620880Z 2026-08-21 06:06:41,758 ERROR:searx.engines: (PID 850) wikicommons.videos: can't register engine (loading engine failed)
+2026-08-21T06:06:41.758960630Z 2026-08-21 06:06:41,758 ERROR:searx.engines.wikicommons.audio: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T06:06:41.758966005Z 2026-08-21 06:06:41,758 ERROR:searx.engines: (PID 850) wikicommons.audio: engine setup was not successful
+2026-08-21T06:06:41.758970005Z 2026-08-21 06:06:41,758 ERROR:searx.engines: (PID 850) wikicommons.audio: can't register engine (loading engine failed)
+2026-08-21T06:06:41.759477338Z 2026-08-21 06:06:41,759 ERROR:searx.engines.wikicommons.files: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T06:06:41.759483588Z 2026-08-21 06:06:41,759 ERROR:searx.engines: (PID 850) wikicommons.files: engine setup was not successful
+2026-08-21T06:06:41.759484838Z 2026-08-21 06:06:41,759 ERROR:searx.engines: (PID 850) wikicommons.files: can't register engine (loading engine failed)
+2026-08-21T06:06:41.762702296Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'naver' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T06:06:41.762714296Z   update_engine_attributes(engine, engine_data)
+2026-08-21T06:06:41.764788713Z 2026-08-21 06:06:41,764 ERROR:searx.engines: Cannot load engine "livespace"
+2026-08-21T06:06:41.764794921Z Traceback (most recent call last):
+2026-08-21T06:06:41.764796088Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.764797296Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.764798380Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.764799463Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.764800421Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.764801421Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.764802755Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.764803796Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.764804880Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/livespace.py'
+2026-08-21T06:06:41.764806005Z 2026-08-21 06:06:41,764 ERROR:searx.engines: (PID 850) livespace: can't register engine (loading engine failed)
+2026-08-21T06:06:41.765207171Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'woxikon.de synonyme' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T06:06:41.765212588Z   update_engine_attributes(engine, engine_data)
+2026-08-21T06:06:41.765778838Z 2026-08-21 06:06:41,765 ERROR:searx.engines: Cannot load engine "seekr"
+2026-08-21T06:06:41.765784130Z Traceback (most recent call last):
+2026-08-21T06:06:41.765785505Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.765786755Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.765787838Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.765788963Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.765790005Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.765790921Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.765792171Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.765797213Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.765798296Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/seekr.py'
+2026-08-21T06:06:41.765799421Z 2026-08-21 06:06:41,765 ERROR:searx.engines: (PID 850) seekr news: can't register engine (loading engine failed)
+2026-08-21T06:06:41.766147546Z 2026-08-21 06:06:41,765 ERROR:searx.engines: Cannot load engine "seekr"
+2026-08-21T06:06:41.766159088Z Traceback (most recent call last):
+2026-08-21T06:06:41.766160213Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.766161463Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.766162505Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.766163588Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.766164546Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.766165505Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.766166588Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.766167671Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.766168755Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/seekr.py'
+2026-08-21T06:06:41.766169880Z 2026-08-21 06:06:41,766 ERROR:searx.engines: (PID 850) seekr images: can't register engine (loading engine failed)
+2026-08-21T06:06:41.766728046Z 2026-08-21 06:06:41,766 ERROR:searx.engines: Cannot load engine "seekr"
+2026-08-21T06:06:41.766732130Z Traceback (most recent call last):
+2026-08-21T06:06:41.766733213Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.766734338Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.766735421Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.766736463Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.766737421Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.766738380Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.766739505Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.766740588Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.766741630Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/seekr.py'
+2026-08-21T06:06:41.766742796Z 2026-08-21 06:06:41,766 ERROR:searx.engines: (PID 850) seekr videos: can't register engine (loading engine failed)
+2026-08-21T06:06:41.767170046Z 2026-08-21 06:06:41,766 ERROR:searx.engines: Cannot load engine "stract"
+2026-08-21T06:06:41.767175880Z Traceback (most recent call last):
+2026-08-21T06:06:41.767176963Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.767178046Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.767179088Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.767180130Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.767184213Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.767185171Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.767186296Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.767187296Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.767188380Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/stract.py'
+2026-08-21T06:06:41.767189463Z 2026-08-21 06:06:41,767 ERROR:searx.engines: (PID 850) stract: can't register engine (loading engine failed)
+2026-08-21T06:06:41.767535505Z 2026-08-21 06:06:41,767 ERROR:searx.engines: Cannot load engine "svgrepo"
+2026-08-21T06:06:41.767539963Z Traceback (most recent call last):
+2026-08-21T06:06:41.767541130Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.767542296Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.767543380Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.767544463Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.767545421Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.767546380Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.767547546Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.767548630Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.767549671Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/svgrepo.py'
+2026-08-21T06:06:41.767552380Z 2026-08-21 06:06:41,767 ERROR:searx.engines: (PID 850) svgrepo: can't register engine (loading engine failed)
+2026-08-21T06:06:41.768723255Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'wikimini' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T06:06:41.768732421Z   update_engine_attributes(engine, engine_data)
+2026-08-21T06:06:41.769697255Z 2026-08-21 06:06:41,769 ERROR:searx.engines: Cannot load engine "yummly"
+2026-08-21T06:06:41.769705171Z Traceback (most recent call last):
+2026-08-21T06:06:41.769706296Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T06:06:41.769707380Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T06:06:41.769708421Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T06:06:41.769709463Z     spec.loader.exec_module(module)
+2026-08-21T06:06:41.769710380Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T06:06:41.769711296Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T06:06:41.769712380Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T06:06:41.769716671Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T06:06:41.769717755Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/yummly.py'
+2026-08-21T06:06:41.769718838Z 2026-08-21 06:06:41,769 ERROR:searx.engines: (PID 850) yummly: can't register engine (loading engine failed)
+2026-08-21T06:06:41.772064963Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'goo' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T06:06:41.772070630Z   update_engine_attributes(engine, engine_data)
+2026-08-21T06:06:41.787254838Z 2026-08-21 06:06:41,786 WARNING:searx.botdetection.config: missing config file: /etc/searxng/limiter.toml
+2026-08-21T06:06:41.788038546Z [INFO] Started worker-1
+2026-08-21T06:06:43.515720881Z 2026-08-21 06:06:43,515 WARNING:searx.network.wikidata: HTTP Request failed: GET https://query.wikidata.org/sparql?query=%0ASELECT+%3Fitem+%3Fname%0AWHERE+%7B%0A++++%7B%0A++++++SELECT+%3Fitem%0A++++++WHERE+%7B+%3Fitem+wdt%3AP279%2A+wd%3AQ12132+%7D%0A++++%7D+UNION+%7B%0A++++++VALUES+%3Fitem+%7B+wd%3AP571+wd%3AP576+wd%3AP580+wd%3AP582+wd%3AP569+wd%3AP570+wd%3AP619+wd%3AP620+wd%3AP27+wd%3AP495+wd%3AP17+wd%3AP159+wd%3AP36+wd%3AP35+wd%3AP6+wd%3AP122+wd%3AP37+wd%3AP1082+wd%3AP2046+wd%3AP281+wd%3AP38+wd%3AP2048+wd%3AP400+wd%3AP50+wd%3AP170+wd%3AP57+wd%3AP175+wd%3AP178+wd%3AP162+wd%3AP176+wd%3AP58+wd%3AP272+wd%3AP264+wd%3AP123+wd%3AP449+wd%3AP750+wd%3AP86+wd%3AP577+wd%3AP136+wd%3AP364+wd%3AP212+wd%3AP957+wd%3AP275+wd%3AP277+wd%3AP348+wd%3AP840+wd%3AP1098+wd%3AP282+wd%3AP1018+wd%3AP218+wd%3AP169+wd%3AP112+wd%3AP1454+wd%3AP137+wd%3AP1029+wd%3AP225+wd%3AP274+wd%3AP1346+wd%3AP1120+wd%3AP498+wd%3AP856+wd%3AP1324+wd%3AP1581+%7D%0A++++%7D%0A++++OPTIONAL+%7B+%3Fitem+rdfs%3Alabel+%3Fname.+%7D%0A%7D%0A
+2026-08-21T06:06:43.522509297Z 2026-08-21 06:06:43,518 ERROR:searx.searx.search.processor: (PID 850) wikidata: engine INIT failed, exception: HTTP error 403 (suspended_time=86400)
+2026-08-21T06:06:43.522577381Z Traceback (most recent call last):
+2026-08-21T06:06:43.522582506Z   File "/usr/local/searxng/searx/search/processors/abstract.py", line 158, in init_engine
+2026-08-21T06:06:43.522585339Z     init_ok = self.engine.init(eng_setting)
+2026-08-21T06:06:43.522587422Z   File "/usr/local/searxng/searx/engines/wikidata.py", line 839, in init
+2026-08-21T06:06:43.522589631Z     init_wikidata_properties()
+2026-08-21T06:06:43.522591464Z     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-08-21T06:06:43.522593297Z   File "/usr/local/searxng/searx/engines/wikidata.py", line 866, in init_wikidata_properties
+2026-08-21T06:06:43.522595422Z     jsonresponse = send_wikidata_query(query, **kwargs)
+2026-08-21T06:06:43.522597381Z   File "/usr/local/searxng/searx/engines/wikidata.py", line 473, in send_wikidata_query
+2026-08-21T06:06:43.522599506Z     http_response = get(SPARQL_ENDPOINT_URL + "?" + urlencode({"query": query}), headers=get_headers(), **kwargs)
+2026-08-21T06:06:43.522601839Z   File "/usr/local/searxng/searx/network/__init__.py", line 175, in get
+2026-08-21T06:06:43.522603839Z     return request('get', url, **kwargs)
+2026-08-21T06:06:43.522628089Z   File "/usr/local/searxng/searx/network/__init__.py", line 106, in request
+2026-08-21T06:06:43.522630297Z     return future.result(timeout)
+2026-08-21T06:06:43.522632131Z            ~~~~~~~~~~~~~^^^^^^^^^
+2026-08-21T06:06:43.522634006Z   File "/usr/lib/python3.14/concurrent/futures/_base.py", line 454, in result
+2026-08-21T06:06:43.522635922Z     return self.__get_result()
+2026-08-21T06:06:43.522637672Z            ~~~~~~~~~~~~~~~~~^^
+2026-08-21T06:06:43.522639506Z   File "/usr/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+2026-08-21T06:06:43.522641589Z     raise self._exception
+2026-08-21T06:06:43.522643422Z   File "/usr/local/searxng/searx/network/network.py", line 304, in request
+2026-08-21T06:06:43.522645547Z     return await self.call_client(False, method, url, **kwargs)
+2026-08-21T06:06:43.522647464Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-21T06:06:43.522649339Z   File "/usr/local/searxng/searx/network/network.py", line 287, in call_client
+2026-08-21T06:06:43.522651381Z     return self.patch_response(response, do_raise_for_httperror)
+2026-08-21T06:06:43.522653256Z            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-21T06:06:43.522655172Z   File "/usr/local/searxng/searx/network/network.py", line 256, in patch_response
+2026-08-21T06:06:43.522657214Z     raise_for_httperror(response)
+2026-08-21T06:06:43.522659006Z     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2026-08-21T06:06:43.522660881Z   File "/usr/local/searxng/searx/network/raise_for_httperror.py", line 76, in raise_for_httperror
+2026-08-21T06:06:43.522664506Z     raise SearxEngineAccessDeniedException(message='HTTP error ' + str(resp.status_code))
+2026-08-21T06:06:43.522666589Z searx.exceptions.SearxEngineAccessDeniedException: HTTP error 403 (suspended_time=86400)
+2026-08-21T06:06:43.522668714Z 2026-08-21 06:06:43,522 ERROR:searx.searx.search.processor: (PID 850) wikidata: engine init was not successful
+2026-08-21T06:06:43.522670881Z 2026-08-21 06:06:43,522 ERROR:searx.search.processors: (PID 850) wikidata: can't register engines processor (init engine failed)
+2026-08-21T08:17:06.541393168Z SearXNG 2026.8.20-487d7a96e
+2026-08-21T08:17:06.551030626Z Updating certificates in /etc/ssl/certs...
+2026-08-21T08:17:07.382889877Z 0 added, 0 removed; done.
+2026-08-21T08:17:07.383154543Z Running hooks in /etc/ca-certificates/update.d...
+2026-08-21T08:17:07.387003877Z done.
+2026-08-21T08:17:07.699738002Z [INFO] Starting granian (main PID: 1)
+2026-08-21T08:17:07.700650127Z [INFO] Listening at: http://:::8080
+2026-08-21T08:17:07.820382168Z [INFO] Spawning worker-1 with PID: 850
+2026-08-21T08:17:08.548020044Z 2026-08-21 08:17:08,546 ERROR:searx.engines: (PID 850) annas archive: engine SETUP failed, exception: missing required config `base_url`
+2026-08-21T08:17:08.548047210Z Traceback (most recent call last):
+2026-08-21T08:17:08.548058002Z   File "/usr/local/searxng/searx/engines/__init__.py", line 282, in call_engine_setup
+2026-08-21T08:17:08.548059377Z     setup_ok = engine.setup(engine_data)
+2026-08-21T08:17:08.548060252Z   File "/usr/local/searxng/searx/engines/annas_archive.py", line 106, in setup
+2026-08-21T08:17:08.548061127Z     raise ValueError("missing required config `base_url`")
+2026-08-21T08:17:08.548062044Z ValueError: missing required config `base_url`
+2026-08-21T08:17:08.548062960Z 2026-08-21 08:17:08,547 ERROR:searx.engines: (PID 850) annas archive: engine setup was not successful
+2026-08-21T08:17:08.548063835Z 2026-08-21 08:17:08,547 ERROR:searx.engines: (PID 850) annas archive: can't register engine (loading engine failed)
+2026-08-21T08:17:08.549344919Z 2026-08-21 08:17:08,549 ERROR:searx.engines: (PID 850) ahmia: can't register engine (loading engine failed)
+2026-08-21T08:17:08.552017585Z 2026-08-21 08:17:08,551 ERROR:searx.engines: Cannot load engine "ask"
+2026-08-21T08:17:08.552023835Z Traceback (most recent call last):
+2026-08-21T08:17:08.552025002Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.552025960Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.552026835Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.552027669Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.552028460Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.552029210Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.552030335Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.552031169Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.552032002Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/ask.py'
+2026-08-21T08:17:08.552080044Z 2026-08-21 08:17:08,551 ERROR:searx.engines: (PID 850) ask: can't register engine (loading engine failed)
+2026-08-21T08:17:08.562436169Z 2026-08-21 08:17:08,561 ERROR:searx.engines: Cannot load engine "cppreference"
+2026-08-21T08:17:08.562450252Z Traceback (most recent call last):
+2026-08-21T08:17:08.562451169Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.562452086Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.562452919Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.562453794Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.562454794Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.562455544Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.562456461Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.562472877Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.562474044Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/cppreference.py'
+2026-08-21T08:17:08.562474919Z 2026-08-21 08:17:08,562 ERROR:searx.engines: (PID 850) cppreference: can't register engine (loading engine failed)
+2026-08-21T08:17:08.644812211Z 2026-08-21 08:17:08,644 ERROR:searx.engines: Missing engine config attribute: "piped.music.frontend_url"
+2026-08-21T08:17:08.644835711Z 2026-08-21 08:17:08,644 ERROR:searx.engines: (PID 850) piped.music: can't register engine (loading engine failed)
+2026-08-21T08:17:08.645693419Z 2026-08-21 08:17:08,645 ERROR:searx.engines: Cannot load engine "podcastindex"
+2026-08-21T08:17:08.645706627Z Traceback (most recent call last):
+2026-08-21T08:17:08.645707877Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.645708919Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.645709794Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.645710669Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.645711586Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.645712336Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.645713502Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.645714336Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.645718627Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/podcastindex.py'
+2026-08-21T08:17:08.645719544Z 2026-08-21 08:17:08,645 ERROR:searx.engines: (PID 850) podcastindex: can't register engine (loading engine failed)
+2026-08-21T08:17:08.646158086Z 2026-08-21 08:17:08,645 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T08:17:08.646164211Z Traceback (most recent call last):
+2026-08-21T08:17:08.646165544Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.646166502Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.646167502Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.646168377Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.646169169Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.646174044Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.646175211Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.646176044Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.646177127Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T08:17:08.646261752Z 2026-08-21 08:17:08,646 ERROR:searx.engines: (PID 850) presearch: can't register engine (loading engine failed)
+2026-08-21T08:17:08.646587252Z 2026-08-21 08:17:08,646 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T08:17:08.646594002Z Traceback (most recent call last):
+2026-08-21T08:17:08.646595169Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.646596002Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.646596794Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.646597669Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.646598586Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.646599294Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.646600169Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.646601086Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.646601919Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T08:17:08.646602794Z 2026-08-21 08:17:08,646 ERROR:searx.engines: (PID 850) presearch images: can't register engine (loading engine failed)
+2026-08-21T08:17:08.646920752Z 2026-08-21 08:17:08,646 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T08:17:08.646925711Z Traceback (most recent call last):
+2026-08-21T08:17:08.646927086Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.646928086Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.646929002Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.646929961Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.646930711Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.646931544Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.646932669Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.646933627Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.646934544Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T08:17:08.646935419Z 2026-08-21 08:17:08,646 ERROR:searx.engines: (PID 850) presearch videos: can't register engine (loading engine failed)
+2026-08-21T08:17:08.647226711Z 2026-08-21 08:17:08,646 ERROR:searx.engines: Cannot load engine "presearch"
+2026-08-21T08:17:08.647229711Z Traceback (most recent call last):
+2026-08-21T08:17:08.647230544Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.647236461Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.647237377Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.647238211Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.647238919Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.647239794Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.647240752Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.647241586Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.647242502Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/presearch.py'
+2026-08-21T08:17:08.647243669Z 2026-08-21 08:17:08,647 ERROR:searx.engines: (PID 850) presearch news: can't register engine (loading engine failed)
+2026-08-21T08:17:08.651904627Z 2026-08-21 08:17:08,651 ERROR:searx.engines: Cannot load engine "reddit"
+2026-08-21T08:17:08.651929044Z Traceback (most recent call last):
+2026-08-21T08:17:08.651930377Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.651931377Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.651932336Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.651933377Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.651934127Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.651934877Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.651936086Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.651936919Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.651937836Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/reddit.py'
+2026-08-21T08:17:08.651938711Z 2026-08-21 08:17:08,651 ERROR:searx.engines: (PID 850) reddit: can't register engine (loading engine failed)
+2026-08-21T08:17:08.657308752Z 2026-08-21 08:17:08,656 ERROR:searx.engines: Cannot load engine "searchcode_code"
+2026-08-21T08:17:08.657320877Z Traceback (most recent call last):
+2026-08-21T08:17:08.657322169Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.657323127Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.657324002Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.657324836Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.657325586Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.657326336Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.657327544Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.657334627Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.657335627Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/searchcode_code.py'
+2026-08-21T08:17:08.657336544Z 2026-08-21 08:17:08,657 ERROR:searx.engines: (PID 850) searchcode code: can't register engine (loading engine failed)
+2026-08-21T08:17:08.660725377Z 2026-08-21 08:17:08,660 ERROR:searx.engines: (PID 850) torch: can't register engine (loading engine failed)
+2026-08-21T08:17:08.665454252Z 2026-08-21 08:17:08,665 ERROR:searx.engines.wikicommons.images: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T08:17:08.665472586Z 2026-08-21 08:17:08,665 ERROR:searx.engines: (PID 850) wikicommons.images: engine setup was not successful
+2026-08-21T08:17:08.665473961Z 2026-08-21 08:17:08,665 ERROR:searx.engines: (PID 850) wikicommons.images: can't register engine (loading engine failed)
+2026-08-21T08:17:08.665725544Z 2026-08-21 08:17:08,665 ERROR:searx.engines.wikicommons.videos: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T08:17:08.665734044Z 2026-08-21 08:17:08,665 ERROR:searx.engines: (PID 850) wikicommons.videos: engine setup was not successful
+2026-08-21T08:17:08.665781377Z 2026-08-21 08:17:08,665 ERROR:searx.engines: (PID 850) wikicommons.videos: can't register engine (loading engine failed)
+2026-08-21T08:17:08.666024127Z 2026-08-21 08:17:08,665 ERROR:searx.engines.wikicommons.audio: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T08:17:08.666027502Z 2026-08-21 08:17:08,665 ERROR:searx.engines: (PID 850) wikicommons.audio: engine setup was not successful
+2026-08-21T08:17:08.666028627Z 2026-08-21 08:17:08,665 ERROR:searx.engines: (PID 850) wikicommons.audio: can't register engine (loading engine failed)
+2026-08-21T08:17:08.666269877Z 2026-08-21 08:17:08,666 ERROR:searx.engines.wikicommons.files: wc_search_type: None isn't a valid file type (image,video,audio,file)
+2026-08-21T08:17:08.666272002Z 2026-08-21 08:17:08,666 ERROR:searx.engines: (PID 850) wikicommons.files: engine setup was not successful
+2026-08-21T08:17:08.666275252Z 2026-08-21 08:17:08,666 ERROR:searx.engines: (PID 850) wikicommons.files: can't register engine (loading engine failed)
+2026-08-21T08:17:08.669955294Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'naver' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T08:17:08.669977794Z   update_engine_attributes(engine, engine_data)
+2026-08-21T08:17:08.672700794Z 2026-08-21 08:17:08,672 ERROR:searx.engines: Cannot load engine "livespace"
+2026-08-21T08:17:08.672709336Z Traceback (most recent call last):
+2026-08-21T08:17:08.672710419Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.672711461Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.672712294Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.672722711Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.672723794Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.672724586Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.672725669Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.672726502Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.672727336Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/livespace.py'
+2026-08-21T08:17:08.672728252Z 2026-08-21 08:17:08,672 ERROR:searx.engines: (PID 850) livespace: can't register engine (loading engine failed)
+2026-08-21T08:17:08.673212961Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'woxikon.de synonyme' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T08:17:08.673224127Z   update_engine_attributes(engine, engine_data)
+2026-08-21T08:17:08.673771836Z 2026-08-21 08:17:08,673 ERROR:searx.engines: Cannot load engine "seekr"
+2026-08-21T08:17:08.673778836Z Traceback (most recent call last):
+2026-08-21T08:17:08.673779752Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.673780711Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.673781544Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.673782377Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.673783252Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.673784002Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.673788836Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.673790627Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.673791461Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/seekr.py'
+2026-08-21T08:17:08.673792377Z 2026-08-21 08:17:08,673 ERROR:searx.engines: (PID 850) seekr news: can't register engine (loading engine failed)
+2026-08-21T08:17:08.674100002Z 2026-08-21 08:17:08,673 ERROR:searx.engines: Cannot load engine "seekr"
+2026-08-21T08:17:08.674104169Z Traceback (most recent call last):
+2026-08-21T08:17:08.674105086Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.674106002Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.674106836Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.674107669Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.674108419Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.674109169Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.674119044Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.674120169Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.674121044Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/seekr.py'
+2026-08-21T08:17:08.674166877Z 2026-08-21 08:17:08,674 ERROR:searx.engines: (PID 850) seekr images: can't register engine (loading engine failed)
+2026-08-21T08:17:08.674558211Z 2026-08-21 08:17:08,674 ERROR:searx.engines: Cannot load engine "seekr"
+2026-08-21T08:17:08.674565127Z Traceback (most recent call last):
+2026-08-21T08:17:08.674566336Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.674567502Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.674568336Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.674569211Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.674570044Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.674570961Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.674571919Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.674572752Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.674573752Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/seekr.py'
+2026-08-21T08:17:08.674576461Z 2026-08-21 08:17:08,674 ERROR:searx.engines: (PID 850) seekr videos: can't register engine (loading engine failed)
+2026-08-21T08:17:08.674908252Z 2026-08-21 08:17:08,674 ERROR:searx.engines: Cannot load engine "stract"
+2026-08-21T08:17:08.674911752Z Traceback (most recent call last):
+2026-08-21T08:17:08.674912669Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.674913544Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.674914294Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.674915169Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.674915919Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.674916669Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.674917502Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.674918336Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.674919502Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/stract.py'
+2026-08-21T08:17:08.674920377Z 2026-08-21 08:17:08,674 ERROR:searx.engines: (PID 850) stract: can't register engine (loading engine failed)
+2026-08-21T08:17:08.675202377Z 2026-08-21 08:17:08,674 ERROR:searx.engines: Cannot load engine "svgrepo"
+2026-08-21T08:17:08.675215502Z Traceback (most recent call last):
+2026-08-21T08:17:08.675216919Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.675235086Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.675237461Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.675238294Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.675239086Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.675239752Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.675240627Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.675241419Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.675242252Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/svgrepo.py'
+2026-08-21T08:17:08.675243127Z 2026-08-21 08:17:08,675 ERROR:searx.engines: (PID 850) svgrepo: can't register engine (loading engine failed)
+2026-08-21T08:17:08.676541336Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'wikimini' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T08:17:08.676548461Z   update_engine_attributes(engine, engine_data)
+2026-08-21T08:17:08.677329002Z 2026-08-21 08:17:08,676 ERROR:searx.engines: Cannot load engine "yummly"
+2026-08-21T08:17:08.677332669Z Traceback (most recent call last):
+2026-08-21T08:17:08.677333794Z   File "/usr/local/searxng/searx/engines/__init__.py", line 132, in load_engine
+2026-08-21T08:17:08.677334711Z     engine = load_module(module_name + '.py', ENGINE_DIR)
+2026-08-21T08:17:08.677335544Z   File "/usr/local/searxng/searx/utils.py", line 430, in load_module
+2026-08-21T08:17:08.677336377Z     spec.loader.exec_module(module)
+2026-08-21T08:17:08.677337127Z     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+2026-08-21T08:17:08.677337877Z   File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+2026-08-21T08:17:08.677338919Z   File "<frozen importlib._bootstrap_external>", line 892, in get_code
+2026-08-21T08:17:08.677339794Z   File "<frozen importlib._bootstrap_external>", line 950, in get_data
+2026-08-21T08:17:08.677340627Z FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/searxng/searx/engines/yummly.py'
+2026-08-21T08:17:08.677341502Z 2026-08-21 08:17:08,677 ERROR:searx.engines: (PID 850) yummly: can't register engine (loading engine failed)
+2026-08-21T08:17:08.679542377Z /usr/local/searxng/searx/engines/__init__.py:141: DeprecationWarning: engine 'goo' (xpath) - migrate engine.about.language to engine.language!
+2026-08-21T08:17:08.679549961Z   update_engine_attributes(engine, engine_data)
+2026-08-21T08:17:08.694113544Z 2026-08-21 08:17:08,693 WARNING:searx.botdetection.config: missing config file: /etc/searxng/limiter.toml
+2026-08-21T08:17:08.695623169Z [INFO] Started worker-1
+2026-08-21T08:17:12.059002004Z 2026-08-21 08:17:12,058 WARNING:searx.network.wikidata: HTTP Request failed: GET https://query.wikidata.org/sparql?query=%0ASELECT+%3Fitem+%3Fname%0AWHERE+%7B%0A++++%7B%0A++++++SELECT+%3Fitem%0A++++++WHERE+%7B+%3Fitem+wdt%3AP279%2A+wd%3AQ12132+%7D%0A++++%7D+UNION+%7B%0A++++++VALUES+%3Fitem+%7B+wd%3AP571+wd%3AP576+wd%3AP580+wd%3AP582+wd%3AP569+wd%3AP570+wd%3AP619+wd%3AP620+wd%3AP27+wd%3AP495+wd%3AP17+wd%3AP159+wd%3AP36+wd%3AP35+wd%3AP6+wd%3AP122+wd%3AP37+wd%3AP1082+wd%3AP2046+wd%3AP281+wd%3AP38+wd%3AP2048+wd%3AP400+wd%3AP50+wd%3AP170+wd%3AP57+wd%3AP175+wd%3AP178+wd%3AP162+wd%3AP176+wd%3AP58+wd%3AP272+wd%3AP264+wd%3AP123+wd%3AP449+wd%3AP750+wd%3AP86+wd%3AP577+wd%3AP136+wd%3AP364+wd%3AP212+wd%3AP957+wd%3AP275+wd%3AP277+wd%3AP348+wd%3AP840+wd%3AP1098+wd%3AP282+wd%3AP1018+wd%3AP218+wd%3AP169+wd%3AP112+wd%3AP1454+wd%3AP137+wd%3AP1029+wd%3AP225+wd%3AP274+wd%3AP1346+wd%3AP1120+wd%3AP498+wd%3AP856+wd%3AP1324+wd%3AP1581+%7D%0A++++%7D%0A++++OPTIONAL+%7B+%3Fitem+rdfs%3Alabel+%3Fname.+%7D%0A%7D%0A
+2026-08-21T08:17:12.069943504Z 2026-08-21 08:17:12,063 ERROR:searx.searx.search.processor: (PID 850) wikidata: engine INIT failed, exception: HTTP error 403 (suspended_time=86400)
+2026-08-21T08:17:12.070050671Z Traceback (most recent call last):
+2026-08-21T08:17:12.070060046Z   File "/usr/local/searxng/searx/search/processors/abstract.py", line 158, in init_engine
+2026-08-21T08:17:12.070062379Z     init_ok = self.engine.init(eng_setting)
+2026-08-21T08:17:12.070063296Z   File "/usr/local/searxng/searx/engines/wikidata.py", line 839, in init
+2026-08-21T08:17:12.070064337Z     init_wikidata_properties()
+2026-08-21T08:17:12.070065129Z     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+2026-08-21T08:17:12.070065879Z   File "/usr/local/searxng/searx/engines/wikidata.py", line 866, in init_wikidata_properties
+2026-08-21T08:17:12.070066754Z     jsonresponse = send_wikidata_query(query, **kwargs)
+2026-08-21T08:17:12.070067587Z   File "/usr/local/searxng/searx/engines/wikidata.py", line 473, in send_wikidata_query
+2026-08-21T08:17:12.070068504Z     http_response = get(SPARQL_ENDPOINT_URL + "?" + urlencode({"query": query}), headers=get_headers(), **kwargs)
+2026-08-21T08:17:12.070069504Z   File "/usr/local/searxng/searx/network/__init__.py", line 175, in get
+2026-08-21T08:17:12.070070379Z     return request('get', url, **kwargs)
+2026-08-21T08:17:12.070071171Z   File "/usr/local/searxng/searx/network/__init__.py", line 106, in request
+2026-08-21T08:17:12.070072337Z     return future.result(timeout)
+2026-08-21T08:17:12.070073129Z            ~~~~~~~~~~~~~^^^^^^^^^
+2026-08-21T08:17:12.070073921Z   File "/usr/lib/python3.14/concurrent/futures/_base.py", line 454, in result
+2026-08-21T08:17:12.070074796Z     return self.__get_result()
+2026-08-21T08:17:12.070075546Z            ~~~~~~~~~~~~~~~~~^^
+2026-08-21T08:17:12.070076296Z   File "/usr/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+2026-08-21T08:17:12.070077129Z     raise self._exception
+2026-08-21T08:17:12.070077879Z   File "/usr/local/searxng/searx/network/network.py", line 304, in request
+2026-08-21T08:17:12.070104004Z     return await self.call_client(False, method, url, **kwargs)
+2026-08-21T08:17:12.070106254Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-21T08:17:12.070107087Z   File "/usr/local/searxng/searx/network/network.py", line 287, in call_client
+2026-08-21T08:17:12.070107921Z     return self.patch_response(response, do_raise_for_httperror)
+2026-08-21T08:17:12.070108712Z            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-21T08:17:12.070109546Z   File "/usr/local/searxng/searx/network/network.py", line 256, in patch_response
+2026-08-21T08:17:12.070110421Z     raise_for_httperror(response)
+2026-08-21T08:17:12.070111171Z     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+2026-08-21T08:17:12.070112004Z   File "/usr/local/searxng/searx/network/raise_for_httperror.py", line 76, in raise_for_httperror
+2026-08-21T08:17:12.070115587Z     raise SearxEngineAccessDeniedException(message='HTTP error ' + str(resp.status_code))
+2026-08-21T08:17:12.070118421Z searx.exceptions.SearxEngineAccessDeniedException: HTTP error 403 (suspended_time=86400)
+2026-08-21T08:17:12.070119296Z 2026-08-21 08:17:12,069 ERROR:searx.searx.search.processor: (PID 850) wikidata: engine init was not successful
+2026-08-21T08:17:12.070122421Z 2026-08-21 08:17:12,069 ERROR:searx.search.processors: (PID 850) wikidata: can't register engines processor (init engine failed)
+2026-08-25T17:40:34.546905252Z [INFO] Shutting down granian
+2026-08-25T17:40:34.654229336Z [INFO] Stopping worker-1
+2026-08-25T17:40:34.807558752Z [INFO] Stopped worker-1
+2026-08-25T17:40:34.809475752Z [INFO] Granian shutdown completed, see ya!
