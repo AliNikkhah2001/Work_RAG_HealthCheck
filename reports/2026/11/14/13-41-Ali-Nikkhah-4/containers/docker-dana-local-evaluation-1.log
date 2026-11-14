@@ -1,0 +1,50 @@
+2026-11-11T20:52:59.926821923Z WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+2026-11-11T20:53:00.613877923Z 
+2026-11-11T20:53:00.614057215Z [notice] A new release of pip is available: 24.0 -> 26.3
+2026-11-11T20:53:00.614063048Z [notice] To update, run: pip install --upgrade pip
+2026-11-11T20:53:02.003078340Z INFO:     Started server process [1]
+2026-11-11T20:53:02.003118257Z INFO:     Waiting for application startup.
+2026-11-11T20:53:02.003456632Z INFO:     Application startup complete.
+2026-11-11T20:53:02.005896465Z INFO:     Uvicorn running on http://0.0.0.0:8300 (Press CTRL+C to quit)
+2026-11-11T20:53:03.248783049Z INFO:     172.24.0.1:56446 - "GET /health HTTP/1.1" 200 OK
+2026-11-11T20:54:11.199489220Z INFO:     172.24.0.8:44062 - "GET /health HTTP/1.1" 200 OK
+2026-11-11T20:54:11.223235178Z INFO:     172.24.0.8:44074 - "GET /v1/datasets HTTP/1.1" 200 OK
+2026-11-11T20:54:11.239593428Z INFO:     172.24.0.8:44076 - "GET /v1/results/hitk HTTP/1.1" 200 OK
+2026-11-11T20:54:11.253612762Z INFO:     172.24.0.8:44088 - "GET /v1/results/multiturn HTTP/1.1" 200 OK
+2026-11-11T20:54:21.703064002Z INFO:     172.24.0.8:37882 - "GET /health HTTP/1.1" 200 OK
+2026-11-11T20:54:21.742387711Z INFO:     172.24.0.8:37896 - "GET /v1/datasets HTTP/1.1" 200 OK
+2026-11-11T20:54:21.767757627Z INFO:     172.24.0.8:37912 - "GET /v1/results/hitk HTTP/1.1" 200 OK
+2026-11-11T20:54:21.791652544Z INFO:     172.24.0.8:37916 - "GET /v1/results/multiturn HTTP/1.1" 200 OK
+2026-11-11T20:54:22.136446836Z INFO:     172.24.0.8:37928 - "GET /health HTTP/1.1" 200 OK
+2026-11-11T20:54:24.892371545Z INFO:     172.24.0.8:37936 - "GET /health HTTP/1.1" 200 OK
+2026-11-11T20:54:24.910037712Z INFO:     172.24.0.8:37946 - "GET /v1/datasets HTTP/1.1" 200 OK
+2026-11-11T20:54:24.925101754Z INFO:     172.24.0.8:37954 - "GET /v1/results/hitk HTTP/1.1" 200 OK
+2026-11-11T20:54:24.944559087Z INFO:     172.24.0.8:37956 - "GET /v1/results/multiturn HTTP/1.1" 200 OK
+2026-11-11T20:54:49.902418585Z INFO:     172.24.0.8:56208 - "GET /health HTTP/1.1" 200 OK
+2026-11-11T20:54:49.937852793Z INFO:     172.24.0.8:56224 - "GET /v1/datasets HTTP/1.1" 200 OK
+2026-11-11T20:54:49.959829876Z INFO:     172.24.0.8:56238 - "GET /v1/results/hitk HTTP/1.1" 200 OK
+2026-11-11T20:54:49.980901501Z INFO:     172.24.0.8:56250 - "GET /v1/results/multiturn HTTP/1.1" 200 OK
+2026-11-11T21:25:05.926401634Z INFO:     172.24.0.1:57624 - "GET /health HTTP/1.1" 200 OK
+2026-11-11T21:25:20.322868543Z INFO:     172.24.0.1:56472 - "GET /health HTTP/1.1" 200 OK
+2026-11-12T13:01:40.673742793Z INFO:     Shutting down
+2026-11-12T13:01:40.926263835Z INFO:     Waiting for application shutdown.
+2026-11-13T14:35:42.154819502Z WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+2026-11-13T14:35:42.196337669Z 
+2026-11-13T14:35:42.196347586Z [notice] A new release of pip is available: 24.0 -> 26.3
+2026-11-13T14:35:42.196350919Z [notice] To update, run: pip install --upgrade pip
+2026-11-13T14:35:48.230801505Z INFO:     Started server process [1]
+2026-11-13T14:35:48.230844755Z INFO:     Waiting for application startup.
+2026-11-13T14:35:48.239043797Z INFO:     Application startup complete.
+2026-11-13T14:35:48.245720589Z INFO:     Uvicorn running on http://0.0.0.0:8300 (Press CTRL+C to quit)
+2026-11-14T08:47:11.246725089Z INFO:     Shutting down
+2026-11-14T08:47:11.367485506Z INFO:     Waiting for application shutdown.
+2026-11-14T08:47:11.414203256Z INFO:     Application shutdown complete.
+2026-11-14T08:47:11.434177256Z INFO:     Finished server process [1]
+2026-11-14T09:06:03.232759543Z WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+2026-11-14T09:06:03.252268918Z 
+2026-11-14T09:06:03.252287043Z [notice] A new release of pip is available: 24.0 -> 26.3
+2026-11-14T09:06:03.252288793Z [notice] To update, run: pip install --upgrade pip
+2026-11-14T09:06:04.973761336Z INFO:     Started server process [1]
+2026-11-14T09:06:04.973838544Z INFO:     Waiting for application startup.
+2026-11-14T09:06:04.976722419Z INFO:     Application startup complete.
+2026-11-14T09:06:04.978981253Z INFO:     Uvicorn running on http://0.0.0.0:8300 (Press CTRL+C to quit)

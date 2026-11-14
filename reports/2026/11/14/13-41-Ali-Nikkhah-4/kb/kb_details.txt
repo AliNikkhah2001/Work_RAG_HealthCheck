@@ -1,0 +1,41 @@
+=== Knowledgebase container ===
+KB container: dana-local-kb-1
+--- KB container env ---
+KB_EMBED_DIM=384
+KB_OPENROUTER_API_KEY=REDACTED
+KB_OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+KB_WEB_HOST=0.0.0.0
+KB_EMBED_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+KB_WEB_PORT=8000
+KB_RERANKER_DEVICE=cpu
+KB_DB_MODE=pgvector
+KB_REDIS_URL=redis://REDACTED
+KB_EMBED_BACKEND=local
+KB_DB_URL=postgresql://REDACTED
+HF_HUB_CACHE=/models
+HF_HOME=/models
+KB_RERANKER_MODEL=cohere/rerank-v3.5
+KB_EMBED_DEVICE=cpu
+KB_USE_TANTIVY=false
+KB_RERANKER_BACKEND=openrouter
+
+--- KB container processes ---
+OCI runtime exec failed: exec failed: unable to start container process: exec: "ps": executable file not found in $PATH
+
+=== KB search API health ===
+{}
+
+=== KB search test (sample query) ===
+{}
+
+=== KB document count / chunks ===
+stats endpoint unavailable
+
+documents endpoint unavailable
+
+=== KB version from git ===
+KB is not a git checkout
+
+=== KB entity lists ===
+no entity_lists dir
+no data dir

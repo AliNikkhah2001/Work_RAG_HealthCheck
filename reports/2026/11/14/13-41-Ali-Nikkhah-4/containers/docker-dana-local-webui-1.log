@@ -1,0 +1,79 @@
+2026-11-14T12:15:44.285523880Z No WEBUI_SECRET_KEY environment variable set, loading from file.
+2026-11-14T12:15:44.285564422Z Generating new WEBUI_SECRET_KEY...
+2026-11-14T12:15:44.290615713Z Loading WEBUI_SECRET_KEY from .webui_secret_key
+2026-11-14T12:15:50.476552591Z INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+2026-11-14T12:15:50.476595508Z INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+2026-11-14T12:15:50.565441800Z WARNI [open_webui.env] 
+2026-11-14T12:15:50.565465425Z 
+2026-11-14T12:15:50.565466758Z WARNING: CORS_ALLOW_ORIGIN IS SET TO '*' - NOT RECOMMENDED FOR PRODUCTION DEPLOYMENTS.
+2026-11-14T12:15:50.565467758Z 
+2026-11-14T12:15:56.471427219Z 
+2026-11-14T12:15:56.471466261Z  ██████╗ ██████╗ ███████╗███╗   ██╗    ██╗    ██╗███████╗██████╗ ██╗   ██╗██╗
+2026-11-14T12:15:56.471470886Z ██╔═══██╗██╔══██╗██╔════╝████╗  ██║    ██║    ██║██╔════╝██╔══██╗██║   ██║██║
+2026-11-14T12:15:56.471472427Z ██║   ██║██████╔╝█████╗  ██╔██╗ ██║    ██║ █╗ ██║█████╗  ██████╔╝██║   ██║██║
+2026-11-14T12:15:56.471473886Z ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║    ██║███╗██║██╔══╝  ██╔══██╗██║   ██║██║
+2026-11-14T12:15:56.471475261Z ╚██████╔╝██║     ███████╗██║ ╚████║    ╚███╔███╔╝███████╗██████╔╝╚██████╔╝██║
+2026-11-14T12:15:56.471476636Z  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝     ╚══╝╚══╝ ╚══════╝╚═════╝  ╚═════╝ ╚═╝
+2026-11-14T12:15:56.471477969Z 
+2026-11-14T12:15:56.471478886Z 
+2026-11-14T12:15:56.471479844Z v0.13.3 - building the best AI user interface.
+2026-11-14T12:15:56.471480927Z 
+2026-11-14T12:15:56.471481844Z https://github.com/open-webui/open-webui
+2026-11-14T12:15:56.471482844Z 
+2026-11-14T12:15:56.937673011Z INFO:     Started server process [1]
+2026-11-14T12:15:56.937716261Z INFO:     Waiting for application startup.
+2026-11-14T12:15:56.946700928Z 2026-11-14 12:15:56.946 | INFO     | open_webui.utils.logger:start_logger:225 - GLOBAL_LOG_LEVEL: INFO
+2026-11-14T12:15:57.159448803Z 2026-11-14 12:15:57.159 | INFO     | open_webui.main:lifespan:426 - Installing external dependencies of functions and tools...
+2026-11-14T12:15:57.167743386Z 2026-11-14 12:15:57.167 | INFO     | open_webui.utils.plugin:install_frontmatter_requirements:460 - No requirements found in frontmatter.
+2026-11-14T12:15:57.174254094Z 2026-11-14 12:15:57.174 | INFO     | open_webui.utils.automations:scheduler_worker_loop:79 - Scheduler worker started (timer poll interval: 1s, scheduler poll interval: 10s)
+2026-11-14T13:19:04.904107041Z 2026-11-14 13:19:04.897 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:55592 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:22:07.237337209Z 2026-11-14 13:22:07.236 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:42568 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:25:10.398332294Z 2026-11-14 13:25:10.397 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:35176 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:25:10.656865752Z 2026-11-14 13:25:10.656 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:35204 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:26:27.362748385Z 2026-11-14 13:26:27.361 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:57740 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:26:40.851493169Z 2026-11-14 13:26:40.850 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:43776 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:26:40.972402794Z 2026-11-14 13:26:40.972 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:43782 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:27:29.198981011Z 2026-11-14 13:27:29.197 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:58728 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:27:29.343747720Z 2026-11-14 13:27:29.343 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:58730 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:29:50.932642382Z 2026-11-14 13:29:50.931 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:37940 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:29:51.057045216Z 2026-11-14 13:29:51.056 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:37946 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:31:59.553715178Z 2026-11-14 13:31:59.552 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:37762 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:31:59.708359553Z 2026-11-14 13:31:59.708 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:37770 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:35:37.636790834Z 2026-11-14 13:35:37.636 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:36018 - "GET / HTTP/1.1" 200
+2026-11-14T13:35:37.789537293Z 2026-11-14 13:35:37.789 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:36022 - "GET /api/config HTTP/1.1" 200
+2026-11-14T13:35:39.900166835Z 2026-11-14 13:35:39.899 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:36036 - "POST /api/chat/completions HTTP/1.1" 401
+2026-11-14T13:35:39.982274169Z 2026-11-14 13:35:39.982 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:36050 - "GET /api/v1/auths/ HTTP/1.1" 401
+2026-11-14T13:35:49.012195340Z 2026-11-14 13:35:49.011 | INFO     | open_webui.models.auths:authenticate_user:336 - authenticate_user: admin@localhost
+2026-11-14T13:35:49.367058382Z 2026-11-14 13:35:49.366 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:44658 - "POST /api/v1/auths/signin HTTP/1.1" 200
+2026-11-14T13:35:49.445584007Z 2026-11-14 13:35:49.445 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:44668 - "GET /api/v1/auths/ HTTP/1.1" 401
+2026-11-14T13:35:54.084610050Z 2026-11-14 13:35:54.084 | INFO     | open_webui.models.auths:authenticate_user:336 - authenticate_user: admin@localhost
+2026-11-14T13:35:54.337969259Z 2026-11-14 13:35:54.337 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:41184 - "POST /api/v1/auths/signin HTTP/1.1" 200
+2026-11-14T13:35:54.469858926Z 2026-11-14 13:35:54.469 | INFO     | open_webui.routers.openai:get_all_models:710 - get_all_models()
+2026-11-14T13:35:54.472958676Z 2026-11-14 13:35:54.472 | INFO     | open_webui.routers.ollama:get_all_models:380 - get_all_models()
+2026-11-14T13:35:54.516952467Z 2026-11-14 13:35:54.516 | INFO     | open_webui.utils.session_pool:get_session:77 - Created shared aiohttp session pool (limit=unlimited, per_host=unlimited, dns_ttl=300)
+2026-11-14T13:35:54.549090134Z 2026-11-14 13:35:54.548 | ERROR    | open_webui.routers.ollama:send_get_request:88 - Connection error: Cannot connect to host host.docker.internal:11434 ssl:default [Connect call failed ('192.168.65.254', 11434)]
+2026-11-14T13:35:54.567015759Z 2026-11-14 13:35:54.566 | WARNING  | open_webui.main:chat_completion:1647 - Error processing chat metadata: Model not found
+2026-11-14T13:35:54.567250384Z 2026-11-14 13:35:54.567 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:41198 - "POST /api/chat/completions HTTP/1.1" 400
+2026-11-14T13:35:59.932062637Z 2026-11-14 13:35:59.931 | INFO     | open_webui.models.auths:authenticate_user:336 - authenticate_user: admin@localhost
+2026-11-14T13:36:00.188377012Z 2026-11-14 13:36:00.188 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:41222 - "POST /api/v1/auths/signin HTTP/1.1" 200
+2026-11-14T13:36:00.270989595Z 2026-11-14 13:36:00.270 | WARNING  | open_webui.main:chat_completion:1647 - Error processing chat metadata: Model not found
+2026-11-14T13:36:00.271141678Z 2026-11-14 13:36:00.271 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:41228 - "POST /api/chat/completions HTTP/1.1" 400
+2026-11-14T13:36:00.350715053Z 2026-11-14 13:36:00.350 | WARNING  | open_webui.main:chat_completion:1647 - Error processing chat metadata: Model not found
+2026-11-14T13:36:00.350872303Z 2026-11-14 13:36:00.350 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:41230 - "POST /api/chat/completions HTTP/1.1" 400
+2026-11-14T13:36:00.435974720Z 2026-11-14 13:36:00.435 | INFO     | open_webui.routers.openai:get_all_models:710 - get_all_models()
+2026-11-14T13:36:00.436301137Z 2026-11-14 13:36:00.436 | INFO     | open_webui.routers.ollama:get_all_models:380 - get_all_models()
+2026-11-14T13:36:00.444676928Z 2026-11-14 13:36:00.444 | ERROR    | open_webui.routers.ollama:send_get_request:88 - Connection error: Cannot connect to host host.docker.internal:11434 ssl:default [Connect call failed ('192.168.65.254', 11434)]
+2026-11-14T13:36:00.454317137Z 2026-11-14 13:36:00.454 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:41232 - "GET /api/models HTTP/1.1" 200
+2026-11-14T13:36:08.335979751Z 2026-11-14 13:36:08.335 | INFO     | open_webui.models.auths:authenticate_user:336 - authenticate_user: admin@localhost
+2026-11-14T13:36:08.595404793Z 2026-11-14 13:36:08.595 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:50202 - "POST /api/v1/auths/signin HTTP/1.1" 200
+2026-11-14T13:36:16.448297838Z 2026-11-14 13:36:16.446 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:50214 - "POST /api/chat/completions HTTP/1.1" 200
+2026-11-14T13:36:21.520861883Z 2026-11-14 13:36:21.520 | INFO     | open_webui.models.auths:authenticate_user:336 - authenticate_user: admin@localhost
+2026-11-14T13:36:21.787583633Z 2026-11-14 13:36:21.787 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:36890 - "POST /api/v1/auths/signin HTTP/1.1" 200
+2026-11-14T13:36:30.650566929Z 2026-11-14 13:36:30.650 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:36900 - "POST /api/chat/completions HTTP/1.1" 200
+2026-11-14T13:38:07.215486376Z 2026-11-14 13:38:07.212 | INFO     | open_webui.models.auths:authenticate_user:336 - authenticate_user: admin@localhost
+2026-11-14T13:38:07.485332084Z 2026-11-14 13:38:07.485 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:50454 - "POST /api/v1/auths/signin HTTP/1.1" 200
+2026-11-14T13:38:07.503827084Z 2026-11-14 13:38:07.503 | INFO     | open_webui.routers.openai:get_all_models:710 - get_all_models()
+2026-11-14T13:38:07.504536792Z 2026-11-14 13:38:07.504 | INFO     | open_webui.routers.ollama:get_all_models:380 - get_all_models()
+2026-11-14T13:38:07.518177209Z 2026-11-14 13:38:07.517 | ERROR    | open_webui.routers.ollama:send_get_request:88 - Connection error: Cannot connect to host host.docker.internal:11434 ssl:default [Connect call failed ('192.168.65.254', 11434)]
+2026-11-14T13:38:07.528742876Z 2026-11-14 13:38:07.528 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:50470 - "GET /api/models HTTP/1.1" 200
+2026-11-14T13:38:15.137152171Z 2026-11-14 13:38:15.136 | INFO     | uvicorn.protocols.http.httptools_impl:send:482 - 127.0.0.1:50486 - "POST /api/chat/completions HTTP/1.1" 200
