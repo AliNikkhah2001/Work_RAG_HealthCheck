@@ -1,0 +1,214 @@
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668023, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"role": "assistant"}, "finish_reason": null}]}
+
+: agent validate_input + retrieve running
+
+: agent retrieve done chunks=15 latency_ms=42
+
+: agent build_context running
+
+: agent build_context done prompt_tokens=12749
+
+: agent guarded_generate streaming
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "با"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " سلام،"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " من دستیار هو"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "شمند شرکت اعتب"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ارسنجی ایران"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " هستم و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " در زمین"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ه‌های گزارش"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اعتباری"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "، امتیاز و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " رتبه،"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " بهبود"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " امتیاز،"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " سوابق منفی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " و چک"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌ها به"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شما کمک می‌کنم"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": ".\n\nاعتب"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ارسنجی به"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " معنای سنج"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ش میزان اعتماد به"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668025, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اشخاص و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شرکت‌ها در انجام"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " تعاملات مالی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " است. در گذشته"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " این"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شناخت"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " بر"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اساس آشنایی‌های"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شخصی و تجربی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ات فردی شکل"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " می‌گرفت،"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اما با"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " رشد جمعیت و پیچ"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "یده"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شدن روابط انسانی،"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " روش‌های سنتی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " کار"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ایی خود"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " را از دست داد"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ند و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " نیاز به سیستم"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌های دقیق"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌تر برای"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شناس"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ایی افراد"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " مت"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "عهد و خوش"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌حساب احساس"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شد.\n\nهدف"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " از این فرآ"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "یند،"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " ارزیابی میزان"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اعتماد به یک شخص"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " حقیقی یا کسب"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "کار از"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " طریق بررسی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " سوابق آن‌ها"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ست"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "."}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " این کار باعث"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " می‌شود عدالت"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " در دریافت خدمات مالی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " برقرار شود و رفتار"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " مالی افراد بهبود"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " یابد.\n\n"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "کاربرد اعتب"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ارسنجی به"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668026, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " نه"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ادهای مختلف"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " کمک می‌کند تا"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " ریسک طرف"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " مقابل را بس"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "نجند؛"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " برای مثال بانک"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌ها و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شرکت‌های مالی می‌توان"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ند با"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اطمینان بیشتری"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " درباره مقدار"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شرایط اع"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "طای وام"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " تصمیم"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " بگیرند، شرکت"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌های بیمه حق"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " بیمه را مت"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ناسب با ریسک"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شخص تعیین کنند و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " افراد نیز"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " بتوان"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ند درباره"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " پذیر"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ش چک‌های"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " یکدیگر تصمیم"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "گیری کنند"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668027, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "."}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-c5cd8c63-33b8-4993-856b-5cd437676459", "object": "chat.completion.chunk", "created": 1794668028, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}], "rag": {"request_id": "c5cd8c63-33b8-4993-856b-5cd437676459", "citations": [{"chunk_id": "52aad230-e750-43d5-8768-2506cfd74182", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "b9cef520-b7d6-40b7-a16e-3fb6fa9e48ea", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "d4702239-e00d-48c2-abda-d0fc2253c034", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "3595558d-dcf6-4f96-9c49-3ebc8d5c7902", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "0e6263fd-640f-464e-a184-ac7a6da30f42", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}], "supplemental": null, "follow_ups": ["امتیاز اعتباری چیست؟", "چگونه می‌توان امتیاز اعتباری را بهبود بخشید؟", "سوابق منفی اعتباری چه تاثیری دارند؟"], "applied_subspace": "general", "sticky_subspace": "general", "available_subspaces": null}}
+
+data: [DONE]
+

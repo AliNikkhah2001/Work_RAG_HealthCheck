@@ -1,0 +1,2 @@
+18000	gemma[/health]	200	{"status":"ok","db_mode":"pgvector","db_driver":"asyncpg","db_url":"postgres:5432/kb_manager","db_ok":true,"doc_count":2
+18000	gemma[/v1/models]	200	{"detail":"Not Found"}

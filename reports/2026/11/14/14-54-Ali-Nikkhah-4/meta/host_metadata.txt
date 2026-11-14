@@ -1,0 +1,74 @@
+utc=2026-11-14T14:53:07Z
+hostname=Ali-Nikkhah-4.local
+user=alinikkhah
+uid=501
+Darwin Ali-Nikkhah-4.local 25.6.0 Darwin Kernel Version 25.6.0: Sat Jul 11 15:26:21 PDT 2026; root:xnu-12377.161.13~4/RELEASE_ARM64_T6000 arm64
+18:23  up  6:02, 2 users, load averages: 25.53 20.27 15.57
+--- nvidia-smi ---
+nvidia-smi missing
+--- docker ps -a (all containers, up and down) ---
+NAMES                       STATUS                      IMAGE                                 PORTS
+dana-local-webui-1          Up 4 minutes (healthy)      rag-webui:local                       127.0.0.1:13000->8080/tcp
+dana-local-orchestrator-1   Up 5 minutes (healthy)      rag-orchestrator:local                127.0.0.1:8100->8100/tcp
+dana-local-kb-1             Up 5 minutes (healthy)      rag-kb:local                          127.0.0.1:8000->8000/tcp
+dana-local-guardrails-1     Up 6 minutes (healthy)      rag-guardrails:local                  127.0.0.1:8200->8200/tcp
+dana-local-tracing-1        Up 6 minutes (healthy)      rag-tracing:local                     127.0.0.1:13002->3000/tcp
+dana-local-redis-1          Up 6 minutes (healthy)      redis:7-alpine                        127.0.0.1:16379->6379/tcp
+dana-local-postgres-1       Up 6 minutes (healthy)      pgvector/pgvector:pg16                127.0.0.1:15432->5432/tcp
+dana-stage-webui-1          Up 6 hours (healthy)        rag-webui:local                       127.0.0.1:13100->8080/tcp
+dana-stage-orchestrator-1   Up 6 hours (healthy)        rag-orchestrator:local                127.0.0.1:18100->8100/tcp
+dana-stage-guardrails-1     Up 6 hours (healthy)        rag-guardrails:local                  127.0.0.1:18200->8200/tcp
+dana-stage-kb-1             Up 6 hours (healthy)        rag-kb:local                          127.0.0.1:18000->8000/tcp
+dana-stage-postgres-1       Up 6 hours (healthy)        pgvector/pgvector:pg16                127.0.0.1:25432->5432/tcp
+dana-stage-litellm-1        Up 6 hours (healthy)        ghcr.io/berriai/litellm:main-latest   127.0.0.1:14000->4000/tcp
+dana-stage-tracing-1        Up 6 hours (healthy)        rag-tracing:local                     127.0.0.1:13001->3000/tcp
+dana-jenkins                Up 6 hours                  dana-jenkins:lts                      127.0.0.1:50000->50000/tcp, 127.0.0.1:8085->8080/tcp
+petfitfood-api-1            Exited (0) 6 hours ago      petfitfood-api                        
+petfitfood-db-1             Exited (0) 6 hours ago      postgres:16-alpine                    
+dana-local-evaluation-1     Up 6 hours                  python:3.11-slim                      127.0.0.1:8300->8300/tcp
+dana-stage-redis-1          Up 6 hours (healthy)        redis:7-alpine                        127.0.0.1:26379->6379/tcp
+dana-local-litellm-1        Up 6 hours (healthy)        ghcr.io/berriai/litellm:main-latest   127.0.0.1:4000->4000/tcp
+wordpress-wp-1              Exited (137) 3 weeks ago    cee34adff49e                          
+wordpress-db-1              Exited (137) 3 weeks ago    mysql:8.0                             
+petfit_wpcli                Exited (1) 3 weeks ago      wordpress:cli                         
+petfit_wordpress            Up 6 hours                  wordpress:php8.2-apache               0.0.0.0:8088->80/tcp, [::]:8088->80/tcp
+lobe-rustfs                 Exited (0) 2 months ago     rustfs/rustfs:latest                  
+lobe-network                Up 6 hours                  alpine                                0.0.0.0:3210->3210/tcp, [::]:3210->3210/tcp, 0.0.0.0:9000-9001->9000-9001/tcp, [::]:9000-9001->9000-9001/tcp
+lobe-grafana                Up 6 hours                  grafana/grafana:12.2.0-17419259409    
+lobe-tempo                  Exited (127) 2 months ago   grafana/tempo:latest                  
+lobe-prometheus             Exited (127) 2 months ago   prom/prometheus                       
+lobe-obs-network            Up 6 hours                  alpine                                0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp, 0.0.0.0:3200->3200/tcp, [::]:3200->3200/tcp, 0.0.0.0:4317-4318->4317-4318/tcp, [::]:4317-4318->4317-4318/tcp, 0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+lobe-rustfs-init            Exited (0) 2 months ago     minio/mc:latest                       
+lobe-searxng                Exited (127) 2 months ago   searxng/searxng                       
+lobe-postgres               Up 6 hours (healthy)        paradedb/paradedb:latest-pg17         0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+lobe-redis                  Up 6 hours (healthy)        redis:7-alpine                        0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+rag_frontend                Up 6 hours                  yidadaa/chatgpt-next-web:latest       0.0.0.0:8081->3000/tcp, [::]:8081->3000/tcp
+rag_backend                 Up 6 hours                  work_credit-rag_phase1-backend        0.0.0.0:8080->8000/tcp, [::]:8080->8000/tcp
+rag_postgres                Up 6 hours (healthy)        pgvector/pgvector:pg16                0.0.0.0:5433->5432/tcp, [::]:5433->5432/tcp
+rag_redis                   Up 6 hours (healthy)        redis:7-alpine                        0.0.0.0:6380->6379/tcp, [::]:6380->6379/tcp
+--- df -h ---
+Filesystem                              Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1s1                         926Gi    12Gi    35Gi    25%    459k  372M    0%   /
+devfs                                  199Ki   199Ki     0Bi   100%     690     0  100%   /dev
+/dev/disk3s6                           926Gi    10Gi    35Gi    23%      10  372M    0%   /System/Volumes/VM
+/dev/disk3s2                           926Gi    10Gi    35Gi    23%    2.1k  372M    0%   /System/Volumes/Preboot
+/dev/disk3s4                           926Gi   7.9Mi    35Gi     1%     111  372M    0%   /System/Volumes/Update
+/dev/disk1s2                           500Mi   6.0Mi   479Mi     2%       1  4.9M    0%   /System/Volumes/xarts
+/dev/disk1s1                           500Mi   5.6Mi   479Mi     2%      35  4.9M    0%   /System/Volumes/iSCPreboot
+/dev/disk1s3                           500Mi   4.9Mi   479Mi     2%      60  4.9M    0%   /System/Volumes/Hardware
+/dev/disk3s5                           926Gi   856Gi    35Gi    97%    6.5M  372M    2%   /System/Volumes/Data
+map auto_home                            0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+/Applications/BookFusion.app/Wrapper   926Gi   858Gi    43Gi    96%    6.6M  447M    1%   /private/var/folders/y5/4ntn99k92d70gksjt9w9jgzr0000gn/X/1F17FC9A-7E81-51D8-B06C-3D58361E8342
+--- free -h ---
+--- git state ---
+git_umbrella=b242bba
+git_ss=2f679a2
+last_good=none
+deployed=none
+--- last reboots/shutdowns ---
+last: illegal option -- x
+usage: last [-swy] [-d [[CC]YY][MMDD]hhmm[.SS]] [-f file] [-h host]
+            [-n maxrec] [-t tty] [user ...]
+last unavailable
+--- detected stack mode ---
+detected_mode=compose

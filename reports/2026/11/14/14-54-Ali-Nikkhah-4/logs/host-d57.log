@@ -1,0 +1,734 @@
+Branch indexing
+ha:////4PC5K3+hBX9UUWG/z8h1OynJXwZCTeYRLJhDVhBSbIXuAAAAhR+LCAAAAAAAAP9b85aBtbiIwSa/KF0vKzUvOzOvODlTryCnNB3I0kvPLMkoTYpPKkrMS86IL84vLUpO1XPPLPEoTXLOzyvOz0n1yy9JZYAARiYGRi8GzpLM3NTiksTcgooiBqmM0pTi/Dy9ZIhiPayaGCoKgPTCcxfmLAUA3as/DI4AAAA=Connecting to https://api.github.com using AliNikkhah2001/****** (GitHub PAT for Multibranch)
+Obtained Jenkinsfile from 4a4a42e6e43cca20d53002a85b9a8dc4331808a7
+ha:////4CMZ3X7qHkkOlk/qUzDMc9fXTt90Ej2dNXwIHcUohWWXAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[Pipeline] Start of Pipeline
+ha:////4J0yIKNinfXfGEVMd/q4Nqg2W3Iv/WHEM3gvzlUlNnsUAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[Pipeline] node
+Running on ha:////4EDR9fyaNPqvNwabFORRWw6GYRuQ+HeBeeRgBUnrg94FAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZR/eT83ILSktQifY2k0sycEt3MPE19AHHxbH3KAAAAJenkins in /var/jenkins_home/workspace/dana-rag_develop
+ha:////4BxXC7hVmAcEB1g3asESH/kNaTRDqMHDdKICkv03WuKZAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[Pipeline] {
+ha:////4OEtfqmWZecu1WbkSmYOfAOm+CagLnZclwSM+9eAFFWeAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[Pipeline] ws
+Running in /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace@2
+ha:////4LW0bHgpnGM/MW/fd2k63sho2ddx9uDDIGPfxcGhf2gXAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[Pipeline] {
+ha:////4M8wmAfq6KV766qoi3wDOB3LFteFmuJbgtrUq2O4YHBMAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gwExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jcChmMxwAAAAA==[Pipeline] stage
+ha:////4GvbLI3TDGsQBwGvxz6Qq3Jhto6BC+dfx/pnqpNXnuBaAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BAkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfpX/cvwAAAAA==[Pipeline] { (Declarative: Checkout SCM)
+ha:////4E3ZeHtoCITFbWbmgjfGUZWX+i0L5hiCz7qzIhuKjE0MAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaoyVLaHxBMgiwpL/WWDdrTyRV/MOEjexcpJJ5k3zXm9Y5wQnSpZ7g73DrB2PYbR18YlSfws0cU9XrgkzBcOlmSR15rygpGJgCWtgJWBjUAfKDm2BrfDqodqg0LaXkup3FNC4boAnMFHNRaXyhTnB7j52mfDn+SuAORZg+9pD/AAeoCAqvAAAAA==[Pipeline] checkout
+The recommended git tool is: NONE
+using credential github-pat
+ > git rev-parse --resolve-git-dir /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials GitHub PAT for Multibranch
+ > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/develop:refs/remotes/origin/develop # timeout=10
+Checking out Revision 4a4a42e6e43cca20d53002a85b9a8dc4331808a7 (develop)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4a4a42e6e43cca20d53002a85b9a8dc4331808a7 # timeout=10
+Commit message: "chore: rebuild stage images after github DNS flake [ci stage] [ci all]"
+ > git rev-list --no-walk 4a4a42e6e43cca20d53002a85b9a8dc4331808a7 # timeout=10
+ha:////4L59U6p+Jm+cLBs2uH+88QrPRcbXcyjXrMyU0hGD3J6+AAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKBDglR0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Q77aCbP8Brmfz270AAAA=[Pipeline] }
+ha:////4Le9SvBh/okS7Ys/J3rAH8kQLfaAPa8ATLL+VbgvE/d4AAAAox+LCAAAAAAAAP9tjTESgjAQRT84FraWHiIMlYVjZZuh8QQRYgxkdjFZhMoTeTXvICMzVv7qv9e81xvrFHHk6FRrqfOUaq/6MLj5qZFjdw08qpYvqmZKHKyq7FhxY08LViwWy7IcK42NpTpw8uQEW92ahymCIVecJc7uoJH75o4nMj2XxUT5whSxuw1NYvp1/gYw9b0gL0tBtv8Aj1Msdr0AAAA=[Pipeline] // stage
+ha:////4P9Yd/wKG5ZwWOecDF0zoncMyDBdK/UtMbjIhAexqhsYAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjKGgQFa3lhheY2Bgn1l2wLyQVL+Jr/IFAJCq22llpNc8XlDnBgZKXjcM2YK6D7GLvpyYHSu0l0iAbOsuaMFN0UrtBk3XHGTWxgzmigIWCpcM6Ug7oGVaqMXdTRYO+OnGatr2CItgbPECoycwm8RfGBOtrbzPhz/NXAGPHIHYMxWb7OZZvfPyORMEAAAA=[Pipeline] withEnv
+ha:////4Jq+prwVPcZBChwf6RjJX0aOecjKU+Zvh1kmm7Ov7YyfAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwIiYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLdfrbD/Cw+y7kUycIAAAA=[Pipeline] {
+ha:////4BBphaALhRqYI2TD7dIw+FGweEVRHHGjiOHmSwRSnYGXAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAbNWnxXCAAAA[Pipeline] withEnv
+ha:////4J3pomi7hZa6GO/U3gjGgVqk7e5Nr9Yb1pWKuwvsspqyAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSDAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD5WQ+PfCAAAA[Pipeline] {
+ha:////4KiK4h8hiGkANBGch570JxipL2A+G+q8J4GORSahU0YYAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUDLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/s94rDCAAAA[Pipeline] timestamps
+ha:////4P/fv2fwiQNpq8XybGTnHm2eFGp3HnYuR4VRwJoZa3hGAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohULDAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD1+IXOLCAAAA[Pipeline] {
+ha:////4GNQUGcqqJQXiv8f0p+RlUHTjTYZcguLHfHZeAQaLY7VAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUTCAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD0rlhNLCAAAA[Pipeline] stage
+ha:////4AZDJpyH1G12wTiStLC3rqyFiSP7NLV8cuhIxRO3Yl1SAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUbCDE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxASnCIIrCAAAA[Pipeline] { (Checkout)
+ha:////4AH2uKHjxnqnVm55WHH0CZgZVs6hinwtqiuUfRcAsZYuAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICdAilorXc8AKTGOPEugu2g1PxIr7GH7CIRMUWq51t5vWGZfBQszfYaeothcbi4EaTFyb2/dVxwo4v2DAFdhqlTpJbfZpRctQwpyhhIWClqXEcLJkIa9Gph6qcIlOdo8/fUUBp2zs8oRDZHJWPX5g8bG5jG5h+nr8CmIYI5e6Qa78dPhmQ9Da+AAAA[Pipeline] checkout
+[2026-11-12T08:12:36.554Z] The recommended git tool is: NONE
+[2026-11-12T08:12:36.556Z] using credential github-pat
+[2026-11-12T08:12:36.572Z]  > git rev-parse --resolve-git-dir /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace@2/.git # timeout=10
+[2026-11-12T08:12:36.585Z] Fetching changes from the remote Git repository
+[2026-11-12T08:12:36.591Z]  > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+[2026-11-12T08:12:36.603Z] Fetching without tags
+[2026-11-12T08:12:36.603Z] Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+[2026-11-12T08:12:36.603Z]  > git --version # timeout=10
+[2026-11-12T08:12:36.608Z]  > git --version # 'git version 2.47.3'
+[2026-11-12T08:12:36.608Z] using GIT_ASKPASS to set credentials GitHub PAT for Multibranch
+[2026-11-12T08:12:36.631Z]  > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/develop:refs/remotes/origin/develop # timeout=10
+[2026-11-12T08:12:37.923Z] Checking out Revision 4a4a42e6e43cca20d53002a85b9a8dc4331808a7 (develop)
+[2026-11-12T08:12:37.923Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-12T08:12:37.928Z]  > git checkout -f 4a4a42e6e43cca20d53002a85b9a8dc4331808a7 # timeout=10
+[2026-11-12T08:12:38.308Z] Commit message: "chore: rebuild stage images after github DNS flake [ci stage] [ci all]"
+ha:////4PgWfiuD6Sw9AZhXxCQxgPE+tAXc36GPlIBGSGHQh2JPAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKi0CFEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNknKOtDrn3tP1ih7y++AAAA[Pipeline] sh
+[2026-11-12T08:12:39.712Z] + set -e
+[2026-11-12T08:12:39.712Z] + chmod +x scripts/ci_submodule_sync.sh scripts/ci_message_gate.py scripts/ci_controller_role.py
+[2026-11-12T08:12:39.712Z] + bash scripts/ci_submodule_sync.sh
+[2026-11-12T08:12:39.712Z] ci_submodule_sync: attempt 1/3
+[2026-11-12T08:12:39.712Z] ci_submodule_sync: resetting dirty submodule worktrees (CI_FORCE_CLEAN=1)
+[2026-11-12T08:12:39.712Z] Entering 'agent-state'
+[2026-11-12T08:12:39.712Z] Entering 'components/evaluation'
+[2026-11-12T08:12:39.712Z] Entering 'components/guardrails'
+[2026-11-12T08:12:39.964Z] Entering 'components/knowledgebase'
+[2026-11-12T08:12:41.838Z] Entering 'components/knowledgebase/kb-source'
+[2026-11-12T08:12:41.838Z] Entering 'components/orchestrator'
+[2026-11-12T08:12:41.838Z] Entering 'components/server-setup'
+[2026-11-12T08:12:42.399Z] Entering 'components/webui'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'agent-state'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'components/evaluation'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'components/guardrails'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'components/knowledgebase'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'components/knowledgebase/kb-source'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'components/orchestrator'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'components/server-setup'
+[2026-11-12T08:13:21.028Z] Synchronizing submodule url for 'components/webui'
+[2026-11-12T08:13:21.028Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/guardrails': checked out '2bbf01a128b08b824bc1b894b7c275a65e0a2104'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/knowledgebase': checked out '01255c48d65c02cd357d9935f70bc0928deefdcc'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/orchestrator': checked out '80080823ec5fb9f58387d2b4a89fa29f2380f824'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/server-setup': checked out 'e93899df184230209e5a5e92a53569c6dd71e4f5'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+[2026-11-12T08:13:21.028Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/guardrails': checked out '2bbf01a128b08b824bc1b894b7c275a65e0a2104'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/knowledgebase': checked out '01255c48d65c02cd357d9935f70bc0928deefdcc'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/knowledgebase/kb-source': checked out '7884d26301841d7c01c80ef080ce10c4219f0c55'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/orchestrator': checked out '80080823ec5fb9f58387d2b4a89fa29f2380f824'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/server-setup': checked out 'e93899df184230209e5a5e92a53569c6dd71e4f5'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+[2026-11-12T08:13:21.028Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/guardrails': checked out '2bbf01a128b08b824bc1b894b7c275a65e0a2104'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/knowledgebase': checked out '01255c48d65c02cd357d9935f70bc0928deefdcc'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/knowledgebase/kb-source': checked out '7884d26301841d7c01c80ef080ce10c4219f0c55'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/orchestrator': checked out '80080823ec5fb9f58387d2b4a89fa29f2380f824'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/server-setup': checked out 'e93899df184230209e5a5e92a53569c6dd71e4f5'
+[2026-11-12T08:13:21.028Z] Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+[2026-11-12T08:13:21.028Z] ci_submodule_sync: OK
+[2026-11-12T08:13:21.028Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-12T08:13:21.028Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-12T08:13:21.028Z]  2bbf01a128b08b824bc1b894b7c275a65e0a2104 components/guardrails (phase1-complete-2026-10-28-25-g2bbf01a)
+[2026-11-12T08:13:21.028Z]  01255c48d65c02cd357d9935f70bc0928deefdcc components/knowledgebase (phase1-complete-2026-10-28-71-g01255c4)
+[2026-11-12T08:13:21.028Z]  80080823ec5fb9f58387d2b4a89fa29f2380f824 components/orchestrator (phase1-complete-2026-10-28-64-g8008082)
+[2026-11-12T08:13:21.028Z]  e93899df184230209e5a5e92a53569c6dd71e4f5 components/server-setup (phase1-complete-2026-10-28-69-ge93899d)
+[2026-11-12T08:13:21.028Z]  2e45b5a97ead97646eb11fdaeec195578b630b67 components/webui (v0.13.3-26-g2e45b5a97)
+[2026-11-12T08:13:21.028Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-12T08:13:21.028Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-12T08:13:21.028Z]  2bbf01a128b08b824bc1b894b7c275a65e0a2104 components/guardrails (phase1-complete-2026-10-28-25-g2bbf01a)
+[2026-11-12T08:13:21.028Z]  01255c48d65c02cd357d9935f70bc0928deefdcc components/knowledgebase (phase1-complete-2026-10-28-71-g01255c4)
+[2026-11-12T08:13:21.028Z]  7884d26301841d7c01c80ef080ce10c4219f0c55 components/knowledgebase/kb-source (phase1-complete-2026-10-28-5-g7884d26)
+[2026-11-12T08:13:21.028Z]  80080823ec5fb9f58387d2b4a89fa29f2380f824 components/orchestrator (phase1-complete-2026-10-28-64-g8008082)
+[2026-11-12T08:13:21.028Z]  e93899df184230209e5a5e92a53569c6dd71e4f5 components/server-setup (phase1-complete-2026-10-28-69-ge93899d)
+[2026-11-12T08:13:21.028Z]  2e45b5a97ead97646eb11fdaeec195578b630b67 components/webui (v0.13.3-26-g2e45b5a97)
+[2026-11-12T08:13:21.028Z] + git log -1 --pretty=%B
+[2026-11-12T08:13:21.028Z] + git diff --name-only HEAD~1...HEAD
+[2026-11-12T08:13:21.028Z] + command -v python3
+[2026-11-12T08:13:21.028Z] + python3 scripts/ci_message_gate.py --write-env .ci_gate.env
+[2026-11-12T08:13:21.028Z] CI_SKIP=0
+[2026-11-12T08:13:21.028Z] CI_BUILD=0
+[2026-11-12T08:13:21.028Z] CI_STAGE=1
+[2026-11-12T08:13:21.028Z] CI_PROD=0
+[2026-11-12T08:13:21.028Z] CI_AUTO=0
+[2026-11-12T08:13:21.028Z] CI_ROLLBACK=0
+[2026-11-12T08:13:21.028Z] CI_HEAVY_PATHS=0
+[2026-11-12T08:13:21.028Z] CI_SERVICES=all
+[2026-11-12T08:13:21.028Z] + python3 scripts/ci_controller_role.py --write-env .ci_role.env
+[2026-11-12T08:13:21.028Z] DANA_ROLE=stage
+[2026-11-12T08:13:21.028Z] CI_MAY_DEPLOY_STAGE=1
+[2026-11-12T08:13:21.028Z] CI_MAY_DEPLOY_PROD=0
+ha:////4L9F8qP+lAo5wxpmB+S5jJcL4SiXRBkrNZyJydK1iwJoAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUdEOIqWuUhROEJIS00f8lSWknTsTVuAOBSkx4sGxL1nu+oIoBjhQs6wz2DqNybPCjzYlNFPqLp4l1dGaKMJI3TJhJkDbtUgUlA4uKElYc1gaVp+jQJtjwTt5l7SXa+pRC3g4cSqdv8ICCZ3KSIX3LHGB7HXUk/HH+AmAeEpS7fbam+TyrN7f3gRDCAAAA[Pipeline] script
+ha:////4HutR/ZSKFPSVgFgvQNjOJmuQpfQI3B2RCISC+UAslEuAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUKiNiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPpnFij8IAAAA=[Pipeline] {
+ha:////4JotejtFwNk513XiIW27gs3w5Onu2sGikLjj5JokQVuTAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiAR2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyu3uU/vwBrANZ3i+AAAA[Pipeline] readFile
+ha:////4ExO3zbMbRsEJ+x5CtZ6BC7IrtabXj/3GZPhVYnIibBwAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIigagQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN/E8fGG+AAAA[Pipeline] readFile
+ha:////4GBAow/oyLKiG+t7QyCs7sWBYopDrbLdAUzwI3HbeIkQAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIigUSDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAEyb1FKvgAAAA==[Pipeline] echo
+[2026-11-12T08:13:21.734Z] CI controller: ROLE=stage MAY_STAGE=1 MAY_PROD=0 HOST=laptop JOB=dana-rag/develop
+ha:////4PDB8gdj7xEYVow68Vy47SSaWgNF/nFUiKjwVL+Zh3/fAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiQUGBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAFzXkpTvgAAAA==[Pipeline] echo
+[2026-11-12T08:13:21.753Z] CI gate: SKIP=0 BUILD=0 STAGE=1 PROD=0 AUTO=0 ROLLBACK=0 HEAVY=0 SERVICES=all BRANCH=develop
+ha:////4OYmIuJY5yIojLbBZQ/UUC3e7hgQraRvQ10EpZEQ5EkzAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiQYOEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQEwPXV5vgAAAA==[Pipeline] }
+ha:////4LhSliBMS3ambi3DrqX1zeXMdK67JCxbFy7VTO2czF24AAAApB+LCAAAAAAAAP9tjbEOwiAURV9rHFwd/QiadDPGyZWw+AXYIkLJexSodPKL/DX/QbSJk3e4uecu5/mCdQxwpKCZVTgYjJ1h3k26LJYpDFdHmVm6sI4wklNMqCyoV6cFBSUFS6oaVhw2CjtH0aBOsOVW3mXjJOrmnEL5Dhxq04/wgIoXc5IhfWEOsLtNfST8ef4KYPY+Qd3uP9W+AQPeLsW+AAAA[Pipeline] // script
+ha:////4MgkCc62+IQ4kUGDrJjuEa/XnuXlHBGCYGvsgeuqDjVmAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICokIoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AE0Dqn4vgAAAA==[Pipeline] }
+ha:////4MGe6DcCAyZE7NclifARm+LraC3/SJpGSVDjPXNB2f4SAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiiAYJUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2PkG5r3PVhw8H7fJEvgAAAA==[Pipeline] // stage
+ha:////4I54CZCR/WDmmLlfKU0c1ca7NdDUyINK+fn1oP4VG8wVAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwMCAOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK52WfbbT/P6g0F14DkwgAAAA==[Pipeline] stage
+ha:////4FVYdKORyQaOiPKjdmcylgMc3P36IOSRSOAxBpl6HNixAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycohUoiNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsPfTawssIAAAA=[Pipeline] { (Skip)
+Stage "Skip" skipped due to when conditional
+ha:////4BgiEg88ZqWu4YfZpVNS1W8VLmEiVtIkfFsvIx9QSSCkAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSxM6xsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4NGWcPtb4AAAA=[Pipeline] getContext
+ha:////4OnWvWQwjCflIecJlGEfqA9y9pjdTQjkhxy6pHvRKAgqAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSZKwcK1uGxhNggghh/idAJJUn8mreQTQzVm6xs2+b93zBOgY4UtDMKhwMxs4w7yZdFssUhqujzCxdWEcYySkmVBbUq9OCgpKCJVUNKw4bhZ2jaFAn2HIr77JxEnVzTqF8Bw616Ud4QMWLOcmQvjAH2N2mPhL+PH8FMHufoG73n2rfGxSHer4AAAA=[Pipeline] }
+ha:////4HLRh4YPnLsriKoJx9Rc6hxQ+6u0o4DkN7rrmVg20v76AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIigUSDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgEjVhSLvgAAAA==[Pipeline] // stage
+ha:////4M6UPDe3h4T7f9RcizgcDKUf4OqezO8+KEnAcRba1V9LAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUiKEDYuoaZeEEIQkhbfR/SVLaiRNxNe5AoBITHizbkvWeL6higCMFyzqDvcOoHBv8aHNiE4X+4mliHZ2ZIozkDRNmEqRNu1RBycCiooQVh7VB5Sk6tAk2vJN3WXuJtj6lkLcDh9LpGzyg4JmcZEjfMgfYXkcdCX+cvwCYhwTlrsm2bz7P6g22Rk20wgAAAA==[Pipeline] stage
+ha:////4OlSN3Bqx72d6tysI0VHlEoXhvV0nE0nivvaYR9QojpNAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0YAAJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfAD8aiCpwgAAAA==[Pipeline] { (Lint)
+ha:////4KWy4SEkDsdWBuHIxzKpSDMEvDVrU/cgKvker2YgQ7ruAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJS0IAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN65NpgK+AAAA[Pipeline] sh
+[2026-11-12T08:13:22.257Z] + set -e
+[2026-11-12T08:13:22.257Z] + python3 -m pip install --quiet ruff
+[2026-11-12T08:13:22.257Z] error: externally-managed-environment
+[2026-11-12T08:13:22.257Z] 
+[2026-11-12T08:13:22.257Z] × This environment is externally managed
+[2026-11-12T08:13:22.257Z] ╰─> To install Python packages system-wide, try apt install
+[2026-11-12T08:13:22.257Z]     python3-xyz, where xyz is the package you are trying to
+[2026-11-12T08:13:22.257Z]     install.
+[2026-11-12T08:13:22.257Z]     
+[2026-11-12T08:13:22.257Z]     If you wish to install a non-Debian-packaged Python package,
+[2026-11-12T08:13:22.257Z]     create a virtual environment using python3 -m venv path/to/venv.
+[2026-11-12T08:13:22.257Z]     Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+[2026-11-12T08:13:22.257Z]     sure you have python3-full installed.
+[2026-11-12T08:13:22.257Z]     
+[2026-11-12T08:13:22.257Z]     If you wish to install a non-Debian packaged Python application,
+[2026-11-12T08:13:22.257Z]     it may be easiest to use pipx install xyz, which will manage a
+[2026-11-12T08:13:22.257Z]     virtual environment for you. Make sure you have pipx installed.
+[2026-11-12T08:13:22.257Z]     
+[2026-11-12T08:13:22.257Z]     See /usr/share/doc/python3.13/README.venv for more information.
+[2026-11-12T08:13:22.257Z] 
+[2026-11-12T08:13:22.257Z] note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+[2026-11-12T08:13:22.257Z] hint: See PEP 668 for the detailed specification.
+[2026-11-12T08:13:22.511Z] + true
+[2026-11-12T08:13:22.511Z] + ruff check components/orchestrator/src components/guardrails/src components/knowledgebase/kb-manager/kb_manager
+[2026-11-12T08:13:22.511Z] /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace@2@tmp/durable-7732f08d/script.sh.copy: 4: ruff: not found
+[2026-11-12T08:13:22.511Z] + true
+[2026-11-12T08:13:22.511Z] + python3 scripts/build_keep_graph.py
+[2026-11-12T08:13:37.308Z] {
+[2026-11-12T08:13:37.308Z]   "keep": 10694,
+[2026-11-12T08:13:37.308Z]   "classes": {
+[2026-11-12T08:13:37.308Z]     "code_candidates_quarantine": 207,
+[2026-11-12T08:13:37.308Z]     "docs": 306,
+[2026-11-12T08:13:37.308Z]     "other": 166,
+[2026-11-12T08:13:37.308Z]     "plots_diagrams": 156,
+[2026-11-12T08:13:37.308Z]     "data_datasets_eval": 82,
+[2026-11-12T08:13:37.308Z]     "research_archive_dev": 116
+[2026-11-12T08:13:37.308Z]   }
+[2026-11-12T08:13:37.308Z] }
+[2026-11-12T08:13:37.308Z] + python3 scripts/ci_message_gate.py --self-test
+[2026-11-12T08:13:37.308Z] ci_message_gate self-test OK
+[2026-11-12T08:13:37.308Z] + python3 scripts/ci_controller_role.py --self-test
+[2026-11-12T08:13:37.308Z] ci_controller_role self-test OK
+ha:////4NkioI0yA34qzFxoLM24svz2qe7+WA4vUfisREFR/vC/AAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCBAUSSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wArmI/eL4AAAA=[Pipeline] }
+ha:////4CLag79M2xY1Wk1LuVmAK/8aCFkd82oY+beIyLx6gCuAAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiBBIFSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wAmqzcI74AAAA=[Pipeline] // stage
+ha:////4JR3KUzxxMmOKVRpFntzAA52yzcyZyXwMW9eDBtT8GnIAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUICQG1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzT7bbvt5Vm+L6SchwgAAAA==[Pipeline] stage
+ha:////4KZfAVpvMotC25bTwvVyoVHGocGkGFtW0PaCVzRRVE4LAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUAjbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAXzhjwPCAAAA[Pipeline] { (Rollback prod)
+Stage "Rollback prod" skipped due to when conditional
+ha:////4EEFDmmqNwkbeu+L14Xals061/zgc/V0OLJzEjiY7SAyAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSkA5R0VppeIFJjLFj3Tm2g1PxIr7GHwhEomKL1c4283zBOgY4ctBoFfWGYmvQu1HPCzOH/uo4o+ULtkyRncJG5YY7dVqw4aRgSVHCSsBGUes4GtIJtsLKu6ycJF2dU5i/g4DSdAM8oBCzOcmQvjAF2N3GLjL9PH8FMPkEZb3/VO3fhXiFur4AAAA=[Pipeline] getContext
+ha:////4K10zhQj9Q1kJG4lfi9eEZXb04AQEyomZDfH64KfRyskAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSABWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nbf2r7BlK8YfC+AAAA[Pipeline] }
+ha:////4IjFR/GRjB/+x12vHxG95e3MaVD2EqqH0NVKIdrrC8j9AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIUSDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgFq/vIBvgAAAA==[Pipeline] // stage
+ha:////4DjUCb5Ewir3rYQ8VVo68SI52eynSNgUJ7dL6iO337V5AAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSEgdEFPXKAsnCEkIaaP/S5LSTpyIq3EHApWY8GDZlqz3fEEVAxwpWNYZ7B1G5djgR5sTmyj0F08T6+jMFGEkb5gwkyBt2qUKSgYWFSWsOKwNKk/RoU2w4Z28y9pLtPUphbwdOJRO3+ABBc/kJEP6ljnA9jrqSPjj/AXAPCQod022ffN5Vm84eOpxwgAAAA==[Pipeline] stage
+ha:////4GNE+Ol3QxR9wj5/4JQRwk21T+B+Z68x89d/I6DgvkkQAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QQIJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLku/1sh/lZfAD9vR8YwgAAAA==[Pipeline] { (Build images)
+ha:////4CnLiyZRV0DPURMUPlnCr1Y6WTkiqYqSVIS3OwJPfe4OAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSUIAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHNzJSLA2+AAAA[Pipeline] sh
+[2026-11-12T08:13:37.824Z] + set -e
+[2026-11-12T08:13:37.824Z] + HOST_REPO=/Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1
+[2026-11-12T08:13:37.824Z] + [ -f /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/deploy/compose/.env ]
+[2026-11-12T08:13:37.824Z] + cp -f /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/deploy/compose/.env deploy/compose/.env
+[2026-11-12T08:13:37.824Z] + break
+[2026-11-12T08:13:37.824Z] + test -f deploy/compose/.env
+[2026-11-12T08:13:37.824Z] + chmod +x scripts/ci_laptop_rerank_env.sh
+[2026-11-12T08:13:37.824Z] + bash scripts/ci_laptop_rerank_env.sh deploy/compose/.env
+[2026-11-12T08:13:37.824Z] ci_laptop_rerank_env: reranker forced to OpenRouter cohere/rerank-v3.5
+[2026-11-12T08:13:37.824Z] + export TAG=4a4a42e
+[2026-11-12T08:13:37.824Z] + export PIP_DEFAULT_TIMEOUT=120
+[2026-11-12T08:13:37.824Z] + export COMPOSE_PARALLEL_LIMIT=1
+[2026-11-12T08:13:37.824Z] + export DOCKER_BUILDKIT=1
+[2026-11-12T08:13:37.824Z] + export COMPOSE_DOCKER_CLI_BUILD=1
+[2026-11-12T08:13:37.824Z] + [ laptop = gpu ]
+[2026-11-12T08:13:37.824Z] + [ stage = prod ]
+[2026-11-12T08:13:37.824Z] + export KB_TORCH_CHANNEL=cpu
+[2026-11-12T08:13:37.824Z] + echo KB_TORCH_CHANNEL=cpu
+[2026-11-12T08:13:37.824Z] KB_TORCH_CHANNEL=cpu
+[2026-11-12T08:13:37.824Z] + SVC=all
+[2026-11-12T08:13:37.824Z] + [ all = none ]
+[2026-11-12T08:13:37.824Z] + [ all = all ]
+[2026-11-12T08:13:37.824Z] + BUILD_SERVICES=kb guardrails orchestrator tracing
+[2026-11-12T08:13:37.824Z] + NEED_WEBUI=0
+[2026-11-12T08:13:37.824Z] + [ all = all ]
+[2026-11-12T08:13:37.824Z] + NEED_WEBUI=1
+[2026-11-12T08:13:37.824Z] + [ 1 = 1 ]
+[2026-11-12T08:13:37.824Z] + [ -f components/webui/package.json ]
+[2026-11-12T08:13:37.825Z] + command -v npm
+[2026-11-12T08:13:37.825Z] + [ -d /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/webui/build ]
+[2026-11-12T08:13:37.825Z] + mkdir -p components/webui
+[2026-11-12T08:13:37.825Z] + rm -rf components/webui/build
+[2026-11-12T08:13:38.739Z] + cp -a /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/webui/build components/webui/build
+[2026-11-12T08:13:48.640Z] + BUILD_SERVICES=kb guardrails orchestrator tracing webui
+[2026-11-12T08:13:48.640Z] + echo Using WebUI build/ copied from host repo (npm unavailable in agent)
+[2026-11-12T08:13:48.640Z] Using WebUI build/ copied from host repo (npm unavailable in agent)
+[2026-11-12T08:13:48.640Z] + echo Building compose services: kb guardrails orchestrator tracing webui (parallel_limit=1)
+[2026-11-12T08:13:48.640Z] Building compose services: kb guardrails orchestrator tracing webui (parallel_limit=1)
+[2026-11-12T08:13:48.640Z] + mkdir -p components/tracing/wheels
+[2026-11-12T08:13:48.640Z] + touch components/tracing/wheels/.gitkeep
+[2026-11-12T08:13:48.640Z] + LOCK=/Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace/.dana-docker-build.lock
+[2026-11-12T08:13:48.640Z] + dirname /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace/.dana-docker-build.lock
+[2026-11-12T08:13:48.640Z] + mkdir -p /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace
+[2026-11-12T08:13:48.640Z] + flock -w 2400 9
+[2026-11-12T08:13:48.640Z] + ok=0
+[2026-11-12T08:13:48.640Z] + echo docker compose build attempt 1/3
+[2026-11-12T08:13:48.640Z] docker compose build attempt 1/3
+[2026-11-12T08:13:48.640Z] + build_once
+[2026-11-12T08:13:48.640Z] + export DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1
+[2026-11-12T08:13:48.640Z] + [ laptop = gpu ]
+[2026-11-12T08:13:48.640Z] + [ stage = prod ]
+[2026-11-12T08:13:48.640Z] + docker compose -f deploy/compose/compose.base.yml -f deploy/compose/compose.local.yml --env-file deploy/compose/.env build kb guardrails orchestrator tracing webui
+[2026-11-12T08:13:48.640Z] time="2026-11-12T08:13:47Z" level=warning msg="Docker Compose is configured to build using Bake, but buildx isn't installed"
+[2026-11-12T08:13:48.640Z] #0 building with "default" instance using docker driver
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #1 [tracing internal] load build definition from Dockerfile
+[2026-11-12T08:13:48.640Z] #1 transferring dockerfile: 654B 0.0s done
+[2026-11-12T08:13:48.640Z] #1 DONE 0.0s
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #2 [tracing internal] load metadata for docker.io/library/python:3.11-slim
+[2026-11-12T08:13:48.640Z] #2 DONE 0.0s
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #3 [tracing internal] load .dockerignore
+[2026-11-12T08:13:48.640Z] #3 transferring context: 2B done
+[2026-11-12T08:13:48.640Z] #3 DONE 0.0s
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #4 [tracing 1/5] FROM docker.io/library/python:3.11-slim
+[2026-11-12T08:13:48.640Z] #4 DONE 0.0s
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #5 [tracing internal] load build context
+[2026-11-12T08:13:48.640Z] #5 transferring context: 84.06kB done
+[2026-11-12T08:13:48.640Z] #5 DONE 0.0s
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #6 [tracing 4/5] RUN if ls /wheels/*.whl >/dev/null 2>&1; then       pip install --no-cache-dir --no-index --find-links=/wheels fastapi uvicorn ;     else       pip install --no-cache-dir --retries 10 --default-timeout=120 fastapi uvicorn ;     fi
+[2026-11-12T08:13:48.640Z] #6 CACHED
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #7 [tracing 2/5] WORKDIR /app
+[2026-11-12T08:13:48.640Z] #7 CACHED
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #8 [tracing 3/5] COPY wheels/ /wheels/
+[2026-11-12T08:13:48.640Z] #8 CACHED
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #9 [tracing 5/5] COPY app.py observe.py eval_store.py dashboard_api.py __init__.py ./
+[2026-11-12T08:13:48.640Z] #9 CACHED
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #10 [tracing] exporting to image
+[2026-11-12T08:13:48.640Z] #10 exporting layers done
+[2026-11-12T08:13:48.640Z] #10 writing image sha256:90f2373f5cfa03900e5c05e5ea24f3585e55e5698b83cf7ebc4258864d63a5be done
+[2026-11-12T08:13:48.640Z] #10 naming to docker.io/library/rag-tracing:4a4a42e done
+[2026-11-12T08:13:48.640Z] #10 DONE 0.0s
+[2026-11-12T08:13:48.640Z] 
+[2026-11-12T08:13:48.640Z] #11 [tracing] resolving provenance for metadata file
+[2026-11-12T08:13:48.640Z] #11 DONE 0.0s
+[2026-11-12T08:13:48.909Z] 
+[2026-11-12T08:13:48.909Z] #12 [guardrails internal] load build definition from Dockerfile
+[2026-11-12T08:13:48.909Z] #12 transferring dockerfile: 670B done
+[2026-11-12T08:13:48.909Z] #12 DONE 0.0s
+[2026-11-12T08:13:48.909Z] 
+[2026-11-12T08:13:48.909Z] #13 [guardrails] resolve image config for docker-image://docker.io/docker/dockerfile:1
+[2026-11-12T08:13:54.144Z] #13 DONE 4.6s
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #14 [guardrails] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+[2026-11-12T08:13:54.144Z] #14 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #2 [guardrails internal] load metadata for docker.io/library/python:3.11-slim
+[2026-11-12T08:13:54.144Z] #2 DONE 0.0s
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #15 [guardrails internal] load .dockerignore
+[2026-11-12T08:13:54.144Z] #15 transferring context: 116B 0.0s done
+[2026-11-12T08:13:54.144Z] #15 DONE 0.0s
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #4 [guardrails stage-0 1/9] FROM docker.io/library/python:3.11-slim
+[2026-11-12T08:13:54.144Z] #4 DONE 0.0s
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #16 [guardrails internal] load build context
+[2026-11-12T08:13:54.144Z] #16 transferring context: 406.41kB 0.0s done
+[2026-11-12T08:13:54.144Z] #16 DONE 0.0s
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #17 [guardrails stage-0 8/9] COPY policies ./policies
+[2026-11-12T08:13:54.144Z] #17 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #18 [guardrails stage-0 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+[2026-11-12T08:13:54.144Z] #18 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #19 [guardrails stage-0 6/9] COPY config ./config
+[2026-11-12T08:13:54.144Z] #19 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #20 [guardrails stage-0 7/9] COPY kb ./kb
+[2026-11-12T08:13:54.144Z] #20 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #7 [guardrails stage-0 2/9] WORKDIR /app
+[2026-11-12T08:13:54.144Z] #7 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #21 [guardrails stage-0 4/9] COPY pyproject.toml README.md ./
+[2026-11-12T08:13:54.144Z] #21 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #22 [guardrails stage-0 5/9] COPY src ./src
+[2026-11-12T08:13:54.144Z] #22 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #23 [guardrails stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     pip install --default-timeout=120 -e .
+[2026-11-12T08:13:54.144Z] #23 CACHED
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #24 [guardrails] exporting to image
+[2026-11-12T08:13:54.144Z] #24 exporting layers done
+[2026-11-12T08:13:54.144Z] #24 writing image sha256:0ba96720af0a5e4abde3482cacc588bd6b2195ce6767a5c7faec706b5236ae6e done
+[2026-11-12T08:13:54.144Z] #24 naming to docker.io/library/rag-guardrails:4a4a42e done
+[2026-11-12T08:13:54.144Z] #24 DONE 0.0s
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.144Z] #25 [guardrails] resolving provenance for metadata file
+[2026-11-12T08:13:54.144Z] #25 DONE 0.0s
+[2026-11-12T08:13:54.144Z] 
+[2026-11-12T08:13:54.145Z] #26 [kb internal] load build definition from Dockerfile
+[2026-11-12T08:13:54.145Z] #26 transferring dockerfile: 1.80kB done
+[2026-11-12T08:13:54.145Z] #26 DONE 0.0s
+[2026-11-12T08:13:54.145Z] 
+[2026-11-12T08:13:54.145Z] #13 [kb] resolve image config for docker-image://docker.io/docker/dockerfile:1
+[2026-11-12T08:13:54.399Z] #13 DONE 5.0s
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #14 [kb] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+[2026-11-12T08:13:54.399Z] #14 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #2 [kb internal] load metadata for docker.io/library/python:3.11-slim
+[2026-11-12T08:13:54.399Z] #2 DONE 0.0s
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #27 [kb internal] load .dockerignore
+[2026-11-12T08:13:54.399Z] #27 transferring context: 156B done
+[2026-11-12T08:13:54.399Z] #27 DONE 0.0s
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #4 [kb stage-0 1/9] FROM docker.io/library/python:3.11-slim
+[2026-11-12T08:13:54.399Z] #4 DONE 0.0s
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #28 [kb internal] load build context
+[2026-11-12T08:13:54.399Z] #28 transferring context: 1.52MB 0.1s done
+[2026-11-12T08:13:54.399Z] #28 DONE 0.1s
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #29 [kb stage-0 8/9] COPY run_server.py ./
+[2026-11-12T08:13:54.399Z] #29 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #7 [kb stage-0 2/9] WORKDIR /app
+[2026-11-12T08:13:54.399Z] #7 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #30 [kb stage-0 4/9] COPY pyproject.toml README.md ./
+[2026-11-12T08:13:54.399Z] #30 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #31 [kb stage-0 7/9] COPY configs ./configs
+[2026-11-12T08:13:54.399Z] #31 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #32 [kb stage-0 5/9] COPY kb_manager ./kb_manager
+[2026-11-12T08:13:54.399Z] #32 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #33 [kb stage-0 6/9] COPY packs ./packs
+[2026-11-12T08:13:54.399Z] #33 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #34 [kb stage-0 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+[2026-11-12T08:13:54.399Z] #34 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #35 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ "cpu" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip install --default-timeout=120         --index-url https://download.pytorch.org/whl/cpu         --extra-index-url https://pypi.org/simple         -e .;       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cpu (default torch resolver)";       pip install --default-timeout=120 -e .;     fi
+[2026-11-12T08:13:54.399Z] #35 CACHED
+[2026-11-12T08:13:54.399Z] 
+[2026-11-12T08:13:54.399Z] #36 [kb] exporting to image
+[2026-11-12T08:13:54.399Z] #36 exporting layers done
+[2026-11-12T08:13:54.399Z] #36 writing image sha256:be41b655a89f1d3d316e0d2b47ea30c2ae930fdef239086deea3195ae870a3e1 done
+[2026-11-12T08:13:54.652Z] #36 naming to docker.io/library/rag-kb:4a4a42e done
+[2026-11-12T08:13:54.652Z] #36 DONE 0.0s
+[2026-11-12T08:13:54.652Z] 
+[2026-11-12T08:13:54.652Z] #37 [kb] resolving provenance for metadata file
+[2026-11-12T08:13:54.652Z] #37 DONE 0.0s
+[2026-11-12T08:13:54.652Z] 
+[2026-11-12T08:13:54.652Z] #38 [orchestrator internal] load build definition from Dockerfile
+[2026-11-12T08:13:54.652Z] #38 transferring dockerfile: 649B done
+[2026-11-12T08:13:54.652Z] #38 DONE 0.0s
+[2026-11-12T08:13:54.652Z] 
+[2026-11-12T08:13:54.652Z] #13 [orchestrator] resolve image config for docker-image://docker.io/docker/dockerfile:1
+[2026-11-12T08:13:54.904Z] #13 DONE 5.3s
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #14 [orchestrator] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+[2026-11-12T08:13:55.156Z] #14 CACHED
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #2 [orchestrator internal] load metadata for docker.io/library/python:3.11-slim
+[2026-11-12T08:13:55.156Z] #2 DONE 0.0s
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #39 [orchestrator internal] load .dockerignore
+[2026-11-12T08:13:55.156Z] #39 transferring context: 116B done
+[2026-11-12T08:13:55.156Z] #39 DONE 0.0s
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #4 [orchestrator stage-0 1/7] FROM docker.io/library/python:3.11-slim
+[2026-11-12T08:13:55.156Z] #4 DONE 0.0s
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #40 [orchestrator internal] load build context
+[2026-11-12T08:13:55.156Z] #40 transferring context: 723.60kB 0.0s done
+[2026-11-12T08:13:55.156Z] #40 DONE 0.0s
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #18 [orchestrator stage-0 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+[2026-11-12T08:13:55.156Z] #18 CACHED
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #41 [orchestrator stage-0 6/7] COPY scripts ./scripts
+[2026-11-12T08:13:55.156Z] #41 CACHED
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #7 [orchestrator stage-0 2/7] WORKDIR /app
+[2026-11-12T08:13:55.156Z] #7 CACHED
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #42 [orchestrator stage-0 5/7] COPY src ./src
+[2026-11-12T08:13:55.156Z] #42 CACHED
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #43 [orchestrator stage-0 4/7] COPY pyproject.toml README.md ./
+[2026-11-12T08:13:55.156Z] #43 CACHED
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #44 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     pip install --default-timeout=120 -e .
+[2026-11-12T08:13:55.156Z] #44 CACHED
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #45 [orchestrator] exporting to image
+[2026-11-12T08:13:55.156Z] #45 exporting layers done
+[2026-11-12T08:13:55.156Z] #45 writing image sha256:82ceb8fa92b8b645f185052a8bdb291e323c9bf1adda577a3b5d4600809747ef done
+[2026-11-12T08:13:55.156Z] #45 naming to docker.io/library/rag-orchestrator:4a4a42e done
+[2026-11-12T08:13:55.156Z] #45 DONE 0.0s
+[2026-11-12T08:13:55.156Z] 
+[2026-11-12T08:13:55.156Z] #46 [orchestrator] resolving provenance for metadata file
+[2026-11-12T08:13:55.156Z] #46 DONE 0.0s
+[2026-11-12T08:13:55.408Z] 
+[2026-11-12T08:13:55.408Z] #47 [webui internal] load build definition from Dockerfile.local
+[2026-11-12T08:13:55.408Z] #47 transferring dockerfile: 4.01kB done
+[2026-11-12T08:13:55.408Z] #47 DONE 0.0s
+[2026-11-12T08:13:55.408Z] 
+[2026-11-12T08:13:55.408Z] #13 [webui] resolve image config for docker-image://docker.io/docker/dockerfile:1
+[2026-11-12T08:13:55.408Z] #13 DONE 5.6s
+[2026-11-12T08:13:55.660Z] 
+[2026-11-12T08:13:55.660Z] #14 [webui] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+[2026-11-12T08:13:55.660Z] #14 CACHED
+[2026-11-12T08:13:55.660Z] 
+[2026-11-12T08:13:55.660Z] #48 [webui internal] load metadata for ghcr.io/astral-sh/uv:0.12.10
+[2026-11-12T08:13:57.016Z] #48 ...
+[2026-11-12T08:13:57.016Z] 
+[2026-11-12T08:13:57.016Z] #49 [webui internal] load metadata for docker.io/library/python:3.12-slim-trixie
+[2026-11-12T08:13:57.016Z] #49 DONE 1.5s
+[2026-11-12T08:13:57.273Z] 
+[2026-11-12T08:13:57.273Z] #48 [webui internal] load metadata for ghcr.io/astral-sh/uv:0.12.10
+[2026-11-12T08:13:57.826Z] #48 DONE 2.2s
+[2026-11-12T08:13:57.826Z] 
+[2026-11-12T08:13:57.826Z] #50 [webui internal] load .dockerignore
+[2026-11-12T08:13:57.826Z] #50 transferring context: 273B 0.0s done
+[2026-11-12T08:13:57.826Z] #50 DONE 0.0s
+[2026-11-12T08:13:57.826Z] 
+[2026-11-12T08:13:57.826Z] #51 [webui] FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+[2026-11-12T08:13:57.826Z] #51 DONE 0.0s
+[2026-11-12T08:13:57.826Z] 
+[2026-11-12T08:13:57.826Z] #52 [webui base  1/12] FROM docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+[2026-11-12T08:13:57.826Z] #52 DONE 0.0s
+[2026-11-12T08:13:57.826Z] 
+[2026-11-12T08:13:57.826Z] #53 [webui internal] load build context
+[2026-11-12T08:14:00.323Z] #53 transferring context: 15.76MB 2.3s done
+[2026-11-12T08:14:00.323Z] #53 DONE 2.3s
+[2026-11-12T08:14:00.323Z] 
+[2026-11-12T08:14:00.323Z] #54 [webui base 10/12] COPY --chown=0:0 ./package.json /app/package.json
+[2026-11-12T08:14:00.323Z] #54 CACHED
+[2026-11-12T08:14:00.323Z] 
+[2026-11-12T08:14:00.323Z] #55 [webui base  4/12] RUN if [ "true" = "true" ] && { [ "false" = "true" ] || [ "false" = "true" ]; }; then       echo "USE_SLIM cannot be combined with USE_CUDA or USE_OLLAMA" >&2; exit 1;     fi
+[2026-11-12T08:14:00.323Z] #55 CACHED
+[2026-11-12T08:14:00.323Z] 
+[2026-11-12T08:14:00.323Z] #56 [webui base  8/12] COPY --chown=0:0 ./build /app/build
+[2026-11-12T08:14:00.323Z] #56 CACHED
+[2026-11-12T08:14:00.323Z] 
+[2026-11-12T08:14:00.323Z] #57 [webui base  2/12] WORKDIR /app/backend
+[2026-11-12T08:14:00.324Z] #57 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #58 [webui base  5/12] RUN apt-get update  && apt-get install -y --no-install-recommends curl jq ca-certificates bash  && rm -rf /var/lib/apt/lists/*
+[2026-11-12T08:14:00.324Z] #58 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #59 [webui base  3/12] RUN if [ "0" -ne 0 ]; then       if [ "0" -ne 0 ]; then addgroup --gid "0" app; fi;       adduser --uid "0" --gid "0" --home "/root" --disabled-password --no-create-home app;     fi  && mkdir -p "/root/.cache/chroma"  && echo -n 00000000-0000-0000-0000-000000000000 > "/root/.cache/chroma/telemetry_user_id"  && chown -R "0:0" /app "/root"
+[2026-11-12T08:14:00.324Z] #59 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #60 [webui base  7/12] RUN --mount=from=ghcr.io/astral-sh/uv:0.12.10,source=/uv,target=/bin/uv     set -e;     if [ "true" = "true" ]; then       uv pip install --system -r requirements-slim.txt --no-cache-dir;     else       pip3 install 'torch<=2.9.1' torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir;       uv pip install --system -r requirements.txt --no-cache-dir;     fi;     mkdir -p /app/backend/data; chown -R "0:0" /app/backend/data/
+[2026-11-12T08:14:00.324Z] #60 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #61 [webui base 11/12] COPY --chown=0:0 ./backend/ ./
+[2026-11-12T08:14:00.324Z] #61 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #62 [webui base  9/12] COPY --chown=0:0 ./CHANGELOG.md /app/CHANGELOG.md
+[2026-11-12T08:14:00.324Z] #62 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #63 [webui base  6/12] COPY --chown=0:0 ./backend/requirements*.txt ./
+[2026-11-12T08:14:00.324Z] #63 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #64 [webui base 12/12] RUN chgrp -R 0 /app/backend/open_webui/static  && chmod -R g=u /app/backend/open_webui/static  && if [ "false" = "true" ]; then       chgrp -R 0 /app /root || true;       chmod -R g+rwX /app /root || true;       find /app -type d -exec chmod g+s {} + || true;       find /root -type d -exec chmod g+s {} + || true;     fi
+[2026-11-12T08:14:00.324Z] #64 CACHED
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #65 [webui] exporting to image
+[2026-11-12T08:14:00.324Z] #65 exporting layers done
+[2026-11-12T08:14:00.324Z] #65 writing image sha256:43d83897e6e6b29d173811689f931e7b384cd636635d557d3873d0819fd4eef8 done
+[2026-11-12T08:14:00.324Z] #65 naming to docker.io/library/rag-webui:4a4a42e done
+[2026-11-12T08:14:00.324Z] #65 DONE 0.0s
+[2026-11-12T08:14:00.324Z] 
+[2026-11-12T08:14:00.324Z] #66 [webui] resolving provenance for metadata file
+[2026-11-12T08:14:00.324Z] #66 DONE 0.0s
+[2026-11-12T08:14:00.324Z]  guardrails  Built
+[2026-11-12T08:14:00.324Z]  kb  Built
+[2026-11-12T08:14:00.324Z]  orchestrator  Built
+[2026-11-12T08:14:00.324Z]  tracing  Built
+[2026-11-12T08:14:00.324Z]  webui  Built
+[2026-11-12T08:14:00.324Z] + ok=1
+[2026-11-12T08:14:00.324Z] + break
+[2026-11-12T08:14:00.324Z] + [ 1 != 1 ]
+[2026-11-12T08:14:00.324Z] + [ 1 = 1 ]
+[2026-11-12T08:14:00.324Z] + src=rag-kb:local
+[2026-11-12T08:14:00.324Z] + dst=rag-kb:4a4a42e
+[2026-11-12T08:14:00.324Z] + docker image inspect rag-kb:local
+[2026-11-12T08:14:00.324Z] + docker tag rag-kb:local rag-kb:4a4a42e
+[2026-11-12T08:14:00.324Z] + src=rag-guardrails:local
+[2026-11-12T08:14:00.324Z] + dst=rag-guardrails:4a4a42e
+[2026-11-12T08:14:00.324Z] + docker image inspect rag-guardrails:local
+[2026-11-12T08:14:00.324Z] + docker tag rag-guardrails:local rag-guardrails:4a4a42e
+[2026-11-12T08:14:00.324Z] + src=rag-orchestrator:local
+[2026-11-12T08:14:00.324Z] + dst=rag-orchestrator:4a4a42e
+[2026-11-12T08:14:00.324Z] + docker image inspect rag-orchestrator:local
+[2026-11-12T08:14:00.576Z] + docker tag rag-orchestrator:local rag-orchestrator:4a4a42e
+[2026-11-12T08:14:00.576Z] + src=rag-tracing:local
+[2026-11-12T08:14:00.576Z] + dst=rag-tracing:4a4a42e
+[2026-11-12T08:14:00.576Z] + docker image inspect rag-tracing:local
+[2026-11-12T08:14:00.576Z] + docker tag rag-tracing:local rag-tracing:4a4a42e
+[2026-11-12T08:14:00.576Z] + src=rag-webui:local
+[2026-11-12T08:14:00.576Z] + dst=rag-webui:4a4a42e
+[2026-11-12T08:14:00.576Z] + docker image inspect rag-webui:local
+[2026-11-12T08:14:00.576Z] + docker tag rag-webui:local rag-webui:4a4a42e
+ha:////4Jho1MpLmec5+x7LtEtuvdo34to2T7XfJOTuRoPtqGjGAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCARISSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wA3f8Jkb4AAAA=[Pipeline] }
+ha:////4LQFeWv6/Qz/gmuGLcLAdt2Wi8dvahvOLNYslXCMLhuYAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJBAFSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wA6THqyr4AAAA=[Pipeline] // stage
+ha:////4CQ5MRFtM5SYM8rV/DSCHHHIO3GYh8zRBrK+jjSABv9kAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUICEG1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzT7bbvt5Vm8/4lCHwgAAAA==[Pipeline] stage
+ha:////4CuZ8LIApFu7X8WeHReLe1xeBe2eDq1ha7ZEFV036XIzAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUAjEhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD6emXT7CAAAA[Pipeline] { (Deploy stage)
+ha:////4DSluNS4xHL0KD9WsNMfIRimytf3w/IemzuXbiUhEp1DAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSABWiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBiwS7Xe+AAAA[Pipeline] sh
+[2026-11-12T08:14:00.985Z] + set -e
+[2026-11-12T08:14:00.985Z] + HOST_REPO=/Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1
+[2026-11-12T08:14:00.985Z] + [ -f /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/deploy/compose/.env ]
+[2026-11-12T08:14:00.985Z] + cp -f /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/deploy/compose/.env deploy/compose/.env
+[2026-11-12T08:14:00.985Z] + break
+[2026-11-12T08:14:00.985Z] + test -f deploy/compose/.env
+[2026-11-12T08:14:00.985Z] + chmod +x scripts/ci_laptop_rerank_env.sh
+[2026-11-12T08:14:00.985Z] + bash scripts/ci_laptop_rerank_env.sh deploy/compose/.env
+[2026-11-12T08:14:00.985Z] ci_laptop_rerank_env: reranker forced to OpenRouter cohere/rerank-v3.5
+[2026-11-12T08:14:00.985Z] + SVC=all
+[2026-11-12T08:14:00.985Z] + src=rag-kb:local
+[2026-11-12T08:14:00.985Z] + dst=rag-kb:4a4a42e
+[2026-11-12T08:14:00.985Z] + docker image inspect rag-kb:local
+[2026-11-12T08:14:00.985Z] + docker tag rag-kb:local rag-kb:4a4a42e
+[2026-11-12T08:14:00.985Z] + src=rag-guardrails:local
+[2026-11-12T08:14:00.985Z] + dst=rag-guardrails:4a4a42e
+[2026-11-12T08:14:00.985Z] + docker image inspect rag-guardrails:local
+[2026-11-12T08:14:00.985Z] + docker tag rag-guardrails:local rag-guardrails:4a4a42e
+[2026-11-12T08:14:00.985Z] + src=rag-orchestrator:local
+[2026-11-12T08:14:00.985Z] + dst=rag-orchestrator:4a4a42e
+[2026-11-12T08:14:00.985Z] + docker image inspect rag-orchestrator:local
+[2026-11-12T08:14:00.985Z] + docker tag rag-orchestrator:local rag-orchestrator:4a4a42e
+[2026-11-12T08:14:00.985Z] + src=rag-tracing:local
+[2026-11-12T08:14:00.985Z] + dst=rag-tracing:4a4a42e
+[2026-11-12T08:14:00.985Z] + docker image inspect rag-tracing:local
+[2026-11-12T08:14:00.985Z] + docker tag rag-tracing:local rag-tracing:4a4a42e
+[2026-11-12T08:14:00.985Z] + src=rag-webui:local
+[2026-11-12T08:14:01.237Z] + dst=rag-webui:4a4a42e
+[2026-11-12T08:14:01.237Z] + docker image inspect rag-webui:local
+[2026-11-12T08:14:01.237Z] + docker tag rag-webui:local rag-webui:4a4a42e
+[2026-11-12T08:14:01.237Z] + COMPOSE=docker compose -p dana-stage -f deploy/compose/compose.base.yml -f deploy/compose/compose.local.yml -f deploy/compose/compose.stage.yml --env-file deploy/compose/.env
+[2026-11-12T08:14:01.237Z] + docker compose -p dana-stage -f deploy/compose/compose.base.yml -f deploy/compose/compose.local.yml -f deploy/compose/compose.stage.yml --env-file deploy/compose/.env up -d --no-build litellm
+[2026-11-12T08:14:01.237Z]  Container dana-stage-litellm-1  Recreate
+[2026-11-12T08:14:03.748Z]  Container dana-stage-litellm-1  Recreated
+[2026-11-12T08:14:03.750Z]  Container dana-stage-litellm-1  Starting
+[2026-11-12T08:14:03.750Z]  Container dana-stage-litellm-1  Started
+[2026-11-12T08:14:03.750Z] + [ all = all ]
+[2026-11-12T08:14:03.750Z] + docker compose -p dana-stage -f deploy/compose/compose.base.yml -f deploy/compose/compose.local.yml -f deploy/compose/compose.stage.yml --env-file deploy/compose/.env up -d --no-build
+[2026-11-12T08:14:04.020Z]  Container dana-stage-tracing-1  Running
+[2026-11-12T08:14:04.021Z]  Container dana-stage-litellm-1  Running
+[2026-11-12T08:14:04.021Z]  Container dana-stage-redis-1  Running
+[2026-11-12T08:14:04.021Z]  Container dana-stage-postgres-1  Recreate
+[2026-11-12T08:14:04.021Z]  Container dana-stage-guardrails-1  Running
+[2026-11-12T08:14:04.581Z]  Container dana-stage-postgres-1  Recreated
+[2026-11-12T08:14:04.581Z]  Container dana-stage-kb-1  Recreate
+[2026-11-12T08:14:06.455Z]  Container dana-stage-kb-1  Recreated
+[2026-11-12T08:14:06.455Z]  Container dana-stage-orchestrator-1  Running
+[2026-11-12T08:14:06.455Z]  Container dana-stage-webui-1  Running
+[2026-11-12T08:14:06.455Z]  Container dana-stage-postgres-1  Starting
+[2026-11-12T08:14:06.455Z]  Container dana-stage-litellm-1  Waiting
+[2026-11-12T08:14:06.455Z]  Container dana-stage-postgres-1  Started
+[2026-11-12T08:14:06.455Z]  Container dana-stage-postgres-1  Waiting
+[2026-11-12T08:14:06.455Z]  Container dana-stage-redis-1  Waiting
+[2026-11-12T08:14:07.036Z]  Container dana-stage-redis-1  Healthy
+[2026-11-12T08:14:12.256Z]  Container dana-stage-postgres-1  Healthy
+[2026-11-12T08:14:12.256Z]  Container dana-stage-kb-1  Starting
+[2026-11-12T08:14:12.256Z]  Container dana-stage-kb-1  Started
+[2026-11-12T08:14:38.736Z]  Container dana-stage-litellm-1  Healthy
+[2026-11-12T08:14:38.736Z]  Container dana-stage-kb-1  Waiting
+[2026-11-12T08:14:38.736Z]  Container dana-stage-guardrails-1  Waiting
+[2026-11-12T08:14:38.736Z]  Container dana-stage-guardrails-1  Healthy
+[2026-11-12T08:15:10.738Z]  Container dana-stage-kb-1  Healthy
+[2026-11-12T08:15:10.738Z]  Container dana-stage-orchestrator-1  Waiting
+[2026-11-12T08:15:10.738Z]  Container dana-stage-orchestrator-1  Healthy
+[2026-11-12T08:15:10.738Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:15:10.738Z] + sleep 10
+[2026-11-12T08:15:20.660Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:15:20.660Z] + sleep 10
+[2026-11-12T08:15:30.580Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:15:30.580Z] + sleep 10
+[2026-11-12T08:15:40.492Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:15:40.492Z] + sleep 10
+[2026-11-12T08:15:50.390Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:15:50.390Z] + sleep 10
+[2026-11-12T08:16:00.317Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:16:00.318Z] + sleep 10
+[2026-11-12T08:16:10.276Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:16:10.276Z] + sleep 10
+[2026-11-12T08:16:20.193Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:16:20.193Z] + sleep 10
+[2026-11-12T08:16:30.096Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:16:30.096Z] + sleep 10
+[2026-11-12T08:16:40.020Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:16:40.020Z] + sleep 10
+[2026-11-12T08:16:49.939Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:16:49.940Z] + sleep 10
+[2026-11-12T08:17:02.079Z] + curl -sf --max-time 3 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:17:02.079Z] + sleep 10
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:18100/health
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:18100/health/liveliness
+[2026-11-12T08:17:10.139Z] + echo port 18100 warming
+[2026-11-12T08:17:10.139Z] port 18100 warming
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:18200/health
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:18200/health/liveliness
+[2026-11-12T08:17:10.139Z] + echo port 18200 warming
+[2026-11-12T08:17:10.139Z] port 18200 warming
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:18000/health
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:18000/health/liveliness
+[2026-11-12T08:17:10.139Z] + echo port 18000 warming
+[2026-11-12T08:17:10.139Z] port 18000 warming
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:14000/health
+[2026-11-12T08:17:10.139Z] + curl -sf --max-time 5 http://127.0.0.1:14000/health/liveliness
+[2026-11-12T08:17:10.139Z] + echo port 14000 warming
+[2026-11-12T08:17:10.139Z] port 14000 warming
+ha:////4CEDex6I0NhobpMYvgYChYw35RF08J3UEFNq24i7BBscAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSoFSIitZKwwtMYowd686xHZyKF/E1/kAgEhVbrHa2mecL1jHAkYNGq6g3FFuD3o16Xpg59FfHGS1fsGWK7BQ2KjfcqdOCDScFS4oSVgI2ilrH0ZBOsBVW3mXlJOnqnML8HQSUphvgAYWYzUmG9IUpwO42dpHp5/krgMn7BGVdf2r/BqeGDU++AAAA[Pipeline] }
+ha:////4Jr7D/vBkNbhPSlJ0mops8baiS+Tfhnsz0C9P+555I2UAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIUGDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgGfxJ6+vgAAAA==[Pipeline] // stage
+ha:////4P35QgU/XmhgmyjFlHPRfrSm+Fo303haWdkM43nIjquFAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUDKgDYuoaZeEEIQkhbfR/SVLaiRNxNe5AoBITHizbkvWeL6higCMFyzqDvcOoHBv8aHNiE4X+4mliHZ2ZIozkDRNmEqRNu1RBycCiooQVh7VB5Sk6tAk2vJN3WXuJtj6lkLcDh9LpGzyg4JmcZEjfMgfYXkcdCX+cvwCYhwTlrsm2bz7P6g2Mc53XwgAAAA==[Pipeline] stage
+ha:////4NkgVQ1G3Pewejr+YU3J4Q2C1O0mmIxpiUONFX6pggV8AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QiAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LDyb6zSXCAAAA[Pipeline] { (E2E stage)
+ha:////4MEe6OUVDtK5/b51IQOL8ezW4CWfyi+gcLKH0xvbND4XAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIYEQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN5s4RMC+AAAA[Pipeline] sh
+[2026-11-12T08:17:10.858Z] + set -e
+[2026-11-12T08:17:10.858Z] + curl -sf+ head --max-time 30 -c 200 http://127.0.0.1:18000/health
+[2026-11-12T08:17:10.858Z] 
+[2026-11-12T08:17:10.858Z] + echo
+[2026-11-12T08:17:10.858Z] 
+[2026-11-12T08:17:10.859Z] + head -c+  500
+[2026-11-12T08:17:10.859Z] curl -sf --max-time 90 http://127.0.0.1:18100/v1/chat/completions -H Content-Type: application/json -d {"model":"chat-primary","messages":[{"role":"user","content":"سلام"}]}
+[2026-11-12T08:17:10.859Z] + echo
+[2026-11-12T08:17:10.859Z] 
+ha:////4HwhSG5qV6dTMZVRKh/Yt0FOpuzom4iBYXAkfYNcayDGAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCA0JCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw8B1Pq5vgAAAA==[Pipeline] }
+ha:////4PwMm53XKk+H7cHgexykjGod3W7IslbPIoioFQio4qI+AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCqBAqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw81GhnivgAAAA==[Pipeline] // stage
+ha:////4PWG5X5WTmbEPBQGoaFyic8sKdEWfUTS5qsq8M5jS63SAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUMMCAOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK52WfbbT/P6g2i+Li2wgAAAA==[Pipeline] stage
+ha:////4OdqaIgAEgqx2Ck/ofb3lvgjh1pJBM9Lnl8cQq/TzgMcAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUAokFMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfADKbit4wgAAAA==[Pipeline] { (Prod approval (interactive only))
+Stage "Prod approval (interactive only)" skipped due to when conditional
+ha:////4B3cHPb8vmqckaTBxY1aKEDq6h8R1k5QSaisBnOUuvmmAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSgGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFN5arJPu+AAAA[Pipeline] getContext
+ha:////4FvWfzb9ihtPzvQBvxH4JkuCXgiNYP/1LkhhtuexTw6GAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbN/nPyFW+AAAA[Pipeline] }
+ha:////4C3ePCx1AJjBv8+MbwUvuOJejUESt1BQhhgnHgpFtZXpAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUaRBVLRWGl5gEmPsWHeO7eBUvIiv8QcCkajYYrWzzTxfsI4Bjhw0WkW9odga9G7U88LMob86zmj5gi1TZKewUbnhTp0WbDgpWFKUsBKwUdQ6joZ0gq2w8i4rJ0lX5xTm7yCgNN0ADyjEbE4ypC9MAXa3sYtMP89fAUzeJyjr+lP7N8GNW6S+AAAA[Pipeline] // stage
+ha:////4LlMpz3WYBbQVPmykqxH1yU47CPZe1TjIjPW2Su2aHU6AAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohULHRATF2jLJwgJCGkjf4vSUo7cSKuxh0IVGLCg2Vbst7zBVUMcKRgWWewdxiVY4MfbU5sotBfPE2sozNThJG8YcJMgrRplyooGVhUlLDisDaoPEWHNsGGd/Iuay/R1qcU8nbgUDp9gwcUPJOTDOlb5gDb66gj4Y/zFwDzkKDcNdn2zedZvQERaXXmwgAAAA==[Pipeline] stage
+ha:////4Ari+SptaBvxtuYt0X5jnQslCK3PXRCRTLnSfC1b8XrJAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0AyTE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAUsyu2PCAAAA[Pipeline] { (Deploy prod)
+Stage "Deploy prod" skipped due to when conditional
+ha:////4PaBSEWBuEQaLxZsYeHYSsgQZKAeaFMyNFp5Am1VETWkAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSIRCiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyu3uU/vwBiGBjUy+AAAA[Pipeline] getContext
+ha:////4KV5f4OSStBgOvN5FtnqpDALY0e8xSION6EJpeaBcZTvAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCBUgoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AF2jKA0vgAAAA==[Pipeline] }
+ha:////4Oifb8x/Bf3hNAFg49M6MRjFnQ9RrCQJKD7D0Vt2Zf7ZAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGlIgqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyjrfa5D/QFCQkNvvgAAAA==[Pipeline] // stage
+ha:////4Gn4y3RB790cq8+r+YJMAyF4kA86oY//o3jt504d6DeoAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUsHRATF2jLJwgJCGkjf4vSUo7cSKuxh0IVGLCg2Vbst7zBVUMcKRgWWewdxiVY4MfbU5sotBfPE2sozNThJG8YcJMgrRplyooGVhUlLDisDaoPEWHNsGGd/Iuay/R1qcU8nbgUDp9gwcUPJOTDOlb5gDb66gj4Y/zFwDzkKDcNdma/edZvQEW888QwgAAAA==[Pipeline] stage
+ha:////4GXDkeqZ2jFFy36yLyM7j307Y1EGXasQW5rehvqH1hTdAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUgoEBMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfAARKflFwgAAAA==[Pipeline] { (Declarative: Post Actions)
+ha:////4Oq/KsDjqNZQGLTF29lwVG1vJrdfbq/5b/2TZ4s3V0bPAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSgESBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK//dQuvAE/wUw2vgAAAA==[Pipeline] sh
+[2026-11-12T08:17:11.387Z] + docker image prune -f
+[2026-11-12T08:17:11.387Z] Deleted Images:
+[2026-11-12T08:17:11.387Z] deleted: sha256:be41b655a89f1d3d316e0d2b47ea30c2ae930fdef239086deea3195ae870a3e1
+[2026-11-12T08:17:11.387Z] deleted: sha256:43d83897e6e6b29d173811689f931e7b384cd636635d557d3873d0819fd4eef8
+[2026-11-12T08:17:11.387Z] deleted: sha256:0ba96720af0a5e4abde3482cacc588bd6b2195ce6767a5c7faec706b5236ae6e
+[2026-11-12T08:17:11.387Z] deleted: sha256:82ceb8fa92b8b645f185052a8bdb291e323c9bf1adda577a3b5d4600809747ef
+[2026-11-12T08:17:11.387Z] 
+[2026-11-12T08:17:11.387Z] Total reclaimed space: 0B
+[2026-11-12T08:17:11.387Z] + rm -f .ci_commit_msg.txt .ci_changed_files.txt .ci_gate.env .ci_role.env
+ha:////4EIdSVG+pSC9G2rJXVs+wITTsLLCErLApooFJN91C8ujAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIESBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgEM9aTqvgAAAA==[Pipeline] }
+ha:////4BB5CstWpbNmwCTxVT231SjAPitL0Cug+8VWtANqiDHrAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiUUCBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgE0tzcbvgAAAA==[Pipeline] // stage
+ha:////4J6baS34jg0xlr2X9Gex6wdOR0C/q+ta/upVtZNP9IQpAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRVQpERWu54QUmOYwT687YDk7Fi/gaf8AiEhVbrHa2mdcb1jHAkYMRA9JoKXZWeDeZskTmMF4dZzHwRXRMkR0KhVlxj6cFFSeEJVUNKwkbpM5xtGQSbOWgH7pxmkxzTqF8Bwm17e/whEoWc9IhfWEOsLtNfWT6ef4KYPY+Qd22pfbtB5g3W/a+AAAA[Pipeline] }
+ha:////4Hd7gaq79hz6Q/KhqGTv0tZ5QRM1fQZDyuE6MArwM9RrAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGkBCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDuD7m2uw/btQpwvgAAAA==[Pipeline] // timestamps
+ha:////4Ml79VaxP/yVh69cIBKlUGXLqESmnX7b2UOGvZhnBwfBAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCoQQSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryf8i13X0AxDdfIr4AAAA=[Pipeline] }
+ha:////4IwgS/QJSwwFYdF4SVjjy1TKdJER778zN1UbNQMbLUF1AAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICEgUSSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4TysM21238AcyYfhL4AAAA=[Pipeline] // withEnv
+ha:////4MUnFug1jAtfua0UZQa7ejoDJCHXWBQ8yGmlUO6we2DKAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiiAYJUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2PkF5qHPV+w91YCfRvgAAAA==[Pipeline] }
+ha:////4J6MPEVMl3e0UuRheRXejTCg5pZR4IjdrEjyJK0vjhmNAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRqZAQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygPda59/QFNIrQgvgAAAA==[Pipeline] // withEnv
+ha:////4Ks5900eT0Q5TXCirAp2zU8k8urrLO16WSG2rCLRhGQuAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIpkBASoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN9vBdnuA7Fh5Fy9AAAA[Pipeline] }
+ha:////4H1/O5rsjjeJ7ZQmHAaafjWmxTq19EVQp2enuyaNctweAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJpQEJCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PutINt9ABvszXe9AAAA[Pipeline] // ws
+ha:////4G/qtqd5Y82QZvUgKHhGUvuedkwh/Q9+Yx4LcuTj3VNgAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJpQEJCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PudINt+AD31qj29AAAA[Pipeline] }
+ha:////4I3G1iKhr/+45KYvkV0YwIUU6xP65lEYJi+ew7699tN/AAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIpkBASoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/vBNn2A04abuS9AAAA[Pipeline] // node
+ha:////4N2r6Bm+5U1Or12I1CyuIsY0pgHn5z3MnwS7JckQd0PlAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKRaEBCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PudINt+AGgDCa69AAAA[Pipeline] End of Pipeline
+
+GitHub has been notified of this commit’s build result
+
+Finished: SUCCESS

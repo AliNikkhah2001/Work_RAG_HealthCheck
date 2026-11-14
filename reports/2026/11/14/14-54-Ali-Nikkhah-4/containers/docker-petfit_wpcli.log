@@ -1,0 +1,3 @@
+2026-10-19T21:05:06.012948971Z Error: This does not seem to be a WordPress installation.
+2026-10-19T21:05:06.013053512Z The used path is: /var/www/html/
+2026-10-19T21:05:06.013065137Z Pass --path=`path/to/wordpress` or run `wp core download`.

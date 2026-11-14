@@ -1,0 +1,86 @@
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "created": 1794668023, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"role": "assistant"}, "finish_reason": null}]}
+
+: agent validate_input + retrieve running
+
+: agent retrieve done chunks=0 latency_ms=131
+
+: agent format_response greeting
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "سلام! "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "👋 "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "من "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "دانا، "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "دستیار "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "هوشمند "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "شرکت "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتبارسنجی "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "ایران، "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "هستم.\n"}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "می‌توانم "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "به "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "سوالات "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "شما "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "درباره "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "مفاهیم "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتبارسنجی، "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "گزارش "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتبارسنجی، "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "امتیاز "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "و "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "رتبه "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "اعتباری "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "و "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "روش "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "رفع "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "دلایل "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "کاهش "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "امتیاز "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "پاسخ "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "بدهم.\n"}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "چطور "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "می‌توانم "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "به "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "شما "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "کمک "}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "کنم؟"}}]}
+
+data: {"id": "chatcmpl-c8e3c301-5aba-44a9-9feb-1e06f518af7a", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}]}
+
+data: [DONE]
+

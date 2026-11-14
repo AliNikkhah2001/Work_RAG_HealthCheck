@@ -1,0 +1,52 @@
+=== UMBRELLA: /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1 ===
+b242bba | AliNikkhah2001 | 2026-11-14 16:22:21 +0330 | docs(ops): GPU full recovery report — 2026-11-14T12:52:21ZZ — machine: Ali-Nikkhah-4 — dev_laptop — status: DEGRADED
+bf559fe | AliNikkhah2001 | 2026-11-14 16:19:34 +0330 | docs(ops): GPU full recovery report — 2026-11-14T12:49:34ZZ — machine: Ali-Nikkhah-4 — dev_laptop — status: DEGRADED
+939b5bb | AliNikkhah2001 | 2026-11-14 16:13:26 +0330 | docs(ops): GPU full recovery report — 2026-11-14T12:43:26ZZ — machine: Ali-Nikkhah-4 — dev_laptop — status: DEGRADED
+323e942 | AliNikkhah2001 | 2026-11-14 16:12:22 +0330 | docs(ops): GPU full recovery report — 2026-11-14T12:42:22ZZ — machine: Ali-Nikkhah-4 — dev_laptop — status: DEGRADED
+d51e8ad | AliNikkhah2001 | 2026-11-14 14:12:57 +0330 | chore: remove Vast.ai references, rename deploy/vast to deploy/gpu
+4a4a42e | AliNikkhah2001 | 2026-11-12 11:22:22 +0330 | chore: rebuild stage images after github DNS flake [ci stage] [ci all]
+44e81ad | AliNikkhah2001 | 2026-11-12 10:44:58 +0330 | On ff-develop-to-main: local-wip
+ca2e2b1 | AliNikkhah2001 | 2026-11-12 10:44:58 +0330 | index on promote-develop-to-main: bc4c234 Merge pull request #60 from AliNikkhah2001/chore/sync-all-tips-to-main
+de7fa3b | Ali Nikkhah | 2026-11-12 10:44:33 +0330 | Merge pull request #61 from AliNikkhah2001/release/promote-develop-to-main
+bc4c234 | Ali Nikkhah | 2026-11-12 10:44:06 +0330 | Merge pull request #60 from AliNikkhah2001/chore/sync-all-tips-to-main
+9260ab8 | AliNikkhah2001 | 2026-11-12 10:43:55 +0330 | chore: pin orch/guard/KB/server tips after develop↔main sync [ci stage]
+bc388f5 | Ali Nikkhah | 2026-11-12 10:26:37 +0330 | Merge pull request #59 from AliNikkhah2001/chore/pin-kb-ingest-batch-flush
+dceade3 | AliNikkhah2001 | 2026-11-12 10:26:25 +0330 | chore: pin KB ingest batch-flush for 1405-08-20 [ci stage]
+404cae7 | Ali Nikkhah | 2026-11-12 10:11:26 +0330 | Merge pull request #58 from AliNikkhah2001/chore/pin-kafil-nardeban-fixes
+a998717 | AliNikkhah2001 | 2026-11-12 10:11:10 +0330 | chore: pin orch+guardrails کفیل/نردبان routing fixes [ci stage]
+8bd17b2 | Ali Nikkhah | 2026-11-12 02:33:48 +0330 | Merge pull request #57 from AliNikkhah2001/develop
+9f13290 | Ali Nikkhah | 2026-11-12 02:33:25 +0330 | Merge pull request #56 from AliNikkhah2001/chore/pin-orch-progressive-broaden
+43aa15e | AliNikkhah2001 | 2026-11-12 02:33:15 +0330 | chore: pin orchestrator progressive scope broaden [ci stage]
+34819a8 | Ali Nikkhah | 2026-11-12 02:04:50 +0330 | Merge pull request #55 from AliNikkhah2001/develop
+129250d | AliNikkhah2001 | 2026-11-12 02:04:43 +0330 | chore: pin orchestrator main with EntityList recovery [ci prod]
+2bea9bd | Ali Nikkhah | 2026-11-12 02:04:12 +0330 | Merge pull request #54 from AliNikkhah2001/develop
+18284e1 | AliNikkhah2001 | 2026-11-12 02:03:53 +0330 | chore: advance orch/KB pins after EntityList production merges [ci prod]
+1ee12a3 | Ali Nikkhah | 2026-11-12 02:03:10 +0330 | Merge pull request #53 from AliNikkhah2001/develop
+0c43304 | AliNikkhah2001 | 2026-11-12 02:02:55 +0330 | chore: pin KB master + orch main for production promote [ci prod]
+7f51af4 | AliNikkhah2001 | 2026-11-12 01:57:04 +0330 | chore: advance orchestrator for cheque colour-rank routing
+f074723 | AliNikkhah2001 | 2026-11-12 01:51:36 +0330 | chore: advance orchestrator for declaration follow-up clarify-loop fix
+1922d7e | Ali Nikkhah | 2026-11-12 01:28:53 +0330 | Merge pull request #52 from AliNikkhah2001/feature/evaluation-suite-submodule
+9d2cdae | AliNikkhah2001 | 2026-11-12 01:28:44 +0330 | chore: advance evaluation, KB, and orchestrator after quality fix PRs
+1698d68 | AliNikkhah2001 | 2026-11-12 00:26:23 +0330 | feat: wire KB benchmarks to Evaluation Suite as sole eval backend
+6a58bf4 | AliNikkhah2001 | 2026-11-11 23:59:15 +0330 | chore: adopt Work_RAG-Evaluation_Suite submodule
+489475d | AliNikkhah2001 | 2026-11-11 23:23:25 +0330 | docs: document EntityList supplements and pin KB/orch tips
+60b0f0f | Ali Nikkhah | 2026-11-11 22:58:46 +0330 | fix(ci): retag all :local images to :TAG for path-filtered deploys [ci stage] (#50)
+eb8b65a | Ali Nikkhah | 2026-11-11 22:52:19 +0330 | fix(ci): pin KB CPU-index torch so laptop images stay +cpu [ci stage] (#49)
+94996fb | Ali Nikkhah | 2026-11-11 22:26:28 +0330 | fix(ci): CPU torch on laptop + skip rebuilds unless sources change [ci stage] (#48)
+a371d7a | AliNikkhah2001 | 2026-11-11 21:58:34 +0330 | chore: promote stage pins to main [ci prod]
+c845199 | Ali Nikkhah | 2026-11-11 21:57:52 +0330 | Merge pull request #46 from AliNikkhah2001/chore/sync-pins-and-webui-rollout
+85e3cb7 | AliNikkhah2001 | 2026-11-11 21:57:40 +0330 | fix(ci): always rebuild WebUI frontend; pin server-setup tip [ci stage] [ci all]
+4dbc038 | AliNikkhah2001 | 2026-11-11 18:36:10 +0330 | fix: pin KB with complete prompts v1.0.4 for RAG answers [ci stage]
+
+=== Current branch ===
+ops/gpu-recover-20261114T125130Z-Ali-Nikkhah-4
+
+=== Submodule status ===
+ 31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+ 4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+ 2bbf01a128b08b824bc1b894b7c275a65e0a2104 components/guardrails (phase1-complete-2026-10-28-25-g2bbf01a)
+ 01255c48d65c02cd357d9935f70bc0928deefdcc components/knowledgebase (phase1-complete-2026-10-28-71-g01255c4)
+ 7884d26301841d7c01c80ef080ce10c4219f0c55 components/knowledgebase/kb-source (phase1-complete-2026-10-28-5-g7884d26)
+ 80080823ec5fb9f58387d2b4a89fa29f2380f824 components/orchestrator (phase1-complete-2026-10-28-64-g8008082)
++2f679a29a4ecf50bd5872e412b2c5e3b3459028c components/server-setup (phase1-complete-2026-10-28-70-g2f679a2)
+ 2e45b5a97ead97646eb11fdaeec195578b630b67 components/webui (v0.13.3-26-g2e45b5a97)

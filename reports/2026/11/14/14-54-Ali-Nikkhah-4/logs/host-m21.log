@@ -1,0 +1,256 @@
+Branch indexing
+ to https://api.github.com using AliNikkhah2001/****** (GitHub PAT for Multibranch)
+Obtained Jenkinsfile from de7fa3bc75e72cc489f58eb8d5b0375440d2cf18
+ Start of Pipeline
+ node
+Running on  in /var/jenkins_home/workspace/dana-rag_main
+ {
+ ws
+Running in /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace
+ {
+ stage
+ { (Declarative: Checkout SCM)
+ checkout
+The recommended git tool is: NONE
+using credential github-pat
+ > git rev-parse --resolve-git-dir /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials GitHub PAT for Multibranch
+ > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/main:refs/remotes/origin/main # timeout=10
+Checking out Revision de7fa3bc75e72cc489f58eb8d5b0375440d2cf18 (main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f de7fa3bc75e72cc489f58eb8d5b0375440d2cf18 # timeout=10
+Commit message: "Merge pull request #61 from AliNikkhah2001/release/promote-develop-to-main"
+ > git rev-list --no-walk de7fa3bc75e72cc489f58eb8d5b0375440d2cf18 # timeout=10
+ }
+ // stage
+ withEnv
+ {
+ withEnv
+ {
+ timestamps
+ {
+ stage
+ { (Checkout)
+ checkout
+[2026-11-12T08:12:22.477Z] The recommended git tool is: NONE
+[2026-11-12T08:12:22.478Z] using credential github-pat
+[2026-11-12T08:12:22.483Z]  > git rev-parse --resolve-git-dir /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace/.git # timeout=10
+[2026-11-12T08:12:22.487Z] Fetching changes from the remote Git repository
+[2026-11-12T08:12:22.489Z]  > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+[2026-11-12T08:12:22.494Z] Fetching without tags
+[2026-11-12T08:12:22.494Z] Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+[2026-11-12T08:12:22.494Z]  > git --version # timeout=10
+[2026-11-12T08:12:22.496Z]  > git --version # 'git version 2.47.3'
+[2026-11-12T08:12:22.496Z] using GIT_ASKPASS to set credentials GitHub PAT for Multibranch
+[2026-11-12T08:12:22.501Z]  > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/main:refs/remotes/origin/main # timeout=10
+[2026-11-12T08:12:24.346Z] Checking out Revision de7fa3bc75e72cc489f58eb8d5b0375440d2cf18 (main)
+[2026-11-12T08:12:24.346Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-12T08:12:24.350Z]  > git checkout -f de7fa3bc75e72cc489f58eb8d5b0375440d2cf18 # timeout=10
+[2026-11-12T08:12:24.396Z] Commit message: "Merge pull request #61 from AliNikkhah2001/release/promote-develop-to-main"
+ sh
+[2026-11-12T08:12:25.904Z] + set -e
+[2026-11-12T08:12:25.905Z] + chmod +x scripts/ci_submodule_sync.sh scripts/ci_message_gate.py scripts/ci_controller_role.py
+[2026-11-12T08:12:25.905Z] + bash scripts/ci_submodule_sync.sh
+[2026-11-12T08:12:25.905Z] ci_submodule_sync: attempt 1/3
+[2026-11-12T08:12:25.905Z] ci_submodule_sync: resetting dirty submodule worktrees (CI_FORCE_CLEAN=1)
+[2026-11-12T08:12:25.905Z] Entering 'agent-state'
+[2026-11-12T08:12:25.905Z] Entering 'components/evaluation'
+[2026-11-12T08:12:26.157Z] Entering 'components/guardrails'
+[2026-11-12T08:12:26.157Z] Entering 'components/knowledgebase'
+[2026-11-12T08:12:26.157Z] Entering 'components/knowledgebase/kb-source'
+[2026-11-12T08:12:26.157Z] Entering 'components/orchestrator'
+[2026-11-12T08:12:26.157Z] Entering 'components/server-setup'
+[2026-11-12T08:12:26.417Z] Entering 'components/webui'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'agent-state'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'components/evaluation'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'components/guardrails'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'components/knowledgebase'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'components/knowledgebase/kb-source'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'components/orchestrator'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'components/server-setup'
+[2026-11-12T08:12:44.548Z] Synchronizing submodule url for 'components/webui'
+[2026-11-12T08:12:44.548Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/guardrails': checked out '2bbf01a128b08b824bc1b894b7c275a65e0a2104'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/knowledgebase': checked out '01255c48d65c02cd357d9935f70bc0928deefdcc'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/orchestrator': checked out '80080823ec5fb9f58387d2b4a89fa29f2380f824'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/server-setup': checked out 'e93899df184230209e5a5e92a53569c6dd71e4f5'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+[2026-11-12T08:12:44.549Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/guardrails': checked out '2bbf01a128b08b824bc1b894b7c275a65e0a2104'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/knowledgebase': checked out '01255c48d65c02cd357d9935f70bc0928deefdcc'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/knowledgebase/kb-source': checked out '7884d26301841d7c01c80ef080ce10c4219f0c55'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/orchestrator': checked out '80080823ec5fb9f58387d2b4a89fa29f2380f824'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/server-setup': checked out 'e93899df184230209e5a5e92a53569c6dd71e4f5'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+[2026-11-12T08:12:44.549Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/guardrails': checked out '2bbf01a128b08b824bc1b894b7c275a65e0a2104'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/knowledgebase': checked out '01255c48d65c02cd357d9935f70bc0928deefdcc'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/knowledgebase/kb-source': checked out '7884d26301841d7c01c80ef080ce10c4219f0c55'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/orchestrator': checked out '80080823ec5fb9f58387d2b4a89fa29f2380f824'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/server-setup': checked out 'e93899df184230209e5a5e92a53569c6dd71e4f5'
+[2026-11-12T08:12:44.549Z] Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+[2026-11-12T08:12:44.549Z] ci_submodule_sync: OK
+[2026-11-12T08:12:44.549Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-12T08:12:44.549Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (remotes/origin/HEAD)
+[2026-11-12T08:12:44.549Z]  2bbf01a128b08b824bc1b894b7c275a65e0a2104 components/guardrails (phase1-complete-2026-10-28-25-g2bbf01a)
+[2026-11-12T08:12:44.549Z]  01255c48d65c02cd357d9935f70bc0928deefdcc components/knowledgebase (phase1-complete-2026-10-28-71-g01255c4)
+[2026-11-12T08:12:44.549Z]  80080823ec5fb9f58387d2b4a89fa29f2380f824 components/orchestrator (phase1-complete-2026-10-28-64-g8008082)
+[2026-11-12T08:12:44.549Z]  e93899df184230209e5a5e92a53569c6dd71e4f5 components/server-setup (phase1-complete-2026-10-28-69-ge93899d)
+[2026-11-12T08:12:44.549Z]  2e45b5a97ead97646eb11fdaeec195578b630b67 components/webui (v0.13.3-26-g2e45b5a97)
+[2026-11-12T08:12:44.549Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-12T08:12:44.549Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (remotes/origin/HEAD)
+[2026-11-12T08:12:44.549Z]  2bbf01a128b08b824bc1b894b7c275a65e0a2104 components/guardrails (phase1-complete-2026-10-28-25-g2bbf01a)
+[2026-11-12T08:12:44.549Z]  01255c48d65c02cd357d9935f70bc0928deefdcc components/knowledgebase (phase1-complete-2026-10-28-71-g01255c4)
+[2026-11-12T08:12:44.549Z]  7884d26301841d7c01c80ef080ce10c4219f0c55 components/knowledgebase/kb-source (phase1-complete-2026-10-28-5-g7884d26)
+[2026-11-12T08:12:44.549Z]  80080823ec5fb9f58387d2b4a89fa29f2380f824 components/orchestrator (phase1-complete-2026-10-28-64-g8008082)
+[2026-11-12T08:12:44.549Z]  e93899df184230209e5a5e92a53569c6dd71e4f5 components/server-setup (phase1-complete-2026-10-28-69-ge93899d)
+[2026-11-12T08:12:44.549Z]  2e45b5a97ead97646eb11fdaeec195578b630b67 components/webui (v0.13.3-26-g2e45b5a97)
+[2026-11-12T08:12:44.549Z] + git log -1 --pretty=%B
+[2026-11-12T08:12:44.549Z] + git diff --name-only HEAD~1...HEAD
+[2026-11-12T08:12:44.549Z] + command -v python3
+[2026-11-12T08:12:44.549Z] + python3 scripts/ci_message_gate.py --write-env .ci_gate.env
+[2026-11-12T08:12:44.549Z] CI_SKIP=0
+[2026-11-12T08:12:44.549Z] CI_BUILD=0
+[2026-11-12T08:12:44.549Z] CI_STAGE=0
+[2026-11-12T08:12:44.549Z] CI_PROD=1
+[2026-11-12T08:12:44.549Z] CI_AUTO=0
+[2026-11-12T08:12:44.549Z] CI_ROLLBACK=0
+[2026-11-12T08:12:44.549Z] CI_HEAVY_PATHS=1
+[2026-11-12T08:12:44.549Z] CI_SERVICES=guardrails kb orchestrator
+[2026-11-12T08:12:44.549Z] + python3 scripts/ci_controller_role.py --write-env .ci_role.env
+[2026-11-12T08:12:44.549Z] DANA_ROLE=stage
+[2026-11-12T08:12:44.549Z] CI_MAY_DEPLOY_STAGE=1
+[2026-11-12T08:12:44.549Z] CI_MAY_DEPLOY_PROD=0
+ script
+ {
+ readFile
+ readFile
+ echo
+[2026-11-12T08:12:44.904Z] CI controller: ROLE=stage MAY_STAGE=1 MAY_PROD=0 HOST=laptop JOB=dana-rag/main
+ echo
+[2026-11-12T08:12:44.917Z] CI gate: SKIP=0 BUILD=0 STAGE=0 PROD=1 AUTO=0 ROLLBACK=0 HEAVY=1 SERVICES=guardrails kb orchestrator BRANCH=main
+ }
+ // script
+ }
+ // stage
+ stage
+ { (Skip)
+Stage "Skip" skipped due to when conditional
+ getContext
+ }
+ // stage
+ stage
+ { (Lint)
+ sh
+[2026-11-12T08:12:45.427Z] + set -e
+[2026-11-12T08:12:45.427Z] + python3 -m pip install --quiet ruff
+[2026-11-12T08:12:45.680Z] error: externally-managed-environment
+[2026-11-12T08:12:45.680Z] 
+[2026-11-12T08:12:45.680Z] × This environment is externally managed
+[2026-11-12T08:12:45.680Z] ╰─> To install Python packages system-wide, try apt install
+[2026-11-12T08:12:45.680Z]     python3-xyz, where xyz is the package you are trying to
+[2026-11-12T08:12:45.680Z]     install.
+[2026-11-12T08:12:45.680Z]     
+[2026-11-12T08:12:45.680Z]     If you wish to install a non-Debian-packaged Python package,
+[2026-11-12T08:12:45.680Z]     create a virtual environment using python3 -m venv path/to/venv.
+[2026-11-12T08:12:45.680Z]     Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+[2026-11-12T08:12:45.680Z]     sure you have python3-full installed.
+[2026-11-12T08:12:45.680Z]     
+[2026-11-12T08:12:45.680Z]     If you wish to install a non-Debian packaged Python application,
+[2026-11-12T08:12:45.680Z]     it may be easiest to use pipx install xyz, which will manage a
+[2026-11-12T08:12:45.680Z]     virtual environment for you. Make sure you have pipx installed.
+[2026-11-12T08:12:45.680Z]     
+[2026-11-12T08:12:45.680Z]     See /usr/share/doc/python3.13/README.venv for more information.
+[2026-11-12T08:12:45.680Z] 
+[2026-11-12T08:12:45.680Z] note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+[2026-11-12T08:12:45.680Z] hint: See PEP 668 for the detailed specification.
+[2026-11-12T08:12:45.680Z] + true
+[2026-11-12T08:12:45.680Z] + ruff check components/orchestrator/src components/guardrails/src components/knowledgebase/kb-manager/kb_manager
+[2026-11-12T08:12:45.680Z] /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/.ci-workspace@tmp/durable-53345454/script.sh.copy: 4: ruff: not found
+[2026-11-12T08:12:45.680Z] + true
+[2026-11-12T08:12:45.680Z] + python3 scripts/build_keep_graph.py
+[2026-11-12T08:13:07.592Z] {
+[2026-11-12T08:13:07.592Z]   "keep": 11627,
+[2026-11-12T08:13:07.592Z]   "classes": {
+[2026-11-12T08:13:07.592Z]     "code_candidates_quarantine": 207,
+[2026-11-12T08:13:07.592Z]     "docs": 306,
+[2026-11-12T08:13:07.592Z]     "other": 166,
+[2026-11-12T08:13:07.592Z]     "plots_diagrams": 156,
+[2026-11-12T08:13:07.592Z]     "data_datasets_eval": 82,
+[2026-11-12T08:13:07.592Z]     "research_archive_dev": 116
+[2026-11-12T08:13:07.592Z]   }
+[2026-11-12T08:13:07.592Z] }
+[2026-11-12T08:13:07.592Z] + python3 scripts/ci_message_gate.py --self-test
+[2026-11-12T08:13:07.592Z] ci_message_gate self-test OK
+[2026-11-12T08:13:07.592Z] + python3 scripts/ci_controller_role.py --self-test
+[2026-11-12T08:13:07.592Z] ci_controller_role self-test OK
+ }
+ // stage
+ stage
+ { (Rollback prod)
+Stage "Rollback prod" skipped due to when conditional
+ getContext
+ }
+ // stage
+ stage
+ { (Build images)
+Stage "Build images" skipped due to when conditional
+ getContext
+ }
+ // stage
+ stage
+ { (Deploy stage)
+Stage "Deploy stage" skipped due to when conditional
+ getContext
+ }
+ // stage
+ stage
+ { (E2E stage)
+Stage "E2E stage" skipped due to when conditional
+ getContext
+ }
+ // stage
+ stage
+ { (Prod approval (interactive only))
+Stage "Prod approval (interactive only)" skipped due to when conditional
+ getContext
+ }
+ // stage
+ stage
+ { (Deploy prod)
+Stage "Deploy prod" skipped due to when conditional
+ getContext
+ }
+ // stage
+ stage
+ { (Declarative: Post Actions)
+ sh
+[2026-11-12T08:13:08.362Z] + docker image prune -f
+[2026-11-12T08:13:08.362Z] Total reclaimed space: 0B
+[2026-11-12T08:13:08.362Z] + rm -f .ci_commit_msg.txt .ci_changed_files.txt .ci_gate.env .ci_role.env
+ }
+ // stage
+ }
+ // timestamps
+ }
+ // withEnv
+ }
+ // withEnv
+ }
+ // ws
+ }
+ // node
+ End of Pipeline
+
+GitHub has been notified of this commit’s build result
+
+Finished: SUCCESS

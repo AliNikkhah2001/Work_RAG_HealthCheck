@@ -1,0 +1,11 @@
+2026-11-14T14:47:02.402198970Z 
+2026-11-14T14:47:02.402257262Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+2026-11-14T14:47:02.402261345Z 
+2026-11-14T14:47:02.695528387Z 2026-11-14 14:47:02.695 UTC [1] LOG:  starting PostgreSQL 16.14 (Debian 16.14-1.pgdg12+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+2026-11-14T14:47:02.697171096Z 2026-11-14 14:47:02.696 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-14T14:47:02.697203721Z 2026-11-14 14:47:02.696 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-14T14:47:02.709428471Z 2026-11-14 14:47:02.709 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-14T14:47:02.723301096Z 2026-11-14 14:47:02.723 UTC [29] LOG:  database system was shut down at 2026-11-14 14:46:56 UTC
+2026-11-14T14:47:02.729890596Z 2026-11-14 14:47:02.729 UTC [1] LOG:  database system is ready to accept connections
+2026-11-14T14:52:02.807294637Z 2026-11-14 14:52:02.806 UTC [27] LOG:  checkpoint starting: time
+2026-11-14T14:52:02.828046179Z 2026-11-14 14:52:02.827 UTC [27] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.010 s, sync=0.002 s, total=0.022 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/24DFB0C0, redo lsn=0/24DFB088

@@ -1,0 +1,62 @@
+[0;36m[██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m   5%  Checking prerequisites
+[0;34m[INFO][0m Step 1/20: Checking prerequisites
+[0;34m[INFO][0m Step 1/20: Checking prerequisites
+[0;32m[OK][0m   docker available
+[0;32m[OK][0m   docker available
+[0;32m[OK][0m   git available
+[0;32m[OK][0m   git available
+[0;32m[OK][0m   curl available
+[0;32m[OK][0m   curl available
+[1;33m[WARN][0m No browser — screenshots will be URL stubs only
+[1;33m[WARN][0m No browser — screenshots will be URL stubs only
+[0;32m[OK][0m   gh CLI available — PR creation enabled
+[0;32m[OK][0m   gh CLI available — PR creation enabled
+[0;32m[OK][0m   python3 available
+[0;32m[OK][0m   python3 available
+[0;36m[████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  10%  Pulling latest updates from GitHub
+[0;34m[INFO][0m Step 2/20: Pulling latest updates from GitHub
+[0;34m[INFO][0m Step 2/20: Pulling latest updates from GitHub
+tee: : No such file or directory
+[1;33m[WARN][0m fetch origin failed — proceeding with local state
+[1;33m[WARN][0m fetch origin failed — proceeding with local state
+[0;34m[INFO][0m Local HEAD (b242bbabb5cf33ea3737d6e1ea90bf98d3c94339) differs from origin/main (de7fa3bc75e72cc489f58eb8d5b0375440d2cf18) — merging
+[0;34m[INFO][0m Local HEAD (b242bbabb5cf33ea3737d6e1ea90bf98d3c94339) differs from origin/main (de7fa3bc75e72cc489f58eb8d5b0375440d2cf18) — merging
+tee: : No such file or directory
+Already up to date.
+[1;33m[WARN][0m fast-forward merge failed — you may need to resolve conflicts manually
+[1;33m[WARN][0m fast-forward merge failed — you may need to resolve conflicts manually
+
+\033[0;36m======================================================================\033[0m
+\033[0;36m  GPU Full Recovery Report — 20261114T145307Z-Ali-Nikkhah-4\033[0m
+\033[0;36m======================================================================\033[0m
+  Host:        Ali-Nikkhah-4.local
+  Repo:        /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1
+  Server-setup: /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup
+  Output:      /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T145307Z-Ali-Nikkhah-4
+  Root:        no
+  Push:        enabled
+  Restart:     enabled
+  Screenshot:  enabled
+\033[0;36m======================================================================\033[0m
+
+[1;33m[WARN][0m Not running as root — docker, journalctl, and /root/.bash_history may be inaccessible
+  Recommended: sudo bash scripts/gpu_full_recover_report.sh (with DANA_HOST_REPO set)
+
+[0;32m[OK][0m   Detected dev laptop (macOS) — dev mode: relaxed restarts, dev health checks
+[0;36m[██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  15%  Collecting host metadata
+[0;34m[INFO][0m Step 3/20: Collecting host metadata
+[0;32m[OK][0m   host metadata -> /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T145307Z-Ali-Nikkhah-4/meta/host_metadata.txt
+[0;36m[████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  20%  Collecting all git commits (last 3 days)
+[0;34m[INFO][0m Step 4/20: Collecting all git commits (last 3 days)
+[0;32m[OK][0m   umbrella commits -> /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T145307Z-Ali-Nikkhah-4/commits/umbrella_commits.txt
+[0;36m[██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  25%  Collecting shell command history (last 3 days)
+[0;34m[INFO][0m Step 5/20: Collecting shell command history (last 3 days)
+[0;32m[OK][0m   shell history -> /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T145307Z-Ali-Nikkhah-4/commands/shell_history.txt
+[0;36m[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  30%  Collecting all container logs
+[0;34m[INFO][0m Step 6/20: Collecting all container logs
+[0;32m[OK][0m   collected logs from 38 containers
+[0;36m[██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  35%  Collecting database and DVC logs
+[0;34m[INFO][0m Step 7/20: Collecting database and DVC logs
+[0;32m[OK][0m   database and dvc logs -> /Users/alinikkhah/Documents/Work/CreditScoring/Chatbot_production_v1/components/server-setup/docs/ops/gpu-recover-reports/20261114T145307Z-Ali-Nikkhah-4/logs/database_and_dvc.log
+[0;36m[████████████████░░░░░░░░░░░░░░░░░░░░░░░░][0m  40%  Collecting host /tmp logs
+[0;34m[INFO][0m Step 8/20: Collecting host /tmp logs

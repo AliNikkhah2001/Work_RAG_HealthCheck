@@ -1,0 +1,48 @@
+=== Jenkins container logs ===
+=== jenkins: dana-jenkins ===
+jenkins logs: dana-jenkins
+
+=== /tmp log files ===
+-rw-r--r--  1 alinikkhah  wheel   4160 Nov 14 14:59 /tmp/brief_compile.log
+-rw-r--r--  1 alinikkhah  wheel   1085 Nov 14 16:44 /tmp/chrome_test.log
+-rw-r--r--  1 alinikkhah  wheel  10336 Nov 14 14:59 /tmp/compile.log
+-rw-r--r--  1 alinikkhah  wheel  71423 Nov 14 18:22 /tmp/d57.log
+-rw-r--r--  1 alinikkhah  wheel  18706 Nov 14 16:50 /tmp/full_run.log
+-rw-r--r--  1 alinikkhah  wheel  43477 Nov 14 16:53 /tmp/full_run2.log
+-rw-r--r--  1 alinikkhah  wheel  38994 Nov 14 16:56 /tmp/full_run3.log
+-rw-r--r--  1 alinikkhah  wheel  39481 Nov 14 16:58 /tmp/full_run4.log
+-rw-r--r--  1 alinikkhah  wheel  39332 Nov 14 17:00 /tmp/full_run5.log
+-rw-r--r--  1 alinikkhah  wheel  39481 Nov 14 17:02 /tmp/full_run6.log
+-rw-r--r--  1 alinikkhah  wheel  39921 Nov 14 17:11 /tmp/full_run7.log
+-rw-r--r--  1 alinikkhah  wheel  40400 Nov 14 17:18 /tmp/full_run8.log
+-rw-r--r--  1 alinikkhah  wheel  14568 Nov 14 18:22 /tmp/m21.log
+-rw-r--r--  1 alinikkhah  wheel  40380 Nov 14 18:22 /tmp/run_final.log
+-rw-r--r--  1 alinikkhah  wheel   5541 Nov 14 18:23 /tmp/run_v2.log
+
+=== Compose directory ===
+total 104
+drwxr-xr-x  13 alinikkhah  staff   416 Nov 14 14:35 .
+drwxr-xr-x   7 alinikkhah  staff   224 Nov 14 13:05 ..
+-rw-------   1 alinikkhah  staff   973 Nov 10 16:35 .env
+-rw-r--r--   1 alinikkhah  staff  1822 Nov 11 21:58 .env.example
+-rw-r--r--   1 alinikkhah  staff  3402 Nov 14 14:06 README.md
+-rw-r--r--   1 alinikkhah  staff  7203 Nov 12 10:44 compose.base.yml
+-rw-r--r--@  1 alinikkhah  staff  2485 Nov 14 18:20 compose.gpu.yml
+-rw-r--r--@  1 alinikkhah  staff  4263 Nov 14 14:10 compose.local.yml
+-rw-r--r--   1 alinikkhah  staff   445 Nov 10 08:02 compose.prod-sim.yml
+-rw-r--r--   1 alinikkhah  staff   921 Nov 10 08:02 compose.stage.yml
+-rw-r--r--   1 alinikkhah  staff  3239 Nov 14 14:35 env.gpu.example
+-rw-r--r--   1 alinikkhah  staff  2354 Nov 14 14:35 env.laptop.example
+-rw-r--r--   1 alinikkhah  staff   936 Nov 14 14:10 litellm.local.yaml
+
+=== Jenkins workspace/builds ===
+total 72
+drwxr-xr-x  9 alinikkhah  staff    288 Nov 14 12:37 .
+drwxr-xr-x  7 alinikkhah  staff    224 Nov 14 13:05 ..
+-rw-r--r--  1 alinikkhah  staff    843 Nov 10 08:02 Dockerfile
+-rw-r--r--@ 1 alinikkhah  staff  11345 Nov 14 14:05 README.md
+-rw-r--r--  1 alinikkhah  staff   1028 Nov 14 12:37 dana-keep-latest.service
+-rw-r--r--  1 alinikkhah  staff    198 Nov 14 12:37 dana-keep-latest.timer
+-rw-r--r--  1 alinikkhah  staff    730 Nov 10 08:02 docker-compose.gpu.yml
+-rw-r--r--  1 alinikkhah  staff   1405 Nov 12 11:22 docker-compose.h200.yml
+-rw-r--r--  1 alinikkhah  staff   1571 Nov 10 08:02 docker-compose.yml
