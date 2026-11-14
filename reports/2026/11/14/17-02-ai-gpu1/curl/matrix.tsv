@@ -1,0 +1,14 @@
+port	service	http_code	body_preview
+18000	gemma	000	
+9000	manager	200	
+8000	kb	200	
+8200	guardrails	200	
+8100	orchestrator	200	
+3000	trace-collector	000	
+3001	langfuse	000	
+13000	webui	200	
+8085	jenkins	200	
+8010	service:8010	200	
+8001	service:8001	200	
+8002	service:8002	200	
+8003	service:8003	200	

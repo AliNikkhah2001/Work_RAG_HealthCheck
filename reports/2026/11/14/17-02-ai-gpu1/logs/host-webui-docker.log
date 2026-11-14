@@ -1,0 +1,88 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.local
+#1 transferring dockerfile: 4.01kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 3.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12-slim-trixie
+#4 DONE 2.1s
+
+#5 [internal] load metadata for ghcr.io/astral-sh/uv:0.12.10
+#5 DONE 2.4s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 273B done
+#6 DONE 0.0s
+
+#7 FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+#7 resolve ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500 0.0s done
+#7 DONE 0.0s
+
+#8 [base  1/12] FROM docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#8 resolve docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 transferring context: 259.72MB 1.6s done
+#9 DONE 1.6s
+
+#10 [base  2/12] WORKDIR /app/backend
+#10 CACHED
+
+#11 [base  3/12] RUN if [ "0" -ne 0 ]; then       if [ "0" -ne 0 ]; then addgroup --gid "0" app; fi;       adduser --uid "0" --gid "0" --home "/root" --disabled-password --no-create-home app;     fi  && mkdir -p "/root/.cache/chroma"  && echo -n 00000000-0000-0000-0000-000000000000 > "/root/.cache/chroma/telemetry_user_id"  && chown -R "0:0" /app "/root"
+#11 CACHED
+
+#12 [base  4/12] RUN if [ "true" = "true" ] && { [ "false" = "true" ] || [ "false" = "true" ]; }; then       echo "USE_SLIM cannot be combined with USE_CUDA or USE_OLLAMA" >&2; exit 1;     fi
+#12 CACHED
+
+#13 [base  5/12] RUN apt-get update  && apt-get install -y --no-install-recommends curl jq ca-certificates bash  && rm -rf /var/lib/apt/lists/*
+#13 CACHED
+
+#14 [base  6/12] COPY --chown=0:0 ./backend/requirements*.txt ./
+#14 CACHED
+
+#15 [base  7/12] RUN --mount=from=ghcr.io/astral-sh/uv:0.12.10,source=/uv,target=/bin/uv     set -e;     if [ "true" = "true" ]; then       uv pip install --system -r requirements-slim.txt --no-cache-dir;     else       pip3 install 'torch<=2.9.1' torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir;       uv pip install --system -r requirements.txt --no-cache-dir;     fi;     mkdir -p /app/backend/data; chown -R "0:0" /app/backend/data/
+#15 CACHED
+
+#16 [base  8/12] COPY --chown=0:0 ./build /app/build
+#16 DONE 1.0s
+
+#17 [base  9/12] COPY --chown=0:0 ./CHANGELOG.md /app/CHANGELOG.md
+#17 DONE 0.1s
+
+#18 [base 10/12] COPY --chown=0:0 ./package.json /app/package.json
+#18 DONE 0.0s
+
+#19 [base 11/12] COPY --chown=0:0 ./backend/ ./
+#19 DONE 0.1s
+
+#20 [base 12/12] RUN chgrp -R 0 /app/backend/open_webui/static  && chmod -R g=u /app/backend/open_webui/static  && if [ "false" = "true" ]; then       chgrp -R 0 /app /root || true;       chmod -R g+rwX /app /root || true;       find /app -type d -exec chmod g+s {} + || true;       find /root -type d -exec chmod g+s {} + || true;     fi
+#20 DONE 0.3s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 9.5s done
+#21 exporting manifest sha256:9e4d91c67a21b534f8cb0ed17695a934c9127d33573ed54036e37bd84f1fe5eb done
+#21 exporting config sha256:46ff136f361a7b8a1142a945c78eb6829afece5f687e6dbce14cb75914393c89 done
+#21 exporting attestation manifest sha256:1de21bf453c5f897066a12fc5c06060534a336adb707947ba041fd4d4ee51128 done
+#21 exporting manifest list sha256:db660d786e6aa7f334e90a968b2fb24007d0ee37fd5c08c40cdb100966c012d6 done
+#21 naming to docker.io/library/rag-webui:local done
+#21 unpacking to docker.io/library/rag-webui:local
+#21 unpacking to docker.io/library/rag-webui:local 1.4s done
+#21 naming to docker.io/library/rag-webui:dana done
+#21 unpacking to docker.io/library/rag-webui:dana done
+#21 DONE 11.0s
+
+ [33m5 warnings found (use docker --debug to expand):
+[0m - UndefinedVar: Usage of undefined variable '$USE_EMBEDDING_MODEL_DOCKER' (line 30)
+ - UndefinedVar: Usage of undefined variable '$USE_RERANKING_MODEL_DOCKER' (line 30)
+ - UndefinedVar: Usage of undefined variable '$USE_AUXILIARY_EMBEDDING_MODEL_DOCKER' (line 30)
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "OPENAI_API_KEY") (line 30)
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "WEBUI_SECRET_KEY") (line 30)

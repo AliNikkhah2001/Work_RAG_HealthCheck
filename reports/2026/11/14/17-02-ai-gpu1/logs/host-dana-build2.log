@@ -1,0 +1,610 @@
+ Image rag-kb:local Building 
+ Image rag-guardrails:local Building 
+ Image rag-orchestrator:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.61kB done
+#1 DONE 0.0s
+
+#2 [kb internal] load build definition from Dockerfile
+#2 transferring dockerfile: 552B done
+#2 DONE 0.0s
+
+#3 [orchestrator internal] load build definition from Dockerfile
+#3 transferring dockerfile: 472B done
+#3 DONE 0.0s
+
+#4 [guardrails internal] load build definition from Dockerfile
+#4 transferring dockerfile: 469B done
+#4 DONE 0.0s
+
+#5 [orchestrator internal] load metadata for docker.io/library/python:3.11-slim
+#5 DONE 0.0s
+
+#6 [kb internal] load .dockerignore
+#6 transferring context: 156B done
+#6 DONE 0.0s
+
+#7 [guardrails internal] load .dockerignore
+#7 transferring context: 116B done
+#7 DONE 0.0s
+
+#8 [orchestrator internal] load .dockerignore
+#8 transferring context: 116B done
+#8 DONE 0.0s
+
+#9 [orchestrator 1/9] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#9 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#9 DONE 0.0s
+
+#10 [guardrails 2/9] WORKDIR /app
+#10 CACHED
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 ...
+
+#12 [guardrails internal] load build context
+#12 transferring context: 2.18kB done
+#12 DONE 0.0s
+
+#13 [orchestrator internal] load build context
+#13 transferring context: 2.80kB done
+#13 DONE 0.0s
+
+#14 [kb internal] load build context
+#14 transferring context: 8.88kB 0.0s done
+#14 DONE 0.0s
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 0.414 Hit:1 http://deb.debian.org/debian trixie InRelease
+#15 0.495 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#15 0.671 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#15 1.288 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#15 8.467 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#15 8.572 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [301 kB]
+#15 9.035 Fetched 10.1 MB in 9s (1150 kB/s)
+#15 9.035 Reading package lists...
+#15 9.445 Reading package lists...
+#15 10.15 Building dependency tree...
+#15 10.27 Reading state information...
+#15 10.47 The following additional packages will be installed:
+#15 10.47   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-14
+#15 10.47   cpp-14-x86-64-linux-gnu cpp-x86-64-linux-gnu g++-14 g++-14-x86-64-linux-gnu
+#15 10.47   g++-x86-64-linux-gnu gcc-14 gcc-14-x86-64-linux-gnu gcc-x86-64-linux-gnu
+#15 10.47   libasan8 libatomic1 libbinutils libbrotli1 libc-dev-bin libc6-dev libcc1-0
+#15 10.47   libcom-err2 libcrypt-dev libctf-nobfd0 libctf0 libcurl4t64 libgcc-14-dev
+#15 10.47   libgnutls30t64 libgomp1 libgprofng0 libgssapi-krb5-2 libhwasan0 libidn2-0
+#15 10.47   libisl23 libitm1 libjansson4 libk5crypto3 libkeyutils1 libkrb5-3
+#15 10.47   libkrb5support0 libldap2 liblsan0 libmpc3 libmpfr6 libnghttp2-14
+#15 10.47   libnghttp3-9 libp11-kit0 libpq5 libpsl5t64 libquadmath0 librtmp1 libsasl2-2
+#15 10.47   libsasl2-modules-db libsframe1 libssh2-1t64 libssl-dev libssl3t64
+#15 10.47   libstdc++-14-dev libtasn1-6 libtsan2 libubsan1 libunistring5 linux-libc-dev
+#15 10.47   openssl openssl-provider-legacy rpcsvc-proto
+#15 10.48 Suggested packages:
+#15 10.48   binutils-doc gprofng-gui binutils-gold cpp-doc gcc-14-locales cpp-14-doc
+#15 10.48   g++-multilib g++-14-multilib gcc-14-doc gcc-multilib make manpages-dev
+#15 10.48   autoconf automake libtool flex bison gdb gcc-doc gcc-14-multilib
+#15 10.48   gdb-x86-64-linux-gnu libc-devtools glibc-doc gnutls-bin krb5-doc krb5-user
+#15 10.48   postgresql-doc-17 libssl-doc libstdc++-14-doc
+#15 10.48 Recommended packages:
+#15 10.48   bash-completion manpages manpages-dev krb5-locales libldap-common
+#15 10.48   publicsuffix libsasl2-modules
+#15 ...
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 0.501 Hit:1 http://deb.debian.org/debian trixie InRelease
+#11 0.584 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#11 0.776 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#11 2.536 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#11 8.869 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#11 8.973 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [301 kB]
+#11 9.919 Fetched 10.1 MB in 10s (1048 kB/s)
+#11 9.919 Reading package lists...
+#11 10.67 Reading package lists...
+#11 ...
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 10.87 The following NEW packages will be installed:
+#15 10.87   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-14
+#15 10.87   cpp-14-x86-64-linux-gnu cpp-x86-64-linux-gnu curl g++ g++-14
+#15 10.87   g++-14-x86-64-linux-gnu g++-x86-64-linux-gnu gcc gcc-14
+#15 10.87   gcc-14-x86-64-linux-gnu gcc-x86-64-linux-gnu libasan8 libatomic1 libbinutils
+#15 10.87   libbrotli1 libc-dev-bin libc6-dev libcc1-0 libcom-err2 libcrypt-dev
+#15 10.87   libctf-nobfd0 libctf0 libcurl4t64 libgcc-14-dev libgnutls30t64 libgomp1
+#15 10.87   libgprofng0 libgssapi-krb5-2 libhwasan0 libidn2-0 libisl23 libitm1
+#15 10.87   libjansson4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap2
+#15 10.87   liblsan0 libmpc3 libmpfr6 libnghttp2-14 libnghttp3-9 libp11-kit0 libpq-dev
+#15 10.87   libpq5 libpsl5t64 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db
+#15 10.87   libsframe1 libssh2-1t64 libssl-dev libstdc++-14-dev libtasn1-6 libtsan2
+#15 10.87   libubsan1 libunistring5 linux-libc-dev rpcsvc-proto
+#15 10.88 The following packages will be upgraded:
+#15 10.88   libssl3t64 openssl openssl-provider-legacy
+#15 11.01 3 upgraded, 66 newly installed, 0 to remove and 7 not upgraded.
+#15 11.01 Need to get 84.2 MB of archives.
+#15 11.01 After this operation, 310 MB of additional disk space will be used.
+#15 11.01 Get:1 http://deb.debian.org/debian-security trixie-security/main amd64 openssl-provider-legacy amd64 3.5.7-1~deb13u3 [316 kB]
+#15 11.32 Get:2 http://deb.debian.org/debian-security trixie-security/main amd64 libssl3t64 amd64 3.5.7-1~deb13u3 [2458 kB]
+#15 14.53 Get:3 http://deb.debian.org/debian trixie/main amd64 libsframe1 amd64 2.44-3 [78.4 kB]
+#15 14.71 Get:4 http://deb.debian.org/debian trixie/main amd64 binutils-common amd64 2.44-3 [2509 kB]
+#15 17.16 Get:5 http://deb.debian.org/debian trixie/main amd64 libbinutils amd64 2.44-3 [534 kB]
+#15 17.65 Get:6 http://deb.debian.org/debian trixie/main amd64 libgprofng0 amd64 2.44-3 [808 kB]
+#15 ...
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 10.67 Reading package lists...
+#11 11.39 Building dependency tree...
+#11 11.52 Reading state information...
+#11 11.74 The following additional packages will be installed:
+#11 11.74   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-14
+#11 11.74   cpp-14-x86-64-linux-gnu cpp-x86-64-linux-gnu gcc-14 gcc-14-x86-64-linux-gnu
+#11 11.74   gcc-x86-64-linux-gnu libasan8 libatomic1 libbinutils libcc1-0 libctf-nobfd0
+#11 11.74   libctf0 libgcc-14-dev libgomp1 libgprofng0 libhwasan0 libisl23 libitm1
+#11 11.74   libjansson4 liblsan0 libmpc3 libmpfr6 libquadmath0 libsframe1 libtsan2
+#11 11.74   libubsan1
+#11 11.75 Suggested packages:
+#11 11.75   binutils-doc gprofng-gui binutils-gold cpp-doc gcc-14-locales cpp-14-doc
+#11 11.75   gcc-multilib make manpages-dev autoconf automake libtool flex bison gdb
+#11 11.75   gcc-doc gcc-14-multilib gcc-14-doc gdb-x86-64-linux-gnu
+#11 11.75 Recommended packages:
+#11 11.75   libc6-dev | libc-dev libc6-dev libc-dev
+#11 11.89 The following NEW packages will be installed:
+#11 11.89   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-14
+#11 11.89   cpp-14-x86-64-linux-gnu cpp-x86-64-linux-gnu gcc gcc-14
+#11 11.89   gcc-14-x86-64-linux-gnu gcc-x86-64-linux-gnu libasan8 libatomic1 libbinutils
+#11 11.89   libcc1-0 libctf-nobfd0 libctf0 libgcc-14-dev libgomp1 libgprofng0 libhwasan0
+#11 11.89   libisl23 libitm1 libjansson4 liblsan0 libmpc3 libmpfr6 libquadmath0
+#11 11.89   libsframe1 libtsan2 libubsan1
+#11 12.92 0 upgraded, 31 newly installed, 0 to remove and 10 not upgraded.
+#11 12.92 Need to get 51.9 MB of archives.
+#11 12.92 After this operation, 192 MB of additional disk space will be used.
+#11 12.92 Get:1 http://deb.debian.org/debian trixie/main amd64 libsframe1 amd64 2.44-3 [78.4 kB]
+#11 13.10 Get:2 http://deb.debian.org/debian trixie/main amd64 binutils-common amd64 2.44-3 [2509 kB]
+#11 16.20 Get:3 http://deb.debian.org/debian trixie/main amd64 libbinutils amd64 2.44-3 [534 kB]
+#11 16.71 Get:4 http://deb.debian.org/debian trixie/main amd64 libgprofng0 amd64 2.44-3 [808 kB]
+#11 17.46 Get:5 http://deb.debian.org/debian trixie/main amd64 libctf-nobfd0 amd64 2.44-3 [156 kB]
+#11 18.00 Get:6 http://deb.debian.org/debian trixie/main amd64 libctf0 amd64 2.44-3 [88.6 kB]
+#11 19.04 Get:7 http://deb.debian.org/debian trixie/main amd64 libjansson4 amd64 2.14-2+b3 [39.8 kB]
+#11 ...
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 19.06 Get:7 http://deb.debian.org/debian trixie/main amd64 libctf-nobfd0 amd64 2.44-3 [156 kB]
+#15 19.43 Get:8 http://deb.debian.org/debian trixie/main amd64 libctf0 amd64 2.44-3 [88.6 kB]
+#15 20.08 Get:9 http://deb.debian.org/debian trixie/main amd64 libjansson4 amd64 2.14-2+b3 [39.8 kB]
+#15 20.20 Get:10 http://deb.debian.org/debian trixie/main amd64 binutils-x86-64-linux-gnu amd64 2.44-3 [1014 kB]
+#15 21.52 Get:11 http://deb.debian.org/debian trixie/main amd64 binutils amd64 2.44-3 [265 kB]
+#15 22.68 Get:12 http://deb.debian.org/debian trixie/main amd64 libisl23 amd64 0.27-1 [659 kB]
+#15 24.54 Get:13 http://deb.debian.org/debian trixie/main amd64 libmpfr6 amd64 4.2.2-1 [729 kB]
+#15 27.36 Get:14 http://deb.debian.org/debian trixie/main amd64 libmpc3 amd64 1.3.1-1+b3 [52.2 kB]
+#15 28.98 Get:15 http://deb.debian.org/debian trixie/main amd64 cpp-14-x86-64-linux-gnu amd64 14.2.0-19 [11.0 MB]
+#15 ...
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 19.47 Get:8 http://deb.debian.org/debian trixie/main amd64 binutils-x86-64-linux-gnu amd64 2.44-3 [1014 kB]
+#11 20.74 Get:9 http://deb.debian.org/debian trixie/main amd64 binutils amd64 2.44-3 [265 kB]
+#11 21.06 Get:10 http://deb.debian.org/debian trixie/main amd64 libisl23 amd64 0.27-1 [659 kB]
+#11 22.14 Get:11 http://deb.debian.org/debian trixie/main amd64 libmpfr6 amd64 4.2.2-1 [729 kB]
+#11 24.01 Get:12 http://deb.debian.org/debian trixie/main amd64 libmpc3 amd64 1.3.1-1+b3 [52.2 kB]
+#11 25.72 Get:13 http://deb.debian.org/debian trixie/main amd64 cpp-14-x86-64-linux-gnu amd64 14.2.0-19 [11.0 MB]
+#11 46.78 Get:14 http://deb.debian.org/debian trixie/main amd64 cpp-14 amd64 14.2.0-19 [1280 B]
+#11 48.06 Get:15 http://deb.debian.org/debian trixie/main amd64 cpp-x86-64-linux-gnu amd64 4:14.2.0-1 [4840 B]
+#11 49.42 Get:16 http://deb.debian.org/debian trixie/main amd64 cpp amd64 4:14.2.0-1 [1568 B]
+#11 ...
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 49.58 Get:16 http://deb.debian.org/debian trixie/main amd64 cpp-14 amd64 14.2.0-19 [1280 B]
+#15 50.92 Get:17 http://deb.debian.org/debian trixie/main amd64 cpp-x86-64-linux-gnu amd64 4:14.2.0-1 [4840 B]
+#15 53.32 Get:18 http://deb.debian.org/debian trixie/main amd64 cpp amd64 4:14.2.0-1 [1568 B]
+#15 54.98 Get:19 http://deb.debian.org/debian-security trixie-security/main amd64 libbrotli1 amd64 1.1.0-2+deb13u1 [304 kB]
+#15 55.39 Get:20 http://deb.debian.org/debian trixie/main amd64 libkrb5support0 amd64 1.21.3-5+deb13u1 [33.1 kB]
+#15 57.68 Get:21 http://deb.debian.org/debian trixie/main amd64 libcom-err2 amd64 1.47.2-3+b12 [25.0 kB]
+#15 58.97 Get:22 http://deb.debian.org/debian trixie/main amd64 libk5crypto3 amd64 1.21.3-5+deb13u1 [81.2 kB]
+#15 59.24 Get:23 http://deb.debian.org/debian trixie/main amd64 libkeyutils1 amd64 1.6.3-6 [9456 B]
+#15 59.34 Get:24 http://deb.debian.org/debian trixie/main amd64 libkrb5-3 amd64 1.21.3-5+deb13u1 [326 kB]
+#15 60.66 Get:25 http://deb.debian.org/debian trixie/main amd64 libgssapi-krb5-2 amd64 1.21.3-5+deb13u1 [138 kB]
+#15 ...
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 50.74 Get:17 http://deb.debian.org/debian trixie/main amd64 libcc1-0 amd64 14.2.0-19 [42.8 kB]
+#11 52.91 Get:18 http://deb.debian.org/debian trixie/main amd64 libgomp1 amd64 14.2.0-19 [137 kB]
+#11 54.94 Get:19 http://deb.debian.org/debian trixie/main amd64 libitm1 amd64 14.2.0-19 [26.0 kB]
+#11 55.29 Get:20 http://deb.debian.org/debian trixie/main amd64 libatomic1 amd64 14.2.0-19 [9308 B]
+#11 55.41 Get:21 http://deb.debian.org/debian trixie/main amd64 libasan8 amd64 14.2.0-19 [2725 kB]
+#11 59.63 Get:22 http://deb.debian.org/debian trixie/main amd64 liblsan0 amd64 14.2.0-19 [1204 kB]
+#11 60.88 Get:23 http://deb.debian.org/debian trixie/main amd64 libtsan2 amd64 14.2.0-19 [2460 kB]
+#11 ...
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 62.38 Get:26 http://deb.debian.org/debian trixie/main amd64 libunistring5 amd64 1.3-2 [477 kB]
+#15 63.09 Get:27 http://deb.debian.org/debian trixie/main amd64 libidn2-0 amd64 2.3.8-2 [109 kB]
+#15 63.24 Get:28 http://deb.debian.org/debian trixie/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-9 [19.8 kB]
+#15 63.35 Get:29 http://deb.debian.org/debian trixie/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-9 [57.5 kB]
+#15 64.08 Get:30 http://deb.debian.org/debian trixie/main amd64 libldap2 amd64 2.6.10+dfsg-1 [194 kB]
+#15 65.05 Get:31 http://deb.debian.org/debian trixie/main amd64 libnghttp2-14 amd64 1.64.0-1.1+deb13u1 [76.2 kB]
+#15 65.17 Get:32 http://deb.debian.org/debian trixie/main amd64 libnghttp3-9 amd64 1.8.0-1 [67.7 kB]
+#15 65.35 Get:33 http://deb.debian.org/debian trixie/main amd64 libpsl5t64 amd64 0.21.2-1.1+b1 [57.2 kB]
+#15 65.59 Get:34 http://deb.debian.org/debian trixie/main amd64 libp11-kit0 amd64 0.25.5-3 [425 kB]
+#15 66.87 Get:35 http://deb.debian.org/debian trixie/main amd64 libtasn1-6 amd64 4.20.0-2+deb13u1 [50.1 kB]
+#15 67.18 Get:36 http://deb.debian.org/debian trixie/main amd64 libgnutls30t64 amd64 3.8.9-3+deb13u4 [1469 kB]
+#15 68.98 Get:37 http://deb.debian.org/debian trixie/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b5 [58.8 kB]
+#15 70.24 Get:38 http://deb.debian.org/debian trixie/main amd64 libssh2-1t64 amd64 1.11.1-1+deb13u2 [245 kB]
+#15 72.17 Get:39 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl4t64 amd64 8.14.1-2+deb13u7 [392 kB]
+#15 ...
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 63.45 Get:24 http://deb.debian.org/debian trixie/main amd64 libubsan1 amd64 14.2.0-19 [1074 kB]
+#11 64.33 Get:25 http://deb.debian.org/debian trixie/main amd64 libhwasan0 amd64 14.2.0-19 [1488 kB]
+#11 65.45 Get:26 http://deb.debian.org/debian trixie/main amd64 libquadmath0 amd64 14.2.0-19 [145 kB]
+#11 65.72 Get:27 http://deb.debian.org/debian trixie/main amd64 libgcc-14-dev amd64 14.2.0-19 [2672 kB]
+#11 67.87 Get:28 http://deb.debian.org/debian trixie/main amd64 gcc-14-x86-64-linux-gnu amd64 14.2.0-19 [21.4 MB]
+#11 ...
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 74.45 Get:40 http://deb.debian.org/debian-security trixie-security/main amd64 curl amd64 8.14.1-2+deb13u7 [270 kB]
+#15 76.69 Get:41 http://deb.debian.org/debian trixie/main amd64 libcc1-0 amd64 14.2.0-19 [42.8 kB]
+#15 79.59 Get:42 http://deb.debian.org/debian trixie/main amd64 libgomp1 amd64 14.2.0-19 [137 kB]
+#15 82.34 Get:43 http://deb.debian.org/debian trixie/main amd64 libitm1 amd64 14.2.0-19 [26.0 kB]
+#15 84.24 Get:44 http://deb.debian.org/debian trixie/main amd64 libatomic1 amd64 14.2.0-19 [9308 B]
+#15 85.75 Get:45 http://deb.debian.org/debian trixie/main amd64 libasan8 amd64 14.2.0-19 [2725 kB]
+#15 90.89 Get:46 http://deb.debian.org/debian trixie/main amd64 liblsan0 amd64 14.2.0-19 [1204 kB]
+#15 94.33 Get:47 http://deb.debian.org/debian trixie/main amd64 libtsan2 amd64 14.2.0-19 [2460 kB]
+#15 ...
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 94.81 Get:29 http://deb.debian.org/debian trixie/main amd64 gcc-14 amd64 14.2.0-19 [540 kB]
+#11 98.59 Get:30 http://deb.debian.org/debian trixie/main amd64 gcc-x86-64-linux-gnu amd64 4:14.2.0-1 [1436 B]
+#11 100.6 Get:31 http://deb.debian.org/debian trixie/main amd64 gcc amd64 4:14.2.0-1 [5136 B]
+#11 100.9 debconf: unable to initialize frontend: Dialog
+#11 100.9 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 100.9 debconf: falling back to frontend: Readline
+#11 100.9 debconf: unable to initialize frontend: Readline
+#11 100.9 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 31.)
+#11 100.9 debconf: falling back to frontend: Teletype
+#11 100.9 debconf: unable to initialize frontend: Teletype
+#11 100.9 debconf: (This frontend requires a controlling tty.)
+#11 100.9 debconf: falling back to frontend: Noninteractive
+#11 ...
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 101.5 Get:48 http://deb.debian.org/debian trixie/main amd64 libubsan1 amd64 14.2.0-19 [1074 kB]
+#15 105.5 Get:49 http://deb.debian.org/debian trixie/main amd64 libhwasan0 amd64 14.2.0-19 [1488 kB]
+#15 ...
+
+#11 [orchestrator 3/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#11 102.6 Fetched 51.9 MB in 1min 29s (585 kB/s)
+#11 102.6 Selecting previously unselected package libsframe1:amd64.
+#11 102.6 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5660 files and directories currently installed.)
+#11 102.6 Preparing to unpack .../00-libsframe1_2.44-3_amd64.deb ...
+#11 102.6 Unpacking libsframe1:amd64 (2.44-3) ...
+#11 102.7 Selecting previously unselected package binutils-common:amd64.
+#11 102.7 Preparing to unpack .../01-binutils-common_2.44-3_amd64.deb ...
+#11 102.7 Unpacking binutils-common:amd64 (2.44-3) ...
+#11 103.0 Selecting previously unselected package libbinutils:amd64.
+#11 103.0 Preparing to unpack .../02-libbinutils_2.44-3_amd64.deb ...
+#11 103.0 Unpacking libbinutils:amd64 (2.44-3) ...
+#11 103.1 Selecting previously unselected package libgprofng0:amd64.
+#11 103.1 Preparing to unpack .../03-libgprofng0_2.44-3_amd64.deb ...
+#11 103.1 Unpacking libgprofng0:amd64 (2.44-3) ...
+#11 103.2 Selecting previously unselected package libctf-nobfd0:amd64.
+#11 103.2 Preparing to unpack .../04-libctf-nobfd0_2.44-3_amd64.deb ...
+#11 103.2 Unpacking libctf-nobfd0:amd64 (2.44-3) ...
+#11 103.3 Selecting previously unselected package libctf0:amd64.
+#11 103.3 Preparing to unpack .../05-libctf0_2.44-3_amd64.deb ...
+#11 103.3 Unpacking libctf0:amd64 (2.44-3) ...
+#11 103.4 Selecting previously unselected package libjansson4:amd64.
+#11 103.4 Preparing to unpack .../06-libjansson4_2.14-2+b3_amd64.deb ...
+#11 103.4 Unpacking libjansson4:amd64 (2.14-2+b3) ...
+#11 103.5 Selecting previously unselected package binutils-x86-64-linux-gnu.
+#11 103.5 Preparing to unpack .../07-binutils-x86-64-linux-gnu_2.44-3_amd64.deb ...
+#11 103.5 Unpacking binutils-x86-64-linux-gnu (2.44-3) ...
+#11 103.6 Selecting previously unselected package binutils.
+#11 103.6 Preparing to unpack .../08-binutils_2.44-3_amd64.deb ...
+#11 103.6 Unpacking binutils (2.44-3) ...
+#11 103.7 Selecting previously unselected package libisl23:amd64.
+#11 103.7 Preparing to unpack .../09-libisl23_0.27-1_amd64.deb ...
+#11 103.7 Unpacking libisl23:amd64 (0.27-1) ...
+#11 103.9 Selecting previously unselected package libmpfr6:amd64.
+#11 103.9 Preparing to unpack .../10-libmpfr6_4.2.2-1_amd64.deb ...
+#11 103.9 Unpacking libmpfr6:amd64 (4.2.2-1) ...
+#11 104.0 Selecting previously unselected package libmpc3:amd64.
+#11 104.0 Preparing to unpack .../11-libmpc3_1.3.1-1+b3_amd64.deb ...
+#11 104.0 Unpacking libmpc3:amd64 (1.3.1-1+b3) ...
+#11 104.0 Selecting previously unselected package cpp-14-x86-64-linux-gnu.
+#11 104.0 Preparing to unpack .../12-cpp-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
+#11 104.0 Unpacking cpp-14-x86-64-linux-gnu (14.2.0-19) ...
+#11 104.7 Selecting previously unselected package cpp-14.
+#11 104.7 Preparing to unpack .../13-cpp-14_14.2.0-19_amd64.deb ...
+#11 104.7 Unpacking cpp-14 (14.2.0-19) ...
+#11 104.8 Selecting previously unselected package cpp-x86-64-linux-gnu.
+#11 104.8 Preparing to unpack .../14-cpp-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
+#11 104.8 Unpacking cpp-x86-64-linux-gnu (4:14.2.0-1) ...
+#11 104.9 Selecting previously unselected package cpp.
+#11 104.9 Preparing to unpack .../15-cpp_4%3a14.2.0-1_amd64.deb ...
+#11 104.9 Unpacking cpp (4:14.2.0-1) ...
+#11 105.0 Selecting previously unselected package libcc1-0:amd64.
+#11 105.0 Preparing to unpack .../16-libcc1-0_14.2.0-19_amd64.deb ...
+#11 105.0 Unpacking libcc1-0:amd64 (14.2.0-19) ...
+#11 105.1 Selecting previously unselected package libgomp1:amd64.
+#11 105.1 Preparing to unpack .../17-libgomp1_14.2.0-19_amd64.deb ...
+#11 105.1 Unpacking libgomp1:amd64 (14.2.0-19) ...
+#11 105.1 Selecting previously unselected package libitm1:amd64.
+#11 105.1 Preparing to unpack .../18-libitm1_14.2.0-19_amd64.deb ...
+#11 105.1 Unpacking libitm1:amd64 (14.2.0-19) ...
+#11 105.2 Selecting previously unselected package libatomic1:amd64.
+#11 105.2 Preparing to unpack .../19-libatomic1_14.2.0-19_amd64.deb ...
+#11 105.2 Unpacking libatomic1:amd64 (14.2.0-19) ...
+#11 105.3 Selecting previously unselected package libasan8:amd64.
+#11 105.3 Preparing to unpack .../20-libasan8_14.2.0-19_amd64.deb ...
+#11 105.3 Unpacking libasan8:amd64 (14.2.0-19) ...
+#11 105.6 Selecting previously unselected package liblsan0:amd64.
+#11 105.6 Preparing to unpack .../21-liblsan0_14.2.0-19_amd64.deb ...
+#11 105.6 Unpacking liblsan0:amd64 (14.2.0-19) ...
+#11 105.7 Selecting previously unselected package libtsan2:amd64.
+#11 105.7 Preparing to unpack .../22-libtsan2_14.2.0-19_amd64.deb ...
+#11 105.7 Unpacking libtsan2:amd64 (14.2.0-19) ...
+#11 106.0 Selecting previously unselected package libubsan1:amd64.
+#11 106.0 Preparing to unpack .../23-libubsan1_14.2.0-19_amd64.deb ...
+#11 106.0 Unpacking libubsan1:amd64 (14.2.0-19) ...
+#11 106.1 Selecting previously unselected package libhwasan0:amd64.
+#11 106.1 Preparing to unpack .../24-libhwasan0_14.2.0-19_amd64.deb ...
+#11 106.1 Unpacking libhwasan0:amd64 (14.2.0-19) ...
+#11 106.3 Selecting previously unselected package libquadmath0:amd64.
+#11 106.3 Preparing to unpack .../25-libquadmath0_14.2.0-19_amd64.deb ...
+#11 106.3 Unpacking libquadmath0:amd64 (14.2.0-19) ...
+#11 106.4 Selecting previously unselected package libgcc-14-dev:amd64.
+#11 106.4 Preparing to unpack .../26-libgcc-14-dev_14.2.0-19_amd64.deb ...
+#11 106.4 Unpacking libgcc-14-dev:amd64 (14.2.0-19) ...
+#11 106.6 Selecting previously unselected package gcc-14-x86-64-linux-gnu.
+#11 106.6 Preparing to unpack .../27-gcc-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
+#11 106.6 Unpacking gcc-14-x86-64-linux-gnu (14.2.0-19) ...
+#11 107.4 Selecting previously unselected package gcc-14.
+#11 107.4 Preparing to unpack .../28-gcc-14_14.2.0-19_amd64.deb ...
+#11 107.4 Unpacking gcc-14 (14.2.0-19) ...
+#11 107.5 Selecting previously unselected package gcc-x86-64-linux-gnu.
+#11 107.5 Preparing to unpack .../29-gcc-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
+#11 107.5 Unpacking gcc-x86-64-linux-gnu (4:14.2.0-1) ...
+#11 107.6 Selecting previously unselected package gcc.
+#11 107.6 Preparing to unpack .../30-gcc_4%3a14.2.0-1_amd64.deb ...
+#11 107.6 Unpacking gcc (4:14.2.0-1) ...
+#11 107.7 Setting up binutils-common:amd64 (2.44-3) ...
+#11 107.7 Setting up libctf-nobfd0:amd64 (2.44-3) ...
+#11 107.7 Setting up libgomp1:amd64 (14.2.0-19) ...
+#11 107.7 Setting up libsframe1:amd64 (2.44-3) ...
+#11 107.7 Setting up libjansson4:amd64 (2.14-2+b3) ...
+#11 107.7 Setting up libmpfr6:amd64 (4.2.2-1) ...
+#11 107.7 Setting up libquadmath0:amd64 (14.2.0-19) ...
+#11 107.7 Setting up libmpc3:amd64 (1.3.1-1+b3) ...
+#11 107.7 Setting up libatomic1:amd64 (14.2.0-19) ...
+#11 107.7 Setting up libubsan1:amd64 (14.2.0-19) ...
+#11 107.7 Setting up libhwasan0:amd64 (14.2.0-19) ...
+#11 107.7 Setting up libasan8:amd64 (14.2.0-19) ...
+#11 107.7 Setting up libtsan2:amd64 (14.2.0-19) ...
+#11 107.8 Setting up libbinutils:amd64 (2.44-3) ...
+#11 107.8 Setting up libisl23:amd64 (0.27-1) ...
+#11 107.8 Setting up libcc1-0:amd64 (14.2.0-19) ...
+#11 107.8 Setting up liblsan0:amd64 (14.2.0-19) ...
+#11 107.8 Setting up libitm1:amd64 (14.2.0-19) ...
+#11 107.8 Setting up libctf0:amd64 (2.44-3) ...
+#11 107.8 Setting up libgprofng0:amd64 (2.44-3) ...
+#11 107.8 Setting up cpp-14-x86-64-linux-gnu (14.2.0-19) ...
+#11 107.8 Setting up cpp-14 (14.2.0-19) ...
+#11 107.8 Setting up libgcc-14-dev:amd64 (14.2.0-19) ...
+#11 107.8 Setting up binutils-x86-64-linux-gnu (2.44-3) ...
+#11 107.8 Setting up cpp-x86-64-linux-gnu (4:14.2.0-1) ...
+#11 107.8 Setting up binutils (2.44-3) ...
+#11 107.8 Setting up cpp (4:14.2.0-1) ...
+#11 107.9 Setting up gcc-14-x86-64-linux-gnu (14.2.0-19) ...
+#11 107.9 Setting up gcc-x86-64-linux-gnu (4:14.2.0-1) ...
+#11 107.9 Setting up gcc-14 (14.2.0-19) ...
+#11 107.9 Setting up gcc (4:14.2.0-1) ...
+#11 108.0 Processing triggers for libc-bin (2.41-12+deb13u4) ...
+#11 DONE 108.1s
+
+#16 [guardrails 4/9] COPY pyproject.toml README.md ./
+#16 ...
+
+#17 [orchestrator 4/7] COPY pyproject.toml README.md ./
+#17 DONE 0.2s
+
+#16 [guardrails 4/9] COPY pyproject.toml README.md ./
+#16 DONE 0.2s
+
+#18 [orchestrator 5/7] COPY src/work_rag_orchestrator ./work_rag_orchestrator
+#18 DONE 0.1s
+
+#19 [guardrails 5/9] COPY src/work_rag_guardrails ./work_rag_guardrails
+#19 DONE 0.1s
+
+#20 [guardrails 6/9] COPY config ./config
+#20 DONE 0.0s
+
+#21 [orchestrator 6/7] COPY scripts ./scripts
+#21 DONE 0.1s
+
+#22 [guardrails 7/9] COPY kb ./kb
+#22 DONE 0.0s
+
+#23 [guardrails 8/9] COPY policies ./policies
+#23 DONE 0.0s
+
+#24 [guardrails 9/9] RUN pip install --no-cache-dir --default-timeout=120 -e .
+#24 2.187 Obtaining file:///app
+#24 2.190   Installing build dependencies: started
+#24 ...
+
+#25 [orchestrator 7/7] RUN pip install --no-cache-dir --default-timeout=120 -e .
+#25 2.236 Obtaining file:///app
+#25 2.239   Installing build dependencies: started
+#25 ...
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 110.7 Get:50 http://deb.debian.org/debian trixie/main amd64 libquadmath0 amd64 14.2.0-19 [145 kB]
+#15 112.8 Get:51 http://deb.debian.org/debian trixie/main amd64 libgcc-14-dev amd64 14.2.0-19 [2672 kB]
+#15 119.9 Get:52 http://deb.debian.org/debian trixie/main amd64 gcc-14-x86-64-linux-gnu amd64 14.2.0-19 [21.4 MB]
+#15 144.2 Get:53 http://deb.debian.org/debian trixie/main amd64 gcc-14 amd64 14.2.0-19 [540 kB]
+#15 145.3 Get:54 http://deb.debian.org/debian trixie/main amd64 gcc-x86-64-linux-gnu amd64 4:14.2.0-1 [1436 B]
+#15 145.9 Get:55 http://deb.debian.org/debian trixie/main amd64 gcc amd64 4:14.2.0-1 [5136 B]
+#15 146.0 Get:56 http://deb.debian.org/debian trixie/main amd64 libc-dev-bin amd64 2.41-12+deb13u4 [60.0 kB]
+#15 146.1 Get:57 http://deb.debian.org/debian-security trixie-security/main amd64 linux-libc-dev all 6.12.116-1 [3050 kB]
+#15 ...
+
+#24 [guardrails 9/9] RUN pip install --no-cache-dir --default-timeout=120 -e .
+#24 38.59   Installing build dependencies: finished with status 'done'
+#24 38.59   Checking if build backend supports build_editable: started
+#24 38.65   Checking if build backend supports build_editable: finished with status 'done'
+#24 38.65   Getting requirements to build editable: started
+#24 38.79   Getting requirements to build editable: finished with status 'done'
+#24 38.80   Installing backend dependencies: started
+#24 41.90   Installing backend dependencies: finished with status 'done'
+#24 41.90   Preparing editable metadata (pyproject.toml): started
+#24 42.09   Preparing editable metadata (pyproject.toml): finished with status 'error'
+#24 42.11   error: subprocess-exited-with-error
+#24 42.11   
+#24 42.11   × Preparing editable metadata (pyproject.toml) did not run successfully.
+#24 42.11   │ exit code: 1
+#24 42.11   ╰─> [31 lines of output]
+#24 42.11       Traceback (most recent call last):
+#24 42.11         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 167, in prepare_metadata_for_build_editable
+#24 42.11           hook = backend.prepare_metadata_for_build_editable
+#24 42.11                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#24 42.11       AttributeError: module 'hatchling.build' has no attribute 'prepare_metadata_for_build_editable'
+#24 42.11       
+#24 42.11       During handling of the above exception, another exception occurred:
+#24 42.11       
+#24 42.11       Traceback (most recent call last):
+#24 42.11         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+#24 42.11           main()
+#24 42.11         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+#24 42.11           json_out['return_val'] = hook(**hook_input['kwargs'])
+#24 42.11                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#24 42.11         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 176, in prepare_metadata_for_build_editable
+#24 42.11           whl_basename = build_hook(metadata_directory, config_settings)
+#24 42.11                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#24 42.11         File "/tmp/pip-build-env-roxmocxj/overlay/lib/python3.11/site-packages/hatchling/build.py", line 83, in build_editable
+#24 42.11           return os.path.basename(next(builder.build(directory=wheel_directory, versions=["editable"])))
+#24 42.11                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#24 42.11         File "/tmp/pip-build-env-roxmocxj/overlay/lib/python3.11/site-packages/hatchling/builders/plugin/interface.py", line 166, in build
+#24 42.11           artifact = version_api[version](directory, **build_data)
+#24 42.11                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#24 42.11         File "/tmp/pip-build-env-roxmocxj/overlay/lib/python3.11/site-packages/hatchling/builders/wheel.py", line 547, in build_editable
+#24 42.11           return self.build_editable_detection(directory, **build_data)
+#24 42.11                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#24 42.11         File "/tmp/pip-build-env-roxmocxj/overlay/lib/python3.11/site-packages/hatchling/builders/wheel.py", line 608, in build_editable_detection
+#24 42.11           for included_file in self.recurse_forced_files(self.get_forced_inclusion_map(build_data)):
+#24 42.11         File "/tmp/pip-build-env-roxmocxj/overlay/lib/python3.11/site-packages/hatchling/builders/plugin/interface.py", line 248, in recurse_forced_files
+#24 42.11           raise FileNotFoundError(msg)
+#24 42.11       FileNotFoundError: Forced include not found: /app/src/work_rag_guardrails/fallback_packs
+#24 42.11       [end of output]
+#24 42.11   
+#24 42.11   note: This error originates from a subprocess, and is likely not a problem with pip.
+#24 42.11 error: metadata-generation-failed
+#24 42.11 
+#24 42.11 × Encountered error while generating package metadata.
+#24 42.11 ╰─> See above for output.
+#24 42.11 
+#24 42.11 note: This is an issue with the package mentioned above, not pip.
+#24 42.11 hint: See above for details.
+#24 ...
+
+#25 [orchestrator 7/7] RUN pip install --no-cache-dir --default-timeout=120 -e .
+#25 38.74   Installing build dependencies: finished with status 'done'
+#25 38.74   Checking if build backend supports build_editable: started
+#25 38.80   Checking if build backend supports build_editable: finished with status 'done'
+#25 38.80   Getting requirements to build editable: started
+#25 38.92   Getting requirements to build editable: finished with status 'done'
+#25 38.93   Installing backend dependencies: started
+#25 41.84   Installing backend dependencies: finished with status 'done'
+#25 41.84   Preparing editable metadata (pyproject.toml): started
+#25 42.04   Preparing editable metadata (pyproject.toml): finished with status 'error'
+#25 42.05   error: subprocess-exited-with-error
+#25 42.05   
+#25 42.05   × Preparing editable metadata (pyproject.toml) did not run successfully.
+#25 42.05   │ exit code: 1
+#25 42.05   ╰─> [31 lines of output]
+#25 42.05       Traceback (most recent call last):
+#25 42.05         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 167, in prepare_metadata_for_build_editable
+#25 42.05           hook = backend.prepare_metadata_for_build_editable
+#25 42.05                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#25 42.05       AttributeError: module 'hatchling.build' has no attribute 'prepare_metadata_for_build_editable'
+#25 42.05       
+#25 42.05       During handling of the above exception, another exception occurred:
+#25 42.05       
+#25 42.05       Traceback (most recent call last):
+#25 42.05         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+#25 42.05           main()
+#25 42.05         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+#25 42.05           json_out['return_val'] = hook(**hook_input['kwargs'])
+#25 42.05                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#25 42.05         File "/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 176, in prepare_metadata_for_build_editable
+#25 42.05           whl_basename = build_hook(metadata_directory, config_settings)
+#25 42.05                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#25 42.05         File "/tmp/pip-build-env-i4nhitt_/overlay/lib/python3.11/site-packages/hatchling/build.py", line 83, in build_editable
+#25 42.05           return os.path.basename(next(builder.build(directory=wheel_directory, versions=["editable"])))
+#25 42.05                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#25 42.05         File "/tmp/pip-build-env-i4nhitt_/overlay/lib/python3.11/site-packages/hatchling/builders/plugin/interface.py", line 166, in build
+#25 42.05           artifact = version_api[version](directory, **build_data)
+#25 42.05                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#25 42.05         File "/tmp/pip-build-env-i4nhitt_/overlay/lib/python3.11/site-packages/hatchling/builders/wheel.py", line 547, in build_editable
+#25 42.05           return self.build_editable_detection(directory, **build_data)
+#25 42.05                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#25 42.05         File "/tmp/pip-build-env-i4nhitt_/overlay/lib/python3.11/site-packages/hatchling/builders/wheel.py", line 608, in build_editable_detection
+#25 42.05           for included_file in self.recurse_forced_files(self.get_forced_inclusion_map(build_data)):
+#25 42.05         File "/tmp/pip-build-env-i4nhitt_/overlay/lib/python3.11/site-packages/hatchling/builders/plugin/interface.py", line 248, in recurse_forced_files
+#25 42.05           raise FileNotFoundError(msg)
+#25 42.05       FileNotFoundError: Forced include not found: /app/src/work_rag_orchestrator/fallback_packs
+#25 42.05       [end of output]
+#25 42.05   
+#25 42.05   note: This error originates from a subprocess, and is likely not a problem with pip.
+#25 42.05 error: metadata-generation-failed
+#25 42.05 
+#25 42.05 × Encountered error while generating package metadata.
+#25 42.05 ╰─> See above for output.
+#25 42.05 
+#25 42.05 note: This is an issue with the package mentioned above, not pip.
+#25 42.05 hint: See above for details.
+#25 43.40 
+#25 43.40 [notice] A new release of pip is available: 24.0 -> 26.3
+#25 43.40 [notice] To update, run: pip install --upgrade pip
+#25 ERROR: process "/bin/sh -c pip install --no-cache-dir --default-timeout=120 -e ." did not complete successfully: exit code: 1
+
+#24 [guardrails 9/9] RUN pip install --no-cache-dir --default-timeout=120 -e .
+#24 43.44 
+#24 43.44 [notice] A new release of pip is available: 24.0 -> 26.3
+#24 43.44 [notice] To update, run: pip install --upgrade pip
+#24 CANCELED
+
+#15 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#15 147.8 Get:58 http://deb.debian.org/debian trixie/main amd64 libcrypt-dev amd64 1:4.4.38-1 [119 kB]
+#15 148.2 Get:59 http://deb.debian.org/debian trixie/main amd64 rpcsvc-proto amd64 1.4.3-1 [63.3 kB]
+#15 148.5 Get:60 http://deb.debian.org/debian trixie/main amd64 libc6-dev amd64 2.41-12+deb13u4 [1995 kB]
+#15 150.3 Get:61 http://deb.debian.org/debian trixie/main amd64 libstdc++-14-dev amd64 14.2.0-19 [2376 kB]
+#15 CANCELED
+------
+ > [orchestrator 7/7] RUN pip install --no-cache-dir --default-timeout=120 -e .:
+42.05 error: metadata-generation-failed
+42.05 
+42.05 × Encountered error while generating package metadata.
+42.05 ╰─> See above for output.
+42.05 
+42.05 note: This is an issue with the package mentioned above, not pip.
+42.05 hint: See above for details.
+43.40 
+43.40 [notice] A new release of pip is available: 24.0 -> 26.3
+43.40 [notice] To update, run: pip install --upgrade pip
+------
+Dockerfile:9
+
+--------------------
+
+   7 |     COPY src/work_rag_orchestrator ./work_rag_orchestrator
+
+   8 |     COPY scripts ./scripts
+
+   9 | >>> RUN pip install --no-cache-dir --default-timeout=120 -e .
+
+  10 |     ENV PYTHONPATH=/app:/app/scripts
+
+  11 |     EXPOSE 8100
+
+--------------------
+
+target orchestrator: failed to solve: process "/bin/sh -c pip install --no-cache-dir --default-timeout=120 -e ." did not complete successfully: exit code: 1
+

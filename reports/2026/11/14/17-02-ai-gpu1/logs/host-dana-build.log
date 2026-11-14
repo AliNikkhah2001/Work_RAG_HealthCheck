@@ -1,0 +1,188 @@
+ Image rag-tracing:local Building 
+ Image rag-kb:local Building 
+ Image rag-guardrails:local Building 
+ Image rag-orchestrator:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.16kB done
+#1 DONE 0.0s
+
+#2 [kb internal] load build definition from Dockerfile
+#2 transferring dockerfile: 552B done
+#2 DONE 0.0s
+
+#3 [tracing internal] load build definition from Dockerfile
+#3 transferring dockerfile: 654B done
+#3 DONE 0.0s
+
+#4 [orchestrator internal] load build definition from Dockerfile
+#4 transferring dockerfile: 472B done
+#4 DONE 0.0s
+
+#5 [guardrails internal] load build definition from Dockerfile
+#5 transferring dockerfile: 469B done
+#5 DONE 0.0s
+
+#6 [kb internal] load .dockerignore
+#6 transferring context: 156B done
+#6 DONE 0.0s
+
+#7 [kb internal] load build context
+#7 DONE 0.0s
+
+#8 [orchestrator internal] load metadata for docker.io/library/python:3.11-slim
+#8 DONE 0.0s
+
+#9 [tracing 1/9] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#9 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#9 DONE 0.0s
+
+#10 [tracing internal] load .dockerignore
+#10 transferring context: 2B done
+#10 DONE 0.0s
+
+#11 [guardrails internal] load .dockerignore
+#11 transferring context: 116B done
+#11 DONE 0.0s
+
+#12 [orchestrator internal] load .dockerignore
+#12 transferring context: 116B done
+#12 DONE 0.0s
+
+#9 [guardrails 1/9] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#9 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#9 DONE 0.0s
+
+#13 [tracing 2/9] WORKDIR /app
+#13 CACHED
+
+#14 [orchestrator internal] load build context
+#14 transferring context: 648.73kB done
+#14 DONE 0.0s
+
+#15 [tracing internal] load build context
+#15 transferring context: 84.06kB done
+#15 DONE 0.1s
+
+#16 [guardrails internal] load build context
+#16 transferring context: 404.51kB done
+#16 DONE 0.1s
+
+#7 [kb internal] load build context
+#7 transferring context: 3.23MB 0.1s done
+#7 DONE 0.1s
+
+#17 [tracing 3/5] COPY wheels/ /wheels/
+#17 DONE 0.0s
+
+#18 [guardrails 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#18 1.486 Ign:1 http://deb.debian.org/debian trixie InRelease
+#18 1.486 Ign:2 http://deb.debian.org/debian trixie-updates InRelease
+#18 1.486 Ign:3 http://deb.debian.org/debian-security trixie-security InRelease
+#18 2.487 Ign:3 http://deb.debian.org/debian-security trixie-security InRelease
+#18 2.487 Ign:2 http://deb.debian.org/debian trixie-updates InRelease
+#18 2.487 Ign:1 http://deb.debian.org/debian trixie InRelease
+#18 4.489 Ign:1 http://deb.debian.org/debian trixie InRelease
+#18 4.489 Ign:2 http://deb.debian.org/debian trixie-updates InRelease
+#18 4.489 Ign:3 http://deb.debian.org/debian-security trixie-security InRelease
+#18 ...
+
+#19 [tracing 4/5] RUN if ls /wheels/*.whl >/dev/null 2>&1; then       pip install --no-cache-dir --no-index --find-links=/wheels fastapi uvicorn ;     else       pip install --no-cache-dir --retries 10 --default-timeout=120 fastapi uvicorn ;     fi
+#19 2.438 WARNING: Retrying (Retry(total=9, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x71474350ab50>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/fastapi/
+#19 3.998 WARNING: Retrying (Retry(total=8, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x714743521a10>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/fastapi/
+#19 5.004 WARNING: Retrying (Retry(total=7, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x714741998cd0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/fastapi/
+#19 7.013 WARNING: Retrying (Retry(total=6, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x714741999450>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/fastapi/
+#19 ...
+
+#18 [guardrails 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#18 8.491 Err:3 http://deb.debian.org/debian-security trixie-security InRelease
+#18 8.491   Unable to connect to deb.debian.org:http:
+#18 8.491 Err:2 http://deb.debian.org/debian trixie-updates InRelease
+#18 8.491   Unable to connect to deb.debian.org:http:
+#18 8.491 Err:1 http://deb.debian.org/debian trixie InRelease
+#18 8.491   Could not connect to debian.map.fastlydns.net:80 (151.101.66.132). - connect (101: Network is unreachable) Could not connect to debian.map.fastlydns.net:80 (151.101.194.132). - connect (101: Network is unreachable) Could not connect to debian.map.fastlydns.net:80 (151.101.130.132). - connect (101: Network is unreachable) Could not connect to debian.map.fastlydns.net:80 (151.101.2.132). - connect (101: Network is unreachable) Unable to connect to deb.debian.org:http:
+#18 8.491   Unable to connect to deb.debian.org:http:
+#18 8.526 Reading package lists...
+#18 8.571 W: Failed to fetch http://deb.debian.org/debian/dists/trixie/InRelease  Unable to connect to deb.debian.org:http:
+#18 8.571 W: Failed to fetch http://deb.debian.org/debian/dists/trixie-updates/InRelease  Unable to connect to deb.debian.org:http:
+#18 8.571 W: Failed to fetch http://deb.debian.org/debian-security/dists/trixie-security/InRelease  Unable to connect to deb.debian.org:http:
+#18 8.571 W: Some index files failed to download. They have been ignored, or old ones used instead.
+#18 8.612 Reading package lists...
+#18 8.657 Building dependency tree...
+#18 8.658 Reading state information...
+#18 8.662 E: Unable to locate package gcc
+#18 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+
+#20 [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#20 1.486 Ign:1 http://deb.debian.org/debian trixie InRelease
+#20 1.486 Ign:2 http://deb.debian.org/debian trixie-updates InRelease
+#20 1.486 Ign:3 http://deb.debian.org/debian-security trixie-security InRelease
+#20 2.487 Ign:3 http://deb.debian.org/debian-security trixie-security InRelease
+#20 2.487 Ign:2 http://deb.debian.org/debian trixie-updates InRelease
+#20 2.487 Ign:1 http://deb.debian.org/debian trixie InRelease
+#20 4.490 Ign:1 http://deb.debian.org/debian trixie InRelease
+#20 4.490 Ign:2 http://deb.debian.org/debian trixie-updates InRelease
+#20 4.490 Ign:3 http://deb.debian.org/debian-security trixie-security InRelease
+#20 8.492 Err:3 http://deb.debian.org/debian-security trixie-security InRelease
+#20 8.492   Unable to connect to deb.debian.org:http:
+#20 8.492 Err:2 http://deb.debian.org/debian trixie-updates InRelease
+#20 8.492   Unable to connect to deb.debian.org:http:
+#20 8.492 Err:1 http://deb.debian.org/debian trixie InRelease
+#20 8.492   Could not connect to debian.map.fastlydns.net:80 (151.101.2.132). - connect (101: Network is unreachable) Could not connect to debian.map.fastlydns.net:80 (151.101.66.132). - connect (101: Network is unreachable) Could not connect to debian.map.fastlydns.net:80 (151.101.194.132). - connect (101: Network is unreachable) Could not connect to debian.map.fastlydns.net:80 (151.101.130.132). - connect (101: Network is unreachable) Unable to connect to deb.debian.org:http:
+#20 8.492   Unable to connect to deb.debian.org:http:
+#20 8.526 Reading package lists...
+#20 8.568 W: Failed to fetch http://deb.debian.org/debian/dists/trixie/InRelease  Unable to connect to deb.debian.org:http:
+#20 8.568 W: Failed to fetch http://deb.debian.org/debian/dists/trixie-updates/InRelease  Unable to connect to deb.debian.org:http:
+#20 8.568 W: Failed to fetch http://deb.debian.org/debian-security/dists/trixie-security/InRelease  Unable to connect to deb.debian.org:http:
+#20 8.568 W: Some index files failed to download. They have been ignored, or old ones used instead.
+#20 8.612 Reading package lists...
+#20 8.657 Building dependency tree...
+#20 8.658 Reading state information...
+#20 8.662 E: Unable to locate package gcc
+#20 8.662 E: Unable to locate package libpq-dev
+#20 8.662 E: Unable to locate package curl
+#20 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+
+#19 [tracing 4/5] RUN if ls /wheels/*.whl >/dev/null 2>&1; then       pip install --no-cache-dir --no-index --find-links=/wheels fastapi uvicorn ;     else       pip install --no-cache-dir --retries 10 --default-timeout=120 fastapi uvicorn ;     fi
+#19 CANCELED
+------
+ > [kb 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*:
+8.568 W: Failed to fetch http://deb.debian.org/debian/dists/trixie/InRelease  Unable to connect to deb.debian.org:http:
+8.568 W: Failed to fetch http://deb.debian.org/debian/dists/trixie-updates/InRelease  Unable to connect to deb.debian.org:http:
+8.568 W: Failed to fetch http://deb.debian.org/debian-security/dists/trixie-security/InRelease  Unable to connect to deb.debian.org:http:
+8.568 W: Some index files failed to download. They have been ignored, or old ones used instead.
+8.612 Reading package lists...
+8.657 Building dependency tree...
+8.658 Reading state information...
+8.662 E: Unable to locate package gcc
+8.662 E: Unable to locate package libpq-dev
+8.662 E: Unable to locate package curl
+------
+------
+ > [orchestrator 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*:
+8.491   Unable to connect to deb.debian.org:http:
+8.526 Reading package lists...
+8.571 W: Failed to fetch http://deb.debian.org/debian/dists/trixie/InRelease  Unable to connect to deb.debian.org:http:
+8.571 W: Failed to fetch http://deb.debian.org/debian/dists/trixie-updates/InRelease  Unable to connect to deb.debian.org:http:
+8.571 W: Failed to fetch http://deb.debian.org/debian-security/dists/trixie-security/InRelease  Unable to connect to deb.debian.org:http:
+8.571 W: Some index files failed to download. They have been ignored, or old ones used instead.
+8.612 Reading package lists...
+8.657 Building dependency tree...
+8.658 Reading state information...
+8.662 E: Unable to locate package gcc
+------
+Dockerfile:4
+
+--------------------
+
+   3 |     ENV PIP_DEFAULT_TIMEOUT=120
+
+   4 | >>> RUN apt-get update && apt-get install -y --no-install-recommends gcc \
+
+   5 | >>>     && rm -rf /var/lib/apt/lists/*
+
+   6 |     COPY pyproject.toml README.md ./
+
+--------------------
+
+target orchestrator: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+

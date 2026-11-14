@@ -1,0 +1,116 @@
+
+Security warnings:
+workflow-multibranch (841.vec5b_9e1806ec): SECURITY-3729 Exposure of System-scoped credentials https://www.jenkins.io/security/advisory/2026-09-16/#SECURITY-3729
+pipeline-groovy-lib (798.v5cc688825312): SECURITY-3815 CSRF vulnerability https://www.jenkins.io/security/advisory/2026-09-02/#SECURITY-3815
+pipeline-groovy-lib (798.v5cc688825312): SECURITY-3796 Path traversal vulnerability https://www.jenkins.io/security/advisory/2026-09-16/#SECURITY-3796
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/okhttp-api/5.5.0-242.v1482d48d3ea_3/okhttp-api.hpi, or download plugin okhttp-api to file: Premature end of Content-Length delimited message body (expected: 3,115,428; received: 2,932,477)
+Tried downloading okhttp-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/okhttp-api/5.5.0-242.v1482d48d3ea_3/okhttp-api.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/pipeline-groovy-lib/798.v5cc688825312/pipeline-groovy-lib.hpi, or download plugin pipeline-groovy-lib to file: Premature end of Content-Length delimited message body (expected: 1,410,298; received: 442,109)
+Tried downloading pipeline-groovy-lib from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/pipeline-groovy-lib/798.v5cc688825312/pipeline-groovy-lib.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/pipeline-build-step/601.v6d4c6d1a_9dc7/pipeline-build-step.hpi, or download plugin pipeline-build-step to file: status code: 503, reason phrase: Service Unavailable
+Tried downloading pipeline-build-step from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/pipeline-build-step/601.v6d4c6d1a_9dc7/pipeline-build-step.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/pipeline-groovy-lib/798.v5cc688825312/pipeline-groovy-lib.hpi, or download plugin pipeline-groovy-lib to file: status code: 500, reason phrase: Internal Server Error
+java.util.concurrent.ExecutionException: java.lang.IndexOutOfBoundsException
+	at java.base/java.util.concurrent.ForkJoinTask.reportExecutionException(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinTask.get(Unknown Source)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.downloadPlugins(PluginManager.java:614)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.start(PluginManager.java:243)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.start(PluginManager.java:189)
+	at io.jenkins.tools.pluginmanager.cli.Main.main(Main.java:60)
+Caused by: java.lang.IndexOutOfBoundsException
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinTask.getThrowableException(Unknown Source)
+	... 6 more
+Caused by: java.lang.IndexOutOfBoundsException
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinTask.getThrowableException(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinTask.reportException(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinTask.invoke(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateParallel(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateParallel(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.forEach(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(Unknown Source)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.lambda$downloadPlugins$6(PluginManager.java:607)
+	at java.base/java.util.concurrent.ForkJoinTask$AdaptedRunnableAction.exec(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)
+Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Unknown Source)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Unknown Source)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Unknown Source)
+	at java.base/java.util.Objects.checkIndex(Unknown Source)
+	at java.base/java.util.ArrayList.get(Unknown Source)
+	at org.apache.http.impl.client.RedirectLocations.get(RedirectLocations.java:111)
+	at org.apache.http.impl.client.RedirectLocations.get(RedirectLocations.java:44)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.getViaHttpWithResponseHandler(PluginManager.java:1400)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.downloadHttpToFile(PluginManager.java:1351)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.downloadToFile(PluginManager.java:1306)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.downloadToFile(PluginManager.java:1279)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.downloadPlugin(PluginManager.java:1216)
+	at io.jenkins.tools.pluginmanager.impl.PluginManager.lambda$downloadPlugins$5(PluginManager.java:608)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(Unknown Source)
+	at java.base/java.util.concurrent.CountedCompleter.exec(Unknown Source)
+	... 5 more
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/commons-lang3-api/3.21.0-122.v6a_ea_4fd34049/commons-lang3-api.hpi, or download plugin commons-lang3-api to file: status code: 500, reason phrase: Internal Server Error
+Tried downloading commons-lang3-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/commons-lang3-api/3.21.0-122.v6a_ea_4fd34049/commons-lang3-api.hpi (attempt 1 of 3)
+Nov 11, 2026 6:02:25 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {tls}->http://192.168.203.2:3128->https://updates.jenkins.io:443: The target server failed to respond
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/pipeline-build-step/601.v6d4c6d1a_9dc7/pipeline-build-step.hpi, or download plugin pipeline-build-step to file: status code: 500, reason phrase: Internal Server Error
+Nov 11, 2026 6:02:25 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {tls}->http://192.168.203.2:3128->https://updates.jenkins.io:443
+Unable to move pipeline-milestone-step to the plugin directory
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/commons-lang3-api/3.21.0-122.v6a_ea_4fd34049/commons-lang3-api.hpi, or download plugin commons-lang3-api to file: status code: 500, reason phrase: Internal Server Error
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/scm-api/728.vc30dcf7a_0df5/scm-api.hpi, or download plugin scm-api to file: status code: 500, reason phrase: Internal Server Error
+Tried downloading scm-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/scm-api/728.vc30dcf7a_0df5/scm-api.hpi (attempt 1 of 3)
+Nov 11, 2026 6:02:25 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {tls}->http://192.168.203.2:3128->https://updates.jenkins.io:443: Socket closed
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/json-api/20260814-226.v20f9685d642c/json-api.hpi, or download plugin json-api to file: Request execution failed
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/woodstox-core-api/7.3.0-16.v017f30ed004c/woodstox-core-api.hpi, or download plugin woodstox-core-api to file: Request execution failed
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/github-api/1.330-492.v3941a_032db_2a_/github-api.hpi, or download plugin github-api to file: Request execution failed
+Tried downloading woodstox-core-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/woodstox-core-api/7.3.0-16.v017f30ed004c/woodstox-core-api.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/pipeline-input-step/568.v0c9db_2652741/pipeline-input-step.hpi, or download plugin pipeline-input-step to file: Request execution failed
+Tried downloading json-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/json-api/20260814-226.v20f9685d642c/json-api.hpi (attempt 1 of 3)
+Tried downloading pipeline-milestone-step from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/pipeline-milestone-step/152.v6e22b_8cfc66c/pipeline-milestone-step.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/variant/70.va_d9f17f859e0/variant.hpi, or download plugin variant to file: Request execution failed
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/github/1.47.0/github.hpi, or download plugin github to file: Request execution failed
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/javax-activation-api/1.2.0-8/javax-activation-api.hpi, or download plugin javax-activation-api to file: Request execution failed
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/jaxb/2.3.9-143.v5979df3304e6/jaxb.hpi, or download plugin jaxb to file: Request execution failed
+Tried downloading javax-activation-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/javax-activation-api/1.2.0-8/javax-activation-api.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/branch-api/2.1303.v9f3b_95dc329d/branch-api.hpi, or download plugin branch-api to file: Request execution failed
+Tried downloading github from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/github/1.47.0/github.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/workflow-multibranch/841.vec5b_9e1806ec/workflow-multibranch.hpi, or download plugin workflow-multibranch to file: Request execution failed
+Tried downloading branch-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/branch-api/2.1303.v9f3b_95dc329d/branch-api.hpi (attempt 1 of 3)
+Tried downloading workflow-multibranch from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/workflow-multibranch/841.vec5b_9e1806ec/workflow-multibranch.hpi (attempt 1 of 3)
+Tried downloading jaxb from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/jaxb/2.3.9-143.v5979df3304e6/jaxb.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/asm-api/9.11.1-226.vff833a_e4c58e/asm-api.hpi, or download plugin asm-api to file: Request execution failed
+Tried downloading asm-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/asm-api/9.11.1-226.vff833a_e4c58e/asm-api.hpi (attempt 1 of 3)
+Tried downloading github-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/github-api/1.330-492.v3941a_032db_2a_/github-api.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/pipeline-graph-analysis/254.v0f63a_a_447dca_/pipeline-graph-analysis.hpi, or download plugin pipeline-graph-analysis to file: Request execution failed
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/workflow-api/1429.v7a_1b_efb_a_f7c5/workflow-api.hpi, or download plugin workflow-api to file: Request execution failed
+Tried downloading pipeline-graph-analysis from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/pipeline-graph-analysis/254.v0f63a_a_447dca_/pipeline-graph-analysis.hpi (attempt 1 of 3)
+Tried downloading variant from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/variant/70.va_d9f17f859e0/variant.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/snakeyaml-api/2.7-152.vc672728cf536/snakeyaml-api.hpi, or download plugin snakeyaml-api to file: Request execution failed
+Tried downloading pipeline-input-step from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/pipeline-input-step/568.v0c9db_2652741/pipeline-input-step.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/json-path-api/3.0.0-218.vcd4dd1355de2/json-path-api.hpi, or download plugin json-path-api to file: Request execution failed
+Tried downloading workflow-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/workflow-api/1429.v7a_1b_efb_a_f7c5/workflow-api.hpi (attempt 1 of 3)
+Tried downloading snakeyaml-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/snakeyaml-api/2.7-152.vc672728cf536/snakeyaml-api.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/script-security/1436.v1082791135e4/script-security.hpi, or download plugin script-security to file: Request execution failed
+Tried downloading json-path-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/json-path-api/3.0.0-218.vcd4dd1355de2/json-path-api.hpi (attempt 1 of 3)
+Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/joda-time-api/2.15.1-211.ve499f52b_da_33/joda-time-api.hpi, or download plugin joda-time-api to file: Request execution failed
+Tried downloading script-security from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/script-security/1436.v1082791135e4/script-security.hpi (attempt 1 of 3)
+Tried downloading joda-time-api from https://ftp.halifax.rwth-aachen.de/jenkins/plugins/joda-time-api/2.15.1-211.ve499f52b_da_33/joda-time-api.hpi (attempt 1 of 3)

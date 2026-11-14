@@ -1,0 +1,66 @@
+==> npm ci
+npm WARN using --force Recommended protections disabled.
+npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm WARN deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+npm WARN deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm WARN deprecated glob@8.1.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm WARN deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm WARN deprecated boolean@3.2.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+npm WARN deprecated i18next-parser@9.4.0: Project is deprecated, use i18next-cli instead
+npm WARN deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm WARN deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 1162 packages, and audited 1163 packages in 32s
+
+265 packages are looking for funding
+  run `npm fund` for details
+
+39 vulnerabilities (12 low, 18 moderate, 7 high, 2 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+==> npm run build (host)
+
+> open-webui@0.13.3 prebuild
+> npm run crypto:verify
+
+
+> open-webui@0.13.3 crypto:verify
+> node scripts/encryption/artifact.mjs
+
+Encryption artifact source and checksums verified
+
+> open-webui@0.13.3 build
+> npm run pyodide:fetch && node --max-old-space-size=8192 node_modules/vite/bin/vite.js build
+
+
+> open-webui@0.13.3 pyodide:fetch
+> node scripts/prepare-pyodide.js
+
+/splunk-data/production/Work_Credit-RAG_Phase1/components/webui/node_modules/undici/lib/web/webidl/index.js:537
+webidl.is.File = webidl.util.MakeTypeAssertion(File)
+                                               ^
+
+ReferenceError: File is not defined
+    at Object.<anonymous> (/splunk-data/production/Work_Credit-RAG_Phase1/components/webui/node_modules/undici/lib/web/webidl/index.js:537:48)
+    at Module._compile (node:internal/modules/cjs/loader:1356:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)
+    at Module.load (node:internal/modules/cjs/loader:1197:32)
+    at Module._load (node:internal/modules/cjs/loader:1013:12)
+    at Module.require (node:internal/modules/cjs/loader:1225:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (/splunk-data/production/Work_Credit-RAG_Phase1/components/webui/node_modules/undici/lib/web/fetch/util.js:12:20)
+    at Module._compile (node:internal/modules/cjs/loader:1356:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)
+
+Node.js v18.19.1

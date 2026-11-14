@@ -1,0 +1,2126 @@
+=== All commands run (from shell history) ===
+        flash_attn=True,
+
+
+        offload_kqv=True,
+
+
+        verbose=False
+    )
+
+
+    print("="*70)
+    print("MODEL READY")
+    print(
+        "Context:",
+        llm.n_ctx()
+    )
+    print("="*70)
+
+
+
+    uvicorn.run(
+        app,
+        host=args.host,
+        port=args.port
+    )
+
+
+
+if __name__ == "__main__":
+    main()
+
+PY
+
+$PY -m py_compile scripts/services/llama_chat_server.py
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 --n-gpu-layers -1
+pkill -TERM -f "llama_chat_server.py.*gemma"
+pgrep -af llama_chat_server
+nvidia-smi --query-gpu=index,memory.used,memory.free --format=csv
+grep -n "chat_template_kwargs" scripts/services/llama_chat_server.py
+grep -n "convert_gemma_tool_call" scripts/services/llama_chat_server.py
+BASE=/splunk-data/v1/Work_RAG-Server-Setup
+PY=$BASE/offline-prep/venv/bin/python3.12
+MODEL=$BASE/offline-prep/models/huggingface/bartowski_google_gemma-4-31B-it-GGUF/google_gemma-4-31B-it-Q4_K_M.gguf
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 --n-gpu-layers -1
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 \
+clear
+curl -s http://127.0.0.1:8091/v1/chat/completions -H "Content-Type: application/json" -d '
+{
+"model":"gemma-4-31b-opencode-256k",
+"messages":[
+{
+"role":"user",
+"content":"Calculate 123+456 using calculator."
+}
+],
+"tools":[
+{
+"type":"function",
+"function":{
+"name":"calculator",
+"description":"Calculate arithmetic",
+"parameters":{
+"type":"object",
+"properties":{
+"expression":{
+"type":"string"
+}
+},
+"required":[
+"expression"
+]
+}
+}
+}
+],
+"tool_choice":"auto",
+"temperature":0
+}
+' | jq
+cd /splunk-data/v1/Work_RAG-Server-Setup
+cp scripts/services/llama_chat_server.py scripts/services/llama_chat_server.py.bak
+python3 - <<'PY'
+from pathlib import Path
+
+p = Path("scripts/services/llama_chat_server.py")
+
+s = p.read_text()
+
+start = s.index("def parse_gemma_tool_call")
+end = s.index("\n\n# ---------------------------------------------------------", start)
+
+new_func = r'''
+def parse_gemma_tool_call(content):
+
+    if not content:
+        return None
+
+
+    # Gemma format:
+    #
+    # call:calculator{expression:<|"|>123+456<|"|>}
+    #
+
+    m = re.search(
+        r"call:([A-Za-z0-9_-]+)\{(.*?)\}",
+        content,
+        re.S
+    )
+
+    if not m:
+        return None
+
+
+    name = m.group(1)
+
+    raw = m.group(2)
+
+
+    # Remove Gemma quote markers
+
+    raw = raw.replace(
+        '<|"|>',
+        '"'
+    )
+
+    raw = raw.replace(
+        '<|',
+        ''
+    )
+
+    raw = raw.replace(
+        '|>',
+        ''
+    )
+
+
+    raw = raw.strip()
+
+
+    # Extract key/value
+
+    kv = re.search(
+        r'([A-Za-z0-9_]+)\s*:\s*"?(.+?)"?$',
+        raw,
+        re.S
+    )
+
+
+    if kv:
+
+        key = kv.group(1)
+
+        value = kv.group(2).strip()
+
+
+        # remove trailing quotes
+
+        value = value.strip('"')
+
+
+        arguments = json.dumps(
+            {
+                key: value
+            }
+        )
+
+    else:
+
+        arguments = json.dumps(
+            {
+                "input": raw
+            }
+        )
+
+
+    return [
+        {
+            "id": "call-local-0",
+            "type": "function",
+            "function": {
+                "name": name,
+                "arguments": arguments
+            }
+        }
+    ]
+'''
+
+p.write_text(
+    s[:start] +
+    new_func +
+    s[end:]
+)
+
+print("patched")
+PY
+
+python3 - <<'PY'
+from pathlib import Path
+
+p = Path("scripts/services/llama_chat_server.py")
+
+s = p.read_text()
+
+start = s.index("def parse_gemma_tool_call")
+end = s.index("\n\n# ---------------------------------------------------------", start)
+
+new_func = r'''
+def parse_gemma_tool_call(content):
+
+    if not content:
+        return None
+
+
+    # Gemma format:
+    #
+    # call:calculator{expression:<|"|>123+456<|"|>}
+    #
+
+    m = re.search(
+        r"call:([A-Za-z0-9_-]+)\{(.*?)\}",
+        content,
+        re.S
+    )
+
+    if not m:
+        return None
+
+
+    name = m.group(1)
+
+    raw = m.group(2)
+
+
+    # Remove Gemma quote markers
+
+    raw = raw.replace(
+        '<|"|>',
+        '"'
+    )
+
+    raw = raw.replace(
+        '<|',
+        ''
+    )
+
+    raw = raw.replace(
+        '|>',
+        ''
+    )
+
+
+    raw = raw.strip()
+
+
+    # Extract key/value
+
+    kv = re.search(
+        r'([A-Za-z0-9_]+)\s*:\s*"?(.+?)"?$',
+        raw,
+        re.S
+    )
+
+
+    if kv:
+
+        key = kv.group(1)
+
+        value = kv.group(2).strip()
+
+
+        # remove trailing quotes
+
+        value = value.strip('"')
+
+
+        arguments = json.dumps(
+            {
+                key: value
+            }
+        )
+
+    else:
+
+        arguments = json.dumps(
+            {
+                "input": raw
+            }
+        )
+
+
+    return [
+        {
+            "id": "call-local-0",
+            "type": "function",
+            "function": {
+                "name": name,
+                "arguments": arguments
+            }
+        }
+    ]
+'''
+
+p.write_text(
+    s[:start] +
+    new_func +
+    s[end:]
+)
+
+print("patched")
+PY
+
+cd /splunk-data/v1/Work_RAG-Server-Setup
+python3 - <<'PY'
+from pathlib import Path
+
+p = Path("scripts/services/llama_chat_server.py")
+
+s = p.read_text()
+
+start = s.find("def parse_gemma_tool_call")
+
+if start == -1:
+    raise SystemExit("Could not find parse_gemma_tool_call")
+
+# find next function after it
+end = s.find("\ndef ", start + 10)
+
+if end == -1:
+    raise SystemExit("Could not find next function boundary")
+
+
+new_func = r'''
+def parse_gemma_tool_call(content):
+
+    if not content:
+        return None
+
+
+    match = re.search(
+        r"call:([A-Za-z0-9_-]+)\{(.*?)\}",
+        content,
+        re.S
+    )
+
+
+    if not match:
+        return None
+
+
+    name = match.group(1)
+
+    raw = match.group(2).strip()
+
+
+    # Gemma special quote tokens
+
+    raw = raw.replace(
+        '<|"|>',
+        '"'
+    )
+
+    raw = raw.replace(
+        '<|',
+        ''
+    )
+
+    raw = raw.replace(
+        '|>',
+        ''
+    )
+
+
+    raw = raw.strip()
+
+
+    # Extract:
+    # expression:"123+456"
+
+    m = re.search(
+        r'([A-Za-z0-9_]+)\s*:\s*"?(.*?)"?$',
+        raw,
+        re.S
+    )
+
+
+    if m:
+
+        key = m.group(1)
+
+        value = m.group(2).strip()
+
+        value = value.strip('"')
+
+
+        arguments = json.dumps(
+            {
+                key: value
+            }
+        )
+
+    else:
+
+        arguments = json.dumps(
+            {
+                "input": raw
+            }
+        )
+
+
+    return [
+        {
+            "id": "call-local-0",
+
+            "type": "function",
+
+            "function": {
+
+                "name": name,
+
+                "arguments": arguments
+
+            }
+        }
+    ]
+
+'''
+
+
+p.write_text(
+    s[:start] +
+    new_func +
+    s[end:]
+)
+
+print("patched successfully")
+PY
+
+$PY -m py_compile scripts/services/llama_chat_server.py
+pkill -TERM -f "llama_chat_server.py.*gemma"
+pgrep -af llama_chat_server
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 --n-gpu-layers -1
+curl -s http://127.0.0.1:8091/v1/chat/completions -H "Content-Type: application/json" -d '
+{
+"model":"gemma-4-31b-opencode-256k",
+"messages":[
+{
+"role":"user",
+"content":"Calculate 123+456 using calculator."
+}
+],
+"tools":[
+{
+"type":"function",
+"function":{
+"name":"calculator",
+"description":"Calculate arithmetic",
+"parameters":{
+"type":"object",
+"properties":{
+"expression":{
+"type":"string"
+}
+},
+"required":["expression"]
+}
+}
+}
+],
+"tool_choice":"auto",
+"temperature":0
+}
+' | jqclear
+clear
+opencode
+clear
+ls
+opencode
+clear
+opencode
+OPENCODE_CONFIG_CONTENT="$MCP_OFF"
+opencode --pure ...
+cd /splunk-data/v1/Work_RAG-Server-Setup
+MCP_OFF="$(
+  opencode --pure debug config |
+  jq -c '{
+    mcp: (
+      (.mcp // {})
+      | with_entries(.value = {"enabled": false})
+    )
+  }'
+)"
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode --pure
+cd ..
+ls
+clear
+ls
+cd v1
+clear
+opencode
+cd /splunk-data/v1/Work_RAG-Server-Setup
+MCP_OFF="$(
+  opencode --pure debug config |
+  jq -c '{mcp: ((.mcp // {}) | with_entries(.value = {"enabled": false}))}'
+)"
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode --pure --print-logs --log-level DEBUG 2>&1 | tee /tmp/opencode-tui-debug.log
+clear
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode --pure --print-logs --log-level DEBUG
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode 
+cd ..
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode 
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode   -s ses_fb23c0f4cffe4opztWmXon8boy   --fork
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode -s ses_fb23c0f4cffe4opztWmXon8boy
+sudo kill 1882792
+cd /splunk-data/v1/Work_RAG-Server-Setup
+sudo nohup /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python3.12 scripts/services/llama_chat_server.py   --model /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/models/huggingface/bartowski_google_gemma-4-31B-it-GGUF/google_gemma-4-31B-it-Q4_K_M.gguf   --host 0.0.0.0   --port 8091   --model-id gemma-4-31b-opencode-256k   --n-ctx 262144   --n-gpu-layers -1   >/tmp/gemma-8091.log 2>&1 &
+clear
+clear
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cd ..
+ls
+cd splunk-data/v1
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cd Work_RAG-Server-Setup/
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+clear
+cd /splunk-data/v1/Work_RAG-Server-Setup && cp scripts/services/llama_chat_server.py scripts/services/llama_chat_server.py.backup && cat > scripts/services/llama_chat_server.py <<'PY'
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+OpenAI-compatible chat/completions server backed by llama.cpp.
+"""
+
+import argparse
+import json
+import re
+import time
+import traceback
+import uuid
+from typing import Any, Dict, List, Optional, Tuple
+
+import llama_cpp
+import uvicorn
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse, StreamingResponse
+from llama_cpp import Llama
+
+app = FastAPI()
+
+llm: Optional[Llama] = None
+MODEL_ID = "local-llm"
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "model": MODEL_ID,
+        "context": llm.n_ctx() if llm is not None else None,
+    }
+
+
+@app.get("/v1/models")
+def list_models():
+    return {
+        "object": "list",
+        "data": [
+            {
+                "id": MODEL_ID,
+                "object": "model",
+                "created": int(time.time()),
+                "owned_by": "local",
+            }
+        ],
+    }
+
+
+def content_to_text(content: Any) -> str:
+    if content is None:
+        return ""
+
+    if isinstance(content, str):
+        return content
+
+    if isinstance(content, list):
+        pieces: List[str] = []
+
+        for item in content:
+            if isinstance(item, str):
+                pieces.append(item)
+                continue
+
+            if isinstance(item, dict):
+                item_type = item.get("type")
+
+                if item_type in ("text", "input_text", "output_text"):
+                    pieces.append(str(item.get("text", "")))
+                else:
+                    pieces.append(json.dumps(item, ensure_ascii=False))
+
+                continue
+
+            pieces.append(str(item))
+
+        return "\n".join(pieces)
+
+    if isinstance(content, dict):
+        return json.dumps(content, ensure_ascii=False)
+
+    return str(content)
+
+
+def gemma_argument_value(value: Any) -> str:
+    if isinstance(value, str):
+        escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+        return f'<|"|>{escaped}<|"|>'
+
+    return json.dumps(
+        value,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+
+
+def openai_tool_call_to_gemma(tool_call: Dict[str, Any]) -> str:
+    function = tool_call.get("function") or {}
+
+    name = str(function.get("name") or "unknown_tool")
+    raw_arguments = function.get("arguments", "{}")
+
+    if isinstance(raw_arguments, str):
+        try:
+            arguments = json.loads(raw_arguments)
+        except Exception:
+            arguments = {"input": raw_arguments}
+
+    elif isinstance(raw_arguments, dict):
+        arguments = raw_arguments
+
+    else:
+        arguments = {"input": raw_arguments}
+
+    if not isinstance(arguments, dict):
+        arguments = {"input": arguments}
+
+    rendered_arguments = []
+
+    for key, value in arguments.items():
+        rendered_arguments.append(
+            f"{key}:{gemma_argument_value(value)}"
+        )
+
+    argument_text = ",".join(rendered_arguments)
+
+    return (
+        "<|tool_call>"
+        f"call:{name}"
+        "{"
+        f"{argument_text}"
+        "}"
+        "<tool_call|>"
+    )
+
+
+def normalize_messages_for_gemma(
+    messages: List[Dict[str, Any]]
+) -> List[Dict[str, str]]:
+    normalized: List[Dict[str, str]] = []
+    tool_names: Dict[str, str] = {}
+
+    def append_message(role: str, content: Any):
+        text = content_to_text(content)
+
+        if (
+            normalized
+            and normalized[-1]["role"] == role
+            and role == "user"
+        ):
+            previous = normalized[-1]["content"]
+
+            if previous and text:
+                normalized[-1]["content"] = previous + "\n\n" + text
+            elif text:
+                normalized[-1]["content"] = text
+
+            return
+
+        normalized.append(
+            {
+                "role": role,
+                "content": text,
+            }
+        )
+
+    for message in messages:
+        role = message.get("role")
+        content = message.get("content")
+
+        if role == "assistant" and message.get("tool_calls"):
+            pieces: List[str] = []
+
+            if content:
+                pieces.append(content_to_text(content))
+
+            for tool_call in message["tool_calls"]:
+                call_id = tool_call.get("id")
+                function = tool_call.get("function") or {}
+                tool_name = str(
+                    function.get("name") or "unknown_tool"
+                )
+
+                if call_id:
+                    tool_names[str(call_id)] = tool_name
+
+                pieces.append(
+                    openai_tool_call_to_gemma(tool_call)
+                )
+
+            append_message(
+                "assistant",
+                "\n".join(pieces),
+            )
+
+            continue
+
+        if role in ("tool", "tool_result", "tool_results"):
+            call_id = (
+                message.get("tool_call_id")
+                or message.get("toolCallId")
+                or ""
+            )
+
+            tool_name = (
+                message.get("name")
+                or tool_names.get(str(call_id))
+                or "tool"
+            )
+
+            result_text = content_to_text(content)
+
+            rendered = f"[Tool result: {tool_name}"
+
+            if call_id:
+                rendered += f", id={call_id}"
+
+            rendered += "]\n"
+            rendered += result_text
+            rendered += "\n[End tool result]"
+
+            append_message("user", rendered)
+            continue
+
+        if role in ("system", "user", "assistant"):
+            append_message(str(role), content)
+            continue
+
+        append_message(
+            "user",
+            f"[Message role={role}]\n{content_to_text(content)}",
+        )
+
+    return normalized
+
+
+def extract_balanced_braces(
+    text: str,
+    start: int,
+) -> Tuple[str, int]:
+    if start >= len(text) or text[start] != "{":
+        raise ValueError("expected '{'")
+
+    depth = 0
+    in_string = False
+    escape = False
+    gemma_quote = '<|"|>'
+
+    i = start
+
+    while i < len(text):
+        if text.startswith(gemma_quote, i):
+            in_string = not in_string
+            i += len(gemma_quote)
+            continue
+
+        ch = text[i]
+
+        if escape:
+            escape = False
+            i += 1
+            continue
+
+        if ch == "\\" and in_string:
+            escape = True
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = not in_string
+            i += 1
+            continue
+
+        if not in_string:
+            if ch == "{":
+                depth += 1
+
+            elif ch == "}":
+                depth -= 1
+
+                if depth == 0:
+                    return text[start + 1:i], i + 1
+
+        i += 1
+
+    raise ValueError("unclosed tool-call argument object")
+
+
+def split_top_level(
+    text: str,
+    separator: str = ",",
+) -> List[str]:
+    pieces = []
+    current = []
+
+    brace_depth = 0
+    bracket_depth = 0
+    paren_depth = 0
+
+    in_string = False
+    escape = False
+    gemma_quote = '<|"|>'
+
+    i = 0
+
+    while i < len(text):
+        if text.startswith(gemma_quote, i):
+            in_string = not in_string
+            current.append(gemma_quote)
+            i += len(gemma_quote)
+            continue
+
+        ch = text[i]
+
+        if escape:
+            current.append(ch)
+            escape = False
+            i += 1
+            continue
+
+        if ch == "\\" and in_string:
+            current.append(ch)
+            escape = True
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = not in_string
+            current.append(ch)
+            i += 1
+            continue
+
+        if not in_string:
+            if ch == "{":
+                brace_depth += 1
+            elif ch == "}":
+                brace_depth -= 1
+            elif ch == "[":
+                bracket_depth += 1
+            elif ch == "]":
+                bracket_depth -= 1
+            elif ch == "(":
+                paren_depth += 1
+            elif ch == ")":
+                paren_depth -= 1
+
+            elif (
+                ch == separator
+                and brace_depth == 0
+                and bracket_depth == 0
+                and paren_depth == 0
+            ):
+                piece = "".join(current).strip()
+
+                if piece:
+                    pieces.append(piece)
+
+                current = []
+                i += 1
+                continue
+
+        current.append(ch)
+        i += 1
+
+    final_piece = "".join(current).strip()
+
+    if final_piece:
+        pieces.append(final_piece)
+
+    return pieces
+
+
+def split_key_value(text: str) -> Optional[Tuple[str, str]]:
+    brace_depth = 0
+    bracket_depth = 0
+
+    in_string = False
+    escape = False
+    gemma_quote = '<|"|>'
+
+    i = 0
+
+    while i < len(text):
+        if text.startswith(gemma_quote, i):
+            in_string = not in_string
+            i += len(gemma_quote)
+            continue
+
+        ch = text[i]
+
+        if escape:
+            escape = False
+            i += 1
+            continue
+
+        if ch == "\\" and in_string:
+            escape = True
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = not in_string
+            i += 1
+            continue
+
+        if not in_string:
+            if ch == "{":
+                brace_depth += 1
+            elif ch == "}":
+                brace_depth -= 1
+            elif ch == "[":
+                bracket_depth += 1
+            elif ch == "]":
+                bracket_depth -= 1
+
+            elif (
+                ch == ":"
+                and brace_depth == 0
+                and bracket_depth == 0
+            ):
+                return (
+                    text[:i].strip(),
+                    text[i + 1:].strip(),
+                )
+
+        i += 1
+
+    return None
+
+
+def parse_gemma_value(raw: str) -> Any:
+    raw = raw.strip()
+
+    if (
+        raw.startswith('<|"|>')
+        and raw.endswith('<|"|>')
+        and len(raw) >= 10
+    ):
+        value = raw[len('<|"|>'):-len('<|"|>')]
+
+        return (
+            value
+            .replace('\\"', '"')
+            .replace("\\\\", "\\")
+        )
+
+    try:
+        return json.loads(raw)
+    except Exception:
+        pass
+
+    lower = raw.lower()
+
+    if lower == "true":
+        return True
+
+    if lower == "false":
+        return False
+
+    if lower in ("null", "none"):
+        return None
+
+    try:
+        if "." in raw:
+            return float(raw)
+
+        return int(raw)
+
+    except Exception:
+        pass
+
+    return raw.strip('"')
+
+
+def parse_gemma_arguments(raw_args: str) -> Dict[str, Any]:
+    raw_args = raw_args.strip()
+
+    if not raw_args:
+        return {}
+
+    cleaned = raw_args.replace('<|"|>', '"')
+
+    try:
+        parsed = json.loads("{" + cleaned + "}")
+
+        if isinstance(parsed, dict):
+            return parsed
+
+    except Exception:
+        pass
+
+    result: Dict[str, Any] = {}
+
+    for piece in split_top_level(raw_args):
+        pair = split_key_value(piece)
+
+        if pair is None:
+            continue
+
+        key, raw_value = pair
+        key = key.strip().strip('"')
+
+        result[key] = parse_gemma_value(raw_value)
+
+    if result:
+        return result
+
+    return {"input": raw_args}
+
+
+def parse_gemma_tool_calls(
+    content: Any,
+) -> Optional[List[Dict[str, Any]]]:
+    if not isinstance(content, str):
+        return None
+
+    marker = "<|tool_call>"
+
+    if marker not in content:
+        return None
+
+    calls: List[Dict[str, Any]] = []
+    position = 0
+
+    while True:
+        marker_position = content.find(marker, position)
+
+        if marker_position < 0:
+            break
+
+        cursor = marker_position + len(marker)
+
+        while cursor < len(content) and content[cursor].isspace():
+            cursor += 1
+
+        if content.startswith("call:", cursor):
+            cursor += len("call:")
+
+        name_match = re.match(
+            r"[A-Za-z0-9_.\-]+",
+            content[cursor:],
+        )
+
+        if not name_match:
+            position = cursor + 1
+            continue
+
+        name = name_match.group(0)
+        cursor += len(name)
+
+        while cursor < len(content) and content[cursor].isspace():
+            cursor += 1
+
+        if cursor >= len(content) or content[cursor] != "{":
+            position = cursor + 1
+            continue
+
+        try:
+            raw_args, after_brace = extract_balanced_braces(
+                content,
+                cursor,
+            )
+
+        except Exception as exc:
+            print(
+                f"[tool-parser] failed extracting {name}: {exc}",
+                flush=True,
+            )
+
+            position = cursor + 1
+            continue
+
+        try:
+            arguments = parse_gemma_arguments(raw_args)
+
+        except Exception as exc:
+            print(
+                f"[tool-parser] failed parsing {name}: {exc}",
+                flush=True,
+            )
+
+            arguments = {"input": raw_args}
+
+        calls.append(
+            {
+                "id": "call_" + uuid.uuid4().hex[:24],
+                "type": "function",
+                "function": {
+                    "name": name,
+                    "arguments": json.dumps(
+                        arguments,
+                        ensure_ascii=False,
+                    ),
+                },
+            }
+        )
+
+        end_marker = content.find(
+            "<tool_call|>",
+            after_brace,
+        )
+
+        if end_marker >= 0:
+            position = end_marker + len("<tool_call|>")
+        else:
+            position = after_brace
+
+    return calls or None
+
+
+def normalize_completion(
+    result: Dict[str, Any]
+) -> Tuple[Dict[str, Any], str]:
+    choice = result["choices"][0]
+    message = choice.get("message") or {}
+
+    content = message.get("content")
+    tool_calls = message.get("tool_calls")
+
+    if not tool_calls and content:
+        try:
+            tool_calls = parse_gemma_tool_calls(content)
+        except Exception:
+            traceback.print_exc()
+            tool_calls = None
+
+    normalized_message: Dict[str, Any] = {
+        "role": "assistant",
+        "content": content,
+    }
+
+    if tool_calls:
+        normalized_calls = []
+
+        for tc in tool_calls:
+            tc = dict(tc)
+
+            if not tc.get("id"):
+                tc["id"] = "call_" + uuid.uuid4().hex[:24]
+
+            tc["type"] = "function"
+
+            function = dict(tc.get("function") or {})
+            arguments = function.get("arguments", "{}")
+
+            if not isinstance(arguments, str):
+                arguments = json.dumps(
+                    arguments,
+                    ensure_ascii=False,
+                )
+
+            function["arguments"] = arguments
+            tc["function"] = function
+
+            normalized_calls.append(tc)
+
+        normalized_message["content"] = None
+        normalized_message["tool_calls"] = normalized_calls
+
+        finish_reason = "tool_calls"
+
+    else:
+        finish_reason = choice.get("finish_reason") or "stop"
+
+    return normalized_message, finish_reason
+
+
+def sse_line(data: Any) -> str:
+    if data == "[DONE]":
+        return "data: [DONE]\n\n"
+
+    return (
+        "data: "
+        + json.dumps(data, ensure_ascii=False)
+        + "\n\n"
+    )
+
+
+def stream_completed_response(
+    completion_id: str,
+    created: int,
+    message: Dict[str, Any],
+    finish_reason: str,
+):
+    yield sse_line(
+        {
+            "id": completion_id,
+            "object": "chat.completion.chunk",
+            "created": created,
+            "model": MODEL_ID,
+            "choices": [
+                {
+                    "index": 0,
+                    "delta": {"role": "assistant"},
+                    "finish_reason": None,
+                }
+            ],
+        }
+    )
+
+    if message.get("tool_calls"):
+        tool_deltas = []
+
+        for index, tc in enumerate(message["tool_calls"]):
+            tool_deltas.append(
+                {
+                    "index": index,
+                    "id": tc.get("id"),
+                    "type": "function",
+                    "function": {
+                        "name": tc.get(
+                            "function",
+                            {},
+                        ).get("name"),
+                        "arguments": tc.get(
+                            "function",
+                            {},
+                        ).get(
+                            "arguments",
+                            "{}",
+                        ),
+                    },
+                }
+            )
+
+        yield sse_line(
+            {
+                "id": completion_id,
+                "object": "chat.completion.chunk",
+                "created": created,
+                "model": MODEL_ID,
+                "choices": [
+                    {
+                        "index": 0,
+                        "delta": {
+                            "tool_calls": tool_deltas
+                        },
+                        "finish_reason": None,
+                    }
+                ],
+            }
+        )
+
+    elif message.get("content") is not None:
+        yield sse_line(
+            {
+                "id": completion_id,
+                "object": "chat.completion.chunk",
+                "created": created,
+                "model": MODEL_ID,
+                "choices": [
+                    {
+                        "index": 0,
+                        "delta": {
+                            "content": message.get(
+                                "content",
+                                "",
+                            )
+                        },
+                        "finish_reason": None,
+                    }
+                ],
+            }
+        )
+
+    yield sse_line(
+        {
+            "id": completion_id,
+            "object": "chat.completion.chunk",
+            "created": created,
+            "model": MODEL_ID,
+            "choices": [
+                {
+                    "index": 0,
+                    "delta": {},
+                    "finish_reason": finish_reason,
+                }
+            ],
+        }
+    )
+
+    yield sse_line("[DONE]")
+
+
+@app.post("/v1/chat/completions")
+async def chat_completions(request: Request):
+    global llm
+
+    body = await request.json()
+
+    original_messages = body.get("messages", [])
+
+    messages = normalize_messages_for_gemma(
+        original_messages
+    )
+
+    requested_stream = bool(
+        body.get("stream", False)
+    )
+
+    kwargs: Dict[str, Any] = {
+        "messages": messages,
+        "max_tokens": body.get(
+            "max_tokens",
+            4096,
+        ),
+        "temperature": body.get(
+            "temperature",
+            0.2,
+        ),
+        "top_p": body.get(
+            "top_p",
+            0.95,
+        ),
+        "stream": False,
+    }
+
+    if body.get("stop") is not None:
+        kwargs["stop"] = body["stop"]
+
+    if body.get("tools") is not None:
+        kwargs["tools"] = body["tools"]
+
+    if body.get("tool_choice") is not None:
+        kwargs["tool_choice"] = body["tool_choice"]
+
+    try:
+        if llm is None:
+            raise RuntimeError("Model is not loaded")
+
+        result = llm.create_chat_completion(**kwargs)
+
+    except Exception as exc:
+        print(
+            "\n=== LLAMA CHAT COMPLETION ERROR ===",
+            flush=True,
+        )
+
+        print(
+            "Exception:",
+            repr(exc),
+            flush=True,
+        )
+
+        print(
+            "\nNormalized Gemma messages:",
+            flush=True,
+        )
+
+        try:
+            print(
+                json.dumps(
+                    messages,
+                    indent=2,
+                    ensure_ascii=False,
+                ),
+                flush=True,
+            )
+        except Exception:
+            pass
+
+        traceback.print_exc()
+
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": {
+                    "message": str(exc),
+                    "type": type(exc).__name__,
+                    "code": "local_llama_error",
+                }
+            },
+        )
+
+    message, finish_reason = normalize_completion(result)
+
+    completion_id = "chatcmpl-" + uuid.uuid4().hex
+    created = int(time.time())
+
+    if requested_stream:
+        return StreamingResponse(
+            stream_completed_response(
+                completion_id,
+                created,
+                message,
+                finish_reason,
+            ),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "X-Accel-Buffering": "no",
+            },
+        )
+
+    return {
+        "id": completion_id,
+        "object": "chat.completion",
+        "created": created,
+        "model": MODEL_ID,
+        "choices": [
+            {
+                "index": 0,
+                "message": message,
+                "finish_reason": finish_reason,
+            }
+        ],
+        "usage": result.get("usage", {}),
+    }
+
+
+@app.post("/v1/completions")
+async def completions(request: Request):
+    global llm
+
+    body = await request.json()
+    prompt = body.get("prompt", "")
+
+    if isinstance(prompt, list):
+        prompt = "\n".join(str(x) for x in prompt)
+
+    try:
+        if llm is None:
+            raise RuntimeError("Model is not loaded")
+
+        out = llm.create_chat_completion(
+            messages=[
+                {
+                    "role": "user",
+                    "content": str(prompt),
+                }
+            ],
+            max_tokens=body.get(
+                "max_tokens",
+                256,
+            ),
+            temperature=body.get(
+                "temperature",
+                0.2,
+            ),
+            top_p=body.get(
+                "top_p",
+                0.95,
+            ),
+            stop=body.get("stop") or None,
+            stream=False,
+        )
+
+    except Exception as exc:
+        traceback.print_exc()
+
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": {
+                    "message": str(exc),
+                    "type": type(exc).__name__,
+                    "code": "local_llama_error",
+                }
+            },
+        )
+
+    choice = out["choices"][0]
+
+    text = (
+        choice.get(
+            "message",
+            {},
+        ).get("content")
+        or ""
+    )
+
+    return {
+        "id": "cmpl-" + uuid.uuid4().hex,
+        "object": "text_completion",
+        "created": int(time.time()),
+        "model": MODEL_ID,
+        "choices": [
+            {
+                "index": 0,
+                "text": text,
+                "finish_reason": (
+                    choice.get("finish_reason")
+                    or "stop"
+                ),
+            }
+        ],
+        "usage": out.get("usage", {}),
+    }
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(
+    request: Request,
+    exc: Exception,
+):
+    traceback.print_exc()
+
+    return JSONResponse(
+        status_code=500,
+        content={
+            "error": {
+                "message": str(exc),
+                "type": type(exc).__name__,
+                "code": "internal_server_error",
+            }
+        },
+    )
+
+
+def main():
+    global llm
+    global MODEL_ID
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--model",
+        required=True,
+    )
+    parser.add_argument(
+        "--host",
+        default="0.0.0.0",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8091,
+    )
+    parser.add_argument(
+        "--n-ctx",
+        type=int,
+        default=8192,
+    )
+    parser.add_argument(
+        "--n-gpu-layers",
+        type=int,
+        default=-1,
+    )
+    parser.add_argument(
+        "--model-id",
+        default=None,
+    )
+    parser.add_argument(
+        "--single-gpu",
+        action="store_true",
+    )
+
+    args = parser.parse_args()
+
+    if args.model_id:
+        MODEL_ID = args.model_id
+
+    print(
+        "Loading model:",
+        args.model,
+        flush=True,
+    )
+
+    print(
+        "Requested context:",
+        args.n_ctx,
+        flush=True,
+    )
+
+    if args.single_gpu:
+        llm = Llama(
+            model_path=args.model,
+            n_ctx=args.n_ctx,
+            n_gpu_layers=args.n_gpu_layers,
+            flash_attn=True,
+            offload_kqv=True,
+            verbose=False,
+        )
+
+    else:
+        llm = Llama(
+            model_path=args.model,
+            n_ctx=args.n_ctx,
+            n_gpu_layers=args.n_gpu_layers,
+            split_mode=llama_cpp.LLAMA_SPLIT_MODE_LAYER,
+            tensor_split=[0.5, 0.5],
+            main_gpu=0,
+            flash_attn=True,
+            offload_kqv=True,
+            verbose=False,
+        )
+
+    print("MODEL READY", flush=True)
+    print("MODEL ID:", MODEL_ID, flush=True)
+    print("ACTUAL CONTEXT:", llm.n_ctx(), flush=True)
+
+    uvicorn.run(
+        app,
+        host=args.host,
+        port=args.port,
+    )
+
+
+if __name__ == "__main__":
+    main()
+PY
+
+/splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python3.12   -m py_compile   /splunk-data/v1/Work_RAG-Server-Setup/scripts/services/llama_chat_server.py && echo "Python syntax OK"
+sudo kill 1882792
+sudo ss -ltnp | grep ':8091' || echo "8091 is free"
+cd /splunk-data/v1/Work_RAG-Server-Setup
+sudo nohup /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python3.12 scripts/services/llama_chat_server.py   --model /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/models/huggingface/bartowski_google_gemma-4-31B-it-GGUF/google_gemma-4-31B-it-Q4_K_M.gguf   --host 0.0.0.0   --port 8091   --model-id gemma-4-31b-opencode-256k   --n-ctx 262144   --n-gpu-layers -1   >/tmp/gemma-8091.log 2>&1 &
+curl -s http://127.0.0.1:8091/health | jq
+G-Server-Setup/off
+line-prep/venv/bin/python3.12 \
+clear
+tmux attach -t bench
+tmux new -s mvp
+opencode
+clear
+ls
+cd carbonyl-bin
+ls
+cd carbonyl-0.0.3/
+ls
+./carbonyl
+./carbonyl --no-sandbox http://127.0.0.1:13000
+./carbonyl --no-sandbox http://127.0.0.1:9000
+./carbonyl --no-sandbox http://127.0.0.1:13001
+./carbonyl --no-sandbox http://127.0.0.1:16333
+reboot
+opencode
+ls
+cd ..
+ls
+cd Work_RAG-Server-Setup/
+ld
+ls
+cd rag_storage
+LS
+ls
+cd ..
+ls
+cd offline-prep/
+ls
+cd models
+ls
+cd ..
+ls
+cd inference-engines/
+ls
+cd ..
+ls
+cd ..
+ls
+opencode
+clear
+opencode
+clear
+ls
+cd ..
+ls
+opencode
+ls
+cd ali.nikkhah
+cd home
+ls
+cd a.nikkhah/
+ls
+cd ..
+ls
+cd ..
+ls
+clear
+find / -type d -name "Work_RAG-KB" 2>/dev/null
+mv /tmp/opencode/Work_RAG-KB/ /splunk-data/v1
+ls -la /splunk-data/Work_RAG-KB
+ls -la /splunk-data/v1/Work_RAG-
+ls -la /splunk-data/v1/Work_RAG-KB
+cd /splunk-data/v1/Work_RAG-KB
+git status
+git remote -v
+git checkout - b server
+git checkout -b server
+git add .
+git push
+git push --set-upstream origin server
+git commit -m 'initial server branch'
+git push -u origin server
+opencode
+cd ..
+ls
+cleasr
+clear
+las
+cd yadegari
+cd ..
+cd a.nikkhah/
+cd /tmp
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk version
+ping 192.168.103.6
+telnet 192.168.103.6 8089
+/opt/splunkforwarder/bin/splunk restart
+netstat -tunlp | greo 8089
+netstat -tunlp | grep 8089
+ss -tunlp | grep 8089
+clear
+pstree
+lsof
+sudo lsof -i :8089
+systemctl stop ngnix
+systemctl status ngnix
+systemctl stop nginx
+systemctl status nginc
+systemctl status nginx
+sudo lsof -i :8089
+sudo -pkill -9 nginx
+clear
+sudo lsof -i :8089
+clear
+./carbonyl --no-sandbox http://127.0.0.1:9000
+curl https://google.com
+/opt/splunkforwarder/bin/splunk restart
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk start
+/opt/splunkforwarder/bin/splunk status
+nano /etc/netplan/50-cloud-init.yaml 
+telnet 192.168.103.6 8089
+/opt/splunkforwarder/bin/splunk restart
+sudo lsof -i :8089
+ls /opt/splunkforwarder/
+ls -al /opt/
+chown root:root /opt/splunkforwarder/
+/opt/splunkforwarder/bin/splunk restart
+/opt/splunkforwarder/bin/splunk status
+ip a
+ip a | grep 192
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk version
+ll /opt/
+chown root:root /opt
+ll /opt/
+
+chown root:root /opt/splunkforwarder/
+ll /opt/
+curl https://google.com
+ping 8.8.8.8
+curl https://google.com
+useradd -m -s /bin/bash sec
+passwd sec
+usermod -aG sudo sec
+w
+ll /opt/
+/opt/splunkforwarder/bin/splunk status
+telnet 192.168.103.6 8089
+htop
+/opt/splunkforwarder/bin/splunk version
+hostnnamectl
+hostnamectl
+cd  /opt/splunkforwarder/
+ll
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk stop
+top |grep spl
+top
+chown -R root:root /opt/splunkforwarder/
+ll /opt/
+cd  /opt/splunkforwarder/
+ll
+hostname
+hostname -I
+/opt/splunkforwarder/bin/splunk status
+cd   /
+ll /opt/
+/opt/splunkforwarder/bin/splunk status
+ll  /tmp/
+ll /opt/
+ll /opt/splunkforwarder/
+ll /etc/systemd/system
+/opt/splunkforwarder/bin/splunk enable boot-start -systemd-managed 1 -user root
+ll /etc/systemd/system
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk start
+/opt/splunkforwarder/bin/splunk status
+syatemctl status SplunkForwarder.service
+systemctl status SplunkForwarder.service
+systemctl stop SplunkForwarder.service
+systemctl status SplunkForwarder.service
+/opt/splunkforwarder/bin/splunk set deploy-poll 192.168.103.6:8089
+ll /opt/splunkforwarder/etc/system/local/
+systemctl status SplunkForwarder.service
+systemctl start SplunkForwarder.service
+systemctl status SplunkForwarder.service
+history 
+chown -R root:root /opt/splunkforwarder/
+systemctl start SplunkForwarder.service
+systemctl stop SplunkForwarder.service
+systemctl status SplunkForwarder.service
+chown -R root:root /opt/splunkforwarder/
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk start
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk version
+ps -ef | grep '[s]plunkd'
+addusr security
+adduser security
+user -aG sudo security
+id security
+usermod -aG sudo security
+su - security
+pstree -ap 2619972
+/opt/splunkforwarder/bin/splunk status
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R root:root /opt/splunkforwarder"
+splunkd is running (PID: 2619972).
+ls   -ld /opt/splunkforwarder/
+find /opt/splunkforwarder   ! -user root -o ! -group root   -printf '%u:%g %p\n' | head -50
+history
+ls   -ld /opt/splunkforwarder/
+find /opt/splunkforwarder   ! -user root -o ! -group root   -printf '%u:%g %p\n' | head -50
+ls   -ld /opt/splunkforwarder/
+cd /
+ls   -ld /opt/splunkforwarder/
+find /opt/splunkforwarder   ! -user root -o ! -group root   -printf '%u:%g %p\n' | head -50
+systemctl cat SplunkForwarder.service
+curl https://google.com
+cd ..
+ls
+cd splunk-data/
+ls
+cd v1
+opencode
+cd ..
+cd splunk-data/
+cd v1
+tmux
+cd ..
+cd splunk-data/
+cd v1
+tmuc
+tmux
+cd ..
+cd splunk-data/
+cd v1
+tmux
+tmux attach
+tmux attach -t 0
+cd ../splunk-data/v1
+tmux attach -t 0
+clear
+tmux attach -t 0
+clear
+tmux attach -t 0
+tmux attach -t
+tmux attach -t 0
+clear
+tmux attach -t 0
+tmux attach -t
+clear
+opencode
+clear
+tmux attach -t 0
+sudo -i
+A.Nikkhah@@2026
+clear
+tmux attach -t 0
+tmux attach -t
+tmux attach -t 0
+tmux attach -t
+tmux attach -t 0
+tmux attach -t
+tmux sessions list -s
+tmux ls
+tmux attach new
+tmux attach -t new
+opencode
+clear
+tmux attach -t 0
+tmux attach -t 5
+tmux kill-session -t 0
+tmux new session
+tmux attach -t 0
+tmux new
+tmux attach -t 0
+tmux new -s
+tmux new 
+tmux attach -t 5
+ls
+cd ..
+ls
+cd splunk-data/
+l
+ls
+clear
+tmux attach -t 5
+tmux attach -t 0
+tmux attach -t 5
+tmux attach -t 0
+tmux attach -t 5
+tmux attach -5
+tmux attach -t 5
+curl https://cursor.com/install -fsS | bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+agent
+clear
+agent
+opencode
+etach
+tmux detach
+tmux ls\
+tmux attach -t 0
+tmux ls
+tmux detach
+cd ..
+ls
+cd splunk-data/
+ls
+opencode
+clear
+ls
+cd ..
+ls
+cd splunk-data/
+ls
+nvidia-smi
+clear
+ls
+cd models
+ls
+ls -la
+cd ..
+clear
+l
+ls
+mkdir production
+cd production
+ls
+clear
+agent
+clear
+agent
+clear
+cd ..
+ls
+cd splunk-data/
+ls
+cd production/
+clear
+ls
+clear
+agent
+cd ..
+ls
+cd splunk-data/
+ls
+cd production/
+tmux new -s 0
+ls
+cd ..
+ls
+cd splunk-data/
+clear
+tmux attach -t 0
+clear
+tmux attach -t 0
+cd ..
+ls
+cd splunk-data/
+ls
+cd production/
+ls
+tmux attach -t 0
+no zsh history
+
+=== Shutdown/reboot events (last) ===
+a.nikkha pts/0        192.168.107.97   Sat Nov 14 16:49   still logged in
+a.nikkha pts/0        192.168.107.97   Sat Nov 14 16:37 - 16:49  (00:11)
+infra    pts/0        192.168.107.97   Sat Nov 14 10:33 - 10:35  (00:01)
+yadegari pts/0        192.168.107.97   Sat Nov 14 07:48 - 08:53  (01:05)
+yadegari pts/0        192.168.107.97   Sat Nov 14 07:11 - 07:41  (00:30)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 09:25 - 11:40  (02:15)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 07:32 - 09:01  (01:28)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 04:23 - 07:18  (02:55)
+yadegari pts/0        192.168.107.97   Wed Nov 11 12:37 - 13:08  (00:31)
+root     pts/3        tmux(105248).%0  Wed Nov 11 07:09    gone - no logout
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 07:08 - 08:34  (01:25)
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 06:30 - 07:07  (00:37)
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 04:56 - 06:29  (01:33)
+runlevel (to lvl 5)   6.8.0-147-generi Wed Nov 11 04:55   still running
+reboot   system boot  6.8.0-147-generi Wed Nov 11 04:55   still running
+shutdown system down  6.8.0-138-generi Wed Nov 11 04:53 - 04:55  (00:01)
+a.nikkha pts/2        192.168.107.97   Wed Nov 11 04:41 - 04:52  (00:11)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 18:17 - 21:09  (02:51)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 18:17 - 18:17  (00:00)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 17:47 - 18:16  (00:29)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 17:40 - 17:47  (00:07)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 16:48 - 17:22  (00:34)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 15:22 - 15:57  (00:34)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 14:40 - 15:10  (00:30)
+a.nikkha pts/2        192.168.107.97   Mon Nov  2 07:33 - 08:18  (00:45)
+a.nikkha pts/2        192.168.107.97   Mon Nov  2 06:52 - 07:27  (00:34)
+root     pts/2        tmux(2832428).%2 Sat Oct 31 12:44 - 13:27  (00:43)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 12:36 - 15:56  (03:20)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 11:30 - 12:01  (00:30)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 10:47 - 11:18  (00:30)
+root     pts/2        tmux(2832428).%2 Sat Oct 31 10:01 - 12:44  (02:43)
+root     pts/2        tmux(2832428).%2 Sat Oct 31 09:54 - 10:01  (00:06)
+root     pts/2        tmux(2832428).%1 Sat Oct 31 09:53 - 09:54  (00:01)
+root     pts/2        tmux(2832428).%1 Sat Oct 31 09:50 - 09:53  (00:02)
+root     pts/2        tmux(2832428).%1 Sat Oct 31 09:49 - 09:50  (00:01)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 09:04 - 10:17  (01:13)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:37 - 09:49 (2+18:11)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:28 - 15:37  (00:08)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:21 - 15:24  (00:02)
+a.nikkha pts/5        192.168.107.97   Wed Oct 28 15:20 - 15:51  (00:30)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:18 - 15:21  (00:03)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:16 - 15:17  (00:01)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:11 - 15:16  (00:05)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:05 - 15:06  (00:01)
+root     pts/2        tmux(2832428).%9 Wed Oct 28 15:03 - 15:05  (00:02)
+root     pts/2        tmux(2832428).%8 Wed Oct 28 15:00 - 15:03  (00:03)
+root     pts/2        tmux(2832428).%7 Wed Oct 28 14:53 - 15:00  (00:06)
+a.nikkha pts/5        192.168.107.97   Wed Oct 28 14:41 - 15:19  (00:37)
+root     pts/2        tmux(2832428).%6 Wed Oct 28 14:25 - 14:53  (00:27)
+root     pts/8        tmux(2832428).%5 Wed Oct 28 12:17 - 04:52 (13+16:35)
+last unavailable
+
+=== User metadata ===
+Current user: root
+UID: 0
+Groups: root
+Home: /root
+Shell: /bin/bash
+
+=== Systemd services status ===
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  containerd.service          loaded active running containerd container runtime
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  docker.service              loaded active running Docker Application Container Engine
+● fwupd-refresh.service       loaded failed failed  Refresh fwupd metadata and update motd
+  fwupd.service               loaded active running Firmware update daemon
+  getty@tty1.service          loaded active running Getty on tty1
+  kesl.service                loaded active running kesl
+  klnagent64.service          loaded active running Kaspersky Network Agent.
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  nginx.service               loaded active running A high performance web server and a reverse proxy server
+  nvidia-persistenced.service loaded active running NVIDIA Persistence Daemon
+  open-vm-tools.service       loaded active running Service for virtual machines hosted on VMware
+  polkit.service              loaded active running Authorization Manager
+  rsyslog.service             loaded active running System Logging Service
+  snapd.service               loaded active running Snap Daemon
+● SplunkForwarder.service     loaded failed failed  Systemd service file for Splunk, generated by 'splunk enable boot-start'
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  upower.service              loaded active running Daemon for power management
+  user@1002.service           loaded active running User Manager for UID 1002
+  vgauth.service              loaded active running Authentication service for virtual machines hosted on VMware
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+30 loaded units listed.
+
+=== Cron jobs ===
+no crontab
+
+=== Systemd timers ===
+NEXT                            LEFT LAST                              PASSED UNIT                           ACTIVATES
+Sat 2026-11-14 17:10:00 UTC     7min Sat 2026-11-14 17:00:00 UTC 1min 59s ago sysstat-collect.timer          sysstat-collect.service
+Sat 2026-11-14 17:14:30 UTC    12min Sat 2026-11-14 16:23:04 UTC    38min ago fwupd-refresh.timer            fwupd-refresh.service
+Sat 2026-11-14 20:12:11 UTC 3h 10min Sat 2026-11-14 06:20:13 UTC      10h ago apt-daily.timer                apt-daily.service
+Sat 2026-11-14 21:11:44 UTC  4h 9min Sat 2026-11-14 10:31:03 UTC       6h ago motd-news.timer                motd-news.service
+Sun 2026-11-15 00:00:00 UTC       6h Sat 2026-11-14 00:00:08 UTC      17h ago dpkg-db-backup.timer           dpkg-db-backup.service
+Sun 2026-11-15 00:00:00 UTC       6h Sat 2026-11-14 00:00:08 UTC      17h ago logrotate.timer                logrotate.service
+Sun 2026-11-15 00:07:00 UTC       7h Sat 2026-11-14 00:07:08 UTC      16h ago sysstat-summary.timer          sysstat-summary.service
+Sun 2026-11-15 01:01:45 UTC       7h Sat 2026-11-14 01:26:41 UTC      15h ago man-db.timer                   man-db.service
+Sun 2026-11-15 03:10:55 UTC      10h Sun 2026-11-08 03:10:30 UTC            - e2scrub_all.timer              e2scrub_all.service
+Sun 2026-11-15 05:00:15 UTC      11h Sat 2026-11-14 05:00:15 UTC      12h ago update-notifier-download.timer update-notifier-download.service
+Sun 2026-11-15 05:10:13 UTC      12h Sat 2026-11-14 05:10:13 UTC      11h ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Sun 2026-11-15 06:54:00 UTC      13h Sat 2026-11-14 06:32:45 UTC      10h ago apt-daily-upgrade.timer        apt-daily-upgrade.service
+Sun 2026-11-15 23:43:28 UTC 1 day 6h Sun 2026-11-08 16:36:55 UTC            - update-notifier-motd.timer     update-notifier-motd.service
+Mon 2026-11-16 01:20:02 UTC 1 day 8h Mon 2026-11-09 00:12:38 UTC            - fstrim.timer                   fstrim.service
+-                                  - -                                      - apport-autoreport.timer        apport-autoreport.service
+-                                  - -                                      - snapd.snap-repair.timer        snapd.snap-repair.service
+-                                  - -                                      - ua-timer.timer                 ua-timer.service
+
+17 timers listed.

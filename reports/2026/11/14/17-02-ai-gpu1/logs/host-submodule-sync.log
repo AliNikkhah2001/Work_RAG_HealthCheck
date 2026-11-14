@@ -1,0 +1,57 @@
+ci_submodule_sync: attempt 1/3
+ci_submodule_sync: resetting dirty submodule worktrees (CI_FORCE_CLEAN=1)
+Entering 'agent-state'
+Entering 'components/evaluation'
+Entering 'components/guardrails'
+Entering 'components/knowledgebase'
+Entering 'components/knowledgebase/kb-source'
+Entering 'components/orchestrator'
+Entering 'components/server-setup'
+Entering 'components/webui'
+Synchronizing submodule url for 'agent-state'
+Synchronizing submodule url for 'components/evaluation'
+Synchronizing submodule url for 'components/guardrails'
+Synchronizing submodule url for 'components/knowledgebase'
+Synchronizing submodule url for 'components/knowledgebase/kb-source'
+Synchronizing submodule url for 'components/orchestrator'
+Synchronizing submodule url for 'components/server-setup'
+Synchronizing submodule url for 'components/webui'
+Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+Submodule path 'components/guardrails': checked out '8f119cc3d5a5b58f6a9e4955e13a295d67a07a35'
+Submodule path 'components/knowledgebase': checked out 'd5273a5804f9d05ec0d9393dd65ad9daf80cb2ed'
+Submodule path 'components/orchestrator': checked out '2703a52cde574647ab768f59fea9157416549778'
+Submodule path 'components/server-setup': checked out 'cc4bcb1cb492be066d940dc3a79ce37c7e0a7de7'
+Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+Submodule path 'components/guardrails': checked out '8f119cc3d5a5b58f6a9e4955e13a295d67a07a35'
+Submodule path 'components/knowledgebase': checked out 'd5273a5804f9d05ec0d9393dd65ad9daf80cb2ed'
+Submodule path 'components/knowledgebase/kb-source': checked out '7884d26301841d7c01c80ef080ce10c4219f0c55'
+Submodule path 'components/orchestrator': checked out '2703a52cde574647ab768f59fea9157416549778'
+Submodule path 'components/server-setup': checked out 'cc4bcb1cb492be066d940dc3a79ce37c7e0a7de7'
+Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+Submodule path 'components/guardrails': checked out '8f119cc3d5a5b58f6a9e4955e13a295d67a07a35'
+Submodule path 'components/knowledgebase': checked out 'd5273a5804f9d05ec0d9393dd65ad9daf80cb2ed'
+Submodule path 'components/knowledgebase/kb-source': checked out '7884d26301841d7c01c80ef080ce10c4219f0c55'
+Submodule path 'components/orchestrator': checked out '2703a52cde574647ab768f59fea9157416549778'
+Submodule path 'components/server-setup': checked out 'cc4bcb1cb492be066d940dc3a79ce37c7e0a7de7'
+Submodule path 'components/webui': checked out '2e45b5a97ead97646eb11fdaeec195578b630b67'
+ci_submodule_sync: OK
+ 31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+ 4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+ 8f119cc3d5a5b58f6a9e4955e13a295d67a07a35 components/guardrails (phase1-complete-2026-10-28-21-g8f119cc)
+ d5273a5804f9d05ec0d9393dd65ad9daf80cb2ed components/knowledgebase (phase1-complete-2026-10-28-67-gd5273a5)
+ 2703a52cde574647ab768f59fea9157416549778 components/orchestrator (phase1-complete-2026-10-28-60-g2703a52)
+ cc4bcb1cb492be066d940dc3a79ce37c7e0a7de7 components/server-setup (phase1-complete-2026-10-28-66-gcc4bcb1)
+ 2e45b5a97ead97646eb11fdaeec195578b630b67 components/webui (v0.13.3-26-g2e45b5a97)
+ 31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+ 4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+ 8f119cc3d5a5b58f6a9e4955e13a295d67a07a35 components/guardrails (phase1-complete-2026-10-28-21-g8f119cc)
+ d5273a5804f9d05ec0d9393dd65ad9daf80cb2ed components/knowledgebase (phase1-complete-2026-10-28-67-gd5273a5)
+ 7884d26301841d7c01c80ef080ce10c4219f0c55 components/knowledgebase/kb-source (phase1-complete-2026-10-28-5-g7884d26)
+ 2703a52cde574647ab768f59fea9157416549778 components/orchestrator (phase1-complete-2026-10-28-60-g2703a52)
+ cc4bcb1cb492be066d940dc3a79ce37c7e0a7de7 components/server-setup (phase1-complete-2026-10-28-66-gcc4bcb1)
+ 2e45b5a97ead97646eb11fdaeec195578b630b67 components/webui (v0.13.3-26-g2e45b5a97)

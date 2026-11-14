@@ -1,0 +1,516 @@
+ Image rag-kb:4bfd2fa Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 943B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 552B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.11-slim
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 156B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#5 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 8.88kB 0.0s done
+#6 DONE 0.0s
+
+#7 [6/9] COPY packs ./packs
+#7 CACHED
+
+#8 [7/9] COPY configs ./configs
+#8 CACHED
+
+#9 [3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [2/9] WORKDIR /app
+#10 CACHED
+
+#11 [4/9] COPY pyproject.toml README.md ./
+#11 CACHED
+
+#12 [5/9] COPY kb_manager ./kb_manager
+#12 CACHED
+
+#13 [8/9] COPY run_server.py ./
+#13 CACHED
+
+#14 [9/9] RUN pip install --no-cache-dir --default-timeout=120 -e .
+#14 2.057 Obtaining file:///app
+#14 2.059   Installing build dependencies: started
+#14 8.353   Installing build dependencies: finished with status 'done'
+#14 8.355   Checking if build backend supports build_editable: started
+#14 8.415   Checking if build backend supports build_editable: finished with status 'done'
+#14 8.417   Getting requirements to build editable: started
+#14 8.545   Getting requirements to build editable: finished with status 'done'
+#14 8.551   Installing backend dependencies: started
+#14 10.58   Installing backend dependencies: finished with status 'done'
+#14 10.58   Preparing editable metadata (pyproject.toml): started
+#14 10.78   Preparing editable metadata (pyproject.toml): finished with status 'done'
+#14 11.57 Collecting aiosqlite>=0.20.0 (from kb-manager==0.1.0)
+#14 12.17   Downloading aiosqlite-0.22.1-py3-none-any.whl.metadata (4.3 kB)
+#14 12.48 Collecting asyncpg>=0.29.0 (from kb-manager==0.1.0)
+#14 12.58   Downloading asyncpg-0.32.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.4 kB)
+#14 12.77 Collecting click>=8.1.0 (from kb-manager==0.1.0)
+#14 12.87   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#14 13.16 Collecting docx (from kb-manager==0.1.0)
+#14 13.25   Downloading docx-0.2.4.tar.gz (54 kB)
+#14 13.32      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.9/54.9 kB 678.9 kB/s eta 0:00:00
+#14 13.33   Preparing metadata (setup.py): started
+#14 13.78   Preparing metadata (setup.py): finished with status 'done'
+#14 14.08 Collecting fastapi>=0.115.0 (from kb-manager==0.1.0)
+#14 14.17   Downloading fastapi-0.162.4-py3-none-any.whl.metadata (27 kB)
+#14 14.37 Collecting httpx>=0.27.0 (from kb-manager==0.1.0)
+#14 14.46   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+#14 14.72 Collecting jinja2>=3.1.0 (from kb-manager==0.1.0)
+#14 14.89   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#14 15.68 Collecting numpy>=1.24.0 (from kb-manager==0.1.0)
+#14 15.77   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+#14 15.93 Collecting openpyxl>=3.1.0 (from kb-manager==0.1.0)
+#14 16.10   Downloading openpyxl-3.1.5-py2.py3-none-any.whl.metadata (2.5 kB)
+#14 16.48 Collecting pandas>=2.0.0 (from kb-manager==0.1.0)
+#14 16.57   Downloading pandas-3.1.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+#14 16.78 Collecting pgvector>=0.3.0 (from kb-manager==0.1.0)
+#14 16.87   Downloading pgvector-0.5.1-py3-none-any.whl.metadata (19 kB)
+#14 17.15 Collecting prometheus-client>=0.20.0 (from kb-manager==0.1.0)
+#14 17.32   Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+#14 17.58 Collecting psycopg2-binary>=2.9.0 (from kb-manager==0.1.0)
+#14 17.75   Downloading psycopg2_binary-2.9.13-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+#14 18.19 Collecting pymupdf>=1.24.0 (from kb-manager==0.1.0)
+#14 18.29   Downloading pymupdf-2.1-cp311-abi3-manylinux_2_28_x86_64.whl.metadata (26 kB)
+#14 18.55 Collecting python-docx>=1.1.0 (from kb-manager==0.1.0)
+#14 18.72   Downloading python_docx-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+#14 18.91 Collecting python-multipart>=0.0.9 (from kb-manager==0.1.0)
+#14 19.08   Downloading python_multipart-0.0.33-py3-none-any.whl.metadata (6.3 kB)
+#14 19.24 Collecting pyyaml>=6.0 (from kb-manager==0.1.0)
+#14 19.38   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#14 19.60 Collecting redis>=5.0.0 (from kb-manager==0.1.0)
+#14 19.69   Downloading redis-8.1.0-py3-none-any.whl.metadata (16 kB)
+#14 20.01 Collecting rich>=13.0.0 (from kb-manager==0.1.0)
+#14 20.11   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+#14 20.35 Collecting sentence-transformers>=3.0.0 (from kb-manager==0.1.0)
+#14 20.44   Downloading sentence_transformers-6.2.0-py3-none-any.whl.metadata (20 kB)
+#14 21.40 Collecting sqlalchemy>=2.0.0 (from sqlalchemy[asyncio]>=2.0.0->kb-manager==0.1.0)
+#14 21.49   Downloading sqlalchemy-2.1.8-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+#14 21.75 Collecting torch>=2.0.0 (from kb-manager==0.1.0)
+#14 21.84   Downloading torch-2.15.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (36 kB)
+#14 22.11 Collecting uvicorn>=0.30.0 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#14 22.21   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+#14 22.42 Collecting starlette>=0.46.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#14 22.54   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+#14 22.75 Collecting anyio>=4.1.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#14 22.89   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#14 23.26 Collecting pydantic>=2.9.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#14 23.35   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+#14 23.42      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 141.5/141.5 kB 2.1 MB/s eta 0:00:00
+#14 23.63 Collecting typing-extensions>=4.8.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#14 23.80   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#14 24.00 Collecting typing-inspection>=0.4.2 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#14 24.11   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+#14 24.29 Collecting annotated-doc>=0.0.2 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#14 24.46   Downloading annotated_doc-0.0.6-py3-none-any.whl.metadata (6.5 kB)
+#14 24.75 Collecting opentelemetry-api>=1.44.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#14 24.93   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+#14 25.15 Collecting certifi (from httpx>=0.27.0->kb-manager==0.1.0)
+#14 25.32   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+#14 25.52 Collecting httpcore==1.* (from httpx>=0.27.0->kb-manager==0.1.0)
+#14 25.62   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+#14 25.85 Collecting idna (from httpx>=0.27.0->kb-manager==0.1.0)
+#14 26.02   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#14 26.19 Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.0->kb-manager==0.1.0)
+#14 26.29   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#14 26.62 Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->kb-manager==0.1.0)
+#14 26.75   Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#14 26.94 Collecting et-xmlfile (from openpyxl>=3.1.0->kb-manager==0.1.0)
+#14 27.03   Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
+#14 27.21 Collecting python-dateutil>=2.9.0 (from pandas>=2.0.0->kb-manager==0.1.0)
+#14 27.31   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+#14 27.50 Collecting networkx (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 27.63   Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+#14 27.82 Collecting onnxruntime (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 28.00   Downloading onnxruntime-1.31.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+#14 28.19 Collecting pymupdf-layout==2.1 (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 28.36   Downloading pymupdf_layout-2.1-py3-none-any.whl.metadata (657 bytes)
+#14 28.64 Collecting psutil (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 28.74   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+#14 29.00 Collecting tabulate (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 29.09   Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+#14 29.11      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 2.5 MB/s eta 0:00:00
+#14 29.27 Collecting pymupdf4llm==2.1 (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 29.37   Downloading pymupdf4llm-2.1-py3-none-any.whl.metadata (648 bytes)
+#14 30.16 Collecting lxml>=3.1.0 (from python-docx>=1.1.0->kb-manager==0.1.0)
+#14 30.32   Downloading lxml-6.1.3-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+#14 30.51 Collecting markdown-it-py>=2.2.0 (from rich>=13.0.0->kb-manager==0.1.0)
+#14 30.60   Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+#14 30.73 Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.0.0->kb-manager==0.1.0)
+#14 30.83   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+#14 31.13 Collecting transformers<6.0.0,>=5.0.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 31.22   Downloading transformers-5.22.2-py3-none-any.whl.metadata (31 kB)
+#14 31.70 Collecting tokenizers>=0.19 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 31.79   Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+#14 32.12 Collecting huggingface-hub<3.0.0,>=1.3.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 32.22   Downloading huggingface_hub-2.4.0-py3-none-any.whl.metadata (16 kB)
+#14 32.56 Collecting scikit-learn>=1.1.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 32.65   Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+#14 33.19 Collecting scipy>=1.0.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 33.28   Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#14 33.33      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.1/62.1 kB 1.2 MB/s eta 0:00:00
+#14 33.56 Collecting tqdm>=4.0.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 33.65   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+#14 33.73      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.4/57.4 kB 635.1 kB/s eta 0:00:00
+#14 34.20 Collecting greenlet>=1 (from sqlalchemy[asyncio]>=2.0.0->kb-manager==0.1.0)
+#14 34.35   Downloading greenlet-3.5.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+#14 34.59 Collecting filelock (from torch>=2.0.0->kb-manager==0.1.0)
+#14 34.75   Downloading filelock-4.2.10-py3-none-any.whl.metadata (2.3 kB)
+#14 34.76 Requirement already satisfied: setuptools>=77.0.3 in /usr/local/lib/python3.11/site-packages (from torch>=2.0.0->kb-manager==0.1.0) (79.0.1)
+#14 34.96 Collecting sympy>=1.13.3 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 35.05   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+#14 35.36 Collecting fsspec>=0.8.5 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 35.45   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+#14 35.72 Collecting cuda-toolkit==13.2.2 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 35.81   Downloading cuda_toolkit-13.2.2-py2.py3-none-any.whl.metadata (20 kB)
+#14 36.12 Collecting cuda-bindings<14,>=13.0.3 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 36.27   Downloading cuda_bindings-13.5.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.5 kB)
+#14 36.40 Collecting nvidia-cudnn-cu13==9.26.0.51 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 36.52   Downloading nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+#14 36.71 Collecting nvidia-cusparselt-cu13==0.8.1 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 36.80   Downloading nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl.metadata (12 kB)
+#14 36.97 Collecting nvidia-nccl-cu13==2.30.7 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 37.11   Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl.metadata (2.1 kB)
+#14 37.24 Collecting nvidia-nvshmem-cu13==3.7.2 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 37.37   Downloading nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.2 kB)
+#14 37.51 Collecting triton~=3.9.0 (from torch>=2.0.0->kb-manager==0.1.0)
+#14 37.62   Downloading triton-3.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (978 bytes)
+#14 38.21 Collecting nvidia-cublas==13.4.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 38.31   Downloading nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+#14 38.50 Collecting nvidia-cuda-nvrtc==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 38.67   Downloading nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+#14 38.92 Collecting nvidia-cuda-runtime==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 39.01   Downloading nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+#14 39.21 Collecting nvidia-cufft==12.2.0.57.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 39.39   Downloading nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+#14 39.56 Collecting nvidia-nvjitlink<14,>=13.2.86 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 39.73   Downloading nvidia_nvjitlink-13.5.37-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+#14 39.93 Collecting nvidia-cufile==1.17.1.22.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 40.03   Downloading nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+#14 40.18 Collecting nvidia-cuda-cupti==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 40.35   Downloading nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl.metadata (1.8 kB)
+#14 40.54 Collecting nvidia-cusolver==12.2.0.11.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 40.71   Downloading nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+#14 40.91 Collecting nvidia-cusparse==12.7.10.12.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 41.08   Downloading nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+#14 41.28 Collecting nvidia-nvtx==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#14 41.45   Downloading nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.9 kB)
+#14 41.66 Collecting nvidia-cuda-cccl (from nvidia-nvshmem-cu13==3.7.2->torch>=2.0.0->kb-manager==0.1.0)
+#14 41.83   Downloading nvidia_cuda_cccl-13.3.5.0.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+#14 42.15 Collecting httptools>=0.8.0 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#14 42.24   Downloading httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+#14 42.45 Collecting python-dotenv>=0.13 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#14 42.54   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+#14 42.85 Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#14 42.99   Downloading uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+#14 43.29 Collecting watchfiles>=0.20 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#14 43.44   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+#14 43.95 Collecting websockets>=13.0 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#14 44.04   Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+#14 44.60 Collecting Pillow>=2.0 (from docx->kb-manager==0.1.0)
+#14 44.69   Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+#14 44.99 Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch>=2.0.0->kb-manager==0.1.0)
+#14 45.12   Downloading cuda_pathfinder-1.8.6-py3-none-any.whl.metadata (1.9 kB)
+#14 45.54 Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 45.71   Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+#14 45.91 Collecting httpx2<3,>=2.0.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 46.08   Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+#14 46.09 Requirement already satisfied: packaging>=20.9 in /usr/local/lib/python3.11/site-packages (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0) (26.3)
+#14 46.34 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.0.0->kb-manager==0.1.0)
+#14 46.52   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+#14 46.73 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi>=0.115.0->kb-manager==0.1.0)
+#14 46.83   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#14 48.64 Collecting pydantic-core==2.50.4 (from pydantic>=2.9.0->fastapi>=0.115.0->kb-manager==0.1.0)
+#14 48.81   Downloading pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+#14 49.04 Collecting tzdata (from python-dateutil>=2.9.0->pandas>=2.0.0->kb-manager==0.1.0)
+#14 49.22   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+#14 49.46 Collecting joblib>=1.4.0 (from scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 49.55   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#14 49.81 Collecting narwhals>=2.0.1 (from scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 49.90   Downloading narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+#14 50.14 Collecting threadpoolctl>=3.5.0 (from scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 50.23   Downloading threadpoolctl-3.8.0-py3-none-any.whl.metadata (29 kB)
+#14 50.52 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=2.0.0->kb-manager==0.1.0)
+#14 50.64   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#14 52.03 Collecting regex>=2025.10.22 (from transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 52.12   Downloading regex-2026.11.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+#14 52.16      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 kB 870.1 kB/s eta 0:00:00
+#14 52.30 Collecting typer (from transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 52.40   Downloading typer-0.29.0-py3-none-any.whl.metadata (16 kB)
+#14 52.67 Collecting safetensors>=0.8.0 (from transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 52.79   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+#14 53.09 Collecting flatbuffers (from onnxruntime->pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 53.18   Downloading flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+#14 53.61 Collecting protobuf>=4.25.8 (from onnxruntime->pymupdf>=1.24.0->kb-manager==0.1.0)
+#14 53.77   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+#14 54.10 Collecting httpcore2==2.16.0 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 54.19   Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+#14 54.46 Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 54.62   Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+#14 54.80 Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 54.90   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#14 55.33 Collecting shellingham>=1.3.0 (from typer->transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#14 55.49   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+#14 55.68 Downloading aiosqlite-0.22.1-py3-none-any.whl (17 kB)
+#14 55.78 Downloading asyncpg-0.32.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+#14 56.43    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 5.0 MB/s eta 0:00:00
+#14 56.53 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#14 56.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 1.5 MB/s eta 0:00:00
+#14 56.70 Downloading fastapi-0.162.4-py3-none-any.whl (151 kB)
+#14 56.77    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.7/151.7 kB 2.5 MB/s eta 0:00:00
+#14 56.86 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#14 56.90    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 1.7 MB/s eta 0:00:00
+#14 57.00 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#14 57.07    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 1.1 MB/s eta 0:00:00
+#14 57.17 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#14 57.25    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 1.8 MB/s eta 0:00:00
+#14 57.34 Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+#14 61.66    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 3.7 MB/s eta 0:00:00
+#14 61.77 Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+#14 61.92    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.9/250.9 kB 75.3 MB/s eta 0:00:00
+#14 62.02 Downloading pandas-3.1.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+#14 67.31    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 2.3 MB/s eta 0:00:00
+#14 67.40 Downloading pgvector-0.5.1-py3-none-any.whl (31 kB)
+#14 67.57 Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+#14 67.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.5/64.5 kB 846.0 kB/s eta 0:00:00
+#14 67.73 Downloading psycopg2_binary-2.9.13-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+#14 71.68    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 1.1 MB/s eta 0:00:00
+#14 71.78 Downloading pymupdf-2.1-cp311-abi3-manylinux_2_28_x86_64.whl (69.0 MB)
+#14 189.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━           52.4/69.0 MB 115.3 kB/s eta 0:02:24
+#14 189.9 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/e4/13/7a1edc4029348e728114cf37837dd121a7439defd668caa087d128b5df2d/pymupdf_layout-2.1-py3-none-any.whl
+#14 190.4 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/e4/13/7a1edc4029348e728114cf37837dd121a7439defd668caa087d128b5df2d/pymupdf_layout-2.1-py3-none-any.whl
+#14 191.4 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/e4/13/7a1edc4029348e728114cf37837dd121a7439defd668caa087d128b5df2d/pymupdf_layout-2.1-py3-none-any.whl
+#14 193.4 WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/e4/13/7a1edc4029348e728114cf37837dd121a7439defd668caa087d128b5df2d/pymupdf_layout-2.1-py3-none-any.whl
+#14 193.9 Downloading pymupdf_layout-2.1-py3-none-any.whl (1.0 kB)
+#14 194.0 Downloading pymupdf4llm-2.1-py3-none-any.whl (1.0 kB)
+#14 194.1 Downloading python_docx-1.2.0-py3-none-any.whl (252 kB)
+#14 194.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 253.0/253.0 kB 1.4 MB/s eta 0:00:00
+#14 194.4 Downloading python_multipart-0.0.33-py3-none-any.whl (32 kB)
+#14 194.5 Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+#14 194.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 8.1 MB/s eta 0:00:00
+#14 194.7 Downloading redis-8.1.0-py3-none-any.whl (560 kB)
+#14 194.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 560.6/560.6 kB 12.8 MB/s eta 0:00:00
+#14 194.8 Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+#14 194.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 3.3 MB/s eta 0:00:00
+#14 195.0 Downloading sentence_transformers-6.2.0-py3-none-any.whl (760 kB)
+#14 195.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 760.7/760.7 kB 7.2 MB/s eta 0:00:00
+#14 195.2 Downloading sqlalchemy-2.1.8-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+#14 195.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 9.4 MB/s eta 0:00:00
+#14 195.8 Downloading torch-2.15.0-cp311-cp311-manylinux_2_28_x86_64.whl (539.1 MB)
+#14 609.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸     477.4/539.1 MB 781.9 kB/s eta 0:01:19
+#14 609.8 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/3d/62/854e4a141f5e87e5425513bad2a742a6260acfe06ef148001b5362148f31/cuda_toolkit-13.2.2-py2.py3-none-any.whl
+#14 610.3 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/3d/62/854e4a141f5e87e5425513bad2a742a6260acfe06ef148001b5362148f31/cuda_toolkit-13.2.2-py2.py3-none-any.whl
+#14 611.3 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/3d/62/854e4a141f5e87e5425513bad2a742a6260acfe06ef148001b5362148f31/cuda_toolkit-13.2.2-py2.py3-none-any.whl
+#14 611.9 Downloading cuda_toolkit-13.2.2-py2.py3-none-any.whl (2.6 kB)
+#14 612.0 Downloading nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl (519.2 MB)
+#14 789.7    ━━━━━━━━━━━━━━━━╸                       222.4/519.2 MB 625.3 kB/s eta 0:07:55
+#14 789.8 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/34/7d/2661f2fb3ac4302f3a246f5fc030213ac60c1fe0bce84f9783dbd831dbb7/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl
+#14 790.3 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/34/7d/2661f2fb3ac4302f3a246f5fc030213ac60c1fe0bce84f9783dbd831dbb7/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl
+#14 791.3 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/34/7d/2661f2fb3ac4302f3a246f5fc030213ac60c1fe0bce84f9783dbd831dbb7/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl
+#14 793.3 WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/34/7d/2661f2fb3ac4302f3a246f5fc030213ac60c1fe0bce84f9783dbd831dbb7/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl
+#14 793.8 Downloading nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+#14 910.5    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸   159.5/170.1 MB 839.4 kB/s eta 0:00:13
+#14 910.6 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/3f/34/c500f90c7ae641b8e0f98965b36b8a7ac79cc8b296e8d251fe3eb592ee54/nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl
+#14 911.1 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/3f/34/c500f90c7ae641b8e0f98965b36b8a7ac79cc8b296e8d251fe3eb592ee54/nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl
+#14 912.1 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/3f/34/c500f90c7ae641b8e0f98965b36b8a7ac79cc8b296e8d251fe3eb592ee54/nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl
+#14 914.1 WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/3f/34/c500f90c7ae641b8e0f98965b36b8a7ac79cc8b296e8d251fe3eb592ee54/nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl
+#14 914.7 Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl (216.0 MB)
+#14 1082.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.0/216.0 MB 1.7 MB/s eta 0:00:00
+#14 1083.0 Downloading nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (135.4 MB)
+#14 1221.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.4/135.4 MB 1.3 MB/s eta 0:00:00
+#14 1221.4 Downloading nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl (404.9 MB)
+#14 1449.9    ━━━━━━━━━━━━━━━━━━━━━━━                 241.7/404.9 MB 947.4 kB/s eta 0:02:53
+#14 1449.9 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/b4/76/a10d9fb5d9a0e46d5f95e5520bd1b2d8ad22a9c0a09d2f8c20c5ee842a96/nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl
+#14 1450.4 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/b4/76/a10d9fb5d9a0e46d5f95e5520bd1b2d8ad22a9c0a09d2f8c20c5ee842a96/nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl
+#14 1451.4 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/b4/76/a10d9fb5d9a0e46d5f95e5520bd1b2d8ad22a9c0a09d2f8c20c5ee842a96/nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl
+#14 1453.4 WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/b4/76/a10d9fb5d9a0e46d5f95e5520bd1b2d8ad22a9c0a09d2f8c20c5ee842a96/nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl
+#14 1453.9 Downloading nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl (12.0 MB)
+#14 1473.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 585.6 kB/s eta 0:00:00
+#14 1474.1 Downloading nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (47.0 MB)
+#14 1570.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.0/47.0 MB 306.4 kB/s eta 0:00:00
+#14 1571.6 Downloading nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#14 1576.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 436.8 kB/s eta 0:00:00
+#14 1577.7 Downloading nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (218.3 MB)
+#14 1810.4    ━━━━━━━━━━━━━━━━━━━━╸                   115.5/218.3 MB 438.1 kB/s eta 0:03:55
+#14 1810.4 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/23/c5/661a73a9042fc5f81cdd5fe6e89f4170b3b33f7962e709987e2b5e5f1381/nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl
+#14 1811.0 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/23/c5/661a73a9042fc5f81cdd5fe6e89f4170b3b33f7962e709987e2b5e5f1381/nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl
+#14 1812.0 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/23/c5/661a73a9042fc5f81cdd5fe6e89f4170b3b33f7962e709987e2b5e5f1381/nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl
+#14 1814.0 WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/23/c5/661a73a9042fc5f81cdd5fe6e89f4170b3b33f7962e709987e2b5e5f1381/nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl
+#14 1814.5 Downloading nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl (1.4 MB)
+#14 1816.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 857.4 kB/s eta 0:00:00
+#14 1816.2 Downloading nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl (227.9 MB)
+#14 2170.2    ━━━━━━━━━━━━━━━━━━━━━╸                  128.5/227.9 MB 138.7 kB/s eta 0:11:58
+#14 2170.2 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/bc/46/3a9700cc13f30c9279af9a862363535c814fa27597199b21fd93cad66237/nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+#14 2170.7 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/bc/46/3a9700cc13f30c9279af9a862363535c814fa27597199b21fd93cad66237/nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+#14 2171.7 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/bc/46/3a9700cc13f30c9279af9a862363535c814fa27597199b21fd93cad66237/nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+#14 2173.7 WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/bc/46/3a9700cc13f30c9279af9a862363535c814fa27597199b21fd93cad66237/nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+#14 2174.3 Downloading nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (151.0 MB)
+#14 2295.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.0/151.0 MB 1.1 MB/s eta 0:00:00
+#14 2295.9 Downloading nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (153 kB)
+#14 2296.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.5/153.5 kB 1.6 MB/s eta 0:00:00
+#14 2296.1 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#14 2296.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.4/87.4 kB 1.1 MB/s eta 0:00:00
+#14 2296.3 Downloading annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+#14 2296.4 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#14 2296.5    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 1.3 MB/s eta 0:00:00
+#14 2296.6 Downloading cuda_bindings-13.5.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (8.4 MB)
+#14 2302.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 1.6 MB/s eta 0:00:00
+#14 2302.1 Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#14 2302.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 221.7/221.7 kB 2.2 MB/s eta 0:00:00
+#14 2302.4 Downloading greenlet-3.5.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (624 kB)
+#14 2302.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 624.4/624.4 kB 2.1 MB/s eta 0:00:00
+#14 2302.8 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#14 2303.0 Downloading httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (499 kB)
+#14 2303.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 499.1/499.1 kB 2.3 MB/s eta 0:00:00
+#14 2303.3 Downloading huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+#14 2303.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 857.0/857.0 kB 2.6 MB/s eta 0:00:00
+#14 2303.8 Downloading filelock-4.2.10-py3-none-any.whl (218 kB)
+#14 2303.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.0/218.0 kB 2.1 MB/s eta 0:00:00
+#14 2304.0 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#14 2304.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 639.1 kB/s eta 0:00:00
+#14 2304.2 Downloading lxml-6.1.3-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+#14 2307.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 1.5 MB/s eta 0:00:00
+#14 2307.9 Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+#14 2307.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.0/97.0 kB 1.5 MB/s eta 0:00:00
+#14 2308.0 Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#14 2308.3 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+#14 2310.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 875.1 kB/s eta 0:00:00
+#14 2310.7 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#14 2310.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 578.9 kB/s eta 0:00:00
+#14 2311.0 Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+#14 2320.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 723.7 kB/s eta 0:00:00
+#14 2322.3 Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+#14 2323.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 494.1/494.1 kB 716.2 kB/s eta 0:00:00
+#14 2323.5 Downloading pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#14 2326.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 732.2 kB/s eta 0:00:00
+#14 2326.7 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#14 2328.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 859.9 kB/s eta 0:00:00
+#14 2328.3 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+#14 2328.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.9/92.9 kB 930.4 kB/s eta 0:00:00
+#14 2328.6 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#14 2328.7 Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+#14 2342.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 656.5 kB/s eta 0:00:00
+#14 2343.0 Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#14 2350.0    ━━━╸                                     3.3/35.3 MB 470.8 kB/s eta 0:01:09
+#14 2350.1 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/88/2e/947cfe02def9371c07cd5bf5b6b61c829e9aecb9904db02a66cfafbc1eec/starlette-1.10.0-py3-none-any.whl
+#14 2350.6 WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Service Unavailable'))': /packages/88/2e/947cfe02def9371c07cd5bf5b6b61c829e9aecb9904db02a66cfafbc1eec/starlette-1.10.0-py3-none-any.whl
+#14 2351.6 WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/88/2e/947cfe02def9371c07cd5bf5b6b61c829e9aecb9904db02a66cfafbc1eec/starlette-1.10.0-py3-none-any.whl
+#14 2353.6 WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 500 Internal Server Error'))': /packages/88/2e/947cfe02def9371c07cd5bf5b6b61c829e9aecb9904db02a66cfafbc1eec/starlette-1.10.0-py3-none-any.whl
+#14 2354.1 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#14 2354.3    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.6/80.6 kB 568.8 kB/s eta 0:00:00
+#14 2354.4 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#14 2356.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 3.2 MB/s eta 0:00:00
+#14 2356.5 Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+#14 2357.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 3.6 MB/s eta 0:00:00
+#14 2357.6 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+#14 2357.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 kB 16.6 MB/s eta 0:00:00
+#14 2357.7 Downloading transformers-5.22.2-py3-none-any.whl (13.1 MB)
+#14 2363.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 2.0 MB/s eta 0:00:00
+#14 2363.7 Downloading triton-3.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (285.8 MB)
+#14 2610.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 285.8/285.8 MB 1.3 MB/s eta 0:00:00
+#14 2610.9 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#14 2611.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 453.8 kB/s eta 0:00:00
+#14 2611.1 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#14 2611.3 Downloading uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.0 MB)
+#14 2613.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 1.6 MB/s eta 0:00:00
+#14 2613.8 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+#14 2614.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 458.4/458.4 kB 2.6 MB/s eta 0:00:00
+#14 2614.1 Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+#14 2614.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.0/226.0 kB 1.2 MB/s eta 0:00:00
+#14 2614.3 Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+#14 2614.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.1/135.1 kB 1.4 MB/s eta 0:00:00
+#14 2614.5 Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+#14 2614.7 Downloading onnxruntime-1.31.1-cp311-cp311-manylinux_2_28_x86_64.whl (23.8 MB)
+#14 2642.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 815.6 kB/s eta 0:00:00
+#14 2643.0 Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+#14 2643.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 787.8 kB/s eta 0:00:00
+#14 2643.3 Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)
+#14 2643.5 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#14 2643.7 Downloading cuda_pathfinder-1.8.6-py3-none-any.whl (62 kB)
+#14 2643.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.6/62.6 kB 577.8 kB/s eta 0:00:00
+#14 2643.9 Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+#14 2648.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 871.9 kB/s eta 0:00:00
+#14 2648.9 Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+#14 2649.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 959.4 kB/s eta 0:00:00
+#14 2649.9 Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+#14 2650.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 85.1/85.1 kB 836.4 kB/s eta 0:00:00
+#14 2652.2 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#14 2652.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 488.6 kB/s eta 0:00:00
+#14 2654.8 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#14 2656.7 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#14 2658.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 380.2 kB/s eta 0:00:00
+#14 2660.9 Downloading narwhals-2.28.0-py3-none-any.whl (490 kB)
+#14 2662.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 490.6/490.6 kB 380.1 kB/s eta 0:00:00
+#14 2664.3 Downloading nvidia_nvjitlink-13.5.37-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (46.6 MB)
+#14 2760.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.6/46.6 MB 387.9 kB/s eta 0:00:00
+#14 2763.2 Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+#14 2764.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 291.4 kB/s eta 0:00:00
+#14 2766.0 Downloading regex-2026.11.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (805 kB)
+#14 2767.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.0/806.0 kB 405.2 kB/s eta 0:00:00
+#14 2769.1 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+#14 2769.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 kB 642.0 kB/s eta 0:00:00
+#14 2770.6 Downloading threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+#14 2771.3 Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+#14 2772.2 Downloading nvidia_cuda_cccl-13.3.5.0.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.1 MB)
+#14 2787.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 273.3 kB/s eta 0:00:00
+#14 2789.4 Downloading typer-0.29.0-py3-none-any.whl (121 kB)
+#14 2789.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.1/121.1 kB 322.9 kB/s eta 0:00:00
+#14 2792.2 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#14 2793.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 kB 205.2 kB/s eta 0:00:00
+#14 2796.7 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#14 2799.0 Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+#14 2800.8 Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+#14 2801.0 ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
+#14 2801.0     unknown package:
+#14 2801.0         Expected sha256 a9efa2e9e5f469d3b5749199329739cfef1ff1d1846538ced4885c544eecbcd9
+#14 2801.0              Got        63851bb92df5724b7fb1eca1902cb364d8b587a01c82690a529f1cda55dc2397
+#14 2801.0 
+#14 2808.9 
+#14 2808.9 [notice] A new release of pip is available: 24.0 -> 26.3
+#14 2808.9 [notice] To update, run: pip install --upgrade pip
+#14 ERROR: process "/bin/sh -c pip install --no-cache-dir --default-timeout=120 -e ." did not complete successfully: exit code: 1
+------
+ > [9/9] RUN pip install --no-cache-dir --default-timeout=120 -e .:
+2799.0 Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2800.8 Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+2801.0 ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.
+2801.0     unknown package:
+2801.0         Expected sha256 a9efa2e9e5f469d3b5749199329739cfef1ff1d1846538ced4885c544eecbcd9
+2801.0              Got        63851bb92df5724b7fb1eca1902cb364d8b587a01c82690a529f1cda55dc2397
+2801.0 
+2808.9 
+2808.9 [notice] A new release of pip is available: 24.0 -> 26.3
+2808.9 [notice] To update, run: pip install --upgrade pip
+------
+Dockerfile:20
+
+--------------------
+
+  18 |     COPY run_server.py ./
+
+  19 |     
+
+  20 | >>> RUN pip install --no-cache-dir --default-timeout=120 -e .
+
+  21 |     
+
+  22 |     EXPOSE 8000
+
+--------------------
+
+failed to solve: process "/bin/sh -c pip install --no-cache-dir --default-timeout=120 -e ." did not complete successfully: exit code: 1
+

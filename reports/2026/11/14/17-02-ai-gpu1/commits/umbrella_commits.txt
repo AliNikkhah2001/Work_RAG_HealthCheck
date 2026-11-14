@@ -1,0 +1,88 @@
+=== UMBRELLA: /splunk-data/production/Work_Credit-RAG_Phase1 ===
+1ee9304 | AliNikkhah2001 | 2026-11-14 20:19:52 +0330 | feat(monitor): durable Pages dashboard + installable GPU health daemon
+c614c32 | AliNikkhah2001 | 2026-11-14 20:18:07 +0330 | fix(deploy): refuse a DANA_STATE_FILE outside DANA_STATE_DIR
+467524e | AliNikkhah2001 | 2026-11-14 19:29:18 +0330 | feat(monitor): one-command installer for the GPU health-report daemon
+790075d | AliNikkhah2001 | 2026-11-14 19:27:34 +0330 | fix(sim): do not fail the isolation check on GitHub's own Pages workflow
+78a3439 | AliNikkhah2001 | 2026-11-14 19:26:33 +0330 | Merge remote-tracking branch 'origin/feature/ci-cd-last-known-good' into feature/lastgood-retention
+ad027ff | AliNikkhah2001 | 2026-11-14 19:25:34 +0330 | fix(deploy): give refusal its own exit code so nothing heals a healthy stack
+d805300 | AliNikkhah2001 | 2026-11-14 19:25:34 +0330 | fix(deploy): give refusal its own exit code so nothing heals a healthy stack
+0562bd9 | AliNikkhah2001 | 2026-11-14 19:25:28 +0330 | Merge branch 'feature/offline-image-rebuild' into feature/lastgood-retention
+fc0df87 | AliNikkhah2001 | 2026-11-14 19:24:20 +0330 | fix(ops): bound last-known-good image tag growth
+e45f83d | AliNikkhah2001 | 2026-11-14 19:19:47 +0330 | fix(deploy): bound rollback pin retention
+6fe68b7 | AliNikkhah2001 | 2026-11-14 19:17:58 +0330 | chore(agent-state): advance pin to the second-pass plan record
+da22621 | AliNikkhah2001 | 2026-11-14 19:16:21 +0330 | fix(deploy): make rollout idempotent and the sim suite race-free
+ea90424 | AliNikkhah2001 | 2026-11-14 19:16:16 +0330 | fix(deploy): stop rollback from acting on a leaked override
+907d968 | AliNikkhah2001 | 2026-11-14 19:16:13 +0330 | fix(ci): gate the ports it was actually asked about
+451aeaa | AliNikkhah2001 | 2026-11-14 19:14:10 +0330 | fix(compose): point the guardrails judge at a model the laptop serves
+e2c6685 | AliNikkhah2001 | 2026-11-14 19:12:10 +0330 | feat(scripts): build component images on Docker-Hub-blocked hosts
+a17931d | AliNikkhah2001 | 2026-11-14 18:59:22 +0330 | refactor(ci): drop the unused markStage helper
+fed3afd | AliNikkhah2001 | 2026-11-14 18:58:05 +0330 | docs(ci): use reviewable JSON bodies for the required-checks patch
+540ebfc | Ali Nikkhah | 2026-11-14 18:56:39 +0330 | fix(ci): close three ways a build could still claim more than it proved
+8c50fd2 | Ali Nikkhah | 2026-11-14 18:52:13 +0330 | ci: report the dana/build commit status from the build stage
+ab57d8d | Ali Nikkhah | 2026-11-14 18:52:03 +0330 | docs(ops): publish per-stage GitHub statuses and document the deploy layer
+bbfa3dd | Ali Nikkhah | 2026-11-14 18:51:52 +0330 | feat(ci): per-stage evidence and GitHub status reporting
+e0fac67 | Ali Nikkhah | 2026-11-14 18:50:42 +0330 | feat(ci): refuse to paint a build green when no stage verified it
+c34ccce | Ali Nikkhah | 2026-11-14 18:49:38 +0330 | fix(ci): stop Jenkins from going red before it runs, and gate prod on health
+c160bb3 | Ali Nikkhah | 2026-11-14 18:49:29 +0330 | fix(ci): gate deploys on health, record a manifest, and report to the health repo only
+6de8fef | Ali Nikkhah | 2026-11-14 18:49:20 +0330 | feat(ops): health-gated GPU deploy with last-known-good rollback
+c592221 | Ali Nikkhah | 2026-11-14 18:49:01 +0330 | docs(compose): spell out the port-layering contract in every overlay
+7cd59c7 | AliNikkhah2001 | 2026-11-14 18:30:38 +0330 | chore: pin agent-state release-tagging policy
+cd61cff | AliNikkhah2001 | 2026-11-14 18:30:13 +0330 | chore: advance server-setup and agent-state pins
+493f9c9 | AliNikkhah2001 | 2026-11-14 18:28:57 +0330 | docs: add the technical report sources (LaTeX, HTML, diagrams)
+4e8ec2f | AliNikkhah2001 | 2026-11-14 18:28:49 +0330 | docs: add component skills and the Dana infra needs letter
+8ebb090 | AliNikkhah2001 | 2026-11-14 18:28:44 +0330 | chore(dev): keep loan-budget/trim probes and fix stale vast path in old plan
+5c409b0 | AliNikkhah2001 | 2026-11-14 18:28:35 +0330 | docs(ci): document the desired-state CI/CD and add repo Cursor rules
+0daa960 | AliNikkhah2001 | 2026-11-14 18:28:31 +0330 | fix(compose): publish every prod port in compose.gpu.yml
+f3d7494 | AliNikkhah2001 | 2026-11-14 18:28:26 +0330 | feat(ops): WebUI cache-bust for the chat.ics24.ir gateway
+dcd4105 | AliNikkhah2001 | 2026-11-14 18:28:26 +0330 | feat(ops): keep-latest daemon that tracks the last healthy main tip
+e041fb7 | AliNikkhah2001 | 2026-11-14 18:28:26 +0330 | feat(ops): proactive auto-heal daemon, daily reporter, machine-origin tagging
+9d096c5 | AliNikkhah2001 | 2026-11-14 18:28:17 +0330 | feat(ops): GPU full recovery/evidence report + HTML dashboard
+d51e8ad | AliNikkhah2001 | 2026-11-14 14:12:57 +0330 | chore: remove Vast.ai references, rename deploy/vast to deploy/gpu
+3c78343 | ICS Dev | 2026-11-12 11:22:04 +0000 | fix: post-v1.3.0 chat truncation hotfixes for KB content and orch generate
+770f8c9 | ICS Dev | 2026-11-12 11:14:02 +0000 | chore: record parent SHA and flat production-2026-11-12 tag name
+4f1db78 | ICS Dev | 2026-11-12 11:13:52 +0000 | chore: production pin v1.3.0 — working H200 image digests and docs
+4a4a42e | AliNikkhah2001 | 2026-11-12 11:22:22 +0330 | chore: rebuild stage images after github DNS flake [ci stage] [ci all]
+de7fa3b | Ali Nikkhah | 2026-11-12 10:44:33 +0330 | Merge pull request #61 from AliNikkhah2001/release/promote-develop-to-main
+bc4c234 | Ali Nikkhah | 2026-11-12 10:44:06 +0330 | Merge pull request #60 from AliNikkhah2001/chore/sync-all-tips-to-main
+9260ab8 | AliNikkhah2001 | 2026-11-12 10:43:55 +0330 | chore: pin orch/guard/KB/server tips after develop↔main sync [ci stage]
+bc388f5 | Ali Nikkhah | 2026-11-12 10:26:37 +0330 | Merge pull request #59 from AliNikkhah2001/chore/pin-kb-ingest-batch-flush
+dceade3 | AliNikkhah2001 | 2026-11-12 10:26:25 +0330 | chore: pin KB ingest batch-flush for 1405-08-20 [ci stage]
+404cae7 | Ali Nikkhah | 2026-11-12 10:11:26 +0330 | Merge pull request #58 from AliNikkhah2001/chore/pin-kafil-nardeban-fixes
+a998717 | AliNikkhah2001 | 2026-11-12 10:11:10 +0330 | chore: pin orch+guardrails کفیل/نردبان routing fixes [ci stage]
+6a5b4ba | ICS Dev | 2026-11-12 04:36:11 +0000 | On master: h200-local-pre-pull-20261112
+7bee3bc | ICS Dev | 2026-11-12 04:36:11 +0000 | index on main: 4bfd2fa fix(ci): pin Manager ChatReq restore and harden prod image deploys
+2386aed | ICS Dev | 2026-11-12 04:36:11 +0000 | untracked files on main: 4bfd2fa fix(ci): pin Manager ChatReq restore and harden prod image deploys
+8bd17b2 | Ali Nikkhah | 2026-11-12 02:33:48 +0330 | Merge pull request #57 from AliNikkhah2001/develop
+9f13290 | Ali Nikkhah | 2026-11-12 02:33:25 +0330 | Merge pull request #56 from AliNikkhah2001/chore/pin-orch-progressive-broaden
+43aa15e | AliNikkhah2001 | 2026-11-12 02:33:15 +0330 | chore: pin orchestrator progressive scope broaden [ci stage]
+34819a8 | Ali Nikkhah | 2026-11-12 02:04:50 +0330 | Merge pull request #55 from AliNikkhah2001/develop
+129250d | AliNikkhah2001 | 2026-11-12 02:04:43 +0330 | chore: pin orchestrator main with EntityList recovery [ci prod]
+2bea9bd | Ali Nikkhah | 2026-11-12 02:04:12 +0330 | Merge pull request #54 from AliNikkhah2001/develop
+18284e1 | AliNikkhah2001 | 2026-11-12 02:03:53 +0330 | chore: advance orch/KB pins after EntityList production merges [ci prod]
+1ee12a3 | Ali Nikkhah | 2026-11-12 02:03:10 +0330 | Merge pull request #53 from AliNikkhah2001/develop
+0c43304 | AliNikkhah2001 | 2026-11-12 02:02:55 +0330 | chore: pin KB master + orch main for production promote [ci prod]
+7f51af4 | AliNikkhah2001 | 2026-11-12 01:57:04 +0330 | chore: advance orchestrator for cheque colour-rank routing
+f074723 | AliNikkhah2001 | 2026-11-12 01:51:36 +0330 | chore: advance orchestrator for declaration follow-up clarify-loop fix
+1922d7e | Ali Nikkhah | 2026-11-12 01:28:53 +0330 | Merge pull request #52 from AliNikkhah2001/feature/evaluation-suite-submodule
+9d2cdae | AliNikkhah2001 | 2026-11-12 01:28:44 +0330 | chore: advance evaluation, KB, and orchestrator after quality fix PRs
+1698d68 | AliNikkhah2001 | 2026-11-12 00:26:23 +0330 | feat: wire KB benchmarks to Evaluation Suite as sole eval backend
+6a58bf4 | AliNikkhah2001 | 2026-11-11 23:59:15 +0330 | chore: adopt Work_RAG-Evaluation_Suite submodule
+60b0f0f | Ali Nikkhah | 2026-11-11 22:58:46 +0330 | fix(ci): retag all :local images to :TAG for path-filtered deploys [ci stage] (#50)
+eb8b65a | Ali Nikkhah | 2026-11-11 22:52:19 +0330 | fix(ci): pin KB CPU-index torch so laptop images stay +cpu [ci stage] (#49)
+94996fb | Ali Nikkhah | 2026-11-11 22:26:28 +0330 | fix(ci): CPU torch on laptop + skip rebuilds unless sources change [ci stage] (#48)
+a371d7a | AliNikkhah2001 | 2026-11-11 21:58:34 +0330 | chore: promote stage pins to main [ci prod]
+c845199 | Ali Nikkhah | 2026-11-11 21:57:52 +0330 | Merge pull request #46 from AliNikkhah2001/chore/sync-pins-and-webui-rollout
+85e3cb7 | AliNikkhah2001 | 2026-11-11 21:57:40 +0330 | fix(ci): always rebuild WebUI frontend; pin server-setup tip [ci stage] [ci all]
+
+=== Current branch ===
+feature/lastgood-retention
+
+=== Submodule status ===
++31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+ 4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
++0b010986d263c31fc8e315a872a603ae1118a809 components/guardrails (phase1-complete-2026-10-28-26-g0b01098)
++cc403ed8f72a49cbbe084632b6d06795a5e0d8ba components/knowledgebase (phase1-complete-2026-10-28-75-gcc403ed)
+ eb9ad934b3979384bb03bf6deda4e912462fb41d components/knowledgebase/kb-source (phase1-complete-2026-10-28-8-geb9ad93)
++2fcbd09e580a6ec1e40741ea8e6ba323bbb3adb2 components/orchestrator (phase1-complete-2026-10-28-66-g2fcbd09)
++9e495b3ff2d40eb4df7260dd5c69535c9bcaf619 components/server-setup (phase1-complete-2026-10-28-70-g9e495b3)
++5fc58d2b1d0b7ff5098b125e666887671432af47 components/webui (v0.13.3-27-g5fc58d2b1)

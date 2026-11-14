@@ -1,0 +1,39 @@
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Unable to retrieve JSON from https://updates.jenkins.io/update-center.json?version=2.541.3: Network is unreachable
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:17 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Nov 11, 2026 6:00:18 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:18 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Nov 11, 2026 6:00:19 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:19 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Unable to retrieve JSON from https://updates.jenkins.io/update-center.json?version=2.541.3: Network is unreachable
+Nov 11, 2026 6:00:21 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:21 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Nov 11, 2026 6:00:22 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:22 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Nov 11, 2026 6:00:23 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://updates.jenkins.io:443: Network is unreachable
+Nov 11, 2026 6:00:23 AM org.apache.http.impl.execchain.RetryExec execute
+INFO: Retrying request to {s}->https://updates.jenkins.io:443
+Error getting update center json

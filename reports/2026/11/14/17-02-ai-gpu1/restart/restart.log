@@ -1,0 +1,228 @@
+Restart attempt at 2026-11-14T16:59:29Z
+Machine type: production_gpu
+Detected stack mode: compose
+
+--- Production GPU mode: compose stack restart ---
+Bringing up compose stack dana-prod with /splunk-data/production/Work_Credit-RAG_Phase1/deploy/compose/.env.prod
+ Network dana-prod_rag Creating 
+ Network dana-prod_rag Creating 
+ Network dana-prod_rag Created 
+ Network dana-prod_rag Created 
+ Container dana-prod-postgres-1 Creating 
+ Container dana-prod-redis-1 Creating 
+ Container dana-prod-tracing-1 Creating 
+ Container dana-prod-guardrails-1 Creating 
+ Container dana-prod-tracing-1 Created 
+ Container dana-prod-guardrails-1 Created 
+ Container dana-prod-postgres-1 Created 
+ Container dana-prod-redis-1 Created 
+ Container dana-prod-kb-1 Creating 
+ Container dana-prod-kb-1 Created 
+ Container dana-prod-orchestrator-1 Creating 
+ Container dana-prod-orchestrator-1 Created 
+ Container dana-prod-webui-1 Creating 
+ Container dana-prod-webui-1 Created 
+ Container dana-prod-redis-1 Starting 
+ Container dana-prod-guardrails-1 Starting 
+ Container dana-prod-tracing-1 Starting 
+ Container dana-prod-postgres-1 Starting 
+ Container dana-prod-postgres-1 Started 
+ Container dana-prod-tracing-1 Started 
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint dana-prod-redis-1 (140979443b7c7cf1d8e0390e3e7cf32130d960f12925763cf02bb256029f4ac8): Bind for 127.0.0.1:16379 failed: port is already allocated
+[1;33m[WARN][0m compose up returned non-zero
+ Image dana-jenkins:lts Pulling 
+ Image dana-jenkins:lts pull access denied for dana-jenkins, repository does not exist or may require 'docker login' 
+ Image dana-jenkins:lts Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 817B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 882B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/jenkins/jenkins:lts-jdk17
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/jenkins/jenkins:lts-jdk17@sha256:cce1eeb79902722f3cf7a8831c41e95c39f4a42b9a2981959630cc66539b3c2d
+#5 resolve docker.io/jenkins/jenkins:lts-jdk17@sha256:cce1eeb79902722f3cf7a8831c41e95c39f4a42b9a2981959630cc66539b3c2d 0.0s done
+#5 CACHED
+
+#6 [2/2] RUN apt-get update  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends       ca-certificates curl git python3 python3-pip  && curl -fsSL https://download.docker.com/linux/static/stable/$(uname -m)/docker-28.3.3.tgz       | tar -xz -C /tmp  && mv /tmp/docker/docker /usr/local/bin/docker  && mkdir -p /usr/local/lib/docker/cli-plugins  && curl -fsSL "https://github.com/docker/compose/releases/download/v2.39.2/docker-compose-linux-$(uname -m | sed 's/aarch64/aarch64/;s/x86_64/x86_64/')"       -o /usr/local/lib/docker/cli-plugins/docker-compose  && chmod +x /usr/local/bin/docker /usr/local/lib/docker/cli-plugins/docker-compose  && rm -rf /var/lib/apt/lists/* /tmp/docker
+#6 0.470 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#6 0.818 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#6 0.995 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#6 1.163 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#6 3.201 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#6 3.322 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [303 kB]
+#6 4.257 Fetched 10.2 MB in 4s (2562 kB/s)
+#6 4.257 Reading package lists...
+#6 5.005 Reading package lists...
+#6 5.719 Building dependency tree...
+#6 5.840 Reading state information...
+#6 6.048 git is already the newest version (1:2.47.3-0+deb13u1).
+#6 6.048 The following additional packages will be installed:
+#6 6.048   libcurl3t64-gnutls libcurl4t64 libpython3-stdlib libpython3.13-minimal
+#6 6.049   libpython3.13-stdlib libreadline8t64 media-types netbase python3-minimal
+#6 6.049   python3-packaging python3-wheel python3.13 python3.13-minimal
+#6 6.049   readline-common
+#6 6.050 Suggested packages:
+#6 6.050   python3-doc python3-tk python3-venv python3-setuptools python3.13-venv
+#6 6.050   python3.13-doc binutils binfmt-support readline-doc
+#6 6.050 Recommended packages:
+#6 6.050   build-essential python3-dev libjs-sphinxdoc
+#6 6.266 The following NEW packages will be installed:
+#6 6.266   libpython3-stdlib libpython3.13-minimal libpython3.13-stdlib libreadline8t64
+#6 6.266   media-types netbase python3 python3-minimal python3-packaging python3-pip
+#6 6.266   python3-wheel python3.13 python3.13-minimal readline-common
+#6 6.267 The following packages will be upgraded:
+#6 6.267   ca-certificates curl libcurl3t64-gnutls libcurl4t64
+#6 6.483 4 upgraded, 14 newly installed, 0 to remove and 54 not upgraded.
+#6 6.483 Need to get 8892 kB of archives.
+#6 6.483 After this operation, 34.2 MB of additional disk space will be used.
+#6 6.483 Get:1 http://deb.debian.org/debian trixie/main amd64 libpython3.13-minimal amd64 3.13.5-2+deb13u5 [863 kB]
+#6 7.254 Get:2 http://deb.debian.org/debian trixie/main amd64 python3.13-minimal amd64 3.13.5-2+deb13u5 [2225 kB]
+#6 8.059 Get:3 http://deb.debian.org/debian trixie/main amd64 python3-minimal amd64 3.13.5-1 [27.2 kB]
+#6 8.164 Get:4 http://deb.debian.org/debian trixie/main amd64 media-types all 13.0.0 [29.3 kB]
+#6 8.269 Get:5 http://deb.debian.org/debian trixie/main amd64 netbase all 6.5 [12.4 kB]
+#6 8.370 Get:6 http://deb.debian.org/debian trixie/main amd64 readline-common all 8.2-6 [69.4 kB]
+#6 8.563 Get:7 http://deb.debian.org/debian trixie/main amd64 libreadline8t64 amd64 8.2-6 [169 kB]
+#6 8.767 Get:8 http://deb.debian.org/debian trixie/main amd64 libpython3.13-stdlib amd64 3.13.5-2+deb13u5 [1959 kB]
+#6 9.708 Get:9 http://deb.debian.org/debian trixie/main amd64 python3.13 amd64 3.13.5-2+deb13u5 [757 kB]
+#6 11.01 Get:10 http://deb.debian.org/debian trixie/main amd64 libpython3-stdlib amd64 3.13.5-1 [10.2 kB]
+#6 11.11 Get:11 http://deb.debian.org/debian trixie/main amd64 python3 amd64 3.13.5-1 [28.2 kB]
+#6 11.30 Get:12 http://deb.debian.org/debian-security trixie-security/main amd64 ca-certificates all 20250419+deb13u1 [161 kB]
+#6 11.52 Get:13 http://deb.debian.org/debian-security trixie-security/main amd64 curl amd64 8.14.1-2+deb13u7 [270 kB]
+#6 11.74 Get:14 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl4t64 amd64 8.14.1-2+deb13u7 [392 kB]
+#6 11.98 Get:15 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl3t64-gnutls amd64 8.14.1-2+deb13u7 [385 kB]
+#6 12.22 Get:16 http://deb.debian.org/debian trixie/main amd64 python3-packaging all 25.0-1 [56.6 kB]
+#6 12.42 Get:17 http://deb.debian.org/debian trixie/main amd64 python3-wheel all 0.46.1-2 [21.7 kB]
+#6 12.53 Get:18 http://deb.debian.org/debian trixie/main amd64 python3-pip all 25.1.1+dfsg-1 [1457 kB]
+#6 14.96 Preconfiguring packages ...
+#6 17.67 Fetched 8892 kB in 8s (1145 kB/s)
+#6 17.71 Selecting previously unselected package libpython3.13-minimal:amd64.
+#6 17.71 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9608 files and directories currently installed.)
+#6 17.72 Preparing to unpack .../libpython3.13-minimal_3.13.5-2+deb13u5_amd64.deb ...
+#6 17.72 Unpacking libpython3.13-minimal:amd64 (3.13.5-2+deb13u5) ...
+#6 17.84 Selecting previously unselected package python3.13-minimal.
+#6 17.84 Preparing to unpack .../python3.13-minimal_3.13.5-2+deb13u5_amd64.deb ...
+#6 17.86 Unpacking python3.13-minimal (3.13.5-2+deb13u5) ...
+#6 18.07 Setting up libpython3.13-minimal:amd64 (3.13.5-2+deb13u5) ...
+#6 18.09 Setting up python3.13-minimal (3.13.5-2+deb13u5) ...
+#6 19.16 Selecting previously unselected package python3-minimal.
+#6 19.16 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9933 files and directories currently installed.)
+#6 19.17 Preparing to unpack .../0-python3-minimal_3.13.5-1_amd64.deb ...
+#6 19.17 Unpacking python3-minimal (3.13.5-1) ...
+#6 19.23 Selecting previously unselected package media-types.
+#6 19.23 Preparing to unpack .../1-media-types_13.0.0_all.deb ...
+#6 19.23 Unpacking media-types (13.0.0) ...
+#6 19.29 Selecting previously unselected package netbase.
+#6 19.29 Preparing to unpack .../2-netbase_6.5_all.deb ...
+#6 19.29 Unpacking netbase (6.5) ...
+#6 19.35 Selecting previously unselected package readline-common.
+#6 19.35 Preparing to unpack .../3-readline-common_8.2-6_all.deb ...
+#6 19.35 Unpacking readline-common (8.2-6) ...
+#6 19.41 Selecting previously unselected package libreadline8t64:amd64.
+#6 19.42 Preparing to unpack .../4-libreadline8t64_8.2-6_amd64.deb ...
+#6 19.43 Adding 'diversion of /lib/x86_64-linux-gnu/libhistory.so.8 to /lib/x86_64-linux-gnu/libhistory.so.8.usr-is-merged by libreadline8t64'
+#6 19.45 Adding 'diversion of /lib/x86_64-linux-gnu/libhistory.so.8.2 to /lib/x86_64-linux-gnu/libhistory.so.8.2.usr-is-merged by libreadline8t64'
+#6 19.46 Adding 'diversion of /lib/x86_64-linux-gnu/libreadline.so.8 to /lib/x86_64-linux-gnu/libreadline.so.8.usr-is-merged by libreadline8t64'
+#6 19.47 Adding 'diversion of /lib/x86_64-linux-gnu/libreadline.so.8.2 to /lib/x86_64-linux-gnu/libreadline.so.8.2.usr-is-merged by libreadline8t64'
+#6 19.48 Unpacking libreadline8t64:amd64 (8.2-6) ...
+#6 19.54 Selecting previously unselected package libpython3.13-stdlib:amd64.
+#6 19.54 Preparing to unpack .../5-libpython3.13-stdlib_3.13.5-2+deb13u5_amd64.deb ...
+#6 19.54 Unpacking libpython3.13-stdlib:amd64 (3.13.5-2+deb13u5) ...
+#6 19.74 Selecting previously unselected package python3.13.
+#6 19.75 Preparing to unpack .../6-python3.13_3.13.5-2+deb13u5_amd64.deb ...
+#6 19.75 Unpacking python3.13 (3.13.5-2+deb13u5) ...
+#6 19.82 Selecting previously unselected package libpython3-stdlib:amd64.
+#6 19.82 Preparing to unpack .../7-libpython3-stdlib_3.13.5-1_amd64.deb ...
+#6 19.82 Unpacking libpython3-stdlib:amd64 (3.13.5-1) ...
+#6 19.87 Setting up python3-minimal (3.13.5-1) ...
+#6 20.12 Selecting previously unselected package python3.
+#6 20.12 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10426 files and directories currently installed.)
+#6 20.13 Preparing to unpack .../0-python3_3.13.5-1_amd64.deb ...
+#6 20.16 Unpacking python3 (3.13.5-1) ...
+#6 20.22 Preparing to unpack .../1-ca-certificates_20250419+deb13u1_all.deb ...
+#6 20.23 Unpacking ca-certificates (20250419+deb13u1) over (20250419) ...
+#6 20.49 Preparing to unpack .../2-curl_8.14.1-2+deb13u7_amd64.deb ...
+#6 20.50 Unpacking curl (8.14.1-2+deb13u7) over (8.14.1-2+deb13u2) ...
+#6 20.59 Preparing to unpack .../3-libcurl4t64_8.14.1-2+deb13u7_amd64.deb ...
+#6 20.60 Unpacking libcurl4t64:amd64 (8.14.1-2+deb13u7) over (8.14.1-2+deb13u2) ...
+#6 20.68 Preparing to unpack .../4-libcurl3t64-gnutls_8.14.1-2+deb13u7_amd64.deb ...
+#6 20.69 Unpacking libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) over (8.14.1-2+deb13u2) ...
+#6 20.78 Selecting previously unselected package python3-packaging.
+#6 20.78 Preparing to unpack .../5-python3-packaging_25.0-1_all.deb ...
+#6 20.79 Unpacking python3-packaging (25.0-1) ...
+#6 20.84 Selecting previously unselected package python3-wheel.
+#6 20.84 Preparing to unpack .../6-python3-wheel_0.46.1-2_all.deb ...
+#6 20.84 Unpacking python3-wheel (0.46.1-2) ...
+#6 20.90 Selecting previously unselected package python3-pip.
+#6 20.91 Preparing to unpack .../7-python3-pip_25.1.1+dfsg-1_all.deb ...
+#6 20.91 Unpacking python3-pip (25.1.1+dfsg-1) ...
+#6 21.08 Setting up media-types (13.0.0) ...
+#6 21.08 Setting up libcurl4t64:amd64 (8.14.1-2+deb13u7) ...
+#6 21.09 Setting up libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) ...
+#6 21.09 Setting up ca-certificates (20250419+deb13u1) ...
+#6 34.59 Updating certificates in /etc/ssl/certs...
+#6 41.42 rehash: warning: skipping ca-certificates.crt, it does not contain exactly one certificate or CRL
+#6 41.43 0 added, 2 removed; done.
+#6 41.47 Setting up netbase (6.5) ...
+#6 41.50 Setting up curl (8.14.1-2+deb13u7) ...
+#6 41.50 Setting up readline-common (8.2-6) ...
+#6 41.51 Setting up libreadline8t64:amd64 (8.2-6) ...
+#6 41.52 Setting up libpython3.13-stdlib:amd64 (3.13.5-2+deb13u5) ...
+#6 41.53 Setting up libpython3-stdlib:amd64 (3.13.5-1) ...
+#6 41.53 Setting up python3.13 (3.13.5-2+deb13u5) ...
+#6 42.61 Setting up python3 (3.13.5-1) ...
+#6 42.77 Setting up python3-packaging (25.0-1) ...
+#6 42.96 Setting up python3-wheel (0.46.1-2) ...
+#6 43.11 Setting up python3-pip (25.1.1+dfsg-1) ...
+#6 44.20 Processing triggers for libc-bin (2.41-12) ...
+#6 44.22 Processing triggers for ca-certificates (20250419+deb13u1) ...
+#6 44.25 Updating certificates in /etc/ssl/certs...
+#6 49.02 0 added, 0 removed; done.
+#6 49.02 Running hooks in /etc/ca-certificates/update.d...
+#6 49.02 done.
+#6 DONE 82.1s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 9.0s done
+#7 exporting manifest sha256:561bbeb24350c7610c2e93833789e08b4effe3658fb353ac1643c2b836f64805 done
+#7 exporting config sha256:d7529bae2f7144f2a8a7f30fdda64b0a2dcbcbddd932ac16a5a56a1ad7a9af0e done
+#7 exporting attestation manifest sha256:fc9e9bd9db4f106f8dd67abbfb774b1f63fe4568bd8eedb515f8f24abe77ea63 done
+#7 exporting manifest list sha256:b6db72a94a5f8719b000a5b862e6a9ac06e0dc8a4438261c2194844077d1260a done
+#7 naming to docker.io/library/dana-jenkins:lts done
+#7 unpacking to docker.io/library/dana-jenkins:lts
+#7 unpacking to docker.io/library/dana-jenkins:lts 1.0s done
+#7 DONE 10.0s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.0s
+ Image dana-jenkins:lts Built 
+ Container dana-jenkins-prod Recreate 
+ Container dana-jenkins-prod Recreated 
+ Container dana-jenkins-prod Starting 
+ Container dana-jenkins-prod Started 
+[0;32m[OK][0m   jenkins compose up succeeded
+sha256:561bbeb24350c7610c2e93833789e08b4effe3658fb353ac1643c2b836f64805 done
+#7 exporting config sha256:d7529bae2f7144f2a8a7f30fdda64b0a2dcbcbddd932ac16a5a56a1ad7a9af0e done
+#7 exporting attestation manifest sha256:fc9e9bd9db4f106f8dd67abbfb774b1f63fe4568bd8eedb515f8f24abe77ea63 done
+#7 exporting manifest list sha256:b6db72a94a5f8719b000a5b862e6a9ac06e0dc8a4438261c2194844077d1260a done
+#7 naming to docker.io/library/dana-jenkins:lts done
+#7 unpacking to docker.io/library/dana-jenkins:lts
+#7 unpacking to docker.io/library/dana-jenkins:lts 1.0s done
+#7 DONE 10.0s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.0s
+ Image dana-jenkins:lts Built 
+ Container dana-jenkins-prod Recreate 
+ Container dana-jenkins-prod Recreated 
+ Container dana-jenkins-prod Starting 
+ Container dana-jenkins-prod Started 

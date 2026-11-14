@@ -1,0 +1,490 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.local
+#1 transferring dockerfile: 4.01kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 1.5s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for ghcr.io/astral-sh/uv:0.12.10
+#4 ...
+
+#5 [internal] load metadata for docker.io/library/python:3.12-slim-trixie
+#5 DONE 1.4s
+
+#4 [internal] load metadata for ghcr.io/astral-sh/uv:0.12.10
+#4 DONE 2.5s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 273B done
+#6 DONE 0.0s
+
+#7 [base  1/12] FROM docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#7 resolve docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#7 DONE 0.0s
+
+#8 [base  2/12] WORKDIR /app/backend
+#8 CACHED
+
+#9 [base  3/12] RUN if [ "0" -ne 0 ]; then       if [ "0" -ne 0 ]; then addgroup --gid "0" app; fi;       adduser --uid "0" --gid "0" --home "/root" --disabled-password --no-create-home app;     fi  && mkdir -p "/root/.cache/chroma"  && echo -n 00000000-0000-0000-0000-000000000000 > "/root/.cache/chroma/telemetry_user_id"  && chown -R "0:0" /app "/root"
+#9 CACHED
+
+#10 [base  4/12] RUN if [ "true" = "true" ] && { [ "false" = "true" ] || [ "false" = "true" ]; }; then       echo "USE_SLIM cannot be combined with USE_CUDA or USE_OLLAMA" >&2; exit 1;     fi
+#10 CACHED
+
+#11 FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+#11 resolve ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500 0.0s done
+#11 sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f 20.97MB / 23.00MB 0.2s
+#11 ...
+
+#12 [internal] load build context
+#12 transferring context: 324.88kB 0.3s done
+#12 DONE 0.3s
+
+#11 FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+#11 sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f 23.00MB / 23.00MB 3.8s done
+#11 extracting sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f
+#11 extracting sha256:a3ca80cfbbd0a2643f858cae52b596a1f8eb2d0dbb5f529c44568c6ba6d9959f 0.5s done
+#11 DONE 4.4s
+
+#13 [base  5/12] RUN apt-get update  && apt-get install -y --no-install-recommends curl jq ca-certificates bash  && rm -rf /var/lib/apt/lists/*
+#13 0.560 Hit:1 http://deb.debian.org/debian trixie InRelease
+#13 0.640 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#13 0.796 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#13 0.965 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#13 ...
+
+#11 FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+#11 extracting sha256:3bf5a1739ff9d32bbbc9c446873d6ccac733ae8c071cd561506c2c218fbd37f9 0.0s done
+#11 DONE 4.4s
+
+#13 [base  5/12] RUN apt-get update  && apt-get install -y --no-install-recommends curl jq ca-certificates bash  && rm -rf /var/lib/apt/lists/*
+#13 5.977 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#13 6.071 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [302 kB]
+#13 7.015 Fetched 10.1 MB in 7s (1502 kB/s)
+#13 7.015 Reading package lists...
+#13 7.855 Reading package lists...
+#13 8.653 Building dependency tree...
+#13 8.812 Reading state information...
+#13 9.074 ca-certificates is already the newest version (20250419+deb13u1).
+#13 9.074 bash is already the newest version (5.2.37-2+b10).
+#13 9.074 bash set to manually installed.
+#13 9.074 The following additional packages will be installed:
+#13 9.074   libbrotli1 libcom-err2 libcurl4t64 libgnutls30t64 libgssapi-krb5-2 libidn2-0
+#13 9.074   libjq1 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap2
+#13 9.075   libnghttp2-14 libnghttp3-9 libonig5 libp11-kit0 libpsl5t64 librtmp1
+#13 9.076   libsasl2-2 libsasl2-modules-db libssh2-1t64 libtasn1-6 libunistring5
+#13 9.077 Suggested packages:
+#13 9.077   gnutls-bin krb5-doc krb5-user
+#13 9.077 Recommended packages:
+#13 9.077   bash-completion krb5-locales libldap-common publicsuffix libsasl2-modules
+#13 9.319 The following NEW packages will be installed:
+#13 9.319   curl jq libbrotli1 libcom-err2 libcurl4t64 libgnutls30t64 libgssapi-krb5-2
+#13 9.319   libidn2-0 libjq1 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
+#13 9.319   libldap2 libnghttp2-14 libnghttp3-9 libonig5 libp11-kit0 libpsl5t64 librtmp1
+#13 9.320   libsasl2-2 libsasl2-modules-db libssh2-1t64 libtasn1-6 libunistring5
+#13 9.469 0 upgraded, 25 newly installed, 0 to remove and 1 not upgraded.
+#13 9.469 Need to get 5321 kB of archives.
+#13 9.469 After this operation, 16.0 MB of additional disk space will be used.
+#13 9.469 Get:1 http://deb.debian.org/debian-security trixie-security/main amd64 libbrotli1 amd64 1.1.0-2+deb13u1 [304 kB]
+#13 9.770 Get:2 http://deb.debian.org/debian trixie/main amd64 libkrb5support0 amd64 1.21.3-5+deb13u1 [33.1 kB]
+#13 9.872 Get:3 http://deb.debian.org/debian trixie/main amd64 libcom-err2 amd64 1.47.2-3+b12 [25.0 kB]
+#13 10.05 Get:4 http://deb.debian.org/debian trixie/main amd64 libk5crypto3 amd64 1.21.3-5+deb13u1 [81.2 kB]
+#13 10.23 Get:5 http://deb.debian.org/debian trixie/main amd64 libkeyutils1 amd64 1.6.3-6 [9456 B]
+#13 10.32 Get:6 http://deb.debian.org/debian trixie/main amd64 libkrb5-3 amd64 1.21.3-5+deb13u1 [326 kB]
+#13 10.56 Get:7 http://deb.debian.org/debian trixie/main amd64 libgssapi-krb5-2 amd64 1.21.3-5+deb13u1 [138 kB]
+#13 10.72 Get:8 http://deb.debian.org/debian trixie/main amd64 libunistring5 amd64 1.3-2 [477 kB]
+#13 11.06 Get:9 http://deb.debian.org/debian trixie/main amd64 libidn2-0 amd64 2.3.8-2 [109 kB]
+#13 11.30 Get:10 http://deb.debian.org/debian trixie/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-9 [19.8 kB]
+#13 11.40 Get:11 http://deb.debian.org/debian trixie/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-9 [57.5 kB]
+#13 11.58 Get:12 http://deb.debian.org/debian trixie/main amd64 libldap2 amd64 2.6.10+dfsg-1 [194 kB]
+#13 11.78 Get:13 http://deb.debian.org/debian trixie/main amd64 libnghttp2-14 amd64 1.64.0-1.1+deb13u1 [76.2 kB]
+#13 11.96 Get:14 http://deb.debian.org/debian trixie/main amd64 libnghttp3-9 amd64 1.8.0-1 [67.7 kB]
+#13 12.15 Get:15 http://deb.debian.org/debian trixie/main amd64 libpsl5t64 amd64 0.21.2-1.1+b1 [57.2 kB]
+#13 12.31 Get:16 http://deb.debian.org/debian trixie/main amd64 libp11-kit0 amd64 0.25.5-3 [425 kB]
+#13 12.62 Get:17 http://deb.debian.org/debian trixie/main amd64 libtasn1-6 amd64 4.20.0-2+deb13u1 [50.1 kB]
+#13 12.77 Get:18 http://deb.debian.org/debian trixie/main amd64 libgnutls30t64 amd64 3.8.9-3+deb13u4 [1469 kB]
+#13 13.63 Get:19 http://deb.debian.org/debian trixie/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b5 [58.8 kB]
+#13 13.81 Get:20 http://deb.debian.org/debian trixie/main amd64 libssh2-1t64 amd64 1.11.1-1+deb13u2 [245 kB]
+#13 14.02 Get:21 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl4t64 amd64 8.14.1-2+deb13u7 [392 kB]
+#13 14.32 Get:22 http://deb.debian.org/debian-security trixie-security/main amd64 curl amd64 8.14.1-2+deb13u7 [270 kB]
+#13 14.54 Get:23 http://deb.debian.org/debian trixie/main amd64 libonig5 amd64 6.9.9-1+b1 [189 kB]
+#13 14.74 Get:24 http://deb.debian.org/debian-security trixie-security/main amd64 libjq1 amd64 1.7.1-6+deb13u4 [168 kB]
+#13 14.94 Get:25 http://deb.debian.org/debian-security trixie-security/main amd64 jq amd64 1.7.1-6+deb13u4 [78.9 kB]
+#13 15.30 debconf: unable to initialize frontend: Dialog
+#13 15.30 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#13 15.30 debconf: falling back to frontend: Readline
+#13 15.30 debconf: unable to initialize frontend: Readline
+#13 15.30 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 25.)
+#13 15.30 debconf: falling back to frontend: Teletype
+#13 15.34 debconf: unable to initialize frontend: Teletype
+#13 15.34 debconf: (This frontend requires a controlling tty.)
+#13 15.34 debconf: falling back to frontend: Noninteractive
+#13 16.16 Fetched 5321 kB in 6s (935 kB/s)
+#13 16.23 Selecting previously unselected package libbrotli1:amd64.
+#13 16.23 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5658 files and directories currently installed.)
+#13 16.25 Preparing to unpack .../00-libbrotli1_1.1.0-2+deb13u1_amd64.deb ...
+#13 16.25 Unpacking libbrotli1:amd64 (1.1.0-2+deb13u1) ...
+#13 16.35 Selecting previously unselected package libkrb5support0:amd64.
+#13 16.35 Preparing to unpack .../01-libkrb5support0_1.21.3-5+deb13u1_amd64.deb ...
+#13 16.35 Unpacking libkrb5support0:amd64 (1.21.3-5+deb13u1) ...
+#13 16.43 Selecting previously unselected package libcom-err2:amd64.
+#13 16.43 Preparing to unpack .../02-libcom-err2_1.47.2-3+b12_amd64.deb ...
+#13 16.43 Unpacking libcom-err2:amd64 (1.47.2-3+b12) ...
+#13 16.51 Selecting previously unselected package libk5crypto3:amd64.
+#13 16.51 Preparing to unpack .../03-libk5crypto3_1.21.3-5+deb13u1_amd64.deb ...
+#13 16.51 Unpacking libk5crypto3:amd64 (1.21.3-5+deb13u1) ...
+#13 16.59 Selecting previously unselected package libkeyutils1:amd64.
+#13 16.59 Preparing to unpack .../04-libkeyutils1_1.6.3-6_amd64.deb ...
+#13 16.59 Unpacking libkeyutils1:amd64 (1.6.3-6) ...
+#13 16.66 Selecting previously unselected package libkrb5-3:amd64.
+#13 16.66 Preparing to unpack .../05-libkrb5-3_1.21.3-5+deb13u1_amd64.deb ...
+#13 16.66 Unpacking libkrb5-3:amd64 (1.21.3-5+deb13u1) ...
+#13 16.76 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#13 16.76 Preparing to unpack .../06-libgssapi-krb5-2_1.21.3-5+deb13u1_amd64.deb ...
+#13 16.76 Unpacking libgssapi-krb5-2:amd64 (1.21.3-5+deb13u1) ...
+#13 16.84 Selecting previously unselected package libunistring5:amd64.
+#13 16.84 Preparing to unpack .../07-libunistring5_1.3-2_amd64.deb ...
+#13 16.85 Unpacking libunistring5:amd64 (1.3-2) ...
+#13 16.95 Selecting previously unselected package libidn2-0:amd64.
+#13 16.96 Preparing to unpack .../08-libidn2-0_2.3.8-2_amd64.deb ...
+#13 16.96 Unpacking libidn2-0:amd64 (2.3.8-2) ...
+#13 17.03 Selecting previously unselected package libsasl2-modules-db:amd64.
+#13 17.03 Preparing to unpack .../09-libsasl2-modules-db_2.1.28+dfsg1-9_amd64.deb ...
+#13 17.04 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+#13 17.11 Selecting previously unselected package libsasl2-2:amd64.
+#13 17.11 Preparing to unpack .../10-libsasl2-2_2.1.28+dfsg1-9_amd64.deb ...
+#13 17.11 Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+#13 17.18 Selecting previously unselected package libldap2:amd64.
+#13 17.18 Preparing to unpack .../11-libldap2_2.6.10+dfsg-1_amd64.deb ...
+#13 17.18 Unpacking libldap2:amd64 (2.6.10+dfsg-1) ...
+#13 17.26 Selecting previously unselected package libnghttp2-14:amd64.
+#13 17.26 Preparing to unpack .../12-libnghttp2-14_1.64.0-1.1+deb13u1_amd64.deb ...
+#13 17.26 Unpacking libnghttp2-14:amd64 (1.64.0-1.1+deb13u1) ...
+#13 17.34 Selecting previously unselected package libnghttp3-9:amd64.
+#13 17.34 Preparing to unpack .../13-libnghttp3-9_1.8.0-1_amd64.deb ...
+#13 17.34 Unpacking libnghttp3-9:amd64 (1.8.0-1) ...
+#13 17.41 Selecting previously unselected package libpsl5t64:amd64.
+#13 17.41 Preparing to unpack .../14-libpsl5t64_0.21.2-1.1+b1_amd64.deb ...
+#13 17.42 Unpacking libpsl5t64:amd64 (0.21.2-1.1+b1) ...
+#13 17.49 Selecting previously unselected package libp11-kit0:amd64.
+#13 17.49 Preparing to unpack .../15-libp11-kit0_0.25.5-3_amd64.deb ...
+#13 17.49 Unpacking libp11-kit0:amd64 (0.25.5-3) ...
+#13 17.58 Selecting previously unselected package libtasn1-6:amd64.
+#13 17.58 Preparing to unpack .../16-libtasn1-6_4.20.0-2+deb13u1_amd64.deb ...
+#13 17.59 Unpacking libtasn1-6:amd64 (4.20.0-2+deb13u1) ...
+#13 17.65 Selecting previously unselected package libgnutls30t64:amd64.
+#13 17.65 Preparing to unpack .../17-libgnutls30t64_3.8.9-3+deb13u4_amd64.deb ...
+#13 17.65 Unpacking libgnutls30t64:amd64 (3.8.9-3+deb13u4) ...
+#13 17.77 Selecting previously unselected package librtmp1:amd64.
+#13 17.78 Preparing to unpack .../18-librtmp1_2.4+20151223.gitfa8646d.1-2+b5_amd64.deb ...
+#13 17.78 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+#13 17.85 Selecting previously unselected package libssh2-1t64:amd64.
+#13 17.85 Preparing to unpack .../19-libssh2-1t64_1.11.1-1+deb13u2_amd64.deb ...
+#13 17.85 Unpacking libssh2-1t64:amd64 (1.11.1-1+deb13u2) ...
+#13 17.93 Selecting previously unselected package libcurl4t64:amd64.
+#13 17.93 Preparing to unpack .../20-libcurl4t64_8.14.1-2+deb13u7_amd64.deb ...
+#13 17.93 Unpacking libcurl4t64:amd64 (8.14.1-2+deb13u7) ...
+#13 18.02 Selecting previously unselected package curl.
+#13 18.02 Preparing to unpack .../21-curl_8.14.1-2+deb13u7_amd64.deb ...
+#13 18.02 Unpacking curl (8.14.1-2+deb13u7) ...
+#13 18.10 Selecting previously unselected package libonig5:amd64.
+#13 18.10 Preparing to unpack .../22-libonig5_6.9.9-1+b1_amd64.deb ...
+#13 18.10 Unpacking libonig5:amd64 (6.9.9-1+b1) ...
+#13 18.17 Selecting previously unselected package libjq1:amd64.
+#13 18.17 Preparing to unpack .../23-libjq1_1.7.1-6+deb13u4_amd64.deb ...
+#13 18.17 Unpacking libjq1:amd64 (1.7.1-6+deb13u4) ...
+#13 18.23 Selecting previously unselected package jq.
+#13 18.24 Preparing to unpack .../24-jq_1.7.1-6+deb13u4_amd64.deb ...
+#13 18.24 Unpacking jq (1.7.1-6+deb13u4) ...
+#13 18.29 Setting up libkeyutils1:amd64 (1.6.3-6) ...
+#13 18.30 Setting up libbrotli1:amd64 (1.1.0-2+deb13u1) ...
+#13 18.30 Setting up libnghttp2-14:amd64 (1.64.0-1.1+deb13u1) ...
+#13 18.31 Setting up libcom-err2:amd64 (1.47.2-3+b12) ...
+#13 18.31 Setting up libkrb5support0:amd64 (1.21.3-5+deb13u1) ...
+#13 18.32 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+#13 18.32 Setting up libp11-kit0:amd64 (0.25.5-3) ...
+#13 18.33 Setting up libunistring5:amd64 (1.3-2) ...
+#13 18.33 Setting up libk5crypto3:amd64 (1.21.3-5+deb13u1) ...
+#13 18.33 Setting up libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+#13 18.34 Setting up libnghttp3-9:amd64 (1.8.0-1) ...
+#13 18.34 Setting up libtasn1-6:amd64 (4.20.0-2+deb13u1) ...
+#13 18.35 Setting up libkrb5-3:amd64 (1.21.3-5+deb13u1) ...
+#13 18.35 Setting up libssh2-1t64:amd64 (1.11.1-1+deb13u2) ...
+#13 18.35 Setting up libldap2:amd64 (2.6.10+dfsg-1) ...
+#13 18.36 Setting up libonig5:amd64 (6.9.9-1+b1) ...
+#13 18.36 Setting up libjq1:amd64 (1.7.1-6+deb13u4) ...
+#13 18.37 Setting up libidn2-0:amd64 (2.3.8-2) ...
+#13 18.37 Setting up libgssapi-krb5-2:amd64 (1.21.3-5+deb13u1) ...
+#13 18.39 Setting up jq (1.7.1-6+deb13u4) ...
+#13 18.39 Setting up libgnutls30t64:amd64 (3.8.9-3+deb13u4) ...
+#13 18.40 Setting up libpsl5t64:amd64 (0.21.2-1.1+b1) ...
+#13 18.40 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+#13 18.41 Setting up libcurl4t64:amd64 (8.14.1-2+deb13u7) ...
+#13 18.41 Setting up curl (8.14.1-2+deb13u7) ...
+#13 18.42 Processing triggers for libc-bin (2.41-12+deb13u4) ...
+#13 DONE 18.5s
+
+#14 [base  6/12] COPY --chown=0:0 ./backend/requirements*.txt ./
+#14 DONE 0.1s
+
+#15 [base  7/12] RUN --mount=from=ghcr.io/astral-sh/uv:0.12.10,source=/uv,target=/bin/uv     set -e;     if [ "true" = "true" ]; then       uv pip install --system -r requirements-slim.txt --no-cache-dir;     else       pip3 install 'torch<=2.9.1' torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir;       uv pip install --system -r requirements.txt --no-cache-dir;     fi;     mkdir -p /app/backend/data; chown -R "0:0" /app/backend/data/
+#15 0.501 Using Python 3.12.16 environment at: /usr/local
+#15 10.57 Resolved 175 packages in 10.06s
+#15 10.73 Downloading pydantic-core (2.0MiB)
+#15 10.73 Downloading zstandard (5.3MiB)
+#15 10.73 Downloading psycopg-binary (4.9MiB)
+#15 10.73 Downloading uvloop (4.3MiB)
+#15 10.74 Downloading aiohttp (1.8MiB)
+#15 10.74 Downloading grpcio (7.0MiB)
+#15 10.74 Downloading psycopg2-binary (4.1MiB)
+#15 10.74 Downloading botocore (14.3MiB)
+#15 10.74 Downloading pygments (1.2MiB)
+#15 10.74 Downloading cryptography (4.5MiB)
+#15 10.74 Downloading pillow (6.8MiB)
+#15 10.74 Downloading tiktoken (1.1MiB)
+#15 10.74 Downloading brotli (1.4MiB)
+#15 10.74 Downloading pycrdt (1.0MiB)
+#15 10.80 Downloading black (1.8MiB)
+#15 10.80 Downloading sqlalchemy (3.2MiB)
+#15 10.81 Downloading lxml (5.0MiB)
+#15 10.81 Downloading openai (1.1MiB)
+#15 10.81 Downloading numpy (15.9MiB)
+#15 42.16  Downloaded pycrdt
+#15 42.50  Downloaded tiktoken
+#15 43.05  Downloaded openai
+#15 43.85  Downloaded pygments
+#15 45.76  Downloaded brotli
+#15 54.93  Downloaded aiohttp
+#15 55.65  Downloaded black
+#15 56.89  Downloaded pydantic-core
+#15 66.93  Downloaded sqlalchemy
+#15 71.04  Downloaded psycopg2-binary
+#15 72.25  Downloaded uvloop
+#15 72.41  Downloaded cryptography
+#15 73.21  Downloaded psycopg-binary
+#15 73.61  Downloaded lxml
+#15 74.21  Downloaded zstandard
+#15 76.65  Downloaded pillow
+#15 77.06  Downloaded grpcio
+#15 86.67  Downloaded botocore
+#15 87.95  Downloaded numpy
+#15 87.95 Prepared 175 packages in 1m 17s
+#15 88.41 Installed 175 packages in 460ms
+#15 88.41  + aiocache==0.12.3
+#15 88.41  + aiodns==3.6.1
+#15 88.41  + aiofiles==25.1.0
+#15 88.41  + aiohappyeyeballs==2.7.1
+#15 88.41  + aiohttp==3.14.5
+#15 88.41  + aiosignal==1.4.0
+#15 88.41  + aiosqlite==0.22.1
+#15 88.41  + alembic==1.18.4
+#15 88.41  + annotated-doc==0.0.6
+#15 88.41  + annotated-types==0.8.0
+#15 88.41  + anyio==4.16.0
+#15 88.41  + argon2-cffi==25.1.0
+#15 88.41  + argon2-cffi-bindings==26.1.0
+#15 88.41  + asgiref==3.11.1
+#15 88.41  + attrs==26.1.0
+#15 88.41  + authlib==1.7.2
+#15 88.41  + azure-ai-documentintelligence==1.0.2
+#15 88.41  + azure-core==1.41.0
+#15 88.41  + azure-identity==1.25.3
+#15 88.41  + azure-search-documents==12.0.0
+#15 88.41  + bcrypt==5.0.0
+#15 88.41  + beautifulsoup4==4.14.3
+#15 88.41  + bidict==0.24.1
+#15 88.41  + black==26.5.1
+#15 88.41  + boto3==1.42.62
+#15 88.41  + botocore==1.42.97
+#15 88.41  + brotli==1.2.1
+#15 88.41  + certifi==2026.10.23
+#15 88.41  + cffi==2.1.1
+#15 88.41  + chardet==7.4.3
+#15 88.41  + charset-normalizer==3.5.2
+#15 88.41  + click==8.5.1
+#15 88.41  + cryptography==48.0.1
+#15 88.41  + defusedxml==0.7.1
+#15 88.41  + distro==1.9.0
+#15 88.41  + fake-useragent==2.2.0
+#15 88.41  + fastapi==0.136.3
+#15 88.41  + frozenlist==1.8.0
+#15 88.41  + ftfy==6.3.1
+#15 88.41  + google-re2==1.1.20251105
+#15 88.41  + googleapis-common-protos==1.75.0
+#15 88.41  + greenlet==3.5.6
+#15 88.41  + grpcio==1.85.1
+#15 88.41  + h11==0.16.0
+#15 88.41  + h2==4.4.1
+#15 88.41  + hiredis==3.4.2
+#15 88.41  + hpack==4.2.0
+#15 88.41  + httpcore==1.0.9
+#15 88.41  + httpcore2==2.16.0
+#15 88.41  + httptools==0.9.0
+#15 88.41  + httpx==0.28.1
+#15 88.41  + httpx2==2.16.0
+#15 88.41  + hyperframe==6.1.0
+#15 88.41  + idna==3.20
+#15 88.41  + isodate==0.7.2
+#15 88.41  + itsdangerous==2.2.0
+#15 88.41  + jiter==0.19.0
+#15 88.42  + jmespath==1.1.0
+#15 88.42  + joserfc==1.7.4
+#15 88.42  + jsonpatch==1.46
+#15 88.42  + jsonpointer==3.11
+#15 88.42  + jsonschema==4.26.0
+#15 88.42  + jsonschema-specifications==2025.9.1
+#15 88.42  + langchain-classic==1.0.7
+#15 88.42  + langchain-core==1.4.8
+#15 88.42  + langchain-protocol==0.0.21
+#15 88.42  + langchain-text-splitters==1.1.2
+#15 88.42  + langsmith==0.14.17
+#15 88.42  + ldap3==2.9.1
+#15 88.42  + loguru==0.7.3
+#15 88.42  + lxml==6.1.1
+#15 88.42  + mako==1.4.3
+#15 88.42  + markdown==3.10.2
+#15 88.42  + markdown-it-py==4.3.0
+#15 88.42  + markupsafe==3.0.4
+#15 88.42  + mcp==2.3.0
+#15 88.42  + mcp-types==2.3.0
+#15 88.42  + mdurl==0.1.2
+#15 88.42  + msal==1.39.0
+#15 88.42  + msal-extensions==1.3.1
+#15 88.42  + multidict==7.2.1
+#15 88.42  + mypy-extensions==1.2.0
+#15 88.42  + numpy==2.4.6
+#15 88.42  + openai==2.29.0
+#15 88.42  + opentelemetry-api==1.42.1
+#15 88.42  + opentelemetry-exporter-otlp==1.42.1
+#15 88.42  + opentelemetry-exporter-otlp-proto-common==1.42.1
+#15 88.42  + opentelemetry-exporter-otlp-proto-grpc==1.42.1
+#15 88.42  + opentelemetry-exporter-otlp-proto-http==1.42.1
+#15 88.42  + opentelemetry-instrumentation==0.63b1
+#15 88.42  + opentelemetry-instrumentation-aiohttp-client==0.63b1
+#15 88.42  + opentelemetry-instrumentation-asgi==0.63b1
+#15 88.42  + opentelemetry-instrumentation-fastapi==0.63b1
+#15 88.42  + opentelemetry-instrumentation-httpx==0.63b1
+#15 88.42  + opentelemetry-instrumentation-logging==0.63b1
+#15 88.42  + opentelemetry-instrumentation-redis==0.63b1
+#15 88.42  + opentelemetry-instrumentation-requests==0.63b1
+#15 88.42  + opentelemetry-instrumentation-sqlalchemy==0.63b1
+#15 88.42  + opentelemetry-instrumentation-system-metrics==0.63b1
+#15 88.42  + opentelemetry-proto==1.42.1
+#15 88.42  + opentelemetry-sdk==1.42.1
+#15 88.42  + opentelemetry-semantic-conventions==0.63b1
+#15 88.42  + opentelemetry-util-http==0.63b1
+#15 88.42  + orjson==3.11.9
+#15 88.42  + packaging==26.3
+#15 88.42  + pathspec==1.1.1
+#15 88.42  + pgvector==0.4.2
+#15 88.42  + pillow==13.0.0
+#15 88.42  + platformdirs==4.14.5
+#15 88.42  + propcache==0.5.4
+#15 88.42  + protobuf==6.33.6
+#15 88.42  + psutil==7.2.2
+#15 88.42  + psycopg==3.3.4
+#15 88.42  + psycopg-binary==3.3.4
+#15 88.42  + psycopg2-binary==2.9.12
+#15 88.42  + pyasn1==0.6.5
+#15 88.42  + pycares==4.11.0
+#15 88.42  + pycparser==3.12
+#15 88.42  + pycrdt==0.14.8
+#15 88.42  + pydantic==2.13.4
+#15 88.42  + pydantic-core==2.46.4
+#15 88.42  + pygments==2.21.0
+#15 88.42  + pyjwt==2.13.0
+#15 88.42  + pyotp==2.9.0
+#15 88.42  + python-dateutil==2.9.0.post0
+#15 88.42  + python-dotenv==1.2.4
+#15 88.42  + python-engineio==4.15.1
+#15 88.42  + python-mimeparse==2.0.0
+#15 88.42  + python-multipart==0.0.32
+#15 88.42  + python-socketio==5.16.2
+#15 88.42  + pytokens==0.4.1
+#15 88.42  + pytz==2026.2
+#15 88.42  + pyyaml==6.0.3
+#15 88.42  + qrcode==8.2
+#15 88.42  + rank-bm25==0.2.2
+#15 88.42  + redis==8.0.1
+#15 88.42  + referencing==0.37.0
+#15 88.42  + regex==2026.5.9
+#15 88.42  + requests==2.34.2
+#15 88.42  + requests-toolbelt==1.0.0
+#15 88.42  + rich==13.9.4
+#15 88.42  + rpds-py==2026.9.1
+#15 88.42  + s3transfer==0.16.1
+#15 88.42  + shellingham==1.5.4
+#15 88.42  + simple-websocket==1.1.0
+#15 88.42  + six==1.17.0
+#15 88.42  + sniffio==1.3.1
+#15 88.42  + socksio==1.0.0
+#15 88.42  + soupsieve==4.1
+#15 88.42  + sqlalchemy==2.0.50
+#15 88.42  + sse-starlette==3.7.0
+#15 88.42  + starlette==1.10.0
+#15 88.42  + starlette-compress==1.7.1
+#15 88.42  + starsessions==2.2.1
+#15 88.42  + tenacity==9.2.1
+#15 88.42  + tiktoken==0.13.0
+#15 88.42  + tqdm==4.70.1
+#15 88.42  + truststore==0.10.5
+#15 88.42  + typer==0.25.1
+#15 88.42  + typing-extensions==4.16.0
+#15 88.42  + typing-inspection==0.4.5
+#15 88.42  + urllib3==2.8.0
+#15 88.42  + uuid-utils==0.19.0
+#15 88.42  + uvicorn==0.54.0
+#15 88.42  + uvloop==0.23.0
+#15 88.42  + validators==0.35.0
+#15 88.42  + watchfiles==1.3.0
+#15 88.42  + wcwidth==0.9.4
+#15 88.42  + websockets==17.4
+#15 88.42  + wrapt==2.5.2
+#15 88.42  + wsproto==1.3.2
+#15 88.42  + xxhash==4.1.0
+#15 88.42  + yarl==1.25.1
+#15 88.42  + youtube-transcript-api==1.2.4
+#15 88.42  + zstandard==0.25.0
+#15 DONE 88.9s
+
+#16 [base  8/12] COPY --chown=0:0 ./build /app/build
+#16 DONE 3.3s
+
+#17 [base  9/12] COPY --chown=0:0 ./CHANGELOG.md /app/CHANGELOG.md
+#17 DONE 0.2s
+
+#18 [base 10/12] COPY --chown=0:0 ./package.json /app/package.json
+#18 DONE 0.0s
+
+#19 [base 11/12] COPY --chown=0:0 ./backend/ ./
+#19 DONE 0.3s
+
+#20 [base 12/12] RUN chgrp -R 0 /app/backend/open_webui/static  && chmod -R g=u /app/backend/open_webui/static  && if [ "false" = "true" ]; then       chgrp -R 0 /app /root || true;       chmod -R g+rwX /app /root || true;       find /app -type d -exec chmod g+s {} + || true;       find /root -type d -exec chmod g+s {} + || true;     fi
+#20 DONE 0.2s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 13.8s done
+#21 exporting manifest sha256:8ef21ba437c2a4f7bf54866a8591a9c5118f5ed4896137d6e697330ae71d253f done
+#21 exporting config sha256:3b7fe130d412edc3ac9f85ad11d6b1ebf725d748eb580eff88231ff6251073e9 done
+#21 exporting attestation manifest sha256:5a41446c9d1f3e3b184b554a0ce1cd7ca48e461e893d83a09e007d49f3515d41 done
+#21 exporting manifest list sha256:ea174b84b634e7b638554bb6c9451e02c9973357d39da23b1fca6244bb2e381d done
+#21 naming to docker.io/library/rag-webui:local done
+#21 unpacking to docker.io/library/rag-webui:local
+#21 unpacking to docker.io/library/rag-webui:local 3.7s done
+#21 naming to docker.io/library/rag-webui:dana done
+#21 unpacking to docker.io/library/rag-webui:dana done
+#21 DONE 17.6s
+
+ [33m5 warnings found (use docker --debug to expand):
+[0m - UndefinedVar: Usage of undefined variable '$USE_EMBEDDING_MODEL_DOCKER' (line 30)
+ - UndefinedVar: Usage of undefined variable '$USE_RERANKING_MODEL_DOCKER' (line 30)
+ - UndefinedVar: Usage of undefined variable '$USE_AUXILIARY_EMBEDDING_MODEL_DOCKER' (line 30)
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "OPENAI_API_KEY") (line 30)
+ - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "WEBUI_SECRET_KEY") (line 30)

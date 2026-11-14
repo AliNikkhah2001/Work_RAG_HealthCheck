@@ -1,0 +1,110 @@
+ Image rag-tracing:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 863B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 654B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.11-slim
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 217B done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#6 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#6 DONE 0.0s
+
+#7 [2/5] WORKDIR /app
+#7 CACHED
+
+#8 [3/5] COPY wheels/ /wheels/
+#8 CACHED
+
+#9 [4/5] RUN if ls /wheels/*.whl >/dev/null 2>&1; then       pip install --no-cache-dir --no-index --find-links=/wheels fastapi uvicorn ;     else       pip install --no-cache-dir --retries 10 --default-timeout=120 fastapi uvicorn ;     fi
+#9 2.950 Collecting fastapi
+#9 3.523   Downloading fastapi-0.162.4-py3-none-any.whl.metadata (27 kB)
+#9 3.831 Collecting uvicorn
+#9 3.949   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+#9 4.248 Collecting starlette>=0.46.0 (from fastapi)
+#9 4.411   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+#9 4.630 Collecting anyio>=4.1.0 (from fastapi)
+#9 4.811   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#9 5.172 Collecting pydantic>=2.9.0 (from fastapi)
+#9 5.274   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+#9 5.296      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 141.5/141.5 kB 8.5 MB/s eta 0:00:00
+#9 5.483 Collecting typing-extensions>=4.8.0 (from fastapi)
+#9 5.665   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#9 5.854 Collecting typing-inspection>=0.4.2 (from fastapi)
+#9 5.977   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+#9 6.099 Collecting annotated-doc>=0.0.2 (from fastapi)
+#9 6.234   Downloading annotated_doc-0.0.6-py3-none-any.whl.metadata (6.5 kB)
+#9 6.483 Collecting opentelemetry-api>=1.44.0 (from fastapi)
+#9 6.637   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+#9 6.857 Collecting click>=7.0 (from uvicorn)
+#9 6.981   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#9 7.167 Collecting h11>=0.8 (from uvicorn)
+#9 7.270   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#9 7.439 Collecting idna>=2.8 (from anyio>=4.1.0->fastapi)
+#9 7.540   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#9 7.840 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi)
+#9 7.945   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#9 9.391 Collecting pydantic-core==2.50.4 (from pydantic>=2.9.0->fastapi)
+#9 9.576   Downloading pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+#9 9.729 Downloading fastapi-0.162.4-py3-none-any.whl (151 kB)
+#9 9.797    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.7/151.7 kB 2.3 MB/s eta 0:00:00
+#9 9.901 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#9 9.975    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.4/87.4 kB 1.1 MB/s eta 0:00:00
+#9 10.08 Downloading annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+#9 10.26 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#9 10.34    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.5/134.5 kB 1.7 MB/s eta 0:00:00
+#9 10.44 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#9 10.52    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.2/126.2 kB 1.5 MB/s eta 0:00:00
+#9 10.63 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#9 10.81 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#9 10.90    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.3/60.3 kB 646.8 kB/s eta 0:00:00
+#9 11.00 Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+#9 11.08    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 494.1/494.1 kB 6.3 MB/s eta 0:00:00
+#9 11.19 Downloading pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#9 11.59    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 5.6 MB/s eta 0:00:00
+#9 11.69 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#9 11.71    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.6/80.6 kB 8.1 MB/s eta 0:00:00
+#9 11.81 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 11.82    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 10.0 MB/s eta 0:00:00
+#9 11.92 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#9 12.04 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#9 12.15 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#9 12.30    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 28.6 MB/s eta 0:00:00
+#9 12.45 Installing collected packages: typing-extensions, idna, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, opentelemetry-api, anyio, starlette, pydantic, fastapi
+#9 13.68 Successfully installed annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 click-8.5.1 fastapi-0.162.4 h11-0.16.0 idna-3.20 opentelemetry-api-1.45.2 pydantic-2.14.3 pydantic-core-2.50.4 starlette-1.10.0 typing-extensions-4.16.0 typing-inspection-0.4.5 uvicorn-0.54.0
+#9 13.68 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 14.40 
+#9 14.40 [notice] A new release of pip is available: 24.0 -> 26.3
+#9 14.40 [notice] To update, run: pip install --upgrade pip
+#9 DONE 14.8s
+
+#10 [5/5] COPY app.py observe.py eval_store.py dashboard_api.py __init__.py ./
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 1.7s done
+#11 exporting manifest sha256:be091c324a9a5364e03067590f6e74bd30387a5002537a1551b3921e1ca7776a done
+#11 exporting config sha256:6ef701e061116ded453c522deaf4483c4725bfc40ed9247a9b1acc7086d69ced done
+#11 exporting attestation manifest sha256:a308eb02146702b0149fc9d9614dc40e6cad9a647909aa8eb9e610e1fff7a4fe 0.0s done
+#11 exporting manifest list sha256:129c506c7412f8934b17cdc6bfe1f1b0006d0f2483c7ea495951a0475f13b25a done
+#11 naming to docker.io/library/rag-tracing:local done
+#11 unpacking to docker.io/library/rag-tracing:local
+#11 unpacking to docker.io/library/rag-tracing:local 0.4s done
+#11 DONE 2.1s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image rag-tracing:local Built 
