@@ -1,0 +1,35 @@
+2026-10-19T21:05:05.689424262Z WordPress not found in /var/www/html - copying now...
+2026-10-19T21:05:06.571451304Z Complete! WordPress has been successfully copied to /var/www/html
+2026-10-19T21:05:06.571470013Z No 'wp-config.php' found in /var/www/html, but 'WORDPRESS_...' variables supplied; copying 'wp-config-docker.php' (WORDPRESS_DB_HOST WORDPRESS_DB_NAME WORDPRESS_DB_PASSWORD WORDPRESS_DB_USER)
+2026-10-19T21:05:06.644835513Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.4. Set the 'ServerName' directive globally to suppress this message
+2026-10-19T21:05:06.655809179Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.4. Set the 'ServerName' directive globally to suppress this message
+2026-10-19T21:05:06.682664596Z [Mon Oct 19 21:05:06.682357 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.68 (Debian) PHP/8.2.34 configured -- resuming normal operations
+2026-10-19T21:05:06.682694846Z [Mon Oct 19 21:05:06.682399 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+2026-10-19T21:05:49.781801213Z 192.168.65.1 - - [19/Oct/2026:21:05:49 +0000] "HEAD / HTTP/1.1" 500 304 "-" "curl/8.7.1"
+2026-10-19T21:37:56.747535632Z 192.168.65.1 - - [19/Oct/2026:21:37:56 +0000] "GET / HTTP/1.1" 500 2808 "-" "curl/8.7.1"
+2026-10-19T21:38:49.772768962Z 192.168.65.1 - - [19/Oct/2026:21:38:49 +0000] "GET / HTTP/1.1" 500 2808 "-" "curl/8.7.1"
+2026-10-20T01:18:40.422103508Z 192.168.65.1 - - [20/Oct/2026:01:18:40 +0000] "GET / HTTP/1.1" 500 2808 "-" "curl/8.7.1"
+2026-10-21T17:36:35.131824875Z [Wed Oct 21 17:36:35.128573 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+2026-10-21T18:49:53.023797459Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-10-21T18:49:53.043240959Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-10-21T18:49:53.292729417Z [Wed Oct 21 18:49:53.292554 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.68 (Debian) PHP/8.2.34 configured -- resuming normal operations
+2026-10-21T18:49:53.292747417Z [Wed Oct 21 18:49:53.292594 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+2026-10-21T21:50:29.934674096Z [Wed Oct 21 21:50:29.934383 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+2026-11-10T00:25:43.352304334Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-10T00:25:43.374214584Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-10T00:25:43.761777293Z [Tue Nov 10 00:25:43.761344 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.68 (Debian) PHP/8.2.34 configured -- resuming normal operations
+2026-11-10T00:25:43.761792501Z [Tue Nov 10 00:25:43.761382 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+2026-11-10T11:28:55.516521336Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-10T11:28:55.554806544Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-10T11:28:56.164460586Z [Tue Nov 10 11:28:56.164365 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.68 (Debian) PHP/8.2.34 configured -- resuming normal operations
+2026-11-10T11:28:56.164510670Z [Tue Nov 10 11:28:56.164502 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+2026-11-12T13:01:40.553271459Z [Thu Nov 12 13:01:40.439667 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+2026-11-13T14:35:40.072242751Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-13T14:35:40.111315751Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-13T14:35:40.802328377Z [Fri Nov 13 14:35:40.802159 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.68 (Debian) PHP/8.2.34 configured -- resuming normal operations
+2026-11-13T14:35:40.802352918Z [Fri Nov 13 14:35:40.802197 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+2026-11-14T08:47:11.063254256Z [Sat Nov 14 08:47:11.058434 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+2026-11-14T09:06:01.964317001Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-14T09:06:01.992121209Z AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.2. Set the 'ServerName' directive globally to suppress this message
+2026-11-14T09:06:02.344959251Z [Sat Nov 14 09:06:02.344633 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.68 (Debian) PHP/8.2.34 configured -- resuming normal operations
+2026-11-14T09:06:02.344973418Z [Sat Nov 14 09:06:02.344732 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'

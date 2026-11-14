@@ -1,0 +1,114 @@
+2026-08-08T09:58:09.520211053Z    ▲ Next.js 14.1.1
+2026-08-08T09:58:09.520311512Z    - Local:        http://974f592f610d:3000
+2026-08-08T09:58:09.520321678Z    - Network:      http://172.18.0.5:3000
+2026-08-08T09:58:09.520376845Z 
+2026-08-08T09:58:09.554265470Z  ✓ Ready in 52ms
+2026-08-08T10:12:36.113626000Z    ▲ Next.js 14.1.1
+2026-08-08T10:12:36.113734042Z    - Local:        http://974f592f610d:3000
+2026-08-08T10:12:36.113738084Z    - Network:      http://172.18.0.2:3000
+2026-08-08T10:12:36.113812792Z 
+2026-08-08T10:12:36.172932209Z  ✓ Ready in 66ms
+2026-08-08T10:15:11.247711044Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:11.279966753Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:11.341987211Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:11.544844711Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:58.985213470Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055205761Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055416220Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055501595Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055592928Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055781136Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055844845Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055905553Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.055999761Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.056045470Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.056354345Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.056443511Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.056486595Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.056492303Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.065775220Z [openai Route] params  { provider: 'openai', path: [ 'v1', 'chat', 'completions' ] }
+2026-08-08T10:15:59.065850636Z [OpenAI Route] params  { provider: 'openai', path: [ 'v1', 'chat', 'completions' ] }
+2026-08-08T10:15:59.066537095Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.066602678Z [Auth] allowed hashed codes:  []
+2026-08-08T10:15:59.066606261Z [Auth] got access code: 
+2026-08-08T10:15:59.066607220Z [Auth] hashed access code: d41d8cd98f00b204e9800998ecf8427e
+2026-08-08T10:15:59.066696928Z [User IP]  172.18.0.1
+2026-08-08T10:15:59.097216886Z [Time]  8/8/2026, 10:15:59 AM
+2026-08-08T10:15:59.097238386Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:15:59.097387386Z [Auth] use system api key
+2026-08-08T10:15:59.097704553Z [Proxy]  v1/chat/completions
+2026-08-08T10:15:59.097708761Z [Base Url] http://host.docker.internal:8080
+2026-08-08T10:15:59.097819595Z fetchUrl http://host.docker.internal:8080/v1/chat/completions
+2026-08-08T10:15:59.119241386Z [Org ID] is not set up.
+2026-08-08T10:15:59.135139636Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:16:04.708708458Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:16:05.721067209Z [openai Route] params  { provider: 'openai', path: [ 'v1', 'chat', 'completions' ] }
+2026-08-08T10:16:05.721206042Z [OpenAI Route] params  { provider: 'openai', path: [ 'v1', 'chat', 'completions' ] }
+2026-08-08T10:16:05.721707209Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:16:05.721848834Z [Auth] allowed hashed codes:  []
+2026-08-08T10:16:05.721858167Z [Auth] got access code: 
+2026-08-08T10:16:05.721860584Z [Auth] hashed access code: d41d8cd98f00b204e9800998ecf8427e
+2026-08-08T10:16:05.722309042Z [User IP]  172.18.0.1
+2026-08-08T10:16:05.722431667Z [Time]  8/8/2026, 10:16:05 AM
+2026-08-08T10:16:05.722437709Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:16:05.722526084Z [Auth] use system api key
+2026-08-08T10:16:05.722797959Z [Proxy]  v1/chat/completions
+2026-08-08T10:16:05.722808500Z [Base Url] http://host.docker.internal:8080
+2026-08-08T10:16:05.722952625Z fetchUrl http://host.docker.internal:8080/v1/chat/completions
+2026-08-08T10:16:05.737104375Z [Org ID] is not set up.
+2026-08-08T10:16:05.757698417Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-08T10:16:17.175619631Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-20T22:48:01.811878334Z    ▲ Next.js 14.1.1
+2026-08-20T22:48:01.812127084Z    - Local:        http://974f592f610d:3000
+2026-08-20T22:48:01.812135667Z    - Network:      http://172.18.0.2:3000
+2026-08-20T22:48:01.812137167Z 
+2026-08-20T22:48:01.905083126Z  ✓ Ready in 102ms
+2026-08-21T06:05:34.337676043Z    ▲ Next.js 14.1.1
+2026-08-21T06:05:34.338063460Z    - Local:        http://974f592f610d:3000
+2026-08-21T06:05:34.338069085Z    - Network:      http://172.18.0.2:3000
+2026-08-21T06:05:34.338070918Z 
+2026-08-21T06:05:34.499304585Z  ✓ Ready in 194ms
+2026-08-21T08:17:07.248542335Z    ▲ Next.js 14.1.1
+2026-08-21T08:17:07.249949585Z    - Local:        http://974f592f610d:3000
+2026-08-21T08:17:07.249958460Z    - Network:      http://172.18.0.3:3000
+2026-08-21T08:17:07.249959835Z 
+2026-08-21T08:17:07.384303877Z  ✓ Ready in 148ms
+2026-08-21T09:10:15.877791047Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-21T09:10:15.882709255Z /bin/sh: git: not found
+2026-08-21T09:10:15.883061005Z [Build Config] No git or not from git repo.
+2026-08-21T11:34:37.146208041Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-21T11:34:37.152466166Z /bin/sh: git: not found
+2026-08-21T11:34:37.152522458Z [Build Config] No git or not from git repo.
+2026-08-21T11:34:37.202870125Z [Server Config] using 1 of 1 api key - sk-REDACTED
+2026-08-21T11:34:37.205205542Z /bin/sh: git: not found
+2026-08-21T11:34:37.205368375Z [Build Config] No git or not from git repo.
+2026-10-19T20:27:41.788802209Z    ▲ Next.js 14.1.1
+2026-10-19T20:27:41.790164918Z    - Local:        http://974f592f610d:3000
+2026-10-19T20:27:41.790192501Z    - Network:      http://172.18.0.3:3000
+2026-10-19T20:27:41.790198751Z 
+2026-10-19T20:27:41.904833626Z  ✓ Ready in 125ms
+2026-10-21T18:49:53.444528959Z    ▲ Next.js 14.1.1
+2026-10-21T18:49:53.444807209Z    - Local:        http://974f592f610d:3000
+2026-10-21T18:49:53.444811834Z    - Network:      http://172.18.0.5:3000
+2026-10-21T18:49:53.444813209Z 
+2026-10-21T18:49:53.535449292Z  ✓ Ready in 102ms
+2026-11-10T00:25:43.894055334Z    ▲ Next.js 14.1.1
+2026-11-10T00:25:43.894313459Z    - Local:        http://974f592f610d:3000
+2026-11-10T00:25:43.894321334Z    - Network:      http://172.18.0.3:3000
+2026-11-10T00:25:43.894322834Z 
+2026-11-10T00:25:44.126252126Z  ✓ Ready in 242ms
+2026-11-10T11:28:56.740782837Z    ▲ Next.js 14.1.1
+2026-11-10T11:28:56.741346587Z    - Local:        http://974f592f610d:3000
+2026-11-10T11:28:56.741351420Z    - Network:      http://172.18.0.2:3000
+2026-11-10T11:28:56.741353003Z 
+2026-11-10T11:28:57.267681879Z  ✓ Ready in 671ms
+2026-11-13T14:35:41.417164585Z    ▲ Next.js 14.1.1
+2026-11-13T14:35:41.418127085Z    - Local:        http://974f592f610d:3000
+2026-11-13T14:35:41.418131835Z    - Network:      http://172.18.0.3:3000
+2026-11-13T14:35:41.418133044Z 
+2026-11-13T14:35:41.920699502Z  ✓ Ready in 540ms
+2026-11-14T09:06:02.155640543Z    ▲ Next.js 14.1.1
+2026-11-14T09:06:02.155977209Z    - Local:        http://974f592f610d:3000
+2026-11-14T09:06:02.155985751Z    - Network:      http://172.18.0.2:3000
+2026-11-14T09:06:02.155992459Z 
+2026-11-14T09:06:02.381753001Z  ✓ Ready in 262ms

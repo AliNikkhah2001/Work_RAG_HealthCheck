@@ -1,0 +1,75 @@
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663114, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"role": "assistant"}, "finish_reason": null}]}
+
+: agent validate_input + retrieve running
+
+: agent retrieve done chunks=15 latency_ms=44
+
+: agent build_context running
+
+: agent build_context done prompt_tokens=12749
+
+: agent guarded_generate streaming
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663116, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "با"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663116, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " سلام، من دستیار هوشمند شرکت اعتبارسنجی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " ایران هستم و در زمینه‌هایی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " نظیر گزارش اعتباری، امتیاز و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " رتبه، بهبود امتیاز، سوابق منفی و"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " چک‌ها به شما کمک می‌کنم.\n\nاع"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "تبارسنجی به معنای سنجش میزان اعتماد به اش"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "خاص و شرکت‌ها در انجام تعاملات"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " مالی است. در گذشته این شناخت بر"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اساس آشنایی‌های شخصی و تجربیات"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " فردی شکل می‌گرفت، اما با"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " پیچیده شدن روابط انسانی و رشد جمعیت، روش‌های سنتی"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " کارایی خود را از دست دادند و نیاز"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " به سیستم‌های دقیق‌تر برای شناسایی افراد"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " متعهد و خوش‌حساب احساس"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " شد.\n\nهدف از این فرآیند، ار"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "زیابی میزان اعتماد به یک شخص حقیقی یا کسب"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "‌وکار از طریق بررسی سوابق آن‌هاست"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663117, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": ". این اقدام باعث می‌شود عدالت در دریافت خدمات مالی برقرار شده"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " و رفتار مالی افراد بهبود یابد.\n\nبه"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " کمک اعتبارسنجی، نه"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ادهایی مانند بانک‌ها، شرکت‌های بیم"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "ه و مؤسسات مالی می‌توانند پیش"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " از اعطای وام، بیمه‌"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": "نامه یا دسته چک، ریسک شخص"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " را بسنجند. این امر به"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " اعتباردهندگان کمک می‌کند تا با اطمینان بیشتری درباره"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " مقدار و شرایط تسهیلات تصمیم بگیرند"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " و از زیان‌های احتمالی ناشی از عدم پرداخت جلوگیری"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663118, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {"content": " کنند."}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "object": "chat.completion.chunk", "created": 1794663119, "model": "gemma-4-31b", "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}], "rag": {"request_id": "3d579eec-c6c4-4b6f-aee0-d2b28a5740e1", "citations": [{"chunk_id": "52aad230-e750-43d5-8768-2506cfd74182", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "b9cef520-b7d6-40b7-a16e-3fb6fa9e48ea", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "d4702239-e00d-48c2-abda-d0fc2253c034", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "3595558d-dcf6-4f96-9c49-3ebc8d5c7902", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}, {"chunk_id": "0e6263fd-640f-464e-a184-ac7a6da30f42", "document_id": "b90de378-2210-412c-a83c-5a47764ec47e", "title": "سوالات عمومی", "heading": "Sheet: Sheet1"}], "supplemental": null, "follow_ups": ["امتیاز اعتباری چیست؟", "چگونه می‌توان امتیاز اعتباری را بهبود بخشید؟", "گزارش اعتباری شامل چه مواردی است؟"], "applied_subspace": "general", "sticky_subspace": "general", "available_subspaces": null}}
+
+data: [DONE]
