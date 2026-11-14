@@ -1,0 +1,11 @@
+=== RESTART/REACHABILITY DIAGNOSIS (2026-11-14T17:01:36Z) ===
+containers_with_published_ports=9
+webui_publishes_13000=1
+dana-jenkins-prod	Up 30 seconds	127.0.0.1:50000->50000/tcp, 127.0.0.1:8085->8080/tcp
+dana-prod-postgres-1	Up 2 minutes (healthy)	127.0.0.1:15432->5432/tcp
+dana-prod-tracing-1	Up 2 minutes (healthy)	127.0.0.1:13002->3000/tcp
+dana-webui-prod	Up 2 days (healthy)	127.0.0.1:13000->8080/tcp, 192.168.177.10:13000->8080/tcp, 192.168.96.82:13000->8080/tcp
+
+NOTE: compose.base.yml declares no ports. A stack started with base-only
+      runs healthy but publishes nothing -> WebUI :13000 unreachable.
+      Correct: base + compose.local.yml (dev) or base + compose.gpu.yml (prod).

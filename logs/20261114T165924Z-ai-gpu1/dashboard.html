@@ -1,0 +1,3155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPU Recovery Dashboard — 20261114T165924Z-ai-gpu1</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f5f5f7; color: #1d1d1f; line-height: 1.5; }
+  .container { max-width: 1400px; margin: 0 auto; }
+  header { background: linear-gradient(135deg, #1d1d1f 0%, #0a84ff 100%); color: #fff; padding: 32px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  header h1 { margin: 0 0 12px 0; font-size: 28px; font-weight: 600; }
+  header .meta { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+  header .meta strong { color: #ffffff; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e5ea; }
+  .card h2 { margin-top: 0; font-size: 16px; color: #0a84ff; border-bottom: 2px solid #0a84ff; padding-bottom: 8px; margin-bottom: 12px; }
+  .status-healthy { color: #34c759; font-weight: 700; }
+  .status-degraded { color: #ff9500; font-weight: 700; }
+  .status-down { color: #ff3b30; font-weight: 700; }
+  .status-passed { color: #34c759; font-weight: 700; }
+  .status-failed { color: #ff3b30; font-weight: 700; }
+  .status-skipped { color: #ff9500; font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+  th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e5e5ea; }
+  th { background: #f2f2f7; font-weight: 600; color: #1d1d1f; }
+  tr:hover { background: #fafafa; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .badge-pass { background: #e6f7e6; color: #2e7d32; }
+  .badge-fail { background: #fdecea; color: #c62828; }
+  .badge-skip { background: #fff4e6; color: #e6a200; }
+  .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .screenshot-item { border: 1px solid #e5e5ea; border-radius: 8px; overflow: hidden; background: #fff; }
+  .screenshot-item img { width: 100%; height: auto; display: block; }
+  .screenshot-item .caption { padding: 8px; font-size: 12px; background: #f2f2f7; color: #666; }
+  pre { background: #1e1e1e; color: #d4d4d4; padding: 14px; border-radius: 8px; overflow-x: auto; font-size: 12px; margin: 12px 0; }
+  .section { margin-bottom: 24px; }
+  .section h3 { color: #1d1d1f; margin-bottom: 12px; font-size: 18px; border-left: 4px solid #0a84ff; padding-left: 12px; }
+  .collapsible { background: #fff; border: 1px solid #e5e5ea; border-radius: 8px; margin: 12px 0; overflow: hidden; }
+  .collapsible-header { background: #f2f2f7; padding: 14px 18px; font-weight: 600; color: #1d1d1f; cursor: pointer; border-bottom: 1px solid #e5e5ea; user-select: none; display: flex; justify-content: space-between; align-items: center; }
+  .collapsible-header:hover { background: #e8e8ed; }
+  .collapsible-header .arrow { display: inline-block; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #666; transition: transform 0.2s; }
+  .collapsible-header.expanded .arrow { transform: rotate(-90deg); }
+  .collapsible-content { padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff; }
+  .collapsible-content.expanded { max-height: 2000px; padding: 18px; }
+  .qa-item { background: #fff; border: 1px solid #e5e5ea; border-radius: 8px; margin: 12px 0; padding: 16px; }
+  .qa-item h4 { margin: 0 0 8px 0; color: #0a84ff; font-size: 15px; }
+  .qa-question { font-weight: 600; color: #1d1d1f; margin-bottom: 6px; }
+  .qa-answer { background: #f2f2f7; padding: 12px; border-radius: 6px; color: #333; white-space: pre-wrap; font-size: 13px; }
+  .qa-status { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 600; }
+  .artifact-list { list-style: none; padding: 0; }
+  .artifact-list li { padding: 8px 0; border-bottom: 1px solid #f2f2f7; }
+  .artifact-list li a { color: #0a84ff; text-decoration: none; }
+  .artifact-list li a:hover { text-decoration: underline; }
+  .artifact-list li:last-child { border-bottom: none; }
+  .auto-open { position: fixed; top: 20px; right: 20px; background: #0a84ff; color: #fff; padding: 12px 20px; border-radius: 8px; font-weight: 600; z-index: 1000; box-shadow: 0 4px 12px rgba(10,132,255,0.3); }
+  .auto-open.hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🖥️ GPU Full Recovery Dashboard</h1>
+  <div class="meta">
+    <strong>Run ID:</strong> 20261114T165924Z-ai-gpu1<br>
+    <strong>Host:</strong> ai-gpu1<br>
+    <strong>Machine:</strong> production_gpu<br>
+    <strong>UTC:</strong> 2026-11-14T17:02:01Z<br>
+    <strong>Mode:</strong> compose<br>
+    <strong>Umbrella HEAD:</strong> c614c32<br>
+    <strong>Overall Status:</strong> <span class="status-HEALTHY">HEALTHY</span>
+  </div>
+</header>
+
+<div class="grid">
+  <div class="card">
+    <h2>Overall Status</h2>
+    <div class="badge status-HEALTHY">HEALTHY</div>
+  </div>
+  <div class="card">
+    <h2>QA Results</h2>
+    <div class="badge badge-pass">E2E: 3 / 3</div>
+    <div class="badge badge-pass">Smoke: PASSED</div>
+  </div>
+  <div class="card">
+    <h2>Restart</h2>
+    <div class="badge badge-skip">FAILED</div>
+  </div>
+  <div class="card">
+    <h2>GitHub Push</h2>
+    <div class="badge badge-skip">NOT_ATTEMPTED</div>
+  </div>
+</div>
+
+<!-- QA Test Results Section -->
+<div class="section">
+  <div class="card">
+    <h2>💬 End-to-End QA Test Results</h2>
+    <div class="qa-results">
+<div class="qa-item"><h4>chat_greeting</h4><div class="qa-question">❓ سلام</div><div class="qa-answer">🤖 سلام! 👋 من دانا، دستیار هوشمند شرکت اعتبارسنجی ایران، هستم. می‌توانم به سوالات شما درباره مفاهیم اعتبارسنجی، گزارش اعتبارسنجی، امتیاز و رتبه اعتباری و روش رفع دلایل کاهش امتیاز پاسخ بدهم. چطور می‌توانم به شما کمک کنم؟</div><div class="qa-status">HTTP: 200 — <span class="status-passed">PASS</span></div></div><div class="qa-item"><h4>chat_credit_qa</h4><div class="qa-question">❓ اعتبارسنجی چیست؟</div><div class="qa-answer">🤖 با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌های گزارش اعتباری، امتیاز و رتبه، بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.  اعتبارسنجی به معنای سنجش میزان اعتماد به اشخاص حقیقی و شرکت‌ها در انجام تعاملات مالی است. در گذشته این شناخت بر اساس آشنایی‌های شخصی شکل می‌گرفت، اما با پیچیده شدن روابط انسانی و رشد جوامع، روش‌های سنتی کارایی خود را از دست دادند و نیاز به سیستم‌های دقیق‌تری برای شناسایی افراد متعهد و خوش‌حساب احساس شد.  در این فرآیند، شرکت‌های اعتبارسنجی با جمع‌آوری و تحلیل داده‌های مالی، تجاری، قضایی، مالیاتی و رفتاری از منابع مختلف، تصویری شفاف از اعتبار و ریسک هر شخص یا کسب‌وکار ارائه می‌دهند. هدف اصلی این کار، کاهش عدم تقارن اطلاعات میان طرفین معامله است تا ریسک کاهش یافته و اعتماد افزایش یابد.  کاربرد اعتبارسنجی تنها به وام و تسهیلات محدود نمی‌شود و در حوزه‌های متنوعی مانند بیمه، معاملات چک، ارزیابی توان مالی مستاجران و حتی بررسی سوابق خودرو و ملک در معاملات C2C استفاده می‌شود. این سیستم به اعتباردهندگان کمک می‌کند تا با اطمینان بیشتری درباره مقدار و شرایط اعطای خدمات مالی تصمیم بگیرند و همزمان افراد را به سمت رفتار مالی مناسب‌تر هدایت کند.</div><div class="qa-status">HTTP: 200 — <span class="status-passed">PASS</span></div></div><div class="qa-item"><h4>chat_webui</h4><div class="qa-question">❓ سلام، آیا سرویس فعال است؟</div><div class="qa-answer">🤖 با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌های گزارش اعتباری، امتیاز و رتبه، بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.  اعتبارسنجی به معنای سنجش میزان اعتماد به اشخاص و شرکت‌ها در انجام تعاملات مالی است. در گذشته این شناخت بر اساس آشنایی‌های شخصی شکل می‌گرفت، اما با پیچیده شدن روابط انسانی و رشد جوامع، روش‌های سنتی کارایی خود را از دست دادند و نیاز به سیستم‌های دقیق‌تری برای شناسایی افراد متعهد و خوش‌حساب احساس شد.  در این فرآیند، شرکت‌های اعتبارسنجی با جمع‌آوری و پردازش داده‌های مالی، تجاری، قضایی، مالیاتی و رفتاری از منابع مختلف، تصویری شفاف از اعتبار و ریسک اشخاص حقیقی و حقوقی ارائه می‌دهند. هدف اصلی این کار، کاهش عدم تقارن اطلاعات میان طرفین معامله است تا ریسک کاهش یافته و اعتماد در تعاملات اقتصادی افزایش یابد.  کاربرد اعتبارسنجی تنها به وام و تسهیلات محدود نمی‌شود و در حوزه‌های متنوعی مانند بیمه، معاملات چک، ارزیابی توان مالی مستاجران و حتی بررسی سوابق خودرو و ملک در معاملات C2C مورد استفاده قرار می‌گیرد. این سیستم به اعتباردهندگان کمک می‌کند تا با اطمینان بیشتری درباره میزان و شرایط اعطای خدمات مالی تصمیم بگیرند و در عین حال، افراد را به سمت رفتار مالی مناسب‌تر هدایت کند.</div><div class="qa-status">HTTP: 200 — <span class="status-passed">PASS</span></div></div><div class="qa-item"><h4>kb_search</h4><div class="qa-question">❓ اعتبارسنجی چیست</div><div class="qa-answer">🤖 سوال: آیا سابقه سفته در سامانه اعتبارسنجی ثبت می‌شود و بر رتبه و امتیاز من اثر می‌گذارد؟\nپاسخ کوتاه: خیر. در حال حاضر داده های مربوط به سفته در اعتبارسنجی افراد و شرکت ها لحاظ نمی‌شود.\nپاسخ کامل: در حال حاضر داده های مربوط به سفته در اعتبارسنجی افراد و شرکت ها لحاظ نمی‌شود. سابقه تسهیلات (چه مستقیم و چه در نقش ضامن)، چک‌های برگشتی، بدهی‌های مالیاتی، محکومیت مالی و قضایی و صدک درآمدی در پایگاه داده اعتبارسنجی ثبت می‌شود و بر رتبه و امتیاز اعتباری افراد تاثیرگذار است.\nدسته‌بندی: عوامل موثر بر امتیاز</div><div class="qa-status">HTTP: 200 — <span class="status-passed">PASS</span></div></div>
+    </div>
+    <div style="margin-top:16px; font-family:monospace; font-size:13px; white-space:pre-wrap; background:#f2f2f7; padding:12px; border-radius:8px;">qa_pass=3/3</div>
+  </div>
+</div>
+
+<!-- Health Matrix Section -->
+<div class="section">
+  <div class="card">
+    <h2>🌐 Health Matrix (All Endpoints)</h2>
+    <table>
+      <thead><tr><th>Port</th><th>Service</th><th>Code</th><th>Preview</th></tr></thead>
+      <tbody>
+      <tr><td>18000</td><td>gemma</td><td><span class="badge badge-fail">000</span></td><td></td></tr>
+      <tr><td>9000</td><td>manager</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8000</td><td>kb</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8200</td><td>guardrails</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8100</td><td>orchestrator</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>3000</td><td>trace-collector</td><td><span class="badge badge-fail">000</span></td><td></td></tr>
+      <tr><td>3001</td><td>langfuse</td><td><span class="badge badge-fail">000</span></td><td></td></tr>
+      <tr><td>13000</td><td>webui</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8085</td><td>jenkins</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8010</td><td>service:8010</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8001</td><td>service:8001</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8002</td><td>service:8002</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      <tr><td>8003</td><td>service:8003</td><td><span class="badge badge-pass">200</span></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Knowledgebase Section -->
+<div class="section">
+  <div class="card">
+    <h2>📚 Knowledgebase Details</h2>
+    <pre>=== Knowledgebase container ===
+KB container: pgvector-kb-prod
+--- KB container env ---
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/16/bin
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=REDACTED
+POSTGRES_DB=kb_manager
+PGDATA=/var/lib/postgresql/data
+
+--- KB container processes ---
+OCI runtime exec failed: exec failed: unable to start container process: exec: "ps": executable file not found in $PATH
+
+=== KB search API health ===
+{
+    "status": "ok",
+    "db_mode": "pgvector",
+    "db_driver": "asyncpg",
+    "db_url": "127.0.0.1:5432/kb_manager",
+    "db_ok": true,
+    "doc_count": 21,
+    "chunk_count": 1319,
+    "reranker_ok": true,
+    "embed_backend": "local",
+    "reranker_backend": "local",
+    "reranker_model": "BAAI/bge-reranker-v2-m3",
+    "reranker_error": null,
+    "dense_ok": true,
+    "llm_upstream_mode": "self_hosted",
+    "error": null
+}
+
+=== KB search test (sample query) ===
+{
+    "query": "\u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc",
+    "normalized_query": "\u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc",
+    "tokens": [
+        "\u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc",
+        "\u0627\u0639\u062a",
+        "\u0639\u062a\u0628",
+        "\u062a\u0628\u0627",
+        "\u0628\u0627\u0631",
+        "\u0627\u0631\u0633",
+        "\u0631\u0633\u0646",
+        "\u0633\u0646\u062c",
+        "\u0646\u062c\u06cc"
+    ],
+    "total_chunks_indexed": 1298,
+    "bm25_results": [
+        {
+            "chunk_id": "74b21260-ee67-4006-aef3-a9b07cf38e08",
+            "doc_id": "706eff4e-e9ba-4f4a-8fda-f1f358a8e3de",
+            "doc_title": "\u0628\u0627\u0646\u06a9 \u0633\u0648\u0627\u0644\u0627\u062a \u0627\u0641\u0631\u0627\u062f \u062f\u0631 \u0632\u0645\u06cc\u0646\u0647 \u06af\u0632\u0627\u0631\u0634 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062a\u0633\u0647\u06cc\u0644\u0627\u062a",
+            "heading_path": "Sheet: \u0633\u0648\u0627\u0644\u0627\u062a \u062d\u0642\u0648\u0642\u06cc",
+            "folder_hierarchy": [
+                "\u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u0646\u0634",
+                "\u0627\u0634\u062e\u0627\u0635 \u062d\u0642\u0648\u0642\u06cc",
+                "\u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062a\u0633\u0647\u06cc\u0644\u0627\u062a",
+                "\u0628\u0627\u0646\u06a9 \u0633\u0648\u0627\u0644\u0627\u062a \u0627\u0641\u0631\u0627\u062f \u062f\u0631 \u0632\u0645\u06cc\u0646\u0647 \u06af\u0632\u0627\u0631\u0634 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062a\u0633\u0647\u06cc\u0644\u0627\u062a"
+            ],
+            "content_preview": "\u0633\u0648\u0627\u0644: \u0622\u06cc\u0627 \u0633\u0627\u0628\u0642\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0633\u0627\u0645\u0627\u0646\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0645\u0646 \u0627\u062b\u0631 \u0645\u06cc\u200c\u06af\u0630\u0627\u0631\u062f\u061f\n\u067e\u0627\u0633\u062e \u06a9\u0648\u062a\u0627\u0647: \u062e\u06cc\u0631. \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f.\n\u067e\u0627\u0633\u062e \u06a9\u0627\u0645\u0644: \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f. \u0633\u0627\u0628\u0642\u0647 \u062a\u0633\u0647\u06cc\u0644\u0627\u062a (\u0686\u0647 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0686\u0647 \u062f\u0631 \u0646\u0642\u0634 \u0636\u0627\u0645\u0646)\u060c \u0686\u06a9\u200c\u0647\u0627\u06cc \u0628\u0631\u06af\u0634\u062a\u06cc\u060c \u0628\u062f\u0647\u06cc\u200c\u0647\u0627\u06cc \u0645\u0627\u0644\u06cc\u0627\u062a\u06cc\u060c \u0645\u062d\u06a9\u0648\u0645\u06cc\u062a \u0645\u0627\u0644\u06cc \u0648 \u0642\u0636\u0627\u06cc\u06cc \u0648 \u0635\u062f\u06a9 \u062f\u0631\u0622\u0645\u062f\u06cc \u062f\u0631 \u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u062f\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0627\u0639\u062a\u0628\u0627\u0631\u06cc \u0627\u0641\u0631\u0627\u062f \u062a\u0627\u062b\u06cc\u0631\u06af\u0630\u0627\u0631 \u0627\u0633\u062a.\n\u062f\u0633\u062a\u0647\u200c\u0628\u0646\u062f\u06cc: \u0639\u0648\u0627\u0645\u0644 \u0645\u0648\u062b\u0631 \u0628\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632",
+            "content": "\u0633\u0648\u0627\u0644: \u0622\u06cc\u0627 \u0633\u0627\u0628\u0642\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0633\u0627\u0645\u0627\u0646\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0645\u0646 \u0627\u062b\u0631 \u0645\u06cc\u200c\u06af\u0630\u0627\u0631\u062f\u061f\n\u067e\u0627\u0633\u062e \u06a9\u0648\u062a\u0627\u0647: \u062e\u06cc\u0631. \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f.\n\u067e\u0627\u0633\u062e \u06a9\u0627\u0645\u0644: \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f. \u0633\u0627\u0628\u0642\u0647 \u062a\u0633\u0647\u06cc\u0644\u0627\u062a (\u0686\u0647 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0686\u0647 \u062f\u0631 \u0646\u0642\u0634 \u0636\u0627\u0645\u0646)\u060c \u0686\u06a9\u200c\u0647\u0627\u06cc \u0628\u0631\u06af\u0634\u062a\u06cc\u060c \u0628\u062f\u0647\u06cc\u200c\u0647\u0627\u06cc \u0645\u0627\u0644\u06cc\u0627\u062a\u06cc\u060c \u0645\u062d\u06a9\u0648\u0645\u06cc\u062a \u0645\u0627\u0644\u06cc \u0648 \u0642\u0636\u0627\u06cc\u06cc \u0648 \u0635\u062f\u06a9 \u062f\u0631\u0622\u0645\u062f\u06cc \u062f\u0631 \u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u062f\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0627\u0639\u062a\u0628\u0627\u0631\u06cc \u0627\u0641\u0631\u0627\u062f \u062a\u0627\u062b\u06cc\u0631\u06af\u0630\u0627\u0631 \u0627\u0633\u062a.\n\u062f\u0633\u062a\u0647\u200c\u0628\u0646\u062f\u06cc: \u0639\u0648\u0627\u0645\u0644 \u0645\u0648\u062b\u0631 \u0628\u0631 \u0627\u0645\u062a\u06cc\u0627\u0632",
+            "bm25_score": 76.9812,
+            "semantic_score": 0.0,
+            "dense_score": 0.0,
+            "hybrid_score": 0.0,
+            "rerank_score": 0.0,
+            "ordinal": 263
+        },
+        {
+            "chunk_id": "cb143421-5868-4723-bb14-a92671cb3deb",
+            "doc_id": "7468c636-f116-4967-be6e-41671e960eb7",
+            "doc_title": "\u0628\u0627\u0646\u06a9 \u0633\u0648\u0627\u0644\u0627\u062a \u0627\u0641\u0631\u0627\u062f \u062f\u0631 \u0632\u0645\u06cc\u0646\u0647 \u06af\u0632\u0627\u0631\u0634 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062a\u0633\u0647\u06cc\u0644\u0627\u062a-\u0627\u0635\u0644\u06cc",
+            "heading_path": "Sheet: Sheet1",
+            "folder_hierarchy": [
+                "\u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u0646\u0634",
+                "\u0627\u0634\u062e\u0627\u0635 \u062d\u0642\u06cc\u0642\u06cc",
+                "\u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062a\u0633\u0647\u06cc\u0644\u0627\u062a",
+                "\u0628\u0627\u0646\u06a9 \u0633\u0648\u0627\u0644\u0627\u062a"
+            ],
+            "content_preview": "\u0633\u0648\u0627\u0644: \u0622\u06cc\u0627 \u0633\u0627\u0628\u0642\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0633\u0627\u0645\u0627\u0646\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0645\u0646 \u0627\u062b\u0631 \u0645\u06cc\u200c\u06af\u0630\u0627\u0631\u062f\u061f\n\u067e\u0627\u0633\u062e \u06a9\u0648\u062a\u0627\u0647: \u062e\u06cc\u0631. \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f.\n\u067e\u0627\u0633\u062e \u06a9\u0627\u0645\u0644: \u062e\u06cc\u0631. \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f. \u0633\u0627\u0628\u0642\u0647 \u062a\u0633\u0647\u06cc\u0644\u0627\u062a (\u0686\u0647 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0686\u0647 \u062f\u0631 \u0646\u0642\u0634 \u0636\u0627\u0645\u0646) \u060c \u0686\u06a9\u200c\u0647\u0627\u06cc \u0628\u0631\u06af\u0634\u062a\u06cc\u060c \u0628\u062f\u0647\u06cc\u200c\u0647\u0627\u06cc \u0645\u0627\u0644\u06cc\u0627\u062a\u06cc\u060c \u0645\u062d\u06a9\u0648\u0645\u06cc\u062a \u0645\u0627\u0644\u06cc \u0648 \u0642\u0636\u0627\u06cc\u06cc \u0648 \u0635\u062f\u06a9 \u062f\u0631\u0622\u0645\u062f\u06cc \u062f\u0631 \u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u062f\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0627\u0639\u062a\u0628\u0627\u0631\u06cc \u0627\u0641\u0631\u0627\u062f \u062a\u0627\u062b\u06cc\u0631\u06af\u0630\u0627\u0631 \u0627\u0633\u062a.\n\u062f\u0633\u062a\u0647\u200c\u0628\u0646\u062f\u06cc: \u0633\u0648\u0627\u0628\u0642 \u0645\u0646\u0641\u06cc \u0648 \u0628\u062f\u0647\u06cc\u200c\u0647\u0627",
+            "content": "\u0633\u0648\u0627\u0644: \u0622\u06cc\u0627 \u0633\u0627\u0628\u0642\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0633\u0627\u0645\u0627\u0646\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0645\u0646 \u0627\u062b\u0631 \u0645\u06cc\u200c\u06af\u0630\u0627\u0631\u062f\u061f\n\u067e\u0627\u0633\u062e \u06a9\u0648\u062a\u0627\u0647: \u062e\u06cc\u0631. \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f.\n\u067e\u0627\u0633\u062e \u06a9\u0627\u0645\u0644: \u062e\u06cc\u0631. \u062f\u0631 \u062d\u0627\u0644 \u062d\u0627\u0636\u0631 \u062f\u0627\u062f\u0647 \u0647\u0627\u06cc \u0645\u0631\u0628\u0648\u0637 \u0628\u0647 \u0633\u0641\u062a\u0647 \u062f\u0631 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0627\u0641\u0631\u0627\u062f \u0648 \u0634\u0631\u06a9\u062a \u0647\u0627 \u0644\u062d\u0627\u0638 \u0646\u0645\u06cc\u200c\u0634\u0648\u062f. \u0633\u0627\u0628\u0642\u0647 \u062a\u0633\u0647\u06cc\u0644\u0627\u062a (\u0686\u0647 \u0645\u0633\u062a\u0642\u06cc\u0645 \u0648 \u0686\u0647 \u062f\u0631 \u0646\u0642\u0634 \u0636\u0627\u0645\u0646) \u060c \u0686\u06a9\u200c\u0647\u0627\u06cc \u0628\u0631\u06af\u0634\u062a\u06cc\u060c \u0628\u062f\u0647\u06cc\u200c\u0647\u0627\u06cc \u0645\u0627\u0644\u06cc\u0627\u062a\u06cc\u060c \u0645\u062d\u06a9\u0648\u0645\u06cc\u062a \u0645\u0627\u0644\u06cc \u0648 \u0642\u0636\u0627\u06cc\u06cc \u0648 \u0635\u062f\u06a9 \u062f\u0631\u0622\u0645\u062f\u06cc \u062f\u0631 \u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u062f\u0647 \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u062b\u0628\u062a \u0645\u06cc\u200c\u0634\u0648\u062f \u0648 \u0628\u0631 \u0631\u062a\u0628\u0647 \u0648 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0627\u0639\u062a\u0628\u0627\u0631\u06cc \u0627\u0641\u0631\u0627\u062f \u062a\u0627\u062b\u06cc\u0631\u06af\u0630\u0627\u0631 \u0627\u0633\u062a.\n\u062f\u0633\u062a\u0647\u200c\u0628\u0646\u062f\u06cc: \u0633\u0648\u0627\u0628\u0642 \u0645\u0646\u0641\u06cc \u0648 \u0628\u062f\u0647\u06cc\u200c\u0647\u0627",
+            "bm25_score": 76.9812,
+            "semantic_score": 0.0,
+            "dense_score": 0.0,
+            "hybrid_score": 0.0,
+            "rerank_score": 0.0,
+            "ordinal": 230
+        },
+        {
+            "chunk_id": "0e6263fd-640f-464e-a184-ac7a6da30f42",
+            "doc_id": "b90de378-2210-412c-a83c-5a47764ec47e",
+            "doc_title": "\u0633\u0648\u0627\u0644\u0627\u062a \u0639\u0645\u0648\u0645\u06cc",
+            "heading_path": "Sheet: Sheet1",
+            "folder_hierarchy": [
+                "\u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u0646\u0634",
+                "\u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u0646\u0634 \u0639\u0645\u0648\u0645\u06cc",
+                "\u0633\u0648\u0627\u0644\u0627\u062a \u0639\u0645\u0648\u0645\u06cc"
+            ],
+            "content_preview": "\u0633\u0648\u0627\u0644: \u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0622\u06cc\u06cc\u0646 \u0646\u0627\u0645\u0647 \u062f\u0627\u0631\u06cc\u0645\u061f\n\u067e\u0627\u0633\u062e \u06a9\u0648\u062a\u0627\u0647: \u0628\u0644\u0647\n\u067e\u0627\u0633\u062e \u06a9\u0627\u0645\u0644: \u0645\u0627\u062f\u0647 2 \u0642\u0627\u0646\u0648\u0646 \u062a\u0623\u0645\u064a\u0646 \u0645\u0627\u0644\u064a \u062a\u0648\u0644\u064a\u062f \u0648 \u0632\u064a\u0631\u0633\u0627\u062e\u062a\u0647\u0627 \u0645\u0635\u0648\u0628 1402/12/22 \u0645\u062c\u0644\u0633 \u0634\u0648\u0631\u0627\u064a \u0627\u0633\u0644\u0627\u0645\u064a",
+            "content": "\u0633\u0648\u0627\u0644: \u0622\u06cc\u0627 \u0628\u0631\u0627\u06cc \u0627\u0639\u062a\u0628\u0627\u0631\u0633\u0646\u062c\u06cc \u0622\u06cc\u06cc\u0646 \u0646\u0627\u0645\u0647 \u062f\u0627\u0631\u06cc\u0645\u061f\n\u067e\u0627\u0633\u062e \u06a9\u0648\u062a\u0627\u0647: \u0628\u0644\u0647\n\u067e\u0627\u0633\u062e \u06a9\u0627\u0645\u0644: \u0645\u0627\u062f\u0647 2 \u0642\u0627\u0646\u0648\u0646 \u062a\u0623\u0645\u064a\u0646 \u0645\u0627\u0644\u064a \u062a\u0648\u0644\u064a\u062f \u0648 \u0632\u064a\u0631\u0633\u0627\u062e\u062a\u0647\u0627 \u0645\u0635\u0648\u0628 1402/12/22 \u0645\u062c\u0644\u0633 \u0634\u0648\u0631\u0627\u064a \u0627\u0633\u0644\u0627\u0645\u064a",
+no kb data</pre>
+  </div>
+</div>
+
+<!-- Collapsible Logs Section -->
+<div class="section">
+  <div class="card">
+    <h2>📋 All Logs &amp; Artifacts (Expand/Collapse)</h2>
+    <div class="collapsible">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">📄 host_metadata.txt <span class="arrow"></span></div>
+      <div class="collapsible-content" id="log-host_metadata_txt">
+        <pre>utc=2026-11-14T16:59:24Z
+hostname=ai-gpu1
+user=root
+uid=0
+Linux ai-gpu1 6.8.0-147-generic #147-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 24 11:33:16 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+ 16:59:24 up 3 days, 12:04,  3 users,  load average: 0.09, 0.36, 0.64
+--- nvidia-smi ---
+Sat Nov 14 16:59:24 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200 NVL                Off |   00000000:03:00.0 Off |                    0 |
+| N/A   31C    P0             93W /  600W |    3565MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200 NVL                Off |   00000000:03:01.0 Off |                    0 |
+| N/A   29C    P0             93W /  600W |  133651MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1070192      C   .../offline-prep/venv/bin/python       3556MiB |
+|    1   N/A  N/A           11624      C   python3                               13292... |
+|    1   N/A  N/A           11625      C   ...ep/venv-trtllm/bin/python3.12        588MiB |
++-----------------------------------------------------------------------------------------+
+--- docker ps -a (all containers, up and down) ---
+NAMES                 STATUS                    IMAGE                                          PORTS
+pgvector-kb-prod      Up 2 days                 pgvector/pgvector:pg16                         127.0.0.1:5432-&gt;5432/tcp
+redis-kb-prod         Up 2 days                 redis:7-alpine                                 127.0.0.1:16379-&gt;6379/tcp
+dana-webui-prod       Up 2 days (healthy)       rag-webui:dana                                 127.0.0.1:13000-&gt;8080/tcp, 192.168.177.10:13000-&gt;8080/tcp, 192.168.96.82:13000-&gt;8080/tcp
+dana-jenkins-prod     Up 3 days                 dana-jenkins:h200                              127.0.0.1:50000-&gt;50000/tcp, 127.0.0.1:8085-&gt;8080/tcp
+rag-embed-prod-8003   Up 2 days (healthy)       b8a783f99485                                   0.0.0.0:8003-&gt;8001/tcp, [::]:8003-&gt;8001/tcp
+rag-embed-prod-8002   Up 2 days (healthy)       b8a783f99485                                   0.0.0.0:8002-&gt;8001/tcp, [::]:8002-&gt;8001/tcp
+rag-embed-prod-8001   Up 2 days (healthy)       b8a783f99485                                   0.0.0.0:8001-&gt;8001/tcp, [::]:8001-&gt;8001/tcp
+rag-guardrails-test   Exited (0) 3 days ago     b085264f0ac7                                   
+rag-embed-test-8004   Exited (137) 3 days ago   b8a783f99485                                   
+rag-embed-test-8005   Exited (137) 3 days ago   b8a783f99485                                   
+rag-embed-test-8006   Exited (137) 3 days ago   b8a783f99485                                   
+rag-tracing-test      Exited (0) 3 days ago     edffec18b032                                   
+rag-manager-test      Exited (0) 3 days ago     f3811bed0f03                                   
+prometheus-test       Exited (0) 3 days ago     prom/prometheus:v2.52.0                        
+litellm-proxy         Exited (0) 3 days ago     ghcr.io/berriai/litellm:main-latest            
+otel-test             Exited (0) 3 days ago     otel/opentelemetry-collector-contrib:0.105.0   
+jaeger-test           Exited (0) 3 days ago     jaegertracing/all-in-one:latest                
+grafana-test          Exited (0) 3 days ago     grafana/grafana:11.2.0                         
+node-exporter-test    Exited (143) 3 days ago   prom/node-exporter:v1.8.1                      
+milvus-test           Exited (134) 3 days ago   milvusdb/milvus:latest                         
+--- df -h ---
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              101G  2.1M  101G   1% /run
+efivarfs                           256K   63K  189K  25% /sys/firmware/efi/efivars
+/dev/mapper/ubuntu--vg-ubuntu--lv   48G   33G   13G  73% /
+tmpfs                              504G   12K  504G   1% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+/dev/sda2                          2.0G  202M  1.6G  12% /boot
+/dev/sda1                          1.1G  6.2M  1.1G   1% /boot/efi
+/dev/sdb1                          6.0T  2.1T  3.6T  38% /splunk-data
+tmpfs                              101G   20K  101G   1% /run/user/1002
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/buildkit/containerd-overlayfs/cachemounts/buildkit3512849312
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/rootfs/overlayfs/60dad4d3a868502f9ee1156e7810304b4898d0aa3333c44d234765aa30bf6e1f
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/rootfs/overlayfs/c1ea84206ff43e362d44022e90eb1646610b15cdd16b4a42d657a3cdbddc30d1
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/rootfs/overlayfs/28d8930c20f5fb3fc4fdb58a041cc3d653e1060ad3a2342891f18bf053f2c84e
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/rootfs/overlayfs/ae6370c36424811234c4c99ad571dc4a010f2b17cf7890b36186bd9cdbd7127c
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/buildkit/containerd-overlayfs/cachemounts/buildkit3180188743
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/buildkit/containerd-overlayfs/cachemounts/buildkit3972721458
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/rootfs/overlayfs/e1514152acd766ffca12bd501ddd6b819f9cb35bb741c72a4a2d35a7ba0650d6
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/rootfs/overlayfs/3c2df56c04d6ddaae6b7988b83b6ac135a94986a8671a02c8919b715c2fa7a90
+overlay                            6.0T  2.1T  3.6T  38% /splunk-data/v1/docker-data/rootfs/overlayfs/a83a323a13167ab0a48001a455cba7754e498ec6301aca10461de12e3a83a8d0
+--- free -h ---
+               total        used        free      shared  buff/cache   available
+Mem:           1.0Ti        86Gi       798Gi       1.3Gi       131Gi       921Gi
+Swap:          8.0Gi          0B       8.0Gi
+--- git state ---
+git_umbrella=c614c32
+git_ss=9e495b3
+last_good=13188eddd14d22dfb976f54babe5dfa645b63a77
+deployed=none
+--- last reboots/shutdowns ---
+a.nikkha pts/0        192.168.107.97   Sat Nov 14 16:49   still logged in
+a.nikkha pts/0        192.168.107.97   Sat Nov 14 16:37 - 16:49  (00:11)
+infra    pts/0        192.168.107.97   Sat Nov 14 10:33 - 10:35  (00:01)
+yadegari pts/0        192.168.107.97   Sat Nov 14 07:48 - 08:53  (01:05)
+yadegari pts/0        192.168.107.97   Sat Nov 14 07:11 - 07:41  (00:30)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 09:25 - 11:40  (02:15)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 07:32 - 09:01  (01:28)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 04:23 - 07:18  (02:55)
+yadegari pts/0        192.168.107.97   Wed Nov 11 12:37 - 13:08  (00:31)
+root     pts/3        tmux(105248).%0  Wed Nov 11 07:09    gone - no logout
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 07:08 - 08:34  (01:25)
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 06:30 - 07:07  (00:37)
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 04:56 - 06:29  (01:33)
+runlevel (to lvl 5)   6.8.0-147-generi Wed Nov 11 04:55   still running
+reboot   system boot  6.8.0-147-generi Wed Nov 11 04:55   still running
+shutdown system down  6.8.0-138-generi Wed Nov 11 04:53 - 04:55  (00:01)
+a.nikkha pts/2        192.168.107.97   Wed Nov 11 04:41 - 04:52  (00:11)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 18:17 - 21:09  (02:51)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 18:17 - 18:17  (00:00)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 17:47 - 18:16  (00:29)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 17:40 - 17:47  (00:07)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 16:48 - 17:22  (00:34)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 15:22 - 15:57  (00:34)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 14:40 - 15:10  (00:30)
+a.nikkha pts/2        192.168.107.97   Mon Nov  2 07:33 - 08:18  (00:45)
+a.nikkha pts/2        192.168.107.97   Mon Nov  2 06:52 - 07:27  (00:34)
+root     pts/2        tmux(2832428).%2 Sat Oct 31 12:44 - 13:27  (00:43)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 12:36 - 15:56  (03:20)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 11:30 - 12:01  (00:30)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 10:47 - 11:18  (00:30)
+last unavailable
+--- detected stack mode ---
+detected_mode=compose</pre>
+      </div>
+    </div>
+    <div class="collapsible">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">📄 command_shutdown_reboot_user.log <span class="arrow"></span></div>
+      <div class="collapsible-content" id="log-command_shutdown_reboot_user_log">
+        <pre>=== All commands run (from shell history) ===
+        flash_attn=True,
+
+
+        offload_kqv=True,
+
+
+        verbose=False
+    )
+
+
+    print("="*70)
+    print("MODEL READY")
+    print(
+        "Context:",
+        llm.n_ctx()
+    )
+    print("="*70)
+
+
+
+    uvicorn.run(
+        app,
+        host=args.host,
+        port=args.port
+    )
+
+
+
+if __name__ == "__main__":
+    main()
+
+PY
+
+$PY -m py_compile scripts/services/llama_chat_server.py
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 --n-gpu-layers -1
+pkill -TERM -f "llama_chat_server.py.*gemma"
+pgrep -af llama_chat_server
+nvidia-smi --query-gpu=index,memory.used,memory.free --format=csv
+grep -n "chat_template_kwargs" scripts/services/llama_chat_server.py
+grep -n "convert_gemma_tool_call" scripts/services/llama_chat_server.py
+BASE=/splunk-data/v1/Work_RAG-Server-Setup
+PY=$BASE/offline-prep/venv/bin/python3.12
+MODEL=$BASE/offline-prep/models/huggingface/bartowski_google_gemma-4-31B-it-GGUF/google_gemma-4-31B-it-Q4_K_M.gguf
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 --n-gpu-layers -1
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 \
+clear
+curl -s http://127.0.0.1:8091/v1/chat/completions -H "Content-Type: application/json" -d '
+{
+"model":"gemma-4-31b-opencode-256k",
+"messages":[
+{
+"role":"user",
+"content":"Calculate 123+456 using calculator."
+}
+],
+"tools":[
+{
+"type":"function",
+"function":{
+"name":"calculator",
+"description":"Calculate arithmetic",
+"parameters":{
+"type":"object",
+"properties":{
+"expression":{
+"type":"string"
+}
+},
+"required":[
+"expression"
+]
+}
+}
+}
+],
+"tool_choice":"auto",
+"temperature":0
+}
+' | jq
+cd /splunk-data/v1/Work_RAG-Server-Setup
+cp scripts/services/llama_chat_server.py scripts/services/llama_chat_server.py.bak
+python3 - &lt;&lt;'PY'
+from pathlib import Path
+
+p = Path("scripts/services/llama_chat_server.py")
+
+s = p.read_text()
+
+start = s.index("def parse_gemma_tool_call")
+end = s.index("\n\n# ---------------------------------------------------------", start)
+
+new_func = r'''
+def parse_gemma_tool_call(content):
+
+    if not content:
+        return None
+
+
+    # Gemma format:
+    #
+    # call:calculator{expression:&lt;|"|&gt;123+456&lt;|"|&gt;}
+    #
+
+    m = re.search(
+        r"call:([A-Za-z0-9_-]+)\{(.*?)\}",
+        content,
+        re.S
+    )
+
+    if not m:
+        return None
+
+
+    name = m.group(1)
+
+    raw = m.group(2)
+
+
+    # Remove Gemma quote markers
+
+    raw = raw.replace(
+        '&lt;|"|&gt;',
+        '"'
+    )
+
+    raw = raw.replace(
+        '&lt;|',
+        ''
+    )
+
+    raw = raw.replace(
+        '|&gt;',
+        ''
+    )
+
+
+    raw = raw.strip()
+
+
+    # Extract key/value
+
+    kv = re.search(
+        r'([A-Za-z0-9_]+)\s*:\s*"?(.+?)"?$',
+        raw,
+        re.S
+    )
+
+
+    if kv:
+
+        key = kv.group(1)
+
+        value = kv.group(2).strip()
+
+
+        # remove trailing quotes
+
+        value = value.strip('"')
+
+
+        arguments = json.dumps(
+            {
+                key: value
+            }
+        )
+
+    else:
+
+        arguments = json.dumps(
+            {
+                "input": raw
+            }
+        )
+
+
+    return [
+        {
+            "id": "call-local-0",
+            "type": "function",
+            "function": {
+                "name": name,
+                "arguments": arguments
+            }
+        }
+    ]
+'''
+
+p.write_text(
+    s[:start] +
+    new_func +
+    s[end:]
+)
+
+print("patched")
+PY
+
+python3 - &lt;&lt;'PY'
+from pathlib import Path
+
+p = Path("scripts/services/llama_chat_server.py")
+
+s = p.read_text()
+
+start = s.index("def parse_gemma_tool_call")
+end = s.index("\n\n# ---------------------------------------------------------", start)
+
+new_func = r'''
+def parse_gemma_tool_call(content):
+
+    if not content:
+        return None
+
+
+    # Gemma format:
+    #
+    # call:calculator{expression:&lt;|"|&gt;123+456&lt;|"|&gt;}
+    #
+
+    m = re.search(
+        r"call:([A-Za-z0-9_-]+)\{(.*?)\}",
+        content,
+        re.S
+    )
+
+    if not m:
+        return None
+
+
+    name = m.group(1)
+
+    raw = m.group(2)
+
+
+    # Remove Gemma quote markers
+
+    raw = raw.replace(
+        '&lt;|"|&gt;',
+        '"'
+    )
+
+    raw = raw.replace(
+        '&lt;|',
+        ''
+    )
+
+    raw = raw.replace(
+        '|&gt;',
+        ''
+    )
+
+
+    raw = raw.strip()
+
+
+    # Extract key/value
+
+    kv = re.search(
+        r'([A-Za-z0-9_]+)\s*:\s*"?(.+?)"?$',
+        raw,
+        re.S
+    )
+
+
+    if kv:
+
+        key = kv.group(1)
+
+        value = kv.group(2).strip()
+
+
+        # remove trailing quotes
+
+        value = value.strip('"')
+
+
+        arguments = json.dumps(
+            {
+                key: value
+            }
+        )
+
+    else:
+
+        arguments = json.dumps(
+            {
+                "input": raw
+            }
+        )
+
+
+    return [
+        {
+            "id": "call-local-0",
+            "type": "function",
+            "function": {
+                "name": name,
+                "arguments": arguments
+            }
+        }
+    ]
+'''
+
+p.write_text(
+    s[:start] +
+    new_func +
+    s[end:]
+)
+
+print("patched")
+PY
+
+cd /splunk-data/v1/Work_RAG-Server-Setup
+python3 - &lt;&lt;'PY'
+from pathlib import Path
+
+p = Path("scripts/services/llama_chat_server.py")
+
+s = p.read_text()
+
+start = s.find("def parse_gemma_tool_call")
+
+if start == -1:
+    raise SystemExit("Could not find parse_gemma_tool_call")
+
+# find next function after it
+end = s.find("\ndef ", start + 10)
+
+if end == -1:
+    raise SystemExit("Could not find next function boundary")
+
+
+new_func = r'''
+def parse_gemma_tool_call(content):
+
+    if not content:
+        return None
+
+
+    match = re.search(
+        r"call:([A-Za-z0-9_-]+)\{(.*?)\}",
+        content,
+        re.S
+    )
+
+
+    if not match:
+        return None
+
+
+    name = match.group(1)
+
+    raw = match.group(2).strip()
+
+
+    # Gemma special quote tokens
+
+    raw = raw.replace(
+        '&lt;|"|&gt;',
+        '"'
+    )
+
+    raw = raw.replace(
+        '&lt;|',
+        ''
+    )
+
+    raw = raw.replace(
+        '|&gt;',
+        ''
+    )
+
+
+    raw = raw.strip()
+
+
+    # Extract:
+    # expression:"123+456"
+
+    m = re.search(
+        r'([A-Za-z0-9_]+)\s*:\s*"?(.*?)"?$',
+        raw,
+        re.S
+    )
+
+
+    if m:
+
+        key = m.group(1)
+
+        value = m.group(2).strip()
+
+        value = value.strip('"')
+
+
+        arguments = json.dumps(
+            {
+                key: value
+            }
+        )
+
+    else:
+
+        arguments = json.dumps(
+            {
+                "input": raw
+            }
+        )
+
+
+    return [
+        {
+            "id": "call-local-0",
+
+            "type": "function",
+
+            "function": {
+
+                "name": name,
+
+                "arguments": arguments
+
+            }
+        }
+    ]
+
+'''
+
+
+p.write_text(
+    s[:start] +
+    new_func +
+    s[end:]
+)
+
+print("patched successfully")
+PY
+
+$PY -m py_compile scripts/services/llama_chat_server.py
+pkill -TERM -f "llama_chat_server.py.*gemma"
+pgrep -af llama_chat_server
+CUDA_VISIBLE_DEVICES=0,1 $PY scripts/services/llama_chat_server.py --model "$MODEL" --port 8091 --model-id gemma-4-31b-opencode-256k --n-ctx 262144 --n-gpu-layers -1
+curl -s http://127.0.0.1:8091/v1/chat/completions -H "Content-Type: application/json" -d '
+{
+"model":"gemma-4-31b-opencode-256k",
+"messages":[
+{
+"role":"user",
+"content":"Calculate 123+456 using calculator."
+}
+],
+"tools":[
+{
+"type":"function",
+"function":{
+"name":"calculator",
+"description":"Calculate arithmetic",
+"parameters":{
+"type":"object",
+"properties":{
+"expression":{
+"type":"string"
+}
+},
+"required":["expression"]
+}
+}
+}
+],
+"tool_choice":"auto",
+"temperature":0
+}
+' | jqclear
+clear
+opencode
+clear
+ls
+opencode
+clear
+opencode
+OPENCODE_CONFIG_CONTENT="$MCP_OFF"
+opencode --pure ...
+cd /splunk-data/v1/Work_RAG-Server-Setup
+MCP_OFF="$(
+  opencode --pure debug config |
+  jq -c '{
+    mcp: (
+      (.mcp // {})
+      | with_entries(.value = {"enabled": false})
+    )
+  }'
+)"
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode --pure
+cd ..
+ls
+clear
+ls
+cd v1
+clear
+opencode
+cd /splunk-data/v1/Work_RAG-Server-Setup
+MCP_OFF="$(
+  opencode --pure debug config |
+  jq -c '{mcp: ((.mcp // {}) | with_entries(.value = {"enabled": false}))}'
+)"
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode --pure --print-logs --log-level DEBUG 2&gt;&amp;1 | tee /tmp/opencode-tui-debug.log
+clear
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode --pure --print-logs --log-level DEBUG
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode 
+cd ..
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode 
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode   -s ses_fb23c0f4cffe4opztWmXon8boy   --fork
+OPENCODE_CONFIG_CONTENT="$MCP_OFF" opencode -s ses_fb23c0f4cffe4opztWmXon8boy
+sudo kill 1882792
+cd /splunk-data/v1/Work_RAG-Server-Setup
+sudo nohup /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python3.12 scripts/services/llama_chat_server.py   --model /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/models/huggingface/bartowski_google_gemma-4-31B-it-GGUF/google_gemma-4-31B-it-Q4_K_M.gguf   --host 0.0.0.0   --port 8091   --model-id gemma-4-31b-opencode-256k   --n-ctx 262144   --n-gpu-layers -1   &gt;/tmp/gemma-8091.log 2&gt;&amp;1 &amp;
+clear
+clear
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cd ..
+ls
+cd splunk-data/v1
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cd Work_RAG-Server-Setup/
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+cp scripts/services/llama_chat_server.py    scripts/services/llama_chat_server.py.before-tool-history-fix
+clear
+cd /splunk-data/v1/Work_RAG-Server-Setup &amp;&amp; cp scripts/services/llama_chat_server.py scripts/services/llama_chat_server.py.backup &amp;&amp; cat &gt; scripts/services/llama_chat_server.py &lt;&lt;'PY'
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+OpenAI-compatible chat/completions server backed by llama.cpp.
+"""
+
+import argparse
+import json
+import re
+import time
+import traceback
+import uuid
+from typing import Any, Dict, List, Optional, Tuple
+
+import llama_cpp
+import uvicorn
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse, StreamingResponse
+from llama_cpp import Llama
+
+app = FastAPI()
+
+llm: Optional[Llama] = None
+MODEL_ID = "local-llm"
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "model": MODEL_ID,
+        "context": llm.n_ctx() if llm is not None else None,
+    }
+
+
+@app.get("/v1/models")
+def list_models():
+    return {
+        "object": "list",
+        "data": [
+            {
+                "id": MODEL_ID,
+                "object": "model",
+                "created": int(time.time()),
+                "owned_by": "local",
+            }
+        ],
+    }
+
+
+def content_to_text(content: Any) -&gt; str:
+    if content is None:
+        return ""
+
+    if isinstance(content, str):
+        return content
+
+    if isinstance(content, list):
+        pieces: List[str] = []
+
+        for item in content:
+            if isinstance(item, str):
+                pieces.append(item)
+                continue
+
+            if isinstance(item, dict):
+                item_type = item.get("type")
+
+                if item_type in ("text", "input_text", "output_text"):
+                    pieces.append(str(item.get("text", "")))
+                else:
+                    pieces.append(json.dumps(item, ensure_ascii=False))
+
+                continue
+
+            pieces.append(str(item))
+
+        return "\n".join(pieces)
+
+    if isinstance(content, dict):
+        return json.dumps(content, ensure_ascii=False)
+
+    return str(content)
+
+
+def gemma_argument_value(value: Any) -&gt; str:
+    if isinstance(value, str):
+        escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+        return f'&lt;|"|&gt;{escaped}&lt;|"|&gt;'
+
+    return json.dumps(
+        value,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+
+
+def openai_tool_call_to_gemma(tool_call: Dict[str, Any]) -&gt; str:
+    function = tool_call.get("function") or {}
+
+    name = str(function.get("name") or "unknown_tool")
+    raw_arguments = function.get("arguments", "{}")
+
+    if isinstance(raw_arguments, str):
+        try:
+            arguments = json.loads(raw_arguments)
+        except Exception:
+            arguments = {"input": raw_arguments}
+
+    elif isinstance(raw_arguments, dict):
+        arguments = raw_arguments
+
+    else:
+        arguments = {"input": raw_arguments}
+
+    if not isinstance(arguments, dict):
+        arguments = {"input": arguments}
+
+    rendered_arguments = []
+
+    for key, value in arguments.items():
+        rendered_arguments.append(
+            f"{key}:{gemma_argument_value(value)}"
+        )
+
+    argument_text = ",".join(rendered_arguments)
+
+    return (
+        "&lt;|tool_call&gt;"
+        f"call:{name}"
+        "{"
+        f"{argument_text}"
+        "}"
+        "&lt;tool_call|&gt;"
+    )
+
+
+def normalize_messages_for_gemma(
+    messages: List[Dict[str, Any]]
+) -&gt; List[Dict[str, str]]:
+    normalized: List[Dict[str, str]] = []
+    tool_names: Dict[str, str] = {}
+
+    def append_message(role: str, content: Any):
+        text = content_to_text(content)
+
+        if (
+            normalized
+            and normalized[-1]["role"] == role
+            and role == "user"
+        ):
+            previous = normalized[-1]["content"]
+
+            if previous and text:
+                normalized[-1]["content"] = previous + "\n\n" + text
+            elif text:
+                normalized[-1]["content"] = text
+
+            return
+
+        normalized.append(
+            {
+                "role": role,
+                "content": text,
+            }
+        )
+
+    for message in messages:
+        role = message.get("role")
+        content = message.get("content")
+
+        if role == "assistant" and message.get("tool_calls"):
+            pieces: List[str] = []
+
+            if content:
+                pieces.append(content_to_text(content))
+
+            for tool_call in message["tool_calls"]:
+                call_id = tool_call.get("id")
+                function = tool_call.get("function") or {}
+                tool_name = str(
+                    function.get("name") or "unknown_tool"
+                )
+
+                if call_id:
+                    tool_names[str(call_id)] = tool_name
+
+                pieces.append(
+                    openai_tool_call_to_gemma(tool_call)
+                )
+
+            append_message(
+                "assistant",
+                "\n".join(pieces),
+            )
+
+            continue
+
+        if role in ("tool", "tool_result", "tool_results"):
+            call_id = (
+                message.get("tool_call_id")
+                or message.get("toolCallId")
+                or ""
+            )
+
+            tool_name = (
+                message.get("name")
+                or tool_names.get(str(call_id))
+                or "tool"
+            )
+
+            result_text = content_to_text(content)
+
+            rendered = f"[Tool result: {tool_name}"
+
+            if call_id:
+                rendered += f", id={call_id}"
+
+            rendered += "]\n"
+            rendered += result_text
+            rendered += "\n[End tool result]"
+
+            append_message("user", rendered)
+            continue
+
+        if role in ("system", "user", "assistant"):
+            append_message(str(role), content)
+            continue
+
+        append_message(
+            "user",
+            f"[Message role={role}]\n{content_to_text(content)}",
+        )
+
+    return normalized
+
+
+def extract_balanced_braces(
+    text: str,
+    start: int,
+) -&gt; Tuple[str, int]:
+    if start &gt;= len(text) or text[start] != "{":
+        raise ValueError("expected '{'")
+
+    depth = 0
+    in_string = False
+    escape = False
+    gemma_quote = '&lt;|"|&gt;'
+
+    i = start
+
+    while i &lt; len(text):
+        if text.startswith(gemma_quote, i):
+            in_string = not in_string
+            i += len(gemma_quote)
+            continue
+
+        ch = text[i]
+
+        if escape:
+            escape = False
+            i += 1
+            continue
+
+        if ch == "\\" and in_string:
+            escape = True
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = not in_string
+            i += 1
+            continue
+
+        if not in_string:
+            if ch == "{":
+                depth += 1
+
+            elif ch == "}":
+                depth -= 1
+
+                if depth == 0:
+                    return text[start + 1:i], i + 1
+
+        i += 1
+
+    raise ValueError("unclosed tool-call argument object")
+
+
+def split_top_level(
+    text: str,
+    separator: str = ",",
+) -&gt; List[str]:
+    pieces = []
+    current = []
+
+    brace_depth = 0
+    bracket_depth = 0
+    paren_depth = 0
+
+    in_string = False
+    escape = False
+    gemma_quote = '&lt;|"|&gt;'
+
+    i = 0
+
+    while i &lt; len(text):
+        if text.startswith(gemma_quote, i):
+            in_string = not in_string
+            current.append(gemma_quote)
+            i += len(gemma_quote)
+            continue
+
+        ch = text[i]
+
+        if escape:
+            current.append(ch)
+            escape = False
+            i += 1
+            continue
+
+        if ch == "\\" and in_string:
+            current.append(ch)
+            escape = True
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = not in_string
+            current.append(ch)
+            i += 1
+            continue
+
+        if not in_string:
+            if ch == "{":
+                brace_depth += 1
+            elif ch == "}":
+                brace_depth -= 1
+            elif ch == "[":
+                bracket_depth += 1
+            elif ch == "]":
+                bracket_depth -= 1
+            elif ch == "(":
+                paren_depth += 1
+            elif ch == ")":
+                paren_depth -= 1
+
+            elif (
+                ch == separator
+                and brace_depth == 0
+                and bracket_depth == 0
+                and paren_depth == 0
+            ):
+                piece = "".join(current).strip()
+
+                if piece:
+                    pieces.append(piece)
+
+                current = []
+                i += 1
+                continue
+
+        current.append(ch)
+        i += 1
+
+    final_piece = "".join(current).strip()
+
+    if final_piece:
+        pieces.append(final_piece)
+
+    return pieces
+
+
+def split_key_value(text: str) -&gt; Optional[Tuple[str, str]]:
+    brace_depth = 0
+    bracket_depth = 0
+
+    in_string = False
+    escape = False
+    gemma_quote = '&lt;|"|&gt;'
+
+    i = 0
+
+    while i &lt; len(text):
+        if text.startswith(gemma_quote, i):
+            in_string = not in_string
+            i += len(gemma_quote)
+            continue
+
+        ch = text[i]
+
+        if escape:
+            escape = False
+            i += 1
+            continue
+
+        if ch == "\\" and in_string:
+            escape = True
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = not in_string
+            i += 1
+            continue
+
+        if not in_string:
+            if ch == "{":
+                brace_depth += 1
+            elif ch == "}":
+                brace_depth -= 1
+            elif ch == "[":
+                bracket_depth += 1
+            elif ch == "]":
+                bracket_depth -= 1
+
+            elif (
+                ch == ":"
+                and brace_depth == 0
+                and bracket_depth == 0
+            ):
+                return (
+                    text[:i].strip(),
+                    text[i + 1:].strip(),
+                )
+
+        i += 1
+
+    return None
+
+
+def parse_gemma_value(raw: str) -&gt; Any:
+    raw = raw.strip()
+
+    if (
+        raw.startswith('&lt;|"|&gt;')
+        and raw.endswith('&lt;|"|&gt;')
+        and len(raw) &gt;= 10
+    ):
+        value = raw[len('&lt;|"|&gt;'):-len('&lt;|"|&gt;')]
+
+        return (
+            value
+            .replace('\\"', '"')
+            .replace("\\\\", "\\")
+        )
+
+    try:
+        return json.loads(raw)
+    except Exception:
+        pass
+
+    lower = raw.lower()
+
+    if lower == "true":
+        return True
+
+    if lower == "false":
+        return False
+
+    if lower in ("null", "none"):
+        return None
+
+    try:
+        if "." in raw:
+            return float(raw)
+
+        return int(raw)
+
+    except Exception:
+        pass
+
+    return raw.strip('"')
+
+
+def parse_gemma_arguments(raw_args: str) -&gt; Dict[str, Any]:
+    raw_args = raw_args.strip()
+
+    if not raw_args:
+        return {}
+
+    cleaned = raw_args.replace('&lt;|"|&gt;', '"')
+
+    try:
+        parsed = json.loads("{" + cleaned + "}")
+
+        if isinstance(parsed, dict):
+            return parsed
+
+    except Exception:
+        pass
+
+    result: Dict[str, Any] = {}
+
+    for piece in split_top_level(raw_args):
+        pair = split_key_value(piece)
+
+        if pair is None:
+            continue
+
+        key, raw_value = pair
+        key = key.strip().strip('"')
+
+        result[key] = parse_gemma_value(raw_value)
+
+    if result:
+        return result
+
+    return {"input": raw_args}
+
+
+def parse_gemma_tool_calls(
+    content: Any,
+) -&gt; Optional[List[Dict[str, Any]]]:
+    if not isinstance(content, str):
+        return None
+
+    marker = "&lt;|tool_call&gt;"
+
+    if marker not in content:
+        return None
+
+    calls: List[Dict[str, Any]] = []
+    position = 0
+
+    while True:
+        marker_position = content.find(marker, position)
+
+        if marker_position &lt; 0:
+            break
+
+        cursor = marker_position + len(marker)
+
+        while cursor &lt; len(content) and content[cursor].isspace():
+            cursor += 1
+
+        if content.startswith("call:", cursor):
+            cursor += len("call:")
+
+        name_match = re.match(
+            r"[A-Za-z0-9_.\-]+",
+            content[cursor:],
+        )
+
+        if not name_match:
+            position = cursor + 1
+            continue
+
+        name = name_match.group(0)
+        cursor += len(name)
+
+        while cursor &lt; len(content) and content[cursor].isspace():
+            cursor += 1
+
+        if cursor &gt;= len(content) or content[cursor] != "{":
+            position = cursor + 1
+            continue
+
+        try:
+            raw_args, after_brace = extract_balanced_braces(
+                content,
+                cursor,
+            )
+
+        except Exception as exc:
+            print(
+                f"[tool-parser] failed extracting {name}: {exc}",
+                flush=True,
+            )
+
+            position = cursor + 1
+            continue
+
+        try:
+            arguments = parse_gemma_arguments(raw_args)
+
+        except Exception as exc:
+            print(
+                f"[tool-parser] failed parsing {name}: {exc}",
+                flush=True,
+            )
+
+            arguments = {"input": raw_args}
+
+        calls.append(
+            {
+                "id": "call_" + uuid.uuid4().hex[:24],
+                "type": "function",
+                "function": {
+                    "name": name,
+                    "arguments": json.dumps(
+                        arguments,
+                        ensure_ascii=False,
+                    ),
+                },
+            }
+        )
+
+        end_marker = content.find(
+            "&lt;tool_call|&gt;",
+            after_brace,
+        )
+
+        if end_marker &gt;= 0:
+            position = end_marker + len("&lt;tool_call|&gt;")
+        else:
+            position = after_brace
+
+    return calls or None
+
+
+def normalize_completion(
+    result: Dict[str, Any]
+) -&gt; Tuple[Dict[str, Any], str]:
+    choice = result["choices"][0]
+    message = choice.get("message") or {}
+
+    content = message.get("content")
+    tool_calls = message.get("tool_calls")
+
+    if not tool_calls and content:
+        try:
+            tool_calls = parse_gemma_tool_calls(content)
+        except Exception:
+            traceback.print_exc()
+            tool_calls = None
+
+    normalized_message: Dict[str, Any] = {
+        "role": "assistant",
+        "content": content,
+    }
+
+    if tool_calls:
+        normalized_calls = []
+
+        for tc in tool_calls:
+            tc = dict(tc)
+
+            if not tc.get("id"):
+                tc["id"] = "call_" + uuid.uuid4().hex[:24]
+
+            tc["type"] = "function"
+
+            function = dict(tc.get("function") or {})
+            arguments = function.get("arguments", "{}")
+
+            if not isinstance(arguments, str):
+                arguments = json.dumps(
+                    arguments,
+                    ensure_ascii=False,
+                )
+
+            function["arguments"] = arguments
+            tc["function"] = function
+
+            normalized_calls.append(tc)
+
+        normalized_message["content"] = None
+        normalized_message["tool_calls"] = normalized_calls
+
+        finish_reason = "tool_calls"
+
+    else:
+        finish_reason = choice.get("finish_reason") or "stop"
+
+    return normalized_message, finish_reason
+
+
+def sse_line(data: Any) -&gt; str:
+    if data == "[DONE]":
+        return "data: [DONE]\n\n"
+
+    return (
+        "data: "
+        + json.dumps(data, ensure_ascii=False)
+        + "\n\n"
+    )
+
+
+def stream_completed_response(
+    completion_id: str,
+    created: int,
+    message: Dict[str, Any],
+    finish_reason: str,
+):
+    yield sse_line(
+        {
+            "id": completion_id,
+            "object": "chat.completion.chunk",
+            "created": created,
+            "model": MODEL_ID,
+            "choices": [
+                {
+                    "index": 0,
+                    "delta": {"role": "assistant"},
+                    "finish_reason": None,
+                }
+            ],
+        }
+    )
+
+    if message.get("tool_calls"):
+        tool_deltas = []
+
+        for index, tc in enumerate(message["tool_calls"]):
+            tool_deltas.append(
+                {
+                    "index": index,
+                    "id": tc.get("id"),
+                    "type": "function",
+                    "function": {
+                        "name": tc.get(
+                            "function",
+                            {},
+                        ).get("name"),
+                        "arguments": tc.get(
+                            "function",
+                            {},
+                        ).get(
+                            "arguments",
+                            "{}",
+                        ),
+                    },
+                }
+            )
+
+        yield sse_line(
+            {
+                "id": completion_id,
+                "object": "chat.completion.chunk",
+                "created": created,
+                "model": MODEL_ID,
+                "choices": [
+                    {
+                        "index": 0,
+                        "delta": {
+                            "tool_calls": tool_deltas
+                        },
+                        "finish_reason": None,
+                    }
+                ],
+            }
+        )
+
+    elif message.get("content") is not None:
+        yield sse_line(
+            {
+                "id": completion_id,
+                "object": "chat.completion.chunk",
+                "created": created,
+                "model": MODEL_ID,
+                "choices": [
+                    {
+                        "index": 0,
+                        "delta": {
+                            "content": message.get(
+                                "content",
+                                "",
+                            )
+                        },
+                        "finish_reason": None,
+                    }
+                ],
+            }
+        )
+
+    yield sse_line(
+        {
+            "id": completion_id,
+            "object": "chat.completion.chunk",
+            "created": created,
+            "model": MODEL_ID,
+            "choices": [
+                {
+                    "index": 0,
+                    "delta": {},
+                    "finish_reason": finish_reason,
+                }
+            ],
+        }
+    )
+
+    yield sse_line("[DONE]")
+
+
+@app.post("/v1/chat/completions")
+async def chat_completions(request: Request):
+    global llm
+
+    body = await request.json()
+
+    original_messages = body.get("messages", [])
+
+    messages = normalize_messages_for_gemma(
+        original_messages
+    )
+
+    requested_stream = bool(
+        body.get("stream", False)
+    )
+
+    kwargs: Dict[str, Any] = {
+        "messages": messages,
+        "max_tokens": body.get(
+            "max_tokens",
+            4096,
+        ),
+        "temperature": body.get(
+            "temperature",
+            0.2,
+        ),
+        "top_p": body.get(
+            "top_p",
+            0.95,
+        ),
+        "stream": False,
+    }
+
+    if body.get("stop") is not None:
+        kwargs["stop"] = body["stop"]
+
+    if body.get("tools") is not None:
+        kwargs["tools"] = body["tools"]
+
+    if body.get("tool_choice") is not None:
+        kwargs["tool_choice"] = body["tool_choice"]
+
+    try:
+        if llm is None:
+            raise RuntimeError("Model is not loaded")
+
+        result = llm.create_chat_completion(**kwargs)
+
+    except Exception as exc:
+        print(
+            "\n=== LLAMA CHAT COMPLETION ERROR ===",
+            flush=True,
+        )
+
+        print(
+            "Exception:",
+            repr(exc),
+            flush=True,
+        )
+
+        print(
+            "\nNormalized Gemma messages:",
+            flush=True,
+        )
+
+        try:
+            print(
+                json.dumps(
+                    messages,
+                    indent=2,
+                    ensure_ascii=False,
+                ),
+                flush=True,
+            )
+        except Exception:
+            pass
+
+        traceback.print_exc()
+
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": {
+                    "message": str(exc),
+                    "type": type(exc).__name__,
+                    "code": "local_llama_error",
+                }
+            },
+        )
+
+    message, finish_reason = normalize_completion(result)
+
+    completion_id = "chatcmpl-" + uuid.uuid4().hex
+    created = int(time.time())
+
+    if requested_stream:
+        return StreamingResponse(
+            stream_completed_response(
+                completion_id,
+                created,
+                message,
+                finish_reason,
+            ),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "Connection": "keep-alive",
+                "X-Accel-Buffering": "no",
+            },
+        )
+
+    return {
+        "id": completion_id,
+        "object": "chat.completion",
+        "created": created,
+        "model": MODEL_ID,
+        "choices": [
+            {
+                "index": 0,
+                "message": message,
+                "finish_reason": finish_reason,
+            }
+        ],
+        "usage": result.get("usage", {}),
+    }
+
+
+@app.post("/v1/completions")
+async def completions(request: Request):
+    global llm
+
+    body = await request.json()
+    prompt = body.get("prompt", "")
+
+    if isinstance(prompt, list):
+        prompt = "\n".join(str(x) for x in prompt)
+
+    try:
+        if llm is None:
+            raise RuntimeError("Model is not loaded")
+
+        out = llm.create_chat_completion(
+            messages=[
+                {
+                    "role": "user",
+                    "content": str(prompt),
+                }
+            ],
+            max_tokens=body.get(
+                "max_tokens",
+                256,
+            ),
+            temperature=body.get(
+                "temperature",
+                0.2,
+            ),
+            top_p=body.get(
+                "top_p",
+                0.95,
+            ),
+            stop=body.get("stop") or None,
+            stream=False,
+        )
+
+    except Exception as exc:
+        traceback.print_exc()
+
+        return JSONResponse(
+            status_code=500,
+            content={
+                "error": {
+                    "message": str(exc),
+                    "type": type(exc).__name__,
+                    "code": "local_llama_error",
+                }
+            },
+        )
+
+    choice = out["choices"][0]
+
+    text = (
+        choice.get(
+            "message",
+            {},
+        ).get("content")
+        or ""
+    )
+
+    return {
+        "id": "cmpl-" + uuid.uuid4().hex,
+        "object": "text_completion",
+        "created": int(time.time()),
+        "model": MODEL_ID,
+        "choices": [
+            {
+                "index": 0,
+                "text": text,
+                "finish_reason": (
+                    choice.get("finish_reason")
+                    or "stop"
+                ),
+            }
+        ],
+        "usage": out.get("usage", {}),
+    }
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(
+    request: Request,
+    exc: Exception,
+):
+    traceback.print_exc()
+
+    return JSONResponse(
+        status_code=500,
+        content={
+            "error": {
+                "message": str(exc),
+                "type": type(exc).__name__,
+                "code": "internal_server_error",
+            }
+        },
+    )
+
+
+def main():
+    global llm
+    global MODEL_ID
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--model",
+        required=True,
+    )
+    parser.add_argument(
+        "--host",
+        default="0.0.0.0",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8091,
+    )
+    parser.add_argument(
+        "--n-ctx",
+        type=int,
+        default=8192,
+    )
+    parser.add_argument(
+        "--n-gpu-layers",
+        type=int,
+        default=-1,
+    )
+    parser.add_argument(
+        "--model-id",
+        default=None,
+    )
+    parser.add_argument(
+        "--single-gpu",
+        action="store_true",
+    )
+
+    args = parser.parse_args()
+
+    if args.model_id:
+        MODEL_ID = args.model_id
+
+    print(
+        "Loading model:",
+        args.model,
+        flush=True,
+    )
+
+    print(
+        "Requested context:",
+        args.n_ctx,
+        flush=True,
+    )
+
+    if args.single_gpu:
+        llm = Llama(
+            model_path=args.model,
+            n_ctx=args.n_ctx,
+            n_gpu_layers=args.n_gpu_layers,
+            flash_attn=True,
+            offload_kqv=True,
+            verbose=False,
+        )
+
+    else:
+        llm = Llama(
+            model_path=args.model,
+            n_ctx=args.n_ctx,
+            n_gpu_layers=args.n_gpu_layers,
+            split_mode=llama_cpp.LLAMA_SPLIT_MODE_LAYER,
+            tensor_split=[0.5, 0.5],
+            main_gpu=0,
+            flash_attn=True,
+            offload_kqv=True,
+            verbose=False,
+        )
+
+    print("MODEL READY", flush=True)
+    print("MODEL ID:", MODEL_ID, flush=True)
+    print("ACTUAL CONTEXT:", llm.n_ctx(), flush=True)
+
+    uvicorn.run(
+        app,
+        host=args.host,
+        port=args.port,
+    )
+
+
+if __name__ == "__main__":
+    main()
+PY
+
+/splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python3.12   -m py_compile   /splunk-data/v1/Work_RAG-Server-Setup/scripts/services/llama_chat_server.py &amp;&amp; echo "Python syntax OK"
+sudo kill 1882792
+sudo ss -ltnp | grep ':8091' || echo "8091 is free"
+cd /splunk-data/v1/Work_RAG-Server-Setup
+sudo nohup /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python3.12 scripts/services/llama_chat_server.py   --model /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/models/huggingface/bartowski_google_gemma-4-31B-it-GGUF/google_gemma-4-31B-it-Q4_K_M.gguf   --host 0.0.0.0   --port 8091   --model-id gemma-4-31b-opencode-256k   --n-ctx 262144   --n-gpu-layers -1   &gt;/tmp/gemma-8091.log 2&gt;&amp;1 &amp;
+curl -s http://127.0.0.1:8091/health | jq
+G-Server-Setup/off
+line-prep/venv/bin/python3.12 \
+clear
+tmux attach -t bench
+tmux new -s mvp
+opencode
+clear
+ls
+cd carbonyl-bin
+ls
+cd carbonyl-0.0.3/
+ls
+./carbonyl
+./carbonyl --no-sandbox http://127.0.0.1:13000
+./carbonyl --no-sandbox http://127.0.0.1:9000
+./carbonyl --no-sandbox http://127.0.0.1:13001
+./carbonyl --no-sandbox http://127.0.0.1:16333
+reboot
+opencode
+ls
+cd ..
+ls
+cd Work_RAG-Server-Setup/
+ld
+ls
+cd rag_storage
+LS
+ls
+cd ..
+ls
+cd offline-prep/
+ls
+cd models
+ls
+cd ..
+ls
+cd inference-engines/
+ls
+cd ..
+ls
+cd ..
+ls
+opencode
+clear
+opencode
+clear
+ls
+cd ..
+ls
+opencode
+ls
+cd ali.nikkhah
+cd home
+ls
+cd a.nikkhah/
+ls
+cd ..
+ls
+cd ..
+ls
+clear
+find / -type d -name "Work_RAG-KB" 2&gt;/dev/null
+mv /tmp/opencode/Work_RAG-KB/ /splunk-data/v1
+ls -la /splunk-data/Work_RAG-KB
+ls -la /splunk-data/v1/Work_RAG-
+ls -la /splunk-data/v1/Work_RAG-KB
+cd /splunk-data/v1/Work_RAG-KB
+git status
+git remote -v
+git checkout - b server
+git checkout -b server
+git add .
+git push
+git push --set-upstream origin server
+git commit -m 'initial server branch'
+git push -u origin server
+opencode
+cd ..
+ls
+cleasr
+clear
+las
+cd yadegari
+cd ..
+cd a.nikkhah/
+cd /tmp
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk version
+ping 192.168.103.6
+telnet 192.168.103.6 8089
+/opt/splunkforwarder/bin/splunk restart
+netstat -tunlp | greo 8089
+netstat -tunlp | grep 8089
+ss -tunlp | grep 8089
+clear
+pstree
+lsof
+sudo lsof -i :8089
+systemctl stop ngnix
+systemctl status ngnix
+systemctl stop nginx
+systemctl status nginc
+systemctl status nginx
+sudo lsof -i :8089
+sudo -pkill -9 nginx
+clear
+sudo lsof -i :8089
+clear
+./carbonyl --no-sandbox http://127.0.0.1:9000
+curl https://google.com
+/opt/splunkforwarder/bin/splunk restart
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk start
+/opt/splunkforwarder/bin/splunk status
+nano /etc/netplan/50-cloud-init.yaml 
+telnet 192.168.103.6 8089
+/opt/splunkforwarder/bin/splunk restart
+sudo lsof -i :8089
+ls /opt/splunkforwarder/
+ls -al /opt/
+chown root:root /opt/splunkforwarder/
+/opt/splunkforwarder/bin/splunk restart
+/opt/splunkforwarder/bin/splunk status
+ip a
+ip a | grep 192
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk version
+ll /opt/
+chown root:root /opt
+ll /opt/
+
+chown root:root /opt/splunkforwarder/
+ll /opt/
+curl https://google.com
+ping 8.8.8.8
+curl https://google.com
+useradd -m -s /bin/bash sec
+passwd sec
+usermod -aG sudo sec
+w
+ll /opt/
+/opt/splunkforwarder/bin/splunk status
+telnet 192.168.103.6 8089
+htop
+/opt/splunkforwarder/bin/splunk version
+hostnnamectl
+hostnamectl
+cd  /opt/splunkforwarder/
+ll
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk stop
+top |grep spl
+top
+chown -R root:root /opt/splunkforwarder/
+ll /opt/
+cd  /opt/splunkforwarder/
+ll
+hostname
+hostname -I
+/opt/splunkforwarder/bin/splunk status
+cd   /
+ll /opt/
+/opt/splunkforwarder/bin/splunk status
+ll  /tmp/
+ll /opt/
+ll /opt/splunkforwarder/
+ll /etc/systemd/system
+/opt/splunkforwarder/bin/splunk enable boot-start -systemd-managed 1 -user root
+ll /etc/systemd/system
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk start
+/opt/splunkforwarder/bin/splunk status
+syatemctl status SplunkForwarder.service
+systemctl status SplunkForwarder.service
+systemctl stop SplunkForwarder.service
+systemctl status SplunkForwarder.service
+/opt/splunkforwarder/bin/splunk set deploy-poll 192.168.103.6:8089
+ll /opt/splunkforwarder/etc/system/local/
+systemctl status SplunkForwarder.service
+systemctl start SplunkForwarder.service
+systemctl status SplunkForwarder.service
+history 
+chown -R root:root /opt/splunkforwarder/
+systemctl start SplunkForwarder.service
+systemctl stop SplunkForwarder.service
+systemctl status SplunkForwarder.service
+chown -R root:root /opt/splunkforwarder/
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk start
+/opt/splunkforwarder/bin/splunk status
+/opt/splunkforwarder/bin/splunk version
+ps -ef | grep '[s]plunkd'
+addusr security
+adduser security
+user -aG sudo security
+id security
+usermod -aG sudo security
+su - security
+pstree -ap 2619972
+/opt/splunkforwarder/bin/splunk status
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R root:root /opt/splunkforwarder"
+splunkd is running (PID: 2619972).
+ls   -ld /opt/splunkforwarder/
+find /opt/splunkforwarder   ! -user root -o ! -group root   -printf '%u:%g %p\n' | head -50
+history
+ls   -ld /opt/splunkforwarder/
+find /opt/splunkforwarder   ! -user root -o ! -group root   -printf '%u:%g %p\n' | head -50
+ls   -ld /opt/splunkforwarder/
+cd /
+ls   -ld /opt/splunkforwarder/
+find /opt/splunkforwarder   ! -user root -o ! -group root   -printf '%u:%g %p\n' | head -50
+systemctl cat SplunkForwarder.service
+curl https://google.com
+cd ..
+ls
+cd splunk-data/
+ls
+cd v1
+opencode
+cd ..
+cd splunk-data/
+cd v1
+tmux
+cd ..
+cd splunk-data/
+cd v1
+tmuc
+tmux
+cd ..
+cd splunk-data/
+cd v1
+tmux
+tmux attach
+tmux attach -t 0
+cd ../splunk-data/v1
+tmux attach -t 0
+clear
+tmux attach -t 0
+clear
+tmux attach -t 0
+tmux attach -t
+tmux attach -t 0
+clear
+tmux attach -t 0
+tmux attach -t
+clear
+opencode
+clear
+tmux attach -t 0
+sudo -i
+A.Nikkhah@@2026
+clear
+tmux attach -t 0
+tmux attach -t
+tmux attach -t 0
+tmux attach -t
+tmux attach -t 0
+tmux attach -t
+tmux sessions list -s
+tmux ls
+tmux attach new
+tmux attach -t new
+opencode
+clear
+tmux attach -t 0
+tmux attach -t 5
+tmux kill-session -t 0
+tmux new session
+tmux attach -t 0
+tmux new
+tmux attach -t 0
+tmux new -s
+tmux new 
+tmux attach -t 5
+ls
+cd ..
+ls
+cd splunk-data/
+l
+ls
+clear
+tmux attach -t 5
+tmux attach -t 0
+tmux attach -t 5
+tmux attach -t 0
+tmux attach -t 5
+tmux attach -5
+tmux attach -t 5
+curl https://cursor.com/install -fsS | bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+agent
+clear
+agent
+opencode
+etach
+tmux detach
+tmux ls\
+tmux attach -t 0
+tmux ls
+tmux detach
+cd ..
+ls
+cd splunk-data/
+ls
+opencode
+clear
+ls
+cd ..
+ls
+cd splunk-data/
+ls
+nvidia-smi
+clear
+ls
+cd models
+ls
+ls -la
+cd ..
+clear
+l
+ls
+mkdir production
+cd production
+ls
+clear
+agent
+clear
+agent
+clear
+cd ..
+ls
+cd splunk-data/
+ls
+cd production/
+clear
+ls
+clear
+agent
+cd ..
+ls
+cd splunk-data/
+ls
+cd production/
+tmux new -s 0
+ls
+cd ..
+ls
+cd splunk-data/
+clear
+tmux attach -t 0
+clear
+tmux attach -t 0
+cd ..
+ls
+cd splunk-data/
+ls
+cd production/
+ls
+tmux attach -t 0
+no zsh history
+
+=== Shutdown/reboot events (last) ===
+a.nikkha pts/0        192.168.107.97   Sat Nov 14 16:49   still logged in
+a.nikkha pts/0        192.168.107.97   Sat Nov 14 16:37 - 16:49  (00:11)
+infra    pts/0        192.168.107.97   Sat Nov 14 10:33 - 10:35  (00:01)
+yadegari pts/0        192.168.107.97   Sat Nov 14 07:48 - 08:53  (01:05)
+yadegari pts/0        192.168.107.97   Sat Nov 14 07:11 - 07:41  (00:30)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 09:25 - 11:40  (02:15)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 07:32 - 09:01  (01:28)
+a.nikkha pts/0        192.168.107.97   Thu Nov 12 04:23 - 07:18  (02:55)
+yadegari pts/0        192.168.107.97   Wed Nov 11 12:37 - 13:08  (00:31)
+root     pts/3        tmux(105248).%0  Wed Nov 11 07:09    gone - no logout
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 07:08 - 08:34  (01:25)
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 06:30 - 07:07  (00:37)
+a.nikkha pts/0        192.168.107.97   Wed Nov 11 04:56 - 06:29  (01:33)
+runlevel (to lvl 5)   6.8.0-147-generi Wed Nov 11 04:55   still running
+reboot   system boot  6.8.0-147-generi Wed Nov 11 04:55   still running
+shutdown system down  6.8.0-138-generi Wed Nov 11 04:53 - 04:55  (00:01)
+a.nikkha pts/2        192.168.107.97   Wed Nov 11 04:41 - 04:52  (00:11)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 18:17 - 21:09  (02:51)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 18:17 - 18:17  (00:00)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 17:47 - 18:16  (00:29)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 17:40 - 17:47  (00:07)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 16:48 - 17:22  (00:34)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 15:22 - 15:57  (00:34)
+a.nikkha pts/2        192.168.107.97   Mon Nov  9 14:40 - 15:10  (00:30)
+a.nikkha pts/2        192.168.107.97   Mon Nov  2 07:33 - 08:18  (00:45)
+a.nikkha pts/2        192.168.107.97   Mon Nov  2 06:52 - 07:27  (00:34)
+root     pts/2        tmux(2832428).%2 Sat Oct 31 12:44 - 13:27  (00:43)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 12:36 - 15:56  (03:20)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 11:30 - 12:01  (00:30)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 10:47 - 11:18  (00:30)
+root     pts/2        tmux(2832428).%2 Sat Oct 31 10:01 - 12:44  (02:43)
+root     pts/2        tmux(2832428).%2 Sat Oct 31 09:54 - 10:01  (00:06)
+root     pts/2        tmux(2832428).%1 Sat Oct 31 09:53 - 09:54  (00:01)
+root     pts/2        tmux(2832428).%1 Sat Oct 31 09:50 - 09:53  (00:02)
+root     pts/2        tmux(2832428).%1 Sat Oct 31 09:49 - 09:50  (00:01)
+a.nikkha pts/5        192.168.107.97   Sat Oct 31 09:04 - 10:17  (01:13)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:37 - 09:49 (2+18:11)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:28 - 15:37  (00:08)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:21 - 15:24  (00:02)
+a.nikkha pts/5        192.168.107.97   Wed Oct 28 15:20 - 15:51  (00:30)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:18 - 15:21  (00:03)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:16 - 15:17  (00:01)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:11 - 15:16  (00:05)
+root     pts/2        tmux(2832428).%1 Wed Oct 28 15:05 - 15:06  (00:01)
+root     pts/2        tmux(2832428).%9 Wed Oct 28 15:03 - 15:05  (00:02)
+root     pts/2        tmux(2832428).%8 Wed Oct 28 15:00 - 15:03  (00:03)
+root     pts/2        tmux(2832428).%7 Wed Oct 28 14:53 - 15:00  (00:06)
+a.nikkha pts/5        192.168.107.97   Wed Oct 28 14:41 - 15:19  (00:37)
+root     pts/2        tmux(2832428).%6 Wed Oct 28 14:25 - 14:53  (00:27)
+root     pts/8        tmux(2832428).%5 Wed Oct 28 12:17 - 04:52 (13+16:35)
+last unavailable
+
+=== User metadata ===
+Current user: root
+UID: 0
+Groups: root
+Home: /root
+Shell: /bin/bash
+
+=== Systemd services status ===
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  containerd.service          loaded active running containerd container runtime
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  docker.service              loaded active running Docker Application Container Engine
+● fwupd-refresh.service       loaded failed failed  Refresh fwupd metadata and update motd
+  fwupd.service               loaded active running Firmware update daemon
+  getty@tty1.service          loaded active running Getty on tty1
+  kesl.service                loaded active running kesl
+  klnagent64.service          loaded active running Kaspersky Network Agent.
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  nginx.service               loaded active running A high performance web server and a reverse proxy server
+  nvidia-persistenced.service loaded active running NVIDIA Persistence Daemon
+  open-vm-tools.service       loaded active running Service for virtual machines hosted on VMware
+  polkit.service              loaded active running Authorization Manager
+  rsyslog.service             loaded active running System Logging Service
+  snapd.service               loaded active running Snap Daemon
+● SplunkForwarder.service     loaded failed failed  Systemd service file for Splunk, generated by 'splunk enable boot-start'
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  upower.service              loaded active running Daemon for power management
+  user@1002.service           loaded active running User Manager for UID 1002
+  vgauth.service              loaded active running Authentication service for virtual machines hosted on VMware
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+30 loaded units listed.
+
+=== Cron jobs ===
+no crontab
+
+=== Systemd timers ===
+NEXT                            LEFT LAST                              PASSED UNIT                           ACTIVATES
+Sat 2026-11-14 17:10:00 UTC     7min Sat 2026-11-14 17:00:00 UTC 1min 59s ago sysstat-collect.timer          sysstat-collect.service
+Sat 2026-11-14 17:14:30 UTC    12min Sat 2026-11-14 16:23:04 UTC    38min ago fwupd-refresh.timer            fwupd-refresh.service
+Sat 2026-11-14 20:12:11 UTC 3h 10min Sat 2026-11-14 06:20:13 UTC      10h ago apt-daily.timer                apt-daily.service
+Sat 2026-11-14 21:11:44 UTC  4h 9min Sat 2026-11-14 10:31:03 UTC       6h ago motd-news.timer                motd-news.service
+Sun 2026-11-15 00:00:00 UTC       6h Sat 2026-11-14 00:00:08 UTC      17h ago dpkg-db-backup.timer           dpkg-db-backup.service
+Sun 2026-11-15 00:00:00 UTC       6h Sat 2026-11-14 00:00:08 UTC      17h ago logrotate.timer                logrotate.service
+Sun 2026-11-15 00:07:00 UTC       7h Sat 2026-11-14 00:07:08 UTC      16h ago sysstat-summary.timer          sysstat-summary.service
+Sun 2026-11-15 01:01:45 UTC       7h Sat 2026-11-14 01:26:41 UTC      15h ago man-db.timer                   man-db.service
+Sun 2026-11-15 03:10:55 UTC      10h Sun 2026-11-08 03:10:30 UTC            - e2scrub_all.timer              e2scrub_all.service
+Sun 2026-11-15 05:00:15 UTC      11h Sat 2026-11-14 05:00:15 UTC      12h ago update-notifier-download.timer update-notifier-download.service
+Sun 2026-11-15 05:10:13 UTC      12h Sat 2026-11-14 05:10:13 UTC      11h ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Sun 2026-11-15 06:54:00 UTC      13h Sat 2026-11-14 06:32:45 UTC      10h ago apt-daily-upgrade.timer        apt-daily-upgrade.service
+Sun 2026-11-15 23:43:28 UTC 1 day 6h Sun 2026-11-08 16:36:55 UTC            - update-notifier-motd.timer     update-notifier-motd.service
+Mon 2026-11-16 01:20:02 UTC 1 day 8h Mon 2026-11-09 00:12:38 UTC            - fstrim.timer                   fstrim.service
+-                                  - -                                      - apport-autoreport.timer        apport-autoreport.service
+-                                  - -                                      - snapd.snap-repair.timer        snapd.snap-repair.service
+-                                  - -                                      - ua-timer.timer                 ua-timer.service
+
+17 timers listed.</pre>
+      </div>
+    </div>
+    <div class="collapsible">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">📄 database_and_dvc.log <span class="arrow"></span></div>
+      <div class="collapsible-content" id="log-database_and_dvc_log">
+        <pre>=== PostgreSQL logs ===
+no postgresql log files found in standard locations
+
+=== Docker postgres container logs ===
+=== container: pgvector-kb-prod ===
+2026-11-12T11:00:43.302358936Z 
+2026-11-12T11:00:43.302413371Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+2026-11-12T11:00:43.302419394Z 
+2026-11-12T11:00:43.562560397Z 2026-11-12 11:00:43.562 UTC [1] LOG:  starting PostgreSQL 16.14 (Debian 16.14-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+2026-11-12T11:00:43.562600421Z 2026-11-12 11:00:43.562 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-12T11:00:43.562605604Z 2026-11-12 11:00:43.562 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-12T11:00:43.566677239Z 2026-11-12 11:00:43.566 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-12T11:00:43.572204687Z 2026-11-12 11:00:43.571 UTC [35] LOG:  database system was shut down at 2026-11-12 10:42:44 UTC
+2026-11-12T11:00:43.581719067Z 2026-11-12 11:00:43.581 UTC [1] LOG:  database system is ready to accept connections
+2026-11-12T11:05:43.573650673Z 2026-11-12 11:05:43.572 UTC [33] LOG:  checkpoint starting: time
+2026-11-12T11:05:43.853128971Z 2026-11-12 11:05:43.852 UTC [33] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.266 s, sync=0.005 s, total=0.281 s; sync files=3, longest=0.003 s, average=0.002 s; distance=4 kB, estimate=4 kB; lsn=0/73E27C28, redo lsn=0/73E27BF0
+
+=== DVC logs (knowledgebase versioning) ===
+--- DVC dir: /splunk-data/production/Work_Credit-RAG_Phase1/components/knowledgebase ---
+total 232
+drwxr-xr-x  9 root root  4096 Nov 12 09:36 .
+drwxr-xr-x 10 root root  4096 Nov 12 04:36 ..
+drwxr-xr-x  3 root root  4096 Nov 11 05:38 .agent
+-rw-r--r--  1 root root   661 Nov 11 05:38 apply_conservative.py
+drwxr-xr-x  6 root root  4096 Nov 11 05:38 archive
+-rw-r--r--  1 root root   563 Nov 11 05:38 debug_tsv.py
+drwxr-xr-x  4 root root  4096 Nov 11 05:38 docs
+-rw-r--r--  1 root root    52 Nov 11 05:32 .git
+drwxr-xr-x  3 root root  4096 Nov 11 05:38 .github
+-rw-r--r--  1 root root   835 Nov 11 05:38 .gitignore
+-rw-r--r--  1 root root   111 Nov 11 05:38 .gitmodules
+-rw-r--r--  1 root root 70427 Nov 11 05:38 KB_ARCHITECTURE.md
+drwxr-xr-x 14 root root  4096 Nov 12 09:36 kb-manager
+drwxr-xr-x  5 root root  4096 Nov 12 09:36 kb-source
+-rw-r--r--  1 root root   536 Nov 11 05:38 .mcp.json
+-rw-r--r--  1 root root    74 Nov 11 05:38 opencode.json
+-rw-r--r--  1 root root 26152 Nov 11 05:38 prismal_architecture.svg
+-rw-r--r--  1 root root 33451 Nov 12 11:13 README.md
+-rw-r--r--  1 root root 18515 Nov 11 05:38 retrieval-evaluation-research.md
+drwxr-xr-x  2 root root  4096 Nov 11 05:38 scripts
+-rw-r--r--  1 root root  6528 Nov 11 05:38 SKILL.md
+-rw-r--r--  1 root root   232 Nov 11 05:38 start_guardrails.py</pre>
+      </div>
+    </div>
+    <div class="collapsible">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">📄 matrix.tsv <span class="arrow"></span></div>
+      <div class="collapsible-content" id="log-matrix_tsv">
+        <pre>port	service	http_code	body_preview
+18000	gemma	000	
+9000	manager	200	
+8000	kb	200	
+8200	guardrails	200	
+8100	orchestrator	200	
+3000	trace-collector	000	
+3001	langfuse	000	
+13000	webui	200	
+8085	jenkins	200	
+8010	service:8010	200	
+8001	service:8001	200	
+8002	service:8002	200	
+8003	service:8003	200	</pre>
+      </div>
+    </div>
+    <div class="collapsible">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">📄 restart.log <span class="arrow"></span></div>
+      <div class="collapsible-content" id="log-restart_log">
+        <pre>Restart attempt at 2026-11-14T16:59:29Z
+Machine type: production_gpu
+Detected stack mode: compose
+
+--- Production GPU mode: compose stack restart ---
+Bringing up compose stack dana-prod with /splunk-data/production/Work_Credit-RAG_Phase1/deploy/compose/.env.prod
+ Network dana-prod_rag Creating 
+ Network dana-prod_rag Creating 
+ Network dana-prod_rag Created 
+ Network dana-prod_rag Created 
+ Container dana-prod-postgres-1 Creating 
+ Container dana-prod-redis-1 Creating 
+ Container dana-prod-tracing-1 Creating 
+ Container dana-prod-guardrails-1 Creating 
+ Container dana-prod-tracing-1 Created 
+ Container dana-prod-guardrails-1 Created 
+ Container dana-prod-postgres-1 Created 
+ Container dana-prod-redis-1 Created 
+ Container dana-prod-kb-1 Creating 
+ Container dana-prod-kb-1 Created 
+ Container dana-prod-orchestrator-1 Creating 
+ Container dana-prod-orchestrator-1 Created 
+ Container dana-prod-webui-1 Creating 
+ Container dana-prod-webui-1 Created 
+ Container dana-prod-redis-1 Starting 
+ Container dana-prod-guardrails-1 Starting 
+ Container dana-prod-tracing-1 Starting 
+ Container dana-prod-postgres-1 Starting 
+ Container dana-prod-postgres-1 Started 
+ Container dana-prod-tracing-1 Started 
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint dana-prod-redis-1 (140979443b7c7cf1d8e0390e3e7cf32130d960f12925763cf02bb256029f4ac8): Bind for 127.0.0.1:16379 failed: port is already allocated
+[1;33m[WARN][0m compose up returned non-zero
+ Image dana-jenkins:lts Pulling 
+ Image dana-jenkins:lts pull access denied for dana-jenkins, repository does not exist or may require 'docker login' 
+ Image dana-jenkins:lts Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 817B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 882B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/jenkins/jenkins:lts-jdk17
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/jenkins/jenkins:lts-jdk17@sha256:cce1eeb79902722f3cf7a8831c41e95c39f4a42b9a2981959630cc66539b3c2d
+#5 resolve docker.io/jenkins/jenkins:lts-jdk17@sha256:cce1eeb79902722f3cf7a8831c41e95c39f4a42b9a2981959630cc66539b3c2d 0.0s done
+#5 CACHED
+
+#6 [2/2] RUN apt-get update  &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends       ca-certificates curl git python3 python3-pip  &amp;&amp; curl -fsSL https://download.docker.com/linux/static/stable/$(uname -m)/docker-28.3.3.tgz       | tar -xz -C /tmp  &amp;&amp; mv /tmp/docker/docker /usr/local/bin/docker  &amp;&amp; mkdir -p /usr/local/lib/docker/cli-plugins  &amp;&amp; curl -fsSL "https://github.com/docker/compose/releases/download/v2.39.2/docker-compose-linux-$(uname -m | sed 's/aarch64/aarch64/;s/x86_64/x86_64/')"       -o /usr/local/lib/docker/cli-plugins/docker-compose  &amp;&amp; chmod +x /usr/local/bin/docker /usr/local/lib/docker/cli-plugins/docker-compose  &amp;&amp; rm -rf /var/lib/apt/lists/* /tmp/docker
+#6 0.470 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#6 0.818 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#6 0.995 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#6 1.163 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#6 3.201 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#6 3.322 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [303 kB]
+#6 4.257 Fetched 10.2 MB in 4s (2562 kB/s)
+#6 4.257 Reading package lists...
+#6 5.005 Reading package lists...
+#6 5.719 Building dependency tree...
+#6 5.840 Reading state information...
+#6 6.048 git is already the newest version (1:2.47.3-0+deb13u1).
+#6 6.048 The following additional packages will be installed:
+#6 6.048   libcurl3t64-gnutls libcurl4t64 libpython3-stdlib libpython3.13-minimal
+#6 6.049   libpython3.13-stdlib libreadline8t64 media-types netbase python3-minimal
+#6 6.049   python3-packaging python3-wheel python3.13 python3.13-minimal
+#6 6.049   readline-common
+#6 6.050 Suggested packages:
+#6 6.050   python3-doc python3-tk python3-venv python3-setuptools python3.13-venv
+#6 6.050   python3.13-doc binutils binfmt-support readline-doc
+#6 6.050 Recommended packages:
+#6 6.050   build-essential python3-dev libjs-sphinxdoc
+#6 6.266 The following NEW packages will be installed:
+#6 6.266   libpython3-stdlib libpython3.13-minimal libpython3.13-stdlib libreadline8t64
+#6 6.266   media-types netbase python3 python3-minimal python3-packaging python3-pip
+#6 6.266   python3-wheel python3.13 python3.13-minimal readline-common
+#6 6.267 The following packages will be upgraded:
+#6 6.267   ca-certificates curl libcurl3t64-gnutls libcurl4t64
+#6 6.483 4 upgraded, 14 newly installed, 0 to remove and 54 not upgraded.
+#6 6.483 Need to get 8892 kB of archives.
+#6 6.483 After this operation, 34.2 MB of additional disk space will be used.
+#6 6.483 Get:1 http://deb.debian.org/debian trixie/main amd64 libpython3.13-minimal amd64 3.13.5-2+deb13u5 [863 kB]
+#6 7.254 Get:2 http://deb.debian.org/debian trixie/main amd64 python3.13-minimal amd64 3.13.5-2+deb13u5 [2225 kB]
+#6 8.059 Get:3 http://deb.debian.org/debian trixie/main amd64 python3-minimal amd64 3.13.5-1 [27.2 kB]
+#6 8.164 Get:4 http://deb.debian.org/debian trixie/main amd64 media-types all 13.0.0 [29.3 kB]
+#6 8.269 Get:5 http://deb.debian.org/debian trixie/main amd64 netbase all 6.5 [12.4 kB]
+#6 8.370 Get:6 http://deb.debian.org/debian trixie/main amd64 readline-common all 8.2-6 [69.4 kB]
+#6 8.563 Get:7 http://deb.debian.org/debian trixie/main amd64 libreadline8t64 amd64 8.2-6 [169 kB]
+#6 8.767 Get:8 http://deb.debian.org/debian trixie/main amd64 libpython3.13-stdlib amd64 3.13.5-2+deb13u5 [1959 kB]
+#6 9.708 Get:9 http://deb.debian.org/debian trixie/main amd64 python3.13 amd64 3.13.5-2+deb13u5 [757 kB]
+#6 11.01 Get:10 http://deb.debian.org/debian trixie/main amd64 libpython3-stdlib amd64 3.13.5-1 [10.2 kB]
+#6 11.11 Get:11 http://deb.debian.org/debian trixie/main amd64 python3 amd64 3.13.5-1 [28.2 kB]
+#6 11.30 Get:12 http://deb.debian.org/debian-security trixie-security/main amd64 ca-certificates all 20250419+deb13u1 [161 kB]
+#6 11.52 Get:13 http://deb.debian.org/debian-security trixie-security/main amd64 curl amd64 8.14.1-2+deb13u7 [270 kB]
+#6 11.74 Get:14 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl4t64 amd64 8.14.1-2+deb13u7 [392 kB]
+#6 11.98 Get:15 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl3t64-gnutls amd64 8.14.1-2+deb13u7 [385 kB]
+#6 12.22 Get:16 http://deb.debian.org/debian trixie/main amd64 python3-packaging all 25.0-1 [56.6 kB]
+#6 12.42 Get:17 http://deb.debian.org/debian trixie/main amd64 python3-wheel all 0.46.1-2 [21.7 kB]
+#6 12.53 Get:18 http://deb.debian.org/debian trixie/main amd64 python3-pip all 25.1.1+dfsg-1 [1457 kB]
+#6 14.96 Preconfiguring packages ...
+#6 17.67 Fetched 8892 kB in 8s (1145 kB/s)
+#6 17.71 Selecting previously unselected package libpython3.13-minimal:amd64.
+#6 17.71 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 9608 files and directories currently installed.)
+#6 17.72 Preparing to unpack .../libpython3.13-minimal_3.13.5-2+deb13u5_amd64.deb ...
+#6 17.72 Unpacking libpython3.13-minimal:amd64 (3.13.5-2+deb13u5) ...
+#6 17.84 Selecting previously unselected package python3.13-minimal.
+#6 17.84 Preparing to unpack .../python3.13-minimal_3.13.5-2+deb13u5_amd64.deb ...
+#6 17.86 Unpacking python3.13-minimal (3.13.5-2+deb13u5) ...
+#6 18.07 Setting up libpython3.13-minimal:amd64 (3.13.5-2+deb13u5) ...
+#6 18.09 Setting up python3.13-minimal (3.13.5-2+deb13u5) ...
+#6 19.16 Selecting previously unselected package python3-minimal.
+#6 19.16 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 9933 files and directories currently installed.)
+#6 19.17 Preparing to unpack .../0-python3-minimal_3.13.5-1_amd64.deb ...
+#6 19.17 Unpacking python3-minimal (3.13.5-1) ...
+#6 19.23 Selecting previously unselected package media-types.
+#6 19.23 Preparing to unpack .../1-media-types_13.0.0_all.deb ...
+#6 19.23 Unpacking media-types (13.0.0) ...
+#6 19.29 Selecting previously unselected package netbase.
+#6 19.29 Preparing to unpack .../2-netbase_6.5_all.deb ...
+#6 19.29 Unpacking netbase (6.5) ...
+#6 19.35 Selecting previously unselected package readline-common.
+#6 19.35 Preparing to unpack .../3-readline-common_8.2-6_all.deb ...
+#6 19.35 Unpacking readline-common (8.2-6) ...
+#6 19.41 Selecting previously unselected package libreadline8t64:amd64.
+#6 19.42 Preparing to unpack .../4-libreadline8t64_8.2-6_amd64.deb ...
+#6 19.43 Adding 'diversion of /lib/x86_64-linux-gnu/libhistory.so.8 to /lib/x86_64-linux-gnu/libhistory.so.8.usr-is-merged by libreadline8t64'
+#6 19.45 Adding 'diversion of /lib/x86_64-linux-gnu/libhistory.so.8.2 to /lib/x86_64-linux-gnu/libhistory.so.8.2.usr-is-merged by libreadline8t64'
+#6 19.46 Adding 'diversion of /lib/x86_64-linux-gnu/libreadline.so.8 to /lib/x86_64-linux-gnu/libreadline.so.8.usr-is-merged by libreadline8t64'
+#6 19.47 Adding 'diversion of /lib/x86_64-linux-gnu/libreadline.so.8.2 to /lib/x86_64-linux-gnu/libreadline.so.8.2.usr-is-merged by libreadline8t64'
+#6 19.48 Unpacking libreadline8t64:amd64 (8.2-6) ...
+#6 19.54 Selecting previously unselected package libpython3.13-stdlib:amd64.
+#6 19.54 Preparing to unpack .../5-libpython3.13-stdlib_3.13.5-2+deb13u5_amd64.deb ...
+#6 19.54 Unpacking libpython3.13-stdlib:amd64 (3.13.5-2+deb13u5) ...
+#6 19.74 Selecting previously unselected package python3.13.
+#6 19.75 Preparing to unpack .../6-python3.13_3.13.5-2+deb13u5_amd64.deb ...
+#6 19.75 Unpacking python3.13 (3.13.5-2+deb13u5) ...
+#6 19.82 Selecting previously unselected package libpython3-stdlib:amd64.
+#6 19.82 Preparing to unpack .../7-libpython3-stdlib_3.13.5-1_amd64.deb ...
+#6 19.82 Unpacking libpython3-stdlib:amd64 (3.13.5-1) ...
+#6 19.87 Setting up python3-minimal (3.13.5-1) ...
+#6 20.12 Selecting previously unselected package python3.
+#6 20.12 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 10426 files and directories currently installed.)
+#6 20.13 Preparing to unpack .../0-python3_3.13.5-1_amd64.deb ...
+#6 20.16 Unpacking python3 (3.13.5-1) ...
+#6 20.22 Preparing to unpack .../1-ca-certificates_20250419+deb13u1_all.deb ...
+#6 20.23 Unpacking ca-certificates (20250419+deb13u1) over (20250419) ...
+#6 20.49 Preparing to unpack .../2-curl_8.14.1-2+deb13u7_amd64.deb ...
+#6 20.50 Unpacking curl (8.14.1-2+deb13u7) over (8.14.1-2+deb13u2) ...
+#6 20.59 Preparing to unpack .../3-libcurl4t64_8.14.1-2+deb13u7_amd64.deb ...
+#6 20.60 Unpacking libcurl4t64:amd64 (8.14.1-2+deb13u7) over (8.14.1-2+deb13u2) ...
+#6 20.68 Preparing to unpack .../4-libcurl3t64-gnutls_8.14.1-2+deb13u7_amd64.deb ...
+#6 20.69 Unpacking libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) over (8.14.1-2+deb13u2) ...
+#6 20.78 Selecting previously unselected package python3-packaging.
+#6 20.78 Preparing to unpack .../5-python3-packaging_25.0-1_all.deb ...
+#6 20.79 Unpacking python3-packaging (25.0-1) ...
+#6 20.84 Selecting previously unselected package python3-wheel.
+#6 20.84 Preparing to unpack .../6-python3-wheel_0.46.1-2_all.deb ...
+#6 20.84 Unpacking python3-wheel (0.46.1-2) ...
+#6 20.90 Selecting previously unselected package python3-pip.
+#6 20.91 Preparing to unpack .../7-python3-pip_25.1.1+dfsg-1_all.deb ...
+#6 20.91 Unpacking python3-pip (25.1.1+dfsg-1) ...
+#6 21.08 Setting up media-types (13.0.0) ...
+#6 21.08 Setting up libcurl4t64:amd64 (8.14.1-2+deb13u7) ...
+#6 21.09 Setting up libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) ...
+#6 21.09 Setting up ca-certificates (20250419+deb13u1) ...
+#6 34.59 Updating certificates in /etc/ssl/certs...
+#6 41.42 rehash: warning: skipping ca-certificates.crt, it does not contain exactly one certificate or CRL
+#6 41.43 0 added, 2 removed; done.
+#6 41.47 Setting up netbase (6.5) ...
+#6 41.50 Setting up curl (8.14.1-2+deb13u7) ...
+#6 41.50 Setting up readline-common (8.2-6) ...
+#6 41.51 Setting up libreadline8t64:amd64 (8.2-6) ...
+#6 41.52 Setting up libpython3.13-stdlib:amd64 (3.13.5-2+deb13u5) ...
+#6 41.53 Setting up libpython3-stdlib:amd64 (3.13.5-1) ...
+#6 41.53 Setting up python3.13 (3.13.5-2+deb13u5) ...
+#6 42.61 Setting up python3 (3.13.5-1) ...
+#6 42.77 Setting up python3-packaging (25.0-1) ...
+#6 42.96 Setting up python3-wheel (0.46.1-2) ...
+#6 43.11 Setting up python3-pip (25.1.1+dfsg-1) ...
+#6 44.20 Processing triggers for libc-bin (2.41-12) ...
+#6 44.22 Processing triggers for ca-certificates (20250419+deb13u1) ...
+#6 44.25 Updating certificates in /etc/ssl/certs...
+#6 49.02 0 added, 0 removed; done.
+#6 49.02 Running hooks in /etc/ca-certificates/update.d...
+#6 49.02 done.
+#6 DONE 82.1s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 9.0s done
+#7 exporting manifest sha256:561bbeb24350c7610c2e93833789e08b4effe3658fb353ac1643c2b836f64805 done
+#7 exporting config sha256:d7529bae2f7144f2a8a7f30fdda64b0a2dcbcbddd932ac16a5a56a1ad7a9af0e done
+#7 exporting attestation manifest sha256:fc9e9bd9db4f106f8dd67abbfb774b1f63fe4568bd8eedb515f8f24abe77ea63 done
+#7 exporting manifest list sha256:b6db72a94a5f8719b000a5b862e6a9ac06e0dc8a4438261c2194844077d1260a done
+#7 naming to docker.io/library/dana-jenkins:lts done
+#7 unpacking to docker.io/library/dana-jenkins:lts
+#7 unpacking to docker.io/library/dana-jenkins:lts 1.0s done
+#7 DONE 10.0s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.0s
+ Image dana-jenkins:lts Built 
+ Container dana-jenkins-prod Recreate 
+ Container dana-jenkins-prod Recreated 
+ Container dana-jenkins-prod Starting 
+ Container dana-jenkins-prod Started 
+[0;32m[OK][0m   jenkins compose up succeeded
+sha256:561bbeb24350c7610c2e93833789e08b4effe3658fb353ac1643c2b836f64805 done
+#7 exporting config sha256:d7529bae2f7144f2a8a7f30fdda64b0a2dcbcbddd932ac16a5a56a1ad7a9af0e done
+#7 exporting attestation manifest sha256:fc9e9bd9db4f106f8dd67abbfb774b1f63fe4568bd8eedb515f8f24abe77ea63 done
+#7 exporting manifest list sha256:b6db72a94a5f8719b000a5b862e6a9ac06e0dc8a4438261c2194844077d1260a done
+#7 naming to docker.io/library/dana-jenkins:lts done
+#7 unpacking to docker.io/library/dana-jenkins:lts
+#7 unpacking to docker.io/library/dana-jenkins:lts 1.0s done
+#7 DONE 10.0s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.0s
+ Image dana-jenkins:lts Built 
+ Container dana-jenkins-prod Recreate 
+ Container dana-jenkins-prod Recreated 
+ Container dana-jenkins-prod Starting 
+ Container dana-jenkins-prod Started </pre>
+      </div>
+    </div>
+    <div class="collapsible">
+      <div class="collapsible-header" onclick="toggleCollapsible(this)">📄 run.log <span class="arrow"></span></div>
+      <div class="collapsible-content" id="log-run_log">
+        <pre>
+\033[0;36m======================================================================\033[0m
+\033[0;36m  GPU Full Recovery Report — 20261114T165924Z-ai-gpu1\033[0m
+\033[0;36m======================================================================\033[0m
+  Host:        ai-gpu1
+  Repo:        /splunk-data/production/Work_Credit-RAG_Phase1
+  Server-setup: /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup
+  Output:      /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1
+  Root:        no
+  Push:        enabled
+  Restart:     enabled
+  Screenshot:  enabled
+\033[0;36m======================================================================\033[0m
+
+[0;32m[OK][0m   Running as root — full access to docker, journalctl, bash history
+[0;32m[OK][0m   Running as root — full access to docker, journalctl, bash history
+[0;32m[OK][0m   Detected production GPU server (Linux) — production mode: full restarts, production health checks
+[0;32m[OK][0m   Detected production GPU server (Linux) — production mode: full restarts, production health checks
+
+[0;36m[██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  15%  Collecting host metadata
+[0;34m[INFO][0m Step 3/20: Collecting host metadata
+[0;34m[INFO][0m Step 3/20: Collecting host metadata
+[0;32m[OK][0m   host metadata -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/meta/host_metadata.txt
+[0;32m[OK][0m   host metadata -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/meta/host_metadata.txt
+
+[0;36m[████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  20%  Collecting all git commits (last 3 days)
+[0;34m[INFO][0m Step 4/20: Collecting all git commits (last 3 days)
+[0;34m[INFO][0m Step 4/20: Collecting all git commits (last 3 days)
+[0;32m[OK][0m   umbrella commits -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/commits/umbrella_commits.txt
+[0;32m[OK][0m   umbrella commits -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/commits/umbrella_commits.txt
+
+[0;36m[██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  25%  Collecting shell command history (last 3 days)
+[0;34m[INFO][0m Step 5/20: Collecting shell command history (last 3 days)
+[0;34m[INFO][0m Step 5/20: Collecting shell command history (last 3 days)
+[0;32m[OK][0m   shell history -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/commands/shell_history.txt
+[0;32m[OK][0m   shell history -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/commands/shell_history.txt
+
+[0;36m[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  30%  Collecting all container logs
+[0;34m[INFO][0m Step 6/20: Collecting all container logs
+[0;34m[INFO][0m Step 6/20: Collecting all container logs
+[0;32m[OK][0m   collected logs from 20 containers
+[0;32m[OK][0m   collected logs from 20 containers
+
+[0;36m[██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  35%  Collecting database and DVC logs
+[0;34m[INFO][0m Step 7/20: Collecting database and DVC logs
+[0;34m[INFO][0m Step 7/20: Collecting database and DVC logs
+[0;32m[OK][0m   database and dvc logs -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/logs/database_and_dvc.log
+[0;32m[OK][0m   database and dvc logs -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/logs/database_and_dvc.log
+
+[0;36m[████████████████░░░░░░░░░░░░░░░░░░░░░░░░][0m  40%  Collecting host /tmp logs
+[0;34m[INFO][0m Step 8/20: Collecting host /tmp logs
+[0;34m[INFO][0m Step 8/20: Collecting host /tmp logs
+[0;32m[OK][0m   collected 39 host log files
+[0;32m[OK][0m   collected 39 host log files
+
+[0;36m[██████████████████░░░░░░░░░░░░░░░░░░░░░░][0m  45%  Collecting builds and runs
+[0;34m[INFO][0m Step 9/20: Collecting builds and runs
+[0;34m[INFO][0m Step 9/20: Collecting builds and runs
+[0;32m[OK][0m   builds/runs -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/builds/builds_and_runs.txt
+[0;32m[OK][0m   builds/runs -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/builds/builds_and_runs.txt
+
+[0;36m[████████████████████░░░░░░░░░░░░░░░░░░░░][0m  50%  Collecting knowledgebase details
+[0;34m[INFO][0m Step 10/20: Collecting knowledgebase details
+[0;34m[INFO][0m Step 10/20: Collecting knowledgebase details
+[0;32m[OK][0m   knowledgebase details -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/kb/kb_details.txt
+[0;32m[OK][0m   knowledgebase details -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/kb/kb_details.txt
+
+[0;36m[██████████████████████░░░░░░░░░░░░░░░░░░][0m  55%  Attempting service restart
+[0;34m[INFO][0m Step 11/20: Attempting service restart
+[0;34m[INFO][0m Step 11/20: Attempting service restart
+[1;33m[WARN][0m compose up returned non-zero
+[0;32m[OK][0m   jenkins compose up succeeded
+[0;32m[OK][0m   restart log -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/restart/restart.log
+[0;32m[OK][0m   restart log -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/restart/restart.log
+--- Post-restart processes ---
+root      744790  2.6  0.0 596596 132448 ?       Rl   Nov12  94:14 offline-prep/venv/bin/python -m uvicorn llm_inference_manager.app:app --host 0.0.0.0 --port 9000 --app-dir /splunk-data/v1/Work_RAG-Server-Setup
+root      878415  0.2  0.0 187048 84892 ?        Sl   Nov12   8:13 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_guardrails.api:create_app --factory --host 0.0.0.0 --port 8200
+root     1053481  1.0  0.0 3480292 432648 ?      Ssl  Nov12  34:53 /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
+999      1062294  0.0  0.0 17247808 409524 ?     Ss   Nov12   0:11 postgres
+999      1062410  0.0  0.0 17247940 192908 ?     Ss   Nov12   0:00 postgres: checkpointer 
+999      1062411  0.0  0.0 17247964 192324 ?     Ss   Nov12   0:02 postgres: background writer 
+999      1062413  0.0  0.0 17247808 77476 ?      Ss   Nov12   0:02 postgres: walwriter 
+999      1062414  0.0  0.0 17249404 62136 ?      Ss   Nov12   0:03 postgres: autovacuum launcher 
+999      1062415  0.0  0.0 17249392 61620 ?      Ss   Nov12   0:00 postgres: logical replication launcher 
+root     1070192  0.3  0.3 41248180 3664460 ?    Sl   Nov12  11:50 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn kb_manager.web.app:app --host 0.0.0.0 --port 8000
+999      1070246  0.0  0.0 17251772 110572 ?     Ss   Nov12   0:04 postgres: postgres kb_manager 172.17.0.1(50366) idle
+root     1072136  0.3  0.1 30335700 2010480 ?    Sl   Nov12  11:48 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_orchestrator.api:create_app --factory --host 0.0.0.0 --port 8100
+root     1848116  0.6  0.0  59280 50744 ?        Ss   16:59   0:00 python -m uvicorn app:app --host 0.0.0.0 --port 3000
+999      1848117  0.0  0.0 220368 29952 ?        Ss   16:59   0:00 postgres
+999      1848553  0.0  0.0 220500  6216 ?        Ss   16:59   0:00 postgres: checkpointer 
+999      1848554  0.0  0.0 220524  7364 ?        Ss   16:59   0:00 postgres: background writer 
+999      1848556  0.0  0.0 220368 10356 ?        Ss   16:59   0:00 postgres: walwriter 
+999      1848557  0.0  0.0 221964  9360 ?        Ss   16:59   0:00 postgres: autovacuum launcher 
+999      1848558  0.0  0.0 221952  8448 ?        Ss   16:59   0:00 postgres: logical replication launcher 
+root     1856205  0.0  0.0   2572  1384 ?        Ss   17:01   0:00 /usr/bin/tini -- /usr/local/bin/jenkins.sh
+root     1856371 61.9  0.0 43733136 427220 ?     Sl   17:01   0:18 java -Duser.home=/var/jenkins_home -Djenkins.install.runSetupWizard=false -Djenkins.model.Jenkins.slaveAgentPort=50000 -Dhudson.lifecycle=hudson.lifecycle.ExitLifecycle -jar /usr/share/jenkins/jenkins.war
+[0;32m[OK][0m   post-restart process check
+[0;32m[OK][0m   post-restart process check
+
+[0;36m[████████████████████████░░░░░░░░░░░░░░░░][0m  60%  Testing all service endpoints (curl health matrix)
+[0;34m[INFO][0m Step 12/20: Testing all service endpoints (curl health matrix)
+[0;34m[INFO][0m Step 12/20: Testing all service endpoints (curl health matrix)
+[0;32m[OK][0m   WebUI publishes :13000 (port overlay applied correctly)
+[0;32m[OK][0m   WebUI publishes :13000 (port overlay applied correctly)
+
+[0;36m[███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m   7%  probing port 1800018000	gemma	000	
+
+[0;36m[██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  15%  probing port 90009000	manager	200	
+
+[0;36m[█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  23%  probing port 80008000	kb	200	
+[0;32m[OK][0m   :8000 (kb) up
+[0;32m[OK][0m   :8000 (kb) up
+
+[0;36m[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  30%  probing port 82008200	guardrails	200	
+[0;32m[OK][0m   :8200 (guardrails) up
+[0;32m[OK][0m   :8200 (guardrails) up
+
+[0;36m[███████████████░░░░░░░░░░░░░░░░░░░░░░░░░][0m  38%  probing port 81008100	orchestrator	200	
+[0;32m[OK][0m   :8100 (orchestrator) up
+[0;32m[OK][0m   :8100 (orchestrator) up
+
+[0;36m[██████████████████░░░░░░░░░░░░░░░░░░░░░░][0m  46%  probing port 30003000	trace-collector	000	
+
+[0;36m[█████████████████████░░░░░░░░░░░░░░░░░░░][0m  53%  probing port 30013001	langfuse	000	
+
+[0;36m[████████████████████████░░░░░░░░░░░░░░░░][0m  61%  probing port 1300013000	webui	200	
+[0;32m[OK][0m   webui :13000 up
+[0;32m[OK][0m   webui :13000 up
+
+[0;36m[███████████████████████████░░░░░░░░░░░░░][0m  69%  probing port 80858085	jenkins	200	
+[0;32m[OK][0m   jenkins :8085 up
+[0;32m[OK][0m   jenkins :8085 up
+
+[0;36m[██████████████████████████████░░░░░░░░░░][0m  76%  probing port 80108010	service:8010	200	
+
+[0;36m[█████████████████████████████████░░░░░░░][0m  84%  probing port 80018001	service:8001	200	
+
+[0;36m[████████████████████████████████████░░░░][0m  92%  probing port 80028002	service:8002	200	
+
+[0;36m[████████████████████████████████████████][0m 100%  probing port 80038003	service:8003	200	
+
+{"status":"ready","dependencies":[{"name":"knowledgebase","status":"ready","url":"http://127.0.0.1:8000","error":null},{"name":"guardrails","status":"ready","url":"http://127.0.0.1:8200","error":null}]}
+{"status":"ready","nemo_config_loaded":true,"upstream_reachable":true,"policy_version":"mvp-1"}
+
+[0;36m[██████████████████████████░░░░░░░░░░░░░░][0m  65%  Running E2E chat QA tests
+[0;34m[INFO][0m Step 13/20: Running E2E chat QA tests
+[0;34m[INFO][0m Step 13/20: Running E2E chat QA tests
+chat_greeting http=200
+[0;32m[OK][0m   E2E chat_greeting pass
+[0;32m[OK][0m   E2E chat_greeting pass
+chat_credit_qa http=200
+[0;32m[OK][0m   E2E chat_credit_qa pass
+[0;32m[OK][0m   E2E chat_credit_qa pass
+chat_webui http=200
+[0;32m[OK][0m   E2E webui pass (signed in, model=ics-helper-agent)
+[0;32m[OK][0m   E2E webui pass (signed in, model=ics-helper-agent)
+kb_search http=200
+[0;32m[OK][0m   KB search returned results
+[0;32m[OK][0m   KB search returned results
+qa_pass=3/3
+
+[0;36m[████████████████████████████░░░░░░░░░░░░][0m  70%  Capturing headless screenshots
+[0;34m[INFO][0m Step 14/20: Capturing headless screenshots
+[0;34m[INFO][0m Step 14/20: Capturing headless screenshots
+[1;33m[WARN][0m no Chrome/Chromium found — screenshots will be URL stubs
+[1;33m[WARN][0m no Chrome/Chromium found — screenshots will be URL stubs
+[1;33m[WARN][0m no browser for kb-health — wrote URL stub
+[1;33m[WARN][0m no browser for kb-health — wrote URL stub
+[1;33m[WARN][0m no browser for orch-health — wrote URL stub
+[1;33m[WARN][0m no browser for orch-health — wrote URL stub
+[1;33m[WARN][0m no browser for guard-health — wrote URL stub
+[1;33m[WARN][0m no browser for guard-health — wrote URL stub
+[1;33m[WARN][0m no browser for webui-home — wrote URL stub
+[1;33m[WARN][0m no browser for webui-home — wrote URL stub
+[1;33m[WARN][0m no browser for jenkins-login — wrote URL stub
+[1;33m[WARN][0m no browser for jenkins-login — wrote URL stub
+[1;33m[WARN][0m no browser for gemma-health — wrote URL stub
+[1;33m[WARN][0m no browser for gemma-health — wrote URL stub
+[1;33m[WARN][0m no browser for collector-health — wrote URL stub
+[1;33m[WARN][0m no browser for collector-health — wrote URL stub
+[1;33m[WARN][0m no browser for webui-chat — wrote URL stub
+[1;33m[WARN][0m no browser for webui-chat — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8000_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8000_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8100_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8100_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8200_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8200_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_13000_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_13000_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8085_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_8085_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_18000_health — wrote URL stub
+[1;33m[WARN][0m no browser for endpoint_18000_health — wrote URL stub
+total 64
+drwxr-xr-x  2 root root 4096 Nov 14 17:02 .
+drwxr-xr-x 15 root root 4096 Nov 14 16:59 ..
+-rw-r--r--  1 root root    0 Nov 14 17:02 collector-health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:02 collector-health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:02 endpoint_13000_health.py.log
+-rw-r--r--  1 root root   30 Nov 14 17:02 endpoint_13000_health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:02 endpoint_18000_health.py.log
+-rw-r--r--  1 root root   30 Nov 14 17:02 endpoint_18000_health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:02 endpoint_8000_health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:02 endpoint_8000_health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:02 endpoint_8085_health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:02 endpoint_8085_health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:02 endpoint_8100_health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:02 endpoint_8100_health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:02 endpoint_8200_health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:02 endpoint_8200_health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:01 gemma-health.py.log
+-rw-r--r--  1 root root   30 Nov 14 17:02 gemma-health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:01 guard-health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:01 guard-health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:01 jenkins-login.py.log
+-rw-r--r--  1 root root   28 Nov 14 17:01 jenkins-login.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:01 kb-health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:01 kb-health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:01 orch-health.py.log
+-rw-r--r--  1 root root   29 Nov 14 17:01 orch-health.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:02 webui-chat.py.log
+-rw-r--r--  1 root root   24 Nov 14 17:02 webui-chat.url.txt
+-rw-r--r--  1 root root    0 Nov 14 17:01 webui-home.py.log
+-rw-r--r--  1 root root   24 Nov 14 17:01 webui-home.url.txt
+
+[0;36m[██████████████████████████████░░░░░░░░░░][0m  75%  Collecting command/shutdown/reboot/user metadata
+[0;34m[INFO][0m Step 15/20: Collecting command/shutdown/reboot/user metadata
+[0;34m[INFO][0m Step 15/20: Collecting command/shutdown/reboot/user metadata
+[0;32m[OK][0m   command/shutdown/reboot/user metadata -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/logs/command_shutdown_reboot_user.log
+[0;32m[OK][0m   command/shutdown/reboot/user metadata -&gt; /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/logs/command_shutdown_reboot_user.log
+
+[0;36m[████████████████████████████████░░░░░░░░][0m  80%  Writing REPORT.md
+[0;34m[INFO][0m Step 16/20: Writing REPORT.md
+[0;34m[INFO][0m Step 16/20: Writing REPORT.md
+[0;32m[OK][0m   wrote /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/REPORT.md
+[0;32m[OK][0m   wrote /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261114T165924Z-ai-gpu1/REPORT.md
+
+[0;36m[██████████████████████████████████░░░░░░][0m  85%  Generating HTML dashboard
+[0;34m[INFO][0m Step 17/20: Generating HTML dashboard
+[0;34m[INFO][0m Step 17/20: Generating HTML dashboard</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screenshots Section -->
+<div class="section">
+  <div class="card">
+    <h2>📸 Screenshots</h2>
+    <div class="screenshot-grid">
+    </div>
+    <p style="font-size: 12px; color: #666;">Screenshots captured for all service endpoints (WebUI, health pages, Jenkins login).</p>
+  </div>
+</div>
+
+<!-- Artifacts Section -->
+<div class="section">
+  <div class="card">
+    <h2>📁 All Artifacts</h2>
+    <ul class="artifact-list">
+      <li><a href="REPORT.md">REPORT.md</a> — Full text report</li>
+      <li><a href="run.log">run.log</a> — Complete execution log</li>
+      <li><a href="meta/host_metadata.txt">Host Metadata</a> — System info, uptime, docker state</li>
+      <li><a href="commits/umbrella_commits.txt">Git Commits</a> — All commits (last 3 days)</li>
+      <li><a href="commands/shell_history.txt">Command History</a> — Shell commands, shutdown/reboot events</li>
+      <li><a href="logs/database_and_dvc.log">Database + DVC Logs</a> — PostgreSQL and KB versioning</li>
+      <li><a href="curl/matrix.tsv">Health Matrix (TSV)</a> — Raw health check data</li>
+      <li><a href="e2e/summary.txt">E2E Summary</a> — Chat QA test results</li>
+      <li><a href="kb/kb_details.txt">KB Details</a> — Knowledgebase version, chunks, entity lists</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+</body>
+<script>
+function toggleCollapsible(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector('.arrow');
+  const isExpanded = header.classList.contains('expanded');
+  if (isExpanded) {
+    header.classList.remove('expanded');
+    content.classList.remove('expanded');
+    arrow.style.transform = 'rotate(0deg)';
+  } else {
+    header.classList.add('expanded');
+    content.classList.add('expanded');
+    arrow.style.transform = 'rotate(-90deg)';
+  }
+}
+</script>
+</html>

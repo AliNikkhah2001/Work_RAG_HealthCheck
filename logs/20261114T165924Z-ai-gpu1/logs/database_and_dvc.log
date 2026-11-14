@@ -1,0 +1,42 @@
+=== PostgreSQL logs ===
+no postgresql log files found in standard locations
+
+=== Docker postgres container logs ===
+=== container: pgvector-kb-prod ===
+2026-11-12T11:00:43.302358936Z 
+2026-11-12T11:00:43.302413371Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+2026-11-12T11:00:43.302419394Z 
+2026-11-12T11:00:43.562560397Z 2026-11-12 11:00:43.562 UTC [1] LOG:  starting PostgreSQL 16.14 (Debian 16.14-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+2026-11-12T11:00:43.562600421Z 2026-11-12 11:00:43.562 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-12T11:00:43.562605604Z 2026-11-12 11:00:43.562 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-11-12T11:00:43.566677239Z 2026-11-12 11:00:43.566 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-11-12T11:00:43.572204687Z 2026-11-12 11:00:43.571 UTC [35] LOG:  database system was shut down at 2026-11-12 10:42:44 UTC
+2026-11-12T11:00:43.581719067Z 2026-11-12 11:00:43.581 UTC [1] LOG:  database system is ready to accept connections
+2026-11-12T11:05:43.573650673Z 2026-11-12 11:05:43.572 UTC [33] LOG:  checkpoint starting: time
+2026-11-12T11:05:43.853128971Z 2026-11-12 11:05:43.852 UTC [33] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.266 s, sync=0.005 s, total=0.281 s; sync files=3, longest=0.003 s, average=0.002 s; distance=4 kB, estimate=4 kB; lsn=0/73E27C28, redo lsn=0/73E27BF0
+
+=== DVC logs (knowledgebase versioning) ===
+--- DVC dir: /splunk-data/production/Work_Credit-RAG_Phase1/components/knowledgebase ---
+total 232
+drwxr-xr-x  9 root root  4096 Nov 12 09:36 .
+drwxr-xr-x 10 root root  4096 Nov 12 04:36 ..
+drwxr-xr-x  3 root root  4096 Nov 11 05:38 .agent
+-rw-r--r--  1 root root   661 Nov 11 05:38 apply_conservative.py
+drwxr-xr-x  6 root root  4096 Nov 11 05:38 archive
+-rw-r--r--  1 root root   563 Nov 11 05:38 debug_tsv.py
+drwxr-xr-x  4 root root  4096 Nov 11 05:38 docs
+-rw-r--r--  1 root root    52 Nov 11 05:32 .git
+drwxr-xr-x  3 root root  4096 Nov 11 05:38 .github
+-rw-r--r--  1 root root   835 Nov 11 05:38 .gitignore
+-rw-r--r--  1 root root   111 Nov 11 05:38 .gitmodules
+-rw-r--r--  1 root root 70427 Nov 11 05:38 KB_ARCHITECTURE.md
+drwxr-xr-x 14 root root  4096 Nov 12 09:36 kb-manager
+drwxr-xr-x  5 root root  4096 Nov 12 09:36 kb-source
+-rw-r--r--  1 root root   536 Nov 11 05:38 .mcp.json
+-rw-r--r--  1 root root    74 Nov 11 05:38 opencode.json
+-rw-r--r--  1 root root 26152 Nov 11 05:38 prismal_architecture.svg
+-rw-r--r--  1 root root 33451 Nov 12 11:13 README.md
+-rw-r--r--  1 root root 18515 Nov 11 05:38 retrieval-evaluation-research.md
+drwxr-xr-x  2 root root  4096 Nov 11 05:38 scripts
+-rw-r--r--  1 root root  6528 Nov 11 05:38 SKILL.md
+-rw-r--r--  1 root root   232 Nov 11 05:38 start_guardrails.py
