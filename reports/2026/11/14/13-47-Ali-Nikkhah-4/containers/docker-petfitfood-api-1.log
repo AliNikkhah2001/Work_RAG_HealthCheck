@@ -1,0 +1,27 @@
+2026-11-13T15:31:43.753225544Z Operations to perform:
+2026-11-13T15:31:43.753303878Z   Apply all migrations: admin, auth, catalog, commerce, contenttypes, home, sessions, taggit, wagtailadmin, wagtailcore, wagtaildocs, wagtailembeds, wagtailforms, wagtailimages, wagtailredirects, wagtailsearch, wagtailusers
+2026-11-13T15:31:43.786998586Z Running migrations:
+2026-11-13T15:31:43.787028336Z   No migrations to apply.
+2026-11-13T15:31:45.305837795Z 
+2026-11-13T15:31:45.305858587Z 246 static files copied to '/app/static', 227 post-processed.
+2026-11-13T15:31:46.539351962Z Products: 7 · Wagtail photos linked: 7
+2026-11-13T15:31:46.539515212Z Wagtail images library: 10
+2026-11-13T15:31:46.584425379Z Ingredients: 11 · Recipes: 44
+2026-11-13T15:31:46.586119837Z Commerce admin customer: 09045957011 (OTP login)
+2026-11-13T15:31:46.720228712Z Magazine articles: 3
+2026-11-13T15:31:46.910654171Z Content pages: 5
+2026-11-13T15:31:46.912145921Z Catalog seed complete
+2026-11-13T15:31:48.089977505Z 63 objects imported automatically (use -v 2 for details).
+2026-11-13T15:31:48.090018046Z 
+2026-11-13T15:31:48.105230421Z superuser exists
+2026-11-13T15:31:48.626314880Z [2026-11-13 15:31:48 +0000] [1] [INFO] Starting gunicorn 27.0.1
+2026-11-13T15:31:48.626450172Z [2026-11-13 15:31:48 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+2026-11-13T15:31:48.626455255Z [2026-11-13 15:31:48 +0000] [1] [INFO] Using worker: sync
+2026-11-13T15:31:48.664644380Z [2026-11-13 15:31:48 +0000] [26] [INFO] Booting worker with pid: 26
+2026-11-13T15:31:48.708931338Z [2026-11-13 15:31:48 +0000] [27] [INFO] Booting worker with pid: 27
+2026-11-13T15:31:48.941603755Z [2026-11-13 15:31:48 +0000] [1] [INFO] Control socket listening at /root/.gunicorn/gunicorn.ctl
+2026-11-13T15:31:50.641036422Z WSGI app sent body bytes on a no-body response (method=HEAD status=200); dropping per RFC 9110.
+2026-11-14T08:47:11.022499006Z [2026-11-14 08:47:11 +0000] [1] [INFO] Handling signal: term
+2026-11-14T08:47:11.040343506Z [2026-11-14 12:17:11 +0330] [26] [INFO] Worker exiting (pid: 26)
+2026-11-14T08:47:11.042300922Z [2026-11-14 12:17:11 +0330] [27] [INFO] Worker exiting (pid: 27)
+2026-11-14T08:47:11.636455631Z [2026-11-14 08:47:11 +0000] [1] [INFO] Shutting down: Master

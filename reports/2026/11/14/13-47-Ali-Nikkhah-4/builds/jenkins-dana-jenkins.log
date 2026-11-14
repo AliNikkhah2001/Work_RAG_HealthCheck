@@ -1,0 +1,30 @@
+2026-11-14T09:11:02.915996251Z Running from: /usr/share/jenkins/jenkins.war
+2026-11-14T09:11:02.918577501Z webroot: /var/jenkins_home/war
+2026-11-14T09:11:03.151739585Z 2026-11-14 09:11:03.128+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2026-11-14T09:11:03.180225127Z 2026-11-14 09:11:03.179+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2026-11-14T09:11:03.221317627Z 2026-11-14 09:11:03.220+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.5; built: 2025-12-03T22:18:24.732Z; git: 4905d09d7b6801e792d7b73946cf7b66e4be25d6; jvm 17.0.18+8
+2026-11-14T09:11:03.484669085Z 2026-11-14 09:11:03.484+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+2026-11-14T09:11:03.512171668Z 2026-11-14 09:11:03.511+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2026-11-14T09:11:03.703543127Z 2026-11-14 09:11:03.703+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-11-14T09:11:03.782317877Z 2026-11-14 09:11:03.782+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@13d186db{Jenkins v2.541.3,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@6f6962ba{STARTED}}
+2026-11-14T09:11:03.790690544Z 2026-11-14 09:11:03.790+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@16fe9c29{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-11-14T09:11:03.791467460Z 2026-11-14 09:11:03.790+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@bd2f5a9{STARTING}[12.1.5,sto=0] @572ms
+2026-11-14T09:11:03.792427544Z 2026-11-14 09:11:03.791+0000 [id=26]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2026-11-14T09:11:03.846932294Z 2026-11-14 09:11:03.846+0000 [id=25]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.541.3
+2026-11-14T09:11:03.883115460Z 2026-11-14 09:11:03.882+0000 [id=32]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2026-11-14T09:11:03.950031377Z 2026-11-14 09:11:03.949+0000 [id=40]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2026-11-14T09:11:05.401641253Z 2026-11-14 09:11:05.401+0000 [id=38]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2026-11-14T09:11:05.410134461Z 2026-11-14 09:11:05.409+0000 [id=45]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2026-11-14T09:11:05.410986086Z 2026-11-14 09:11:05.410+0000 [id=46]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2026-11-14T09:11:05.534429544Z 2026-11-14 09:11:05.533+0000 [id=39]	INFO	h.p.b.g.GlobalTimeOutConfiguration#load: global timeout not set
+2026-11-14T09:11:05.961226211Z 2026-11-14 09:11:05.960+0000 [id=31]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2026-11-14T09:11:05.961438295Z 2026-11-14 09:11:05.961+0000 [id=47]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2026-11-14T09:11:06.056021045Z 2026-11-14 09:11:06.055+0000 [id=36]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2026-11-14T09:11:06.066018878Z 2026-11-14 09:11:06.065+0000 [id=36]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2026-11-14T09:11:06.098920253Z 2026-11-14 09:11:06.098+0000 [id=39]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2026-11-14T09:11:06.150797545Z 2026-11-14 09:11:06.150+0000 [id=25]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2026-11-14T09:11:07.931383879Z 2026-11-14 09:11:07.930+0000 [id=68]	INFO	o.j.p.g.ApiRateLimitChecker$RateLimitCheckerAdapter#checkRateLimit: LocalChecker for rate limit was not set for this thread. Configured using system settings with API URL 'https://api.github.com'.
+2026-11-14T10:11:08.466428004Z 2026-11-14 10:11:08.465+0000 [id=135]	INFO	o.j.p.g.ApiRateLimitChecker$RateLimitCheckerAdapter#checkRateLimit: LocalChecker for rate limit was not set for this thread. Configured using system settings with API URL 'https://api.github.com'.
+2026-11-14T11:11:11.274512379Z 2026-11-14 11:11:11.273+0000 [id=187]	INFO	o.j.p.g.ApiRateLimitChecker$RateLimitCheckerAdapter#checkRateLimit: LocalChecker for rate limit was not set for this thread. Configured using system settings with API URL 'https://api.github.com'.
+2026-11-14T12:11:09.638247336Z 2026-11-14 12:11:09.637+0000 [id=239]	INFO	o.j.p.g.ApiRateLimitChecker$RateLimitCheckerAdapter#checkRateLimit: LocalChecker for rate limit was not set for this thread. Configured using system settings with API URL 'https://api.github.com'.
+2026-11-14T13:11:08.199866168Z 2026-11-14 13:11:08.197+0000 [id=295]	INFO	o.j.p.g.ApiRateLimitChecker$RateLimitCheckerAdapter#checkRateLimit: LocalChecker for rate limit was not set for this thread. Configured using system settings with API URL 'https://api.github.com'.
