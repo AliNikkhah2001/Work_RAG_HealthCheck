@@ -1,0 +1,2 @@
+3000	trace-collector[/health]	200	<a href="/login?redirectTo=%2Fhealth">Found</a>.
+3000	trace-collector[/api/public/health]	200	{"extra":null,"message":"Unauthorized","messageId":"auth.unauthorized","statusCode":401,"traceID":""}
