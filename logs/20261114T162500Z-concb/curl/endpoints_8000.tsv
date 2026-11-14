@@ -1,4 +1,0 @@
-8000	kb[/health]	200	{"status":"ok","db_mode":"pgvector","db_driver":"asyncpg","db_url":"postgres:5432/kb_manager","db_ok":true,"doc_count":2
-8000	kb[/search/api]	200	{"detail":"Method Not Allowed"}
-8000	kb[/stats]	200	{"detail":"Not Found"}
-8000	kb[/documents]	200	<!DOCTYPE html> <html lang="en" dir="ltr"> <head>     <meta charset="UTF-8">     <meta http-equiv="Content-Type" content
