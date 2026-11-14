@@ -1,0 +1,3 @@
+8200	guardrails[/health]	200	{"status":"ok"}
+8200	guardrails[/ready]	200	{"status":"ready","nemo_config_loaded":true,"upstream_reachable":false,"policy_version":"mvp-1"}
+8200	guardrails[/v1/rails/check]	200	{"detail":"Method Not Allowed"}

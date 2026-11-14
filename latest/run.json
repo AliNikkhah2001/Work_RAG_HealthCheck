@@ -1,8 +1,8 @@
 {
   "schema_version": "health-run/v1",
-  "run_id": "20261114T163500Z-raced",
+  "run_id": "20261114T163500Z-racee",
   "generated_at": "2026-11-14T16:35:00Z",
-  "machine": "raced-1",
+  "machine": "raced-2",
   "machine_type": "unknown",
   "host": "Ali-Nikkhah-4.local",
   "mode": "compose",
@@ -132,7 +132,7 @@
   "gate": {},
   "kb": null,
   "links": {
-    "detail": "logs/20261114T163500Z-raced/dashboard.html",
-    "record": "runs/20261114T163500Z-raced.json"
+    "detail": "logs/20261114T163500Z-racee/dashboard.html",
+    "record": "runs/20261114T163500Z-racee.json"
   }
 }

@@ -1,0 +1,138 @@
+{
+  "schema_version": "health-run/v1",
+  "run_id": "20261114T163500Z-racee",
+  "generated_at": "2026-11-14T16:35:00Z",
+  "machine": "raced-2",
+  "machine_type": "unknown",
+  "host": "Ali-Nikkhah-4.local",
+  "mode": "compose",
+  "origin": "report",
+  "status": "HEALTHY",
+  "core_services_down": [],
+  "services": [
+    {
+      "name": "gemma",
+      "port": 18000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "manager",
+      "port": 9000,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "kb",
+      "port": 8000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "guardrails",
+      "port": 8200,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "orchestrator",
+      "port": 8100,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "trace-collector",
+      "port": 3000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "langfuse",
+      "port": 3001,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "webui",
+      "port": 13000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "jenkins",
+      "port": 8085,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8010",
+      "port": 8010,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "service-8001",
+      "port": 8001,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "service-8002",
+      "port": 8002,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "service-8003",
+      "port": 8003,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    }
+  ],
+  "e2e": {
+    "tests": [
+      {
+        "test": "chat_greeting",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "chat_credit_qa",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "chat_webui",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "kb_search",
+        "http_code": "200",
+        "passed": true
+      }
+    ],
+    "passed": 3,
+    "total": 3,
+    "kb_search_ok": true
+  },
+  "gate": {},
+  "kb": null,
+  "links": {
+    "detail": "logs/20261114T163500Z-racee/dashboard.html",
+    "record": "runs/20261114T163500Z-racee.json"
+  }
+}
