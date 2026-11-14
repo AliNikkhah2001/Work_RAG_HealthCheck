@@ -1,0 +1,167 @@
+2026-08-20T23:03:40.679129338Z 1:C 20 Aug 2026 23:03:40.678 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-08-20T23:03:40.679169255Z 1:C 20 Aug 2026 23:03:40.678 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-08-20T23:03:40.679171421Z 1:C 20 Aug 2026 23:03:40.678 * Configuration loaded
+2026-08-20T23:03:40.680079338Z 1:M 20 Aug 2026 23:03:40.679 * monotonic clock: POSIX clock_gettime
+2026-08-20T23:03:40.681123213Z 1:M 20 Aug 2026 23:03:40.680 * Running mode=standalone, port=6379.
+2026-08-20T23:03:40.682218130Z 1:M 20 Aug 2026 23:03:40.681 * Server initialized
+2026-08-20T23:03:40.684779880Z 1:M 20 Aug 2026 23:03:40.684 * Creating AOF base file appendonly.aof.1.base.rdb on server start
+2026-08-20T23:03:40.692732380Z 1:M 20 Aug 2026 23:03:40.691 * Creating AOF incr file appendonly.aof.1.incr.aof on server start
+2026-08-20T23:03:40.692757546Z 1:M 20 Aug 2026 23:03:40.691 * Ready to accept connections tcp
+2026-08-21T06:05:33.527277751Z 1:C 21 Aug 2026 06:05:33.526 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-08-21T06:05:33.528475834Z 1:C 21 Aug 2026 06:05:33.527 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-08-21T06:05:33.528481251Z 1:C 21 Aug 2026 06:05:33.527 * Configuration loaded
+2026-08-21T06:05:33.528485417Z 1:M 21 Aug 2026 06:05:33.527 * monotonic clock: POSIX clock_gettime
+2026-08-21T06:05:33.529752001Z 1:M 21 Aug 2026 06:05:33.529 * Running mode=standalone, port=6379.
+2026-08-21T06:05:33.530384584Z 1:M 21 Aug 2026 06:05:33.529 * Server initialized
+2026-08-21T06:05:33.533063376Z 1:M 21 Aug 2026 06:05:33.532 * Reading RDB base file on AOF loading...
+2026-08-21T06:05:33.533077001Z 1:M 21 Aug 2026 06:05:33.533 * Loading RDB produced by version 7.4.10
+2026-08-21T06:05:33.533078751Z 1:M 21 Aug 2026 06:05:33.533 * RDB age 25313 seconds
+2026-08-21T06:05:33.533080084Z 1:M 21 Aug 2026 06:05:33.533 * RDB memory usage when created 0.94 Mb
+2026-08-21T06:05:33.533081459Z 1:M 21 Aug 2026 06:05:33.533 * RDB is base AOF
+2026-08-21T06:05:33.533082751Z 1:M 21 Aug 2026 06:05:33.533 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-08-21T06:05:33.534111501Z 1:M 21 Aug 2026 06:05:33.534 * DB loaded from base file appendonly.aof.1.base.rdb: 0.002 seconds
+2026-08-21T06:05:33.534565417Z 1:M 21 Aug 2026 06:05:33.534 * DB loaded from append only file: 0.002 seconds
+2026-08-21T06:05:33.534569376Z 1:M 21 Aug 2026 06:05:33.534 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-08-21T06:05:33.534570876Z 1:M 21 Aug 2026 06:05:33.534 * Ready to accept connections tcp
+2026-08-21T08:17:06.551967168Z 1:C 21 Aug 2026 08:17:06.550 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-08-21T08:17:06.552802418Z 1:C 21 Aug 2026 08:17:06.551 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-08-21T08:17:06.552808168Z 1:C 21 Aug 2026 08:17:06.551 * Configuration loaded
+2026-08-21T08:17:06.552811418Z 1:M 21 Aug 2026 08:17:06.552 * monotonic clock: POSIX clock_gettime
+2026-08-21T08:17:06.554416168Z 1:M 21 Aug 2026 08:17:06.554 * Running mode=standalone, port=6379.
+2026-08-21T08:17:06.554671376Z 1:M 21 Aug 2026 08:17:06.554 * Server initialized
+2026-08-21T08:17:06.555702168Z 1:M 21 Aug 2026 08:17:06.555 * Reading RDB base file on AOF loading...
+2026-08-21T08:17:06.555711126Z 1:M 21 Aug 2026 08:17:06.555 * Loading RDB produced by version 7.4.10
+2026-08-21T08:17:06.555712543Z 1:M 21 Aug 2026 08:17:06.555 * RDB age 33206 seconds
+2026-08-21T08:17:06.555717043Z 1:M 21 Aug 2026 08:17:06.555 * RDB memory usage when created 0.94 Mb
+2026-08-21T08:17:06.555718001Z 1:M 21 Aug 2026 08:17:06.555 * RDB is base AOF
+2026-08-21T08:17:06.555724668Z 1:M 21 Aug 2026 08:17:06.555 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-08-21T08:17:06.556414668Z 1:M 21 Aug 2026 08:17:06.556 * DB loaded from base file appendonly.aof.1.base.rdb: 0.001 seconds
+2026-08-21T08:17:06.556453460Z 1:M 21 Aug 2026 08:17:06.556 * DB loaded from append only file: 0.001 seconds
+2026-08-21T08:17:06.556455751Z 1:M 21 Aug 2026 08:17:06.556 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-08-21T08:17:06.556456835Z 1:M 21 Aug 2026 08:17:06.556 * Ready to accept connections tcp
+2026-08-25T17:40:34.464106544Z 1:signal-handler (1787679634) Received SIGTERM scheduling shutdown...
+2026-08-25T17:40:34.503432502Z 1:M 25 Aug 2026 17:40:34.503 * User requested shutdown...
+2026-08-25T17:40:34.503446544Z 1:M 25 Aug 2026 17:40:34.503 * Calling fsync() on the AOF file.
+2026-08-25T17:40:34.503744419Z 1:M 25 Aug 2026 17:40:34.503 * Saving the final RDB snapshot before exiting.
+2026-08-25T17:40:34.518688919Z 1:M 25 Aug 2026 17:40:34.517 * DB saved on disk
+2026-08-25T17:40:34.518703086Z 1:M 25 Aug 2026 17:40:34.517 # Redis is now ready to exit, bye bye...
+2026-10-19T20:27:41.037087417Z 1:C 19 Oct 2026 20:27:41.037 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-10-19T20:27:41.038476501Z 1:C 19 Oct 2026 20:27:41.037 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-10-19T20:27:41.038480751Z 1:C 19 Oct 2026 20:27:41.037 * Configuration loaded
+2026-10-19T20:27:41.038484709Z 1:M 19 Oct 2026 20:27:41.037 * monotonic clock: POSIX clock_gettime
+2026-10-19T20:27:41.038486042Z 1:M 19 Oct 2026 20:27:41.037 * Running mode=standalone, port=6379.
+2026-10-19T20:27:41.038487209Z 1:M 19 Oct 2026 20:27:41.037 * Server initialized
+2026-10-19T20:27:41.038606959Z 1:M 19 Oct 2026 20:27:41.038 * Reading RDB base file on AOF loading...
+2026-10-19T20:27:41.038616542Z 1:M 19 Oct 2026 20:27:41.038 * Loading RDB produced by version 7.4.10
+2026-10-19T20:27:41.038617917Z 1:M 19 Oct 2026 20:27:41.038 * RDB age 5174641 seconds
+2026-10-19T20:27:41.038619126Z 1:M 19 Oct 2026 20:27:41.038 * RDB memory usage when created 0.94 Mb
+2026-10-19T20:27:41.038620376Z 1:M 19 Oct 2026 20:27:41.038 * RDB is base AOF
+2026-10-19T20:27:41.038622001Z 1:M 19 Oct 2026 20:27:41.038 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-10-19T20:27:41.038628959Z 1:M 19 Oct 2026 20:27:41.038 * DB loaded from base file appendonly.aof.1.base.rdb: 0.000 seconds
+2026-10-19T20:27:41.038886584Z 1:M 19 Oct 2026 20:27:41.038 * DB loaded from append only file: 0.000 seconds
+2026-10-19T20:27:41.038943501Z 1:M 19 Oct 2026 20:27:41.038 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-10-19T20:27:41.038947917Z 1:M 19 Oct 2026 20:27:41.038 * Ready to accept connections tcp
+2026-10-21T17:36:35.091399083Z 1:signal-handler (1792604195) Received SIGTERM scheduling shutdown...
+2026-10-21T17:36:35.149990875Z 1:M 21 Oct 2026 17:36:35.149 * User requested shutdown...
+2026-10-21T17:36:35.150001500Z 1:M 21 Oct 2026 17:36:35.149 * Calling fsync() on the AOF file.
+2026-10-21T17:36:35.152259667Z 1:M 21 Oct 2026 17:36:35.150 * Saving the final RDB snapshot before exiting.
+2026-10-21T17:36:35.163705958Z 1:M 21 Oct 2026 17:36:35.163 * DB saved on disk
+2026-10-21T17:36:35.163714792Z 1:M 21 Oct 2026 17:36:35.163 # Redis is now ready to exit, bye bye...
+2026-10-21T18:49:52.729664584Z 1:C 21 Oct 2026 18:49:52.729 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-10-21T18:49:52.729807334Z 1:C 21 Oct 2026 18:49:52.729 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-10-21T18:49:52.729811250Z 1:C 21 Oct 2026 18:49:52.729 * Configuration loaded
+2026-10-21T18:49:52.729880167Z 1:M 21 Oct 2026 18:49:52.729 * monotonic clock: POSIX clock_gettime
+2026-10-21T18:49:52.731199459Z 1:M 21 Oct 2026 18:49:52.731 * Running mode=standalone, port=6379.
+2026-10-21T18:49:52.731461459Z 1:M 21 Oct 2026 18:49:52.731 * Server initialized
+2026-10-21T18:49:52.732230459Z 1:M 21 Oct 2026 18:49:52.732 * Reading RDB base file on AOF loading...
+2026-10-21T18:49:52.732237334Z 1:M 21 Oct 2026 18:49:52.732 * Loading RDB produced by version 7.4.10
+2026-10-21T18:49:52.732238584Z 1:M 21 Oct 2026 18:49:52.732 * RDB age 5341572 seconds
+2026-10-21T18:49:52.732239792Z 1:M 21 Oct 2026 18:49:52.732 * RDB memory usage when created 0.94 Mb
+2026-10-21T18:49:52.732284417Z 1:M 21 Oct 2026 18:49:52.732 * RDB is base AOF
+2026-10-21T18:49:52.732290250Z 1:M 21 Oct 2026 18:49:52.732 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-10-21T18:49:52.732655750Z 1:M 21 Oct 2026 18:49:52.732 * DB loaded from base file appendonly.aof.1.base.rdb: 0.001 seconds
+2026-10-21T18:49:52.732661167Z 1:M 21 Oct 2026 18:49:52.732 * DB loaded from append only file: 0.001 seconds
+2026-10-21T18:49:52.732691959Z 1:M 21 Oct 2026 18:49:52.732 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-10-21T18:49:52.732693959Z 1:M 21 Oct 2026 18:49:52.732 * Ready to accept connections tcp
+2026-10-21T21:50:29.940171721Z 1:signal-handler (1792619429) Received SIGTERM scheduling shutdown...
+2026-10-21T21:50:29.975113929Z 1:M 21 Oct 2026 21:50:29.974 * User requested shutdown...
+2026-10-21T21:50:29.975131804Z 1:M 21 Oct 2026 21:50:29.974 * Calling fsync() on the AOF file.
+2026-10-21T21:50:29.975896304Z 1:M 21 Oct 2026 21:50:29.975 * Saving the final RDB snapshot before exiting.
+2026-10-21T21:50:29.980118096Z 1:M 21 Oct 2026 21:50:29.979 * DB saved on disk
+2026-10-21T21:50:29.980132262Z 1:M 21 Oct 2026 21:50:29.979 # Redis is now ready to exit, bye bye...
+2026-11-10T00:25:43.058628251Z 1:C 10 Nov 2026 00:25:43.057 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-11-10T00:25:43.060418917Z 1:C 10 Nov 2026 00:25:43.058 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-11-10T00:25:43.060423667Z 1:C 10 Nov 2026 00:25:43.058 * Configuration loaded
+2026-11-10T00:25:43.060426667Z 1:M 10 Nov 2026 00:25:43.059 * monotonic clock: POSIX clock_gettime
+2026-11-10T00:25:43.061158334Z 1:M 10 Nov 2026 00:25:43.061 * Running mode=standalone, port=6379.
+2026-11-10T00:25:43.061654917Z 1:M 10 Nov 2026 00:25:43.061 * Server initialized
+2026-11-10T00:25:43.062391501Z 1:M 10 Nov 2026 00:25:43.062 * Reading RDB base file on AOF loading...
+2026-11-10T00:25:43.062398001Z 1:M 10 Nov 2026 00:25:43.062 * Loading RDB produced by version 7.4.10
+2026-11-10T00:25:43.062399667Z 1:M 10 Nov 2026 00:25:43.062 * RDB age 7003323 seconds
+2026-11-10T00:25:43.062400834Z 1:M 10 Nov 2026 00:25:43.062 * RDB memory usage when created 0.94 Mb
+2026-11-10T00:25:43.062401959Z 1:M 10 Nov 2026 00:25:43.062 * RDB is base AOF
+2026-11-10T00:25:43.062402959Z 1:M 10 Nov 2026 00:25:43.062 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-11-10T00:25:43.063757001Z 1:M 10 Nov 2026 00:25:43.063 * DB loaded from base file appendonly.aof.1.base.rdb: 0.001 seconds
+2026-11-10T00:25:43.064712209Z 1:M 10 Nov 2026 00:25:43.063 * DB loaded from append only file: 0.001 seconds
+2026-11-10T00:25:43.064720084Z 1:M 10 Nov 2026 00:25:43.063 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-11-10T00:25:43.064721376Z 1:M 10 Nov 2026 00:25:43.063 * Ready to accept connections tcp
+2026-11-10T11:28:54.855166836Z 1:C 10 Nov 2026 11:28:54.855 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-11-10T11:28:54.855557377Z 1:C 10 Nov 2026 11:28:54.855 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-11-10T11:28:54.855570169Z 1:C 10 Nov 2026 11:28:54.855 * Configuration loaded
+2026-11-10T11:28:54.855575419Z 1:M 10 Nov 2026 11:28:54.855 * monotonic clock: POSIX clock_gettime
+2026-11-10T11:28:54.856669586Z 1:M 10 Nov 2026 11:28:54.856 * Running mode=standalone, port=6379.
+2026-11-10T11:28:54.858788419Z 1:M 10 Nov 2026 11:28:54.858 * Server initialized
+2026-11-10T11:28:54.859209461Z 1:M 10 Nov 2026 11:28:54.859 * Reading RDB base file on AOF loading...
+2026-11-10T11:28:54.859221794Z 1:M 10 Nov 2026 11:28:54.859 * Loading RDB produced by version 7.4.10
+2026-11-10T11:28:54.859223627Z 1:M 10 Nov 2026 11:28:54.859 * RDB age 7043114 seconds
+2026-11-10T11:28:54.859224877Z 1:M 10 Nov 2026 11:28:54.859 * RDB memory usage when created 0.94 Mb
+2026-11-10T11:28:54.859230794Z 1:M 10 Nov 2026 11:28:54.859 * RDB is base AOF
+2026-11-10T11:28:54.859231752Z 1:M 10 Nov 2026 11:28:54.859 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-11-10T11:28:54.859806502Z 1:M 10 Nov 2026 11:28:54.859 * DB loaded from base file appendonly.aof.1.base.rdb: 0.001 seconds
+2026-11-10T11:28:54.859815252Z 1:M 10 Nov 2026 11:28:54.859 * DB loaded from append only file: 0.001 seconds
+2026-11-10T11:28:54.859901669Z 1:M 10 Nov 2026 11:28:54.859 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-11-10T11:28:54.859908086Z 1:M 10 Nov 2026 11:28:54.859 * Ready to accept connections tcp
+2026-11-12T13:01:40.164004667Z 1:signal-handler (1794488500) Received SIGTERM scheduling shutdown...
+2026-11-12T13:01:40.172535042Z 1:M 12 Nov 2026 13:01:40.160 * User requested shutdown...
+2026-11-12T13:01:40.172555001Z 1:M 12 Nov 2026 13:01:40.163 * Calling fsync() on the AOF file.
+2026-11-12T13:01:40.172567626Z 1:M 12 Nov 2026 13:01:40.166 * Saving the final RDB snapshot before exiting.
+2026-11-12T13:01:40.222674959Z 1:M 12 Nov 2026 13:01:40.222 * DB saved on disk
+2026-11-12T13:01:40.223567959Z 1:M 12 Nov 2026 13:01:40.222 # Redis is now ready to exit, bye bye...
+2026-11-13T14:35:39.227734584Z 1:C 13 Nov 2026 14:35:39.227 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-11-13T14:35:39.231301709Z 1:C 13 Nov 2026 14:35:39.227 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-11-13T14:35:39.231313876Z 1:C 13 Nov 2026 14:35:39.227 * Configuration loaded
+2026-11-13T14:35:39.231318251Z 1:M 13 Nov 2026 14:35:39.227 * monotonic clock: POSIX clock_gettime
+2026-11-13T14:35:39.231319459Z 1:M 13 Nov 2026 14:35:39.228 * Running mode=standalone, port=6379.
+2026-11-13T14:35:39.231320543Z 1:M 13 Nov 2026 14:35:39.228 * Server initialized
+2026-11-13T14:35:39.231469168Z 1:M 13 Nov 2026 14:35:39.231 * Reading RDB base file on AOF loading...
+2026-11-13T14:35:39.231663209Z 1:M 13 Nov 2026 14:35:39.231 * Loading RDB produced by version 7.4.10
+2026-11-13T14:35:39.231674001Z 1:M 13 Nov 2026 14:35:39.231 * RDB age 7313519 seconds
+2026-11-13T14:35:39.231675626Z 1:M 13 Nov 2026 14:35:39.231 * RDB memory usage when created 0.94 Mb
+2026-11-13T14:35:39.231676834Z 1:M 13 Nov 2026 14:35:39.231 * RDB is base AOF
+2026-11-13T14:35:39.231763876Z 1:M 13 Nov 2026 14:35:39.231 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-11-13T14:35:39.231791084Z 1:M 13 Nov 2026 14:35:39.231 * DB loaded from base file appendonly.aof.1.base.rdb: 0.000 seconds
+2026-11-13T14:35:39.231794668Z 1:M 13 Nov 2026 14:35:39.231 * DB loaded from append only file: 0.000 seconds
+2026-11-13T14:35:39.231797543Z 1:M 13 Nov 2026 14:35:39.231 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-11-13T14:35:39.232455001Z 1:M 13 Nov 2026 14:35:39.231 * Ready to accept connections tcp
+2026-11-14T08:47:11.007228797Z 1:signal-handler (1794646031) Received SIGTERM scheduling shutdown...
+2026-11-14T08:47:11.037113631Z 1:M 14 Nov 2026 08:47:11.036 * User requested shutdown...
+2026-11-14T08:47:11.037242006Z 1:M 14 Nov 2026 08:47:11.037 * Calling fsync() on the AOF file.
+2026-11-14T08:47:11.038211381Z 1:M 14 Nov 2026 08:47:11.037 * Saving the final RDB snapshot before exiting.
+2026-11-14T08:47:11.053140172Z 1:M 14 Nov 2026 08:47:11.052 * DB saved on disk
+2026-11-14T08:47:11.056565589Z 1:M 14 Nov 2026 08:47:11.052 # Redis is now ready to exit, bye bye...
+2026-11-14T09:06:01.253406667Z 1:C 14 Nov 2026 09:06:01.251 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2026-11-14T09:06:01.254383792Z 1:C 14 Nov 2026 09:06:01.252 * Redis version=7.4.10, bits=64, commit=00000000, modified=0, pid=1, just started
+2026-11-14T09:06:01.254392917Z 1:C 14 Nov 2026 09:06:01.252 * Configuration loaded
+2026-11-14T09:06:01.254399417Z 1:M 14 Nov 2026 09:06:01.252 * monotonic clock: POSIX clock_gettime
+2026-11-14T09:06:01.254407376Z 1:M 14 Nov 2026 09:06:01.254 * Running mode=standalone, port=6379.
+2026-11-14T09:06:01.254678459Z 1:M 14 Nov 2026 09:06:01.254 * Server initialized
+2026-11-14T09:06:01.255751501Z 1:M 14 Nov 2026 09:06:01.255 * Reading RDB base file on AOF loading...
+2026-11-14T09:06:01.255785001Z 1:M 14 Nov 2026 09:06:01.255 * Loading RDB produced by version 7.4.10
+2026-11-14T09:06:01.255788126Z 1:M 14 Nov 2026 09:06:01.255 * RDB age 7380141 seconds
+2026-11-14T09:06:01.255789501Z 1:M 14 Nov 2026 09:06:01.255 * RDB memory usage when created 0.94 Mb
+2026-11-14T09:06:01.255790667Z 1:M 14 Nov 2026 09:06:01.255 * RDB is base AOF
+2026-11-14T09:06:01.255791792Z 1:M 14 Nov 2026 09:06:01.255 * Done loading RDB, keys loaded: 0, keys expired: 0.
+2026-11-14T09:06:01.259322584Z 1:M 14 Nov 2026 09:06:01.259 * DB loaded from base file appendonly.aof.1.base.rdb: 0.004 seconds
+2026-11-14T09:06:01.259335876Z 1:M 14 Nov 2026 09:06:01.259 * DB loaded from append only file: 0.005 seconds
+2026-11-14T09:06:01.259337209Z 1:M 14 Nov 2026 09:06:01.259 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+2026-11-14T09:06:01.259338334Z 1:M 14 Nov 2026 09:06:01.259 * Ready to accept connections tcp

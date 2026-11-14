@@ -1,0 +1,68 @@
+2026-08-20T23:03:40.811626255Z The files belonging to this database system will be owned by user "postgres".
+2026-08-20T23:03:40.811662088Z This user must also own the server process.
+2026-08-20T23:03:40.811663880Z 
+2026-08-20T23:03:40.811665005Z The database cluster will be initialized with locale "en_US.utf8".
+2026-08-20T23:03:40.811666213Z The default database encoding has accordingly been set to "UTF8".
+2026-08-20T23:03:40.811667255Z The default text search configuration will be set to "english".
+2026-08-20T23:03:40.811668338Z 
+2026-08-20T23:03:40.811669255Z Data page checksums are disabled.
+2026-08-20T23:03:40.811670172Z 
+2026-08-20T23:03:40.813280130Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+2026-08-20T23:03:40.834652838Z creating subdirectories ... ok
+2026-08-20T23:03:40.835734422Z selecting dynamic shared memory implementation ... posix
+2026-08-20T23:03:40.894409297Z selecting default "max_connections" ... 100
+2026-08-20T23:03:40.909707963Z selecting default "shared_buffers" ... 128MB
+2026-08-20T23:03:40.919606505Z selecting default time zone ... Etc/UTC
+2026-08-20T23:03:40.943883463Z creating configuration files ... ok
+2026-08-20T23:03:41.822719005Z running bootstrap script ... ok
+2026-08-20T23:03:41.849382714Z 2026-08-20 23:03:41.848 UTC [41] LOG:  registered custom resource manager "pg_search" with ID 137
+2026-08-20T23:03:43.564918881Z performing post-bootstrap initialization ... ok
+2026-08-20T23:03:43.880349340Z initdb: warning: enabling "trust" authentication for local connections
+2026-08-20T23:03:43.880393756Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+2026-08-20T23:03:43.880337798Z syncing data to disk ... ok
+2026-08-20T23:03:43.880412256Z 
+2026-08-20T23:03:43.880417881Z 
+2026-08-20T23:03:43.880422090Z Success. You can now start the database server using:
+2026-08-20T23:03:43.880426631Z 
+2026-08-20T23:03:43.880431215Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+2026-08-20T23:03:43.880436840Z 
+2026-08-20T23:03:43.917045756Z waiting for server to start....2026-08-20 23:03:43.916 UTC [58] LOG:  registered custom resource manager "pg_search" with ID 137
+2026-08-20T23:03:44.039803173Z 2026-08-20 23:03:44.039 UTC [58] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-08-20T23:03:44.042253298Z 2026-08-20 23:03:44.042 UTC [58] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-08-20T23:03:44.060164423Z 2026-08-20 23:03:44.058 UTC [70] LOG:  database system was shut down at 2026-08-20 23:03:43 UTC
+2026-08-20T23:03:44.080092340Z 2026-08-20 23:03:44.079 UTC [58] LOG:  database system is ready to accept connections
+2026-08-20T23:03:44.107684923Z  done
+2026-08-20T23:03:44.107724631Z server started
+2026-08-20T23:03:44.538220132Z CREATE DATABASE
+2026-08-20T23:03:44.538820382Z 
+2026-08-20T23:03:44.538844090Z 
+2026-08-20T23:03:44.539053882Z /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/10_bootstrap_paradedb.sh
+2026-08-20T23:03:44.592051632Z 2026-08-20 23:03:44.591 UTC [81] ERROR:  pg_cron can only be loaded via shared_preload_libraries
+2026-08-20T23:03:44.592076548Z 2026-08-20 23:03:44.591 UTC [81] HINT:  Add pg_cron to the shared_preload_libraries configuration variable in postgresql.conf.
+2026-08-20T23:03:44.592078507Z 2026-08-20 23:03:44.591 UTC [81] STATEMENT:  CREATE EXTENSION IF NOT EXISTS pg_cron;
+2026-08-20T23:03:44.592105757Z ERROR:  pg_cron can only be loaded via shared_preload_libraries
+2026-08-20T23:03:44.592119257Z HINT:  Add pg_cron to the shared_preload_libraries configuration variable in postgresql.conf.
+2026-08-20T23:03:45.746454507Z 
+2026-08-20T23:03:45.746480466Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+2026-08-20T23:03:45.746482424Z 
+2026-08-20T23:03:45.765431841Z 2026-08-20 23:03:45.764 UTC [1] LOG:  registered custom resource manager "pg_search" with ID 137
+2026-08-20T23:03:45.835949174Z 2026-08-20 23:03:45.827 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-08-20T23:03:45.842434091Z 2026-08-20 23:03:45.841 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-08-20T23:03:45.842464924Z 2026-08-20 23:03:45.841 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-08-20T23:03:45.853364007Z 2026-08-20 23:03:45.853 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-08-20T23:03:45.891773007Z 2026-08-20 23:03:45.891 UTC [39] LOG:  database system was interrupted; last known up at 2026-08-20 23:03:44 UTC
+2026-08-20T23:03:46.305232549Z 2026-08-20 23:03:46.305 UTC [39] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-08-20T23:03:46.311006383Z 2026-08-20 23:03:46.310 UTC [39] LOG:  redo starts at 0/14EF800
+2026-08-20T23:03:46.372616424Z 2026-08-20 23:03:46.372 UTC [39] LOG:  invalid record length at 0/1917998: expected at least 24, got 0
+2026-08-20T23:03:46.372639924Z 2026-08-20 23:03:46.372 UTC [39] LOG:  redo done at 0/1917950 system usage: CPU: user: 0.00 s, system: 0.01 s, elapsed: 0.06 s
+2026-08-20T23:03:46.379817091Z 2026-08-20 23:03:46.379 UTC [37] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-08-20T23:03:46.530543966Z 2026-08-20 23:03:46.530 UTC [37] LOG:  checkpoint complete: wrote 925 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.117 s, sync=0.031 s, total=0.152 s; sync files=301, longest=0.003 s, average=0.001 s; distance=4256 kB, estimate=4256 kB; lsn=0/1917998, redo lsn=0/1917998
+2026-08-20T23:03:46.536999008Z 2026-08-20 23:03:46.536 UTC [1] LOG:  database system is ready to accept connections
+2026-08-21T01:20:50.688469310Z 2026-08-21 01:20:50.678 UTC [13119] LOG:  could not send data to client: Broken pipe
+2026-08-21T01:20:50.799753852Z 2026-08-21 01:20:50.681 UTC [13119] FATAL:  connection to client lost
+2026-08-21T01:21:00.785081565Z 2026-08-21 01:21:00.784 UTC [13128] LOG:  could not send data to client: Broken pipe
+2026-08-21T01:21:00.785257190Z 2026-08-21 01:21:00.784 UTC [13128] FATAL:  connection to client lost
+2026-08-21T01:21:46.340449107Z 2026-08-21 01:21:46.331 UTC [13136] LOG:  could not send data to client: Broken pipe
+2026-08-21T01:21:46.340561690Z 2026-08-21 01:21:46.331 UTC [13136] FATAL:  connection to client lost
+2026-08-21T01:21:46.442482857Z 2026-08-21 01:21:46.442 UTC [13144] LOG:  could not send data to client: Broken pipe
+2026-08-21T01:21:46.442537232Z 2026-08-21 01:21:46.442 UTC [13144] FATAL:  connection to client lost

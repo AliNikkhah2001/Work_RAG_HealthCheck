@@ -1,0 +1,35 @@
+2026-08-21T06:06:46.233018798Z + echo 'S3_ACCESS_KEY=admin, S3_SECRET_KEY=change_this_password_on_production'
+2026-08-21T06:06:46.233038132Z + mc --version
+2026-08-21T06:06:46.233036507Z S3_ACCESS_KEY=admin, S3_SECRET_KEY=change_this_password_on_production
+2026-08-21T06:06:46.250526715Z mc version RELEASE.2025-08-13T08-35-41Z (commit-id=7394ce0dd2a80935aded936b09fa12cbb3cb8096)
+2026-08-21T06:06:46.250549424Z Runtime: go1.24.6 linux/arm64
+2026-08-21T06:06:46.250550965Z Copyright (c) 2015-2025 MinIO, Inc.
+2026-08-21T06:06:46.250552132Z License GNU AGPLv3 <https://www.gnu.org/licenses/agpl-3.0.html>
+2026-08-21T06:06:46.251027299Z + mc alias set rustfs http://network-service:9000 admin change_this_password_on_production
+2026-08-21T06:06:46.267647757Z Added `rustfs` successfully.
+2026-08-21T06:06:46.268308965Z + mc ls rustfs
+2026-08-21T06:06:46.282222549Z + mc mb rustfs/lobe --ignore-existing
+2026-08-21T06:06:46.306728965Z Bucket created successfully `rustfs/lobe`.
+2026-08-21T06:06:46.307570757Z + mc admin info rustfs
+2026-08-21T06:06:46.336437382Z mc: <ERROR>  Unable to get service info
+2026-08-21T06:06:46.337208340Z + true
+2026-08-21T06:06:46.337219590Z + mc anonymous set-json /bucket.config.json rustfs/lobe
+2026-08-21T06:06:46.355838215Z Access permission for `rustfs/lobe` is set from `/bucket.config.json`
+2026-08-21T08:26:45.518259547Z + echo 'S3_ACCESS_KEY=admin, S3_SECRET_KEY=change_this_password_on_production'
+2026-08-21T08:26:45.518755339Z + mc --version
+2026-08-21T08:26:45.518276672Z S3_ACCESS_KEY=admin, S3_SECRET_KEY=change_this_password_on_production
+2026-08-21T08:26:45.587573714Z mc version RELEASE.2025-08-13T08-35-41Z (commit-id=7394ce0dd2a80935aded936b09fa12cbb3cb8096)
+2026-08-21T08:26:45.587596047Z Runtime: go1.24.6 linux/arm64
+2026-08-21T08:26:45.587597505Z Copyright (c) 2015-2025 MinIO, Inc.
+2026-08-21T08:26:45.587598714Z License GNU AGPLv3 <https://www.gnu.org/licenses/agpl-3.0.html>
+2026-08-21T08:26:45.588677880Z + mc alias set rustfs http://network-service:9000 admin change_this_password_on_production
+2026-08-21T08:26:45.625615880Z Added `rustfs` successfully.
+2026-08-21T08:26:45.626302589Z + mc ls rustfs
+2026-08-21T08:26:45.641390964Z [2026-08-21 06:06:46 UTC]     0B lobe/
+2026-08-21T08:26:45.642127339Z + mc mb rustfs/lobe --ignore-existing
+2026-08-21T08:26:45.658302630Z Bucket created successfully `rustfs/lobe`.
+2026-08-21T08:26:45.658862672Z + mc admin info rustfs
+2026-08-21T08:26:45.682267089Z mc: <ERROR>  Unable to get service info
+2026-08-21T08:26:45.683087339Z + true
+2026-08-21T08:26:45.683104922Z + mc anonymous set-json /bucket.config.json rustfs/lobe
+2026-08-21T08:26:45.706223339Z Access permission for `rustfs/lobe` is set from `/bucket.config.json`

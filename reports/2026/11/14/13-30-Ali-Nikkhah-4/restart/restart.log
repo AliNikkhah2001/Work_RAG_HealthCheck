@@ -1,0 +1,25 @@
+Restart attempt at 2026-11-14T13:29:10Z
+Machine type: dev_laptop
+Detected stack mode: compose
+
+--- Dev laptop mode: attempting lightweight service start ---
+Found running containers — attempting docker compose restart
+time="2026-11-14T16:59:10+03:30" level=warning msg="Found orphan containers ([dana-local-evaluation-1 dana-local-litellm-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+ Container dana-local-guardrails-1 Running 
+ Container dana-local-redis-1 Running 
+ Container dana-local-postgres-1 Running 
+ Container dana-local-tracing-1 Running 
+ Container dana-local-kb-1 Running 
+ Container dana-local-orchestrator-1 Running 
+ Container dana-local-webui-1 Running 
+ Container dana-local-postgres-1 Waiting 
+ Container dana-local-redis-1 Waiting 
+ Container dana-local-redis-1 Healthy 
+ Container dana-local-postgres-1 Healthy 
+ Container dana-local-kb-1 Waiting 
+ Container dana-local-guardrails-1 Waiting 
+ Container dana-local-guardrails-1 Healthy 
+ Container dana-local-kb-1 Healthy 
+ Container dana-local-orchestrator-1 Waiting 
+ Container dana-local-orchestrator-1 Healthy 
+[0;32m[OK][0m   dev compose up succeeded
