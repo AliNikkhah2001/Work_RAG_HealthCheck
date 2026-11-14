@@ -1,0 +1,222 @@
+{
+  "schema_version": "health-run/v1",
+  "run_id": "20261114T153319Z-Ali-Nikkhah-4",
+  "generated_at": "2026-11-14T15:33:19Z",
+  "machine": "Ali-Nikkhah-4",
+  "machine_type": "dev_laptop",
+  "host": "Ali-Nikkhah-4.local",
+  "mode": "compose",
+  "origin": "report",
+  "status": "HEALTHY",
+  "core_services_down": [],
+  "services": [
+    {
+      "name": "gemma",
+      "port": 18000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "manager",
+      "port": 9000,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "kb",
+      "port": 8000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "guardrails",
+      "port": 8200,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "orchestrator",
+      "port": 8100,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "trace-collector",
+      "port": 3000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "langfuse",
+      "port": 3001,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "webui",
+      "port": 13000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "jenkins",
+      "port": 8085,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8010",
+      "port": 8010,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "service-8001",
+      "port": 8001,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "service-8002",
+      "port": 8002,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "service-8003",
+      "port": 8003,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    }
+  ],
+  "e2e": {
+    "tests": [
+      {
+        "test": "chat_greeting",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "chat_credit_qa",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "chat_webui",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "kb_search",
+        "http_code": "200",
+        "passed": true
+      }
+    ],
+    "passed": 3,
+    "total": 3,
+    "kb_search_ok": true
+  },
+  "gate": {},
+  "kb": {
+    "verdict": "unknown",
+    "mismatches": [],
+    "checks": [
+      {
+        "check": "chunk_count",
+        "actual": null,
+        "expected": null,
+        "match": null,
+        "note": "chunks in Postgres vs chunks in the DVC pin"
+      },
+      {
+        "check": "document_count",
+        "actual": null,
+        "expected": null,
+        "match": null,
+        "note": "documents in Postgres vs documents in the DVC pin"
+      },
+      {
+        "check": "corpus_date",
+        "actual": "1405-06-23",
+        "expected": null,
+        "match": null,
+        "note": "corpus the running API serves vs the exported snapshot pin"
+      },
+      {
+        "check": "chunks_in_db_vs_dvc_pin",
+        "actual": null,
+        "expected": 1471,
+        "match": null,
+        "note": "chunks in Postgres vs the DVC snapshot pin the API advertises"
+      },
+      {
+        "check": "chunks_vs_api_health",
+        "actual": null,
+        "expected": 1319,
+        "match": null,
+        "note": "chunks in Postgres vs chunk_count from /health"
+      },
+      {
+        "check": "packs",
+        "actual": {
+          "schemas": "1.0.1",
+          "taxonomy": "1.0.2",
+          "canned": "1.0.2",
+          "prompts_orchestrator": "1.0.3",
+          "prompts_guardrails": "1.0.1",
+          "retrieval": "1.0.0"
+        },
+        "expected": null,
+        "match": null,
+        "note": "active registry pack versions served vs pinned"
+      }
+    ],
+    "chunks_in_db": null,
+    "documents_in_db": null,
+    "chunks_in_pin": 1471,
+    "corpus_live": "1405-06-23",
+    "corpus_latest": null,
+    "corpus_lagging": null,
+    "manifest_id": null,
+    "packs": {
+      "schemas": "1.0.1",
+      "taxonomy": "1.0.2",
+      "canned": "1.0.2",
+      "prompts_orchestrator": "1.0.3",
+      "prompts_guardrails": "1.0.1",
+      "retrieval": "1.0.0"
+    },
+    "embedding_models": [],
+    "last_ingestion_job": null,
+    "unknown": [
+      "actual",
+      "actual.chunk_count",
+      "actual.document_count",
+      "actual.entity_list_count",
+      "actual.embedded_chunk_count",
+      "actual.last_ingestion_job",
+      "served.manifest",
+      "expected.corpus_pin",
+      "expected.processed_corpus",
+      "expected.processed",
+      "expected.kb_git_head"
+    ]
+  },
+  "links": {
+    "detail": "logs/20261114T153319Z-Ali-Nikkhah-4/dashboard.html",
+    "record": "runs/20261114T153319Z-Ali-Nikkhah-4.json"
+  }
+}
