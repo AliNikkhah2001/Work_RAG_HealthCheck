@@ -1,0 +1,365 @@
+Started by an SCM change
+ > git rev-parse --resolve-git-dir /var/jenkins_home/caches/git-c37e07c8354b606ca46386b6ae453174/.git # timeout=10
+Setting origin to https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git config --get remote.origin.url # timeout=10
+using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+ > git fetch --no-tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/backup/laptop-chore-trigger-20261115T174840Z
+Seen branch in repository origin/backup/origin-main-20261115T174840Z
+Seen branch in repository origin/bugfix/broaden-subspace-disclosure
+Seen branch in repository origin/bugfix/orch-upstream-env-and-stress-qa
+Seen branch in repository origin/bugfix/pin-qa-loop-fixes
+Seen branch in repository origin/bugfix/remaining-noevidence-hardening
+Seen branch in repository origin/chore/trigger-prod-webui-rebuild
+Seen branch in repository origin/develop
+Seen branch in repository origin/feature/healthcheck-jenkins-qa-logs
+Seen branch in repository origin/main
+Seen 10 remote branches
+Obtained Jenkinsfile from 981504a66bcd9758b47aba66d9461c33f6accb56
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/dana-rag-prod_main
+[Pipeline] {
+[Pipeline] ws
+Running in /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+using credential github-pat
+ > git rev-parse --resolve-git-dir /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+ > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision 981504a66bcd9758b47aba66d9461c33f6accb56 (main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 981504a66bcd9758b47aba66d9461c33f6accb56 # timeout=10
+Commit message: "Merge pull request #95 from AliNikkhah2001/fix/iran-mirrors-dash-source"
+ > git rev-list --no-walk 670e00b66f12d311c916bfb9c0cbdaf89b454c00 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+[2026-11-15T23:43:16.495Z] The recommended git tool is: git
+[2026-11-15T23:43:16.496Z] using credential github-pat
+[2026-11-15T23:43:16.500Z]  > git rev-parse --resolve-git-dir /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.git # timeout=10
+[2026-11-15T23:43:16.518Z] Fetching changes from the remote Git repository
+[2026-11-15T23:43:16.520Z]  > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+[2026-11-15T23:43:16.535Z] Fetching without tags
+[2026-11-15T23:43:16.535Z] Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+[2026-11-15T23:43:16.535Z]  > git --version # timeout=10
+[2026-11-15T23:43:16.560Z]  > git --version # 'git version 2.47.3'
+[2026-11-15T23:43:16.561Z] using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+[2026-11-15T23:43:16.574Z]  > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-15T23:43:17.983Z] Checking out Revision 981504a66bcd9758b47aba66d9461c33f6accb56 (main)
+[2026-11-15T23:43:17.983Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-15T23:43:17.999Z]  > git checkout -f 981504a66bcd9758b47aba66d9461c33f6accb56 # timeout=10
+[2026-11-15T23:43:18.044Z] Commit message: "Merge pull request #95 from AliNikkhah2001/fix/iran-mirrors-dash-source"
+[Pipeline] sh
+[2026-11-15T23:43:18.338Z] + set -e
+[2026-11-15T23:43:18.338Z] + chmod +x scripts/ci_submodule_sync.sh scripts/ci_message_gate.py scripts/ci_controller_role.py
+[2026-11-15T23:43:18.338Z] + bash scripts/ci_stage_evidence.sh reset
+[2026-11-15T23:43:18.338Z] ci_stage_evidence: reset
+[2026-11-15T23:43:18.338Z] + bash scripts/ci_submodule_sync.sh
+[2026-11-15T23:43:18.338Z] ci_submodule_sync: attempt 1/3
+[2026-11-15T23:43:18.588Z] ci_submodule_sync: resetting dirty submodule worktrees (CI_FORCE_CLEAN=1)
+[2026-11-15T23:43:18.839Z] Entering 'agent-state'
+[2026-11-15T23:43:18.839Z] Entering 'components/evaluation'
+[2026-11-15T23:43:18.839Z] Entering 'components/guardrails'
+[2026-11-15T23:43:18.839Z] Entering 'components/knowledgebase'
+[2026-11-15T23:43:18.839Z] Entering 'components/knowledgebase/kb-source'
+[2026-11-15T23:43:18.839Z] Entering 'components/orchestrator'
+[2026-11-15T23:43:18.839Z] Entering 'components/server-setup'
+[2026-11-15T23:43:19.090Z] Entering 'components/webui'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'agent-state'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'components/evaluation'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'components/guardrails'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'components/knowledgebase'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'components/knowledgebase/kb-source'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'components/orchestrator'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'components/server-setup'
+[2026-11-15T23:43:33.856Z] Synchronizing submodule url for 'components/webui'
+[2026-11-15T23:43:33.856Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/guardrails': checked out '3519f510e36761c5ff2248ff1106e3d71ad0df37'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/knowledgebase': checked out '4a6722f21153bd983c9bed69acee3e5279afbdcc'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/orchestrator': checked out '258443fdc0be4baeada3ff0de4674a002beee578'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T23:43:33.856Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/guardrails': checked out '3519f510e36761c5ff2248ff1106e3d71ad0df37'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/knowledgebase': checked out '4a6722f21153bd983c9bed69acee3e5279afbdcc'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/knowledgebase/kb-source': checked out '22392fae97a596a1287ec11b073924fc8d6937f8'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/orchestrator': checked out '258443fdc0be4baeada3ff0de4674a002beee578'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T23:43:33.856Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/guardrails': checked out '3519f510e36761c5ff2248ff1106e3d71ad0df37'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/knowledgebase': checked out '4a6722f21153bd983c9bed69acee3e5279afbdcc'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/knowledgebase/kb-source': checked out '22392fae97a596a1287ec11b073924fc8d6937f8'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/orchestrator': checked out '258443fdc0be4baeada3ff0de4674a002beee578'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T23:43:33.856Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T23:43:33.856Z] ci_submodule_sync: OK
+[2026-11-15T23:43:33.856Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-15T23:43:33.856Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-15T23:43:33.856Z]  3519f510e36761c5ff2248ff1106e3d71ad0df37 components/guardrails (phase1-complete-2026-10-28-26-g3519f51)
+[2026-11-15T23:43:33.856Z]  4a6722f21153bd983c9bed69acee3e5279afbdcc components/knowledgebase (phase1-complete-2026-10-28-75-g4a6722f)
+[2026-11-15T23:43:33.856Z]  258443fdc0be4baeada3ff0de4674a002beee578 components/orchestrator (phase1-complete-2026-10-28-66-g258443f)
+[2026-11-15T23:43:33.856Z]  7f07e2d3bd940088660a62fd7cc48452d266ed37 components/server-setup (phase1-complete-2026-10-28-76-g7f07e2d)
+[2026-11-15T23:43:33.856Z]  9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb components/webui (v0.13.3-28-g9dfd36002)
+[2026-11-15T23:43:34.107Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-15T23:43:34.107Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-15T23:43:34.107Z]  3519f510e36761c5ff2248ff1106e3d71ad0df37 components/guardrails (phase1-complete-2026-10-28-26-g3519f51)
+[2026-11-15T23:43:34.107Z]  4a6722f21153bd983c9bed69acee3e5279afbdcc components/knowledgebase (phase1-complete-2026-10-28-75-g4a6722f)
+[2026-11-15T23:43:34.107Z]  22392fae97a596a1287ec11b073924fc8d6937f8 components/knowledgebase/kb-source (phase1-complete-2026-10-28-7-g22392fa)
+[2026-11-15T23:43:34.107Z]  258443fdc0be4baeada3ff0de4674a002beee578 components/orchestrator (phase1-complete-2026-10-28-66-g258443f)
+[2026-11-15T23:43:34.107Z]  7f07e2d3bd940088660a62fd7cc48452d266ed37 components/server-setup (phase1-complete-2026-10-28-76-g7f07e2d)
+[2026-11-15T23:43:34.107Z]  9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb components/webui (v0.13.3-28-g9dfd36002)
+[2026-11-15T23:43:34.107Z] + git log -1 --pretty=%B
+[2026-11-15T23:43:34.107Z] + git diff --name-only HEAD~1...HEAD
+[2026-11-15T23:43:34.107Z] + command -v python3
+[2026-11-15T23:43:34.107Z] + python3 scripts/ci_message_gate.py --write-env .ci_gate.env
+[2026-11-15T23:43:34.358Z] CI_SKIP=0
+[2026-11-15T23:43:34.358Z] CI_BUILD=0
+[2026-11-15T23:43:34.358Z] CI_STAGE=0
+[2026-11-15T23:43:34.358Z] CI_PROD=1
+[2026-11-15T23:43:34.358Z] CI_AUTO=0
+[2026-11-15T23:43:34.358Z] CI_ROLLBACK=0
+[2026-11-15T23:43:34.358Z] CI_SNAPSHOT=0
+[2026-11-15T23:43:34.358Z] CI_HEAL=0
+[2026-11-15T23:43:34.358Z] CI_HEAL_STAMP=
+[2026-11-15T23:43:34.358Z] CI_HEAVY_PATHS=1
+[2026-11-15T23:43:34.358Z] CI_SERVICES=all
+[2026-11-15T23:43:34.358Z] + python3 scripts/ci_controller_role.py --write-env .ci_role.env
+[2026-11-15T23:43:34.358Z] DANA_ROLE=prod
+[2026-11-15T23:43:34.358Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-15T23:43:34.358Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] script
+[Pipeline] {
+[Pipeline] readFile
+[Pipeline] readFile
+[Pipeline] echo
+[2026-11-15T23:43:34.705Z] CI controller: ROLE=prod MAY_STAGE=0 MAY_PROD=1 HOST=gpu JOB=dana-rag-prod/main
+[Pipeline] echo
+[2026-11-15T23:43:34.721Z] CI gate: SKIP=0 BUILD=0 STAGE=0 PROD=1 AUTO=0 ROLLBACK=0 SNAPSHOT=0 HEAL=0 STAMP= HEAVY=1 SERVICES=all BRANCH=main
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Skip)
+Stage "Skip" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Lint)
+[Pipeline] sh
+[2026-11-15T23:43:35.312Z] + set -e
+[2026-11-15T23:43:35.312Z] + bash scripts/ci_stage_evidence.sh mark lint
+[2026-11-15T23:43:35.312Z] ci_stage_evidence: marked lint
+[2026-11-15T23:43:35.312Z] + command -v ruff
+[2026-11-15T23:43:35.312Z] + echo ruff not installed on agent — skipping advisory lint
+[2026-11-15T23:43:35.312Z] ruff not installed on agent — skipping advisory lint
+[2026-11-15T23:43:35.312Z] + python3 scripts/build_keep_graph.py
+[2026-11-15T23:43:50.078Z] {
+[2026-11-15T23:43:50.078Z]   "keep": 5805,
+[2026-11-15T23:43:50.078Z]   "classes": {
+[2026-11-15T23:43:50.078Z]     "code_candidates_quarantine": 247,
+[2026-11-15T23:43:50.078Z]     "other": 193,
+[2026-11-15T23:43:50.078Z]     "docs": 319,
+[2026-11-15T23:43:50.078Z]     "plots_diagrams": 168,
+[2026-11-15T23:43:50.078Z]     "data_datasets_eval": 82,
+[2026-11-15T23:43:50.078Z]     "research_archive_dev": 116
+[2026-11-15T23:43:50.078Z]   }
+[2026-11-15T23:43:50.078Z] }
+[2026-11-15T23:43:50.078Z] + python3 scripts/ci_message_gate.py --self-test
+[2026-11-15T23:43:50.078Z] ci_message_gate self-test OK
+[2026-11-15T23:43:50.078Z] + python3 scripts/ci_controller_role.py --self-test
+[2026-11-15T23:43:50.078Z] ci_controller_role self-test OK
+[2026-11-15T23:43:50.078Z] + python3 scripts/ci_verify_coverage.py --self-test
+[2026-11-15T23:43:50.078Z] ci_verify_coverage self-test OK
+[2026-11-15T23:43:50.078Z] + bash scripts/ci_stage_evidence.sh self-test
+[2026-11-15T23:43:50.078Z] ci_stage_evidence self-test OK
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Rollback prod)
+Stage "Rollback prod" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Force-heal from snapshot)
+Stage "Force-heal from snapshot" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Snapshot images)
+Stage "Snapshot images" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build images)
+[Pipeline] sh
+[2026-11-15T23:43:50.823Z] + set -e
+[2026-11-15T23:43:50.823Z] + bash -euo pipefail
+[2026-11-15T23:43:50.823Z] ci_laptop_rerank_env: reranker forced to OpenRouter cohere/rerank-v3.5
+[2026-11-15T23:43:50.823Z] KB_TORCH_CHANNEL=cuda
+[2026-11-15T23:43:50.823Z] ci_apply_iran_mirrors: mode=fallback-only (upstream primary)
+[2026-11-15T23:43:50.823Z] ci_apply_iran_mirrors: PIP_INDEX_URL=https://pypi.org/simple
+[2026-11-15T23:43:50.823Z] ci_apply_iran_mirrors: PIP_EXTRA_INDEX_URL=https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/
+[2026-11-15T23:43:50.823Z] ci_apply_iran_mirrors: NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
+[2026-11-15T23:43:50.823Z] ci_apply_iran_mirrors: IRAN_NPM_REGISTRIES=https://mirror-npm.pkg.shecan.ir/ https://mirror-npm.runflare.com/ https://package-mirror.liara.ir/repository/npm/
+[2026-11-15T23:43:50.823Z] ci_apply_iran_mirrors: PIP_TRUSTED_HOST=pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir
+[2026-11-15T23:43:50.823Z] Skipping rag-webui image build (no npm and no components/webui/build)
+[2026-11-15T23:43:50.823Z] Building compose services: kb guardrails orchestrator tracing  (parallel_limit=1)
+[2026-11-15T23:43:51.074Z] docker compose build attempt 1/3 (PIP_INDEX_URL=https://pypi.org/simple)
+[2026-11-15T23:43:51.074Z] main: line 148: docker: command not found
+[2026-11-15T23:43:51.074Z] build attempt 1 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T23:44:12.876Z] docker compose build attempt 2/3 (PIP_INDEX_URL=https://pypi.org/simple)
+[2026-11-15T23:44:12.876Z] main: line 148: docker: command not found
+[2026-11-15T23:44:12.876Z] build attempt 2 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T23:44:34.679Z] docker compose build attempt 3/3 (PIP_INDEX_URL=https://pypi.org/simple)
+[2026-11-15T23:44:34.679Z] main: line 148: docker: command not found
+[2026-11-15T23:44:34.679Z] build attempt 3 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T23:44:52.645Z] ci_apply_iran_mirrors: promoted Iran pip primary → https://mirror-pypi.pkg.shecan.ir/simple/ (upstream failed)
+[2026-11-15T23:44:52.645Z] docker compose build fallback attempt with Iran pip primary
+[2026-11-15T23:44:52.645Z] main: line 148: docker: command not found
+Post stage
+[Pipeline] withCredentials
+[2026-11-15T23:44:52.710Z] Masking supported pattern matches of $GITHUB_TOKEN
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-11-15T23:44:53.067Z] + set +e
+[2026-11-15T23:44:53.067Z] + bash scripts/ci_github_status.sh --sha 981504a66bcd9758b47aba66d9461c33f6accb56 --state failure --context dana/build --description image build failed --target-url 
+[2026-11-15T23:44:54.412Z] ci_github_status: reported failure for 981504a66bcd9758b47aba66d9461c33f6accb56 (dana/build)
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy stage)
+Stage "Deploy stage" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (E2E stage)
+Stage "E2E stage" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Prod approval (interactive only))
+Stage "Prod approval (interactive only)" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy prod)
+Stage "Deploy prod" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
+[2026-11-15T23:44:55.459Z] + docker image prune -f
+[2026-11-15T23:44:55.459Z] /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace@tmp/durable-ec3b62c7/script.sh.copy: 2: docker: not found
+[2026-11-15T23:44:55.459Z] + true
+[2026-11-15T23:44:55.459Z] + :
+[2026-11-15T23:44:55.459Z] + [ -f scripts/ci_verify_coverage.py ]
+[2026-11-15T23:44:55.459Z] + bash scripts/ci_stage_evidence.sh list
+[2026-11-15T23:44:55.459Z] + RAN=lint build
+[2026-11-15T23:44:55.459Z] + chmod +x scripts/ci_verify_coverage.py
+[2026-11-15T23:44:55.459Z] + python3 scripts/ci_verify_coverage.py --branch main --executed lint build --require-prod-controller 1 --write-env .ci_coverage.env
+[2026-11-15T23:44:55.459Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T23:44:55.459Z] COVERAGE_RAN=lint,build
+[2026-11-15T23:44:55.459Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T23:44:55.459Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T23:44:55.459Z] COVERAGE_STATE=failure
+[2026-11-15T23:44:55.459Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T23:44:55.459Z] COVERAGE_GUARD=fail
+[2026-11-15T23:44:55.459Z] + cat .ci_coverage.env
+[2026-11-15T23:44:55.459Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T23:44:55.459Z] COVERAGE_RAN=lint,build
+[2026-11-15T23:44:55.459Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T23:44:55.459Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T23:44:55.459Z] COVERAGE_STATE=failure
+[2026-11-15T23:44:55.459Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T23:44:55.459Z] COVERAGE_GUARD=fail
+[2026-11-15T23:44:55.459Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-15T23:44:55.459Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-15T23:44:55.459Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-15T23:44:55.459Z] + rm -f .ci_commit_msg.txt .ci_changed_files.txt .ci_gate.env .ci_role.env
+[2026-11-15T23:44:55.459Z] + rm -rf .ci-evidence
+[Pipeline] script
+[Pipeline] {
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] withCredentials
+[2026-11-15T23:44:55.725Z] Masking supported pattern matches of $GITHUB_TOKEN
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-11-15T23:44:56.076Z] + set +e
+[2026-11-15T23:44:56.077Z] + bash scripts/ci_github_status.sh --sha 981504a66bcd9758b47aba66d9461c33f6accb56 --state failure --context dana/validate --description build FAILURE: main missing prod verification: prod-deploy --target-url 
+[2026-11-15T23:44:56.989Z] ci_github_status: reported failure for 981504a66bcd9758b47aba66d9461c33f6accb56 (dana/validate)
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] echo
+[2026-11-15T23:44:57.135Z] COVERAGE GUARD: FAIL — this build did not verify what it claims
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+[2026-11-15T23:44:57.202Z] Pipeline failed — inspect Jenkins console + docker compose logs
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // ws
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
