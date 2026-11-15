@@ -1,0 +1,49 @@
+[2026-11-15T20:10:07.440Z] DANA_ROLE=prod
+[2026-11-15T20:10:07.440Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-15T20:10:07.440Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] { (Build images)
+[2026-11-15T20:10:23.985Z] + echo Skipping rag-webui image build (no npm and no components/webui/build)
+[2026-11-15T20:10:23.985Z] Skipping rag-webui image build (no npm and no components/webui/build)
+[2026-11-15T20:10:23.985Z] + echo Building compose services: kb guardrails orchestrator tracing  (parallel_limit=1)
+[2026-11-15T20:10:23.985Z] Building compose services: kb guardrails orchestrator tracing  (parallel_limit=1)
+[2026-11-15T20:10:24.236Z] + echo docker compose build attempt 1/3
+[2026-11-15T20:10:24.236Z] docker compose build attempt 1/3
+[2026-11-15T20:10:24.236Z] + echo build attempt 1 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:10:24.236Z] build attempt 1 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:10:46.038Z] + echo docker compose build attempt 2/3
+[2026-11-15T20:10:46.038Z] docker compose build attempt 2/3
+[2026-11-15T20:10:46.038Z] + echo build attempt 2 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:10:46.038Z] build attempt 2 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:11:07.841Z] + echo docker compose build attempt 3/3
+[2026-11-15T20:11:07.841Z] docker compose build attempt 3/3
+[2026-11-15T20:11:07.841Z] + echo build attempt 3 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:11:07.841Z] build attempt 3 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:11:26.227Z] + bash scripts/ci_github_status.sh --sha be8dbcb73005e7ad930f3a67b662b31e32505039 --state failure --context dana/build --description image build failed --target-url 
+[2026-11-15T20:11:27.139Z] ci_github_status: reported failure for be8dbcb73005e7ad930f3a67b662b31e32505039 (dana/build)
+Stage "Deploy stage" skipped due to earlier failure(s)
+Stage "E2E stage" skipped due to earlier failure(s)
+Stage "Prod approval (interactive only)" skipped due to earlier failure(s)
+[Pipeline] { (Deploy prod)
+Stage "Deploy prod" skipped due to earlier failure(s)
+[2026-11-15T20:11:28.313Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T20:11:28.313Z] COVERAGE_RAN=lint,build
+[2026-11-15T20:11:28.313Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_STATE=failure
+[2026-11-15T20:11:28.313Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_GUARD=fail
+[2026-11-15T20:11:28.313Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T20:11:28.313Z] COVERAGE_RAN=lint,build
+[2026-11-15T20:11:28.313Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_STATE=failure
+[2026-11-15T20:11:28.313Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_GUARD=fail
+[2026-11-15T20:11:28.313Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-15T20:11:28.313Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-15T20:11:28.313Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-15T20:11:28.974Z] + bash scripts/ci_github_status.sh --sha be8dbcb73005e7ad930f3a67b662b31e32505039 --state failure --context dana/validate --description build FAILURE: main missing prod verification: prod-deploy --target-url 
+[2026-11-15T20:11:29.886Z] ci_github_status: reported failure for be8dbcb73005e7ad930f3a67b662b31e32505039 (dana/validate)
+[2026-11-15T20:11:30.079Z] Pipeline failed — inspect Jenkins console + docker compose logs
+ERROR: script returned exit code 1
+Finished: FAILURE

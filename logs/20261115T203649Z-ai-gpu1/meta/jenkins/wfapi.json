@@ -1,0 +1,222 @@
+{
+  "_links": {
+    "self": {
+      "href": "/job/dana-rag-prod/job/main/18/wfapi/describe"
+    },
+    "changesets": {
+      "href": "/job/dana-rag-prod/job/main/18/wfapi/changesets"
+    }
+  },
+  "id": "18",
+  "name": "#18",
+  "status": "FAILED",
+  "startTimeMillis": 1794773383774,
+  "endTimeMillis": 1794773490534,
+  "durationMillis": 106760,
+  "queueDurationMillis": 7,
+  "pauseDurationMillis": 0,
+  "stages": [
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/8/wfapi/describe"
+        }
+      },
+      "id": "8",
+      "name": "Declarative: Checkout SCM",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794773387643,
+      "durationMillis": 1927,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/19/wfapi/describe"
+        }
+      },
+      "id": "19",
+      "name": "Checkout",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794773389756,
+      "durationMillis": 18135,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/33/wfapi/describe"
+        }
+      },
+      "id": "33",
+      "name": "Skip",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794773407918,
+      "durationMillis": 103,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/38/wfapi/describe"
+        }
+      },
+      "id": "38",
+      "name": "Lint",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794773408054,
+      "durationMillis": 15149,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/43/wfapi/describe"
+        }
+      },
+      "id": "43",
+      "name": "Rollback prod",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794773423237,
+      "durationMillis": 115,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/48/wfapi/describe"
+        }
+      },
+      "id": "48",
+      "name": "Force-heal from snapshot",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794773423387,
+      "durationMillis": 94,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/53/wfapi/describe"
+        }
+      },
+      "id": "53",
+      "name": "Snapshot images",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794773423508,
+      "durationMillis": 85,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/58/wfapi/describe"
+        }
+      },
+      "id": "58",
+      "name": "Build images",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "script returned exit code 1",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1794773423637,
+      "durationMillis": 63913,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/72/wfapi/describe"
+        }
+      },
+      "id": "72",
+      "name": "Deploy stage",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "script returned exit code 1",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1794773487581,
+      "durationMillis": 86,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/77/wfapi/describe"
+        }
+      },
+      "id": "77",
+      "name": "E2E stage",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "script returned exit code 1",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1794773487694,
+      "durationMillis": 66,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/82/wfapi/describe"
+        }
+      },
+      "id": "82",
+      "name": "Prod approval (interactive only)",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "script returned exit code 1",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1794773487795,
+      "durationMillis": 69,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/87/wfapi/describe"
+        }
+      },
+      "id": "87",
+      "name": "Deploy prod",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "script returned exit code 1",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1794773487894,
+      "durationMillis": 76,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/18/execution/node/92/wfapi/describe"
+        }
+      },
+      "id": "92",
+      "name": "Declarative: Post Actions",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794773487997,
+      "durationMillis": 2133,
+      "pauseDurationMillis": 0
+    }
+  ]
+}

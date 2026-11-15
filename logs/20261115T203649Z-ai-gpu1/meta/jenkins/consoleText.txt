@@ -1,0 +1,427 @@
+Branch indexing
+ > git rev-parse --resolve-git-dir /var/jenkins_home/caches/git-c37e07c8354b606ca46386b6ae453174/.git # timeout=10
+Setting origin to https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git config --get remote.origin.url # timeout=10
+using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+ > git fetch --no-tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/backup/laptop-chore-trigger-20261115T174840Z
+Seen branch in repository origin/backup/origin-main-20261115T174840Z
+Seen branch in repository origin/bugfix/orch-upstream-env-and-stress-qa
+Seen branch in repository origin/chore/trigger-prod-webui-rebuild
+Seen branch in repository origin/develop
+Seen branch in repository origin/feature/healthcheck-jenkins-qa-logs
+Seen branch in repository origin/main
+Seen 7 remote branches
+Obtained Jenkinsfile from be8dbcb73005e7ad930f3a67b662b31e32505039
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/dana-rag-prod_main
+[Pipeline] {
+[Pipeline] ws
+Running in /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+using credential github-pat
+ > git rev-parse --resolve-git-dir /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+ > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision be8dbcb73005e7ad930f3a67b662b31e32505039 (main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f be8dbcb73005e7ad930f3a67b662b31e32505039 # timeout=10
+Commit message: "Merge pull request #90 from AliNikkhah2001/chore/trigger-prod-rebuild-v2"
+ > git rev-list --no-walk c20ba466cef7d5050a90fbef84e78422d10008b7 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+[2026-11-15T20:09:49.809Z] The recommended git tool is: git
+[2026-11-15T20:09:49.810Z] using credential github-pat
+[2026-11-15T20:09:49.817Z]  > git rev-parse --resolve-git-dir /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.git # timeout=10
+[2026-11-15T20:09:49.837Z] Fetching changes from the remote Git repository
+[2026-11-15T20:09:49.840Z]  > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+[2026-11-15T20:09:49.860Z] Fetching without tags
+[2026-11-15T20:09:49.860Z] Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+[2026-11-15T20:09:49.860Z]  > git --version # timeout=10
+[2026-11-15T20:09:49.878Z]  > git --version # 'git version 2.47.3'
+[2026-11-15T20:09:49.878Z] using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+[2026-11-15T20:09:49.893Z]  > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-15T20:09:51.564Z] Checking out Revision be8dbcb73005e7ad930f3a67b662b31e32505039 (main)
+[2026-11-15T20:09:51.564Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-15T20:09:51.583Z]  > git checkout -f be8dbcb73005e7ad930f3a67b662b31e32505039 # timeout=10
+[2026-11-15T20:09:51.620Z] Commit message: "Merge pull request #90 from AliNikkhah2001/chore/trigger-prod-rebuild-v2"
+[Pipeline] sh
+[2026-11-15T20:09:51.921Z] + set -e
+[2026-11-15T20:09:51.921Z] + chmod +x scripts/ci_submodule_sync.sh scripts/ci_message_gate.py scripts/ci_controller_role.py
+[2026-11-15T20:09:51.921Z] + bash scripts/ci_stage_evidence.sh reset
+[2026-11-15T20:09:51.921Z] ci_stage_evidence: reset
+[2026-11-15T20:09:51.921Z] + bash scripts/ci_submodule_sync.sh
+[2026-11-15T20:09:51.921Z] ci_submodule_sync: attempt 1/3
+[2026-11-15T20:09:52.171Z] ci_submodule_sync: resetting dirty submodule worktrees (CI_FORCE_CLEAN=1)
+[2026-11-15T20:09:52.422Z] Entering 'agent-state'
+[2026-11-15T20:09:52.422Z] Entering 'components/evaluation'
+[2026-11-15T20:09:52.422Z] Entering 'components/guardrails'
+[2026-11-15T20:09:52.422Z] Entering 'components/knowledgebase'
+[2026-11-15T20:09:52.673Z] Entering 'components/knowledgebase/kb-source'
+[2026-11-15T20:09:52.673Z] Entering 'components/orchestrator'
+[2026-11-15T20:09:52.673Z] Entering 'components/server-setup'
+[2026-11-15T20:09:52.673Z] Entering 'components/webui'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'agent-state'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'components/evaluation'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'components/guardrails'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'components/knowledgebase'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'components/knowledgebase/kb-source'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'components/orchestrator'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'components/server-setup'
+[2026-11-15T20:10:07.439Z] Synchronizing submodule url for 'components/webui'
+[2026-11-15T20:10:07.439Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T20:10:07.439Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T20:10:07.439Z] Submodule path 'components/guardrails': checked out '809b41184a2087298e3eaa0111a3f7661c0c1386'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/knowledgebase': checked out '27cc393b5c580b136233bf8bb112b729cd8b6284'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/orchestrator': checked out '49bab6f43fbbc2b97f9feee6a77ca3210c9edeac'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T20:10:07.440Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/guardrails': checked out '809b41184a2087298e3eaa0111a3f7661c0c1386'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/knowledgebase': checked out '27cc393b5c580b136233bf8bb112b729cd8b6284'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/knowledgebase/kb-source': checked out '22392fae97a596a1287ec11b073924fc8d6937f8'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/orchestrator': checked out '49bab6f43fbbc2b97f9feee6a77ca3210c9edeac'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T20:10:07.440Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/guardrails': checked out '809b41184a2087298e3eaa0111a3f7661c0c1386'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/knowledgebase': checked out '27cc393b5c580b136233bf8bb112b729cd8b6284'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/knowledgebase/kb-source': checked out '22392fae97a596a1287ec11b073924fc8d6937f8'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/orchestrator': checked out '49bab6f43fbbc2b97f9feee6a77ca3210c9edeac'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T20:10:07.440Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T20:10:07.440Z] ci_submodule_sync: OK
+[2026-11-15T20:10:07.440Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-15T20:10:07.440Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-15T20:10:07.440Z]  809b41184a2087298e3eaa0111a3f7661c0c1386 components/guardrails (phase1-complete-2026-10-28-24-g809b411)
+[2026-11-15T20:10:07.440Z]  27cc393b5c580b136233bf8bb112b729cd8b6284 components/knowledgebase (phase1-complete-2026-10-28-73-g27cc393)
+[2026-11-15T20:10:07.440Z]  49bab6f43fbbc2b97f9feee6a77ca3210c9edeac components/orchestrator (phase1-complete-2026-10-28-64-g49bab6f)
+[2026-11-15T20:10:07.440Z]  7f07e2d3bd940088660a62fd7cc48452d266ed37 components/server-setup (phase1-complete-2026-10-28-76-g7f07e2d)
+[2026-11-15T20:10:07.440Z]  9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb components/webui (v0.13.3-28-g9dfd36002)
+[2026-11-15T20:10:07.440Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-15T20:10:07.440Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-15T20:10:07.440Z]  809b41184a2087298e3eaa0111a3f7661c0c1386 components/guardrails (phase1-complete-2026-10-28-24-g809b411)
+[2026-11-15T20:10:07.440Z]  27cc393b5c580b136233bf8bb112b729cd8b6284 components/knowledgebase (phase1-complete-2026-10-28-73-g27cc393)
+[2026-11-15T20:10:07.440Z]  22392fae97a596a1287ec11b073924fc8d6937f8 components/knowledgebase/kb-source (phase1-complete-2026-10-28-7-g22392fa)
+[2026-11-15T20:10:07.440Z]  49bab6f43fbbc2b97f9feee6a77ca3210c9edeac components/orchestrator (phase1-complete-2026-10-28-64-g49bab6f)
+[2026-11-15T20:10:07.440Z]  7f07e2d3bd940088660a62fd7cc48452d266ed37 components/server-setup (phase1-complete-2026-10-28-76-g7f07e2d)
+[2026-11-15T20:10:07.440Z]  9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb components/webui (v0.13.3-28-g9dfd36002)
+[2026-11-15T20:10:07.440Z] + git log -1 --pretty=%B
+[2026-11-15T20:10:07.440Z] + git diff --name-only HEAD~1...HEAD
+[2026-11-15T20:10:07.440Z] + command -v python3
+[2026-11-15T20:10:07.440Z] + python3 scripts/ci_message_gate.py --write-env .ci_gate.env
+[2026-11-15T20:10:07.440Z] CI_SKIP=0
+[2026-11-15T20:10:07.440Z] CI_BUILD=0
+[2026-11-15T20:10:07.440Z] CI_STAGE=0
+[2026-11-15T20:10:07.440Z] CI_PROD=1
+[2026-11-15T20:10:07.440Z] CI_AUTO=0
+[2026-11-15T20:10:07.440Z] CI_ROLLBACK=0
+[2026-11-15T20:10:07.440Z] CI_SNAPSHOT=0
+[2026-11-15T20:10:07.440Z] CI_HEAL=0
+[2026-11-15T20:10:07.440Z] CI_HEAL_STAMP=
+[2026-11-15T20:10:07.440Z] CI_HEAVY_PATHS=0
+[2026-11-15T20:10:07.440Z] CI_SERVICES=all
+[2026-11-15T20:10:07.440Z] + python3 scripts/ci_controller_role.py --write-env .ci_role.env
+[2026-11-15T20:10:07.440Z] DANA_ROLE=prod
+[2026-11-15T20:10:07.440Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-15T20:10:07.440Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] script
+[Pipeline] {
+[Pipeline] readFile
+[Pipeline] readFile
+[Pipeline] echo
+[2026-11-15T20:10:07.783Z] CI controller: ROLE=prod MAY_STAGE=0 MAY_PROD=1 HOST=gpu JOB=dana-rag-prod/main
+[Pipeline] echo
+[2026-11-15T20:10:07.799Z] CI gate: SKIP=0 BUILD=0 STAGE=0 PROD=1 AUTO=0 ROLLBACK=0 SNAPSHOT=0 HEAL=0 STAMP= HEAVY=0 SERVICES=all BRANCH=main
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Skip)
+Stage "Skip" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Lint)
+[Pipeline] sh
+[2026-11-15T20:10:08.376Z] + set -e
+[2026-11-15T20:10:08.376Z] + bash scripts/ci_stage_evidence.sh mark lint
+[2026-11-15T20:10:08.377Z] ci_stage_evidence: marked lint
+[2026-11-15T20:10:08.377Z] + command -v ruff
+[2026-11-15T20:10:08.377Z] + echo ruff not installed on agent — skipping advisory lint
+[2026-11-15T20:10:08.377Z] ruff not installed on agent — skipping advisory lint
+[2026-11-15T20:10:08.377Z] + python3 scripts/build_keep_graph.py
+[2026-11-15T20:10:23.143Z] {
+[2026-11-15T20:10:23.143Z]   "keep": 5805,
+[2026-11-15T20:10:23.143Z]   "classes": {
+[2026-11-15T20:10:23.143Z]     "code_candidates_quarantine": 246,
+[2026-11-15T20:10:23.143Z]     "other": 190,
+[2026-11-15T20:10:23.143Z]     "docs": 318,
+[2026-11-15T20:10:23.143Z]     "plots_diagrams": 168,
+[2026-11-15T20:10:23.143Z]     "data_datasets_eval": 82,
+[2026-11-15T20:10:23.143Z]     "research_archive_dev": 116
+[2026-11-15T20:10:23.143Z]   }
+[2026-11-15T20:10:23.143Z] }
+[2026-11-15T20:10:23.143Z] + python3 scripts/ci_message_gate.py --self-test
+[2026-11-15T20:10:23.143Z] ci_message_gate self-test OK
+[2026-11-15T20:10:23.143Z] + python3 scripts/ci_controller_role.py --self-test
+[2026-11-15T20:10:23.143Z] ci_controller_role self-test OK
+[2026-11-15T20:10:23.143Z] + python3 scripts/ci_verify_coverage.py --self-test
+[2026-11-15T20:10:23.143Z] ci_verify_coverage self-test OK
+[2026-11-15T20:10:23.143Z] + bash scripts/ci_stage_evidence.sh self-test
+[2026-11-15T20:10:23.143Z] ci_stage_evidence self-test OK
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Rollback prod)
+Stage "Rollback prod" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Force-heal from snapshot)
+Stage "Force-heal from snapshot" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Snapshot images)
+Stage "Snapshot images" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build images)
+[Pipeline] sh
+[2026-11-15T20:10:23.985Z] + set -e
+[2026-11-15T20:10:23.985Z] + HOST_REPO=/splunk-data/production/Work_Credit-RAG_Phase1
+[2026-11-15T20:10:23.985Z] + [ -f /splunk-data/production/Work_Credit-RAG_Phase1/deploy/compose/.env ]
+[2026-11-15T20:10:23.985Z] + [ -f ../deploy/compose/.env ]
+[2026-11-15T20:10:23.985Z] + test -f deploy/compose/.env
+[2026-11-15T20:10:23.985Z] + chmod +x scripts/ci_laptop_rerank_env.sh
+[2026-11-15T20:10:23.985Z] + bash scripts/ci_laptop_rerank_env.sh deploy/compose/.env
+[2026-11-15T20:10:23.985Z] ci_laptop_rerank_env: reranker forced to OpenRouter cohere/rerank-v3.5
+[2026-11-15T20:10:23.985Z] + export TAG=be8dbcb
+[2026-11-15T20:10:23.985Z] + export PIP_DEFAULT_TIMEOUT=120
+[2026-11-15T20:10:23.985Z] + export COMPOSE_PARALLEL_LIMIT=1
+[2026-11-15T20:10:23.985Z] + export DOCKER_BUILDKIT=1
+[2026-11-15T20:10:23.985Z] + export COMPOSE_DOCKER_CLI_BUILD=1
+[2026-11-15T20:10:23.985Z] + [ gpu = gpu ]
+[2026-11-15T20:10:23.985Z] + export KB_TORCH_CHANNEL=cuda
+[2026-11-15T20:10:23.985Z] + echo KB_TORCH_CHANNEL=cuda
+[2026-11-15T20:10:23.985Z] KB_TORCH_CHANNEL=cuda
+[2026-11-15T20:10:23.985Z] + export HTTP_PROXY=http://192.168.203.2:3128
+[2026-11-15T20:10:23.985Z] + export HTTPS_PROXY=http://192.168.203.2:3128
+[2026-11-15T20:10:23.985Z] + export http_proxy=http://192.168.203.2:3128
+[2026-11-15T20:10:23.985Z] + export https_proxy=http://192.168.203.2:3128
+[2026-11-15T20:10:23.985Z] + export NO_PROXY=localhost,127.0.0.1,host.docker.internal,172.17.0.0/16,192.168.0.0/16,10.0.0.0/8,.local
+[2026-11-15T20:10:23.985Z] + export no_proxy=localhost,127.0.0.1,host.docker.internal,172.17.0.0/16,192.168.0.0/16,10.0.0.0/8,.local
+[2026-11-15T20:10:23.985Z] + SVC=all
+[2026-11-15T20:10:23.985Z] + [ all = none ]
+[2026-11-15T20:10:23.985Z] + [ all = all ]
+[2026-11-15T20:10:23.985Z] + BUILD_SERVICES=kb guardrails orchestrator tracing
+[2026-11-15T20:10:23.985Z] + NEED_WEBUI=0
+[2026-11-15T20:10:23.985Z] + [ all = all ]
+[2026-11-15T20:10:23.985Z] + NEED_WEBUI=1
+[2026-11-15T20:10:23.985Z] + [ gpu = gpu ]
+[2026-11-15T20:10:23.985Z] + NEED_WEBUI=1
+[2026-11-15T20:10:23.985Z] + [ 1 = 1 ]
+[2026-11-15T20:10:23.985Z] + [ -f components/webui/package.json ]
+[2026-11-15T20:10:23.985Z] + command -v npm
+[2026-11-15T20:10:23.985Z] + [ -d /splunk-data/production/Work_Credit-RAG_Phase1/components/webui/build ]
+[2026-11-15T20:10:23.985Z] + [ -d components/webui/build ]
+[2026-11-15T20:10:23.985Z] + echo Skipping rag-webui image build (no npm and no components/webui/build)
+[2026-11-15T20:10:23.985Z] Skipping rag-webui image build (no npm and no components/webui/build)
+[2026-11-15T20:10:23.985Z] + echo kb guardrails orchestrator tracing
+[2026-11-15T20:10:23.985Z] + tr   
+[2026-11-15T20:10:23.985Z] 
+[2026-11-15T20:10:23.985Z] + grep -v ^webui$
+[2026-11-15T20:10:23.985Z] + tr 
+[2026-11-15T20:10:23.985Z]   
+[2026-11-15T20:10:23.985Z] + BUILD_SERVICES=kb guardrails orchestrator tracing 
+[2026-11-15T20:10:23.985Z] + echo Building compose services: kb guardrails orchestrator tracing  (parallel_limit=1)
+[2026-11-15T20:10:23.985Z] Building compose services: kb guardrails orchestrator tracing  (parallel_limit=1)
+[2026-11-15T20:10:23.985Z] + mkdir -p components/tracing/wheels
+[2026-11-15T20:10:23.985Z] + touch components/tracing/wheels/.gitkeep
+[2026-11-15T20:10:23.985Z] + LOCK=/splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.dana-docker-build.lock
+[2026-11-15T20:10:23.985Z] + dirname /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.dana-docker-build.lock
+[2026-11-15T20:10:24.236Z] + mkdir -p /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace
+[2026-11-15T20:10:24.236Z] + flock -w 2400 9
+[2026-11-15T20:10:24.236Z] + ok=0
+[2026-11-15T20:10:24.236Z] + echo docker compose build attempt 1/3
+[2026-11-15T20:10:24.236Z] docker compose build attempt 1/3
+[2026-11-15T20:10:24.236Z] + build_once
+[2026-11-15T20:10:24.236Z] + export DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1
+[2026-11-15T20:10:24.236Z] + [ gpu = gpu ]
+[2026-11-15T20:10:24.236Z] + docker compose -f deploy/compose/compose.base.yml -f deploy/compose/compose.gpu.yml --env-file deploy/compose/.env.prod build kb guardrails orchestrator tracing
+[2026-11-15T20:10:24.236Z] /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace@tmp/durable-868a1379/script.sh.copy: 114: docker: not found
+[2026-11-15T20:10:24.236Z] + echo build attempt 1 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:10:24.236Z] build attempt 1 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:10:24.236Z] + sleep 20
+[2026-11-15T20:10:46.038Z] + echo docker compose build attempt 2/3
+[2026-11-15T20:10:46.038Z] docker compose build attempt 2/3
+[2026-11-15T20:10:46.038Z] + build_once
+[2026-11-15T20:10:46.038Z] + export DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1
+[2026-11-15T20:10:46.038Z] + [ gpu = gpu ]
+[2026-11-15T20:10:46.038Z] + docker compose -f deploy/compose/compose.base.yml -f deploy/compose/compose.gpu.yml --env-file deploy/compose/.env.prod build kb guardrails orchestrator tracing
+[2026-11-15T20:10:46.038Z] /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace@tmp/durable-868a1379/script.sh.copy: 114: docker: not found
+[2026-11-15T20:10:46.038Z] + echo build attempt 2 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:10:46.038Z] build attempt 2 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:10:46.038Z] + sleep 20
+[2026-11-15T20:11:07.841Z] + echo docker compose build attempt 3/3
+[2026-11-15T20:11:07.841Z] docker compose build attempt 3/3
+[2026-11-15T20:11:07.841Z] + build_once
+[2026-11-15T20:11:07.841Z] + export DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1
+[2026-11-15T20:11:07.841Z] + [ gpu = gpu ]
+[2026-11-15T20:11:07.841Z] + docker compose -f deploy/compose/compose.base.yml -f deploy/compose/compose.gpu.yml --env-file deploy/compose/.env.prod build kb guardrails orchestrator tracing
+[2026-11-15T20:11:07.841Z] /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace@tmp/durable-868a1379/script.sh.copy: 114: docker: not found
+[2026-11-15T20:11:07.841Z] + echo build attempt 3 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:11:07.841Z] build attempt 3 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T20:11:07.841Z] + sleep 20
+[2026-11-15T20:11:25.806Z] + [ 0 != 1 ]
+[2026-11-15T20:11:25.806Z] + [ gpu = laptop ]
+[2026-11-15T20:11:25.806Z] + [ 0 = 1 ]
+[2026-11-15T20:11:25.806Z] + exit 1
+Post stage
+[Pipeline] withCredentials
+[2026-11-15T20:11:25.876Z] Masking supported pattern matches of $GITHUB_TOKEN
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-11-15T20:11:26.227Z] + set +e
+[2026-11-15T20:11:26.227Z] + bash scripts/ci_github_status.sh --sha be8dbcb73005e7ad930f3a67b662b31e32505039 --state failure --context dana/build --description image build failed --target-url 
+[2026-11-15T20:11:27.139Z] ci_github_status: reported failure for be8dbcb73005e7ad930f3a67b662b31e32505039 (dana/build)
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy stage)
+Stage "Deploy stage" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (E2E stage)
+Stage "E2E stage" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Prod approval (interactive only))
+Stage "Prod approval (interactive only)" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy prod)
+Stage "Deploy prod" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
+[2026-11-15T20:11:28.313Z] + docker image prune -f
+[2026-11-15T20:11:28.313Z] /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace@tmp/durable-19b1716a/script.sh.copy: 2: docker: not found
+[2026-11-15T20:11:28.313Z] + true
+[2026-11-15T20:11:28.313Z] + :
+[2026-11-15T20:11:28.313Z] + [ -f scripts/ci_verify_coverage.py ]
+[2026-11-15T20:11:28.313Z] + bash scripts/ci_stage_evidence.sh list
+[2026-11-15T20:11:28.313Z] + RAN=lint build
+[2026-11-15T20:11:28.313Z] + chmod +x scripts/ci_verify_coverage.py
+[2026-11-15T20:11:28.313Z] + python3 scripts/ci_verify_coverage.py --branch main --executed lint build --require-prod-controller 1 --write-env .ci_coverage.env
+[2026-11-15T20:11:28.313Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T20:11:28.313Z] COVERAGE_RAN=lint,build
+[2026-11-15T20:11:28.313Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_STATE=failure
+[2026-11-15T20:11:28.313Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_GUARD=fail
+[2026-11-15T20:11:28.313Z] + cat .ci_coverage.env
+[2026-11-15T20:11:28.313Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T20:11:28.313Z] COVERAGE_RAN=lint,build
+[2026-11-15T20:11:28.313Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_STATE=failure
+[2026-11-15T20:11:28.313Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T20:11:28.313Z] COVERAGE_GUARD=fail
+[2026-11-15T20:11:28.313Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-15T20:11:28.313Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-15T20:11:28.313Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-15T20:11:28.313Z] + rm -f .ci_commit_msg.txt .ci_changed_files.txt .ci_gate.env .ci_role.env
+[2026-11-15T20:11:28.313Z] + rm -rf .ci-evidence
+[Pipeline] script
+[Pipeline] {
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] withCredentials
+[2026-11-15T20:11:28.619Z] Masking supported pattern matches of $GITHUB_TOKEN
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-11-15T20:11:28.973Z] + set +e
+[2026-11-15T20:11:28.974Z] + bash scripts/ci_github_status.sh --sha be8dbcb73005e7ad930f3a67b662b31e32505039 --state failure --context dana/validate --description build FAILURE: main missing prod verification: prod-deploy --target-url 
+[2026-11-15T20:11:29.886Z] ci_github_status: reported failure for be8dbcb73005e7ad930f3a67b662b31e32505039 (dana/validate)
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] echo
+[2026-11-15T20:11:30.015Z] COVERAGE GUARD: FAIL — this build did not verify what it claims
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+[2026-11-15T20:11:30.079Z] Pipeline failed — inspect Jenkins console + docker compose logs
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // ws
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE

@@ -1,0 +1,9 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+  "duration": 106760,
+  "number": 18,
+  "result": "FAILURE",
+  "timestamp": 1794773383767,
+  "url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/18/",
+  "branch": "main"
+}
