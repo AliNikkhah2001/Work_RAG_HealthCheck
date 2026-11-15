@@ -1,18 +1,18 @@
 {
   "schema_version": "health-run/v1",
-  "run_id": "20261115T153130Z-ai-gpu1",
-  "generated_at": "2026-11-15T15:31:30Z",
+  "run_id": "20261115T163248Z-ai-gpu1",
+  "generated_at": "2026-11-15T16:32:48Z",
   "machine": "ai-gpu1",
   "machine_type": "production_gpu",
   "host": {
     "schema_version": "host-inventory/v1",
     "hostname": "ai-gpu1",
-    "ts": "2026-11-15T15:47:46Z",
+    "ts": "2026-11-15T16:49:00Z",
     "ports": [
       {
         "port": 3000,
         "open": false,
-        "connect_ms": 0.2
+        "connect_ms": 0.3
       },
       {
         "port": 3001,
@@ -47,7 +47,7 @@
       {
         "port": 8085,
         "open": true,
-        "connect_ms": 0.1
+        "connect_ms": 0.2
       },
       {
         "port": 8088,
@@ -87,7 +87,7 @@
       {
         "port": 18100,
         "open": true,
-        "connect_ms": 0.1
+        "connect_ms": 0.2
       },
       {
         "port": 18200,
@@ -140,7 +140,7 @@
         "mem_total_mb": 143771.0,
         "mem_used_mb": 3565.0,
         "util_pct": 0.0,
-        "temp_c": 32.0
+        "temp_c": 31.0
       },
       {
         "index": 1,
@@ -155,61 +155,61 @@
       {
         "name": "dana-webui-prod",
         "image": "rag-webui:production",
-        "status": "Up 53 minutes (healthy)",
+        "status": "Up 2 hours (healthy)",
         "ports": "127.0.0.1:13000->8080/tcp, 192.168.177.10:13000->8080/tcp, 192.168.96.82:13000->8080/tcp"
       },
       {
         "name": "dana-jenkins-prod",
         "image": "dana-jenkins:lts",
-        "status": "Up About an hour",
+        "status": "Up 2 hours",
         "ports": "127.0.0.1:50000->50000/tcp, 127.0.0.1:8085->8080/tcp"
       },
       {
         "name": "dana-stage-webui-1",
         "image": "rag-webui:local",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:13100->8080/tcp"
       },
       {
         "name": "dana-stage-orchestrator-1",
         "image": "rag-orchestrator:local",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:18100->8100/tcp"
       },
       {
         "name": "dana-stage-guardrails-1",
         "image": "rag-guardrails:local",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:18200->8200/tcp"
       },
       {
         "name": "dana-stage-kb-1",
         "image": "rag-kb:local",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:18000->8000/tcp"
       },
       {
         "name": "dana-stage-litellm-1",
         "image": "ghcr.io/berriai/litellm:main-latest",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:14000->4000/tcp"
       },
       {
         "name": "dana-stage-redis-1",
         "image": "redis:7-alpine",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:26379->6379/tcp"
       },
       {
         "name": "dana-stage-postgres-1",
         "image": "pgvector/pgvector:pg16",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:25432->5432/tcp"
       },
       {
         "name": "dana-stage-tracing-1",
         "image": "rag-tracing:local",
-        "status": "Up 3 hours (healthy)",
+        "status": "Up 4 hours (healthy)",
         "ports": "127.0.0.1:13001->3000/tcp"
       },
       {
@@ -245,9 +245,9 @@
     ],
     "listening_raw": "Netid State  Recv-Q Send-Q  Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \nudp   UNCONN 0      0          127.0.0.54:53         0.0.0.0:*    users:((\"systemd-resolve\",pid=1356407,fd=16))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \nudp   UNCONN 0      0       127.0.0.53%lo:53         0.0.0.0:*    users:((\"systemd-resolve\",pid=1356407,fd=14))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \nudp   UNCONN 0      0             0.0.0.0:15000      0.0.0.0:*    users:((\"klnagent\",pid=1356565,fd=58))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \nudp   UNCONN 0      0                [::]:15000         [::]:*    users:((\"klnagent\",pid=1356565,fd=59))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \ntcp   LISTEN 0      2048        127.0.0.1:30523      0.0.0.0:*    users:((\"klnagent\",pid=1356565,fd=61))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \ntcp   LISTEN 0      4096        127.0.0.1:26379      0.0.0.0:*    users:((\"docker-proxy\",pid=2592889,fd=8))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \ntcp   LISTEN 0      2048          0.0.0.0:9000       0.0.0.0:*    users:((\"python\",pid=744790,fd=13))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         \ntcp   LISTEN 0      2048          0.0.0.0:8200       0.0.0.0:*    users:((\"python\",pid=878415,fd=14))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ",
     "loadavg": [
-      0.8525390625,
-      1.013671875,
-      1.0830078125
+      1.2470703125,
+      1.88427734375,
+      2.0556640625
     ]
   },
   "mode": "compose",
@@ -443,53 +443,53 @@
       "failed": 0,
       "e2e": {
         "n": 10,
-        "avg_ms": 11566.0,
-        "p50_ms": 11950.0,
-        "p95_ms": 15225.4,
-        "max_ms": 21752.5
+        "avg_ms": 10525.3,
+        "p50_ms": 11609.4,
+        "p95_ms": 12569.1,
+        "max_ms": 16610.2
       },
       "retrieval": {
         "n": 10,
-        "avg_ms": 129.5,
-        "p50_ms": 120.5,
-        "p95_ms": 166.3,
-        "max_ms": 184.7
+        "avg_ms": 122.6,
+        "p50_ms": 123.0,
+        "p95_ms": 152.9,
+        "max_ms": 160.0
       },
       "generation": {
         "n": 10,
-        "avg_ms": 11436.5,
-        "p50_ms": 11795.8,
-        "p95_ms": 15059.1,
-        "max_ms": 21638.2
+        "avg_ms": 10402.7,
+        "p50_ms": 11488.0,
+        "p95_ms": 12478.8,
+        "max_ms": 16457.3
       },
       "stages": {
         "build_context": {
           "n": 9,
           "avg_ms": 1.2,
-          "p50_ms": 0.9,
-          "p95_ms": 1.7,
-          "max_ms": 3.5
+          "p50_ms": 1.0,
+          "p95_ms": 1.9,
+          "max_ms": 2.1
         },
         "format_response": {
           "n": 9,
-          "avg_ms": 2538.5,
-          "p50_ms": 1855.1,
-          "p95_ms": 3617.7,
-          "max_ms": 5583.9
+          "avg_ms": 1834.5,
+          "p50_ms": 1768.1,
+          "p95_ms": 1981.8,
+          "max_ms": 2724.2
         },
         "guarded_generate": {
           "n": 9,
-          "avg_ms": 6427.4,
-          "p50_ms": 5957.0,
-          "p95_ms": 10267.2,
-          "max_ms": 11727.8
+          "avg_ms": 6050.7,
+          "p50_ms": 5818.0,
+          "p95_ms": 8741.4,
+          "max_ms": 8806.8
         },
         "retrieval.bm25": {
           "n": 10,
-          "avg_ms": 17.8,
-          "p50_ms": 18.1,
-          "p95_ms": 22.7,
-          "max_ms": 25.4
+          "avg_ms": 18.2,
+          "p50_ms": 18.2,
+          "p95_ms": 22.6,
+          "max_ms": 23.1
         },
         "retrieval.build_context": {
           "n": 10,
@@ -500,10 +500,10 @@
         },
         "retrieval.dense": {
           "n": 10,
-          "avg_ms": 37.5,
-          "p50_ms": 15.6,
-          "p95_ms": 76.4,
-          "max_ms": 77.1
+          "avg_ms": 30.1,
+          "p50_ms": 19.0,
+          "p95_ms": 69.7,
+          "max_ms": 71.4
         },
         "retrieval.hyde": {
           "n": 10,
@@ -514,69 +514,76 @@
         },
         "retrieval.rerank": {
           "n": 10,
-          "avg_ms": 35.4,
-          "p50_ms": 33.8,
-          "p95_ms": 44.9,
-          "max_ms": 49.5
+          "avg_ms": 35.1,
+          "p50_ms": 32.7,
+          "p95_ms": 42.9,
+          "max_ms": 50.3
         },
         "retrieval.rrf": {
           "n": 10,
           "avg_ms": 0.3,
           "p50_ms": 0.3,
-          "p95_ms": 0.3,
-          "max_ms": 0.4
+          "p95_ms": 0.4,
+          "max_ms": 0.5
         },
         "retrieval.total": {
           "n": 10,
-          "avg_ms": 91.4,
-          "p50_ms": 85.2,
-          "p95_ms": 130.2,
-          "max_ms": 133.4
+          "avg_ms": 84.1,
+          "p50_ms": 73.7,
+          "p95_ms": 116.8,
+          "max_ms": 124.7
         },
         "retrieve": {
           "n": 10,
-          "avg_ms": 920.9,
-          "p50_ms": 899.0,
-          "p95_ms": 1156.3,
-          "max_ms": 1469.6
+          "avg_ms": 836.9,
+          "p50_ms": 808.6,
+          "p95_ms": 1036.8,
+          "max_ms": 1239.0
+        },
+        "retrieve_retry": {
+          "n": 1,
+          "avg_ms": 216.7,
+          "p50_ms": 216.7,
+          "p95_ms": 216.7,
+          "max_ms": 216.7
         },
         "validate_input": {
           "n": 10,
-          "avg_ms": 241.6,
-          "p50_ms": 253.3,
-          "p95_ms": 290.3,
-          "max_ms": 298.4
+          "avg_ms": 216.3,
+          "p50_ms": 203.5,
+          "p95_ms": 269.7,
+          "max_ms": 278.0
         }
       },
       "questions": [
-        "امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟",
-        "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟",
-        "خطوط قرمز امتیاز اعتباری چیست؟",
-        "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
-        "راه‌های رسمی دریافت گزارش و ارتباط با واحد پشتیبانی چیست؟",
-        "مدیران شرکت اعتبارسنجی ایران چه اشخاصی هستند؟",
-        "آیا داشتن رتبه اعتباری بالا (مانند A1) دریافت وام از بانک را تضمین می‌کند؟",
         "تفاوت اثر چک برگشتی «رفع‌سوءاثرنشده» با «رفع‌سوءاثرشده» در امتیاز چک چیست؟",
-        "آیا با امتیاز اعتباری پایین می توانم وام بگیرم؟",
-        "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟"
+        "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟",
+        "آیا داشتن رتبه اعتباری بالا (مانند A1) دریافت وام از بانک را تضمین می‌کند؟",
+        "به عدد امتیازم اعتراض دارم. چه اقدامی باید انجام دهم؟",
+        "چگونه می توانم امتیازم را افزایش دهم؟",
+        "مدیرعامل شرکت اعتبارسنجی ایران کیست؟",
+        "خطوط قرمز امتیاز اعتباری برای افراد چیست؟",
+        "چه مواردی باعث می شود امتیاز اعتباری شرکت ۲۵۰ شود؟",
+        "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
+        "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟"
       ],
-      "seed": 1794756730
+      "seed": 1794760408
     },
     "random_qa": {
-      "seed": 1794756730,
+      "seed": 1794760408,
       "n": 10,
       "pool_size": 30,
       "questions": [
-        "امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟",
-        "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟",
-        "خطوط قرمز امتیاز اعتباری چیست؟",
-        "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
-        "راه‌های رسمی دریافت گزارش و ارتباط با واحد پشتیبانی چیست؟",
-        "مدیران شرکت اعتبارسنجی ایران چه اشخاصی هستند؟",
-        "آیا داشتن رتبه اعتباری بالا (مانند A1) دریافت وام از بانک را تضمین می‌کند؟",
         "تفاوت اثر چک برگشتی «رفع‌سوءاثرنشده» با «رفع‌سوءاثرشده» در امتیاز چک چیست؟",
-        "آیا با امتیاز اعتباری پایین می توانم وام بگیرم؟",
-        "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟"
+        "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟",
+        "آیا داشتن رتبه اعتباری بالا (مانند A1) دریافت وام از بانک را تضمین می‌کند؟",
+        "به عدد امتیازم اعتراض دارم. چه اقدامی باید انجام دهم؟",
+        "چگونه می توانم امتیازم را افزایش دهم؟",
+        "مدیرعامل شرکت اعتبارسنجی ایران کیست؟",
+        "خطوط قرمز امتیاز اعتباری برای افراد چیست؟",
+        "چه مواردی باعث می شود امتیاز اعتباری شرکت ۲۵۰ شود؟",
+        "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
+        "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟"
       ]
     }
   },
@@ -587,53 +594,53 @@
     "failed": 0,
     "e2e": {
       "n": 10,
-      "avg_ms": 11566.0,
-      "p50_ms": 11950.0,
-      "p95_ms": 15225.4,
-      "max_ms": 21752.5
+      "avg_ms": 10525.3,
+      "p50_ms": 11609.4,
+      "p95_ms": 12569.1,
+      "max_ms": 16610.2
     },
     "retrieval": {
       "n": 10,
-      "avg_ms": 129.5,
-      "p50_ms": 120.5,
-      "p95_ms": 166.3,
-      "max_ms": 184.7
+      "avg_ms": 122.6,
+      "p50_ms": 123.0,
+      "p95_ms": 152.9,
+      "max_ms": 160.0
     },
     "generation": {
       "n": 10,
-      "avg_ms": 11436.5,
-      "p50_ms": 11795.8,
-      "p95_ms": 15059.1,
-      "max_ms": 21638.2
+      "avg_ms": 10402.7,
+      "p50_ms": 11488.0,
+      "p95_ms": 12478.8,
+      "max_ms": 16457.3
     },
     "stages": {
       "build_context": {
         "n": 9,
         "avg_ms": 1.2,
-        "p50_ms": 0.9,
-        "p95_ms": 1.7,
-        "max_ms": 3.5
+        "p50_ms": 1.0,
+        "p95_ms": 1.9,
+        "max_ms": 2.1
       },
       "format_response": {
         "n": 9,
-        "avg_ms": 2538.5,
-        "p50_ms": 1855.1,
-        "p95_ms": 3617.7,
-        "max_ms": 5583.9
+        "avg_ms": 1834.5,
+        "p50_ms": 1768.1,
+        "p95_ms": 1981.8,
+        "max_ms": 2724.2
       },
       "guarded_generate": {
         "n": 9,
-        "avg_ms": 6427.4,
-        "p50_ms": 5957.0,
-        "p95_ms": 10267.2,
-        "max_ms": 11727.8
+        "avg_ms": 6050.7,
+        "p50_ms": 5818.0,
+        "p95_ms": 8741.4,
+        "max_ms": 8806.8
       },
       "retrieval.bm25": {
         "n": 10,
-        "avg_ms": 17.8,
-        "p50_ms": 18.1,
-        "p95_ms": 22.7,
-        "max_ms": 25.4
+        "avg_ms": 18.2,
+        "p50_ms": 18.2,
+        "p95_ms": 22.6,
+        "max_ms": 23.1
       },
       "retrieval.build_context": {
         "n": 10,
@@ -644,10 +651,10 @@
       },
       "retrieval.dense": {
         "n": 10,
-        "avg_ms": 37.5,
-        "p50_ms": 15.6,
-        "p95_ms": 76.4,
-        "max_ms": 77.1
+        "avg_ms": 30.1,
+        "p50_ms": 19.0,
+        "p95_ms": 69.7,
+        "max_ms": 71.4
       },
       "retrieval.hyde": {
         "n": 10,
@@ -658,57 +665,64 @@
       },
       "retrieval.rerank": {
         "n": 10,
-        "avg_ms": 35.4,
-        "p50_ms": 33.8,
-        "p95_ms": 44.9,
-        "max_ms": 49.5
+        "avg_ms": 35.1,
+        "p50_ms": 32.7,
+        "p95_ms": 42.9,
+        "max_ms": 50.3
       },
       "retrieval.rrf": {
         "n": 10,
         "avg_ms": 0.3,
         "p50_ms": 0.3,
-        "p95_ms": 0.3,
-        "max_ms": 0.4
+        "p95_ms": 0.4,
+        "max_ms": 0.5
       },
       "retrieval.total": {
         "n": 10,
-        "avg_ms": 91.4,
-        "p50_ms": 85.2,
-        "p95_ms": 130.2,
-        "max_ms": 133.4
+        "avg_ms": 84.1,
+        "p50_ms": 73.7,
+        "p95_ms": 116.8,
+        "max_ms": 124.7
       },
       "retrieve": {
         "n": 10,
-        "avg_ms": 920.9,
-        "p50_ms": 899.0,
-        "p95_ms": 1156.3,
-        "max_ms": 1469.6
+        "avg_ms": 836.9,
+        "p50_ms": 808.6,
+        "p95_ms": 1036.8,
+        "max_ms": 1239.0
+      },
+      "retrieve_retry": {
+        "n": 1,
+        "avg_ms": 216.7,
+        "p50_ms": 216.7,
+        "p95_ms": 216.7,
+        "max_ms": 216.7
       },
       "validate_input": {
         "n": 10,
-        "avg_ms": 241.6,
-        "p50_ms": 253.3,
-        "p95_ms": 290.3,
-        "max_ms": 298.4
+        "avg_ms": 216.3,
+        "p50_ms": 203.5,
+        "p95_ms": 269.7,
+        "max_ms": 278.0
       }
     },
     "questions": [
-      "امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟",
-      "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟",
-      "خطوط قرمز امتیاز اعتباری چیست؟",
-      "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
-      "راه‌های رسمی دریافت گزارش و ارتباط با واحد پشتیبانی چیست؟",
-      "مدیران شرکت اعتبارسنجی ایران چه اشخاصی هستند؟",
-      "آیا داشتن رتبه اعتباری بالا (مانند A1) دریافت وام از بانک را تضمین می‌کند؟",
       "تفاوت اثر چک برگشتی «رفع‌سوءاثرنشده» با «رفع‌سوءاثرشده» در امتیاز چک چیست؟",
-      "آیا با امتیاز اعتباری پایین می توانم وام بگیرم؟",
-      "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟"
+      "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟",
+      "آیا داشتن رتبه اعتباری بالا (مانند A1) دریافت وام از بانک را تضمین می‌کند؟",
+      "به عدد امتیازم اعتراض دارم. چه اقدامی باید انجام دهم؟",
+      "چگونه می توانم امتیازم را افزایش دهم؟",
+      "مدیرعامل شرکت اعتبارسنجی ایران کیست؟",
+      "خطوط قرمز امتیاز اعتباری برای افراد چیست؟",
+      "چه مواردی باعث می شود امتیاز اعتباری شرکت ۲۵۰ شود؟",
+      "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
+      "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟"
     ],
-    "seed": 1794756730
+    "seed": 1794760408
   },
   "jenkins": {
     "schema_version": "jenkins-status/v1",
-    "ts": "2026-11-15T15:47:47Z",
+    "ts": "2026-11-15T16:49:01Z",
     "healthy": true,
     "images_ok": true,
     "build_ok": false,
@@ -733,9 +747,9 @@
       "job_http": 200,
       "last_build": {
         "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
-        "number": 8,
+        "number": 10,
         "result": "FAILURE",
-        "timestamp": 1794757392558
+        "timestamp": 1794760992838
       }
     },
     "images": [
@@ -744,7 +758,7 @@
         "present": true,
         "id": "sha256:e3e94a77cac2",
         "created": "2026-11-12T10:53:15.60796346Z",
-        "age_hours": 76.9,
+        "age_hours": 77.9,
         "tags": "[\"rag-kb:de7fa3b\",\"rag-kb:local\",\"rag-kb:snapshot-20261115\"]"
       },
       {
@@ -752,7 +766,7 @@
         "present": true,
         "id": "sha256:a865567e3a18",
         "created": "2026-11-12T10:52:12.21957369Z",
-        "age_hours": 76.9,
+        "age_hours": 77.9,
         "tags": "[\"rag-orchestrator:de7fa3b\",\"rag-orchestrator:local\",\"rag-orchestrator:prod-2026-11-12\",\"rag-orchestrator:production\",\"rag-orchestrator:sha-a865567e3a\",\"rag-orchestrator:snapshot-20261115\",\"rag-orchestrator:working\"]"
       },
       {
@@ -760,7 +774,7 @@
         "present": true,
         "id": "sha256:0f3a49c6bfe2",
         "created": "2026-11-12T10:51:56.249626424Z",
-        "age_hours": 76.9,
+        "age_hours": 78.0,
         "tags": "[\"rag-guardrails:de7fa3b\",\"rag-guardrails:local\",\"rag-guardrails:prod-2026-11-12\",\"rag-guardrails:production\",\"rag-guardrails:sha-0f3a49c6bf\",\"rag-guardrails:snapshot-20261115\",\"rag-guardrails:working\"]"
       },
       {
@@ -768,7 +782,7 @@
         "present": true,
         "id": "sha256:4e76b1243fab",
         "created": "2026-11-12T10:43:15.579368996Z",
-        "age_hours": 77.1,
+        "age_hours": 78.1,
         "tags": "[\"rag-webui:dana\",\"rag-webui:de7fa3b\",\"rag-webui:local\",\"rag-webui:prod-2026-11-12\",\"rag-webui:production\",\"rag-webui:sha-4e76b1243f\",\"rag-webui:snapshot-20261115\",\"rag-webui:working\"]"
       },
       {
@@ -776,7 +790,7 @@
         "present": true,
         "id": "sha256:129c506c7412",
         "created": "2026-11-11T05:47:09.902199563Z",
-        "age_hours": 106.0,
+        "age_hours": 107.0,
         "tags": "[\"rag-tracing:de7fa3b\",\"rag-tracing:local\",\"rag-tracing:snapshot-20261115\"]"
       },
       {
@@ -784,13 +798,13 @@
         "present": true,
         "id": "sha256:46b04ab41fa7",
         "created": "2026-11-11T06:59:05.9171976Z",
-        "age_hours": 104.8,
+        "age_hours": 105.8,
         "tags": "[\"dana-jenkins:h200\",\"dana-jenkins:lts\",\"dana-jenkins:prod-2026-11-12\",\"dana-jenkins:production\",\"dana-jenkins:sha-46b04ab41f\",\"dana-jenkins:snapshot-20261115\",\"dana-jenkins:working\"]"
       }
     ],
     "missing_images": [],
     "stale_images": [],
-    "max_image_age_hours": 106.0,
+    "max_image_age_hours": 107.0,
     "stale_hours_threshold": 168.0,
     "snapshots": [
       "20261115T124350Z"
@@ -799,7 +813,7 @@
   },
   "webui_watch": {
     "schema_version": "webui-watch/v1",
-    "ts": "2026-11-15T15:47:49Z",
+    "ts": "2026-11-15T16:49:04Z",
     "submodule": "components/webui",
     "remote": "https://github.com/AliNikkhah2001/Work_RAG-WebUI.git",
     "pinned_sha": "9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb",
@@ -895,9 +909,9 @@
     "unknown": []
   },
   "links": {
-    "detail": "logs/20261115T153130Z-ai-gpu1/dashboard.html",
-    "record": "runs/20261115T153130Z-ai-gpu1.json",
-    "logs": "logs/20261115T153130Z-ai-gpu1/",
+    "detail": "logs/20261115T163248Z-ai-gpu1/dashboard.html",
+    "record": "runs/20261115T163248Z-ai-gpu1.json",
+    "logs": "logs/20261115T163248Z-ai-gpu1/",
     "screenshots": [
       "gemma-docs.png",
       "guard-docs.png",
@@ -912,6 +926,6 @@
       "webui-main.png",
       "webui-stage.png"
     ],
-    "screenshots_dir": "logs/20261115T153130Z-ai-gpu1/screenshots"
+    "screenshots_dir": "logs/20261115T163248Z-ai-gpu1/screenshots"
   }
 }

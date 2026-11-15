@@ -1,0 +1,91 @@
+{
+  "schema_version": "jenkins-status/v1",
+  "ts": "2026-11-15T16:49:01Z",
+  "healthy": true,
+  "images_ok": true,
+  "build_ok": false,
+  "status": "HEALTHY",
+  "reasons": [
+    "last_build_FAILURE"
+  ],
+  "jenkins": {
+    "url": "http://127.0.0.1:8085",
+    "authenticated": true,
+    "who": {
+      "_class": "hudson.security.WhoAmI",
+      "anonymous": false,
+      "authenticated": true,
+      "authorities": [
+        "authenticated",
+        "FACTOR_PASSWORD"
+      ],
+      "name": "admin"
+    },
+    "job": "dana-rag-prod",
+    "job_http": 200,
+    "last_build": {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 10,
+      "result": "FAILURE",
+      "timestamp": 1794760992838
+    }
+  },
+  "images": [
+    {
+      "ref": "rag-kb:local",
+      "present": true,
+      "id": "sha256:e3e94a77cac2",
+      "created": "2026-11-12T10:53:15.60796346Z",
+      "age_hours": 77.9,
+      "tags": "[\"rag-kb:de7fa3b\",\"rag-kb:local\",\"rag-kb:snapshot-20261115\"]"
+    },
+    {
+      "ref": "rag-orchestrator:local",
+      "present": true,
+      "id": "sha256:a865567e3a18",
+      "created": "2026-11-12T10:52:12.21957369Z",
+      "age_hours": 77.9,
+      "tags": "[\"rag-orchestrator:de7fa3b\",\"rag-orchestrator:local\",\"rag-orchestrator:prod-2026-11-12\",\"rag-orchestrator:production\",\"rag-orchestrator:sha-a865567e3a\",\"rag-orchestrator:snapshot-20261115\",\"rag-orchestrator:working\"]"
+    },
+    {
+      "ref": "rag-guardrails:local",
+      "present": true,
+      "id": "sha256:0f3a49c6bfe2",
+      "created": "2026-11-12T10:51:56.249626424Z",
+      "age_hours": 78.0,
+      "tags": "[\"rag-guardrails:de7fa3b\",\"rag-guardrails:local\",\"rag-guardrails:prod-2026-11-12\",\"rag-guardrails:production\",\"rag-guardrails:sha-0f3a49c6bf\",\"rag-guardrails:snapshot-20261115\",\"rag-guardrails:working\"]"
+    },
+    {
+      "ref": "rag-webui:dana",
+      "present": true,
+      "id": "sha256:4e76b1243fab",
+      "created": "2026-11-12T10:43:15.579368996Z",
+      "age_hours": 78.1,
+      "tags": "[\"rag-webui:dana\",\"rag-webui:de7fa3b\",\"rag-webui:local\",\"rag-webui:prod-2026-11-12\",\"rag-webui:production\",\"rag-webui:sha-4e76b1243f\",\"rag-webui:snapshot-20261115\",\"rag-webui:working\"]"
+    },
+    {
+      "ref": "rag-tracing:local",
+      "present": true,
+      "id": "sha256:129c506c7412",
+      "created": "2026-11-11T05:47:09.902199563Z",
+      "age_hours": 107.0,
+      "tags": "[\"rag-tracing:de7fa3b\",\"rag-tracing:local\",\"rag-tracing:snapshot-20261115\"]"
+    },
+    {
+      "ref": "dana-jenkins:lts",
+      "present": true,
+      "id": "sha256:46b04ab41fa7",
+      "created": "2026-11-11T06:59:05.9171976Z",
+      "age_hours": 105.8,
+      "tags": "[\"dana-jenkins:h200\",\"dana-jenkins:lts\",\"dana-jenkins:prod-2026-11-12\",\"dana-jenkins:production\",\"dana-jenkins:sha-46b04ab41f\",\"dana-jenkins:snapshot-20261115\",\"dana-jenkins:working\"]"
+    }
+  ],
+  "missing_images": [],
+  "stale_images": [],
+  "max_image_age_hours": 107.0,
+  "stale_hours_threshold": 168.0,
+  "snapshots": [
+    "20261115T124350Z"
+  ],
+  "latest_snapshot": "20261115T124350Z"
+}
