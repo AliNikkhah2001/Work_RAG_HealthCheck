@@ -213,6 +213,26 @@
   </section>
 
   <section class="panel">
+    <h2>Jenkins &amp; images <span class="badge b-nodata" id="jenkins-badge">…</span></h2>
+    <p class="panel-note">Authenticated Jenkins probe + production image freshness (none missing / none stale). Snapshot stamps listed when freezes exist.</p>
+    <div class="kv" id="jenkins-body"><div class="empty">Loading…</div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Latency — retrieval / generation / end-to-end</h2>
+    <p class="panel-note">From random FAQ QA each hourly run (orchestrator <span class="mono">audit.stage_timing_ms</span> + KB <span class="mono">stage_ms</span>). Bars use the latest run; trend uses metrics series when present.</p>
+    <div id="latency-body"><div class="empty">Loading…</div></div>
+    <canvas id="latency-trend" width="1100" height="220" style="width:100%;max-width:1100px;margin-top:12px;background:#0a0d13;border-radius:10px;border:1px solid var(--line)"></canvas>
+  </section>
+
+  <section class="panel">
+    <h2>Host resources — ports / disk / RAM / GPU</h2>
+    <p class="panel-note">Captured each report into <span class="mono">meta/host_inventory.json</span> and published with the run.</p>
+    <div id="host-body"><div class="empty">Loading…</div></div>
+    <canvas id="host-trend" width="1100" height="180" style="width:100%;max-width:1100px;margin-top:12px;background:#0a0d13;border-radius:10px;border:1px solid var(--line)"></canvas>
+  </section>
+
+  <section class="panel">
     <h2>Endpoints — what each check means</h2>
     <p class="panel-note">Brief notes for every health endpoint the report probes. Expand a row for a one-line explanation. Ports shown are the usual host bindings; stage stack uses the higher aliases when present.</p>
     <div id="endpoints-body"></div>
@@ -985,10 +1005,139 @@ function renderHeader(records) {
 }
 
 /* ------------------------------------------------------------ boot */
+function sparkline(canvasId, series, color) {
+  const c = $(canvasId);
+  if (!c || !c.getContext) return;
+  const ctx = c.getContext("2d");
+  const w = c.width, h = c.height;
+  ctx.clearRect(0, 0, w, h);
+  ctx.strokeStyle = "#232a38";
+  ctx.beginPath(); ctx.moveTo(40, h - 24); ctx.lineTo(w - 10, h - 24); ctx.stroke();
+  if (!series.length) {
+    ctx.fillStyle = "#8894a8";
+    ctx.fillText("no trend points yet", 48, h / 2);
+    return;
+  }
+  const vals = series.map((p) => p.v).filter((v) => v != null && !isNaN(v));
+  if (!vals.length) return;
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const span = Math.max(1e-6, max - min);
+  ctx.strokeStyle = color || "#4d9dff";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  series.forEach((p, i) => {
+    if (p.v == null || isNaN(p.v)) return;
+    const x = 40 + (i / Math.max(1, series.length - 1)) * (w - 60);
+    const y = (h - 30) - ((p.v - min) / span) * (h - 50);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  ctx.fillStyle = "#8894a8";
+  ctx.font = "11px sans-serif";
+  ctx.fillText(String(Math.round(max)), 4, 20);
+  ctx.fillText(String(Math.round(min)), 4, h - 28);
+}
+
+function renderJenkins(records) {
+  const last = [...records].reverse().find((r) => r.jenkins) || records[records.length - 1];
+  const j = last && last.jenkins;
+  const badge = $("jenkins-badge");
+  const body = $("jenkins-body");
+  if (!j) {
+    badge.className = "badge b-nodata";
+    badge.textContent = "no data";
+    body.innerHTML = '<div class="empty">No jenkins_status.json in published runs yet — next hourly report will include it.</div>';
+    return;
+  }
+  const ok = !!j.healthy;
+  badge.className = "badge " + (ok ? "b-up" : "b-degraded");
+  badge.textContent = j.status || (ok ? "HEALTHY" : "DEGRADED");
+  const imgs = (j.images || []).map((i) =>
+    `<div class="k">${esc(i.ref)}</div><div class="v">${i.present ? `<span class="badge b-up">present</span> age ${esc(i.age_hours)}h` : '<span class="badge b-down">missing</span>'}</div>`
+  ).join("");
+  const snaps = (j.snapshots || []).slice(-5).map((s) => `<span class="mono">${esc(s)}</span>`).join(" · ") || "—";
+  const reasons = (j.reasons || []).length ? (j.reasons || []).map((r) => `<span class="badge b-degraded">${esc(r)}</span>`).join(" ") : '<span class="badge b-up">ok</span>';
+  body.innerHTML = `
+    <div class="k">Jenkins auth</div><div class="v">${(j.jenkins && j.jenkins.authenticated) ? '<span class="badge b-up">yes</span>' : '<span class="badge b-down">no</span>'}</div>
+    <div class="k">Job</div><div class="v mono">${esc((j.jenkins && j.jenkins.job) || "—")}</div>
+    <div class="k">Last build</div><div class="v">${esc(JSON.stringify(j.jenkins && j.jenkins.last_build || {}).slice(0, 180))}</div>
+    <div class="k">Reasons</div><div class="v">${reasons}</div>
+    <div class="k">Snapshots</div><div class="v">${snaps}</div>
+    ${imgs}`;
+}
+
+function renderLatency(records) {
+  const last = [...records].reverse().find((r) => r.latency || (r.e2e && r.e2e.latency));
+  const lat = (last && (last.latency || (last.e2e && last.e2e.latency))) || null;
+  const host = $("latency-body");
+  if (!lat) {
+    host.innerHTML = '<div class="empty">No latency_summary.json yet — produced by random FAQ QA each report.</div>';
+    sparkline("latency-trend", [], "#4d9dff");
+    return;
+  }
+  const stages = lat.stages || {};
+  const rows = Object.keys(stages).sort().map((k) => {
+    const s = stages[k] || {};
+    const avg = s.avg_ms;
+    return `<tr>
+      <td class="mono">${esc(k)}</td>
+      <td class="num">${avg == null ? "—" : esc(avg) + " ms"}</td>
+      <td class="num">${s.p50_ms == null ? "—" : esc(s.p50_ms)}</td>
+      <td class="num">${s.p95_ms == null ? "—" : esc(s.p95_ms)}</td>
+      <td><div class="bar-track"><div class="bar-fill" style="width:${Math.min(100, (avg || 0) / 50)}%"></div></div></td>
+    </tr>`;
+  }).join("");
+  host.innerHTML = `
+    <div class="kv" style="margin-bottom:12px">
+      <div class="k">QA</div><div class="v">${esc(lat.passed)}/${esc(lat.count)} · seed ${esc(lat.seed || (last.e2e && last.e2e.random_qa && last.e2e.random_qa.seed) || "—")}</div>
+      <div class="k">E2E p50 / p95</div><div class="v mono">${esc((lat.e2e || {}).p50_ms)} / ${esc((lat.e2e || {}).p95_ms)} ms</div>
+      <div class="k">Retrieval p50</div><div class="v mono">${esc((lat.retrieval || {}).p50_ms)} ms</div>
+      <div class="k">Generation p50</div><div class="v mono">${esc((lat.generation || {}).p50_ms)} ms</div>
+    </div>
+    <table><thead><tr><th>Stage</th><th>Avg</th><th>p50</th><th>p95</th><th></th></tr></thead><tbody>${rows || '<tr><td colspan="5" class="empty">No stage timings</td></tr>'}</tbody></table>`;
+  const trend = records.filter((r) => r.latency || (r.e2e && r.e2e.latency)).map((r) => {
+    const L = r.latency || r.e2e.latency;
+    return { v: (L.e2e || {}).p50_ms };
+  });
+  sparkline("latency-trend", trend, "#2ecc71");
+}
+
+function renderHost(records) {
+  const last = [...records].reverse().find((r) => r.host) || records[records.length - 1];
+  const h = last && last.host;
+  const body = $("host-body");
+  if (!h) {
+    body.innerHTML = '<div class="empty">No host_inventory.json yet.</div>';
+    sparkline("host-trend", [], "#f5a524");
+    return;
+  }
+  const ports = (h.ports || []).filter((p) => p.open).map((p) => p.port).join(", ") || "—";
+  const closed = (h.ports || []).filter((p) => !p.open).map((p) => p.port).join(", ") || "none";
+  const mem = h.memory || {};
+  const disk = (h.disk || []).slice(0, 4).map((d) =>
+    `<div class="k">${esc(d.mount)}</div><div class="v">${esc(d.used)} / ${esc(d.size)} (${esc(d.use_pct)}%)</div>`
+  ).join("");
+  const gpu = (h.gpu || []).map((g, i) =>
+    `<div class="k">GPU ${esc(g.index != null ? g.index : i)}</div><div class="v">${esc(g.name || g.error || "?")} · util ${esc(g.util_pct)}% · mem ${esc(g.mem_used_mb)}/${esc(g.mem_total_mb)} MiB · ${esc(g.temp_c)}°C</div>`
+  ).join("");
+  body.innerHTML = `
+    <div class="kv">
+      <div class="k">Open ports</div><div class="v mono">${esc(ports)}</div>
+      <div class="k">Closed (watched)</div><div class="v mono">${esc(closed)}</div>
+      <div class="k">RAM used</div><div class="v">${esc(mem.used_mb)} / ${esc(mem.total_mb)} MiB (avail ${esc(mem.available_mb)})</div>
+      ${disk}${gpu}
+    </div>`;
+  const trend = records.filter((r) => r.host && r.host.memory).map((r) => ({ v: r.host.memory.used_mb }));
+  sparkline("host-trend", trend, "#f5a524");
+}
+
 function renderAll() {
   renderHeader(state.records);
   renderMetricsStatus();
   renderCards(state.records);
+  renderJenkins(state.records);
+  renderLatency(state.records);
+  renderHost(state.records);
   renderEndpoints(state.records);
   renderHeatmap(state.records);
   renderUptime(state.records);
