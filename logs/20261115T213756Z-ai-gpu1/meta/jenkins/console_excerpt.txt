@@ -1,0 +1,33 @@
+[2026-11-15T21:43:47.500Z] DANA_ROLE=prod
+[2026-11-15T21:43:47.500Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-15T21:43:47.500Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] { (Build images)
+[2026-11-15T21:44:04.444Z] + bash scripts/ci_github_status.sh --sha 670e00b66f12d311c916bfb9c0cbdaf89b454c00 --state failure --context dana/build --description image build failed --target-url 
+[2026-11-15T21:44:05.356Z] ci_github_status: reported failure for 670e00b66f12d311c916bfb9c0cbdaf89b454c00 (dana/build)
+Stage "Deploy stage" skipped due to earlier failure(s)
+Stage "E2E stage" skipped due to earlier failure(s)
+Stage "Prod approval (interactive only)" skipped due to earlier failure(s)
+[Pipeline] { (Deploy prod)
+Stage "Deploy prod" skipped due to earlier failure(s)
+[2026-11-15T21:44:06.517Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T21:44:06.517Z] COVERAGE_RAN=lint,build
+[2026-11-15T21:44:06.517Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T21:44:06.517Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T21:44:06.517Z] COVERAGE_STATE=failure
+[2026-11-15T21:44:06.517Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T21:44:06.517Z] COVERAGE_GUARD=fail
+[2026-11-15T21:44:06.517Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T21:44:06.517Z] COVERAGE_RAN=lint,build
+[2026-11-15T21:44:06.517Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T21:44:06.517Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T21:44:06.517Z] COVERAGE_STATE=failure
+[2026-11-15T21:44:06.517Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T21:44:06.517Z] COVERAGE_GUARD=fail
+[2026-11-15T21:44:06.517Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-15T21:44:06.517Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-15T21:44:06.517Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-15T21:44:07.157Z] + bash scripts/ci_github_status.sh --sha 670e00b66f12d311c916bfb9c0cbdaf89b454c00 --state failure --context dana/validate --description build FAILURE: main missing prod verification: prod-deploy --target-url 
+[2026-11-15T21:44:08.502Z] ci_github_status: reported failure for 670e00b66f12d311c916bfb9c0cbdaf89b454c00 (dana/validate)
+[2026-11-15T21:44:08.701Z] Pipeline failed — inspect Jenkins console + docker compose logs
+ERROR: script returned exit code 127
+Finished: FAILURE
