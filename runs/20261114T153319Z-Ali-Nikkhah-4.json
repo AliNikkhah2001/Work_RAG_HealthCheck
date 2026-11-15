@@ -217,6 +217,8 @@
   },
   "links": {
     "detail": "logs/20261114T153319Z-Ali-Nikkhah-4/dashboard.html",
-    "record": "runs/20261114T153319Z-Ali-Nikkhah-4.json"
+    "record": "runs/20261114T153319Z-Ali-Nikkhah-4.json",
+    "screenshots": [],
+    "screenshots_dir": null
   }
 }

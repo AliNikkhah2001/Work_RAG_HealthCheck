@@ -161,6 +161,8 @@
   },
   "links": {
     "detail": "logs/20261114T165924Z-ai-gpu1/dashboard.html",
-    "record": "runs/20261114T165924Z-ai-gpu1.json"
+    "record": "runs/20261114T165924Z-ai-gpu1.json",
+    "screenshots": [],
+    "screenshots_dir": null
   }
 }
