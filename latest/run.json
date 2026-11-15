@@ -163,6 +163,20 @@
   "kb": null,
   "links": {
     "detail": "logs/20261115T130125Z-ai-gpu1/dashboard.html",
-    "record": "runs/20261115T130125Z-ai-gpu1.json"
+    "record": "runs/20261115T130125Z-ai-gpu1.json",
+    "logs": "logs/20261115T130125Z-ai-gpu1/",
+    "screenshots": [
+      "endpoint_13000_health.png",
+      "endpoint_18000_health.png",
+      "endpoint_8000_health.png",
+      "endpoint_8085_health.png",
+      "endpoint_8100_health.png",
+      "endpoint_8200_health.png",
+      "guard-health.png",
+      "jenkins-login.png",
+      "kb-health.png",
+      "orch-health.png"
+    ],
+    "screenshots_dir": "logs/20261115T130125Z-ai-gpu1/screenshots"
   }
 }
