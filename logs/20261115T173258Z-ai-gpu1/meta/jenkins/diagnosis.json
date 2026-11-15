@@ -1,0 +1,7 @@
+{
+  "labels": [
+    "coverage_gate_stage_controller_on_main",
+    "jenkins_result_failure"
+  ],
+  "tip": "Laptop/stage Jenkins ran `main` and correctly refused prod proof. Image rebuilds for prod require GPU job `dana-rag-prod` on `main` with `[ci prod]` / `[ci auto]` (or heavy paths). Do not treat this as a Dockerfile/npm failure."
+}
