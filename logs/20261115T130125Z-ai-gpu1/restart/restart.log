@@ -1,0 +1,22 @@
+Restart attempt at 2026-11-15T13:01:30Z
+Machine type: production_gpu
+Detected stack mode: compose
+
+--- Production GPU mode: compose stack restart ---
+Bringing up compose stack dana-prod with /splunk-data/production/Work_Credit-RAG_Phase1/deploy/compose/.env.prod
+ Container dana-prod-tracing-1 Running 
+ Container dana-prod-postgres-1 Running 
+ Container dana-prod-webui-1 Recreate 
+ Container dana-prod-webui-1 Error response from daemon: No such container: e2049a402226662ce958552ce3b6365cd11b2a856eae2b7d53ec9c96f1528015 
+Error response from daemon: No such container: e2049a402226662ce958552ce3b6365cd11b2a856eae2b7d53ec9c96f1528015
+[1;33m[WARN][0m compose up returned non-zero
+ Container dana-jenkins-prod Recreate 
+ Container dana-jenkins-prod Recreated 
+ Container dana-jenkins-prod Starting 
+ Container dana-jenkins-prod Started 
+[0;32m[OK][0m   jenkins compose up succeeded
+015
+ Container dana-jenkins-prod Recreate 
+ Container dana-jenkins-prod Recreated 
+ Container dana-jenkins-prod Starting 
+ Container dana-jenkins-prod Started 

@@ -1,0 +1,256 @@
+{
+  "schema_version": "health-run/v1",
+  "run_id": "20261115T130125Z-ai-gpu1",
+  "generated_at": "2026-11-15T13:01:25Z",
+  "machine": "ai-gpu1",
+  "machine_type": "production_gpu",
+  "host": "ai-gpu1",
+  "mode": "compose",
+  "origin": "report",
+  "status": "HEALTHY",
+  "core_services_down": [],
+  "services": [
+    {
+      "name": "manager",
+      "port": 9000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "kb",
+      "port": 8000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "guardrails",
+      "port": 8200,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "orchestrator",
+      "port": 8100,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "trace-collector",
+      "port": 3000,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "langfuse",
+      "port": 3001,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "webui",
+      "port": 13000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "jenkins",
+      "port": 8085,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:8088",
+      "port": 8088,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8010",
+      "port": 8010,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8001",
+      "port": 8001,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8002",
+      "port": 8002,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8003",
+      "port": 8003,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "gemma",
+      "port": 18000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:18100",
+      "port": 18100,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:18200",
+      "port": 18200,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:13100",
+      "port": 13100,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    }
+  ],
+  "e2e": {
+    "tests": [
+      {
+        "test": "chat_greeting",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "chat_credit_qa",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "chat_webui",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "kb_search",
+        "http_code": "200",
+        "passed": true
+      }
+    ],
+    "passed": 3,
+    "total": 3,
+    "kb_search_ok": true
+  },
+  "gate": {},
+  "kb": {
+    "verdict": "mismatch",
+    "mismatches": [
+      "packs"
+    ],
+    "checks": [
+      {
+        "check": "chunk_count",
+        "actual": 1319,
+        "expected": 1319,
+        "match": true,
+        "note": "chunks in Postgres vs chunks in the DVC pin"
+      },
+      {
+        "check": "document_count",
+        "actual": 21,
+        "expected": 21,
+        "match": true,
+        "note": "documents in Postgres vs documents in the DVC pin"
+      },
+      {
+        "check": "corpus_date",
+        "actual": "1405-08-20",
+        "expected": "1405-08-20",
+        "match": true,
+        "note": "corpus the running API serves vs the exported snapshot pin"
+      },
+      {
+        "check": "chunks_in_db_vs_dvc_pin",
+        "actual": 1319,
+        "expected": 1319,
+        "match": true,
+        "note": "chunks in Postgres vs the DVC snapshot pin the API advertises"
+      },
+      {
+        "check": "chunks_vs_api_health",
+        "actual": 1319,
+        "expected": 1319,
+        "match": true,
+        "note": "chunks in Postgres vs chunk_count from /health"
+      },
+      {
+        "check": "packs",
+        "actual": {
+          "schemas": "1.0.1",
+          "taxonomy": "1.0.2",
+          "canned": "1.0.2",
+          "prompts_orchestrator": "1.0.3",
+          "prompts_guardrails": "1.0.1",
+          "retrieval": "1.0.0"
+        },
+        "expected": {
+          "schemas": "schemas/v1.0.1.yaml",
+          "taxonomy": "taxonomy/v1.0.2.yaml",
+          "canned": "canned/v1.0.2.yaml",
+          "retrieval": "retrieval/v1.0.0.yaml",
+          "prompts_orchestrator": "prompts/orchestrator/v1.0.3.yaml",
+          "prompts_guardrails": "prompts/guardrails/v1.0.1.yaml"
+        },
+        "match": false,
+        "note": "active registry pack versions served vs pinned"
+      }
+    ],
+    "chunks_in_db": 1319,
+    "documents_in_db": 21,
+    "chunks_in_pin": 1319,
+    "corpus_live": "1405-08-20",
+    "corpus_latest": "1405-08-20",
+    "corpus_lagging": false,
+    "manifest_id": "kb-20261112T092512Z",
+    "packs": {
+      "schemas": "1.0.1",
+      "taxonomy": "1.0.2",
+      "canned": "1.0.2",
+      "prompts_orchestrator": "1.0.3",
+      "prompts_guardrails": "1.0.1",
+      "retrieval": "1.0.0"
+    },
+    "embedding_models": [
+      {
+        "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "chunks": 1319
+      }
+    ],
+    "last_ingestion_job": null,
+    "unknown": [
+      "actual",
+      "actual.last_ingestion_job",
+      "served.manifest"
+    ]
+  },
+  "links": {
+    "detail": "logs/20261115T130125Z-ai-gpu1/dashboard.html",
+    "record": "runs/20261115T130125Z-ai-gpu1.json"
+  }
+}
