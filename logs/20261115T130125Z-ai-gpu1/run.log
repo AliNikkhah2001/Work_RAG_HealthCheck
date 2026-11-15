@@ -263,3 +263,6 @@ drwxr-xr-x  2 root root   4096 Nov 15 13:02 .chrome-profile-webui-home
 [0;34m[INFO][0m Step 19/20: Publishing run record to monitoring repo
 [0;34m[INFO][0m probing knowledge-base version (db + api) vs pinned
 [1;33m[WARN][0m KB version MISMATCH — ingested state differs from the pinned snapshot
+[0;32m[OK][0m   published run 20261115T130125Z-ai-gpu1 to main
+[0;34m[INFO][0m Step 20/20: Final status summary
+[0;32m[OK][0m   wrote /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261115T130125Z-ai-gpu1/REPORT.md

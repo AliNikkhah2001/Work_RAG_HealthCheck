@@ -161,6 +161,12 @@
 
   <div class="cards" id="cards"></div>
 
+  <section class="panel" id="status-panel">
+    <h2>Live status <span class="badge b-nodata" id="status-badge">…</span></h2>
+    <p class="panel-note">From <span class="mono">metrics/status.json</span> (synced each hourly publish). Compact series lives in <span class="mono">metrics/series.json</span> — no screenshots.</p>
+    <div class="kv" id="status-body"><div class="empty">Loading…</div></div>
+  </section>
+
   <section class="panel">
     <h2>Historical uptime
       <span class="seg" id="window-seg">
@@ -236,7 +242,7 @@
   </section>
 
   <footer class="sub" style="text-align:center; margin-top:28px">
-    Static site — no backend. Data comes from <span class="mono">runs/index.json</span> and <span class="mono">runs/*.json</span> in this repo.
+    Static site — no backend. Data from <span class="mono">runs/</span> + <span class="mono">metrics/</span> (hourly). Screenshots auto-pruned after 24h / 3 newest runs.
   </footer>
 </div>
 <div id="tooltip"></div>
@@ -245,7 +251,7 @@
 "use strict";
 const CORE = ["kb", "guardrails", "orchestrator", "webui"];
 const STATUS_CLASS = { up: "b-up", down: "b-down", degraded: "b-degraded", "no-data": "b-nodata", nodata: "b-nodata" };
-const state = { records: [], index: null, heatWindow: 168, uptimeWindow: 24 };
+const state = { records: [], index: null, heatWindow: 168, uptimeWindow: 24, metricsStatus: null, metricsSeries: null };
 
 /* ------------------------------------------------------------------ utils */
 const $ = (id) => document.getElementById(id);
@@ -607,25 +613,54 @@ function renderRuns(records) {
   }).join("");
 }
 
+/* ------------------------------------------------------------ live status (metrics/) */
+function renderMetricsStatus() {
+  const st = state.metricsStatus;
+  const badge = $("status-badge");
+  const body = $("status-body");
+  if (!st) {
+    badge.className = "badge b-nodata";
+    badge.textContent = "missing";
+    body.innerHTML = '<div class="empty">metrics/status.json not published yet — next hourly run will create it.</div>';
+    return;
+  }
+  const ok = !!st.ok || st.status === "HEALTHY";
+  badge.className = "badge " + (ok ? "b-up" : st.status === "DOWN" ? "b-down" : "b-degraded");
+  badge.textContent = st.status || (ok ? "ok" : "degraded");
+  const series = state.metricsSeries;
+  const n = series && series.count != null ? series.count : (series && series.points ? series.points.length : "—");
+  body.innerHTML = `
+    <div class="k">Updated</div><div class="v mono">${esc(fmtTs(st.updated_at))}</div>
+    <div class="k">Machine</div><div class="v">${esc(st.machine || "—")}</div>
+    <div class="k">Core services</div><div class="v mono">${esc(st.core_up)} / ${esc(st.core_total)}</div>
+    <div class="k">Run</div><div class="v mono">${esc(st.run_id || "—")}</div>
+    <div class="k">Series points</div><div class="v mono">${esc(n)} (keep ${esc(series && series.keep_days != null ? series.keep_days + "d" : "—")})</div>`;
+}
+
 /* ------------------------------------------------------------ header */
 function renderHeader(records) {
   const last = records[records.length - 1];
+  const mst = state.metricsStatus;
   $("subtitle").textContent = records.length
-    ? `${records.length} run(s) · ${fmtTs(records[0].ts)} → ${fmtTs(last.ts)}`
+    ? `${records.length} run(s) · ${fmtTs(records[0].ts)} → ${fmtTs(last.ts)} · hourly`
     : "no runs published yet";
   const machines = Array.from(new Set(records.map((r) => r.machine).filter(Boolean)));
   $("machine-pill").textContent = machines.length ? machines.join(" · ") : "all machines";
   const dot = $("live-dot"), txt = $("live-text");
-  if (!last) { dot.style.background = "var(--nodata)"; txt.textContent = "no data"; return; }
-  const ageMin = (Date.now() - new Date(last.ts).getTime()) / 60000;
-  const stale = ageMin > 36 * 60;
-  dot.style.background = last.status === "HEALTHY" ? "var(--up)" : last.status === "DOWN" ? "var(--down)" : "var(--degraded)";
-  txt.textContent = `${last.status} · ${ageMin < 90 ? Math.round(ageMin) + " min ago" : Math.round(ageMin / 60) + " h ago"}${stale ? " (stale)" : ""}`;
+  const status = (mst && mst.status) || (last && last.status);
+  const ts = (mst && mst.updated_at) || (last && last.ts);
+  if (!status) { dot.style.background = "var(--nodata)"; txt.textContent = "no data"; return; }
+  const ageMin = ts ? (Date.now() - new Date(ts).getTime()) / 60000 : 9999;
+  // Hourly cadence → stale after ~2.5h without a publish
+  const stale = ageMin > 150;
+  dot.style.background = status === "HEALTHY" ? "var(--up)" : status === "DOWN" ? "var(--down)" : "var(--degraded)";
+  txt.textContent = `${status} · ${ageMin < 90 ? Math.round(ageMin) + " min ago" : Math.round(ageMin / 60) + " h ago"}${stale ? " (stale)" : ""}`;
 }
 
 /* ------------------------------------------------------------ boot */
 function renderAll() {
   renderHeader(state.records);
+  renderMetricsStatus();
   renderCards(state.records);
   renderHeatmap(state.records);
   renderUptime(state.records);
@@ -647,7 +682,13 @@ wireSeg("window-seg", "heatWindow");
 wireSeg("uptime-seg", "uptimeWindow");
 
 async function boot() {
-  const index = await getJSON("runs/index.json");
+  const [index, metricsStatus, metricsSeries] = await Promise.all([
+    getJSON("runs/index.json"),
+    getJSON("metrics/status.json"),
+    getJSON("metrics/series.json"),
+  ]);
+  state.metricsStatus = metricsStatus;
+  state.metricsSeries = metricsSeries;
   if (!index || !Array.isArray(index.entries)) {
     $("subtitle").textContent = "runs/index.json not found — has the first report been published?";
     renderAll();

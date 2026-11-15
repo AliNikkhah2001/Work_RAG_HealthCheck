@@ -5,7 +5,7 @@
   "machine": "ai-gpu1",
   "machine_type": "production_gpu",
   "host": "ai-gpu1",
-  "mode": "compose",
+  "mode": "host",
   "origin": "report",
   "status": "HEALTHY",
   "core_services_down": [],
@@ -157,98 +157,10 @@
     "total": 3,
     "kb_search_ok": true
   },
-  "gate": {},
-  "kb": {
-    "verdict": "mismatch",
-    "mismatches": [
-      "packs"
-    ],
-    "checks": [
-      {
-        "check": "chunk_count",
-        "actual": 1319,
-        "expected": 1319,
-        "match": true,
-        "note": "chunks in Postgres vs chunks in the DVC pin"
-      },
-      {
-        "check": "document_count",
-        "actual": 21,
-        "expected": 21,
-        "match": true,
-        "note": "documents in Postgres vs documents in the DVC pin"
-      },
-      {
-        "check": "corpus_date",
-        "actual": "1405-08-20",
-        "expected": "1405-08-20",
-        "match": true,
-        "note": "corpus the running API serves vs the exported snapshot pin"
-      },
-      {
-        "check": "chunks_in_db_vs_dvc_pin",
-        "actual": 1319,
-        "expected": 1319,
-        "match": true,
-        "note": "chunks in Postgres vs the DVC snapshot pin the API advertises"
-      },
-      {
-        "check": "chunks_vs_api_health",
-        "actual": 1319,
-        "expected": 1319,
-        "match": true,
-        "note": "chunks in Postgres vs chunk_count from /health"
-      },
-      {
-        "check": "packs",
-        "actual": {
-          "schemas": "1.0.1",
-          "taxonomy": "1.0.2",
-          "canned": "1.0.2",
-          "prompts_orchestrator": "1.0.3",
-          "prompts_guardrails": "1.0.1",
-          "retrieval": "1.0.0"
-        },
-        "expected": {
-          "schemas": "schemas/v1.0.1.yaml",
-          "taxonomy": "taxonomy/v1.0.2.yaml",
-          "canned": "canned/v1.0.2.yaml",
-          "retrieval": "retrieval/v1.0.0.yaml",
-          "prompts_orchestrator": "prompts/orchestrator/v1.0.3.yaml",
-          "prompts_guardrails": "prompts/guardrails/v1.0.1.yaml"
-        },
-        "match": false,
-        "note": "active registry pack versions served vs pinned"
-      }
-    ],
-    "chunks_in_db": 1319,
-    "documents_in_db": 21,
-    "chunks_in_pin": 1319,
-    "corpus_live": "1405-08-20",
-    "corpus_latest": "1405-08-20",
-    "corpus_lagging": false,
-    "manifest_id": "kb-20261112T092512Z",
-    "packs": {
-      "schemas": "1.0.1",
-      "taxonomy": "1.0.2",
-      "canned": "1.0.2",
-      "prompts_orchestrator": "1.0.3",
-      "prompts_guardrails": "1.0.1",
-      "retrieval": "1.0.0"
-    },
-    "embedding_models": [
-      {
-        "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        "chunks": 1319
-      }
-    ],
-    "last_ingestion_job": null,
-    "unknown": [
-      "actual",
-      "actual.last_ingestion_job",
-      "served.manifest"
-    ]
+  "gate": {
+    "push": "PASSED"
   },
+  "kb": null,
   "links": {
     "detail": "logs/20261115T130125Z-ai-gpu1/dashboard.html",
     "record": "runs/20261115T130125Z-ai-gpu1.json"
