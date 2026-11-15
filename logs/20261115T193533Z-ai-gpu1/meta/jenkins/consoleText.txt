@@ -1,0 +1,294 @@
+Started by an SCM change
+ > git rev-parse --resolve-git-dir /var/jenkins_home/caches/git-c37e07c8354b606ca46386b6ae453174/.git # timeout=10
+Setting origin to https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git config --get remote.origin.url # timeout=10
+using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+ > git fetch --no-tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/backup/laptop-chore-trigger-20261115T174840Z
+Seen branch in repository origin/backup/origin-main-20261115T174840Z
+Seen branch in repository origin/chore/trigger-prod-webui-rebuild
+Seen branch in repository origin/develop
+Seen branch in repository origin/feature/healthcheck-jenkins-qa-logs
+Seen branch in repository origin/main
+Seen 6 remote branches
+Obtained Jenkinsfile from c20ba466cef7d5050a90fbef84e78422d10008b7
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/dana-rag-prod_main
+[Pipeline] {
+[Pipeline] ws
+Running in /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+using credential github-pat
+ > git rev-parse --resolve-git-dir /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+ > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision c20ba466cef7d5050a90fbef84e78422d10008b7 (main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f c20ba466cef7d5050a90fbef84e78422d10008b7 # timeout=10
+Commit message: "Merge pull request #89 from AliNikkhah2001/feat/hc-countdown-gauges-docs"
+ > git rev-list --no-walk 4a1963580490888328923c3186352277d380e2ee # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+[2026-11-15T19:43:17.820Z] The recommended git tool is: git
+[2026-11-15T19:43:17.821Z] using credential github-pat
+[2026-11-15T19:43:17.824Z]  > git rev-parse --resolve-git-dir /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace/.git # timeout=10
+[2026-11-15T19:43:17.834Z] Fetching changes from the remote Git repository
+[2026-11-15T19:43:17.836Z]  > git config remote.origin.url https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git # timeout=10
+[2026-11-15T19:43:17.863Z] Fetching without tags
+[2026-11-15T19:43:17.863Z] Fetching upstream changes from https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git
+[2026-11-15T19:43:17.863Z]  > git --version # timeout=10
+[2026-11-15T19:43:17.875Z]  > git --version # 'git version 2.47.3'
+[2026-11-15T19:43:17.875Z] using GIT_ASKPASS to set credentials GitHub PAT for DANA prod Multibranch
+[2026-11-15T19:43:17.902Z]  > git fetch --no-tags --force --progress -- https://github.com/AliNikkhah2001/Work_Credit-RAG_Phase1.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-11-15T19:43:19.124Z] Checking out Revision c20ba466cef7d5050a90fbef84e78422d10008b7 (main)
+[2026-11-15T19:43:19.124Z]  > git config core.sparsecheckout # timeout=10
+[2026-11-15T19:43:19.138Z]  > git checkout -f c20ba466cef7d5050a90fbef84e78422d10008b7 # timeout=10
+[2026-11-15T19:43:19.170Z] Commit message: "Merge pull request #89 from AliNikkhah2001/feat/hc-countdown-gauges-docs"
+[Pipeline] sh
+[2026-11-15T19:43:19.463Z] + set -e
+[2026-11-15T19:43:19.463Z] + chmod +x scripts/ci_submodule_sync.sh scripts/ci_message_gate.py scripts/ci_controller_role.py
+[2026-11-15T19:43:19.463Z] + bash scripts/ci_stage_evidence.sh reset
+[2026-11-15T19:43:19.463Z] ci_stage_evidence: reset
+[2026-11-15T19:43:19.463Z] + bash scripts/ci_submodule_sync.sh
+[2026-11-15T19:43:19.463Z] ci_submodule_sync: attempt 1/3
+[2026-11-15T19:43:19.714Z] ci_submodule_sync: resetting dirty submodule worktrees (CI_FORCE_CLEAN=1)
+[2026-11-15T19:43:19.964Z] Entering 'agent-state'
+[2026-11-15T19:43:19.965Z] Entering 'components/evaluation'
+[2026-11-15T19:43:19.965Z] Entering 'components/guardrails'
+[2026-11-15T19:43:19.965Z] Entering 'components/knowledgebase'
+[2026-11-15T19:43:19.965Z] Entering 'components/knowledgebase/kb-source'
+[2026-11-15T19:43:20.215Z] Entering 'components/orchestrator'
+[2026-11-15T19:43:20.215Z] Entering 'components/server-setup'
+[2026-11-15T19:43:20.215Z] Entering 'components/webui'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'agent-state'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'components/evaluation'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'components/guardrails'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'components/knowledgebase'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'components/knowledgebase/kb-source'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'components/orchestrator'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'components/server-setup'
+[2026-11-15T19:43:34.981Z] Synchronizing submodule url for 'components/webui'
+[2026-11-15T19:43:34.981Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/guardrails': checked out '809b41184a2087298e3eaa0111a3f7661c0c1386'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/knowledgebase': checked out '27cc393b5c580b136233bf8bb112b729cd8b6284'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/orchestrator': checked out '49bab6f43fbbc2b97f9feee6a77ca3210c9edeac'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T19:43:34.981Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/guardrails': checked out '809b41184a2087298e3eaa0111a3f7661c0c1386'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/knowledgebase': checked out '27cc393b5c580b136233bf8bb112b729cd8b6284'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/knowledgebase/kb-source': checked out '22392fae97a596a1287ec11b073924fc8d6937f8'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/orchestrator': checked out '49bab6f43fbbc2b97f9feee6a77ca3210c9edeac'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T19:43:34.981Z] Submodule path 'agent-state': checked out '31be58fe5596009cb811268d056ffa10940a9507'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/evaluation': checked out '4cb79cfbc50eda9b43d4e432ec499152a5a8aa61'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/guardrails': checked out '809b41184a2087298e3eaa0111a3f7661c0c1386'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/knowledgebase': checked out '27cc393b5c580b136233bf8bb112b729cd8b6284'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/knowledgebase/kb-source': checked out '22392fae97a596a1287ec11b073924fc8d6937f8'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/orchestrator': checked out '49bab6f43fbbc2b97f9feee6a77ca3210c9edeac'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/server-setup': checked out '7f07e2d3bd940088660a62fd7cc48452d266ed37'
+[2026-11-15T19:43:34.981Z] Submodule path 'components/webui': checked out '9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb'
+[2026-11-15T19:43:34.981Z] ci_submodule_sync: OK
+[2026-11-15T19:43:34.981Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-15T19:43:34.981Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-15T19:43:34.981Z]  809b41184a2087298e3eaa0111a3f7661c0c1386 components/guardrails (phase1-complete-2026-10-28-24-g809b411)
+[2026-11-15T19:43:34.981Z]  27cc393b5c580b136233bf8bb112b729cd8b6284 components/knowledgebase (phase1-complete-2026-10-28-73-g27cc393)
+[2026-11-15T19:43:34.981Z]  49bab6f43fbbc2b97f9feee6a77ca3210c9edeac components/orchestrator (phase1-complete-2026-10-28-64-g49bab6f)
+[2026-11-15T19:43:34.981Z]  7f07e2d3bd940088660a62fd7cc48452d266ed37 components/server-setup (phase1-complete-2026-10-28-76-g7f07e2d)
+[2026-11-15T19:43:34.981Z]  9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb components/webui (v0.13.3-28-g9dfd36002)
+[2026-11-15T19:43:34.981Z]  31be58fe5596009cb811268d056ffa10940a9507 agent-state (phase1-complete-2026-10-28-6-g31be58f)
+[2026-11-15T19:43:34.981Z]  4cb79cfbc50eda9b43d4e432ec499152a5a8aa61 components/evaluation (heads/main)
+[2026-11-15T19:43:34.981Z]  809b41184a2087298e3eaa0111a3f7661c0c1386 components/guardrails (phase1-complete-2026-10-28-24-g809b411)
+[2026-11-15T19:43:34.981Z]  27cc393b5c580b136233bf8bb112b729cd8b6284 components/knowledgebase (phase1-complete-2026-10-28-73-g27cc393)
+[2026-11-15T19:43:34.981Z]  22392fae97a596a1287ec11b073924fc8d6937f8 components/knowledgebase/kb-source (phase1-complete-2026-10-28-7-g22392fa)
+[2026-11-15T19:43:34.981Z]  49bab6f43fbbc2b97f9feee6a77ca3210c9edeac components/orchestrator (phase1-complete-2026-10-28-64-g49bab6f)
+[2026-11-15T19:43:34.981Z]  7f07e2d3bd940088660a62fd7cc48452d266ed37 components/server-setup (phase1-complete-2026-10-28-76-g7f07e2d)
+[2026-11-15T19:43:34.981Z]  9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb components/webui (v0.13.3-28-g9dfd36002)
+[2026-11-15T19:43:34.981Z] + git log -1 --pretty=%B
+[2026-11-15T19:43:34.981Z] + git diff --name-only HEAD~1...HEAD
+[2026-11-15T19:43:34.981Z] + command -v python3
+[2026-11-15T19:43:34.981Z] + python3 scripts/ci_message_gate.py --write-env .ci_gate.env
+[2026-11-15T19:43:34.981Z] CI_SKIP=1
+[2026-11-15T19:43:34.981Z] CI_BUILD=0
+[2026-11-15T19:43:34.981Z] CI_STAGE=0
+[2026-11-15T19:43:34.981Z] CI_PROD=0
+[2026-11-15T19:43:34.981Z] CI_AUTO=0
+[2026-11-15T19:43:34.981Z] CI_ROLLBACK=0
+[2026-11-15T19:43:34.981Z] CI_SNAPSHOT=0
+[2026-11-15T19:43:34.981Z] CI_HEAL=0
+[2026-11-15T19:43:34.981Z] CI_HEAL_STAMP=
+[2026-11-15T19:43:34.981Z] CI_HEAVY_PATHS=1
+[2026-11-15T19:43:34.981Z] CI_SERVICES=none
+[2026-11-15T19:43:34.981Z] + python3 scripts/ci_controller_role.py --write-env .ci_role.env
+[2026-11-15T19:43:34.981Z] DANA_ROLE=prod
+[2026-11-15T19:43:34.981Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-15T19:43:34.981Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] script
+[Pipeline] {
+[Pipeline] readFile
+[Pipeline] readFile
+[Pipeline] echo
+[2026-11-15T19:43:35.332Z] CI controller: ROLE=prod MAY_STAGE=0 MAY_PROD=1 HOST=gpu JOB=dana-rag-prod/main
+[Pipeline] echo
+[2026-11-15T19:43:35.347Z] CI gate: SKIP=1 BUILD=0 STAGE=0 PROD=0 AUTO=0 ROLLBACK=0 SNAPSHOT=0 HEAL=0 STAMP= HEAVY=1 SERVICES=none BRANCH=main
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Skip)
+[Pipeline] echo
+[2026-11-15T19:43:35.530Z] Commit contains [ci skip] / [skip ci] — aborting remaining stages.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Lint)
+Stage "Lint" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Rollback prod)
+Stage "Rollback prod" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Force-heal from snapshot)
+Stage "Force-heal from snapshot" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Snapshot images)
+Stage "Snapshot images" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build images)
+Stage "Build images" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy stage)
+Stage "Deploy stage" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (E2E stage)
+Stage "E2E stage" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Prod approval (interactive only))
+Stage "Prod approval (interactive only)" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy prod)
+Stage "Deploy prod" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
+[2026-11-15T19:43:36.929Z] + docker image prune -f
+[2026-11-15T19:43:36.930Z] /splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace@tmp/durable-28bd83e2/script.sh.copy: 2: docker: not found
+[2026-11-15T19:43:36.930Z] + true
+[2026-11-15T19:43:36.930Z] + :
+[2026-11-15T19:43:36.930Z] + [ -f scripts/ci_verify_coverage.py ]
+[2026-11-15T19:43:36.930Z] + bash scripts/ci_stage_evidence.sh list
+[2026-11-15T19:43:36.930Z] + RAN=
+[2026-11-15T19:43:36.930Z] + chmod +x scripts/ci_verify_coverage.py
+[2026-11-15T19:43:36.930Z] + python3 scripts/ci_verify_coverage.py --branch main --executed  --require-prod-controller 1 --write-env .ci_coverage.env
+[2026-11-15T19:43:36.930Z] COVERAGE_VERDICT=opted-out
+[2026-11-15T19:43:36.930Z] COVERAGE_RAN=none
+[2026-11-15T19:43:36.930Z] COVERAGE_EXPECTED=none
+[2026-11-15T19:43:36.930Z] COVERAGE_MISSING=none
+[2026-11-15T19:43:36.930Z] COVERAGE_STATE=success
+[2026-11-15T19:43:36.930Z] COVERAGE_DESCRIPTION=no verification requested ([ci skip])
+[2026-11-15T19:43:36.930Z] COVERAGE_GUARD=pass
+[2026-11-15T19:43:36.930Z] + cat .ci_coverage.env
+[2026-11-15T19:43:36.930Z] COVERAGE_VERDICT=opted-out
+[2026-11-15T19:43:36.930Z] COVERAGE_RAN=none
+[2026-11-15T19:43:36.930Z] COVERAGE_EXPECTED=none
+[2026-11-15T19:43:36.930Z] COVERAGE_MISSING=none
+[2026-11-15T19:43:36.930Z] COVERAGE_STATE=success
+[2026-11-15T19:43:36.930Z] COVERAGE_DESCRIPTION=no verification requested ([ci skip])
+[2026-11-15T19:43:36.930Z] COVERAGE_GUARD=pass
+[2026-11-15T19:43:36.930Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-15T19:43:36.930Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-15T19:43:36.930Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-15T19:43:36.930Z] + rm -f .ci_commit_msg.txt .ci_changed_files.txt .ci_gate.env .ci_role.env
+[2026-11-15T19:43:36.930Z] + rm -rf .ci-evidence
+[Pipeline] script
+[Pipeline] {
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] withCredentials
+[2026-11-15T19:43:37.174Z] Masking supported pattern matches of $GITHUB_TOKEN
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-11-15T19:43:37.510Z] + set +e
+[2026-11-15T19:43:37.510Z] + bash scripts/ci_github_status.sh --sha c20ba466cef7d5050a90fbef84e78422d10008b7 --state success --context dana/validate --description no verification requested ([ci skip]) --target-url 
+[2026-11-15T19:43:38.422Z] ci_github_status: reported success for c20ba466cef7d5050a90fbef84e78422d10008b7 (dana/validate)
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // ws
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

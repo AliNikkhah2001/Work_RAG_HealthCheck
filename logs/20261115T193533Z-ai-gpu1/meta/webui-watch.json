@@ -1,0 +1,11 @@
+{
+  "schema_version": "webui-watch/v1",
+  "ts": "2026-11-15T19:51:38Z",
+  "submodule": "components/webui",
+  "remote": "https://github.com/AliNikkhah2001/Work_RAG-WebUI.git",
+  "pinned_sha": "9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb",
+  "remote_tip": "9dfd36002b5c2ca4030fa35aa37b5d6e82ea34bb",
+  "ahead": false,
+  "action": "none",
+  "note": "Parent gitlink must advance (commit on umbrella with [ci prod]) before Jenkins builds the new WebUI tip. Watcher only scans Multibranch."
+}
