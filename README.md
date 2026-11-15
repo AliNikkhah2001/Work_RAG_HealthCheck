@@ -39,3 +39,23 @@ Pack pins are semver-normalized (`schemas/v1.0.1.yaml` ≡ `1.0.1`) so false pac
 - `gpu-webui-watch.timer` — hourly compare `components/webui` pin vs `Work_RAG-WebUI` tip; Multibranch scan (parent gitlink + `[ci prod]` still required to rebuild new WebUI)
 
 See `deploy/monitor/README.md` and `deploy/jenkins/README.md` in `Work_Credit-RAG_Phase1`.
+
+## Jenkins forensics & QA samples
+
+Published by the umbrella hourly reporter (`Work_Credit-RAG_Phase1` `scripts/monitor/` + `gpu_full_recover_report.sh`):
+
+| Path | Contents |
+|---|---|
+| `logs/<run>/e2e/random_qa.json` | Full FAQ sample questions + `generation.answer_preview` |
+| `logs/<run>/dashboard.html` | Per-run detail; QA cards render from `random_qa.json` |
+| `logs/<run>/meta/jenkins_status.json` | Auth, job, image freshness, `build_ok`, reasons |
+| `logs/<run>/meta/jenkins/consoleText.txt` | Truncated Jenkins console for the last completed build |
+| `logs/<run>/meta/jenkins/console_excerpt.txt` | Filtered docker/npm/ERROR/coverage-gate lines |
+| `logs/<run>/meta/jenkins/stages.json` / `wfapi.json` | Pipeline stage dump when the controller exposes it |
+| `logs/<run>/meta/jenkins/diagnosis.json` | Heuristic labels (e.g. stage controller on `main` vs real image build failure) |
+
+The Pages home dashboard links to the newest console artifacts when present.
+A red `last_build_FAILURE` with label `coverage_gate_stage_controller_on_main` means the
+laptop/stage Jenkins refused to verify `main` — it is not proof that `rag-webui` npm/Docker failed.
+Prod image builds require GPU job `dana-rag-prod` on `main` with `[ci prod]` / `[ci auto]`.
+
