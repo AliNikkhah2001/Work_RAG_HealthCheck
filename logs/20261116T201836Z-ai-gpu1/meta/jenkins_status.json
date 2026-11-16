@@ -1,0 +1,132 @@
+{
+  "schema_version": "jenkins-status/v2",
+  "ts": "2026-11-16T20:34:53Z",
+  "healthy": true,
+  "images_ok": true,
+  "build_ok": true,
+  "status": "HEALTHY",
+  "reasons": [],
+  "jenkins": {
+    "url": "http://127.0.0.1:8085",
+    "authenticated": true,
+    "who": {
+      "_class": "hudson.security.WhoAmI",
+      "anonymous": false,
+      "authenticated": true,
+      "authorities": [
+        "authenticated",
+        "FACTOR_PASSWORD"
+      ],
+      "name": "admin"
+    },
+    "job": "dana-rag-prod",
+    "job_http": 200,
+    "last_build": {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "duration": 1103806,
+      "number": 37,
+      "result": "SUCCESS",
+      "timestamp": 1794849010557,
+      "url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/37/",
+      "branch": "main"
+    }
+  },
+  "forensics": {
+    "captured": true,
+    "build_number": 37,
+    "branch": "main",
+    "console_url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/37/consoleText",
+    "wfapi_url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/37/wfapi/describe",
+    "console_bytes": 475939,
+    "excerpt_lines": 43,
+    "stages": 13,
+    "diagnosis": {
+      "labels": [],
+      "tip": null
+    },
+    "ci_evidence_files": [
+      "agent_context.txt",
+      "build",
+      "compose-build.log",
+      "coverage.env",
+      "iran_mirrors.env",
+      "lint",
+      "prod-deploy",
+      "shell_probe.txt"
+    ],
+    "artifacts": [
+      "consoleText.txt",
+      "console_excerpt.txt",
+      "build.json",
+      "diagnosis.json",
+      "wfapi.json",
+      "stages.json",
+      "ci-evidence/agent_context.txt",
+      "ci-evidence/build",
+      "ci-evidence/compose-build.log",
+      "ci-evidence/coverage.env",
+      "ci-evidence/iran_mirrors.env",
+      "ci-evidence/lint",
+      "ci-evidence/prod-deploy",
+      "ci-evidence/shell_probe.txt"
+    ]
+  },
+  "images": [
+    {
+      "ref": "rag-kb:local",
+      "present": true,
+      "id": "sha256:6b36b439c62a",
+      "created": "2026-11-16T17:22:05.172025487Z",
+      "age_hours": 3.2,
+      "tags": "[\"rag-kb:f0c47ca\",\"rag-kb:local\"]"
+    },
+    {
+      "ref": "rag-orchestrator:local",
+      "present": true,
+      "id": "sha256:d33d560460eb",
+      "created": "2026-11-16T17:19:36.705489597Z",
+      "age_hours": 3.3,
+      "tags": "[\"rag-orchestrator:f0c47ca\",\"rag-orchestrator:local\"]"
+    },
+    {
+      "ref": "rag-guardrails:local",
+      "present": true,
+      "id": "sha256:0f4009b33a67",
+      "created": "2026-11-16T09:16:16.29249176Z",
+      "age_hours": 11.3,
+      "tags": "[\"rag-guardrails:f0c47ca\",\"rag-guardrails:local\"]"
+    },
+    {
+      "ref": "rag-webui:dana",
+      "present": true,
+      "id": "sha256:18a7125fdf75",
+      "created": "2026-11-16T17:16:30.396299405Z",
+      "age_hours": 3.3,
+      "tags": "[\"rag-webui:dana\",\"rag-webui:f0c47ca\",\"rag-webui:local\"]"
+    },
+    {
+      "ref": "rag-tracing:local",
+      "present": true,
+      "id": "sha256:de673f46b817",
+      "created": "2026-11-16T09:11:56.582922014Z",
+      "age_hours": 11.4,
+      "tags": "[\"rag-tracing:f0c47ca\",\"rag-tracing:local\"]"
+    },
+    {
+      "ref": "dana-jenkins:lts",
+      "present": true,
+      "id": "sha256:34834aeb907c",
+      "created": "2026-11-16T08:36:08.515560602Z",
+      "age_hours": 12.0,
+      "tags": "[\"dana-jenkins:lts\",\"dana-jenkins:production\"]"
+    }
+  ],
+  "missing_images": [],
+  "stale_images": [],
+  "max_image_age_hours": 12.0,
+  "stale_hours_threshold": 168.0,
+  "snapshots": [
+    "20261115T124350Z"
+  ],
+  "latest_snapshot": "20261115T124350Z"
+}
