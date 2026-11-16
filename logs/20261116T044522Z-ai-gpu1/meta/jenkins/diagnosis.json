@@ -1,0 +1,8 @@
+{
+  "labels": [
+    "webui_image_skipped_no_npm_build",
+    "docker_compose_build_failed",
+    "jenkins_result_failure"
+  ],
+  "tip": "Agent lacked npm and had no components/webui/build — WebUI image was skipped. Ensure the GPU agent has npm or a prebuilt webui/build."
+}
