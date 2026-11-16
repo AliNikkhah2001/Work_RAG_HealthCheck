@@ -1,0 +1,3 @@
+8100	orchestrator[/health]	200	{"status":"ok"}
+8100	orchestrator[/ready]	200	{"status":"ready","dependencies":[{"name":"knowledgebase","status":"ready","url":"http://127.0.0.1:8000","error":null},{
+8100	orchestrator[/v1/chat/completions]	200	{"detail":"Method Not Allowed"}
