@@ -1,0 +1,4 @@
+=== shell builtin probe ===
+/bin/sh: 1: source: not found
+sh_source_exit=127
+bash_source_exit=0
