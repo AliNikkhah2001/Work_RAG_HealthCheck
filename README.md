@@ -59,3 +59,33 @@ A red `last_build_FAILURE` with label `coverage_gate_stage_controller_on_main` m
 laptop/stage Jenkins refused to verify `main` — it is not proof that `rag-webui` npm/Docker failed.
 Prod image builds require GPU job `dana-rag-prod` on `main` with `[ci prod]` / `[ci auto]`.
 
+### Known failure: Build images / docker CLI (2026-11-16)
+
+**Symptom in `meta/jenkins/`:** `docker: command not found`, or later
+`unknown shorthand flag: 'f' in -f` on every `docker compose build` attempt.
+Health Pages may still show stack **HEALTHY** (apps up) while `dana-rag-prod`
+`last_build_FAILURE` / `docker_compose_build_failed`.
+
+**Root cause (not “merges missing from git”):**
+1. Umbrella `origin/main` already had PRs **#95/#98/#99/#100** (static CLI scripts +
+   h200.yml sock-only) — `git pull` alone does **not** recreate the controller.
+2. `dana-jenkins-prod` was last started with only `docker-compose.yml` +
+   `docker-compose.gpu.yml` (**missing `docker-compose.h200.yml`**), still on an
+   image **without** `/usr/local/bin/docker`.
+3. Host `/usr/bin/docker` bind-mounts are dynamically linked → inside the
+   container they look like `command not found` (ENOENT on ld-linux). Do **not**
+   remount the host binary.
+4. CI self-heal (`ci_resolve_docker.sh`) sometimes fetched a static `docker` into
+   `.ci-bin/` **without** the compose plugin → `unknown shorthand flag: 'f'`.
+
+**Host fix (GPU):** bake static CLI into `dana-jenkins:production`, recreate with
+**all three** compose files (see umbrella `components/server-setup/imagebugfix.txt`
+and `deploy/jenkins/README.md`). Verify:
+`docker exec dana-jenkins-prod bash -c 'ldd /usr/local/bin/docker || true; docker compose version'`
+→ static (“not a dynamic executable”) + Compose v2.
+
+**Submodules will not “appear” on this host until:** tip is merged on the child
+repo **and** the umbrella gitlink on `main` is bumped with `[ci prod]`/`[ci auto]`,
+**and** Build images can run (this docker CLI fix). Watchers alone do not advance pins.
+
+
