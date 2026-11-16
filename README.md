@@ -89,3 +89,12 @@ repo **and** the umbrella gitlink on `main` is bumped with `[ci prod]`/`[ci auto
 **and** Build images can run (this docker CLI fix). Watchers alone do not advance pins.
 
 
+### Known failure: long-thread LLM «خطا در پردازش درخواست.» (2026-11-16)
+
+**Not classic VRAM OOM.** TRT on GPU1 returns HTTP 400 when prompt_len > `max_seq_len` 8192
+(`default_max_tokens` negative). GPU0 was idle (~140 GiB free).
+
+**Mitigation now live:** Manager `:9000` fails over to **llama.cpp Q4** on GPU0 `:8080`
+(`n_ctx=16384`). See Server-Setup `docs/ops/llm-fallback-gpu0.md`. Check
+`GET http://127.0.0.1:9000/admin/fallback/status` and TRT log for overflow 400s.
+
