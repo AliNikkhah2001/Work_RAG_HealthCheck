@@ -1,0 +1,57 @@
+[2026-11-15T23:57:36.893Z] DANA_ROLE=prod
+[2026-11-15T23:57:36.893Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-15T23:57:36.893Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] { (Build images)
+[2026-11-15T23:57:53.337Z] ci_apply_iran_mirrors: mode=fallback-only (upstream primary)
+[2026-11-15T23:57:53.337Z] ci_apply_iran_mirrors: PIP_INDEX_URL=https://pypi.org/simple
+[2026-11-15T23:57:53.337Z] ci_apply_iran_mirrors: PIP_EXTRA_INDEX_URL=https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/
+[2026-11-15T23:57:53.337Z] ci_apply_iran_mirrors: NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
+[2026-11-15T23:57:53.337Z] ci_apply_iran_mirrors: IRAN_NPM_REGISTRIES=https://mirror-npm.pkg.shecan.ir/ https://mirror-npm.runflare.com/ https://package-mirror.liara.ir/repository/npm/
+[2026-11-15T23:57:53.337Z] ci_apply_iran_mirrors: PIP_TRUSTED_HOST=pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir
+[2026-11-15T23:57:53.588Z] ci_apply_iran_mirrors: wrote export env → .ci_iran_mirrors.env
+[2026-11-15T23:57:53.588Z] Skipping rag-webui image build (no npm and no components/webui/build)
+[2026-11-15T23:57:53.588Z] Building compose services: kb guardrails orchestrator tracing  (parallel_limit=1)
+[2026-11-15T23:57:53.588Z] docker compose build attempt 1/3 (PIP_INDEX_URL=https://pypi.org/simple)
+[2026-11-15T23:57:53.588Z] build attempt 1 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T23:58:15.390Z] docker compose build attempt 2/3 (PIP_INDEX_URL=https://pypi.org/simple)
+[2026-11-15T23:58:15.390Z] build attempt 2 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T23:58:37.193Z] docker compose build attempt 3/3 (PIP_INDEX_URL=https://pypi.org/simple)
+[2026-11-15T23:58:37.193Z] build attempt 3 failed — retrying in 20s (often PyPI ReadTimeout)
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: WARNING Iran as index-url (promote/primary escape hatch)
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: mode=fallback-only (upstream primary)
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: PIP_INDEX_URL=https://mirror-pypi.pkg.shecan.ir/simple/
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: PIP_EXTRA_INDEX_URL=https://pypi.org/simple
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: IRAN_NPM_REGISTRIES=https://mirror-npm.pkg.shecan.ir/ https://mirror-npm.runflare.com/ https://package-mirror.liara.ir/repository/npm/
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: PIP_TRUSTED_HOST=pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir
+[2026-11-15T23:58:55.157Z] ci_apply_iran_mirrors: wrote export env → .ci_iran_mirrors.env
+[2026-11-15T23:58:55.157Z] docker compose build fallback attempt with Iran pip primary PIP_INDEX_URL=https://mirror-pypi.pkg.shecan.ir/simple/
+[2026-11-15T23:58:55.916Z] + bash scripts/ci_github_status.sh --sha 07c1cf39d9023925127ebf5504804f2af8ac1ee1 --state failure --context dana/build --description image build failed --target-url 
+[2026-11-15T23:58:57.260Z] ci_github_status: reported failure for 07c1cf39d9023925127ebf5504804f2af8ac1ee1 (dana/build)
+Stage "Deploy stage" skipped due to earlier failure(s)
+Stage "E2E stage" skipped due to earlier failure(s)
+Stage "Prod approval (interactive only)" skipped due to earlier failure(s)
+[Pipeline] { (Deploy prod)
+Stage "Deploy prod" skipped due to earlier failure(s)
+[2026-11-15T23:58:58.496Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T23:58:58.496Z] COVERAGE_RAN=lint,build
+[2026-11-15T23:58:58.496Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T23:58:58.496Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T23:58:58.496Z] COVERAGE_STATE=failure
+[2026-11-15T23:58:58.496Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T23:58:58.496Z] COVERAGE_GUARD=fail
+[2026-11-15T23:58:58.496Z] COVERAGE_VERDICT=unexpected-missing
+[2026-11-15T23:58:58.496Z] COVERAGE_RAN=lint,build
+[2026-11-15T23:58:58.496Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-15T23:58:58.496Z] COVERAGE_MISSING=prod-deploy
+[2026-11-15T23:58:58.496Z] COVERAGE_STATE=failure
+[2026-11-15T23:58:58.496Z] COVERAGE_DESCRIPTION=main missing prod verification: prod-deploy
+[2026-11-15T23:58:58.496Z] COVERAGE_GUARD=fail
+[2026-11-15T23:58:58.496Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-15T23:58:58.496Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-15T23:58:58.496Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-15T23:58:59.135Z] + bash scripts/ci_github_status.sh --sha 07c1cf39d9023925127ebf5504804f2af8ac1ee1 --state failure --context dana/validate --description build FAILURE: main missing prod verification: prod-deploy --target-url 
+[2026-11-15T23:59:00.047Z] ci_github_status: reported failure for 07c1cf39d9023925127ebf5504804f2af8ac1ee1 (dana/validate)
+[2026-11-15T23:59:00.264Z] Pipeline failed — inspect Jenkins console, archived .ci-evidence/, and HC meta/jenkins/
+ERROR: script returned exit code 1
+Finished: FAILURE

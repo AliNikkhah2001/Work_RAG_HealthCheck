@@ -1,0 +1,13 @@
+=== ci_capture_build_evidence ===
+ts=2026-11-15T23:58:58Z
+pwd=/splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace
+shell=/bin/bash bash=5.2.37(1)-release
+sh_path=/usr/bin/sh
+lrwxrwxrwx 1 root root 4 Feb  4  2025 /bin/sh -> dash
+PATH=/usr/local/bin:/usr/bin:/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+which docker: MISSING
+scripts/ci_capture_build_evidence.sh: line 20: docker: command not found
+--- env (package mirrors / role) ---
+HTTPS_PROXY=http://192.168.203.2:3128
+NO_PROXY=localhost,127.0.0.1,host.docker.internal,172.17.0.0/16,192.168.0.0/16,10.0.0.0/8,.local
+--- docker images (rag-*) ---
