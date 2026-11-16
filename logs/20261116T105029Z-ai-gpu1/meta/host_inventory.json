@@ -1,0 +1,246 @@
+{
+  "schema_version": "host-inventory/v1",
+  "hostname": "ai-gpu1",
+  "ts": "2026-11-16T11:06:52Z",
+  "ports": [
+    {
+      "port": 3000,
+      "open": false,
+      "connect_ms": 0.2
+    },
+    {
+      "port": 3001,
+      "open": false,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8000,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8001,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8002,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8003,
+      "open": true,
+      "connect_ms": 0.2
+    },
+    {
+      "port": 8010,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8085,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8088,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8100,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 8200,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 9000,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 13000,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 13100,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 18000,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 18100,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 18200,
+      "open": true,
+      "connect_ms": 0.1
+    },
+    {
+      "port": 50000,
+      "open": true,
+      "connect_ms": 0.1
+    }
+  ],
+  "memory": {
+    "total_mb": 1.0,
+    "used_mb": 93184.0,
+    "free_mb": 753664.0,
+    "available_mb": 937984.0,
+    "raw": "Mem:           1.0Ti        91Gi       736Gi       1.4Gi       188Gi       916Gi"
+  },
+  "disk": [
+    {
+      "filesystem": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+      "size": "48G",
+      "used": "34G",
+      "avail": "12G",
+      "use_pct": "75",
+      "mount": "/"
+    },
+    {
+      "filesystem": "/dev/sdb1",
+      "size": "6.0T",
+      "used": "2.2T",
+      "avail": "3.6T",
+      "use_pct": "38",
+      "mount": "/splunk-data"
+    },
+    {
+      "filesystem": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+      "size": "48G",
+      "used": "34G",
+      "avail": "12G",
+      "use_pct": "75",
+      "mount": "/"
+    }
+  ],
+  "gpu": [
+    {
+      "index": 0,
+      "name": "NVIDIA H200 NVL",
+      "mem_total_mb": 143771.0,
+      "mem_used_mb": 39287.0,
+      "util_pct": 0.0,
+      "temp_c": 32.0
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA H200 NVL",
+      "mem_total_mb": 143771.0,
+      "mem_used_mb": 133651.0,
+      "util_pct": 0.0,
+      "temp_c": 32.0
+    }
+  ],
+  "docker": [
+    {
+      "name": "dana-webui-prod",
+      "image": "rag-webui:dana",
+      "status": "Up 39 minutes (healthy)",
+      "ports": "127.0.0.1:13000->8080/tcp, 192.168.177.10:13000->8080/tcp, 192.168.96.82:13000->8080/tcp"
+    },
+    {
+      "name": "dana-jenkins-prod",
+      "image": "dana-jenkins:production",
+      "status": "Up About an hour",
+      "ports": "127.0.0.1:50000->50000/tcp, 127.0.0.1:8085->8080/tcp"
+    },
+    {
+      "name": "dana-stage-webui-1",
+      "image": "4e76b1243fab",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:13100->8080/tcp"
+    },
+    {
+      "name": "dana-stage-orchestrator-1",
+      "image": "a865567e3a18",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:18100->8100/tcp"
+    },
+    {
+      "name": "dana-stage-guardrails-1",
+      "image": "0f3a49c6bfe2",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:18200->8200/tcp"
+    },
+    {
+      "name": "dana-stage-kb-1",
+      "image": "e3e94a77cac2",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:18000->8000/tcp"
+    },
+    {
+      "name": "dana-stage-litellm-1",
+      "image": "ghcr.io/berriai/litellm:main-latest",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:14000->4000/tcp"
+    },
+    {
+      "name": "dana-stage-redis-1",
+      "image": "redis:7-alpine",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:26379->6379/tcp"
+    },
+    {
+      "name": "dana-stage-postgres-1",
+      "image": "pgvector/pgvector:pg16",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:25432->5432/tcp"
+    },
+    {
+      "name": "dana-stage-tracing-1",
+      "image": "129c506c7412",
+      "status": "Up 22 hours (healthy)",
+      "ports": "127.0.0.1:13001->3000/tcp"
+    },
+    {
+      "name": "pgvector-kb-prod",
+      "image": "pgvector/pgvector:pg16",
+      "status": "Up 4 days",
+      "ports": "127.0.0.1:5432->5432/tcp"
+    },
+    {
+      "name": "redis-kb-prod",
+      "image": "redis:7-alpine",
+      "status": "Up 4 days",
+      "ports": "127.0.0.1:16379->6379/tcp"
+    },
+    {
+      "name": "rag-embed-prod-8003",
+      "image": "b8a783f99485",
+      "status": "Up 4 days (healthy)",
+      "ports": "0.0.0.0:8003->8001/tcp, [::]:8003->8001/tcp"
+    },
+    {
+      "name": "rag-embed-prod-8002",
+      "image": "b8a783f99485",
+      "status": "Up 4 days (healthy)",
+      "ports": "0.0.0.0:8002->8001/tcp, [::]:8002->8001/tcp"
+    },
+    {
+      "name": "rag-embed-prod-8001",
+      "image": "b8a783f99485",
+      "status": "Up 4 days (healthy)",
+      "ports": "0.0.0.0:8001->8001/tcp, [::]:8001->8001/tcp"
+    }
+  ],
+  "listening_raw": "Netid State  Recv-Q Send-Q  Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \nudp   UNCONN 0      0          127.0.0.54:53         0.0.0.0:*    users:((\"systemd-resolve\",pid=1356407,fd=16))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \nudp   UNCONN 0      0       127.0.0.53%lo:53         0.0.0.0:*    users:((\"systemd-resolve\",pid=1356407,fd=14))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \nudp   UNCONN 0      0             0.0.0.0:15000      0.0.0.0:*    users:((\"klnagent\",pid=1356565,fd=58))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \nudp   UNCONN 0      0                [::]:15000         [::]:*    users:((\"klnagent\",pid=1356565,fd=59))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \ntcp   LISTEN 0      2048        127.0.0.1:30523      0.0.0.0:*    users:((\"klnagent\",pid=1356565,fd=61))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \ntcp   LISTEN 0      4096        127.0.0.1:26379      0.0.0.0:*    users:((\"docker-proxy\",pid=2592889,fd=8))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \ntcp   LISTEN 0      2048          0.0.0.0:9000       0.0.0.0:*    users:((\"python\",pid=73206,fd=13))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \ntcp   LISTEN 0      2048          0.0.0.0:8200       0.0.0.0:*    users:((\"python\",pid=71459,fd=14))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ",
+  "loadavg": [
+    1.50244140625,
+    2.71826171875,
+    2.74560546875
+  ]
+}

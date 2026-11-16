@@ -1,0 +1,37 @@
+[2026-11-16T10:28:33.130Z] DANA_ROLE=prod
+[2026-11-16T10:28:33.130Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-16T10:28:33.130Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] { (Build images)
+[2026-11-16T10:29:01.720Z] ci_apply_iran_mirrors: mode=fallback-only (upstream primary)
+[2026-11-16T10:29:01.720Z] ci_apply_iran_mirrors: PIP_INDEX_URL=https://pypi.org/simple
+[2026-11-16T10:29:01.720Z] ci_apply_iran_mirrors: PIP_EXTRA_INDEX_URL=https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/
+[2026-11-16T10:29:01.720Z] ci_apply_iran_mirrors: NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
+[2026-11-16T10:29:01.720Z] ci_apply_iran_mirrors: IRAN_NPM_REGISTRIES=https://mirror-npm.pkg.shecan.ir/ https://mirror-npm.runflare.com/ https://package-mirror.liara.ir/repository/npm/
+[2026-11-16T10:29:01.720Z] ci_apply_iran_mirrors: PIP_TRUSTED_HOST=pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir
+[2026-11-16T10:29:01.720Z] ci_apply_iran_mirrors: wrote export env → .ci_iran_mirrors.env
+[Pipeline] { (Deploy prod)
+[2026-11-16T10:29:04.345Z] + docker tag rag-webui:299507c rag-webui:dana
+[2026-11-16T10:29:04.345Z] + docker tag rag-webui:local rag-webui:dana
+[2026-11-16T10:29:04.596Z] + export DANA_WEBUI_IMAGE=rag-webui:dana
+[2026-11-16T10:29:04.596Z] Using WebUI image: rag-webui:dana
+[2026-11-16T10:29:04.847Z] WebUI already healthy on image rag-webui:dana (cur=rag-webui:dana) — skip recreate
+[2026-11-16T10:29:08.806Z] COVERAGE_VERDICT=covered
+[2026-11-16T10:29:08.806Z] COVERAGE_RAN=lint,build,prod-deploy
+[2026-11-16T10:29:08.806Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-16T10:29:08.806Z] COVERAGE_MISSING=none
+[2026-11-16T10:29:08.806Z] COVERAGE_STATE=success
+[2026-11-16T10:29:08.806Z] COVERAGE_DESCRIPTION=verified: lint,build,prod-deploy
+[2026-11-16T10:29:08.806Z] COVERAGE_GUARD=pass
+[2026-11-16T10:29:08.806Z] COVERAGE_VERDICT=covered
+[2026-11-16T10:29:08.806Z] COVERAGE_RAN=lint,build,prod-deploy
+[2026-11-16T10:29:08.806Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-16T10:29:08.806Z] COVERAGE_MISSING=none
+[2026-11-16T10:29:08.806Z] COVERAGE_STATE=success
+[2026-11-16T10:29:08.806Z] COVERAGE_DESCRIPTION=verified: lint,build,prod-deploy
+[2026-11-16T10:29:08.806Z] COVERAGE_GUARD=pass
+[2026-11-16T10:29:08.806Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-16T10:29:08.806Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-16T10:29:08.806Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-16T10:29:09.401Z] + bash scripts/ci_github_status.sh --sha 299507c7e0f03083c062b9d6c5b0d2d5e15ececa --state success --context dana/validate --description verified: lint,build,prod-deploy --target-url 
+[2026-11-16T10:29:10.745Z] ci_github_status: reported success for 299507c7e0f03083c062b9d6c5b0d2d5e15ececa (dana/validate)
+Finished: SUCCESS

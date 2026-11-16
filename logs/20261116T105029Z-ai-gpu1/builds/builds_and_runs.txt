@@ -1,0 +1,88 @@
+=== Jenkins container logs ===
+=== jenkins: dana-jenkins-prod ===
+jenkins logs: dana-jenkins-prod
+
+=== /tmp log files ===
+-rw-r--r-- 1 root root    6041 Nov 12 10:18 /tmp/apt-cfgproxy.log
+-rw-r--r-- 1 root root    7409 Nov 11 05:47 /tmp/build-tracing.log
+-rw-r--r-- 1 root root  213919 Nov 16 09:34 /tmp/c26.log
+-rw-r--r-- 1 root root  213919 Nov 16 09:34 /tmp/compose-build-26.log
+-rw-r--r-- 1 root root   44964 Nov 12 10:52 /tmp/compose-go-rebuild.log
+-rw-r--r-- 1 root root   36438 Nov 12 10:58 /tmp/compose-kb-rebuild.log
+-rw-r--r-- 1 root root    4194 Nov 12 10:21 /tmp/compose-webui-build.log
+-rw-r--r-- 1 root root    4105 Nov 12 10:35 /tmp/compose-webui-jenkins.log
+-rw-r--r-- 1 root root    4189 Nov 12 10:43 /tmp/compose-webui-mono.log
+-rw-r--r-- 1 root root   24905 Nov 12 10:37 /tmp/compose-webui-nocache.log
+-rw-r--r-- 1 root root   39991 Nov 11 05:49 /tmp/dana-build2.log
+-rw-r--r-- 1 root root   11456 Nov 11 05:46 /tmp/dana-build.log
+-rw-r--r-- 1 root root    1777 Nov 11 05:46 /tmp/dana-core-up.log
+-rw-r--r-- 1 root root    5097 Nov 12 05:59 /tmp/dana-diag-build.log
+-rw-r--r-- 1 root root    9695 Nov 11 06:59 /tmp/dana-jenkins-h200-build.log
+-rw-r--r-- 1 root root  124043 Nov 11 07:20 /tmp/dana-prod-compose-build2.log
+-rw-r--r-- 1 root root   57403 Nov 11 08:15 /tmp/dana-prod-compose-build3.log
+-rw-r--r-- 1 root root   25624 Nov 11 07:15 /tmp/dana-prod-compose-build.log
+-rw-r--r-- 1 root root    5610 Nov 11 05:45 /tmp/dana-prod-up.log
+-rw-r--r-- 1 root root    2975 Nov 16 09:39 /tmp/dana-rag-prod-28-watch.log
+-rw-r--r-- 1 root root    8195 Nov 16 10:00 /tmp/dana-rag-prod-29-watch.log
+-rw-r--r-- 1 root root    4223 Nov 16 10:07 /tmp/dana-rag-prod-30-watch.log
+-rw-r--r-- 1 root root 1673805 Nov 16 10:50 /tmp/dana-readme-watch.log
+-rw-r--r-- 1 root root  361167 Nov 11 06:18 /tmp/dana-webui-build.log
+-rw-r--r-- 1 root root   26189 Nov 11 06:25 /tmp/dana-webui-docker.log
+-rw-r--r-- 1 root root    3803 Nov 12 09:39 /tmp/dana-webui-rebuild-black.log
+-rw-r--r-- 1 root root    4766 Nov 12 05:40 /tmp/dana-webui-rebuild.log
+-rw-r--r-- 1 root root   12266 Nov 16 10:45 /tmp/gpu-imagebugfix-contact.log
+-rw-r--r-- 1 root root   18579 Nov 16 10:50 /tmp/gpu-laptop-image-watch.log
+-rw-r--r-- 1 root root   14532 Nov 11 06:02 /tmp/jenkins-plugins2.log
+-rw-r--r-- 1 root root  286660 Nov 11 06:12 /tmp/jenkins-plugins3.log
+-rw-r--r-- 1 root root    3404 Nov 11 06:00 /tmp/jenkins-plugins.log
+-rw-r--r-- 1 root root    1394 Nov 11 06:41 /tmp/jenkins-pull-2568.log
+-rw-r--r-- 1 root root 3212122 Nov 16 09:01 /tmp/llm-manager-9000.log
+-rw-r--r-- 1 root root     749 Nov 15 14:30 /tmp/shots_fix.log
+-rw-r--r-- 1 root root    4515 Nov 12 04:37 /tmp/submodule-sync.log
+-rw-r--r-- 1 root root   13504 Nov 16 10:50 /tmp/watch-9655abc.log
+-rw-r--r-- 1 root root  335194 Nov 12 04:43 /tmp/webui-build.log
+-rw-r--r-- 1 root root    4634 Nov 12 10:05 /tmp/webui-docker-build-black.log
+-rw-r--r-- 1 root root    4939 Nov 12 09:44 /tmp/webui-docker-build.log
+-rw-r--r-- 1 root root    4698 Nov 12 04:44 /tmp/webui-docker.log
+-rw-r--r-- 1 root root  334284 Nov 12 09:53 /tmp/webui-npm-build2.log
+-rw-r--r-- 1 root root  334640 Nov 12 10:04 /tmp/webui-npm-build-black.log
+-rw-r--r-- 1 root root  334288 Nov 12 09:43 /tmp/webui-npm-build.log
+-rw-r--r-- 1 root root    2321 Nov 12 09:41 /tmp/webui-npm-ci.log
+-rw-r--r-- 1 root root    2622 Nov 12 04:41 /tmp/webui-npm.log
+-rw-r--r-- 1 root root  334640 Nov 12 10:42 /tmp/webui-npm-mono.log
+-rw-r--r-- 1 root root  334640 Nov 12 10:33 /tmp/webui-npm-rebuild-origin.log
+
+=== Compose directory ===
+total 88
+drwxr-xr-x  2 root root 4096 Nov 16 10:06 .
+drwxr-xr-x 12 root root 4096 Nov 15 21:37 ..
+-rw-r--r--  1 root root 9480 Nov 16 09:04 compose.base.yml
+-rw-r--r--  1 root root 2804 Nov 16 09:05 compose.gpu.yml
+-rw-r--r--  1 root root 4264 Nov 16 09:04 compose.local.yml
+-rw-r--r--  1 root root  445 Nov 14 17:59 compose.prod-sim.yml
+-rw-r--r--  1 root root 1129 Nov 15 13:04 compose.stage.yml
+-rw-r--r--  1 root root 2281 Nov 15 13:01 .env
+-rw-r--r--  1 root root 2281 Nov 15 12:51 .env.example
+-rw-r--r--  1 root root 4412 Nov 15 21:37 env.gpu.example
+-rw-r--r--  1 root root 4096 Nov 15 21:37 env.laptop.example
+-rw-r--r--  1 root root  924 Nov 11 05:52 .env.prod
+-rw-r--r--  1 root root  547 Nov 16 10:29 .last_good.json
+-rw-r--r--  1 root root 1507 Nov 16 10:29 .last_good.json.prev
+-rw-r--r--  1 root root   41 Nov 16 10:29 .last_good_sha
+-rw-r--r--  1 root root   41 Nov 16 10:29 .last_good_sha.prev
+-rw-r--r--  1 root root  937 Nov 14 17:59 litellm.local.yaml
+-rw-r--r--  1 root root 3064 Nov 15 13:17 README.md
+
+=== Jenkins workspace/builds ===
+total 72
+drwxr-xr-x  3 root root  4096 Nov 16 09:05 .
+drwxr-xr-x 12 root root  4096 Nov 15 21:37 ..
+-rw-r--r--  1 root root   994 Nov 15 12:51 docker-compose.gpu.yml
+-rw-r--r--  1 root root  2319 Nov 16 09:05 docker-compose.h200.yml
+-rw-r--r--  1 root root  2320 Nov 15 12:58 docker-compose.yml
+-rw-r--r--  1 root root  1648 Nov 16 01:42 Dockerfile
+-rw-r--r--  1 root root  2382 Nov 16 09:05 Dockerfile.docker-cli
+-rw-r--r--  1 root root 18052 Nov 15 13:17 github-status.md
+-rw-r--r--  1 root root    91 Nov 16 09:05 .imagebugfix-laptop-trigger.txt
+drwxr-xr-x  2 root root  4096 Nov 15 13:17 jobs
+-rw-r--r--  1 root root 15493 Nov 16 09:05 README.md
