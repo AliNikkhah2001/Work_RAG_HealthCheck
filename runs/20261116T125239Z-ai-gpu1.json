@@ -1,0 +1,1064 @@
+{
+  "schema_version": "health-run/v1",
+  "run_id": "20261116T125239Z-ai-gpu1",
+  "generated_at": "2026-11-16T12:52:39Z",
+  "machine": "ai-gpu1",
+  "machine_type": "production_gpu",
+  "host": {
+    "schema_version": "host-inventory/v1",
+    "hostname": "ai-gpu1",
+    "ts": "2026-11-16T13:08:40Z",
+    "ports": [
+      {
+        "port": 3000,
+        "open": false,
+        "connect_ms": 0.3
+      },
+      {
+        "port": 3001,
+        "open": false,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8000,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8001,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8002,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8003,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8010,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8085,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8088,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8100,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 8200,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 9000,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 13000,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 13100,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 18000,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 18100,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 18200,
+        "open": true,
+        "connect_ms": 0.1
+      },
+      {
+        "port": 50000,
+        "open": true,
+        "connect_ms": 0.1
+      }
+    ],
+    "memory": {
+      "total_mb": 1.0,
+      "used_mb": 93184.0,
+      "free_mb": 753664.0,
+      "available_mb": 937984.0,
+      "raw": "Mem:           1.0Ti        91Gi       736Gi       1.4Gi       188Gi       916Gi"
+    },
+    "disk": [
+      {
+        "filesystem": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+        "size": "48G",
+        "used": "34G",
+        "avail": "12G",
+        "use_pct": "75",
+        "mount": "/"
+      },
+      {
+        "filesystem": "/dev/sdb1",
+        "size": "6.0T",
+        "used": "2.2T",
+        "avail": "3.6T",
+        "use_pct": "38",
+        "mount": "/splunk-data"
+      },
+      {
+        "filesystem": "/dev/mapper/ubuntu--vg-ubuntu--lv",
+        "size": "48G",
+        "used": "34G",
+        "avail": "12G",
+        "use_pct": "75",
+        "mount": "/"
+      }
+    ],
+    "gpu": [
+      {
+        "index": 0,
+        "name": "NVIDIA H200 NVL",
+        "mem_total_mb": 143771.0,
+        "mem_used_mb": 39287.0,
+        "util_pct": 0.0,
+        "temp_c": 31.0
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H200 NVL",
+        "mem_total_mb": 143771.0,
+        "mem_used_mb": 133651.0,
+        "util_pct": 0.0,
+        "temp_c": 30.0
+      }
+    ],
+    "docker": [
+      {
+        "name": "dana-webui-prod",
+        "image": "rag-webui:dana",
+        "status": "Up 3 hours (healthy)",
+        "ports": "127.0.0.1:13000->8080/tcp, 192.168.177.10:13000->8080/tcp, 192.168.96.82:13000->8080/tcp"
+      },
+      {
+        "name": "dana-jenkins-prod",
+        "image": "dana-jenkins:production",
+        "status": "Up 3 hours",
+        "ports": "127.0.0.1:50000->50000/tcp, 127.0.0.1:8085->8080/tcp"
+      },
+      {
+        "name": "dana-stage-webui-1",
+        "image": "4e76b1243fab",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:13100->8080/tcp"
+      },
+      {
+        "name": "dana-stage-orchestrator-1",
+        "image": "a865567e3a18",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:18100->8100/tcp"
+      },
+      {
+        "name": "dana-stage-guardrails-1",
+        "image": "0f3a49c6bfe2",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:18200->8200/tcp"
+      },
+      {
+        "name": "dana-stage-kb-1",
+        "image": "e3e94a77cac2",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:18000->8000/tcp"
+      },
+      {
+        "name": "dana-stage-litellm-1",
+        "image": "ghcr.io/berriai/litellm:main-latest",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:14000->4000/tcp"
+      },
+      {
+        "name": "dana-stage-redis-1",
+        "image": "redis:7-alpine",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:26379->6379/tcp"
+      },
+      {
+        "name": "dana-stage-postgres-1",
+        "image": "pgvector/pgvector:pg16",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:25432->5432/tcp"
+      },
+      {
+        "name": "dana-stage-tracing-1",
+        "image": "129c506c7412",
+        "status": "Up 24 hours (healthy)",
+        "ports": "127.0.0.1:13001->3000/tcp"
+      },
+      {
+        "name": "pgvector-kb-prod",
+        "image": "pgvector/pgvector:pg16",
+        "status": "Up 4 days",
+        "ports": "127.0.0.1:5432->5432/tcp"
+      },
+      {
+        "name": "redis-kb-prod",
+        "image": "redis:7-alpine",
+        "status": "Up 4 days",
+        "ports": "127.0.0.1:16379->6379/tcp"
+      },
+      {
+        "name": "rag-embed-prod-8003",
+        "image": "b8a783f99485",
+        "status": "Up 4 days (healthy)",
+        "ports": "0.0.0.0:8003->8001/tcp, [::]:8003->8001/tcp"
+      },
+      {
+        "name": "rag-embed-prod-8002",
+        "image": "b8a783f99485",
+        "status": "Up 4 days (healthy)",
+        "ports": "0.0.0.0:8002->8001/tcp, [::]:8002->8001/tcp"
+      },
+      {
+        "name": "rag-embed-prod-8001",
+        "image": "b8a783f99485",
+        "status": "Up 4 days (healthy)",
+        "ports": "0.0.0.0:8001->8001/tcp, [::]:8001->8001/tcp"
+      }
+    ],
+    "listening_raw": "Netid State  Recv-Q Send-Q  Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \nudp   UNCONN 0      0          127.0.0.54:53         0.0.0.0:*    users:((\"systemd-resolve\",pid=1356407,fd=16))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \nudp   UNCONN 0      0       127.0.0.53%lo:53         0.0.0.0:*    users:((\"systemd-resolve\",pid=1356407,fd=14))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \nudp   UNCONN 0      0             0.0.0.0:15000      0.0.0.0:*    users:((\"klnagent\",pid=1356565,fd=58))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \nudp   UNCONN 0      0                [::]:15000         [::]:*    users:((\"klnagent\",pid=1356565,fd=59))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \ntcp   LISTEN 0      2048        127.0.0.1:30523      0.0.0.0:*    users:((\"klnagent\",pid=1356565,fd=61))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      \ntcp   LISTEN 0      4096        127.0.0.1:26379      0.0.0.0:*    users:((\"docker-proxy\",pid=2592889,fd=8))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   \ntcp   LISTEN 0      2048          0.0.0.0:9000       0.0.0.0:*    users:((\"python\",pid=73206,fd=13))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \ntcp   LISTEN 0      2048          0.0.0.0:8200       0.0.0.0:*    users:((\"python\",pid=71459,fd=14))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ",
+    "loadavg": [
+      1.05517578125,
+      1.2412109375,
+      1.3134765625
+    ]
+  },
+  "mode": "compose",
+  "origin": "report",
+  "status": "HEALTHY",
+  "core_services_down": [],
+  "services": [
+    {
+      "name": "manager",
+      "port": 9000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "kb",
+      "port": 8000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "guardrails",
+      "port": 8200,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "orchestrator",
+      "port": 8100,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "trace-collector",
+      "port": 3000,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "langfuse",
+      "port": 3001,
+      "status": "down",
+      "http_code": "000",
+      "detail": null
+    },
+    {
+      "name": "webui",
+      "port": 13000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "jenkins",
+      "port": 8085,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:8088",
+      "port": 8088,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8010",
+      "port": 8010,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8001",
+      "port": 8001,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8002",
+      "port": 8002,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service-8003",
+      "port": 8003,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "gemma",
+      "port": 18000,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:18100",
+      "port": 18100,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:18200",
+      "port": 18200,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    },
+    {
+      "name": "service:13100",
+      "port": 13100,
+      "status": "up",
+      "http_code": "200",
+      "detail": null
+    }
+  ],
+  "e2e": {
+    "tests": [
+      {
+        "test": "random_qa_1",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_2",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_3",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_4",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_5",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_6",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_7",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_8",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_9",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_10",
+        "http_code": "200",
+        "passed": true
+      },
+      {
+        "test": "random_qa_batch",
+        "http_code": null,
+        "passed": true
+      }
+    ],
+    "passed": 10,
+    "total": 10,
+    "kb_search_ok": null,
+    "latency": {
+      "schema_version": "qa-latency/v1",
+      "count": 10,
+      "passed": 10,
+      "failed": 0,
+      "e2e": {
+        "n": 10,
+        "avg_ms": 9767.8,
+        "p50_ms": 11975.7,
+        "p95_ms": 14229.9,
+        "max_ms": 15880.9
+      },
+      "retrieval": {
+        "n": 10,
+        "avg_ms": 96.8,
+        "p50_ms": 91.3,
+        "p95_ms": 108.3,
+        "max_ms": 128.0
+      },
+      "generation": {
+        "n": 10,
+        "avg_ms": 9670.9,
+        "p50_ms": 11847.7,
+        "p95_ms": 14143.2,
+        "max_ms": 15789.6
+      },
+      "stages": {
+        "build_context": {
+          "n": 7,
+          "avg_ms": 1.0,
+          "p50_ms": 0.9,
+          "p95_ms": 1.3,
+          "max_ms": 1.3
+        },
+        "format_response": {
+          "n": 7,
+          "avg_ms": 2081.2,
+          "p50_ms": 1763.2,
+          "p95_ms": 1904.1,
+          "max_ms": 4610.9
+        },
+        "guarded_generate": {
+          "n": 7,
+          "avg_ms": 5727.1,
+          "p50_ms": 6190.7,
+          "p95_ms": 6396.2,
+          "max_ms": 8453.1
+        },
+        "retrieval.bm25": {
+          "n": 10,
+          "avg_ms": 15.7,
+          "p50_ms": 15.7,
+          "p95_ms": 18.3,
+          "max_ms": 23.1
+        },
+        "retrieval.build_context": {
+          "n": 10,
+          "avg_ms": 0.0,
+          "p50_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 0.0
+        },
+        "retrieval.dense": {
+          "n": 10,
+          "avg_ms": 11.9,
+          "p50_ms": 14.9,
+          "p95_ms": 17.5,
+          "max_ms": 17.7
+        },
+        "retrieval.hyde": {
+          "n": 10,
+          "avg_ms": 0.0,
+          "p50_ms": 0.0,
+          "p95_ms": 0.0,
+          "max_ms": 0.0
+        },
+        "retrieval.rerank": {
+          "n": 10,
+          "avg_ms": 33.7,
+          "p50_ms": 31.7,
+          "p95_ms": 44.9,
+          "max_ms": 52.7
+        },
+        "retrieval.rrf": {
+          "n": 10,
+          "avg_ms": 0.3,
+          "p50_ms": 0.3,
+          "p95_ms": 0.4,
+          "max_ms": 0.5
+        },
+        "retrieval.total": {
+          "n": 10,
+          "avg_ms": 62.1,
+          "p50_ms": 64.1,
+          "p95_ms": 71.3,
+          "max_ms": 72.6
+        },
+        "retrieve": {
+          "n": 10,
+          "avg_ms": 928.1,
+          "p50_ms": 864.5,
+          "p95_ms": 1007.6,
+          "max_ms": 1871.3
+        },
+        "retrieve_retry": {
+          "n": 1,
+          "avg_ms": 197.7,
+          "p50_ms": 197.7,
+          "p95_ms": 197.7,
+          "max_ms": 197.7
+        },
+        "validate_input": {
+          "n": 10,
+          "avg_ms": 448.5,
+          "p50_ms": 259.1,
+          "p95_ms": 837.7,
+          "max_ms": 1707.8
+        }
+      },
+      "questions": [
+        "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟",
+        "خطوط قرمز امتیاز اعتباری برای افراد چیست؟",
+        "اگر فکر می کنم اطلاعات گزارش اعتباری من اشتباه است، چه کاری باید انجام بدهم؟",
+        "چگونه با شرکت اعتبارسنجی ایران تماس بگیرم؟",
+        "خطوط قرمز امتیاز اعتباری برای کسب و کارها چیست؟",
+        "مدیرعامل شرکت اعتبارسنجی ایران کیست؟",
+        "امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟",
+        "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
+        "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟",
+        "اگر چک برگشتی من رفع سوء اثر شده باشد، اما همچنان در گزارش اعتباری نمایش داده شود، چه اقداماتی باید انجام دهم تا از گزارش اعتباری من حذف شود؟"
+      ],
+      "seed": 1794833601
+    },
+    "random_qa": {
+      "seed": 1794833601,
+      "n": 10,
+      "pool_size": 30,
+      "questions": [
+        "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟",
+        "خطوط قرمز امتیاز اعتباری برای افراد چیست؟",
+        "اگر فکر می کنم اطلاعات گزارش اعتباری من اشتباه است، چه کاری باید انجام بدهم؟",
+        "چگونه با شرکت اعتبارسنجی ایران تماس بگیرم؟",
+        "خطوط قرمز امتیاز اعتباری برای کسب و کارها چیست؟",
+        "مدیرعامل شرکت اعتبارسنجی ایران کیست؟",
+        "امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟",
+        "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
+        "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟",
+        "اگر چک برگشتی من رفع سوء اثر شده باشد، اما همچنان در گزارش اعتباری نمایش داده شود، چه اقداماتی باید انجام دهم تا از گزارش اعتباری من حذف شود؟"
+      ],
+      "samples": [
+        {
+          "question": "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟",
+          "answer_preview": "با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌های مربوط به گزارش اعتباری، امتیاز و رتبه، روش‌های بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.\n\nبرای دریافت گزارش اعتبارسنجی چک و گزارش اعتباری تسهیلات، می‌توانید به سامانه رسمی اعتباریتو به نشانی etebarito.ir یا etebarito.ics24.ir مراجعه کنید. در این وب‌سایت، پس از انجام مراحل احراز هویت و پرداخت هزینه مصوب، گزارش شما صادر خو",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 11975.7,
+          "chunks_used": 5
+        },
+        {
+          "question": "خطوط قرمز امتیاز اعتباری برای افراد چیست؟",
+          "answer_preview": "آیا منظورتان رتبه رنگی گزارش اعتبارسنجی چک است (مثل سبز/آبی) یا رتبه تسهیلات؟",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 963.4,
+          "chunks_used": 0
+        },
+        {
+          "question": "اگر فکر می کنم اطلاعات گزارش اعتباری من اشتباه است، چه کاری باید انجام بدهم؟",
+          "answer_preview": "آیا این مورد مربوط به تسهیلات (شخصی یا شرکتی) است یا گزارش چک؟",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 8734.4,
+          "chunks_used": 0
+        },
+        {
+          "question": "چگونه با شرکت اعتبارسنجی ایران تماس بگیرم؟",
+          "answer_preview": "با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌هایی نظیر گزارش اعتباری، امتیاز و رتبه، روش‌های بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.\n\nبرای ارتباط با واحد ارتباط با مشتریان شرکت اعتبارسنجی ایران، می‌توانید با شماره تلفن ۰۲۱۴۱۵۲۲۲۲۲ تماس بگیرید. این شماره برای پیگیری موارد مختلف از جمله پشتیبانی پرداخت‌ها، اصلاح اطلاعات هویتی و گزارش اشتباهات در چک‌های سررسید شده نیز ک",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 13820.5,
+          "chunks_used": 5
+        },
+        {
+          "question": "خطوط قرمز امتیاز اعتباری برای کسب و کارها چیست؟",
+          "answer_preview": "آیا منظورتان رتبه رنگی گزارش اعتبارسنجی چک است (مثل سبز/آبی) یا رتبه تسهیلات؟",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 907.2,
+          "chunks_used": 0
+        },
+        {
+          "question": "مدیرعامل شرکت اعتبارسنجی ایران کیست؟",
+          "answer_preview": "با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌هایی نظیر گزارش اعتباری، امتیاز و رتبه، بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.\n\nبر اساس اطلاعات موجود در پایگاه دانش، پاسخی برای این سوال یافت نشد.",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 8283.1,
+          "chunks_used": 0
+        },
+        {
+          "question": "امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟",
+          "answer_preview": "با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌های گزارش اعتباری، امتیاز و رتبه، روش‌های بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.\n\nامتیاز اعتباری عددی است که بازتابی از احتمال خوش‌حسابی شما در آینده بر اساس رفتار مالی گذشته است. در مدل فعلی، این امتیاز برای اشخاص حقیقی و حقوقی عددی بین ۲۵۰ تا ۹۰۰ است و هرچه این عدد بالاتر باشد، ریسک اعتباری کمتر و میزان اعتماد مالی بیشت",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 9292.9,
+          "chunks_used": 5
+        },
+        {
+          "question": "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
+          "answer_preview": "با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌های گزارش اعتباری، امتیاز و رتبه، بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.\n\nزمان به‌روزرسانی اطلاعات در گزارش اعتباری بسته به نوع داده‌ها متفاوت است. به طور کلی، این بازه زمانی از حداقل ۲۴ ساعت تا حداکثر یک ماه متغیر است.\n\nاطلاعات مربوط به چک‌ها در کوتاه‌ترین زمان، یعنی هر ۲۴ ساعت یک‌بار از سامانه‌های مربوطه دریافت و در گزا",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 14229.9,
+          "chunks_used": 5
+        },
+        {
+          "question": "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟",
+          "answer_preview": "با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌هایی نظیر گزارش اعتباری، امتیاز و رتبه، بهبود امتیاز، سوابق منفی و چک‌ها به شما کمک می‌کنم.\n\nدر مورد عدم نمایش اطلاعات بازپرداخت اقساط وام در گزارش اعتباری، باید توجه داشته باشید که شرکت اعتبارسنجی صرفاً دریافت‌کننده و نمایش‌دهنده داده‌های ارسالی از سوی بانک‌ها و تامین‌کنندگان است و هیچ‌گونه تغییری در این اطلاعات ایجاد نمی‌کند.\n\nبرای ",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 13590.0,
+          "chunks_used": 5
+        },
+        {
+          "question": "اگر چک برگشتی من رفع سوء اثر شده باشد، اما همچنان در گزارش اعتباری نمایش داده شود، چه اقداماتی باید انجام دهم تا از گزارش اعتباری من حذف شود؟",
+          "answer_preview": "با سلام، من دستیار هوشمند شرکت اعتبارسنجی ایران هستم و در زمینه‌های گزارش اعتباری، امتیاز و رتبه، روش‌های بهبود امتیاز، بررسی سوابق منفی و چک‌ها به شما کمک می‌کنم.\n\nدر مورد سوال شما باید اشاره کنم که رفع سوءاثر چک باعث حذف سابقه آن از گزارش اعتباری نمی‌شود. سوابق چک‌های برگشتی حتی پس از تسویه و رفع سوءاثر، به مدت ۵ سال در گزارش اعتباری شما باقی می‌مانند و در این بازه زمانی بر امتیاز و رتبه اعتباری",
+          "passed": true,
+          "http": 200,
+          "wall_ms": 15880.9,
+          "chunks_used": 5
+        }
+      ]
+    }
+  },
+  "latency": {
+    "schema_version": "qa-latency/v1",
+    "count": 10,
+    "passed": 10,
+    "failed": 0,
+    "e2e": {
+      "n": 10,
+      "avg_ms": 9767.8,
+      "p50_ms": 11975.7,
+      "p95_ms": 14229.9,
+      "max_ms": 15880.9
+    },
+    "retrieval": {
+      "n": 10,
+      "avg_ms": 96.8,
+      "p50_ms": 91.3,
+      "p95_ms": 108.3,
+      "max_ms": 128.0
+    },
+    "generation": {
+      "n": 10,
+      "avg_ms": 9670.9,
+      "p50_ms": 11847.7,
+      "p95_ms": 14143.2,
+      "max_ms": 15789.6
+    },
+    "stages": {
+      "build_context": {
+        "n": 7,
+        "avg_ms": 1.0,
+        "p50_ms": 0.9,
+        "p95_ms": 1.3,
+        "max_ms": 1.3
+      },
+      "format_response": {
+        "n": 7,
+        "avg_ms": 2081.2,
+        "p50_ms": 1763.2,
+        "p95_ms": 1904.1,
+        "max_ms": 4610.9
+      },
+      "guarded_generate": {
+        "n": 7,
+        "avg_ms": 5727.1,
+        "p50_ms": 6190.7,
+        "p95_ms": 6396.2,
+        "max_ms": 8453.1
+      },
+      "retrieval.bm25": {
+        "n": 10,
+        "avg_ms": 15.7,
+        "p50_ms": 15.7,
+        "p95_ms": 18.3,
+        "max_ms": 23.1
+      },
+      "retrieval.build_context": {
+        "n": 10,
+        "avg_ms": 0.0,
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "max_ms": 0.0
+      },
+      "retrieval.dense": {
+        "n": 10,
+        "avg_ms": 11.9,
+        "p50_ms": 14.9,
+        "p95_ms": 17.5,
+        "max_ms": 17.7
+      },
+      "retrieval.hyde": {
+        "n": 10,
+        "avg_ms": 0.0,
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "max_ms": 0.0
+      },
+      "retrieval.rerank": {
+        "n": 10,
+        "avg_ms": 33.7,
+        "p50_ms": 31.7,
+        "p95_ms": 44.9,
+        "max_ms": 52.7
+      },
+      "retrieval.rrf": {
+        "n": 10,
+        "avg_ms": 0.3,
+        "p50_ms": 0.3,
+        "p95_ms": 0.4,
+        "max_ms": 0.5
+      },
+      "retrieval.total": {
+        "n": 10,
+        "avg_ms": 62.1,
+        "p50_ms": 64.1,
+        "p95_ms": 71.3,
+        "max_ms": 72.6
+      },
+      "retrieve": {
+        "n": 10,
+        "avg_ms": 928.1,
+        "p50_ms": 864.5,
+        "p95_ms": 1007.6,
+        "max_ms": 1871.3
+      },
+      "retrieve_retry": {
+        "n": 1,
+        "avg_ms": 197.7,
+        "p50_ms": 197.7,
+        "p95_ms": 197.7,
+        "max_ms": 197.7
+      },
+      "validate_input": {
+        "n": 10,
+        "avg_ms": 448.5,
+        "p50_ms": 259.1,
+        "p95_ms": 837.7,
+        "max_ms": 1707.8
+      }
+    },
+    "questions": [
+      "کجا گزارش اعتباری و گزارش چک خودم را بگیرم؟",
+      "خطوط قرمز امتیاز اعتباری برای افراد چیست؟",
+      "اگر فکر می کنم اطلاعات گزارش اعتباری من اشتباه است، چه کاری باید انجام بدهم؟",
+      "چگونه با شرکت اعتبارسنجی ایران تماس بگیرم؟",
+      "خطوط قرمز امتیاز اعتباری برای کسب و کارها چیست؟",
+      "مدیرعامل شرکت اعتبارسنجی ایران کیست؟",
+      "امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟",
+      "اطلاعات موجود در گزارش اعتباری هر چند وقت یک‌بار به روزرسانی می‌شوند؟",
+      "اقساط یکی از وام های من در گزارش اعتباری یافت نمی شود. چه اقدامی انجام دهم؟",
+      "اگر چک برگشتی من رفع سوء اثر شده باشد، اما همچنان در گزارش اعتباری نمایش داده شود، چه اقداماتی باید انجام دهم تا از گزارش اعتباری من حذف شود؟"
+    ],
+    "seed": 1794833601
+  },
+  "jenkins": {
+    "schema_version": "jenkins-status/v2",
+    "ts": "2026-11-16T13:08:42Z",
+    "healthy": true,
+    "images_ok": true,
+    "build_ok": true,
+    "status": "HEALTHY",
+    "reasons": [],
+    "jenkins": {
+      "url": "http://127.0.0.1:8085",
+      "authenticated": true,
+      "who": {
+        "_class": "hudson.security.WhoAmI",
+        "anonymous": false,
+        "authenticated": true,
+        "authorities": [
+          "authenticated",
+          "FACTOR_PASSWORD"
+        ],
+        "name": "admin"
+      },
+      "job": "dana-rag-prod",
+      "job_http": 200,
+      "last_build": {
+        "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+        "duration": 68085,
+        "number": 36,
+        "result": "SUCCESS",
+        "timestamp": 1794828909109,
+        "url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/36/",
+        "branch": "main"
+      }
+    },
+    "forensics": {
+      "captured": true,
+      "build_number": 36,
+      "branch": "main",
+      "console_url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/36/consoleText",
+      "wfapi_url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/36/wfapi/describe",
+      "console_bytes": 26689,
+      "excerpt_lines": 37,
+      "stages": 13,
+      "diagnosis": {
+        "labels": [],
+        "tip": null
+      },
+      "ci_evidence_files": [
+        "agent_context.txt",
+        "build",
+        "coverage.env",
+        "iran_mirrors.env",
+        "lint",
+        "prod-deploy",
+        "shell_probe.txt"
+      ],
+      "artifacts": [
+        "consoleText.txt",
+        "console_excerpt.txt",
+        "build.json",
+        "diagnosis.json",
+        "wfapi.json",
+        "stages.json",
+        "ci-evidence/agent_context.txt",
+        "ci-evidence/build",
+        "ci-evidence/coverage.env",
+        "ci-evidence/iran_mirrors.env",
+        "ci-evidence/lint",
+        "ci-evidence/prod-deploy",
+        "ci-evidence/shell_probe.txt"
+      ]
+    },
+    "images": [
+      {
+        "ref": "rag-kb:local",
+        "present": true,
+        "id": "sha256:af7f740d177a",
+        "created": "2026-11-16T09:27:22.647930852Z",
+        "age_hours": 3.7,
+        "tags": "[\"rag-kb:9655abc\",\"rag-kb:974f628\",\"rag-kb:local\"]"
+      },
+      {
+        "ref": "rag-orchestrator:local",
+        "present": true,
+        "id": "sha256:2f03551b6331",
+        "created": "2026-11-16T09:16:16.479333928Z",
+        "age_hours": 3.9,
+        "tags": "[\"rag-orchestrator:9655abc\",\"rag-orchestrator:974f628\",\"rag-orchestrator:local\"]"
+      },
+      {
+        "ref": "rag-guardrails:local",
+        "present": true,
+        "id": "sha256:c32f8dd78b1c",
+        "created": "2026-11-16T09:16:16.29249176Z",
+        "age_hours": 3.9,
+        "tags": "[\"rag-guardrails:9655abc\",\"rag-guardrails:974f628\",\"rag-guardrails:local\"]"
+      },
+      {
+        "ref": "rag-webui:dana",
+        "present": true,
+        "id": "sha256:c4fa98f84e6a",
+        "created": "2026-11-16T09:11:17.809063812Z",
+        "age_hours": 4.0,
+        "tags": "[\"rag-webui:9655abc\",\"rag-webui:dana\",\"rag-webui:local\"]"
+      },
+      {
+        "ref": "rag-tracing:local",
+        "present": true,
+        "id": "sha256:ac70c49b5917",
+        "created": "2026-11-16T09:11:56.582922014Z",
+        "age_hours": 3.9,
+        "tags": "[\"rag-tracing:9655abc\",\"rag-tracing:974f628\",\"rag-tracing:local\"]"
+      },
+      {
+        "ref": "dana-jenkins:lts",
+        "present": true,
+        "id": "sha256:34834aeb907c",
+        "created": "2026-11-16T08:36:08.515560602Z",
+        "age_hours": 4.5,
+        "tags": "[\"dana-jenkins:lts\",\"dana-jenkins:production\"]"
+      }
+    ],
+    "missing_images": [],
+    "stale_images": [],
+    "max_image_age_hours": 4.5,
+    "stale_hours_threshold": 168.0,
+    "snapshots": [
+      "20261115T124350Z"
+    ],
+    "latest_snapshot": "20261115T124350Z"
+  },
+  "webui_watch": {
+    "schema_version": "webui-watch/v1",
+    "ts": "2026-11-16T13:08:43Z",
+    "submodule": "components/webui",
+    "remote": "https://github.com/AliNikkhah2001/Work_RAG-WebUI.git",
+    "pinned_sha": "ad2544eb7add71ad5cb666424a67951bebc3214b",
+    "remote_tip": "ad2544eb7add71ad5cb666424a67951bebc3214b",
+    "ahead": false,
+    "action": "none",
+    "note": "Parent gitlink must advance (commit on umbrella with [ci prod]) before Jenkins builds the new WebUI tip. Watcher only scans Multibranch."
+  },
+  "gate": {},
+  "kb": {
+    "verdict": "match",
+    "mismatches": [],
+    "checks": [
+      {
+        "check": "chunk_count",
+        "actual": 1319,
+        "expected": 1319,
+        "match": true,
+        "note": "chunks in Postgres vs chunks in the DVC pin"
+      },
+      {
+        "check": "document_count",
+        "actual": 21,
+        "expected": 21,
+        "match": true,
+        "note": "documents in Postgres vs documents in the DVC pin"
+      },
+      {
+        "check": "corpus_date",
+        "actual": "1405-08-20",
+        "expected": "1405-08-20",
+        "match": true,
+        "note": "corpus the running API serves vs the exported snapshot pin"
+      },
+      {
+        "check": "chunks_in_db_vs_dvc_pin",
+        "actual": 1319,
+        "expected": 1319,
+        "match": true,
+        "note": "chunks in Postgres vs the DVC snapshot pin the API advertises"
+      },
+      {
+        "check": "chunks_vs_api_health",
+        "actual": 1319,
+        "expected": 1319,
+        "match": true,
+        "note": "chunks in Postgres vs chunk_count from /health"
+      },
+      {
+        "check": "packs",
+        "actual": {
+          "schemas": "1.0.1",
+          "taxonomy": "1.0.2",
+          "canned": "1.0.2",
+          "prompts_orchestrator": "1.0.3",
+          "prompts_guardrails": "1.0.1",
+          "retrieval": "1.0.0"
+        },
+        "expected": {
+          "schemas": "1.0.1",
+          "taxonomy": "1.0.2",
+          "canned": "1.0.2",
+          "retrieval": "1.0.0",
+          "prompts_orchestrator": "1.0.3",
+          "prompts_guardrails": "1.0.1"
+        },
+        "match": true,
+        "note": "active registry pack versions served vs pinned (path vs semver normalized)"
+      }
+    ],
+    "chunks_in_db": 1319,
+    "documents_in_db": 21,
+    "chunks_in_pin": 1319,
+    "corpus_live": "1405-08-20",
+    "corpus_latest": "1405-08-20",
+    "corpus_lagging": false,
+    "manifest_id": "kb-20261112T092512Z",
+    "packs": {
+      "schemas": "1.0.1",
+      "taxonomy": "1.0.2",
+      "canned": "1.0.2",
+      "prompts_orchestrator": "1.0.3",
+      "prompts_guardrails": "1.0.1",
+      "retrieval": "1.0.0"
+    },
+    "embedding_models": [
+      {
+        "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "chunks": 1319
+      }
+    ],
+    "last_ingestion_job": null,
+    "unknown": []
+  },
+  "links": {
+    "detail": "logs/20261116T125239Z-ai-gpu1/dashboard.html",
+    "record": "runs/20261116T125239Z-ai-gpu1.json",
+    "logs": "logs/20261116T125239Z-ai-gpu1/",
+    "screenshots": [
+      "gemma-docs.png",
+      "guard-docs.png",
+      "jenkins-login.png",
+      "jenkins-status.png",
+      "kb-manager-docs.png",
+      "kb-manager-redoc.png",
+      "manager-docs.png",
+      "manager-ui.png",
+      "orch-docs.png",
+      "webui-alt.png",
+      "webui-main.png",
+      "webui-stage.png"
+    ],
+    "screenshots_dir": "logs/20261116T125239Z-ai-gpu1/screenshots",
+    "jenkins_dir": "logs/20261116T125239Z-ai-gpu1/meta/jenkins/",
+    "jenkins_artifacts": [
+      "build.json",
+      "consoleText.txt",
+      "console_excerpt.txt",
+      "diagnosis.json",
+      "stages.json",
+      "wfapi.json"
+    ],
+    "jenkins_console": "logs/20261116T125239Z-ai-gpu1/meta/jenkins/consoleText.txt",
+    "jenkins_excerpt": "logs/20261116T125239Z-ai-gpu1/meta/jenkins/console_excerpt.txt",
+    "random_qa": "logs/20261116T125239Z-ai-gpu1/e2e/random_qa.json"
+  }
+}
