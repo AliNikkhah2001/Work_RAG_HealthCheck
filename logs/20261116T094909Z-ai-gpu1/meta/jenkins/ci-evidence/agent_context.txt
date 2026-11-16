@@ -1,0 +1,73 @@
+=== ci_capture_build_evidence ===
+ts=2026-11-16T09:59:34Z
+pwd=/splunk-data/production/Work_Credit-RAG_Phase1/.ci-workspace
+shell=/bin/bash bash=5.2.37(1)-release
+sh_path=/usr/bin/sh
+lrwxrwxrwx 1 root root 4 Feb  4  2025 /bin/sh -> dash
+PATH=/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin
+which docker: /usr/local/bin/docker
+found_docker=/usr/local/bin/docker
+Client:
+ Version:           28.3.3
+ API version:       1.51
+ Go version:        go1.24.5
+ Git commit:        980b856
+ Built:             Fri Jul 25 11:33:09 2025
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          29.7.2
+  API version:      1.55 (minimum version 1.40)
+  Go version:       go1.26.5
+  Git commit:       6a43e3d
+  Built:            Wed Aug  5 18:28:53 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v2.3.3
+--- env (package mirrors / role) ---
+HTTPS_PROXY=http://192.168.203.2:3128
+NO_PROXY=localhost,127.0.0.1,host.docker.internal,172.17.0.0/16,192.168.0.0/16,10.0.0.0/8,.local
+--- docker images (rag-*) ---
+rag-kb:974f628 af7f740d177a 32 minutes ago
+rag-guardrails:974f628 c32f8dd78b1c 43 minutes ago
+rag-orchestrator:974f628 2f03551b6331 43 minutes ago
+rag-tracing:974f628 ac70c49b5917 47 minutes ago
+rag-webui:974f628 8e3e7ecbbf30 48 minutes ago
+dana-jenkins:lts 34834aeb907c About an hour ago
+dana-jenkins:production 34834aeb907c About an hour ago
+rag-kb:1707dc7 e3e94a77cac2 3 days ago
+rag-kb:de7fa3b e3e94a77cac2 3 days ago
+rag-kb:local e3e94a77cac2 3 days ago
+rag-kb:snapshot-20261115 e3e94a77cac2 3 days ago
+rag-orchestrator:1707dc7 a865567e3a18 3 days ago
+rag-orchestrator:de7fa3b a865567e3a18 3 days ago
+rag-orchestrator:local a865567e3a18 3 days ago
+rag-orchestrator:prod-2026-11-12 a865567e3a18 3 days ago
+rag-orchestrator:production a865567e3a18 3 days ago
+rag-orchestrator:sha-a865567e3a a865567e3a18 3 days ago
+rag-orchestrator:snapshot-20261115 a865567e3a18 3 days ago
+rag-orchestrator:working a865567e3a18 3 days ago
+rag-guardrails:1707dc7 0f3a49c6bfe2 3 days ago
+rag-guardrails:de7fa3b 0f3a49c6bfe2 3 days ago
+rag-guardrails:local 0f3a49c6bfe2 3 days ago
+rag-guardrails:prod-2026-11-12 0f3a49c6bfe2 3 days ago
+rag-guardrails:production 0f3a49c6bfe2 3 days ago
+rag-guardrails:sha-0f3a49c6bf 0f3a49c6bfe2 3 days ago
+rag-guardrails:snapshot-20261115 0f3a49c6bfe2 3 days ago
+rag-guardrails:working 0f3a49c6bfe2 3 days ago
+rag-webui:1707dc7 4e76b1243fab 3 days ago
+rag-webui:dana 4e76b1243fab 3 days ago
+rag-webui:de7fa3b 4e76b1243fab 3 days ago
+rag-webui:local 4e76b1243fab 3 days ago
+rag-webui:prod-2026-11-12 4e76b1243fab 3 days ago
+rag-webui:production 4e76b1243fab 3 days ago
+rag-webui:sha-4e76b1243f 4e76b1243fab 3 days ago
+rag-webui:snapshot-20261115 4e76b1243fab 3 days ago
+rag-webui:working 4e76b1243fab 3 days ago
+rag-webui:jenkins-de7fa3b 2429b1534d83 3 days ago
+dana-apt-test:cfgproxy 9ac8e17b5f34 4 days ago
+dana-apt-test:proxy 7d7dad9b46f7 4 days ago
+rag-webui:diag-black de023617637d 4 days ago

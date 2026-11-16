@@ -1,12 +1,12 @@
-# GPU Full Recovery Report — `20261116T084855Z-ai-gpu1`
+# GPU Full Recovery Report — `20261116T094909Z-ai-gpu1`
 
 | Field | Value |
 |------|------|
-| UTC | 2026-11-16T09:05:20Z |
+| UTC | 2026-11-16T10:05:26Z |
 | Host | ai-gpu1 |
 | Status | **HEALTHY** |
 | Mode | `compose` |
-| Umbrella HEAD | f689e3e |
+| Umbrella HEAD | 1707dc7 |
 | last_good | 7a504d48ae6d7a88a8ee343108f8427a2fad9c53 |
 | deployed | none |
 | QA | 10 / 10 chat passes |
@@ -62,7 +62,7 @@ random_qa_7 http=200
 random_qa_8 http=200
 random_qa_9 http=200
 random_qa_10 http=200
-random_qa_batch passed=10/10 seed=1794818976
+random_qa_batch passed=10/10 seed=1794822589
 qa_pass=10/10
 ```
 
@@ -166,30 +166,30 @@ OCI runtime exec failed: exec failed: unable to start container process: exec: "
 
 ## Post-restart processes
 ```
-root       33521  0.0  0.0   2564  1452 ?        Ss   08:36   0:00 /usr/bin/tini -- /usr/local/bin/jenkins.sh
-root       33613  4.5  0.0 42851800 596596 ?     Sl   08:36   0:34 java -Duser.home=/var/jenkins_home -Djenkins.install.runSetupWizard=false -Djenkins.model.Jenkins.slaveAgentPort=50000 -Dhudson.lifecycle=hudson.lifecycle.ExitLifecycle -jar /usr/share/jenkins/jenkins.war
-root      744790  2.6  0.0 598896 140628 ?       Sl   Nov12 160:09 offline-prep/venv/bin/python -m uvicorn llm_inference_manager.app:app --host 0.0.0.0 --port 9000 --app-dir /splunk-data/v1/Work_RAG-Server-Setup
-root      878415  0.3  0.0 189884 88080 ?        Sl   Nov12  18:11 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_guardrails.api:create_app --factory --host 0.0.0.0 --port 8200
+root       71459  0.1  0.0 174292 63788 ?        Sl   09:01   0:05 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_guardrails.api:create_app --factory --host 0.0.0.0 --port 8200
+root       71539  1.5  0.1 29724556 1206296 ?    Sl   09:01   0:45 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_orchestrator.api:create_app --factory --host 0.0.0.0 --port 8100
+root       73206  2.6  0.0 520584 125196 ?       Sl   09:02   1:16 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn llm_inference_manager.app:app --host 0.0.0.0 --port 9000 --app-dir /splunk-data/v1/Work_RAG-Server-Setup.__DEPRECATED_DO_NOT_USE_FOR_WEBUI__
+root      147882 42.0  0.0 2281708 365972 ?      Ssl  09:49   0:16 /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
+root      150202  0.0  0.0   2564  1592 ?        Ss   09:49   0:00 /usr/bin/tini -- /usr/local/bin/jenkins.sh
+root      150353  123  0.1 42727244 1302544 ?    Sl   09:49   0:37 java -Duser.home=/var/jenkins_home -Djenkins.install.runSetupWizard=false -Djenkins.model.Jenkins.slaveAgentPort=50000 -Dhudson.lifecycle=hudson.lifecycle.ExitLifecycle -jar /usr/share/jenkins/jenkins.war
 999      1062294  0.0  0.0 17247808 409524 ?     Ss   Nov12   0:20 postgres
 999      1062410  0.0  0.0 17247940 192908 ?     Ss   Nov12   0:00 postgres: checkpointer 
 999      1062411  0.0  0.0 17247964 192324 ?     Ss   Nov12   0:04 postgres: background writer 
 999      1062413  0.0  0.0 17247808 77476 ?      Ss   Nov12   0:04 postgres: walwriter 
 999      1062414  0.0  0.0 17249404 62152 ?      Ss   Nov12   0:05 postgres: autovacuum launcher 
 999      1062415  0.0  0.0 17249392 61620 ?      Ss   Nov12   0:00 postgres: logical replication launcher 
-root     1070192  0.4  0.3 41285116 3705636 ?    Sl   Nov12  23:55 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn kb_manager.web.app:app --host 0.0.0.0 --port 8000
+root     1070192  0.4  0.3 41285116 3705684 ?    Sl   Nov12  24:12 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn kb_manager.web.app:app --host 0.0.0.0 --port 8000
 999      1070246  0.0  0.0 17251772 110608 ?     Ss   Nov12   0:16 postgres: postgres kb_manager 172.17.0.1(50366) idle
-root     1072136  0.9  0.1 30523592 2064632 ?    Sl   Nov12  55:30 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_orchestrator.api:create_app --factory --host 0.0.0.0 --port 8100
-root     2592594  0.2  0.0  59280 51176 ?        Ss   Nov15   3:24 python -m uvicorn app:app --host 0.0.0.0 --port 3000
-999      2592601  0.0  0.0 220368 29444 ?        Ss   Nov15   0:25 postgres
+root     2592594  0.2  0.0  59280 51176 ?        Ss   Nov15   3:33 python -m uvicorn app:app --host 0.0.0.0 --port 3000
+999      2592601  0.0  0.0 220368 29444 ?        Ss   Nov15   0:26 postgres
 999      2592911  0.0  0.0 220500  9056 ?        Ss   Nov15   0:00 postgres: checkpointer 
 999      2592912  0.0  0.0 220524  7316 ?        Ss   Nov15   0:00 postgres: background writer 
 999      2592914  0.0  0.0 220368 10340 ?        Ss   Nov15   0:00 postgres: walwriter 
 999      2592915  0.0  0.0 221964  9180 ?        Ss   Nov15   0:01 postgres: autovacuum launcher 
 999      2592916  0.0  0.0 221952  8520 ?        Ss   Nov15   0:00 postgres: logical replication launcher 
 999      2594965  0.0  0.0 225736 20236 ?        Ss   Nov15   0:05 postgres: postgres kb_manager 172.30.101.6(44616) idle
-root     2597304  0.9  0.0 3750664 373888 ?      Ssl  Nov15  10:51 /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
-root     2806424  1.5  0.0 4033180 397688 ?      Ssl  Nov15  17:09 /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
-999      2867876  0.0  0.0 17251660 63868 ?      Ss   Nov15   0:06 postgres: postgres kb_manager 172.17.0.1(53914) idle
+root     2597304  0.9  0.0 3758876 374112 ?      Ssl  Nov15  11:19 /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
+999      2867876  0.0  0.0 17251660 63868 ?      Ss   Nov15   0:07 postgres: postgres kb_manager 172.17.0.1(53914) idle
 ```
 
 ## How to re-run
@@ -197,4 +197,4 @@ root     2806424  1.5  0.0 4033180 397688 ?      Ssl  Nov15  17:09 /usr/local/bi
 DANA_HOST_REPO=/splunk-data/production/Work_Credit-RAG_Phase1 bash /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/scripts/gpu_full_recover_report.sh
 ```
 
-Artifacts live under `docs/ops/gpu-recover-reports/20261116T084855Z-ai-gpu1/` in Work_RAG-Server-Setup.
+Artifacts live under `docs/ops/gpu-recover-reports/20261116T094909Z-ai-gpu1/` in Work_RAG-Server-Setup.
