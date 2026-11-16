@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Declarative: Checkout SCM",
+    "status": "SUCCESS",
+    "durationMillis": 4027,
+    "id": "8"
+  },
+  {
+    "name": "Checkout",
+    "status": "SUCCESS",
+    "durationMillis": 18014,
+    "id": "19"
+  },
+  {
+    "name": "Skip",
+    "status": "NOT_EXECUTED",
+    "durationMillis": 86,
+    "id": "33"
+  },
+  {
+    "name": "Lint",
+    "status": "SUCCESS",
+    "durationMillis": 15128,
+    "id": "38"
+  },
+  {
+    "name": "Rollback prod",
+    "status": "NOT_EXECUTED",
+    "durationMillis": 113,
+    "id": "43"
+  },
+  {
+    "name": "Force-heal from snapshot",
+    "status": "NOT_EXECUTED",
+    "durationMillis": 80,
+    "id": "48"
+  },
+  {
+    "name": "Snapshot images",
+    "status": "NOT_EXECUTED",
+    "durationMillis": 80,
+    "id": "53"
+  },
+  {
+    "name": "Build images",
+    "status": "FAILED",
+    "durationMillis": 64431,
+    "id": "58"
+  },
+  {
+    "name": "Deploy stage",
+    "status": "FAILED",
+    "durationMillis": 88,
+    "id": "74"
+  },
+  {
+    "name": "E2E stage",
+    "status": "FAILED",
+    "durationMillis": 85,
+    "id": "79"
+  },
+  {
+    "name": "Prod approval (interactive only)",
+    "status": "FAILED",
+    "durationMillis": 76,
+    "id": "84"
+  },
+  {
+    "name": "Deploy prod",
+    "status": "FAILED",
+    "durationMillis": 68,
+    "id": "89"
+  },
+  {
+    "name": "Declarative: Post Actions",
+    "status": "SUCCESS",
+    "durationMillis": 2379,
+    "id": "94"
+  }
+]
