@@ -1,0 +1,2 @@
+9000	manager[/health]	200	{"status":"ok","manager":"llm_inference_manager","version":"1.0.0","uptime_sec":84541,"gpus":[{"index":0,"used_mib":3928
+9000	manager[/]	200	<!doctype html> <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-sc
