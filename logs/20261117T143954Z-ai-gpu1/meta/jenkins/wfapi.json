@@ -1,0 +1,205 @@
+{
+  "_links": {
+    "self": {
+      "href": "/job/dana-rag-prod/job/main/37/wfapi/describe"
+    },
+    "changesets": {
+      "href": "/job/dana-rag-prod/job/main/37/wfapi/changesets"
+    },
+    "artifacts": {
+      "href": "/job/dana-rag-prod/job/main/37/wfapi/artifacts"
+    }
+  },
+  "id": "37",
+  "name": "#37",
+  "status": "SUCCESS",
+  "startTimeMillis": 1794849010565,
+  "endTimeMillis": 1794850114371,
+  "durationMillis": 1103806,
+  "queueDurationMillis": 8,
+  "pauseDurationMillis": 0,
+  "stages": [
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/8/wfapi/describe"
+        }
+      },
+      "id": "8",
+      "name": "Declarative: Checkout SCM",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794849013933,
+      "durationMillis": 12259,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/19/wfapi/describe"
+        }
+      },
+      "id": "19",
+      "name": "Checkout",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794849026339,
+      "durationMillis": 26170,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/33/wfapi/describe"
+        }
+      },
+      "id": "33",
+      "name": "Skip",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794849052536,
+      "durationMillis": 104,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/38/wfapi/describe"
+        }
+      },
+      "id": "38",
+      "name": "Lint",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794849052669,
+      "durationMillis": 26780,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/43/wfapi/describe"
+        }
+      },
+      "id": "43",
+      "name": "Rollback prod",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794849079481,
+      "durationMillis": 120,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/48/wfapi/describe"
+        }
+      },
+      "id": "48",
+      "name": "Force-heal from snapshot",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794849079630,
+      "durationMillis": 96,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/53/wfapi/describe"
+        }
+      },
+      "id": "53",
+      "name": "Snapshot images",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794849079756,
+      "durationMillis": 90,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/58/wfapi/describe"
+        }
+      },
+      "id": "58",
+      "name": "Build images",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794849079876,
+      "durationMillis": 1014767,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/72/wfapi/describe"
+        }
+      },
+      "id": "72",
+      "name": "Deploy stage",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794850094657,
+      "durationMillis": 40,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/77/wfapi/describe"
+        }
+      },
+      "id": "77",
+      "name": "E2E stage",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794850094709,
+      "durationMillis": 37,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/82/wfapi/describe"
+        }
+      },
+      "id": "82",
+      "name": "Prod approval (interactive only)",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1794850094759,
+      "durationMillis": 39,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/87/wfapi/describe"
+        }
+      },
+      "id": "87",
+      "name": "Deploy prod",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794850094814,
+      "durationMillis": 17171,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/dana-rag-prod/job/main/37/execution/node/101/wfapi/describe"
+        }
+      },
+      "id": "101",
+      "name": "Declarative: Post Actions",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1794850112003,
+      "durationMillis": 2242,
+      "pauseDurationMillis": 0
+    }
+  ]
+}

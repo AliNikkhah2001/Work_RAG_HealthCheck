@@ -1,0 +1,27 @@
+Restart attempt at 2026-11-17T14:40:02Z
+Machine type: production_gpu
+Detected stack mode: compose
+
+--- Production GPU mode: compose stack restart ---
+Bringing up compose stack dana-prod with /splunk-data/production/Work_Credit-RAG_Phase1/deploy/compose/.env.prod
+ Container dana-prod-kb-1 Stopping 
+ Container dana-prod-tracing-1 Stopping 
+ Container dana-prod-guardrails-1 Stopping 
+ Container dana-prod-postgres-1 Stopping 
+ Container dana-prod-redis-1 Stopping 
+ Container dana-prod-webui-1 Stopping 
+ Container dana-prod-orchestrator-1 Stopping 
+ Container dana-prod-kb-1 Stopped 
+ Container dana-prod-tracing-1 Stopped 
+ Container dana-prod-guardrails-1 Stopped 
+ Container dana-prod-redis-1 Stopped 
+ Container dana-prod-orchestrator-1 Stopped 
+ Container dana-prod-kb-1 Error response from daemon: container 6423cd95784f3d05b08801659d6c8e1a9e955b1728fd6eaa6ac3873371bfb5b5 is not connected to the network dana-prod_rag 
+ Container dana-prod-webui-1 Stopped 
+ Container dana-prod-postgres-1 Stopped 
+Error response from daemon: container 6423cd95784f3d05b08801659d6c8e1a9e955b1728fd6eaa6ac3873371bfb5b5 is not connected to the network dana-prod_rag
+[1;33m[WARN][0m compose up returned non-zero
+ Container dana-jenkins-prod Running 
+[0;32m[OK][0m   jenkins compose up succeeded
+ not connected to the network dana-prod_rag
+ Container dana-jenkins-prod Running 
