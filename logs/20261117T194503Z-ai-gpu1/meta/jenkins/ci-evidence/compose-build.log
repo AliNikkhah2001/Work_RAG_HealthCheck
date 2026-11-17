@@ -1,0 +1,283 @@
+docker compose build attempt 1/3 (PIP_INDEX_URL=https://pypi.org/simple)
+#1 [internal] load local bake definitions
+#1 reading from stdin 6.55kB done
+#1 DONE 0.0s
+
+#2 [kb internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.29kB done
+#2 DONE 0.0s
+
+#3 [webui internal] load build definition from Dockerfile.local
+#3 transferring dockerfile: 4.01kB done
+#3 DONE 0.0s
+
+#4 [guardrails internal] load build definition from Dockerfile
+#4 transferring dockerfile: 1.04kB done
+#4 DONE 0.0s
+
+#5 [orchestrator internal] load build definition from Dockerfile
+#5 transferring dockerfile: 1.02kB done
+#5 DONE 0.0s
+
+#6 [tracing internal] load build definition from Dockerfile
+#6 transferring dockerfile: 947B done
+#6 DONE 0.0s
+
+#7 [tracing internal] load metadata for docker.io/library/python:3.11-slim
+#7 DONE 0.0s
+
+#8 [tracing internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [tracing internal] load build context
+#9 transferring context: 221B done
+#9 DONE 0.0s
+
+#10 [tracing 1/5] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#10 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#10 DONE 0.0s
+
+#11 [orchestrator] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#11 ...
+
+#12 [tracing 2/5] WORKDIR /app
+#12 CACHED
+
+#13 [tracing 3/5] COPY wheels/ /wheels/
+#13 CACHED
+
+#14 [tracing 4/5] RUN set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     if ls /wheels/*.whl >/dev/null 2>&1; then       pip install --no-cache-dir --no-index --find-links=/wheels fastapi uvicorn ;     else       pip install --no-cache-dir --retries 10 --default-timeout=120 fastapi uvicorn ;     fi
+#14 CACHED
+
+#15 [tracing 5/5] COPY app.py observe.py eval_store.py dashboard_api.py __init__.py ./
+#15 CACHED
+
+#16 [tracing] exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:07f0df68feea0e61f7a16ceb3c1683b236c2f3376c6914adc9f1525e013e9402 done
+#16 exporting config sha256:1f9788a9864b04ca65cb41939035b1cfed27f60c8135e1582442c392ad26b46f done
+#16 exporting attestation manifest sha256:97662d2e55dc265648e2b7038b36fd289061b88de1c2dba638a3c07518051703 0.0s done
+#16 exporting manifest list sha256:32f32eb94ffcf8ebbef79f8364d9f74fcfd20c1523c98a18d8666820d4987540 done
+#16 naming to docker.io/library/rag-tracing:2578997 done
+#16 unpacking to docker.io/library/rag-tracing:2578997 0.0s done
+#16 DONE 0.1s
+
+#17 [tracing] resolving provenance for metadata file
+#17 DONE 0.0s
+
+#11 [orchestrator] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#11 DONE 2.5s
+
+#18 [guardrails] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#18 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#18 CACHED
+
+#7 [orchestrator internal] load metadata for docker.io/library/python:3.11-slim
+#7 ...
+
+#19 [webui internal] load metadata for docker.io/library/python:3.12-slim-trixie
+#19 DONE 2.0s
+
+#7 [guardrails internal] load metadata for docker.io/library/python:3.11-slim
+#7 DONE 2.0s
+
+#20 [orchestrator internal] load .dockerignore
+#20 transferring context: 116B done
+#20 DONE 0.0s
+
+#21 [guardrails internal] load .dockerignore
+#21 transferring context: 116B done
+#21 DONE 0.0s
+
+#22 [kb internal] load .dockerignore
+#22 transferring context: 156B done
+#22 DONE 0.0s
+
+#23 [orchestrator stage-0 1/7] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#23 resolve docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 0.0s done
+#23 DONE 0.0s
+
+#24 [guardrails internal] load build context
+#24 transferring context: 2.23kB done
+#24 DONE 0.0s
+
+#25 [orchestrator internal] load build context
+#25 transferring context: 3.06kB done
+#25 DONE 0.0s
+
+#26 [kb internal] load build context
+#26 transferring context: 9.45kB 0.0s done
+#26 DONE 0.0s
+
+#27 [guardrails stage-0 7/9] COPY kb ./kb
+#27 CACHED
+
+#28 [guardrails stage-0 5/9] COPY src ./src
+#28 CACHED
+
+#29 [guardrails stage-0 8/9] COPY policies ./policies
+#29 CACHED
+
+#30 [guardrails stage-0 4/9] COPY pyproject.toml README.md ./
+#30 CACHED
+
+#31 [guardrails stage-0 6/9] COPY config ./config
+#31 CACHED
+
+#32 [guardrails stage-0 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#32 CACHED
+
+#33 [guardrails stage-0 2/7] WORKDIR /app
+#33 CACHED
+
+#34 [guardrails stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#34 CACHED
+
+#35 [orchestrator stage-0 4/7] COPY pyproject.toml README.md ./
+#35 CACHED
+
+#36 [orchestrator stage-0 6/7] COPY scripts ./scripts
+#36 CACHED
+
+#37 [orchestrator stage-0 5/7] COPY src ./src
+#37 CACHED
+
+#32 [orchestrator stage-0 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#32 CACHED
+
+#38 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#38 CACHED
+
+#39 [kb stage-0 6/9] COPY packs ./packs
+#39 CACHED
+
+#40 [kb stage-0 8/9] COPY run_server.py ./
+#40 CACHED
+
+#33 [kb stage-0 2/7] WORKDIR /app
+#33 CACHED
+
+#41 [kb stage-0 4/9] COPY pyproject.toml README.md ./
+#41 CACHED
+
+#42 [kb stage-0 5/9] COPY kb_manager ./kb_manager
+#42 CACHED
+
+#43 [kb stage-0 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#43 CACHED
+
+#44 [kb stage-0 7/9] COPY configs ./configs
+#44 CACHED
+
+#45 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#45 CACHED
+
+#46 [orchestrator] exporting to image
+#46 exporting layers done
+#46 exporting manifest sha256:ebbad315c81fba6148c9c63c644c21b7494fbecf6df065ddd56fef62efb9cd46 done
+#46 exporting config sha256:d668c837007ccc694f0e371e512a80424a18caf4d46ad7e4346beb036fe47634 done
+#46 exporting attestation manifest sha256:ca31f8e66d76d0b31bd9bd885663b60924e0a7b43c52d8b0a8b7bf75efb02d32 0.0s done
+#46 exporting manifest list sha256:f0c287dcb8f7da06a33d5eeddc6958fe07b00b8a8d02b3f7d0de19ef47e40f81 0.0s done
+#46 naming to docker.io/library/rag-orchestrator:2578997 done
+#46 unpacking to docker.io/library/rag-orchestrator:2578997 0.0s done
+#46 DONE 0.1s
+
+#47 [kb] exporting to image
+#47 exporting layers done
+#47 exporting manifest sha256:0db249d187a73cdb7fbec3d54ccf7707cecf7df8c34802d1349109ed67426950 done
+#47 exporting config sha256:d1701fac2f59d8994eb1a3abbe2edeae4d71f55a8947aa7fe72535213d429995 done
+#47 exporting attestation manifest sha256:4a075682363ac2792391f0c9fdf0676420ab3d73eec3b944d98bc210296f20d7 0.0s done
+#47 exporting manifest list sha256:b2ba5a956066bbc9c17f97d869cdb96e8068948720eabc89b33af1a841d0ad55 0.0s done
+#47 naming to docker.io/library/rag-kb:2578997 done
+#47 unpacking to docker.io/library/rag-kb:2578997 0.0s done
+#47 DONE 0.1s
+
+#48 [guardrails] exporting to image
+#48 exporting layers done
+#48 exporting manifest sha256:781a74e22522133ca9ee1b570bff020e88933d8575f50641f4d03909e1fd39e3 done
+#48 exporting config sha256:d34d786904721c9a5402212d545a2d19807987c87d46b4ef254522574c292909 done
+#48 exporting attestation manifest sha256:d6808b9f8d32d7b23c16b912fc2c1163b53addb91b92250d37df6e9a572ff78b 0.0s done
+#48 exporting manifest list sha256:28ec7011820b0b953670531faaafa24b332244324b056a912930cfeb9a82f8ac 0.0s done
+#48 naming to docker.io/library/rag-guardrails:2578997 done
+#48 unpacking to docker.io/library/rag-guardrails:2578997 0.0s done
+#48 DONE 0.1s
+
+#49 [guardrails] resolving provenance for metadata file
+#49 DONE 0.0s
+
+#50 [orchestrator] resolving provenance for metadata file
+#50 DONE 0.1s
+
+#51 [kb] resolving provenance for metadata file
+#51 DONE 0.0s
+
+#52 [webui internal] load metadata for ghcr.io/astral-sh/uv:0.12.10
+#52 DONE 2.6s
+
+#53 [webui internal] load .dockerignore
+#53 transferring context: 273B done
+#53 DONE 0.0s
+
+#54 [webui] FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+#54 resolve ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500 0.0s done
+#54 DONE 0.0s
+
+#55 [webui base  1/12] FROM docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#55 resolve docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#55 DONE 0.0s
+
+#56 [webui internal] load build context
+#56 transferring context: 172.97MB 1.3s done
+#56 DONE 1.3s
+
+#57 [webui base  4/12] RUN if [ "true" = "true" ] && { [ "false" = "true" ] || [ "false" = "true" ]; }; then       echo "USE_SLIM cannot be combined with USE_CUDA or USE_OLLAMA" >&2; exit 1;     fi
+#57 CACHED
+
+#58 [webui base  6/12] COPY --chown=0:0 ./backend/requirements*.txt ./
+#58 CACHED
+
+#59 [webui base  9/12] COPY --chown=0:0 ./CHANGELOG.md /app/CHANGELOG.md
+#59 CACHED
+
+#60 [webui base  5/12] RUN apt-get update  && apt-get install -y --no-install-recommends curl jq ca-certificates bash  && rm -rf /var/lib/apt/lists/*
+#60 CACHED
+
+#61 [webui base  7/12] RUN --mount=from=ghcr.io/astral-sh/uv:0.12.10,source=/uv,target=/bin/uv     set -e;     if [ "true" = "true" ]; then       uv pip install --system -r requirements-slim.txt --no-cache-dir;     else       pip3 install 'torch<=2.9.1' torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir;       uv pip install --system -r requirements.txt --no-cache-dir;     fi;     mkdir -p /app/backend/data; chown -R "0:0" /app/backend/data/
+#61 CACHED
+
+#62 [webui base 11/12] COPY --chown=0:0 ./backend/ ./
+#62 CACHED
+
+#63 [webui base  8/12] COPY --chown=0:0 ./build /app/build
+#63 CACHED
+
+#64 [webui base  2/12] WORKDIR /app/backend
+#64 CACHED
+
+#65 [webui base  3/12] RUN if [ "0" -ne 0 ]; then       if [ "0" -ne 0 ]; then addgroup --gid "0" app; fi;       adduser --uid "0" --gid "0" --home "/root" --disabled-password --no-create-home app;     fi  && mkdir -p "/root/.cache/chroma"  && echo -n 00000000-0000-0000-0000-000000000000 > "/root/.cache/chroma/telemetry_user_id"  && chown -R "0:0" /app "/root"
+#65 CACHED
+
+#66 [webui base 10/12] COPY --chown=0:0 ./package.json /app/package.json
+#66 CACHED
+
+#67 [webui base 12/12] RUN chgrp -R 0 /app/backend/open_webui/static  && chmod -R g=u /app/backend/open_webui/static  && if [ "false" = "true" ]; then       chgrp -R 0 /app /root || true;       chmod -R g+rwX /app /root || true;       find /app -type d -exec chmod g+s {} + || true;       find /root -type d -exec chmod g+s {} + || true;     fi
+#67 CACHED
+
+#68 [webui] exporting to image
+#68 exporting layers done
+#68 exporting manifest sha256:1b64cae42378070b589ba8d55f1abc94469a278ea30cc61a9dab209c3d877fb4 done
+#68 exporting config sha256:0100eaccd2127bc80b8cdf39212476636a9ac23ebccbf556555a41aeaab9ba17 done
+#68 exporting attestation manifest sha256:9f1155c8df00ce018cccf6ec7b268fd44d902ee41f32425795b57c3e89182790 done
+#68 exporting manifest list sha256:5e2ff3feb5bd17d9ec79cc6a6be3587404de006b8770c38decf7edae1f6a2428 done
+#68 naming to docker.io/library/rag-webui:2578997 done
+#68 unpacking to docker.io/library/rag-webui:2578997 done
+#68 DONE 0.1s
+
+#69 [webui] resolving provenance for metadata file
+#69 DONE 0.0s
+ rag-webui:2578997  Built
+ rag-kb:2578997  Built
+ rag-guardrails:2578997  Built
+ rag-orchestrator:2578997  Built
+ rag-tracing:2578997  Built

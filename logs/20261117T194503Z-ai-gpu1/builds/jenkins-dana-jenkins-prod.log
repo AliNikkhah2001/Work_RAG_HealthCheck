@@ -1,0 +1,201 @@
+2026-11-16T09:49:16.914511794Z Running from: /usr/share/jenkins/jenkins.war
+2026-11-16T09:49:16.915309254Z webroot: /var/jenkins_home/war
+2026-11-16T09:49:17.429515113Z 2026-11-16 09:49:17.403+0000 [id=1]	INFO	winstone.Logger#logInternal: Beginning extraction from war file
+2026-11-16T09:49:17.475968917Z 2026-11-16 09:49:17.475+0000 [id=1]	WARNING	o.e.j.ee9.nested.ContextHandler#setContextPath: Empty contextPath
+2026-11-16T09:49:17.537172285Z 2026-11-16 09:49:17.536+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: jetty-12.1.12; built: 2026-08-03T22:37:55.389Z; git: 10dd3948f37767b84cc2c62358364f042e51dbbe; jvm 21.0.12.1+1-LTS
+2026-11-16T09:49:17.973519677Z 2026-11-16 09:49:17.972+0000 [id=1]	INFO	o.e.j.e.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.ee9.jsp.JettyJspServlet
+2026-11-16T09:49:18.022942325Z 2026-11-16 09:49:18.022+0000 [id=1]	INFO	o.e.j.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2026-11-16T09:49:18.385691927Z 2026-11-16 09:49:18.384+0000 [id=1]	INFO	hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2026-11-16T09:49:18.491051031Z 2026-11-16 09:49:18.490+0000 [id=1]	INFO	o.e.j.s.handler.ContextHandler#doStart: Started oeje9n.ContextHandler$CoreContextHandler@415156bf{Jenkins v2.568.3,/,b=file:///var/jenkins_home/war/,a=AVAILABLE,h=oeje9n.ContextHandler$CoreContextHandler$CoreToNestedHandler@393881f0{STARTED}}
+2026-11-16T09:49:18.502624471Z 2026-11-16 09:49:18.502+0000 [id=1]	INFO	o.e.j.server.AbstractConnector#doStart: Started oejs.ServerConnector@4e628b52{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2026-11-16T09:49:18.503179109Z 2026-11-16 09:49:18.502+0000 [id=1]	INFO	org.eclipse.jetty.server.Server#doStart: Started oejs.Server@f8f56b9{STARTING}[12.1.12,sto=0] @969ms
+2026-11-16T09:49:18.504594079Z 2026-11-16 09:49:18.503+0000 [id=69]	INFO	winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2026-11-16T09:49:18.604780861Z 2026-11-16 09:49:18.604+0000 [id=63]	INFO	jenkins.model.Jenkins#<init>: Starting version 2.568.3
+2026-11-16T09:49:18.677215190Z 2026-11-16 09:49:18.676+0000 [id=75]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2026-11-16T09:49:18.705954834Z 2026-11-16 09:49:18.705+0000 [id=99]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/apache-httpcomponents-client-4-api.hpi under a nonstandard name; expected apache-httpcomponents-client-4-api.jpi
+2026-11-16T09:49:18.708295787Z 2026-11-16 09:49:18.707+0000 [id=101]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/asm-api.hpi under a nonstandard name; expected asm-api.jpi
+2026-11-16T09:49:18.710923598Z 2026-11-16 09:49:18.710+0000 [id=103]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/authentication-tokens.hpi under a nonstandard name; expected authentication-tokens.jpi
+2026-11-16T09:49:18.713690771Z 2026-11-16 09:49:18.713+0000 [id=105]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/bouncycastle-api.hpi under a nonstandard name; expected bouncycastle-api.jpi
+2026-11-16T09:49:18.715862106Z 2026-11-16 09:49:18.715+0000 [id=107]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/branch-api.hpi under a nonstandard name; expected branch-api.jpi
+2026-11-16T09:49:18.718602501Z 2026-11-16 09:49:18.718+0000 [id=109]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/caffeine-api.hpi under a nonstandard name; expected caffeine-api.jpi
+2026-11-16T09:49:18.719936156Z 2026-11-16 09:49:18.719+0000 [id=109]	INFO	hudson.PluginManager$1$3$1#isDuplicate: Ignoring /var/jenkins_home/plugins/caffeine-api.hpi because /var/jenkins_home/plugins/caffeine-api.jpi is already loaded
+2026-11-16T09:49:18.721041521Z 2026-11-16 09:49:18.720+0000 [id=111]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/cloudbees-folder.hpi under a nonstandard name; expected cloudbees-folder.jpi
+2026-11-16T09:49:18.723474508Z 2026-11-16 09:49:18.723+0000 [id=113]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/commons-lang3-api.hpi under a nonstandard name; expected commons-lang3-api.jpi
+2026-11-16T09:49:18.725542782Z 2026-11-16 09:49:18.725+0000 [id=115]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/commons-text-api.hpi under a nonstandard name; expected commons-text-api.jpi
+2026-11-16T09:49:18.727481468Z 2026-11-16 09:49:18.726+0000 [id=117]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/credentials-binding.hpi under a nonstandard name; expected credentials-binding.jpi
+2026-11-16T09:49:18.729796630Z 2026-11-16 09:49:18.729+0000 [id=119]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/credentials.hpi under a nonstandard name; expected credentials.jpi
+2026-11-16T09:49:18.731761891Z 2026-11-16 09:49:18.731+0000 [id=121]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/display-url-api.hpi under a nonstandard name; expected display-url-api.jpi
+2026-11-16T09:49:18.735051193Z 2026-11-16 09:49:18.734+0000 [id=123]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/docker-commons.hpi under a nonstandard name; expected docker-commons.jpi
+2026-11-16T09:49:18.737682768Z 2026-11-16 09:49:18.737+0000 [id=125]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/docker-workflow.hpi under a nonstandard name; expected docker-workflow.jpi
+2026-11-16T09:49:18.739590515Z 2026-11-16 09:49:18.739+0000 [id=127]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/durable-task.hpi under a nonstandard name; expected durable-task.jpi
+2026-11-16T09:49:18.740730512Z 2026-11-16 09:49:18.740+0000 [id=129]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/git-client.hpi under a nonstandard name; expected git-client.jpi
+2026-11-16T09:49:18.742373820Z 2026-11-16 09:49:18.742+0000 [id=131]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/git.hpi under a nonstandard name; expected git.jpi
+2026-11-16T09:49:18.743721743Z 2026-11-16 09:49:18.743+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/github-api.hpi under a nonstandard name; expected github-api.jpi
+2026-11-16T09:49:18.744483454Z 2026-11-16 09:49:18.744+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/github-branch-source.hpi under a nonstandard name; expected github-branch-source.jpi
+2026-11-16T09:49:18.745008610Z 2026-11-16 09:49:18.744+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/github.hpi under a nonstandard name; expected github.jpi
+2026-11-16T09:49:18.745543400Z 2026-11-16 09:49:18.745+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/gson-api.hpi under a nonstandard name; expected gson-api.jpi
+2026-11-16T09:49:18.745945353Z 2026-11-16 09:49:18.745+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/instance-identity.hpi under a nonstandard name; expected instance-identity.jpi
+2026-11-16T09:49:18.746416468Z 2026-11-16 09:49:18.746+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/ionicons-api.hpi under a nonstandard name; expected ionicons-api.jpi
+2026-11-16T09:49:18.747079081Z 2026-11-16 09:49:18.746+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/jackson-annotations2-api.hpi under a nonstandard name; expected jackson-annotations2-api.jpi
+2026-11-16T09:49:18.747639590Z 2026-11-16 09:49:18.747+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/jackson2-api.hpi under a nonstandard name; expected jackson2-api.jpi
+2026-11-16T09:49:18.748322473Z 2026-11-16 09:49:18.748+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/jakarta-activation-api.hpi under a nonstandard name; expected jakarta-activation-api.jpi
+2026-11-16T09:49:18.748796249Z 2026-11-16 09:49:18.748+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/jakarta-mail-api.hpi under a nonstandard name; expected jakarta-mail-api.jpi
+2026-11-16T09:49:18.749415294Z 2026-11-16 09:49:18.749+0000 [id=133]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/jakarta-xml-bind-api.hpi under a nonstandard name; expected jakarta-xml-bind-api.jpi
+2026-11-16T09:49:18.750895379Z 2026-11-16 09:49:18.750+0000 [id=94]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/javax-activation-api.hpi under a nonstandard name; expected javax-activation-api.jpi
+2026-11-16T09:49:18.752428632Z 2026-11-16 09:49:18.752+0000 [id=96]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/jaxb.hpi under a nonstandard name; expected jaxb.jpi
+2026-11-16T09:49:18.753557168Z 2026-11-16 09:49:18.753+0000 [id=98]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/jjwt-api.hpi under a nonstandard name; expected jjwt-api.jpi
+2026-11-16T09:49:18.754375512Z 2026-11-16 09:49:18.754+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/joda-time-api.hpi under a nonstandard name; expected joda-time-api.jpi
+2026-11-16T09:49:18.755069254Z 2026-11-16 09:49:18.754+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/json-api.hpi under a nonstandard name; expected json-api.jpi
+2026-11-16T09:49:18.755607001Z 2026-11-16 09:49:18.755+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/json-path-api.hpi under a nonstandard name; expected json-path-api.jpi
+2026-11-16T09:49:18.756129289Z 2026-11-16 09:49:18.755+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/mailer.hpi under a nonstandard name; expected mailer.jpi
+2026-11-16T09:49:18.756599385Z 2026-11-16 09:49:18.756+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/mina-sshd-api-common.hpi under a nonstandard name; expected mina-sshd-api-common.jpi
+2026-11-16T09:49:18.757117366Z 2026-11-16 09:49:18.756+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/mina-sshd-api-core.hpi under a nonstandard name; expected mina-sshd-api-core.jpi
+2026-11-16T09:49:18.757742749Z 2026-11-16 09:49:18.757+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/okhttp-api.hpi under a nonstandard name; expected okhttp-api.jpi
+2026-11-16T09:49:18.758328817Z 2026-11-16 09:49:18.758+0000 [id=100]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-build-step.hpi under a nonstandard name; expected pipeline-build-step.jpi
+2026-11-16T09:49:18.759282857Z 2026-11-16 09:49:18.758+0000 [id=116]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-graph-analysis.hpi under a nonstandard name; expected pipeline-graph-analysis.jpi
+2026-11-16T09:49:18.760531085Z 2026-11-16 09:49:18.759+0000 [id=118]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-groovy-lib.hpi under a nonstandard name; expected pipeline-groovy-lib.jpi
+2026-11-16T09:49:18.761682834Z 2026-11-16 09:49:18.761+0000 [id=118]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-input-step.hpi under a nonstandard name; expected pipeline-input-step.jpi
+2026-11-16T09:49:18.762587530Z 2026-11-16 09:49:18.762+0000 [id=118]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-milestone-step.hpi under a nonstandard name; expected pipeline-milestone-step.jpi
+2026-11-16T09:49:18.763399070Z 2026-11-16 09:49:18.763+0000 [id=118]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-model-api.hpi under a nonstandard name; expected pipeline-model-api.jpi
+2026-11-16T09:49:18.764801122Z 2026-11-16 09:49:18.764+0000 [id=126]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-model-definition.hpi under a nonstandard name; expected pipeline-model-definition.jpi
+2026-11-16T09:49:18.766019382Z 2026-11-16 09:49:18.765+0000 [id=126]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-model-extensions.hpi under a nonstandard name; expected pipeline-model-extensions.jpi
+2026-11-16T09:49:18.767252239Z 2026-11-16 09:49:18.766+0000 [id=130]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-rest-api.hpi under a nonstandard name; expected pipeline-rest-api.jpi
+2026-11-16T09:49:18.768395880Z 2026-11-16 09:49:18.768+0000 [id=130]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-stage-step.hpi under a nonstandard name; expected pipeline-stage-step.jpi
+2026-11-16T09:49:18.769553975Z 2026-11-16 09:49:18.769+0000 [id=130]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-stage-tags-metadata.hpi under a nonstandard name; expected pipeline-stage-tags-metadata.jpi
+2026-11-16T09:49:18.770405719Z 2026-11-16 09:49:18.770+0000 [id=130]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/pipeline-stage-view.hpi under a nonstandard name; expected pipeline-stage-view.jpi
+2026-11-16T09:49:18.771247539Z 2026-11-16 09:49:18.770+0000 [id=78]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/plain-credentials.hpi under a nonstandard name; expected plain-credentials.jpi
+2026-11-16T09:49:18.771782854Z 2026-11-16 09:49:18.771+0000 [id=78]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/scm-api.hpi under a nonstandard name; expected scm-api.jpi
+2026-11-16T09:49:18.772691588Z 2026-11-16 09:49:18.772+0000 [id=82]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/script-security.hpi under a nonstandard name; expected script-security.jpi
+2026-11-16T09:49:18.773538619Z 2026-11-16 09:49:18.773+0000 [id=85]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/snakeyaml-api.hpi under a nonstandard name; expected snakeyaml-api.jpi
+2026-11-16T09:49:18.774015636Z 2026-11-16 09:49:18.773+0000 [id=85]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/ssh-credentials.hpi under a nonstandard name; expected ssh-credentials.jpi
+2026-11-16T09:49:18.774561616Z 2026-11-16 09:49:18.774+0000 [id=85]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/structs.hpi under a nonstandard name; expected structs.jpi
+2026-11-16T09:49:18.774970953Z 2026-11-16 09:49:18.774+0000 [id=85]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/token-macro.hpi under a nonstandard name; expected token-macro.jpi
+2026-11-16T09:49:18.775591966Z 2026-11-16 09:49:18.775+0000 [id=85]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/variant.hpi under a nonstandard name; expected variant.jpi
+2026-11-16T09:49:18.776093187Z 2026-11-16 09:49:18.775+0000 [id=85]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/woodstox-core-api.hpi under a nonstandard name; expected woodstox-core-api.jpi
+2026-11-16T09:49:18.776557543Z 2026-11-16 09:49:18.776+0000 [id=85]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-aggregator.hpi under a nonstandard name; expected workflow-aggregator.jpi
+2026-11-16T09:49:18.777459338Z 2026-11-16 09:49:18.777+0000 [id=99]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-api.hpi under a nonstandard name; expected workflow-api.jpi
+2026-11-16T09:49:18.778278768Z 2026-11-16 09:49:18.778+0000 [id=98]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-basic-steps.hpi under a nonstandard name; expected workflow-basic-steps.jpi
+2026-11-16T09:49:18.778731937Z 2026-11-16 09:49:18.778+0000 [id=98]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-cps.hpi under a nonstandard name; expected workflow-cps.jpi
+2026-11-16T09:49:18.779196636Z 2026-11-16 09:49:18.779+0000 [id=98]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-durable-task-REDACTED.hpi under a nonstandard name; expected workflow-durable-task-REDACTED.jpi
+2026-11-16T09:49:18.779683644Z 2026-11-16 09:49:18.779+0000 [id=98]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-job.hpi under a nonstandard name; expected workflow-job.jpi
+2026-11-16T09:49:18.780529238Z 2026-11-16 09:49:18.780+0000 [id=109]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-multibranch.hpi under a nonstandard name; expected workflow-multibranch.jpi
+2026-11-16T09:49:18.781525715Z 2026-11-16 09:49:18.781+0000 [id=109]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-scm-step.hpi under a nonstandard name; expected workflow-scm-step.jpi
+2026-11-16T09:49:18.782343765Z 2026-11-16 09:49:18.782+0000 [id=109]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-step-api.hpi under a nonstandard name; expected workflow-step-api.jpi
+2026-11-16T09:49:18.783001703Z 2026-11-16 09:49:18.782+0000 [id=115]	WARNING	hudson.ClassicPluginStrategy#createPluginWrapper: encountered /var/jenkins_home/plugins/workflow-support.hpi under a nonstandard name; expected workflow-support.jpi
+2026-11-16T09:49:18.785492801Z 2026-11-16 09:49:18.785+0000 [id=115]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2026-11-16T09:49:20.740909379Z 2026-11-16 09:49:20.739+0000 [id=79]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2026-11-16T09:49:20.752232617Z 2026-11-16 09:49:20.751+0000 [id=126]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2026-11-16T09:49:20.753176924Z 2026-11-16 09:49:20.752+0000 [id=126]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2026-11-16T09:49:21.194865104Z 2026-11-16 09:49:21.194+0000 [id=95]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2026-11-16T09:49:21.195073137Z 2026-11-16 09:49:21.194+0000 [id=95]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2026-11-16T09:49:21.335929767Z 2026-11-16 09:49:21.335+0000 [id=91]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2026-11-16T09:49:21.357707822Z 2026-11-16 09:49:21.356+0000 [id=112]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2026-11-16T09:49:21.367947638Z 2026-11-16 09:49:21.367+0000 [id=148]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2026-11-16T09:49:21.385551362Z 2026-11-16 09:49:21.385+0000 [id=112]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2026-11-16T09:49:21.456913123Z 2026-11-16 09:49:21.456+0000 [id=63]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2026-11-16T09:49:21.567671824Z 2026-11-16 09:49:21.566+0000 [id=148]	INFO	hudson.util.Retrier#start: The attempt #1 to do the action check updates server failed with an allowed exception:
+2026-11-16T09:49:21.567705417Z java.net.SocketException: Network is unreachable
+2026-11-16T09:49:21.567710057Z 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+2026-11-16T09:49:21.567712878Z 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+2026-11-16T09:49:21.567715486Z 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+2026-11-16T09:49:21.567718175Z 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+2026-11-16T09:49:21.567720925Z 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+2026-11-16T09:49:21.567723334Z 	at java.base/java.net.Socket.connect(Unknown Source)
+2026-11-16T09:49:21.567725649Z 	at java.base/sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
+2026-11-16T09:49:21.567728979Z 	at java.base/sun.net.NetworkClient.doConnect(Unknown Source)
+2026-11-16T09:49:21.567731579Z 	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+2026-11-16T09:49:21.567734191Z 	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+2026-11-16T09:49:21.567736587Z 	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source)
+2026-11-16T09:49:21.567739233Z 	at java.base/sun.net.www.protocol.https.HttpsClient.New(Unknown Source)
+2026-11-16T09:49:21.567741762Z 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source)
+2026-11-16T09:49:21.567744219Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+2026-11-16T09:49:21.567746801Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+2026-11-16T09:49:21.567749147Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+2026-11-16T09:49:21.567751744Z 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
+2026-11-16T09:49:21.567754133Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+2026-11-16T09:49:21.567756971Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+2026-11-16T09:49:21.567759999Z 	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+2026-11-16T09:49:21.567762813Z 	at hudson.model.DownloadService.loadJSON(DownloadService.java:122)
+2026-11-16T09:49:21.567776562Z 	at hudson.model.UpdateSite.updateDirectlyNow(UpdateSite.java:235)
+2026-11-16T09:49:21.567779559Z 	at hudson.model.UpdateSite.updateDirectlyNow(UpdateSite.java:230)
+2026-11-16T09:49:21.567781914Z 	at hudson.PluginManager.checkUpdatesServer(PluginManager.java:2152)
+2026-11-16T09:49:21.567785183Z 	at hudson.util.Retrier.start(Retrier.java:62)
+2026-11-16T09:49:21.567788388Z 	at hudson.PluginManager.doCheckUpdatesServer(PluginManager.java:2123)
+2026-11-16T09:49:21.567791173Z 	at jenkins.DailyCheck.execute(DailyCheck.java:93)
+2026-11-16T09:49:21.567793456Z 	at hudson.model.AsyncPeriodicWork.lambda$doRun$0(AsyncPeriodicWork.java:110)
+2026-11-16T09:49:21.567796285Z 	at java.base/java.lang.Thread.run(Unknown Source)
+2026-11-16T09:49:21.567799282Z 2026-11-16 09:49:21.567+0000 [id=148]	INFO	hudson.util.Retrier#start: Calling the listener of the allowed exception 'Network is unreachable' at the attempt #1 to do the action check updates server
+2026-11-16T09:49:21.569140416Z 2026-11-16 09:49:21.568+0000 [id=148]	INFO	hudson.util.Retrier#start: Attempted the action check updates server for 1 time(s) with no success
+2026-11-16T09:49:21.569327261Z 2026-11-16 09:49:21.569+0000 [id=148]	SEVERE	hudson.PluginManager#doCheckUpdatesServer: Error checking update sites for 1 attempt(s). Last exception was: SocketException: Network is unreachable
+2026-11-16T10:05:21.471185414Z 2026-11-16 10:05:21.470+0000 [id=439]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #1 from /172.30.100.1:50324 failed: null
+2026-11-16T11:06:52.184516602Z 2026-11-16 11:06:52.183+0000 [id=1525]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #2 from /172.30.100.1:36320 failed: null
+2026-11-16T12:07:29.552279245Z 2026-11-16 12:07:29.550+0000 [id=1830]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #3 from /172.30.100.1:53404 failed: null
+2026-11-16T13:08:40.153011507Z 2026-11-16 13:08:40.151+0000 [id=1948]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #4 from /172.30.100.1:59526 failed: null
+2026-11-16T14:10:26.360298306Z 2026-11-16 14:10:26.359+0000 [id=2096]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #5 from /172.30.100.1:51702 failed: null
+2026-11-16T15:11:12.874427192Z 2026-11-16 15:11:12.873+0000 [id=2209]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #6 from /172.30.100.1:54040 failed: null
+2026-11-16T16:12:42.336420543Z 2026-11-16 16:12:42.335+0000 [id=2323]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #7 from /172.30.100.1:42268 failed: null
+2026-11-16T17:14:26.939985569Z 2026-11-16 17:14:26.938+0000 [id=2579]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #8 from /172.30.100.1:44286 failed: null
+2026-11-16T17:33:19.333456366Z 2026-11-16 17:33:19.331+0000 [id=2744]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #9 from /172.30.100.1:54000 failed: null
+2026-11-16T18:32:44.583049291Z 2026-11-16 18:32:44.582+0000 [id=2849]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #10 from /172.30.100.1:54908 failed: null
+2026-11-16T19:34:13.789537559Z 2026-11-16 19:34:13.788+0000 [id=2956]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #11 from /172.30.100.1:32968 failed: null
+2026-11-16T20:34:50.581765422Z 2026-11-16 20:34:50.580+0000 [id=3063]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #12 from /172.30.100.1:43798 failed: null
+2026-11-16T21:35:09.124807066Z 2026-11-16 21:35:09.123+0000 [id=3167]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #13 from /172.30.100.1:54652 failed: null
+2026-11-16T22:36:15.273054556Z 2026-11-16 22:36:15.271+0000 [id=3272]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #14 from /172.30.100.1:54658 failed: null
+2026-11-16T23:37:53.670262734Z 2026-11-16 23:37:53.669+0000 [id=3375]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #15 from /172.30.100.1:39148 failed: null
+2026-11-17T00:18:05.389974006Z 2026-11-17 00:18:05.389+0000 [id=3477]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #16 from /172.30.100.1:60328 failed: null
+2026-11-17T00:39:03.689753442Z 2026-11-17 00:39:03.688+0000 [id=3523]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #17 from /172.30.100.1:39006 failed: null
+2026-11-17T01:39:06.249717777Z 2026-11-17 01:39:06.249+0000 [id=3625]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #18 from /172.30.100.1:53414 failed: null
+2026-11-17T02:41:12.160771380Z 2026-11-17 02:41:12.160+0000 [id=3729]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #19 from /172.30.100.1:33154 failed: null
+2026-11-17T03:42:03.142117093Z 2026-11-17 03:42:03.141+0000 [id=3833]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #20 from /172.30.100.1:56562 failed: null
+2026-11-17T04:43:16.222461703Z 2026-11-17 04:43:16.221+0000 [id=3952]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #21 from /172.30.100.1:47292 failed: null
+2026-11-17T05:43:51.568446277Z 2026-11-17 05:43:51.567+0000 [id=4054]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #22 from /172.30.100.1:44020 failed: null
+2026-11-17T06:45:55.164759889Z 2026-11-17 06:45:55.163+0000 [id=4153]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #23 from /172.30.100.1:54822 failed: null
+2026-11-17T07:45:57.370982924Z 2026-11-17 07:45:57.370+0000 [id=4257]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #24 from /172.30.100.1:46438 failed: null
+2026-11-17T08:47:38.742933124Z 2026-11-17 08:47:38.741+0000 [id=4363]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #25 from /172.30.100.1:54974 failed: null
+2026-11-17T09:48:14.764617608Z 2026-11-17 09:48:14.764+0000 [id=4464]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #26 from /172.30.100.1:55388 failed: null
+2026-11-17T09:49:21.366145141Z 2026-11-17 09:49:21.364+0000 [id=4507]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2026-11-17T09:49:21.780345767Z 2026-11-17 09:49:21.778+0000 [id=4507]	INFO	hudson.util.Retrier#start: The attempt #1 to do the action check updates server failed with an allowed exception:
+2026-11-17T09:49:21.780405258Z java.net.SocketException: Network is unreachable
+2026-11-17T09:49:21.780410571Z 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+2026-11-17T09:49:21.780413283Z 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+2026-11-17T09:49:21.780416116Z 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+2026-11-17T09:49:21.780418643Z 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+2026-11-17T09:49:21.780421016Z 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+2026-11-17T09:49:21.780423627Z 	at java.base/java.net.Socket.connect(Unknown Source)
+2026-11-17T09:49:21.780425956Z 	at java.base/sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
+2026-11-17T09:49:21.780428706Z 	at java.base/sun.net.NetworkClient.doConnect(Unknown Source)
+2026-11-17T09:49:21.780431007Z 	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+2026-11-17T09:49:21.780433801Z 	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+2026-11-17T09:49:21.780436148Z 	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source)
+2026-11-17T09:49:21.780439128Z 	at java.base/sun.net.www.protocol.https.HttpsClient.New(Unknown Source)
+2026-11-17T09:49:21.780441644Z 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source)
+2026-11-17T09:49:21.780444084Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+2026-11-17T09:49:21.780446488Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+2026-11-17T09:49:21.780448820Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+2026-11-17T09:49:21.780451274Z 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
+2026-11-17T09:49:21.780453668Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+2026-11-17T09:49:21.780456065Z 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+2026-11-17T09:49:21.780458372Z 	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+2026-11-17T09:49:21.780460802Z 	at hudson.model.DownloadService.loadJSON(DownloadService.java:122)
+2026-11-17T09:49:21.780463105Z 	at hudson.model.UpdateSite.updateDirectlyNow(UpdateSite.java:235)
+2026-11-17T09:49:21.780465455Z 	at hudson.model.UpdateSite.updateDirectlyNow(UpdateSite.java:230)
+2026-11-17T09:49:21.780467710Z 	at hudson.PluginManager.checkUpdatesServer(PluginManager.java:2152)
+2026-11-17T09:49:21.780471472Z 	at hudson.util.Retrier.start(Retrier.java:62)
+2026-11-17T09:49:21.780473859Z 	at hudson.PluginManager.doCheckUpdatesServer(PluginManager.java:2123)
+2026-11-17T09:49:21.780476196Z 	at jenkins.DailyCheck.execute(DailyCheck.java:93)
+2026-11-17T09:49:21.780483530Z 	at hudson.model.AsyncPeriodicWork.lambda$doRun$0(AsyncPeriodicWork.java:110)
+2026-11-17T09:49:21.780486020Z 	at java.base/java.lang.Thread.run(Unknown Source)
+2026-11-17T09:49:21.780488465Z 2026-11-17 09:49:21.779+0000 [id=4507]	INFO	hudson.util.Retrier#start: Calling the listener of the allowed exception 'Network is unreachable' at the attempt #1 to do the action check updates server
+2026-11-17T09:49:21.781004152Z 2026-11-17 09:49:21.780+0000 [id=4507]	INFO	hudson.util.Retrier#start: Attempted the action check updates server for 1 time(s) with no success
+2026-11-17T09:49:21.781038548Z 2026-11-17 09:49:21.780+0000 [id=4507]	SEVERE	hudson.PluginManager#doCheckUpdatesServer: Error checking update sites for 1 attempt(s). Last exception was: SocketException: Network is unreachable
+2026-11-17T10:49:18.384957298Z 2026-11-17 10:49:18.383+0000 [id=4567]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #27 from /172.30.100.1:55410 failed: null
+2026-11-17T11:50:55.834807819Z 2026-11-17 11:50:55.833+0000 [id=4684]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #28 from /172.30.100.1:44986 failed: null
+2026-11-17T12:52:48.093580031Z 2026-11-17 12:52:48.092+0000 [id=4786]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #29 from /172.30.100.1:34824 failed: null
+2026-11-17T13:54:46.734970588Z 2026-11-17 13:54:46.734+0000 [id=4891]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #30 from /172.30.100.1:36292 failed: null
+2026-11-17T14:55:40.059110236Z 2026-11-17 14:55:40.058+0000 [id=4994]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #31 from /172.30.100.1:51526 failed: null
+2026-11-17T15:43:02.881784103Z 2026-11-17 15:43:02.880+0000 [id=2990]	INFO	h.triggers.SCMTrigger$Runner#run: SCM changes detected in DANA RAG Prod (main) » main. Triggering  #38
+2026-11-17T15:56:33.127199719Z 2026-11-17 15:56:33.125+0000 [id=5314]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #32 from /172.30.100.1:52320 failed: null
+2026-11-17T16:43:03.243988810Z 2026-11-17 16:43:03.243+0000 [id=1484]	INFO	h.triggers.SCMTrigger$Runner#run: SCM changes detected in DANA RAG Prod (main) » main. Triggering  #41
+2026-11-17T16:57:16.596696157Z 2026-11-17 16:57:16.596+0000 [id=5983]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #33 from /172.30.100.1:46106 failed: null
+2026-11-17T17:59:14.724457805Z 2026-11-17 17:59:14.723+0000 [id=6308]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #34 from /172.30.100.1:60302 failed: null
+2026-11-17T19:01:14.688920744Z 2026-11-17 19:01:14.688+0000 [id=6413]	INFO	h.TcpSlaveAgentListener$ConnectionHandler#run: Connection #35 from /172.30.100.1:57664 failed: null
