@@ -1,0 +1,2 @@
+8003	service:8003[/health]	200	{"status":"ok","model":"paraphrase-multilingual-MiniLM-L12-v2","dim":384}
+8003	service:8003[/]	200	{"detail":"Not Found"}

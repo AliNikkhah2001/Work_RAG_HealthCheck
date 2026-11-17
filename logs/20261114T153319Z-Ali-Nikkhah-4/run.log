@@ -1,149 +1,0 @@
-
-\033[0;36m======================================================================\033[0m
-\033[0;36m  GPU Full Recovery Report — 20261114T153319Z-Ali-Nikkhah-4\033[0m
-\033[0;36m======================================================================\033[0m
-  Host:        Ali-Nikkhah-4.local
-  Repo:        /Users/alinikkhah/Documents/Work/CreditScoring/chatbot-health-dashboard
-  Server-setup: /Users/alinikkhah/Documents/Work/CreditScoring/chatbot-health-dashboard/components/server-setup
-  Output:      /tmp/report-out3
-  Root:        no
-  Push:        disabled
-  Restart:     disabled
-  Screenshot:  disabled
-\033[0;36m======================================================================\033[0m
-
-[1;33m[WARN][0m Not running as root — docker, journalctl, and /root/.bash_history may be inaccessible
-[1;33m[WARN][0m Not running as root — docker, journalctl, and /root/.bash_history may be inaccessible
-  Recommended: sudo bash scripts/gpu_full_recover_report.sh (with DANA_HOST_REPO set)
-
-[0;32m[OK][0m   Detected dev laptop (macOS) — dev mode: relaxed restarts, dev health checks
-[0;32m[OK][0m   Detected dev laptop (macOS) — dev mode: relaxed restarts, dev health checks
-[0;36m[██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  15%  Collecting host metadata
-[0;34m[INFO][0m Step 3/20: Collecting host metadata
-[0;34m[INFO][0m Step 3/20: Collecting host metadata
-[0;32m[OK][0m   host metadata -> /tmp/report-out3/meta/host_metadata.txt
-[0;32m[OK][0m   host metadata -> /tmp/report-out3/meta/host_metadata.txt
-[0;36m[████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  20%  Collecting all git commits (last 3 days)
-[0;34m[INFO][0m Step 4/20: Collecting all git commits (last 3 days)
-[0;34m[INFO][0m Step 4/20: Collecting all git commits (last 3 days)
-[0;32m[OK][0m   umbrella commits -> /tmp/report-out3/commits/umbrella_commits.txt
-[0;32m[OK][0m   umbrella commits -> /tmp/report-out3/commits/umbrella_commits.txt
-[0;36m[██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  25%  Collecting shell command history (last 3 days)
-[0;34m[INFO][0m Step 5/20: Collecting shell command history (last 3 days)
-[0;34m[INFO][0m Step 5/20: Collecting shell command history (last 3 days)
-[0;32m[OK][0m   shell history -> /tmp/report-out3/commands/shell_history.txt
-[0;32m[OK][0m   shell history -> /tmp/report-out3/commands/shell_history.txt
-[0;36m[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  30%  Collecting all container logs
-[0;34m[INFO][0m Step 6/20: Collecting all container logs
-[0;34m[INFO][0m Step 6/20: Collecting all container logs
-[0;32m[OK][0m   collected logs from 38 containers
-[0;32m[OK][0m   collected logs from 38 containers
-[0;36m[██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  35%  Collecting database and DVC logs
-[0;34m[INFO][0m Step 7/20: Collecting database and DVC logs
-[0;34m[INFO][0m Step 7/20: Collecting database and DVC logs
-[0;32m[OK][0m   database and dvc logs -> /tmp/report-out3/logs/database_and_dvc.log
-[0;32m[OK][0m   database and dvc logs -> /tmp/report-out3/logs/database_and_dvc.log
-[0;36m[████████████████░░░░░░░░░░░░░░░░░░░░░░░░][0m  40%  Collecting host /tmp logs
-[0;34m[INFO][0m Step 8/20: Collecting host /tmp logs
-[0;34m[INFO][0m Step 8/20: Collecting host /tmp logs
-[0;32m[OK][0m   collected 36 host log files
-[0;32m[OK][0m   collected 36 host log files
-[0;36m[██████████████████░░░░░░░░░░░░░░░░░░░░░░][0m  45%  Collecting builds and runs
-[0;34m[INFO][0m Step 9/20: Collecting builds and runs
-[0;34m[INFO][0m Step 9/20: Collecting builds and runs
-[0;32m[OK][0m   builds/runs -> /tmp/report-out3/builds/builds_and_runs.txt
-[0;32m[OK][0m   builds/runs -> /tmp/report-out3/builds/builds_and_runs.txt
-[0;36m[████████████████████░░░░░░░░░░░░░░░░░░░░][0m  50%  Collecting knowledgebase details
-[0;34m[INFO][0m Step 10/20: Collecting knowledgebase details
-[0;34m[INFO][0m Step 10/20: Collecting knowledgebase details
-[0;32m[OK][0m   kb version probe -> /tmp/report-out3/kb/kb_version.json (verdict: unknown)
-[0;32m[OK][0m   kb version probe -> /tmp/report-out3/kb/kb_version.json (verdict: unknown)
-[0;32m[OK][0m   knowledgebase details -> /tmp/report-out3/kb/kb_details.txt
-[0;32m[OK][0m   knowledgebase details -> /tmp/report-out3/kb/kb_details.txt
-[0;36m[██████████████████████░░░░░░░░░░░░░░░░░░][0m  55%  Attempting service restart
-[0;34m[INFO][0m Step 11/20: Attempting service restart
-[0;34m[INFO][0m Step 11/20: Attempting service restart
-[1;33m[WARN][0m restart disabled (--no-restart)
-[1;33m[WARN][0m restart disabled (--no-restart)
-[0;36m[████████████████████████░░░░░░░░░░░░░░░░][0m  60%  Testing all service endpoints (curl health matrix)
-[0;34m[INFO][0m Step 12/20: Testing all service endpoints (curl health matrix)
-[0;34m[INFO][0m Step 12/20: Testing all service endpoints (curl health matrix)
-[0;32m[OK][0m   WebUI publishes :13000 (port overlay applied correctly)
-[0;32m[OK][0m   WebUI publishes :13000 (port overlay applied correctly)
-[0;36m[███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m   7%  probing port 1800018000	gemma	200	
-[0;36m[██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  15%  probing port 90009000	manager	000	
-[0;36m[█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  23%  probing port 80008000	kb	200	
-[0;32m[OK][0m   :8000 (kb) up
-[0;32m[OK][0m   :8000 (kb) up
-[0;36m[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  30%  probing port 82008200	guardrails	200	
-[0;32m[OK][0m   :8200 (guardrails) up
-[0;32m[OK][0m   :8200 (guardrails) up
-[0;36m[███████████████░░░░░░░░░░░░░░░░░░░░░░░░░][0m  38%  probing port 81008100	orchestrator	200	
-[0;32m[OK][0m   :8100 (orchestrator) up
-[0;32m[OK][0m   :8100 (orchestrator) up
-[0;36m[██████████████████░░░░░░░░░░░░░░░░░░░░░░][0m  46%  probing port 30003000	trace-collector	200	
-[0;36m[█████████████████████░░░░░░░░░░░░░░░░░░░][0m  53%  probing port 30013001	langfuse	000	
-[0;36m[████████████████████████░░░░░░░░░░░░░░░░][0m  61%  probing port 1300013000	webui	200	
-[0;32m[OK][0m   webui :13000 up
-[0;32m[OK][0m   webui :13000 up
-[0;36m[███████████████████████████░░░░░░░░░░░░░][0m  69%  probing port 80858085	jenkins	200	
-[0;32m[OK][0m   jenkins :8085 up
-[0;32m[OK][0m   jenkins :8085 up
-[0;36m[██████████████████████████████░░░░░░░░░░][0m  76%  probing port 80108010	service:8010	000	
-[0;36m[█████████████████████████████████░░░░░░░][0m  84%  probing port 80018001	service:8001	000	
-[0;36m[████████████████████████████████████░░░░][0m  92%  probing port 80028002	service:8002	000	
-[0;36m[████████████████████████████████████████][0m 100%  probing port 80038003	service:8003	000	
-
-{"status":"ready","dependencies":[{"name":"knowledgebase","status":"ready","url":"http://kb:8000","error":null},{"name":"guardrails","status":"ready","url":"http://guardrails:8200","error":null}]}
-{"status":"ready","nemo_config_loaded":true,"upstream_reachable":false,"policy_version":"mvp-1"}
-[0;36m[██████████████████████████░░░░░░░░░░░░░░][0m  65%  Running E2E chat QA tests
-[0;34m[INFO][0m Step 13/20: Running E2E chat QA tests
-[0;34m[INFO][0m Step 13/20: Running E2E chat QA tests
-chat_greeting http=200
-[0;32m[OK][0m   E2E chat_greeting pass
-[0;32m[OK][0m   E2E chat_greeting pass
-chat_credit_qa http=200
-[0;32m[OK][0m   E2E chat_credit_qa pass
-[0;32m[OK][0m   E2E chat_credit_qa pass
-chat_webui http=200
-[0;32m[OK][0m   E2E webui pass (signed in, model=ics-helper-agent)
-[0;32m[OK][0m   E2E webui pass (signed in, model=ics-helper-agent)
-kb_search http=200
-[0;32m[OK][0m   KB search returned results
-[0;32m[OK][0m   KB search returned results
-qa_pass=3/3
-[0;36m[████████████████████████████░░░░░░░░░░░░][0m  70%  Capturing headless screenshots
-[0;34m[INFO][0m Step 14/20: Capturing headless screenshots
-[0;34m[INFO][0m Step 14/20: Capturing headless screenshots
-[1;33m[WARN][0m screenshots disabled (--no-screenshot)
-[1;33m[WARN][0m screenshots disabled (--no-screenshot)
-total 0
-drwxr-xr-x   3 alinikkhah  wheel   96 Nov 14 19:03 .
-drwxr-xr-x  16 alinikkhah  wheel  512 Nov 14 19:03 ..
--rw-r--r--   1 alinikkhah  wheel    0 Nov 14 19:03 listing.txt
-[0;36m[██████████████████████████████░░░░░░░░░░][0m  75%  Collecting command/shutdown/reboot/user metadata
-[0;34m[INFO][0m Step 15/20: Collecting command/shutdown/reboot/user metadata
-[0;34m[INFO][0m Step 15/20: Collecting command/shutdown/reboot/user metadata
-[0;32m[OK][0m   command/shutdown/reboot/user metadata -> /tmp/report-out3/logs/command_shutdown_reboot_user.log
-[0;32m[OK][0m   command/shutdown/reboot/user metadata -> /tmp/report-out3/logs/command_shutdown_reboot_user.log
-[0;36m[████████████████████████████████░░░░░░░░][0m  80%  Writing REPORT.md
-[0;34m[INFO][0m Step 16/20: Writing REPORT.md
-[0;34m[INFO][0m Step 16/20: Writing REPORT.md
-[0;32m[OK][0m   wrote /tmp/report-out3/REPORT.md
-[0;32m[OK][0m   wrote /tmp/report-out3/REPORT.md
-[0;36m[██████████████████████████████████░░░░░░][0m  85%  Generating HTML dashboard
-[0;34m[INFO][0m Step 17/20: Generating HTML dashboard
-[0;34m[INFO][0m Step 17/20: Generating HTML dashboard
-sed: RE error: illegal byte sequence
-[0;32m[OK][0m   html dashboard -> /tmp/report-out3/html/dashboard.html
-[0;32m[OK][0m   html dashboard -> /tmp/report-out3/html/dashboard.html
-[0;36m[████████████████████████████████████░░░░][0m  90%  Redacting secrets and pushing to GitHub
-[0;34m[INFO][0m Step 18/20: Redacting secrets and pushing to GitHub
-[0;34m[INFO][0m Step 18/20: Redacting secrets and pushing to GitHub
-[0;34m[INFO][0m Step 19/20: Publishing run record to monitoring repo
-[0;34m[INFO][0m probing knowledge-base version (db + api) vs pinned
-[1;33m[WARN][0m KB version undetermined (values reported as 'unknown' on the dashboard)
-[1;33m[WARN][0m push disabled (--no-push). Report at: /tmp/report-out3
-[0;34m[INFO][0m Step 20/20: Final status summary
-[0;32m[OK][0m   wrote /tmp/report-out3/REPORT.md
-[0;32m[OK][0m   dashboard opened in browser
