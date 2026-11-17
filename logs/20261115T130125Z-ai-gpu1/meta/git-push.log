@@ -1,4 +1,0 @@
-[publish] repo=/var/lib/dana-health/Work_RAG_HealthCheck run=20261115T130125Z-ai-gpu1 status=HEALTHY machine=ai-gpu1
-[publish] logs/20261115T130125Z-ai-gpu1: 67 files
-[publish] runs/index.json: 4 records, 2 machines
-[publish] OK: pushed to main on attempt 1
