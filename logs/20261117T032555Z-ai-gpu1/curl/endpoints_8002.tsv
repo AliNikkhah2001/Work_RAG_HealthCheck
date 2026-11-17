@@ -1,0 +1,2 @@
+8002	service:8002[/health]	200	{"status":"ok","model":"BAAI/bge-m3","dim":1024}
+8002	service:8002[/]	200	{"detail":"Not Found"}
