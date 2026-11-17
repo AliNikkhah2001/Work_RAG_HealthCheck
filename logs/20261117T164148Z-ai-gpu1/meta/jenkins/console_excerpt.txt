@@ -1,0 +1,42 @@
+[2026-11-17T16:43:34.304Z] DANA_ROLE=prod
+[2026-11-17T16:43:34.304Z] CI_MAY_DEPLOY_STAGE=0
+[2026-11-17T16:43:34.304Z] CI_MAY_DEPLOY_PROD=1
+[Pipeline] { (Build images)
+[2026-11-17T16:44:02.893Z] ci_apply_iran_mirrors: mode=fallback-only (upstream primary)
+[2026-11-17T16:44:02.893Z] ci_apply_iran_mirrors: PIP_INDEX_URL=https://pypi.org/simple
+[2026-11-17T16:44:02.893Z] ci_apply_iran_mirrors: PIP_EXTRA_INDEX_URL=https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/
+[2026-11-17T16:44:02.893Z] ci_apply_iran_mirrors: NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
+[2026-11-17T16:44:02.893Z] ci_apply_iran_mirrors: IRAN_NPM_REGISTRIES=https://mirror-npm.pkg.shecan.ir/ https://mirror-npm.runflare.com/ https://package-mirror.liara.ir/repository/npm/
+[2026-11-17T16:44:02.893Z] ci_apply_iran_mirrors: PIP_TRUSTED_HOST=pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir
+[2026-11-17T16:44:02.893Z] ci_apply_iran_mirrors: wrote export env → .ci_iran_mirrors.env
+[2026-11-17T16:46:18.292Z] 1620:       {@const failure = sessionFailures[tab.id]}
+[2026-11-17T16:46:47.772Z] 1620:       {@const failure = sessionFailures[tab.id]}
+[2026-11-17T16:48:53.954Z] .svelte-kit/output/server/entries/pages/error/_page.svelte.js                                 0.57 kB │ map:     2.18 kB
+[2026-11-17T16:48:53.954Z] .svelte-kit/output/server/entries/pages/_error.svelte.js                                      0.72 kB │ map:     0.57 kB
+[2026-11-17T16:48:56.211Z] Building compose services: kb guardrails orchestrator tracing webui (parallel_limit=1)
+[2026-11-17T16:48:56.211Z] docker compose build attempt 1/3 (PIP_INDEX_URL=https://pypi.org/simple)
+[Pipeline] { (Deploy prod)
+[2026-11-17T16:49:10.611Z] + docker tag rag-webui:2578997 rag-webui:dana
+[2026-11-17T16:49:10.611Z] + docker tag rag-webui:local rag-webui:dana
+[2026-11-17T16:49:10.611Z] + export DANA_WEBUI_IMAGE=rag-webui:dana
+[2026-11-17T16:49:10.611Z] Using WebUI image: rag-webui:dana
+[2026-11-17T16:49:35.472Z] COVERAGE_VERDICT=covered
+[2026-11-17T16:49:35.472Z] COVERAGE_RAN=lint,build,prod-deploy
+[2026-11-17T16:49:35.472Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-17T16:49:35.472Z] COVERAGE_MISSING=none
+[2026-11-17T16:49:35.472Z] COVERAGE_STATE=success
+[2026-11-17T16:49:35.472Z] COVERAGE_DESCRIPTION=verified: lint,build,prod-deploy
+[2026-11-17T16:49:35.472Z] COVERAGE_GUARD=pass
+[2026-11-17T16:49:35.472Z] COVERAGE_VERDICT=covered
+[2026-11-17T16:49:35.472Z] COVERAGE_RAN=lint,build,prod-deploy
+[2026-11-17T16:49:35.472Z] COVERAGE_EXPECTED=lint,build,prod-deploy
+[2026-11-17T16:49:35.472Z] COVERAGE_MISSING=none
+[2026-11-17T16:49:35.472Z] COVERAGE_STATE=success
+[2026-11-17T16:49:35.472Z] COVERAGE_DESCRIPTION=verified: lint,build,prod-deploy
+[2026-11-17T16:49:35.472Z] COVERAGE_GUARD=pass
+[2026-11-17T16:49:35.472Z] + sed -n s/^COVERAGE_GUARD=//p .ci_coverage.env
+[2026-11-17T16:49:35.473Z] + sed -n s/^COVERAGE_STATE=//p .ci_coverage.env
+[2026-11-17T16:49:35.473Z] + sed -n s/^COVERAGE_DESCRIPTION=//p .ci_coverage.env
+[2026-11-17T16:49:36.231Z] + bash scripts/ci_github_status.sh --sha 2578997c77df60f14efb81e6160b095c67afd1c4 --state success --context dana/validate --description verified: lint,build,prod-deploy --target-url 
+[2026-11-17T16:49:37.142Z] ci_github_status: reported success for 2578997c77df60f14efb81e6160b095c67afd1c4 (dana/validate)
+Finished: SUCCESS
