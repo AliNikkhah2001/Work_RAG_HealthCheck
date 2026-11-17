@@ -1,0 +1,1 @@
+{"status":"ready","dependencies":[{"name":"knowledgebase","status":"ready","url":"http://127.0.0.1:8000","error":null},{"name":"guardrails","status":"ready","url":"http://127.0.0.1:8200","error":null}]}
