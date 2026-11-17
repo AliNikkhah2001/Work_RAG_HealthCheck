@@ -1,0 +1,781 @@
+docker compose build attempt 1/3 (PIP_INDEX_URL=https://pypi.org/simple)
+#1 [internal] load local bake definitions
+#1 reading from stdin 6.55kB done
+#1 DONE 0.0s
+
+#2 [kb internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.29kB done
+#2 DONE 0.0s
+
+#3 [webui internal] load build definition from Dockerfile.local
+#3 transferring dockerfile: 4.01kB done
+#3 DONE 0.0s
+
+#4 [tracing internal] load build definition from Dockerfile
+#4 transferring dockerfile: 947B done
+#4 DONE 0.0s
+
+#5 [guardrails internal] load build definition from Dockerfile
+#5 transferring dockerfile: 1.04kB done
+#5 DONE 0.0s
+
+#6 [orchestrator internal] load build definition from Dockerfile
+#6 transferring dockerfile: 1.02kB done
+#6 DONE 0.0s
+
+#7 [tracing internal] load metadata for docker.io/library/python:3.11-slim
+#7 DONE 0.0s
+
+#8 [tracing internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [tracing internal] load build context
+#9 transferring context: 221B done
+#9 DONE 0.0s
+
+#10 [tracing 1/5] FROM docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9
+#10 resolve docker.io/library/python:3.11-slim@sha256:da047cb8f9d1d98e5c070f5300ba9f7274e33b8fc0e5be5ed88740aed1b95ba9 0.0s done
+#10 DONE 0.0s
+
+#11 [tracing 4/5] RUN set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     if ls /wheels/*.whl >/dev/null 2>&1; then       pip install --no-cache-dir --no-index --find-links=/wheels fastapi uvicorn ;     else       pip install --no-cache-dir --retries 10 --default-timeout=120 fastapi uvicorn ;     fi
+#11 CACHED
+
+#12 [tracing 3/5] COPY wheels/ /wheels/
+#12 CACHED
+
+#13 [tracing 2/5] WORKDIR /app
+#13 CACHED
+
+#14 [tracing 5/5] COPY app.py observe.py eval_store.py dashboard_api.py __init__.py ./
+#14 CACHED
+
+#15 [tracing] exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:07f0df68feea0e61f7a16ceb3c1683b236c2f3376c6914adc9f1525e013e9402 done
+#15 exporting config sha256:1f9788a9864b04ca65cb41939035b1cfed27f60c8135e1582442c392ad26b46f done
+#15 exporting attestation manifest sha256:23785eaf1236273825050ed587711a8b84996b118c79bbceb50fb51a2b01ec15 done
+#15 exporting manifest list sha256:de673f46b817d026d66febbd49ff8c8d87f02bfdcb3b0516e337e250af35b3a5 done
+#15 naming to docker.io/library/rag-tracing:f0c47ca done
+#15 unpacking to docker.io/library/rag-tracing:f0c47ca 0.0s done
+#15 DONE 0.1s
+
+#16 [tracing] resolving provenance for metadata file
+#16 DONE 0.0s
+
+#17 [orchestrator] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#17 DONE 2.6s
+
+#18 [kb] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#18 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#18 CACHED
+
+#7 [orchestrator internal] load metadata for docker.io/library/python:3.11-slim
+#7 ...
+
+#19 [webui internal] load metadata for docker.io/library/python:3.12-slim-trixie
+#19 DONE 2.1s
+
+#7 [guardrails internal] load metadata for docker.io/library/python:3.11-slim
+#7 DONE 2.1s
+
+#20 [orchestrator internal] load .dockerignore
+#20 transferring context: 116B done
+#20 DONE 0.0s
+
+#21 [kb internal] load .dockerignore
+#21 transferring context: 156B done
+#21 DONE 0.0s
+
+#22 [guardrails internal] load .dockerignore
+#22 transferring context: 116B done
+#22 DONE 0.0s
+
+#23 [kb stage-0 1/7] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#23 resolve docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 0.0s done
+#23 DONE 0.0s
+
+#24 [orchestrator internal] load build context
+#24 transferring context: 181.52kB 0.0s done
+#24 DONE 0.0s
+
+#25 [orchestrator stage-0 2/7] WORKDIR /app
+#25 CACHED
+
+#26 [orchestrator stage-0 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#26 CACHED
+
+#27 [orchestrator stage-0 4/7] COPY pyproject.toml README.md ./
+#27 CACHED
+
+#28 [orchestrator stage-0 5/7] COPY src ./src
+#28 DONE 0.0s
+
+#23 [guardrails stage-0 1/7] FROM docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+#23 resolve docker.io/library/python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 0.0s done
+#23 DONE 0.0s
+
+#29 [guardrails internal] load build context
+#29 transferring context: 2.18kB done
+#29 DONE 0.0s
+
+#30 [kb internal] load build context
+#30 transferring context: 31.51kB 0.0s done
+#30 DONE 0.0s
+
+#31 [guardrails stage-0 7/9] COPY kb ./kb
+#31 CACHED
+
+#26 [guardrails stage-0 3/7] RUN apt-get update && apt-get install -y --no-install-recommends gcc     && rm -rf /var/lib/apt/lists/*
+#26 CACHED
+
+#32 [guardrails stage-0 5/9] COPY src ./src
+#32 CACHED
+
+#33 [guardrails stage-0 6/9] COPY config ./config
+#33 CACHED
+
+#34 [guardrails stage-0 4/9] COPY pyproject.toml README.md ./
+#34 CACHED
+
+#35 [guardrails stage-0 8/9] COPY policies ./policies
+#35 CACHED
+
+#36 [guardrails stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#36 CACHED
+
+#37 [kb stage-0 4/9] COPY pyproject.toml README.md ./
+#37 CACHED
+
+#25 [kb stage-0 2/7] WORKDIR /app
+#25 CACHED
+
+#38 [kb stage-0 3/9] RUN apt-get update && apt-get install -y --no-install-recommends     gcc     g++     libpq-dev     curl     && rm -rf /var/lib/apt/lists/*
+#38 CACHED
+
+#39 [kb stage-0 5/9] COPY kb_manager ./kb_manager
+#39 CACHED
+
+#40 [kb stage-0 6/9] COPY packs ./packs
+#40 DONE 0.0s
+
+#41 [orchestrator stage-0 6/7] COPY scripts ./scripts
+#41 DONE 0.0s
+
+#42 [guardrails] exporting to image
+#42 exporting layers done
+#42 exporting manifest sha256:ec469d59c176b7c6e96664476385c813fd886fb9069b60474b032a2b79c43b81 done
+#42 exporting config sha256:da50f52850ec92a1f03ec234f740ecb8af6e53dac8daf7fb563de93ed77d9754 done
+#42 exporting attestation manifest sha256:e676f9433779b5b72d39afb7483366eabbfe7d0cae8ffd7d2308f6f7debc7e03 0.0s done
+#42 exporting manifest list sha256:0f4009b33a67e7681ad0087cb84fd8c0f94b1cd770b702ac21d2f5728fdd13c4 0.0s done
+#42 naming to docker.io/library/rag-guardrails:f0c47ca
+#42 naming to docker.io/library/rag-guardrails:f0c47ca done
+#42 unpacking to docker.io/library/rag-guardrails:f0c47ca 0.0s done
+#42 DONE 0.1s
+
+#43 [kb stage-0 7/9] COPY configs ./configs
+#43 DONE 0.1s
+
+#44 [kb stage-0 8/9] COPY run_server.py ./
+#44 DONE 0.0s
+
+#45 [webui internal] load metadata for ghcr.io/astral-sh/uv:0.12.10
+#45 DONE 2.4s
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 ...
+
+#47 [webui internal] load .dockerignore
+#47 transferring context: 273B done
+#47 DONE 0.0s
+
+#48 [guardrails] resolving provenance for metadata file
+#48 DONE 0.0s
+
+#49 [webui base  1/12] FROM docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#49 resolve docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#49 DONE 0.0s
+
+#50 [webui] FROM ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500
+#50 resolve ghcr.io/astral-sh/uv:0.12.10@sha256:2bb3ebca0a796a155094a27773d290c4b074572e6107f171d88d086682fd2500 0.0s done
+#50 DONE 0.0s
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 0.246 KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)
+#46 ...
+
+#51 [webui internal] load build context
+#51 transferring context: 176.91MB 1.2s done
+#51 DONE 1.2s
+
+#52 [webui base  3/12] RUN if [ "0" -ne 0 ]; then       if [ "0" -ne 0 ]; then addgroup --gid "0" app; fi;       adduser --uid "0" --gid "0" --home "/root" --disabled-password --no-create-home app;     fi  && mkdir -p "/root/.cache/chroma"  && echo -n 00000000-0000-0000-0000-000000000000 > "/root/.cache/chroma/telemetry_user_id"  && chown -R "0:0" /app "/root"
+#52 CACHED
+
+#53 [webui base  4/12] RUN if [ "true" = "true" ] && { [ "false" = "true" ] || [ "false" = "true" ]; }; then       echo "USE_SLIM cannot be combined with USE_CUDA or USE_OLLAMA" >&2; exit 1;     fi
+#53 CACHED
+
+#54 [webui base  6/12] COPY --chown=0:0 ./backend/requirements*.txt ./
+#54 CACHED
+
+#55 [webui base  2/12] WORKDIR /app/backend
+#55 CACHED
+
+#56 [webui base  5/12] RUN apt-get update  && apt-get install -y --no-install-recommends curl jq ca-certificates bash  && rm -rf /var/lib/apt/lists/*
+#56 CACHED
+
+#57 [webui base  7/12] RUN --mount=from=ghcr.io/astral-sh/uv:0.12.10,source=/uv,target=/bin/uv     set -e;     if [ "true" = "true" ]; then       uv pip install --system -r requirements-slim.txt --no-cache-dir;     else       pip3 install 'torch<=2.9.1' torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu --no-cache-dir;       uv pip install --system -r requirements.txt --no-cache-dir;     fi;     mkdir -p /app/backend/data; chown -R "0:0" /app/backend/data/
+#57 CACHED
+
+#58 [webui base  8/12] COPY --chown=0:0 ./build /app/build
+#58 DONE 0.9s
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 2.123 Looking in indexes: https://pypi.org/simple, https://mirror-pypi.pkg.shecan.ir/simple/, https://mirror-pypi.runflare.com/simple/, https://package-mirror.liara.ir/repository/pypi/simple/
+#46 2.123 Obtaining file:///app
+#46 2.126   Installing build dependencies: started
+#46 ...
+
+#59 [webui base  9/12] COPY --chown=0:0 ./CHANGELOG.md /app/CHANGELOG.md
+#59 DONE 0.0s
+
+#60 [webui base 10/12] COPY --chown=0:0 ./package.json /app/package.json
+#60 DONE 0.0s
+
+#61 [webui base 11/12] COPY --chown=0:0 ./backend/ ./
+#61 DONE 0.1s
+
+#62 [webui base 12/12] RUN chgrp -R 0 /app/backend/open_webui/static  && chmod -R g=u /app/backend/open_webui/static  && if [ "false" = "true" ]; then       chgrp -R 0 /app /root || true;       chmod -R g+rwX /app /root || true;       find /app -type d -exec chmod g+s {} + || true;       find /root -type d -exec chmod g+s {} + || true;     fi
+#62 DONE 0.5s
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 1.311 Looking in indexes: https://pypi.org/simple, https://mirror-pypi.pkg.shecan.ir/simple/, https://mirror-pypi.runflare.com/simple/, https://package-mirror.liara.ir/repository/pypi/simple/
+#63 1.311 Obtaining file:///app
+#63 1.313   Installing build dependencies: started
+#63 ...
+
+#64 [webui] exporting to image
+#64 exporting layers 7.0s done
+#64 exporting manifest sha256:1b64cae42378070b589ba8d55f1abc94469a278ea30cc61a9dab209c3d877fb4 done
+#64 exporting config sha256:0100eaccd2127bc80b8cdf39212476636a9ac23ebccbf556555a41aeaab9ba17 done
+#64 exporting attestation manifest sha256:f3d8345fd60b1454be575cee03056c64feb4f17742712b338aa5a40da4df300b done
+#64 exporting manifest list sha256:18a7125fdf75985d306cce4f08986deddc00d5e0b80ffd57090e6857d80f6dba done
+#64 naming to docker.io/library/rag-webui:f0c47ca done
+#64 unpacking to docker.io/library/rag-webui:f0c47ca
+#64 unpacking to docker.io/library/rag-webui:f0c47ca 1.6s done
+#64 DONE 8.7s
+
+#65 [webui] resolving provenance for metadata file
+#65 DONE 0.0s
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 13.94   Installing build dependencies: finished with status 'done'
+#63 13.94   Checking if build backend supports build_editable: started
+#63 13.97   Checking if build backend supports build_editable: finished with status 'done'
+#63 13.97   Getting requirements to build editable: started
+#63 14.08   Getting requirements to build editable: finished with status 'done'
+#63 14.08   Installing backend dependencies: started
+#63 17.45   Installing backend dependencies: finished with status 'done'
+#63 17.45   Preparing editable metadata (pyproject.toml): started
+#63 17.63   Preparing editable metadata (pyproject.toml): finished with status 'done'
+#63 21.46 Collecting fastapi>=0.115.0 (from work-rag-orchestrator==0.1.0)
+#63 21.65   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/20/b6/2424da1e40825d3fc54539621811f34e21472499677c9490e4967270e38e/fastapi-0.163.1-py3-none-any.whl (154 kB)
+#63 22.95 Collecting httpx>=0.27.0 (from work-rag-orchestrator==0.1.0)
+#63 23.15   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl (73 kB)
+#63 25.14 Collecting langchain-core>=0.3.0 (from work-rag-orchestrator==0.1.0)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 15.02   Installing build dependencies: finished with status 'done'
+#46 15.02   Checking if build backend supports build_editable: started
+#46 15.07   Checking if build backend supports build_editable: finished with status 'done'
+#46 15.07   Getting requirements to build editable: started
+#46 15.13   Getting requirements to build editable: finished with status 'done'
+#46 15.14   Installing backend dependencies: started
+#46 19.30   Installing backend dependencies: finished with status 'done'
+#46 19.31   Preparing editable metadata (pyproject.toml): started
+#46 19.48   Preparing editable metadata (pyproject.toml): finished with status 'done'
+#46 22.80 Collecting aiosqlite>=0.20.0 (from kb-manager==0.1.0)
+#46 22.98   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/00/b7/e3bf5133d697a08128598c8d0abc5e16377b51465a33756de24fa7dee953/aiosqlite-0.22.1-py3-none-any.whl (17 kB)
+#46 24.83 Collecting asyncpg>=0.29.0 (from kb-manager==0.1.0)
+#46 25.09   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/85/b5/3ac7cb86aa287e5bbceaeb783ee6e4f51cd2a001f1747ef4f1236a20bde6/asyncpg-0.32.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 25.37   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/02/5b/fc60734441d0d9816e10598bb71a5a322494b4e3d393e75b37af0578b327/langchain_core-1.8.1-py3-none-any.whl (588 kB)
+#63 28.04 Collecting langfuse>=2.60.0 (from work-rag-orchestrator==0.1.0)
+#63 28.24   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/f0/48/715e2b612d5d20989e4a338c27d78bef43de327f2192c9b20421f5648868/langfuse-5.2.0-py3-none-any.whl (660 kB)
+#63 29.57 Collecting langgraph-checkpoint>=2.0.0 (from work-rag-orchestrator==0.1.0)
+#63 29.76   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/d5/f1/c84ac1431857640bfb9ea811a58ab5b9c040da3842fd1bcf080655184db0/langgraph_checkpoint-4.3.2-py3-none-any.whl (58 kB)
+#63 32.61 Collecting langgraph>=0.2.0 (from work-rag-orchestrator==0.1.0)
+#63 32.85   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/46/7e/52b1f714b976d344f116ccaae44e2abe4a5602ec849ab4174e3df80f0e2c/langgraph-1.2.22-py3-none-any.whl (264 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 26.31 Collecting click>=8.1.0 (from kb-manager==0.1.0)
+#46 26.55   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/31/7d/164b7ffc8624fe9efb4221bf9af485d5c1e41b9ae118045d2b6dc5457d8b/click-8.5.1-py3-none-any.whl (126 kB)
+#46 27.94 Collecting docx (from kb-manager==0.1.0)
+#46 27.94   Using cached docx-0.2.4-py3-none-any.whl
+#46 30.09 Collecting fastapi>=0.115.0 (from kb-manager==0.1.0)
+#46 30.28   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/20/b6/2424da1e40825d3fc54539621811f34e21472499677c9490e4967270e38e/fastapi-0.163.1-py3-none-any.whl (154 kB)
+#46 31.47 Collecting httpx>=0.27.0 (from kb-manager==0.1.0)
+#46 31.73   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl (73 kB)
+#46 32.69 Collecting jinja2>=3.1.0 (from kb-manager==0.1.0)
+#46 32.87   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl (134 kB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 36.81 Collecting numpy>=1.24.0 (from work-rag-orchestrator==0.1.0)
+#63 37.01   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/02/03/74fe2a4cb3817d94d86402f2506554130a2f01414e299b5a843e5a8a957f/numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+#63 38.28 Collecting opentelemetry-api>=1.24.0 (from work-rag-orchestrator==0.1.0)
+#63 38.49   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a9/2d/610db864d7513158cebb8f36cc88e67e73bd6c7aa1905ef18d89e1281c81/opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#63 39.73 Collecting opentelemetry-exporter-otlp>=1.24.0 (from work-rag-orchestrator==0.1.0)
+#63 39.94   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/19/27/fcc3b725ddbfa274fbf6098c9583032557671d35aa8d5e08d7e7277fb126/opentelemetry_exporter_otlp-1.45.2-py3-none-any.whl (6.7 kB)
+#63 41.55 Collecting opentelemetry-sdk>=1.24.0 (from work-rag-orchestrator==0.1.0)
+#63 41.74   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/9f/a5/9a3b793ef48245f2336a16beb2324c2397dbb3f987cd68942f77cca06156/opentelemetry_sdk-1.45.2-py3-none-any.whl (141 kB)
+#63 43.06 Collecting pydantic-settings>=2.5.0 (from work-rag-orchestrator==0.1.0)
+#63 43.29   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/4c/26/3e68379ca313b6aa58e11fbd8b28d5c6f1b9f4428d70222ba021a76797ec/pydantic_settings-2.16.3-py3-none-any.whl (82 kB)
+#63 45.99 Collecting pydantic>=2.10.0 (from work-rag-orchestrator==0.1.0)
+#63 46.19   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/72/b8/b864503789ef5c58597d2a7b4adbee62c26440ab1e682581fc6838df8947/pydantic-2.14.3-py3-none-any.whl (494 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 36.88 Collecting numpy>=1.24.0 (from kb-manager==0.1.0)
+#46 37.06   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/02/03/74fe2a4cb3817d94d86402f2506554130a2f01414e299b5a843e5a8a957f/numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+#46 38.45 Collecting openpyxl>=3.1.0 (from kb-manager==0.1.0)
+#46 38.64   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+#46 41.62 Collecting pandas>=2.0.0 (from kb-manager==0.1.0)
+#46 41.89   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/3a/a9/0770e9316611d45b9eb7bc5d1266a327b21d3c237fb288aa679ce419296e/pandas-3.1.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+#46 43.04 Collecting pgvector>=0.3.0 (from kb-manager==0.1.0)
+#46 43.23   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a2/8d/a9c2a531da0ebb54b4a7174450e8534a39db112a141ae3a437de28420111/pgvector-0.5.1-py3-none-any.whl (31 kB)
+#46 44.22 Collecting prometheus-client>=0.20.0 (from kb-manager==0.1.0)
+#46 44.46   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/eb/a3/b69efbf4143b5b9859b977770bbbabcc2796b702fa69dc40271e45cd5a56/prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+#46 46.48 Collecting psycopg2-binary>=2.9.0 (from kb-manager==0.1.0)
+#46 46.69   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/97/63/057c65532bd12cdf9d4f568e59c2a078a38e9ba8f7f251292968dc781905/psycopg2_binary-2.9.13-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 47.32 Collecting python-dotenv>=1.0.0 (from work-rag-orchestrator==0.1.0)
+#63 47.51   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#63 49.50 Collecting pyyaml>=6.0.0 (from work-rag-orchestrator==0.1.0)
+#63 49.71   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/71/60/917329f640924b18ff085ab889a11c763e0b573da888e8404ff486657602/pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+#63 51.07 Collecting uvicorn>=0.30.0 (from uvicorn[standard]>=0.30.0->work-rag-orchestrator==0.1.0)
+#63 51.31   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/38/0c/b54a4fdd7f90a3af8b02ebc9ce6712c2c208b7926a2f7bad95c33ebbe943/uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#63 52.82 Collecting starlette>=0.46.0 (from fastapi>=0.115.0->work-rag-orchestrator==0.1.0)
+#63 53.08   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/88/2e/947cfe02def9371c07cd5bf5b6b61c829e9aecb9904db02a66cfafbc1eec/starlette-1.10.0-py3-none-any.whl (80 kB)
+#63 54.54 Collecting anyio>=4.1.0 (from fastapi>=0.115.0->work-rag-orchestrator==0.1.0)
+#63 54.85   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a9/16/7757fb84c819accc7d7e9af5291b261e4abb8627ee040f99e7d35ef2457a/anyio-4.16.0-py3-none-any.whl (134 kB)
+#63 56.15 Collecting typing-extensions>=4.8.0 (from fastapi>=0.115.0->work-rag-orchestrator==0.1.0)
+#63 56.37   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 49.71 Collecting pymupdf>=1.24.0 (from kb-manager==0.1.0)
+#46 49.89   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/f4/dc/e244c162ab621a45bfe36e33fe432264ef7e40592f739474864df66a2dd8/pymupdf-2.1-cp311-abi3-manylinux_2_28_x86_64.whl (69.0 MB)
+#46 51.18 Collecting python-docx>=1.1.0 (from kb-manager==0.1.0)
+#46 51.36   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/d0/00/1e03a4989fa5795da308cd774f05b704ace555a70f9bf9d3be057b680bcf/python_docx-1.2.0-py3-none-any.whl (252 kB)
+#46 52.57 Collecting python-multipart>=0.0.9 (from kb-manager==0.1.0)
+#46 52.75   Downloading https://package-mirror.liara.ir/repository/pypi/packages/packages/f5/0e/090c52b122d8ec5fa37942c1410fea9cf04ce98bca0c84dde7f0aa11594d/python_multipart-0.0.34-py3-none-any.whl (32 kB)
+#46 54.97 Collecting pyyaml>=6.0 (from kb-manager==0.1.0)
+#46 55.15   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/71/60/917329f640924b18ff085ab889a11c763e0b573da888e8404ff486657602/pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+#46 56.56 Collecting redis>=5.0.0 (from kb-manager==0.1.0)
+#46 56.82   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/66/9d/c5731f6e3608663d4d3656fd8d3aecee8b509c3082818f5a13eae925baea/redis-8.1.0-py3-none-any.whl (560 kB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 57.33 Collecting typing-inspection>=0.4.2 (from fastapi>=0.115.0->work-rag-orchestrator==0.1.0)
+#63 57.58   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/de/0c/ea2544850a7c135e15033a5c7a8e7211136184b7ae63e2239d557c2b3019/typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#63 58.79 Collecting annotated-doc>=0.0.2 (from fastapi>=0.115.0->work-rag-orchestrator==0.1.0)
+#63 58.99   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/cd/f5/3dd85d583e55be76cd02b1fc9bbec771b12d63124b01661d9535ccf8721f/annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+#63 60.47 Collecting certifi (from httpx>=0.27.0->work-rag-orchestrator==0.1.0)
+#63 60.66   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl (135 kB)
+#63 62.27 Collecting httpcore==1.* (from httpx>=0.27.0->work-rag-orchestrator==0.1.0)
+#63 62.46   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl (78 kB)
+#63 63.93 Collecting idna (from httpx>=0.27.0->work-rag-orchestrator==0.1.0)
+#63 64.12   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl (69 kB)
+#63 65.52 Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.0->work-rag-orchestrator==0.1.0)
+#63 65.71   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl (37 kB)
+#63 67.12 Collecting jsonpatch>=1.33.0 (from langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 67.34   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/5d/e9/a09b859f5fbd7a192ed40f9098fb746607ab46eaacc1eecaea713e4df0de/jsonpatch-1.47-py3-none-any.whl (25 kB)
+#63 68.28 Collecting langchain-protocol>=0.0.20 (from langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 68.50   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/3f/f6/25232abfce5cc696c21f7947e6ae11cc6b124e5099783408ff8552c545a3/langchain_protocol-0.0.21-py3-none-any.whl (7.4 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 58.42 Collecting rich>=13.0.0 (from kb-manager==0.1.0)
+#46 58.61   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl (310 kB)
+#46 61.31 Collecting sentence-transformers>=3.0.0 (from kb-manager==0.1.0)
+#46 61.54   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/81/33/efddeeec49af6ddae162e2824c77f8b1136c2ad43ec8d8fec53fb70c93ef/sentence_transformers-6.3.0-py3-none-any.whl (780 kB)
+#46 66.73 Collecting sqlalchemy>=2.0.0 (from sqlalchemy[asyncio]>=2.0.0->kb-manager==0.1.0)
+#46 66.91   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a7/99/b3735bdc14a913c292f9fb8e0aaf8d0cd24040edbf8f40ef9e4867719438/sqlalchemy-2.1.8-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+#46 69.70 Collecting torch>=2.0.0 (from kb-manager==0.1.0)
+#46 69.95   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/06/7d/57b7f46934e1148b436889e385693bfcb94ae047b3fe0b6015922e3b66f7/torch-2.15.0-cp311-cp311-manylinux_2_28_x86_64.whl (539.1 MB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 71.97 Collecting langsmith<1.0.0,>=0.14.9 (from langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 72.21   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a8/11/4da3faa7fd20c487c4770f14aa2b4247871e787ad305c2ba528fcf0f2bcc/langsmith-0.14.17-py3-none-any.whl (940 kB)
+#63 72.23 Requirement already satisfied: packaging>=23.2.0 in /usr/local/lib/python3.11/site-packages (from langchain-core>=0.3.0->work-rag-orchestrator==0.1.0) (26.3)
+#63 73.55 Collecting tenacity!=8.4.0,>=8.1.0 (from langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 73.78   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/d6/26/1ff2b0721ac66a3ec5b1402b333110b352ab0a8724052ac279a7b82d40c4/tenacity-9.2.1-py3-none-any.whl (32 kB)
+#63 78.26 Collecting uuid-utils>=0.12.0 (from langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 78.49   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/00/23/2b68f9ffa7da1b344140b4f013fc56270e1fe43310da815104e6db886e58/uuid_utils-1.2.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (331 kB)
+#63 79.77 Collecting backoff>=1.10.0 (from langfuse>=2.60.0->work-rag-orchestrator==0.1.0)
+#63 79.96   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/df/73/b6e24bd22e6720ca8ee9a85a0c4a2971af8497d8f3193fa05390cbd46e09/backoff-2.2.1-py3-none-any.whl (15 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 73.15 Collecting uvicorn>=0.30.0 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#46 73.43   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/38/0c/b54a4fdd7f90a3af8b02ebc9ce6712c2c208b7926a2f7bad95c33ebbe943/uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#46 75.13 Collecting starlette>=0.46.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#46 75.32   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/88/2e/947cfe02def9371c07cd5bf5b6b61c829e9aecb9904db02a66cfafbc1eec/starlette-1.10.0-py3-none-any.whl (80 kB)
+#46 77.14 Collecting anyio>=4.1.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#46 77.36   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a9/16/7757fb84c819accc7d7e9af5291b261e4abb8627ee040f99e7d35ef2457a/anyio-4.16.0-py3-none-any.whl (134 kB)
+#46 80.26 Collecting pydantic>=2.9.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#46 80.44   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/72/b8/b864503789ef5c58597d2a7b4adbee62c26440ab1e682581fc6838df8947/pydantic-2.14.3-py3-none-any.whl (494 kB)
+#46 81.28 Collecting typing-extensions>=4.8.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#46 81.59   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#46 82.48 Collecting typing-inspection>=0.4.2 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#46 82.67   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/de/0c/ea2544850a7c135e15033a5c7a8e7211136184b7ae63e2239d557c2b3019/typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#46 83.47 Collecting annotated-doc>=0.0.2 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#46 83.65   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/cd/f5/3dd85d583e55be76cd02b1fc9bbec771b12d63124b01661d9535ccf8721f/annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+#46 84.82 Collecting opentelemetry-api>=1.44.0 (from fastapi>=0.115.0->kb-manager==0.1.0)
+#46 85.00   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a9/2d/610db864d7513158cebb8f36cc88e67e73bd6c7aa1905ef18d89e1281c81/opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#46 86.51 Collecting certifi (from httpx>=0.27.0->kb-manager==0.1.0)
+#46 86.69   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl (135 kB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 86.64 Collecting wrapt<3,>=1.14 (from langfuse>=2.60.0->work-rag-orchestrator==0.1.0)
+#63 86.84   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/98/00/a0effd5872aed3271b28b4740a71bc2d7406d33b4e03eac01ae099ac8569/wrapt-2.5.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (240 kB)
+#63 88.22 Collecting opentelemetry-exporter-otlp-proto-http<2,>=1.45.0 (from langfuse>=2.60.0->work-rag-orchestrator==0.1.0)
+#63 88.42   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/32/65/f64d7d2450217e2989714e1dee15e19bf79a77a313387abac0cac77bc10e/opentelemetry_exporter_otlp_proto_http-1.45.2-py3-none-any.whl (22 kB)
+#63 89.83 Collecting langgraph-prebuilt<1.2.0,>=1.1.0 (from langgraph>=0.2.0->work-rag-orchestrator==0.1.0)
+#63 90.34   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/26/e9/dd45ebf824f9b403bc5a4b8e6b99a517a96e1bd443a8a5a1356ff53fe2fc/langgraph_prebuilt-1.1.2-py3-none-any.whl (42 kB)
+#63 92.33 Collecting langgraph-sdk<0.5.0,>=0.4.6 (from langgraph>=0.2.0->work-rag-orchestrator==0.1.0)
+#63 92.63   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/14/f1/3db4776fb3673dbae57b0ad2e9f14d9a2c44bde8932df7df0f7671572ed3/langgraph_sdk-0.4.14-py3-none-any.whl (171 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 88.03 Collecting httpcore==1.* (from httpx>=0.27.0->kb-manager==0.1.0)
+#46 88.27   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl (78 kB)
+#46 89.60 Collecting idna (from httpx>=0.27.0->kb-manager==0.1.0)
+#46 89.84   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl (69 kB)
+#46 90.78 Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27.0->kb-manager==0.1.0)
+#46 91.04   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl (37 kB)
+#46 93.10 Collecting MarkupSafe>=2.0 (from jinja2>=3.1.0->kb-manager==0.1.0)
+#46 93.35   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/81/a5/a513b76c139a3915b43404324e55c0b7979ae4f0d39eb6f075b0282e90a8/markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#46 94.48 Collecting et-xmlfile (from openpyxl>=3.1.0->kb-manager==0.1.0)
+#46 94.71   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+#46 95.80 Collecting python-dateutil>=2.9.0 (from pandas>=2.0.0->kb-manager==0.1.0)
+#46 95.98   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/2f/a9/52b89563d154433d79b51ed1eb4842bf7334cb2696891a7fe135618853d7/python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 96.98 Collecting xxhash>=3.5.0 (from langgraph>=0.2.0->work-rag-orchestrator==0.1.0)
+#63 97.21   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/b6/4f/5b195a79fafb6e9ab8e95229cc5346572a6cc40d6d6ed9227183a25315ea/xxhash-4.1.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (471 kB)
+#63 99.81 Collecting ormsgpack>=1.12.0 (from langgraph-checkpoint>=2.0.0->work-rag-orchestrator==0.1.0)
+#63 100.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/ea/0b/33bf293f87b62805192d1595b53087e272e441fb63ca52616dd2193ecd11/ormsgpack-1.13.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (269 kB)
+#63 101.8 Collecting opentelemetry-exporter-otlp-proto-grpc==1.45.2 (from opentelemetry-exporter-otlp>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 101.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e8/48/14301cac3d106e795eef7e89e191489f086b4e5ad26e47c9635a198e95f4/opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl (19 kB)
+#63 103.6 Collecting googleapis-common-protos~=1.57 (from opentelemetry-exporter-otlp-proto-grpc==1.45.2->opentelemetry-exporter-otlp>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 103.8   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/05/6d/78dc67a9e779e594b49bf62604034d3a6aa428a55afc729cafda4b7333e1/googleapis_common_protos-1.76.0-py3-none-any.whl (307 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 97.96 Collecting networkx (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 98.18   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl (2.1 MB)
+#46 101.6 Collecting onnxruntime (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 102.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/1d/46/e6f356c9539d2eed44126de3421a81e217da2ad91b22dc11b379cb1e384f/onnxruntime-1.32.0-cp311-cp311-manylinux_2_28_x86_64.whl (27.8 MB)
+#46 103.7 Collecting pymupdf-layout==2.1 (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 103.8   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e4/13/7a1edc4029348e728114cf37837dd121a7439defd668caa087d128b5df2d/pymupdf_layout-2.1-py3-none-any.whl (1.0 kB)
+#46 106.2 Collecting psutil (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 106.5   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+#46 108.2 Collecting tabulate (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 108.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl (39 kB)
+#46 109.8 Collecting pymupdf4llm==2.1 (from pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 110.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/38/19/21e262de4e1ddbcd552889e5f04147f83ed219dd13d1e0e0db46ab4d2347/pymupdf4llm-2.1-py3-none-any.whl (1.0 kB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 111.8 Collecting grpcio<2.0.0,>=1.63.2 (from opentelemetry-exporter-otlp-proto-grpc==1.45.2->opentelemetry-exporter-otlp>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 112.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/1a/4f/30f66cedfec6c03bc304b28fbe073ed53179cf37a511b8ee8e8e7e2d3f17/grpcio-1.85.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (7.4 MB)
+#63 113.1 Collecting opentelemetry-exporter-otlp-common==0.66b2 (from opentelemetry-exporter-otlp-proto-grpc==1.45.2->opentelemetry-exporter-otlp>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 113.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a8/47/b3049e30b339c82e3c7ec1fc692185a5d5a3ba65a94c570bb39b2c0b8424/opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl (12 kB)
+#63 114.5 Collecting opentelemetry-exporter-otlp-proto-common==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc==1.45.2->opentelemetry-exporter-otlp>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 114.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e6/d6/0f30d38120a949aef70528f845bf539f80df62abb4b8e62fdf69c2b6df5a/opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl (15 kB)
+#63 116.2 Collecting opentelemetry-proto==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc==1.45.2->opentelemetry-exporter-otlp>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 116.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/7e/0d/a0b8f2b9efe2ec1abdf639d3696db9b1563ebeb11d91aac08ba7341e9122/opentelemetry_proto-1.45.2-py3-none-any.whl (72 kB)
+#63 117.7 Collecting opentelemetry-exporter-http-transport==0.66b2 (from opentelemetry-exporter-http-transport[requests]==0.66b2->opentelemetry-exporter-otlp-proto-http<2,>=1.45.0->langfuse>=2.60.0->work-rag-orchestrator==0.1.0)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 117.7 Collecting lxml>=3.1.0 (from python-docx>=1.1.0->kb-manager==0.1.0)
+#46 118.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/94/2a/25d128872f4d51753542bfc3feb482c2ea7c8a2d6d81a0bc5c6a00779ed4/lxml-6.1.3-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+#46 119.2 Collecting markdown-it-py>=2.2.0 (from rich>=13.0.0->kb-manager==0.1.0)
+#46 119.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/c9/31/5f0ac2f1a1c67423c995c731a11cd4ad05d081a2be969d74f868bdb9cc70/markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+#46 121.1 Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.0.0->kb-manager==0.1.0)
+#46 121.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#46 123.1 Collecting transformers<6.0.0,>=5.0.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 123.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/bf/62/8c06b0b932cc9a5dac7ce48bf23737107143e75f9b20fd99e97dde1463c3/transformers-5.23.0-py3-none-any.whl (13.3 MB)
+#46 127.2 Collecting tokenizers>=0.19 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 127.5   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/3a/40/6706b82693715581457c6d5423eaa7faae576bb0526c5738a57085eb4449/tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 117.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a1/b2/c622a101f31c0e6670b82f4264c4e77c161bce415bc6fc158fda0b82e218/opentelemetry_exporter_http_transport-0.66b2-py3-none-any.whl (12 kB)
+#63 119.2 Collecting requests~=2.7 (from opentelemetry-exporter-otlp-proto-http<2,>=1.45.0->langfuse>=2.60.0->work-rag-orchestrator==0.1.0)
+#63 119.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl (73 kB)
+#63 123.9 Collecting protobuf<8.0,>=5.0 (from opentelemetry-proto==1.45.2->opentelemetry-exporter-otlp-proto-grpc==1.45.2->opentelemetry-exporter-otlp>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 124.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/db/f3/3996583dd2906297a637af12114deddf7658af6e683fedb83be061983fb5/protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+#63 126.2 Collecting opentelemetry-semantic-conventions==0.66b2 (from opentelemetry-sdk>=1.24.0->work-rag-orchestrator==0.1.0)
+#63 126.5   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/67/bd/6bf33ed31521c565931c037e9e81bac47c1acb000e850c6e24220e2a0c00/opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl (206 kB)
+#63 127.4 Collecting annotated-types>=0.6.0 (from pydantic>=2.10.0->work-rag-orchestrator==0.1.0)
+#63 127.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 129.6 Collecting huggingface-hub<3.0.0,>=1.3.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 129.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/d4/55/ff47f1b082ecf5f43f4bc1e3b932d68eead171dabbbd1a92666c686301d7/huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+#46 133.2 Collecting scikit-learn>=1.1.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 133.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/69/46/f8b95a7a16fd13b458401d5e85a63d88ecb3679f3649812d5fdbea4c8357/scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+#46 137.2 Collecting scipy>=1.0.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 137.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/09/7d/af933f0f6e0767995b4e2d705a0665e454d1c19402aa7e895de3951ebb04/scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 138.9 Collecting pydantic-core==2.50.4 (from pydantic>=2.10.0->work-rag-orchestrator==0.1.0)
+#63 139.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/56/51/cbb7a1bc0196ff94d3478d265eed7449f811759988eb760d41f4edd0893b/pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#63 140.5 Collecting click>=7.0 (from uvicorn>=0.30.0->uvicorn[standard]>=0.30.0->work-rag-orchestrator==0.1.0)
+#63 140.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/31/7d/164b7ffc8624fe9efb4221bf9af485d5c1e41b9ae118045d2b6dc5457d8b/click-8.5.1-py3-none-any.whl (126 kB)
+#63 142.3 Collecting httptools>=0.8.0 (from uvicorn[standard]>=0.30.0->work-rag-orchestrator==0.1.0)
+#63 142.5   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/f7/0b/6498fe8218db1ed5f785010c303bfef50516d0988e64988bb8f9f59d70ab/httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (499 kB)
+#63 144.4 Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.30.0->work-rag-orchestrator==0.1.0)
+#63 144.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/16/fd/8cbf6124607863399008ae4b0d2bb50c22ed83526deec28dca08d635eb6d/uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.0 MB)
+#63 147.1 Collecting watchfiles>=0.20 (from uvicorn[standard]>=0.30.0->work-rag-orchestrator==0.1.0)
+#63 147.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/8a/cf/e3ad894ed5909a7c44b0707e89bc25d19a3d78b3a7aec846119443b6ae56/watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 139.0 Collecting tqdm>=4.0.0 (from sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 139.2   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a7/03/921a3d3c75785aca9ebfbfcabfbc3a1be12e2ab5265deb026d55a5a3f83e/tqdm-4.70.1-py3-none-any.whl (80 kB)
+#46 142.8 Collecting greenlet>=1 (from sqlalchemy[asyncio]>=2.0.0->kb-manager==0.1.0)
+#46 143.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/ec/d3/63d4477ce31dff2fd802a9a20240f6606aac85977e0fb18443aae33de3f6/greenlet-3.5.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (624 kB)
+#46 144.8 Collecting filelock (from torch>=2.0.0->kb-manager==0.1.0)
+#46 145.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/ef/90/5d0096a325aa0f83ba7a3968bfb485b67e32c947bdf9cd0fcb4b485be718/filelock-4.2.10-py3-none-any.whl (218 kB)
+#46 145.0 Requirement already satisfied: setuptools>=77.0.3 in /usr/local/lib/python3.11/site-packages (from torch>=2.0.0->kb-manager==0.1.0) (79.0.1)
+#46 146.2 Collecting sympy>=1.13.3 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 146.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#46 147.8 Collecting fsspec>=0.8.5 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 148.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/6c/c0/a98505f18594f1bce828bb159cec0fcf9860562f1a2c85913409fc8f3d9e/fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#46 149.0 Collecting cuda-toolkit==13.2.2 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 149.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/3d/62/854e4a141f5e87e5425513bad2a742a6260acfe06ef148001b5362148f31/cuda_toolkit-13.2.2-py2.py3-none-any.whl (2.6 kB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 150.1 Collecting websockets>=13.0 (from uvicorn[standard]>=0.30.0->work-rag-orchestrator==0.1.0)
+#63 150.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/57/70/80f870701f8610e88649d3cd173a0e7ce66433913da3683035a4370063ad/websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+#63 152.0 Collecting jsonpointer>=3.8 (from jsonpatch>=1.33.0->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 152.2   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/72/07/3c953fceee478798f6bdf7b39e0da0793f437e8b5f9e9e1360fba32fb25c/jsonpointer-3.12-py3-none-any.whl (10 kB)
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 151.2 Collecting cuda-bindings<14,>=13.0.3 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 151.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/f6/0d/ca24317a31118b90fd60126aec5c0a92a191a7fdd39524032d43328b49b5/cuda_bindings-13.5.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (8.4 MB)
+#46 152.6 Collecting nvidia-cudnn-cu13==9.26.0.51 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 153.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/ac/1b/ea72dd62f26ce3e0a7870b85148b75a5987507629b712deebeb87f7cce9a/nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl (519.2 MB)
+#46 155.6 Collecting nvidia-cusparselt-cu13==0.8.1 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 155.8   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/34/7d/2661f2fb3ac4302f3a246f5fc030213ac60c1fe0bce84f9783dbd831dbb7/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+#46 157.3 Collecting nvidia-nccl-cu13==2.30.7 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 157.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/3f/34/c500f90c7ae641b8e0f98965b36b8a7ac79cc8b296e8d251fe3eb592ee54/nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl (216.0 MB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 158.3 Collecting orjson>=3.11.5 (from langgraph-sdk<0.5.0,>=0.4.6->langgraph>=0.2.0->work-rag-orchestrator==0.1.0)
+#63 158.5   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/cd/cc/c0874f13819ae346d69ca00d074d464710b494abd4442bdebf75ac404a98/orjson-3.13.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+#63 159.5 Collecting distro<2,>=1.7.0 (from langsmith<1.0.0,>=0.14.9->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 159.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl (20 kB)
+#63 160.8 Collecting httpx2<3,>=2 (from langsmith<1.0.0,>=0.14.9->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 161.0   Downloading https://package-mirror.liara.ir/repository/pypi/packages/packages/77/de/8c4306a3d6aa2495111986addf33a9e561eff4c47552e4c4b9251160d0ad/httpx2-2.16.2-py3-none-any.whl (97 kB)
+#63 161.3      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 334.2 kB/s eta 0:00:00
+#63 162.5 Collecting requests-toolbelt>=1.0.0 (from langsmith<1.0.0,>=0.14.9->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 162.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/3f/51/d4db610ef29373b879047326cbf6fa98b6c1969d6f6dc423279de2b1be2c/requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+#63 163.5 Collecting sniffio (from langsmith<1.0.0,>=0.14.9->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 163.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl (10 kB)
+#63 163.8 Collecting uuid-utils>=0.12.0 (from langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 164.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/be/45/8238eac588b668e5c500cb187fd74a9f6d984c09f3f3f2fa4161d3c07eb7/uuid_utils-0.19.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (330 kB)
+#63 166.6 Collecting zstandard>=0.23.0 (from langsmith<1.0.0,>=0.14.9->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 166.8   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/bb/1f/e9cfd801a3f9190bf3e759c422bbfd2247db9d7f3d54a56ecde70137791a/zstandard-0.25.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.6 MB)
+#63 168.5 Collecting httpcore2==2.16.2 (from httpx2<3,>=2->langsmith<1.0.0,>=0.14.9->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 168.7   Downloading https://package-mirror.liara.ir/repository/pypi/packages/packages/2a/e8/009c347feac27f8960605aa98d55ed263b5870dd4fd80b82fd1d00d5716c/httpcore2-2.16.2-py3-none-any.whl (85 kB)
+#63 168.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 85.6/85.6 kB 516.9 kB/s eta 0:00:00
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 159.0 Collecting nvidia-nvshmem-cu13==3.7.2 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 159.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/4f/4a/037dfbbafc96ad1828ef62326f27970cae2c0eb271cf5b8e6922f32a7427/nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (135.4 MB)
+#46 161.2 Collecting triton~=3.9.0 (from torch>=2.0.0->kb-manager==0.1.0)
+#46 161.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/05/73/51e1466f2941ed36dbe57d1f88f772ba6afe669e5ba1e24eaf148b7ec0e1/triton-3.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (285.8 MB)
+#46 163.8 Collecting nvidia-cublas==13.4.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 164.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e1/97/d483a41da34df5c88727c57319576967f6d7befba5028d70928d2999635e/nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl (404.9 MB)
+#46 166.3 Collecting nvidia-cuda-nvrtc==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 166.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/1e/39/c58835ec8392a91b8d7bad83760eafc3085f64788b722ec2b44a27b3ca3e/nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (47.0 MB)
+#46 167.9 Collecting nvidia-cuda-runtime==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 168.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/70/c6/8f8c5e893d183082ea78f973aebc7ebc845ee219d68bddac73b0f62490fe/nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#46 169.0 Collecting nvidia-cufft==12.2.0.57.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 169.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/41/28/868ed0c6ade5e6a75b25166b3cf191f4a2ff58ad618c1e40befb776c97c5/nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (218.3 MB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 169.7 Collecting truststore>=0.10 (from httpx2<3,>=2->langsmith<1.0.0,>=0.14.9->langchain-core>=0.3.0->work-rag-orchestrator==0.1.0)
+#63 169.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/51/e9/3a7820be2bb0fe53b6bc9c3be26d3d1158004e4c3ab953aa6840b955b1e9/truststore-0.10.5-py3-none-any.whl (19 kB)
+#63 173.8 Collecting charset_normalizer<4,>=2 (from requests~=2.7->opentelemetry-exporter-otlp-proto-http<2,>=1.45.0->langfuse>=2.60.0->work-rag-orchestrator==0.1.0)
+#63 174.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e4/ed/cf505d3011ffceb12c2067a7a5d3cfe92b875d4d44bb0ff0d69375e2c184/charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (269 kB)
+#63 175.7 Collecting urllib3<3,>=1.26 (from requests~=2.7->opentelemetry-exporter-otlp-proto-http<2,>=1.45.0->langfuse>=2.60.0->work-rag-orchestrator==0.1.0)
+#63 175.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl (135 kB)
+#63 176.1 Building wheels for collected packages: work-rag-orchestrator
+#63 176.1   Building editable for work-rag-orchestrator (pyproject.toml): started
+#63 176.2   Building editable for work-rag-orchestrator (pyproject.toml): finished with status 'done'
+#63 176.2   Created wheel for work-rag-orchestrator: filename=work_rag_orchestrator-0.1.0-py3-none-any.whl size=15441 sha256=511a81d51b78bfca4a7cd7edead1636898453a4b765138d66dc8318ccac1fb3f
+#63 176.2   Stored in directory: /tmp/pip-ephem-wheel-cache-7bqrwp39/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+#63 176.2 Successfully built work-rag-orchestrator
+#63 176.5 Installing collected packages: zstandard, xxhash, wrapt, websockets, uvloop, uuid-utils, urllib3, typing-extensions, truststore, tenacity, sniffio, pyyaml, python-dotenv, protobuf, ormsgpack, orjson, numpy, jsonpointer, idna, httptools, h11, distro, click, charset_normalizer, certifi, backoff, annotated-types, annotated-doc, uvicorn, typing-inspection, requests, pydantic-core, opentelemetry-proto, opentelemetry-api, langchain-protocol, jsonpatch, httpcore2, httpcore, grpcio, googleapis-common-protos, anyio, watchfiles, starlette, requests-toolbelt, pydantic, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, httpx2, httpx, pydantic-settings, opentelemetry-sdk, langsmith, fastapi, opentelemetry-exporter-otlp-common, langchain-core, opentelemetry-exporter-otlp-proto-http, opentelemetry-exporter-otlp-proto-grpc, langgraph-sdk, langgraph-checkpoint, opentelemetry-exporter-otlp, langgraph-prebuilt, langfuse, langgraph, work-rag-orchestrator
+#63 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 170.9 Collecting nvidia-nvjitlink<14,>=13.2.86 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 171.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/cc/1f/2321702b8d60b4b4dd18b957f61612dbac9cb1c07e940cf6582106b7c8b8/nvidia_nvjitlink-13.5.37-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (46.6 MB)
+#46 172.7 Collecting nvidia-cufile==1.17.1.22.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 172.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/23/c5/661a73a9042fc5f81cdd5fe6e89f4170b3b33f7962e709987e2b5e5f1381/nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl (1.4 MB)
+#46 174.0 Collecting nvidia-cuda-cupti==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 174.2   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/b4/76/a10d9fb5d9a0e46d5f95e5520bd1b2d8ad22a9c0a09d2f8c20c5ee842a96/nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl (12.0 MB)
+#46 175.2 Collecting nvidia-cusolver==12.2.0.11.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 175.5   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e4/a4/90f7ade9992190788658c3c285f196fdb9bcc3a5bb93a325c245121d22fd/nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl (227.9 MB)
+#46 177.2 Collecting nvidia-cusparse==12.7.10.12.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 177.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/bc/46/3a9700cc13f30c9279af9a862363535c814fa27597199b21fd93cad66237/nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (151.0 MB)
+#46 179.2 Collecting nvidia-nvtx==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.0.0->kb-manager==0.1.0)
+#46 179.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/49/ee/16bde09927e7ffacd50b117cd7d1dc764d145f03249fc41fdf6dfba3301f/nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (153 kB)
+#46 180.5 Collecting nvidia-cuda-cccl (from nvidia-nvshmem-cu13==3.7.2->torch>=2.0.0->kb-manager==0.1.0)
+#46 180.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/a7/7e/4aa67cca14e0558b5a151a692f5ffe609930cdfc20d16c7a584de68424d4/nvidia_cuda_cccl-13.3.5.0.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.1 MB)
+#46 182.7 Collecting httptools>=0.8.0 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#46 182.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/f7/0b/6498fe8218db1ed5f785010c303bfef50516d0988e64988bb8f9f59d70ab/httptools-0.9.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (499 kB)
+#46 184.2 Collecting python-dotenv>=0.13 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#46 184.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#46 ...
+
+#63 [orchestrator stage-0 7/7] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     pip install --default-timeout=120 -e .
+#63 184.9 Successfully installed annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 backoff-2.2.1 certifi-2026.10.23 charset_normalizer-3.5.2 click-8.5.1 distro-1.9.0 fastapi-0.163.1 googleapis-common-protos-1.76.0 grpcio-1.85.1 h11-0.16.0 httpcore-1.0.9 httpcore2-2.16.2 httptools-0.9.0 httpx-0.28.1 httpx2-2.16.2 idna-3.20 jsonpatch-1.47 jsonpointer-3.12 langchain-core-1.8.1 langchain-protocol-0.0.21 langfuse-5.2.0 langgraph-1.2.22 langgraph-checkpoint-4.3.2 langgraph-prebuilt-1.1.2 langgraph-sdk-0.4.14 langsmith-0.14.17 numpy-2.4.6 opentelemetry-api-1.45.2 opentelemetry-exporter-http-transport-0.66b2 opentelemetry-exporter-otlp-1.45.2 opentelemetry-exporter-otlp-common-0.66b2 opentelemetry-exporter-otlp-proto-common-1.45.2 opentelemetry-exporter-otlp-proto-grpc-1.45.2 opentelemetry-exporter-otlp-proto-http-1.45.2 opentelemetry-proto-1.45.2 opentelemetry-sdk-1.45.2 opentelemetry-semantic-conventions-0.66b2 orjson-3.13.0 ormsgpack-1.13.1 protobuf-7.36.2 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.3 python-dotenv-1.2.4 pyyaml-6.0.3 requests-2.34.2 requests-toolbelt-1.0.0 sniffio-1.3.1 starlette-1.10.0 tenacity-9.2.1 truststore-0.10.5 typing-extensions-4.16.0 typing-inspection-0.4.5 urllib3-2.8.0 uuid-utils-0.19.0 uvicorn-0.54.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.4 work-rag-orchestrator-0.1.0 wrapt-2.5.2 xxhash-4.1.0 zstandard-0.25.0
+#63 184.9 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#63 185.0 
+#63 185.0 [notice] A new release of pip is available: 24.0 -> 26.3
+#63 185.0 [notice] To update, run: pip install --upgrade pip
+#63 DONE 189.4s
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 186.8 Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#46 187.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/16/fd/8cbf6124607863399008ae4b0d2bb50c22ed83526deec28dca08d635eb6d/uvloop-0.23.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.0 MB)
+#46 189.4 Collecting watchfiles>=0.20 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#46 189.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/8a/cf/e3ad894ed5909a7c44b0707e89bc25d19a3d78b3a7aec846119443b6ae56/watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+#46 193.9 Collecting websockets>=13.0 (from uvicorn[standard]>=0.30.0->kb-manager==0.1.0)
+#46 194.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/57/70/80f870701f8610e88649d3cd173a0e7ce66433913da3683035a4370063ad/websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+#46 197.7 Collecting Pillow>=2.0 (from docx->kb-manager==0.1.0)
+#46 197.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/36/46/f509b74787f40ce0627501089d630b2c741b63b244c1f40b640b3b01e181/pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+#46 ...
+
+#66 [orchestrator] exporting to image
+#66 exporting layers 9.6s done
+#66 exporting manifest sha256:889ce8997dba3a17cb08454046182e5e78c5f107c0715f36709e04563990907e done
+#66 exporting config sha256:dc9b4ac72d44a22270dfe734ac5e9bcb0e87d764cddad1a99107f27f149e9917 done
+#66 exporting attestation manifest sha256:50a5abc73eb55404c101f6fa5490745a0e42b02099c04e160d84ac79b3f22e3d done
+#66 exporting manifest list sha256:d33d560460ebb8e92785b27d51a1a89219999f9e43a47b3b9be555ed28d01c35 done
+#66 naming to docker.io/library/rag-orchestrator:f0c47ca done
+#66 unpacking to docker.io/library/rag-orchestrator:f0c47ca
+#66 ...
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 199.4 Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch>=2.0.0->kb-manager==0.1.0)
+#46 199.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/b6/80/7cf8bbe4a8844198fa64481ffc6642003770999b9ead27e99fc03484989a/cuda_pathfinder-1.9.0-py3-none-any.whl (63 kB)
+#46 ...
+
+#66 [orchestrator] exporting to image
+#66 unpacking to docker.io/library/rag-orchestrator:f0c47ca 2.0s done
+#66 DONE 11.6s
+
+#67 [orchestrator] resolving provenance for metadata file
+#67 DONE 0.0s
+
+#46 [kb stage-0 9/9] RUN --mount=type=cache,target=/root/.cache/pip     set -e;     if [ -n "https://pypi.org/simple" ]; then export PIP_INDEX_URL; fi;     if [ -n "https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/" ]; then export PIP_EXTRA_INDEX_URL; fi;     if [ -n "pypi.org mirror-pypi.pkg.shecan.ir mirror-pypi.runflare.com package-mirror.liara.ir" ]; then export PIP_TRUSTED_HOST; fi;     EXTRA_PYPI="https://mirror-pypi.pkg.shecan.ir/simple/ https://mirror-pypi.runflare.com/simple/ https://package-mirror.liara.ir/repository/pypi/simple/";     if [ "cuda" = "cpu" ]; then       echo "KB image: pip -e . with CPU torch index (TORCH_CHANNEL=cpu)";       pip_cmd="pip install --default-timeout=120 --index-url https://download.pytorch.org/whl/cpu";       for u in $EXTRA_PYPI; do pip_cmd="$pip_cmd --extra-index-url $u"; done;       eval "$pip_cmd -e .";       python -c "import torch,sys; v=torch.__version__; print('torch=%s cuda_available=%s'%(v,torch.cuda.is_available())); sys.exit('ERROR: expected CPU torch, got '+v) if ('+cu' in v) else None";     else       echo "KB image: TORCH_CHANNEL=cuda (PIP_INDEX_URL=https://pypi.org/simple)";       pip install --default-timeout=120 -e .;     fi
+#46 201.9 Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 202.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/f8/1e/1e8ecc05ef034e9a95c18ed32d2ec07905a7cd2ca611a9d88e25ee1f4850/hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+#46 203.0 Collecting httpx2<3,>=2.0.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 203.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/77/de/8c4306a3d6aa2495111986addf33a9e561eff4c47552e4c4b9251160d0ad/httpx2-2.16.2-py3-none-any.whl (97 kB)
+#46 203.1 Requirement already satisfied: packaging>=20.9 in /usr/local/lib/python3.11/site-packages (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0) (26.3)
+#46 204.2 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.0.0->kb-manager==0.1.0)
+#46 204.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#46 205.3 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi>=0.115.0->kb-manager==0.1.0)
+#46 205.5   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#46 213.8 Collecting pydantic-core==2.50.4 (from pydantic>=2.9.0->fastapi>=0.115.0->kb-manager==0.1.0)
+#46 214.0   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/56/51/cbb7a1bc0196ff94d3478d265eed7449f811759988eb760d41f4edd0893b/pydantic_core-2.50.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#46 215.4 Collecting tzdata (from python-dateutil>=2.9.0->pandas>=2.0.0->kb-manager==0.1.0)
+#46 215.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/0a/66/9a06c2227fedfd4919f0eaaa8b94377d9730882a7e4f95823c9a331ab5e1/tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+#46 218.2 Collecting joblib>=1.4.0 (from scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 218.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/18/53/84099323c2ec4be98d935f63c033ac4151ee83836ca1050ede3b3aadf155/joblib-1.6.0-py3-none-any.whl (306 kB)
+#46 219.9 Collecting narwhals>=2.0.1 (from scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 220.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/cf/82/8ef9c7e0f50493307a49c09cfa7f00c5a778b6d1921f7b2dabe1d3a5809e/narwhals-2.28.0-py3-none-any.whl (490 kB)
+#46 220.9 Collecting threadpoolctl>=3.5.0 (from scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 221.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/54/1b/831f2de4840a25db1dd7b1afea433ccafe6bb10aca07e13264f2079462d0/threadpoolctl-3.8.0-py3-none-any.whl (32 kB)
+#46 222.5 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=2.0.0->kb-manager==0.1.0)
+#46 222.7   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl (536 kB)
+#46 229.2 Collecting regex>=2025.10.22 (from transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 229.4   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/fc/aa/90c4534a1fabe124a6e7e72e777c4a1a90dfd13aad8b5151924c96024b98/regex-2026.11.15-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+#46 230.8 Collecting typer (from transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 231.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/05/ff/51969745f31cea6bcd12151e668febcf979656316e67a7755942267c1273/typer-0.29.1-py3-none-any.whl (121 kB)
+#46 234.0 Collecting safetensors>=0.8.0 (from transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 234.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/28/50/f203ff3a3ddfe19308efc83c5a3a29ed02bf786732ec35e68bf9162f3365/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+#46 235.9 Collecting flatbuffers (from onnxruntime->pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 236.1   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+#46 239.4 Collecting protobuf>=4.25.8 (from onnxruntime->pymupdf>=1.24.0->kb-manager==0.1.0)
+#46 239.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/db/f3/3996583dd2906297a637af12114deddf7658af6e683fedb83be061983fb5/protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+#46 240.7 Collecting httpcore2==2.16.2 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 240.9   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/2a/e8/009c347feac27f8960605aa98d55ed263b5870dd4fd80b82fd1d00d5716c/httpcore2-2.16.2-py3-none-any.whl (85 kB)
+#46 242.1 Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 242.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/51/e9/3a7820be2bb0fe53b6bc9c3be26d3d1158004e4c3ab953aa6840b955b1e9/truststore-0.10.5-py3-none-any.whl (19 kB)
+#46 243.4 Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn>=1.1.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 243.6   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#46 245.1 Collecting shellingham>=1.3.0 (from typer->transformers<6.0.0,>=5.0.0->sentence-transformers>=3.0.0->kb-manager==0.1.0)
+#46 245.3   Using cached https://package-mirror.liara.ir/repository/pypi/packages/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+#46 245.5 Building wheels for collected packages: kb-manager
+#46 245.5   Building editable for kb-manager (pyproject.toml): started
+#46 245.5   Building editable for kb-manager (pyproject.toml): finished with status 'done'
+#46 245.5   Created wheel for kb-manager: filename=kb_manager-0.1.0-py3-none-any.whl size=1619 sha256=df1dce52617abc4272ea608efc5b969adc253ecf85fae4a3bd67996f2ce50338
+#46 245.5   Stored in directory: /tmp/pip-ephem-wheel-cache-wcm9s3vv/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+#46 245.5 Successfully built kb-manager
+#46 246.8 Installing collected packages: nvidia-cusparselt-cu13, mpmath, flatbuffers, cuda-toolkit, websockets, uvloop, tzdata, typing-extensions, truststore, triton, tqdm, threadpoolctl, tabulate, sympy, shellingham, safetensors, regex, redis, pyyaml, python-multipart, python-dotenv, pygments, psycopg2-binary, psutil, protobuf, prometheus-client, Pillow, pgvector, nvidia-nvtx, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, nvidia-cuda-cccl, numpy, networkx, narwhals, mdurl, MarkupSafe, lxml, idna, httptools, hf-xet, h11, greenlet, fsspec, filelock, et-xmlfile, cuda-pathfinder, cloudpickle, click, certifi, asyncpg, annotated-types, annotated-doc, aiosqlite, uvicorn, typing-inspection, sqlalchemy, scipy, python-docx, python-dateutil, pydantic-core, opentelemetry-api, openpyxl, onnxruntime, nvidia-nvshmem-cu13, nvidia-cusparse, nvidia-cufft, nvidia-cublas, markdown-it-py, joblib, jinja2, httpcore2, httpcore, docx, cuda-bindings, anyio, watchfiles, starlette, scikit-learn, rich, pydantic, pandas, nvidia-cusolver, nvidia-cudnn-cu13, httpx2, httpx, typer, huggingface-hub, fastapi, torch, tokenizers, transformers, sentence-transformers, pymupdf4llm, pymupdf-layout, pymupdf, kb-manager
+#46 332.1 Successfully installed MarkupSafe-3.0.4 Pillow-13.0.0 aiosqlite-0.22.1 annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 asyncpg-0.32.0 certifi-2026.10.23 click-8.5.1 cloudpickle-3.1.2 cuda-bindings-13.5.0 cuda-pathfinder-1.9.0 cuda-toolkit-13.2.2 docx-0.2.4 et-xmlfile-2.0.0 fastapi-0.163.1 filelock-4.2.10 flatbuffers-25.12.19 fsspec-2026.9.0 greenlet-3.5.6 h11-0.16.0 hf-xet-1.8.0 httpcore-1.0.9 httpcore2-2.16.2 httptools-0.9.0 httpx-0.28.1 httpx2-2.16.2 huggingface-hub-2.4.0 idna-3.20 jinja2-3.1.6 joblib-1.6.0 kb-manager-0.1.0 lxml-6.1.3 markdown-it-py-4.3.0 mdurl-0.1.2 mpmath-1.3.0 narwhals-2.28.0 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-13.4.1.3 nvidia-cuda-cccl-13.3.5.0.6 nvidia-cuda-cupti-13.2.86 nvidia-cuda-nvrtc-13.2.86 nvidia-cuda-runtime-13.2.86 nvidia-cudnn-cu13-9.26.0.51 nvidia-cufft-12.2.0.57 nvidia-cufile-1.17.1.22 nvidia-cusolver-12.2.0.11 nvidia-cusparse-12.7.10.12 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.30.7 nvidia-nvjitlink-13.5.37 nvidia-nvshmem-cu13-3.7.2 nvidia-nvtx-13.2.86 onnxruntime-1.32.0 openpyxl-3.1.5 opentelemetry-api-1.45.2 pandas-3.1.1 pgvector-0.5.1 prometheus-client-0.26.0 protobuf-7.36.2 psutil-7.2.2 psycopg2-binary-2.9.13 pydantic-2.14.3 pydantic-core-2.50.4 pygments-2.21.0 pymupdf-2.1 pymupdf-layout-2.1 pymupdf4llm-2.1 python-dateutil-4.0.0 python-docx-1.2.0 python-dotenv-1.2.4 python-multipart-0.0.34 pyyaml-6.0.3 redis-8.1.0 regex-2026.11.15 rich-15.0.0 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.17.1 sentence-transformers-6.3.0 shellingham-1.5.4 sqlalchemy-2.1.8 starlette-1.10.0 sympy-1.14.0 tabulate-0.10.0 threadpoolctl-3.8.0 tokenizers-0.23.3 torch-2.15.0 tqdm-4.70.1 transformers-5.23.0 triton-3.9.0 truststore-0.10.5 typer-0.29.1 typing-extensions-4.16.0 typing-inspection-0.4.5 tzdata-2026.6 uvicorn-0.54.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.4
+#46 332.1 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#46 332.1 
+#46 332.1 [notice] A new release of pip is available: 24.0 -> 26.3
+#46 332.1 [notice] To update, run: pip install --upgrade pip
+#46 DONE 337.8s
+
+#68 [kb] exporting to image
+#68 exporting layers
+#68 exporting layers 327.7s done
+#68 exporting manifest sha256:6203708c5e6907f86a8efcd2b09ab8fba27baf0b5a9f7ff944d69afb75414283 done
+#68 exporting config sha256:f89d5b86741447f6445963cd1686d89749facacf270e4514c19a20a8c3f7f81a done
+#68 exporting attestation manifest sha256:5713c9d59fce8ff7b80c8f700c4fef044517b7d59e0aa2ef26e6a0d0aefeecd1 done
+#68 exporting manifest list sha256:6b36b439c62aefe336d1c343440054e8cf33624a71c9a94d407149a482e54cd4 done
+#68 naming to docker.io/library/rag-kb:f0c47ca done
+#68 unpacking to docker.io/library/rag-kb:f0c47ca
+#68 unpacking to docker.io/library/rag-kb:f0c47ca 33.9s done
+#68 DONE 361.7s
+
+#69 [kb] resolving provenance for metadata file
+#69 DONE 0.0s
+ rag-orchestrator:f0c47ca  Built
+ rag-tracing:f0c47ca  Built
+ rag-webui:f0c47ca  Built
+ rag-kb:f0c47ca  Built
+ rag-guardrails:f0c47ca  Built
