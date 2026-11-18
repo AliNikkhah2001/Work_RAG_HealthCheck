@@ -1,7 +1,0 @@
-{
-  "labels": [
-    "docker_compose_build_failed",
-    "jenkins_result_failure"
-  ],
-  "tip": "Real image build failure — inspect console_excerpt.txt / consoleText.txt and archived .ci-evidence/compose-build.log."
-}
