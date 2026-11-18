@@ -1,0 +1,263 @@
+
+[0;36m======================================================================[0m
+[0;36m  GPU Full Recovery Report — 20261118T095911Z-ai-gpu1[0m
+[0;36m======================================================================[0m
+  Host:        ai-gpu1
+  Repo:        /splunk-data/production/Work_Credit-RAG_Phase1
+  Server-setup: /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup
+  Output:      /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1
+  Root:        no
+  Push:        enabled
+  Restart:     enabled
+  Screenshot:  enabled
+[0;36m======================================================================[0m
+
+[0;32m[OK][0m   Running as root — full access to docker, journalctl, bash history
+[0;32m[OK][0m   Running as root — full access to docker, journalctl, bash history
+[0;32m[OK][0m   machine type from GPU_MACHINE_TYPE: production_gpu
+[0;32m[OK][0m   machine type from GPU_MACHINE_TYPE: production_gpu
+[0;36m[██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  15%  Collecting host metadata
+[0;34m[INFO][0m Step 3/20: Collecting host metadata
+[0;34m[INFO][0m Step 3/20: Collecting host metadata
+[0;32m[OK][0m   host metadata -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/meta/host_metadata.txt
+[0;32m[OK][0m   host metadata -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/meta/host_metadata.txt
+[0;36m[████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  20%  Collecting all git commits (last 3 days)
+[0;34m[INFO][0m Step 4/20: Collecting all git commits (last 3 days)
+[0;34m[INFO][0m Step 4/20: Collecting all git commits (last 3 days)
+[0;32m[OK][0m   umbrella commits -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/commits/umbrella_commits.txt
+[0;32m[OK][0m   umbrella commits -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/commits/umbrella_commits.txt
+[0;36m[██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  25%  Collecting shell command history (last 3 days)
+[0;34m[INFO][0m Step 5/20: Collecting shell command history (last 3 days)
+[0;34m[INFO][0m Step 5/20: Collecting shell command history (last 3 days)
+[0;32m[OK][0m   shell history -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/commands/shell_history.txt
+[0;32m[OK][0m   shell history -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/commands/shell_history.txt
+[0;36m[████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  30%  Collecting all container logs
+[0;34m[INFO][0m Step 6/20: Collecting all container logs
+[0;34m[INFO][0m Step 6/20: Collecting all container logs
+[0;32m[OK][0m   collected logs from 35 containers
+[0;32m[OK][0m   collected logs from 35 containers
+[0;36m[██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  35%  Collecting database and DVC logs
+[0;34m[INFO][0m Step 7/20: Collecting database and DVC logs
+[0;34m[INFO][0m Step 7/20: Collecting database and DVC logs
+[0;32m[OK][0m   database and dvc logs -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/logs/database_and_dvc.log
+[0;32m[OK][0m   database and dvc logs -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/logs/database_and_dvc.log
+[0;36m[████████████████░░░░░░░░░░░░░░░░░░░░░░░░][0m  40%  Collecting host /tmp logs
+[0;34m[INFO][0m Step 8/20: Collecting host /tmp logs
+[0;34m[INFO][0m Step 8/20: Collecting host /tmp logs
+[0;32m[OK][0m   collected 48 host log files
+[0;32m[OK][0m   collected 48 host log files
+[0;36m[██████████████████░░░░░░░░░░░░░░░░░░░░░░][0m  45%  Collecting builds and runs
+[0;34m[INFO][0m Step 9/20: Collecting builds and runs
+[0;34m[INFO][0m Step 9/20: Collecting builds and runs
+[0;32m[OK][0m   builds/runs -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/builds/builds_and_runs.txt
+[0;32m[OK][0m   builds/runs -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/builds/builds_and_runs.txt
+[0;36m[████████████████████░░░░░░░░░░░░░░░░░░░░][0m  50%  Collecting knowledgebase details
+[0;34m[INFO][0m Step 10/20: Collecting knowledgebase details
+[0;34m[INFO][0m Step 10/20: Collecting knowledgebase details
+[0;32m[OK][0m   kb version probe -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/kb/kb_version.json (verdict: match)
+[0;32m[OK][0m   kb version probe -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/kb/kb_version.json (verdict: match)
+[0;32m[OK][0m   knowledgebase details -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/kb/kb_details.txt
+[0;32m[OK][0m   knowledgebase details -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/kb/kb_details.txt
+[0;36m[██████████████████████░░░░░░░░░░░░░░░░░░][0m  55%  Attempting service restart
+[0;34m[INFO][0m Step 11/20: Attempting service restart
+[0;34m[INFO][0m Step 11/20: Attempting service restart
+[1;33m[WARN][0m compose up returned non-zero
+[0;32m[OK][0m   jenkins compose up succeeded
+[0;32m[OK][0m   restart log -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/restart/restart.log
+[0;32m[OK][0m   restart log -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/restart/restart.log
+--- Post-restart processes ---
+root       71459  0.5  0.0 187756 77436 ?        Sl   Nov16  14:42 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_guardrails.api:create_app --factory --host 0.0.0.0 --port 8200
+root       71539  1.6  0.1 30929156 1914196 ?    Sl   Nov16  49:43 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn work_rag_orchestrator.api:create_app --factory --host 0.0.0.0 --port 8100
+root       73206  3.5  0.0 723912 145148 ?       Sl   Nov16 104:30 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn llm_inference_manager.app:app --host 0.0.0.0 --port 9000 --app-dir /splunk-data/v1/Work_RAG-Server-Setup.__DEPRECATED_DO_NOT_USE_FOR_WEBUI__
+root      150202  0.0  0.0   2564  1592 ?        Ss   Nov16   0:10 /usr/bin/tini -- /usr/local/bin/jenkins.sh
+root      150353  0.4  0.1 42734288 1337068 ?    Sl   Nov16  13:43 java -Duser.home=/var/jenkins_home -Djenkins.install.runSetupWizard=false -Djenkins.model.Jenkins.slaveAgentPort=50000 -Dhudson.lifecycle=hudson.lifecycle.ExitLifecycle -jar /usr/share/jenkins/jenkins.war
+999       980934  0.0  0.0 222592 16580 ?        Ss   Nov16   0:05 postgres: postgres kb_manager 172.30.101.6(41318) idle
+999      1062294  0.0  0.0 17247808 409524 ?     Ss   Nov12   0:31 postgres
+999      1062410  0.0  0.0 17247940 192908 ?     Ss   Nov12   0:00 postgres: checkpointer 
+999      1062411  0.0  0.0 17247964 192324 ?     Ss   Nov12   0:07 postgres: background writer 
+999      1062413  0.0  0.0 17247808 77476 ?      Ss   Nov12   0:07 postgres: walwriter 
+999      1062414  0.0  0.0 17249404 62152 ?      Ss   Nov12   0:08 postgres: autovacuum launcher 
+999      1062415  0.0  0.0 17249392 61620 ?      Ss   Nov12   0:00 postgres: logical replication launcher 
+root     1070192  0.4  0.3 41298944 3721240 ?    Sl   Nov12  40:57 /splunk-data/v1/Work_RAG-Server-Setup/offline-prep/venv/bin/python -m uvicorn kb_manager.web.app:app --host 0.0.0.0 --port 8000
+999      1070246  0.0  0.0 17251772 110608 ?     Ss   Nov12   0:33 postgres: postgres kb_manager 172.17.0.1(50366) idle
+root     2592594  0.2  0.0  59280 51188 ?        Ss   Nov15  11:56 python -m uvicorn app:app --host 0.0.0.0 --port 3000
+999      2592601  0.0  0.0 220368 29444 ?        Ss   Nov15   1:31 postgres
+999      2592911  0.0  0.0 220500  9056 ?        Ss   Nov15   0:00 postgres: checkpointer 
+999      2592912  0.0  0.0 220524  7316 ?        Ss   Nov15   0:03 postgres: background writer 
+999      2592914  0.0  0.0 220368 10340 ?        Ss   Nov15   0:03 postgres: walwriter 
+999      2592915  0.0  0.0 221964  9180 ?        Ss   Nov15   0:05 postgres: autovacuum launcher 
+999      2592916  0.0  0.0 221952  8520 ?        Ss   Nov15   0:00 postgres: logical replication launcher 
+999      2594965  0.0  0.0 225736 20236 ?        Ss   Nov15   0:13 postgres: postgres kb_manager 172.30.101.6(44616) idle
+root     2597304  0.9  0.0 4792372 376532 ?      Ssl  Nov15  37:22 /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
+root     2723568  1.5  0.0 3838024 405360 ?      Ssl  Nov17  15:32 /usr/local/bin/python3 -m uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --forwarded-allow-ips * --workers 1 --ws-per-message-deflate true
+999      2867876  0.0  0.0 17251660 63868 ?      Ss   Nov15   0:24 postgres: postgres kb_manager 172.17.0.1(53914) idle
+[0;32m[OK][0m   post-restart process check
+[0;32m[OK][0m   post-restart process check
+[0;36m[████████████████████████░░░░░░░░░░░░░░░░][0m  60%  Testing all service endpoints (curl health matrix)
+[0;34m[INFO][0m Step 12/20: Testing all service endpoints (curl health matrix)
+[0;34m[INFO][0m Step 12/20: Testing all service endpoints (curl health matrix)
+[0;32m[OK][0m   WebUI publishes :13000 (port overlay applied correctly)
+[0;32m[OK][0m   WebUI publishes :13000 (port overlay applied correctly)
+[0;36m[██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m   5%  probing port 90009000	manager	200	
+tr: write error: Broken pipe
+/splunk-data/production/Work_Credit-RAG_Phase1/scripts/gpu_full_recover_report.sh: line 994: printf: write error: Broken pipe
+[0;36m[████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  11%  probing port 80008000	kb	200	
+tr: write error: Broken pipe
+[0;32m[OK][0m   :8000 (kb) up
+[0;32m[OK][0m   :8000 (kb) up
+[0;36m[███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  17%  probing port 82008200	guardrails	200	
+[0;32m[OK][0m   :8200 (guardrails) up
+[0;32m[OK][0m   :8200 (guardrails) up
+[0;36m[█████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  23%  probing port 81008100	orchestrator	200	
+[0;32m[OK][0m   :8100 (orchestrator) up
+[0;32m[OK][0m   :8100 (orchestrator) up
+[0;36m[███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  29%  probing port 30003000	trace-collector	000	
+[0;36m[██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░][0m  35%  probing port 30013001	langfuse	000	
+[0;36m[████████████████░░░░░░░░░░░░░░░░░░░░░░░░][0m  41%  probing port 1300013000	webui	200	
+[0;32m[OK][0m   webui :13000 up
+[0;32m[OK][0m   webui :13000 up
+[0;36m[██████████████████░░░░░░░░░░░░░░░░░░░░░░][0m  47%  probing port 80858085	jenkins	200	
+[0;32m[OK][0m   jenkins :8085 up
+[0;32m[OK][0m   jenkins :8085 up
+[0;36m[█████████████████████░░░░░░░░░░░░░░░░░░░][0m  52%  probing port 80888088	service:8088	200	
+[0;36m[███████████████████████░░░░░░░░░░░░░░░░░][0m  58%  probing port 80108010	service:8010	200	
+[0;36m[█████████████████████████░░░░░░░░░░░░░░░][0m  64%  probing port 80018001	service:8001	200	
+[0;36m[████████████████████████████░░░░░░░░░░░░][0m  70%  probing port 80028002	service:8002	200	
+[0;36m[██████████████████████████████░░░░░░░░░░][0m  76%  probing port 80038003	service:8003	200	
+[0;36m[████████████████████████████████░░░░░░░░][0m  82%  probing port 1800018000	gemma	200	
+[0;36m[███████████████████████████████████░░░░░][0m  88%  probing port 1810018100	service:18100	200	
+[0;36m[█████████████████████████████████████░░░][0m  94%  probing port 1820018200	service:18200	200	
+[0;36m[████████████████████████████████████████][0m 100%  probing port 1310013100	service:13100	200	
+
+{"status":"ready","dependencies":[{"name":"knowledgebase","status":"ready","url":"http://127.0.0.1:8000","error":null},{"name":"guardrails","status":"ready","url":"http://127.0.0.1:8200","error":null}]}
+{"status":"ready","nemo_config_loaded":true,"upstream_reachable":true,"policy_version":"mvp-1"}
+[0;36m[██████████████████████████░░░░░░░░░░░░░░][0m  65%  Running E2E random KB FAQ QA (10) + latency metrics
+[0;34m[INFO][0m Step 13/20: Running E2E random KB FAQ QA (10) + latency metrics
+[0;34m[INFO][0m Step 13/20: Running E2E random KB FAQ QA (10) + latency metrics
+[qa] 1/10: چه مواردی باعث می شود امتیاز اعتباری من ۲۵۰ شود؟
+[qa] 2/10: شرکت اعتبارسنجی ایران را معرفی کن.
+[qa] 3/10: چگونه با شرکت اعتبارسنجی ایران تماس بگیرم؟
+[qa] 4/10: اگر هیچ وامی نگرفتم رتبه اعتباریم چند حساب میشه؟
+[qa] 5/10: اعضای هیئت مدیره شرکت اعتبارسنجی ایران چه اشخاصی هستند؟
+[qa] 6/10: اگر چک برگشتی من رفع سوء اثر شده باشد، اما همچنان در گزارش اعتباری نمایش داده شو
+[qa] 7/10: امتیاز اعتباری چیست و با رتبه اعتباری چه تفاوتی دارد؟
+[qa] 8/10: هدف اصلی از اعتبارسنجی چیست؟
+[qa] 9/10: چگونه گزارش خلاصه چک صادر کننده چک را دریافت کنم؟
+[qa] 10/10: به عدد امتیازم اعتراض دارم. چه اقدامی باید انجام دهم؟
+[qa] done passed=10/10 seed=1794995992 e2e_p50=13495.7ms
+[0;32m[OK][0m   random KB QA batch passed
+[0;32m[OK][0m   random KB QA batch passed
+[0;36m[████████████████████████████░░░░░░░░░░░░][0m  70%  Capturing headless screenshots
+[0;34m[INFO][0m Step 14/20: Capturing headless screenshots
+[0;34m[INFO][0m Step 14/20: Capturing headless screenshots
+[0;32m[OK][0m   browser for screenshots: chromium
+[0;32m[OK][0m   browser for screenshots: chromium
+[0;32m[OK][0m   shot kb-manager-docs (playwright)
+[0;32m[OK][0m   shot kb-manager-docs (playwright)
+[0;32m[OK][0m   shot orch-docs (playwright)
+[0;32m[OK][0m   shot orch-docs (playwright)
+[0;32m[OK][0m   shot guard-docs (playwright)
+[0;32m[OK][0m   shot guard-docs (playwright)
+[1;33m[WARN][0m no browser for webui-home — wrote URL stub
+[1;33m[WARN][0m no browser for webui-home — wrote URL stub
+[0;32m[OK][0m   shot webui-alt (playwright)
+[0;32m[OK][0m   shot webui-alt (playwright)
+[0;32m[OK][0m   shot jenkins-login (playwright)
+[0;32m[OK][0m   shot jenkins-login (playwright)
+[0;32m[OK][0m   shot manager-ui (playwright)
+[0;32m[OK][0m   shot manager-ui (playwright)
+[0;32m[OK][0m   shot manager-docs (playwright)
+[0;32m[OK][0m   shot manager-docs (playwright)
+[0;32m[OK][0m   shot gemma-docs (playwright)
+[0;32m[OK][0m   shot gemma-docs (playwright)
+[0;36m[██████████████████████████████░░░░░░░░░░][0m  75%  Screenshot gallery (Jenkins login + UIs, 10s delay)
+[0;34m[INFO][0m Step 15/20: Screenshot gallery (Jenkins login + UIs, 10s delay)
+[0;34m[INFO][0m Step 15/20: Screenshot gallery (Jenkins login + UIs, 10s delay)
+[shot] jenkins-status: OK via playwright (http://127.0.0.1:8085/login)
+[shot] kb-manager-docs: OK via chrome (http://127.0.0.1:8000/docs)
+[shot] kb-manager-redoc: OK via chrome (http://127.0.0.1:8000/redoc)
+[shot] webui-main: OK via chrome (http://127.0.0.1:13000/)
+[shot] webui-alt: OK via playwright (http://127.0.0.1:8088/)
+[shot] webui-stage: OK via playwright (http://127.0.0.1:13100/)
+[shot] manager-ui: OK via playwright (http://127.0.0.1:9000/)
+[shot] manager-docs: OK via chrome (http://127.0.0.1:9000/docs)
+[shot] orch-docs: OK via chrome (http://127.0.0.1:8100/docs)
+[shot] guard-docs: OK via chrome (http://127.0.0.1:8200/docs)
+[shot] gemma-docs: OK via chrome (http://127.0.0.1:18000/docs)
+[shot] done 11/11
+total 1192
+drwxr-xr-x 13 root root   4096 Nov 18 10:15 .
+drwxr-xr-x 15 root root   4096 Nov 18 09:59 ..
+drwxr-xr-x  2 root root   4096 Nov 18 10:03 .chrome-profile-gemma-docs
+drwxr-xr-x  2 root root   4096 Nov 18 10:02 .chrome-profile-guard-docs
+drwxr-xr-x  2 root root   4096 Nov 18 10:03 .chrome-profile-jenkins-login
+drwxr-xr-x  2 root root   4096 Nov 18 10:01 .chrome-profile-kb-manager-docs
+drwxr-xr-x  2 root root   4096 Nov 18 10:07 .chrome-profile-kb-manager-redoc
+drwxr-xr-x  2 root root   4096 Nov 18 10:03 .chrome-profile-manager-docs
+drwxr-xr-x  2 root root   4096 Nov 18 10:03 .chrome-profile-manager-ui
+drwxr-xr-x  2 root root   4096 Nov 18 10:02 .chrome-profile-orch-docs
+drwxr-xr-x  2 root root   4096 Nov 18 10:03 .chrome-profile-webui-alt
+drwxr-xr-x  2 root root   4096 Nov 18 10:02 .chrome-profile-webui-home
+drwxr-xr-x  2 root root   4096 Nov 18 10:07 .chrome-profile-webui-main
+-rw-r--r--  1 root root   1726 Nov 18 10:15 gallery.json
+-rw-r--r--  1 root root   4922 Nov 18 10:03 gemma-docs.chrome.log
+-rw-r--r--  1 root root   5738 Nov 18 10:15 gemma-docs.png
+-rw-r--r--  1 root root     22 Nov 18 10:15 gemma-docs.py.log
+-rw-r--r--  1 root root   4922 Nov 18 10:02 guard-docs.chrome.log
+-rw-r--r--  1 root root   5738 Nov 18 10:13 guard-docs.png
+-rw-r--r--  1 root root     22 Nov 18 10:13 guard-docs.py.log
+-rw-r--r--  1 root root   4928 Nov 18 10:03 jenkins-login.chrome.log
+-rw-r--r--  1 root root 492327 Nov 18 10:03 jenkins-login.png
+-rw-r--r--  1 root root      0 Nov 18 10:03 jenkins-login.py.log
+-rw-r--r--  1 root root  51377 Nov 18 10:03 jenkins-status.png
+-rw-r--r--  1 root root   4932 Nov 18 10:02 kb-manager-docs.chrome.log
+-rw-r--r--  1 root root   5738 Nov 18 10:05 kb-manager-docs.png
+-rw-r--r--  1 root root     22 Nov 18 10:05 kb-manager-docs.py.log
+-rw-r--r--  1 root root   5738 Nov 18 10:07 kb-manager-redoc.png
+-rw-r--r--  1 root root     22 Nov 18 10:07 kb-manager-redoc.py.log
+-rw-r--r--  1 root root   4926 Nov 18 10:03 manager-docs.chrome.log
+-rw-r--r--  1 root root   5738 Nov 18 10:10 manager-docs.png
+-rw-r--r--  1 root root     22 Nov 18 10:10 manager-docs.py.log
+-rw-r--r--  1 root root   4922 Nov 18 10:03 manager-ui.chrome.log
+-rw-r--r--  1 root root 215521 Nov 18 10:08 manager-ui.png
+-rw-r--r--  1 root root      0 Nov 18 10:03 manager-ui.py.log
+-rw-r--r--  1 root root   4920 Nov 18 10:02 orch-docs.chrome.log
+-rw-r--r--  1 root root   5738 Nov 18 10:12 orch-docs.png
+-rw-r--r--  1 root root     22 Nov 18 10:12 orch-docs.py.log
+-rw-r--r--  1 root root   4920 Nov 18 10:03 webui-alt.chrome.log
+-rw-r--r--  1 root root 132987 Nov 18 10:08 webui-alt.png
+-rw-r--r--  1 root root      0 Nov 18 10:03 webui-alt.py.log
+-rw-r--r--  1 root root   4922 Nov 18 10:02 webui-home.chrome.log
+-rw-r--r--  1 root root    165 Nov 18 10:03 webui-home.py.log
+-rw-r--r--  1 root root     24 Nov 18 10:03 webui-home.url.txt
+-rw-r--r--  1 root root  35138 Nov 18 10:07 webui-main.png
+-rw-r--r--  1 root root     35 Nov 18 10:07 webui-main.py.log
+-rw-r--r--  1 root root  62937 Nov 18 10:08 webui-stage.png
+[0;36m[████████████████████████████████░░░░░░░░][0m  80%  Host inventory + Jenkins status
+[0;34m[INFO][0m Step 16/20: Host inventory + Jenkins status
+[0;34m[INFO][0m Step 16/20: Host inventory + Jenkins status
+[host] ports_open=16/18 gpus=2
+[jenkins] status=HEALTHY healthy=True reasons=['ok'] forensics=['none']
+[webui-watch] pinned=e9a8dd1eb2d3 tip=ad2544eb7add ahead=1
+[webui-watch] jenkins multibranch_scan=302 ahead=1
+[0;36m[██████████████████████████████████░░░░░░][0m  85%  Collecting command/shutdown/reboot/user metadata
+[0;34m[INFO][0m Step 17/20: Collecting command/shutdown/reboot/user metadata
+[0;34m[INFO][0m Step 17/20: Collecting command/shutdown/reboot/user metadata
+[0;32m[OK][0m   command/shutdown/reboot/user metadata -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/logs/command_shutdown_reboot_user.log
+[0;32m[OK][0m   command/shutdown/reboot/user metadata -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/logs/command_shutdown_reboot_user.log
+[0;36m[████████████████████████████████████░░░░][0m  90%  Writing REPORT.md
+[0;34m[INFO][0m Step 18/20: Writing REPORT.md
+[0;34m[INFO][0m Step 18/20: Writing REPORT.md
+[0;32m[OK][0m   wrote /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/REPORT.md
+[0;32m[OK][0m   wrote /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/REPORT.md
+[0;36m[██████████████████████████████████████░░][0m  95%  Generating HTML dashboard
+[0;34m[INFO][0m Step 19/20: Generating HTML dashboard
+[0;34m[INFO][0m Step 19/20: Generating HTML dashboard
+[0;32m[OK][0m   html dashboard -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/html/dashboard.html
+[0;32m[OK][0m   html dashboard -> /splunk-data/production/Work_Credit-RAG_Phase1/components/server-setup/docs/ops/gpu-recover-reports/20261118T095911Z-ai-gpu1/html/dashboard.html
+[0;36m[████████████████████████████████████████][0m 100%  Redacting secrets and pushing to GitHub
+[0;34m[INFO][0m Step 20/20: Redacting secrets and pushing to GitHub
+[0;34m[INFO][0m Step 20/20: Redacting secrets and pushing to GitHub
+[0;34m[INFO][0m Step 21/20: Publishing run record to monitoring repo
+[0;34m[INFO][0m probing knowledge-base version (db + api) vs pinned
+[0;32m[OK][0m   KB version matches the pin
