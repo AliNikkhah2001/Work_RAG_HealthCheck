@@ -1,0 +1,14 @@
+{
+  "schema_version": "deploy-state/v1",
+  "umbrella_sha": "2578997c77df60f14efb81e6160b095c67afd1c4",
+  "umbrella_sha_short": "2578997",
+  "server_setup_sha": "005dbda",
+  "last_good_sha": "2578997c77df60f14efb81e6160b095c67afd1c4",
+  "deployed_sha": null,
+  "release": {
+    "tag": null,
+    "sha": null,
+    "on_umbrella": false,
+    "describe": "v1.4.0-6-g2578997"
+  }
+}
