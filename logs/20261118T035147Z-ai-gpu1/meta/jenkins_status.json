@@ -1,0 +1,144 @@
+{
+  "schema_version": "jenkins-status/v2",
+  "ts": "2026-11-18T04:07:44Z",
+  "healthy": true,
+  "images_ok": true,
+  "build_ok": true,
+  "status": "HEALTHY",
+  "reasons": [],
+  "jenkins": {
+    "url": "http://127.0.0.1:8085",
+    "authenticated": true,
+    "who": {
+      "_class": "hudson.security.WhoAmI",
+      "anonymous": false,
+      "authenticated": true,
+      "authorities": [
+        "authenticated",
+        "FACTOR_PASSWORD"
+      ],
+      "name": "admin"
+    },
+    "job": "dana-rag-prod",
+    "job_http": 200,
+    "last_build": {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "duration": 400868,
+      "number": 42,
+      "result": "SUCCESS",
+      "timestamp": 1794935435693,
+      "url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/42/",
+      "branch": "main"
+    }
+  },
+  "forensics": {
+    "captured": true,
+    "build_number": 42,
+    "branch": "main",
+    "console_url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/42/consoleText",
+    "wfapi_url": "http://127.0.0.1:8085/job/dana-rag-prod/job/main/42/wfapi/describe",
+    "console_bytes": 475718,
+    "excerpt_lines": 42,
+    "stages": 13,
+    "diagnosis": {
+      "labels": [],
+      "tip": null
+    },
+    "ci_evidence_files": [
+      "agent_context.txt",
+      "build",
+      "compose-build.log",
+      "coverage.env",
+      "iran_mirrors.env",
+      "lint",
+      "prod-deploy",
+      "shell_probe.txt"
+    ],
+    "artifacts": [
+      "consoleText.txt",
+      "console_excerpt.txt",
+      "build.json",
+      "diagnosis.json",
+      "wfapi.json",
+      "stages.json",
+      "ci-evidence/agent_context.txt",
+      "ci-evidence/build",
+      "ci-evidence/compose-build.log",
+      "ci-evidence/coverage.env",
+      "ci-evidence/iran_mirrors.env",
+      "ci-evidence/lint",
+      "ci-evidence/prod-deploy",
+      "ci-evidence/shell_probe.txt"
+    ]
+  },
+  "images": [
+    {
+      "ref": "rag-kb:local",
+      "present": true,
+      "id": "sha256:b2ba5a956066bbc9c17f97d869cdb96e8068948720eabc89b33af1a841d0ad55",
+      "id_short": "sha256:b2ba5a956066",
+      "created": "2026-11-17T15:54:42.830003371Z",
+      "age_hours": 12.2,
+      "tags": "[\"rag-kb:2578997\",\"rag-kb:local\"]",
+      "digests": "[\"rag-kb@sha256:b2ba5a956066bbc9c17f97d869cdb96e8068948720eabc89b33af1a841d0ad55\"]"
+    },
+    {
+      "ref": "rag-orchestrator:local",
+      "present": true,
+      "id": "sha256:f0c287dcb8f7da06a33d5eeddc6958fe07b00b8a8d02b3f7d0de19ef47e40f81",
+      "id_short": "sha256:f0c287dcb8f7",
+      "created": "2026-11-17T15:52:46.226408567Z",
+      "age_hours": 12.2,
+      "tags": "[\"rag-orchestrator:2578997\",\"rag-orchestrator:local\"]",
+      "digests": "[\"rag-orchestrator@sha256:f0c287dcb8f7da06a33d5eeddc6958fe07b00b8a8d02b3f7d0de19ef47e40f81\"]"
+    },
+    {
+      "ref": "rag-guardrails:local",
+      "present": true,
+      "id": "sha256:28ec7011820b0b953670531faaafa24b332244324b056a912930cfeb9a82f8ac",
+      "id_short": "sha256:28ec7011820b",
+      "created": "2026-11-17T15:51:12.543299572Z",
+      "age_hours": 12.3,
+      "tags": "[\"rag-guardrails:2578997\",\"rag-guardrails:local\"]",
+      "digests": "[\"rag-guardrails@sha256:28ec7011820b0b953670531faaafa24b332244324b056a912930cfeb9a82f8ac\"]"
+    },
+    {
+      "ref": "rag-webui:dana",
+      "present": true,
+      "id": "sha256:5e2ff3feb5bd17d9ec79cc6a6be3587404de006b8770c38decf7edae1f6a2428",
+      "id_short": "sha256:5e2ff3feb5bd",
+      "created": "2026-11-16T17:16:30.396299405Z",
+      "age_hours": 34.9,
+      "tags": "[\"rag-webui:2578997\",\"rag-webui:dana\",\"rag-webui:local\"]",
+      "digests": "[\"rag-webui@sha256:5e2ff3feb5bd17d9ec79cc6a6be3587404de006b8770c38decf7edae1f6a2428\"]"
+    },
+    {
+      "ref": "rag-tracing:local",
+      "present": true,
+      "id": "sha256:32f32eb94ffcf8ebbef79f8364d9f74fcfd20c1523c98a18d8666820d4987540",
+      "id_short": "sha256:32f32eb94ffc",
+      "created": "2026-11-16T09:11:56.582922014Z",
+      "age_hours": 42.9,
+      "tags": "[\"rag-tracing:2578997\",\"rag-tracing:local\"]",
+      "digests": "[\"rag-tracing@sha256:32f32eb94ffcf8ebbef79f8364d9f74fcfd20c1523c98a18d8666820d4987540\"]"
+    },
+    {
+      "ref": "dana-jenkins:lts",
+      "present": true,
+      "id": "sha256:34834aeb907ca4aa485239dd011a2d6d8fedf2d8071c3fd6b5907267de71e73a",
+      "id_short": "sha256:34834aeb907c",
+      "created": "2026-11-16T08:36:08.515560602Z",
+      "age_hours": 43.5,
+      "tags": "[\"dana-jenkins:lts\",\"dana-jenkins:production\"]",
+      "digests": "[\"dana-jenkins@sha256:34834aeb907ca4aa485239dd011a2d6d8fedf2d8071c3fd6b5907267de71e73a\"]"
+    }
+  ],
+  "missing_images": [],
+  "stale_images": [],
+  "max_image_age_hours": 43.5,
+  "stale_hours_threshold": 168.0,
+  "snapshots": [
+    "20261115T124350Z"
+  ],
+  "latest_snapshot": "20261115T124350Z"
+}
